@@ -1,0 +1,81 @@
+---
+title: "Supported Platforms"
+description: "RootFi adds new integrations every week, and below are the currently supported platforms."
+---
+
+<Card title="Supported" icon="circle-nodes" icontype="duotone">
+  Indicates that the integration is readily available and can be effortlessly set up by the user without any external assistance.
+</Card>
+<Card title="Beta" icon="flask-vial" icontype="duotone">
+  Indicates that the integration is still under development and may require specialised onboarding, such as approval or complex setup processes. Hence, we will onboard customers manually for such platforms until we ensure that the connection can be effortlessly set up by the users themselves.
+</Card>
+
+| Platform                                | Status      | Read | Write |
+| --------------------------------------- | ----------- | ---- | ----- |
+| Zoho Books                              | Supported   | ✓    | ✓     |
+| Quickbooks Online                       | Supported   | ✓    | ✓     |
+| Xero                                    | Supported   | ✓    | ✓     |
+| Tally Prime                             | Beta        | ✓    | ✓     |
+| Microsoft Dynamics 365 Business Central | Supported   | ✓    | ✓     |
+| Sage Business Cloud                     | Supported   | ✓    | ✓     |
+| Sage Business Cloud (ZA)                | Supported   | ✓    | ✓     |
+| Myob Business                           | Supported   | ✓    | ✓     |
+| Wave                                    | Supported   | ✓    | ✓     |
+| Odoo                                    | Beta        | ✓    | ✓     |
+| Oracle Netsuite                         | Beta        | ✓    | ✓     |
+| Wafeq                                   | Building... |      |       |
+
+  
+<Tip>
+
+    **Need a specific Integration?**
+
+    We are constantly adding new integrations, and if there is a specific integration you would like to see, you can add or upvote it on [our Trello board](https://trello.com/b/ISjLnO29/building-rootfi).
+</Tip>
+  
+## Data Models Supported
+
+### Read
+
+| Data Model/Platform     | Quickbooks Sandbox | Quickbooks Online | Xero        | Tally Prime | Microsoft Dynamics 365 | Zoho Books  | Sage Business Cloud | Sage Business Cloud ( ZA) |
+| ----------------------- | ------------------ | ----------------- | ----------- | ----------- | ---------------------- | ----------- | ------------------- | ------------------------- |
+| Accounts                | ✓                  | ✓                 | ✓           | ✓           | ✓                      | ✓           | ✓                   | ✓                         |
+| Bank Accounts           | ✓                  | ✓                 | ✓           | ✓           | ✓                      | ✓           | ✓                   | ✓                         |
+| Bills                   | ✓                  | ✓                 | ✓           | ✓           | ✓                      | ✓           | ✓                   | ✓                         |
+| Bill Payments           | ✓                  | ✓                 | ✓           | ✕           | ✕                      | ✓           | ✓                   | ✓                         |
+| Company Info            | ✓                  | ✓                 | ✓           | ✓           | ✓                      | ✓           | ✓                   | ✓                         |
+| Customers               | ✓                  | ✓                 | ✓           | ✓           | ✓                      | ✓           | ✓                   | ✓                         |
+| Credit Notes            | ✓                  | ✓                 | ✓           | ✓           | ✓                      | ✓           | ✓                   | ✓                         |
+| Documents / Attachments | ✓                  | ✓                 | ✓           | ✕           | ✕                      | ✓           | ✓                   | ✓                         |
+| Invoices                | ✓                  | ✓                 | ✓           | ✓           | ✓                      | ✓           | ✓                   | ✓                         |
+| Invoice Payments        | ✓                  | ✓                 | ✓           | ✕           | ✕                      | ✓           | ✓                   | ✓                         |
+| Items                   | ✓                  | ✓                 | ✓           | ✓           | ✓                      | ✓           | ✓                   | ✓                         |
+| Line Items              | ✓                  | ✓                 | ✓           | ✓           | ✓                      | ✓           | ✓                   | ✓                         |
+| Tax Rates               | ✓                  | ✓                 | ✓           | ✕           | ✓                      | ✓           | ✓                   | ✓                         |
+| Vendors                 | ✓                  | ✓                 | ✓           | ✓           | ✓                      | ✓           | ✓                   | ✓                         |
+| Journal Entries         | ✓                  | ✓                 | ✓           | ✓           | ✓                      | ✓           | ✓                   | ✓                         |
+| Bank Transactions       | ✕                  | ✕                 | ✓           | ✕           | ✕                      | ✓           | ✓                   | ✓                         |
+| Journal Lines           | ✓                  | ✓                 | ✓           | ✕           | ✕                      | ✓           | ✕                   | ✕                         |
+| Expenses                | ✓                  | ✓                 | ✕           | ✓           | ✕                      | ✓           | ✓                   | ✓                         |
+| Purchase Orders         | Coming Soon        | Coming Soon       | Coming Soon | Coming Soon | Coming Soon            | Coming Soon | Coming Soon         | Coming Soon               |
+
+  
+### Write
+
+| Data Models/Platforms | Quickbooks Sandbox | Quickbooks Online | Xero        | Tally Prime | Microsoft Dynamics 365 | Zoho Books  | Sage Business Cloud | Sage Business Cloud (ZA) |
+| --------------------- | ------------------ | ----------------- | ----------- | ----------- | ---------------------- | ----------- | ------------------- | ------------------------ |
+| Line Items            | ✓                  | ✓                 | ✓           | ✓           | ✓                      | ✓           | ✓                   | ✓                        |
+| Invoices              | ✓                  | ✓                 | ✓           | ✓           | ✓                      | ✓           | ✓                   | ✓                        |
+| Bills                 | ✓                  | ✓                 | ✓           | ✓           | ✓                      | ✓           | ✓                   | ✓                        |
+| Bill Payments         | ✓                  | ✓                 | ✓           | ✕           | ✕                      | ✓           | ✓                   | ✕                        |
+| Invoice Payments      | ✓                  | ✓                 | ✓           | ✕           | ✕                      | ✓           | ✓                   | ✕                        |
+| Vendors               | ✓                  | ✓                 | ✓           | ✓           | ✓                      | ✓           | ✓                   | ✓                        |
+| Customers             | ✓                  | ✓                 | ✓           | ✓           | ✓                      | ✓           | ✓                   | ✓                        |
+| Bank Transactions     | ✕                  | ✕                 | ✓           | ✕           | ✕                      | ✓           | ✕                   | ✕                        |
+| Journal Entries       | ✕                  | ✕                 | ✕           | ✕           | ✕                      | ✓           | ✓                   | ✓                        |
+| Accounts              | ✓                  | ✓                 | ✓           | ✕           | ✕                      | ✓           | ✕                   | ✕                        |
+| Items                 | ✓                  | ✓                 | ✓           | ✕           | ✕                      | ✓           | ✕                   | ✕                        |
+| Tax Rates             | ✕                  | ✕                 | ✓           | ✕           | ✕                      | ✓           | ✕                   | ✕                        |
+| Purchase Orders       | Coming Soon        | Coming Soon       | Coming Soon | Coming Soon | Coming Soon            | Coming Soon | Coming Soon         | Coming Soon              |
+
+  

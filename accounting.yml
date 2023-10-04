@@ -1,0 +1,4232 @@
+openapi: 3.0.1
+info:
+  title: Accounting
+  description: ""
+  version: "1.0"
+servers:
+- url: https://integrate.rootfi.dev/api/v2
+security:
+- api_key: []
+tags:
+- name: Accounts
+- name: Balance Sheet
+- name: Bank Accounts
+- name: Bank Transactions
+- name: Bill Credit Notes
+- name: Bill Payments
+- name: Bills
+- name: Cash Flow Statements
+- name: Company Info
+- name: Contacts
+- name: Documents
+- name: Expenses
+- name: Income Statements
+- name: Invoice Credit Notes
+- name: Invoice Payments
+- name: Invoices
+- name: Items
+- name: Journal Entries
+- name: Purchase Orders
+- name: Sales Orders
+- name: Tax Rates
+- name: Tracking Categories
+paths:
+  /read/accounts:
+    get:
+      tags:
+      - Accounts
+      summary: Get All Accounts
+      operationId: ""
+      parameters:
+      - name: take
+        in: query
+        schema:
+          type: string
+      - name: filter
+        in: query
+        schema:
+          type: string
+          default: '{ "rootfi_company_id": {"eq": 21}}'
+      - name: orderBy
+        in: query
+        schema:
+          type: string
+          default: '{"rootfi_created_at": "desc"}'
+      - name: skip
+        in: query
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/accounts-fields'
+                        x-stoplight:
+                          id: sjpw1mwiy0v44
+                      total_count:
+                        type: integer
+                        x-stoplight:
+                          id: 2l7z0blnjhvxk
+                    x-stoplight:
+                      id: 990n1gyfu1w26
+            Example 1:
+              example:
+                data:
+                  data:
+                  - nominal_code: string
+                    name: string
+                    description: string
+                    category: string
+                    sub_category: string
+                    status: string
+                    currency: string
+                    current_balance: 0
+                    updated_at: 2019-08-24T14:15:22Z
+                    parent_account_id: string
+                    rootfi_id: 0
+                    rootfi_company_id: 0
+                    rootfi_organisation_id: 0
+                    rootfi_integration_type: string
+                    rootfi_updated_at: string
+                    rootfi_created_at: string
+                    platform_id: string
+                  total_count: 0
+                request_timestamp: string
+                response_timestamp: string
+                request_id: string
+  /write/accounts:
+    post:
+      tags:
+      - Accounts
+      summary: Create Accounts
+      operationId: create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - company_id
+              type: object
+              properties:
+                company_id:
+                  type: integer
+                  x-stoplight:
+                    id: kgt1koh2kgnsy
+                data:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/accounts-write-fields'
+                  x-stoplight:
+                    id: jb83tuom0yc7i
+        required: false
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    allOf:
+                    - type: object
+                      properties:
+                        data:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/accounts-write-response'
+                          x-stoplight:
+                            id: 49mxxqn1cdkof
+                    - $ref: '#/components/schemas/upload-job-id-response'
+                    x-stoplight:
+                      id: v4wslg9wuferv
+      x-codegen-request-body-name: body
+  /read/bank_accounts:
+    get:
+      tags:
+      - Bank Accounts
+      summary: Get All Bank Accounts
+      operationId: get-bank-accounts
+      parameters:
+      - name: take
+        in: query
+        schema:
+          type: string
+      - name: filter
+        in: query
+        schema:
+          type: string
+          default: '{ "rootfi_company_id": {"eq": 21}}'
+      - name: orderBy
+        in: query
+        schema:
+          type: string
+          default: '{"rootfi_created_at": "desc"}'
+      - name: skip
+        in: query
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/bank-accounts-fields'
+                        x-stoplight:
+                          id: xmusf2g3ylky1
+                      total_count:
+                        type: integer
+                        x-stoplight:
+                          id: j40kkqbexi7cc
+                    x-stoplight:
+                      id: xn3d6y674hql6
+  /write/bank_accounts:
+    post:
+      tags:
+      - Bank Accounts
+      summary: Create Bank Accounts
+      operationId: get-write-bank-accounts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - company_id
+              type: object
+              properties:
+                company_id:
+                  type: integer
+                  x-stoplight:
+                    id: 4k48w04s7n8dd
+                data:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/bank-accounts-write-fields'
+                  x-stoplight:
+                    id: so5xcgtufiprt
+        required: false
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    allOf:
+                    - type: object
+                      properties:
+                        data:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/bank-accounts-write-response'
+                          x-stoplight:
+                            id: lapzuatr06ake
+                    - $ref: '#/components/schemas/upload-job-id-response'
+                    x-stoplight:
+                      id: lcqcnihty0my7
+      x-codegen-request-body-name: body
+  /read/bank_transactions:
+    get:
+      tags:
+      - Bank Transactions
+      summary: Get All Bank Transactions
+      operationId: get-read-bank_transactions
+      parameters:
+      - name: take
+        in: query
+        schema:
+          type: string
+      - name: filter
+        in: query
+        schema:
+          type: string
+          default: '{ "rootfi_company_id": {"eq": 21}}'
+      - name: orderBy
+        in: query
+        schema:
+          type: string
+          default: '{"rootfi_created_at": "desc"}'
+      - name: skip
+        in: query
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/bank-transactions-fields'
+                        x-stoplight:
+                          id: cfmkq0firf3j0
+                      total_count:
+                        type: integer
+                        x-stoplight:
+                          id: u4sz77nmz8h75
+                    x-stoplight:
+                      id: berogp9pmn2uk
+  /read/bills:
+    get:
+      tags:
+      - Bills
+      summary: Get All Bills
+      operationId: get-read-bills
+      parameters:
+      - name: take
+        in: query
+        schema:
+          type: string
+      - name: filter
+        in: query
+        schema:
+          type: string
+          default: '{ "rootfi_company_id": {"eq": 21}}'
+      - name: orderBy
+        in: query
+        schema:
+          type: string
+          default: '{"rootfi_created_at": "desc"}'
+      - name: skip
+        in: query
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/bills-fields'
+                        x-stoplight:
+                          id: m6i6utnpxjtfy
+                      total_count:
+                        type: integer
+                        x-stoplight:
+                          id: vlv3spwfcesuw
+                    x-stoplight:
+                      id: xjn1oy4p6tla3
+  /write/bills:
+    post:
+      tags:
+      - Bills
+      summary: Create Bills
+      operationId: get-write-bills
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - company_id
+              type: object
+              properties:
+                company_id:
+                  type: integer
+                  x-stoplight:
+                    id: uc773qbzfhoox
+                data:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/bills-write-fields'
+                  x-stoplight:
+                    id: 8gyem8mcgfutt
+        required: false
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    allOf:
+                    - type: object
+                      properties:
+                        data:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/bills-write-response'
+                          x-stoplight:
+                            id: tb4xz8vl3gzig
+                    - $ref: '#/components/schemas/upload-job-id-response'
+                    x-stoplight:
+                      id: w3qap15fzni5v
+      x-codegen-request-body-name: body
+  /read/bill_payments:
+    get:
+      tags:
+      - Bill Payments
+      summary: Get All Bill Payments
+      operationId: get-read-bill-payments
+      parameters:
+      - name: take
+        in: query
+        schema:
+          type: string
+      - name: filter
+        in: query
+        schema:
+          type: string
+          default: '{ "rootfi_company_id": {"eq": 21}}'
+      - name: orderBy
+        in: query
+        schema:
+          type: string
+          default: '{"rootfi_created_at": "desc"}'
+      - name: skip
+        in: query
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/bill-payments-fields'
+                        x-stoplight:
+                          id: 93ijc1tl6etvd
+                      total_count:
+                        type: integer
+                        x-stoplight:
+                          id: 6zhbk62p437t1
+                    x-stoplight:
+                      id: d1q6il4zrjnvq
+  /write/bill_payments:
+    post:
+      tags:
+      - Bill Payments
+      summary: Create Bill Payments
+      operationId: get-write-bill-payments
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - company_id
+              type: object
+              properties:
+                company_id:
+                  type: integer
+                  x-stoplight:
+                    id: 1emtaw1ti2no7
+                data:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/bill-payments-write-fields'
+                  x-stoplight:
+                    id: gmxepxvai3w39
+        required: false
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    allOf:
+                    - type: object
+                      properties:
+                        data:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/bill-payments-write-response'
+                          x-stoplight:
+                            id: 1eno4l9cdhyxg
+                    - $ref: '#/components/schemas/upload-job-id-response'
+                    x-stoplight:
+                      id: p7ufucsk1dw0m
+      x-codegen-request-body-name: body
+  /read/bill_credit_notes:
+    get:
+      tags:
+      - Bill Credit Notes
+      summary: Get All Bill Credit Notes
+      operationId: get-read-bill-credit-notes
+      parameters:
+      - name: take
+        in: query
+        schema:
+          type: string
+      - name: filter
+        in: query
+        schema:
+          type: string
+          default: '{ "rootfi_company_id": {"eq": 21}}'
+      - name: orderBy
+        in: query
+        schema:
+          type: string
+          default: '{"rootfi_created_at": "desc"}'
+      - name: skip
+        in: query
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/bill-credit-notes-fields'
+                        x-stoplight:
+                          id: 7tujr6yrcav0r
+                      total_count:
+                        type: integer
+                        x-stoplight:
+                          id: jpt091s8htu1l
+                    x-stoplight:
+                      id: umxjo9idnwtvz
+  /write/bill_credit_notes:
+    post:
+      tags:
+      - Bill Credit Notes
+      summary: Create Bill Credit Notes
+      operationId: get-write-bill-credit-notes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - company_id
+              type: object
+              properties:
+                company_id:
+                  type: integer
+                  x-stoplight:
+                    id: lnf6b7ge5slwa
+                data:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/bill-credit-notes-write-fields'
+                  x-stoplight:
+                    id: jint9krg098t4
+        required: false
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    allOf:
+                    - type: object
+                      properties:
+                        data:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/bill-credit-notes-write-response'
+                          x-stoplight:
+                            id: huhcyl78oj967
+                    - $ref: '#/components/schemas/upload-job-id-response'
+                    x-stoplight:
+                      id: tc97opuzljt07
+      x-codegen-request-body-name: body
+  /read/contacts:
+    get:
+      tags:
+      - Contacts
+      summary: Get All Contacts
+      operationId: get-read-contacts
+      parameters:
+      - name: take
+        in: query
+        schema:
+          type: string
+      - name: filter
+        in: query
+        schema:
+          type: string
+          default: '{ "rootfi_company_id": {"eq": 21}}'
+      - name: orderBy
+        in: query
+        schema:
+          type: string
+          default: '{"rootfi_created_at": "desc"}'
+      - name: skip
+        in: query
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/contacts-fields'
+                        x-stoplight:
+                          id: zy2rw1a6sqrrs
+                      total_count:
+                        type: integer
+                        x-stoplight:
+                          id: ifaqe5fviyfgs
+                    x-stoplight:
+                      id: 9zaho8yoa0r5z
+  /write/contacts:
+    post:
+      tags:
+      - Contacts
+      summary: Create Contacts
+      operationId: write-contacts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - company_id
+              type: object
+              properties:
+                company_id:
+                  type: integer
+                  x-stoplight:
+                    id: k4b7vtgg0bko5
+                data:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/contacts-write-fields'
+                  x-stoplight:
+                    id: 7bg8v0c7u228x
+        required: false
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    allOf:
+                    - type: object
+                      properties:
+                        data:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/contacts-write-response'
+                          x-stoplight:
+                            id: g2tqojnuv6lj6
+                    - $ref: '#/components/schemas/upload-job-id-response'
+                    x-stoplight:
+                      id: rjjk783lt1nrv
+      x-codegen-request-body-name: body
+  /write/contacts/{contact_id}:
+    post:
+      tags:
+      - Contacts
+      summary: Update Contacts
+      operationId: update-contacts
+      parameters:
+      - name: contact_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - company_id
+              type: object
+              properties:
+                company_id:
+                  type: integer
+                  x-stoplight:
+                    id: hfb1y33wipje8
+                data:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/contacts-write-fields'
+                  x-stoplight:
+                    id: njz676so9ogpk
+        required: false
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    allOf:
+                    - type: object
+                      properties:
+                        data:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/contacts-write-response'
+                          x-stoplight:
+                            id: rpw9mvp53de36
+                    - $ref: '#/components/schemas/upload-job-id-response'
+                    x-stoplight:
+                      id: i8ej2qlz3rzr8
+      x-codegen-request-body-name: body
+  /read/company_info:
+    get:
+      tags:
+      - Company Info
+      summary: Get All Company Info
+      operationId: get-read-company-info
+      parameters:
+      - name: take
+        in: query
+        schema:
+          type: string
+      - name: filter
+        in: query
+        schema:
+          type: string
+          default: '{ "rootfi_company_id": {"eq": 21}}'
+      - name: orderBy
+        in: query
+        schema:
+          type: string
+          default: '{"rootfi_created_at": "desc"}'
+      - name: skip
+        in: query
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/company-info-fields'
+                        x-stoplight:
+                          id: 2eraoibm3egxp
+                      total_count:
+                        type: integer
+                        x-stoplight:
+                          id: 3jqc962wpkylq
+                    x-stoplight:
+                      id: jiakw4ct8gqnt
+  /read/documents:
+    get:
+      tags:
+      - Documents
+      summary: Get All Documents
+      operationId: get-read-documents
+      parameters:
+      - name: take
+        in: query
+        schema:
+          type: string
+      - name: filter
+        in: query
+        schema:
+          type: string
+          default: '{ "rootfi_company_id": {"eq": 21}}'
+      - name: orderBy
+        in: query
+        schema:
+          type: string
+          default: '{"rootfi_created_at": "desc"}'
+      - name: skip
+        in: query
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/documents-fields'
+                        x-stoplight:
+                          id: e61ntfuupi4mh
+                      total_count:
+                        type: integer
+                        x-stoplight:
+                          id: t8yhdtzrry2ik
+                    x-stoplight:
+                      id: sc8bwx629r59k
+  /write/documents:
+    post:
+      tags:
+      - Documents
+      summary: Create Documents
+      operationId: write-documents
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              required:
+              - company_id
+              - document_type
+              - document_type_id
+              - file
+              properties:
+                company_id:
+                  type: integer
+                  format: int32
+                document_type:
+                  type: string
+                document_type_id:
+                  type: string
+                file:
+                  type: string
+                  format: binary
+          multipart/form-data:
+            schema:
+              required:
+              - company_id
+              - document_type
+              - document_type_id
+              - file
+              properties:
+                company_id:
+                  type: integer
+                  format: int32
+                document_type:
+                  type: string
+                document_type_id:
+                  type: string
+                file:
+                  type: string
+                  format: binary
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    allOf:
+                    - type: object
+                      properties:
+                        data:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/documents-write-response'
+                          x-stoplight:
+                            id: s2yybjs055r85
+                    - $ref: '#/components/schemas/upload-job-id-response'
+                    x-stoplight:
+                      id: nxy30v85nli4q
+  /read/expenses:
+    get:
+      tags:
+      - Expenses
+      summary: Get All Expenses
+      operationId: get-read-expenses
+      parameters:
+      - name: take
+        in: query
+        schema:
+          type: string
+      - name: filter
+        in: query
+        schema:
+          type: string
+          default: '{ "rootfi_company_id": {"eq": 21}}'
+      - name: orderBy
+        in: query
+        schema:
+          type: string
+          default: '{"rootfi_created_at": "desc"}'
+      - name: skip
+        in: query
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/expenses-fields'
+                        x-stoplight:
+                          id: 0wr93073kkq3x
+                      total_count:
+                        type: integer
+                        x-stoplight:
+                          id: clxq92el6a6ze
+                    x-stoplight:
+                      id: wjc7gfnj5hgfj
+  /write/expenses:
+    post:
+      tags:
+      - Expenses
+      summary: Create Expenses
+      operationId: write-expenses
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - company_id
+              type: object
+              properties:
+                company_id:
+                  type: integer
+                  x-stoplight:
+                    id: w2c5ezgwr7qbo
+                data:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/expenses-write-fields'
+                  x-stoplight:
+                    id: o4juesebllm53
+        required: false
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    allOf:
+                    - type: object
+                      properties:
+                        data:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/expenses-write-response'
+                          x-stoplight:
+                            id: x1d3iuumh6deq
+                    - $ref: '#/components/schemas/upload-job-id-response'
+                    x-stoplight:
+                      id: 89kf3doi8s8mp
+      x-codegen-request-body-name: body
+  /read/invoice_credit_notes:
+    get:
+      tags:
+      - Invoice Credit Notes
+      summary: Get All Invoice Credit Notes
+      operationId: get-read-invoice-credit-notes
+      parameters:
+      - name: take
+        in: query
+        schema:
+          type: string
+      - name: filter
+        in: query
+        schema:
+          type: string
+          default: '{ "rootfi_company_id": {"eq": 21}}'
+      - name: orderBy
+        in: query
+        schema:
+          type: string
+          default: '{"rootfi_created_at": "desc"}'
+      - name: skip
+        in: query
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/invoice-credit-notes-fields'
+                        x-stoplight:
+                          id: l7cjtrzh3c5u1
+                      total_count:
+                        type: integer
+                        x-stoplight:
+                          id: 4h8m3z0w3cz5o
+                    x-stoplight:
+                      id: x36a6gmhl2jxx
+  /write/invoice_credit_notes:
+    post:
+      tags:
+      - Invoice Credit Notes
+      summary: Create Invoice Credit Notes
+      operationId: write-invoice-credit-notes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - company_id
+              type: object
+              properties:
+                company_id:
+                  type: integer
+                  x-stoplight:
+                    id: izo7n2njbn14q
+                data:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/invoice-credit-notes-write-fields'
+                  x-stoplight:
+                    id: 5q6o8r189fsso
+        required: false
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    allOf:
+                    - type: object
+                      properties:
+                        data:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/invoice-credit-notes-write-response'
+                          x-stoplight:
+                            id: 9t0bo1tl2s0lw
+                    - $ref: '#/components/schemas/upload-job-id-response'
+                    x-stoplight:
+                      id: qf57yen9ek0ry
+      x-codegen-request-body-name: body
+  /read/invoices:
+    get:
+      tags:
+      - Invoices
+      summary: Get All Invoices
+      operationId: get-read-invoices
+      parameters:
+      - name: take
+        in: query
+        schema:
+          type: string
+      - name: filter
+        in: query
+        schema:
+          type: string
+          default: '{ "rootfi_company_id": {"eq": 21}}'
+      - name: orderBy
+        in: query
+        schema:
+          type: string
+          default: '{"rootfi_created_at": "desc"}'
+      - name: skip
+        in: query
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/invoices-fields'
+                        x-stoplight:
+                          id: n5q7jb23pcu37
+                      total_count:
+                        type: integer
+                        x-stoplight:
+                          id: y8z1v9rdx8ssw
+                    x-stoplight:
+                      id: 879lrnrtketrb
+  /write/invoices:
+    post:
+      tags:
+      - Invoices
+      summary: Create Invoices
+      operationId: write-invoices
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - company_id
+              type: object
+              properties:
+                company_id:
+                  type: integer
+                  x-stoplight:
+                    id: 1jvl8z4co5dx2
+                data:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/invoices-write-fields'
+                  x-stoplight:
+                    id: dic4m9shhe6gi
+        required: false
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    allOf:
+                    - type: object
+                      properties:
+                        data:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/invoices-write-response'
+                          x-stoplight:
+                            id: 75lgm19hvqrgr
+                    - $ref: '#/components/schemas/upload-job-id-response'
+                    x-stoplight:
+                      id: xdis9kovvo5gg
+      x-codegen-request-body-name: body
+  /write/invoices/{invoice_id}:
+    post:
+      tags:
+      - Invoices
+      summary: Update Invoices
+      operationId: update-invoices
+      parameters:
+      - name: invoice_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - company_id
+              type: object
+              properties:
+                company_id:
+                  type: integer
+                  x-stoplight:
+                    id: wdx39v16empsh
+                data:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/invoices-write-fields'
+                  x-stoplight:
+                    id: 6tz4mtdp8t05q
+        required: false
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    allOf:
+                    - required:
+                      - data
+                      type: object
+                      properties:
+                        data:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/invoices-write-response'
+                          x-stoplight:
+                            id: 84zmfl3mz5hsm
+                    - $ref: '#/components/schemas/upload-job-id-response'
+                    x-stoplight:
+                      id: zn3t00becs0j4
+      x-codegen-request-body-name: body
+  /read/invoice_payments:
+    get:
+      tags:
+      - Invoice Payments
+      summary: Get All Invoice Payments
+      operationId: get-read-invoice-payments
+      parameters:
+      - name: take
+        in: query
+        schema:
+          type: string
+      - name: filter
+        in: query
+        schema:
+          type: string
+          default: '{ "rootfi_company_id": {"eq": 21}}'
+      - name: orderBy
+        in: query
+        schema:
+          type: string
+          default: '{"rootfi_created_at": "desc"}'
+      - name: skip
+        in: query
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/invoice-payments-fields'
+                        x-stoplight:
+                          id: pv21mrzc8ti8f
+                      total_count:
+                        type: integer
+                        x-stoplight:
+                          id: 7ugzjdjriv9eh
+                    x-stoplight:
+                      id: 1e6fcmx2vh05o
+  /write/invoice_payments:
+    post:
+      tags:
+      - Invoice Payments
+      summary: Create Invoice Payments
+      operationId: write-invoice-payments
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - company_id
+              type: object
+              properties:
+                company_id:
+                  type: integer
+                  x-stoplight:
+                    id: q6nte13l3tv9r
+                data:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/invoice-payments-write-fields'
+                  x-stoplight:
+                    id: ldw7h12tdh0g7
+        required: false
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    allOf:
+                    - type: object
+                      properties:
+                        data:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/invoice-payments-write-response'
+                          x-stoplight:
+                            id: i6llp0jo1o40x
+                    - $ref: '#/components/schemas/upload-job-id-response'
+                    x-stoplight:
+                      id: y74q61x80us9k
+      x-codegen-request-body-name: body
+  /read/items:
+    get:
+      tags:
+      - Items
+      summary: Get All Items
+      operationId: get-read-items
+      parameters:
+      - name: take
+        in: query
+        schema:
+          type: string
+      - name: filter
+        in: query
+        schema:
+          type: string
+          default: '{ "rootfi_company_id": {"eq": 21}}'
+      - name: orderBy
+        in: query
+        schema:
+          type: string
+          default: '{"rootfi_created_at": "desc"}'
+      - name: skip
+        in: query
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/items-fields'
+                        x-stoplight:
+                          id: ikxj2w3dxtqf1
+                      total_count:
+                        type: integer
+                        x-stoplight:
+                          id: f1rtlrn009jo4
+                    x-stoplight:
+                      id: 80p5h2vm1hsr8
+  /write/items:
+    post:
+      tags:
+      - Items
+      summary: Create Items
+      operationId: write-items
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - company_id
+              type: object
+              properties:
+                company_id:
+                  type: integer
+                  x-stoplight:
+                    id: btvt61cvur4ct
+                data:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/items-write-fields'
+                  x-stoplight:
+                    id: 6a2ckieov2axg
+        required: false
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    allOf:
+                    - type: object
+                      properties:
+                        data:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/items-write-response'
+                          x-stoplight:
+                            id: fos9hx2thmg4e
+                    - $ref: '#/components/schemas/upload-job-id-response'
+                    x-stoplight:
+                      id: uzdhwfbwvogba
+      x-codegen-request-body-name: body
+  /write/items/{item_id}:
+    post:
+      tags:
+      - Items
+      summary: Update Items
+      operationId: update-items
+      parameters:
+      - name: item_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - company_id
+              type: object
+              properties:
+                company_id:
+                  type: integer
+                  x-stoplight:
+                    id: fsq9xdji8egvb
+                data:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/items-write-fields'
+                  x-stoplight:
+                    id: sd929qij92bzd
+        required: false
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    allOf:
+                    - type: object
+                      properties:
+                        data:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/items-write-response'
+                          x-stoplight:
+                            id: 9h4b4olqgfj5l
+                    - $ref: '#/components/schemas/upload-job-id-response'
+                    x-stoplight:
+                      id: dbkdpfrwgknvv
+      x-codegen-request-body-name: body
+  /read/journal_entries:
+    get:
+      tags:
+      - Journal Entries
+      summary: Get All Journal Entries
+      operationId: get-read-journal-entries
+      parameters:
+      - name: take
+        in: query
+        schema:
+          type: string
+      - name: filter
+        in: query
+        schema:
+          type: string
+          default: '{ "rootfi_company_id": {"eq": 21}}'
+      - name: orderBy
+        in: query
+        schema:
+          type: string
+          default: '{"rootfi_created_at": "desc"}'
+      - name: skip
+        in: query
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/journal-entries-fields'
+                        x-stoplight:
+                          id: criuw9r67l037
+                      total_count:
+                        type: integer
+                        x-stoplight:
+                          id: mpv66hizit94y
+                    x-stoplight:
+                      id: 8aesr0nf2z030
+  /write/journal_entries:
+    post:
+      tags:
+      - Journal Entries
+      summary: Create Journal Entries
+      operationId: write-journal-entries
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - company_id
+              type: object
+              properties:
+                company_id:
+                  type: integer
+                  x-stoplight:
+                    id: ltx61ohkbpkjp
+                data:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/journal-entries-write-fields'
+                  x-stoplight:
+                    id: p6ov3w138ttnm
+        required: false
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    allOf:
+                    - type: object
+                      properties:
+                        data:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/journal-entries-write-response'
+                          x-stoplight:
+                            id: 7v3jene5r0qxl
+                    - $ref: '#/components/schemas/upload-job-id-response'
+                    x-stoplight:
+                      id: feidv53jg86qt
+      x-codegen-request-body-name: body
+  /read/purchase_orders:
+    get:
+      tags:
+      - Purchase Orders
+      summary: Get All Purchase Orders
+      operationId: get-read-purchase-orders
+      parameters:
+      - name: take
+        in: query
+        schema:
+          type: string
+      - name: filter
+        in: query
+        schema:
+          type: string
+          default: '{ "rootfi_company_id": {"eq": 21}}'
+      - name: orderBy
+        in: query
+        schema:
+          type: string
+          default: '{"rootfi_created_at": "desc"}'
+      - name: skip
+        in: query
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/purchase-orders-fields'
+                        x-stoplight:
+                          id: vk3mqxzmbz9ku
+                      total_count:
+                        type: integer
+                        x-stoplight:
+                          id: r17nrcf7mj88u
+                    x-stoplight:
+                      id: jvfl19nrq27dc
+  /write/purchase_orders:
+    post:
+      tags:
+      - Purchase Orders
+      summary: Create Purchase Orders
+      operationId: write-purchase-orders
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - company_id
+              type: object
+              properties:
+                company_id:
+                  type: integer
+                  x-stoplight:
+                    id: ejbwlh4k2cv9t
+                data:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/purchase-orders-write-fields'
+                  x-stoplight:
+                    id: 5mcognn4d78tn
+        required: false
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    allOf:
+                    - type: object
+                      properties:
+                        data:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/purchase-orders-write-response'
+                          x-stoplight:
+                            id: xiw00ut29g6ql
+                    - $ref: '#/components/schemas/upload-job-id-response'
+                    x-stoplight:
+                      id: 203y3bne4g4gl
+      x-codegen-request-body-name: body
+  /read/sales_orders:
+    get:
+      tags:
+      - Sales Orders
+      summary: Get All Sales Orders
+      operationId: get-read-sales-orders
+      parameters:
+      - name: take
+        in: query
+        schema:
+          type: string
+      - name: filter
+        in: query
+        schema:
+          type: string
+          default: '{ "rootfi_company_id": {"eq": 21}}'
+      - name: orderBy
+        in: query
+        schema:
+          type: string
+          default: '{"rootfi_created_at": "desc"}'
+      - name: skip
+        in: query
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/sales-orders-fields'
+                        x-stoplight:
+                          id: tp0ba87pbxevf
+                      total_count:
+                        type: integer
+                        x-stoplight:
+                          id: a3l8jsy3doyfq
+                    x-stoplight:
+                      id: chvowd22wcojx
+  /write/sales_orders:
+    post:
+      tags:
+      - Sales Orders
+      summary: Create Sales Orders
+      operationId: write-sales-orders
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - company_id
+              type: object
+              properties:
+                company_id:
+                  type: integer
+                  x-stoplight:
+                    id: rmyhc75q12x6h
+                data:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/sales-orders-write-fields'
+                  x-stoplight:
+                    id: ersf6ipn1198m
+        required: false
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    allOf:
+                    - type: object
+                      properties:
+                        data:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/sales-orders-write-response'
+                          x-stoplight:
+                            id: 1tw5h2gssyy6x
+                    - $ref: '#/components/schemas/upload-job-id-response'
+                    x-stoplight:
+                      id: gm4kevysbkbe6
+      x-codegen-request-body-name: body
+  /read/tax_rates:
+    get:
+      tags:
+      - Tax Rates
+      summary: Get All Tax Rates
+      operationId: get-read-tax-rates
+      parameters:
+      - name: take
+        in: query
+        schema:
+          type: string
+      - name: filter
+        in: query
+        schema:
+          type: string
+          default: '{ "rootfi_company_id": {"eq": 21}}'
+      - name: orderBy
+        in: query
+        schema:
+          type: string
+          default: '{"rootfi_created_at": "desc"}'
+      - name: skip
+        in: query
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/tax-rates-fields'
+                        x-stoplight:
+                          id: nq6uzhohi8lqt
+                      total_count:
+                        type: integer
+                        x-stoplight:
+                          id: rm43m7f284lei
+                    x-stoplight:
+                      id: mnahmle9df480
+  /write/tax_rates:
+    post:
+      tags:
+      - Tax Rates
+      summary: Create Tax Rates
+      operationId: write-tax-rates
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - company_id
+              type: object
+              properties:
+                company_id:
+                  type: integer
+                  x-stoplight:
+                    id: 0hg7xfoa57h4d
+                data:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/tax-rates-write-fields'
+                  x-stoplight:
+                    id: tboe19tu6wbdd
+        required: false
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    allOf:
+                    - type: object
+                      properties:
+                        data:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/tax-rates-write-response'
+                          x-stoplight:
+                            id: 80jsgtbowlc2m
+                    - $ref: '#/components/schemas/upload-job-id-response'
+                    x-stoplight:
+                      id: 7jn9ijy7ta4v8
+      x-codegen-request-body-name: body
+  /write/tax_rates/{tax_rate_id}:
+    post:
+      tags:
+      - Tax Rates
+      summary: Update Tax Rates
+      operationId: update-tax-rates
+      parameters:
+      - name: tax_rate_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - company_id
+              type: object
+              properties:
+                company_id:
+                  type: integer
+                  x-stoplight:
+                    id: 24v5inw7l0ayj
+                data:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/tax-rates-write-fields'
+                  x-stoplight:
+                    id: er7axnpclcdeq
+        required: false
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    allOf:
+                    - type: object
+                      properties:
+                        data:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/tax-rates-write-response'
+                          x-stoplight:
+                            id: y1ksls1l11iu6
+                    - $ref: '#/components/schemas/upload-job-id-response'
+                    x-stoplight:
+                      id: prh1nno23u88m
+      x-codegen-request-body-name: body
+  /read/tracking_categories:
+    get:
+      tags:
+      - Tracking Categories
+      summary: Get All Tracking Categories
+      operationId: get-read-tracking_categories
+      parameters:
+      - name: take
+        in: query
+        schema:
+          type: string
+      - name: skip
+        in: query
+        schema:
+          type: string
+      - name: orderBy
+        in: query
+        schema:
+          type: string
+          default: '{"rootfi_created_at": "desc"}'
+      - name: filter
+        in: query
+        schema:
+          type: string
+          default: '{ "rootfi_company_id": {"eq": 21}}'
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/tracking-category-fields'
+                        x-stoplight:
+                          id: g6zm87qar84tu
+                      total_count:
+                        type: number
+                        x-stoplight:
+                          id: in5xb73vogf7p
+                    x-stoplight:
+                      id: f8glvjc7bivz0
+      x-stoplight:
+        id: zeuhefjgxiopz
+  /read/balance_sheet:
+    get:
+      tags:
+      - Balance Sheet
+      summary: Get Balance Sheet
+      operationId: get-read-balance_sheet
+      parameters:
+      - name: take
+        in: query
+        schema:
+          type: string
+      - name: orderBy
+        in: query
+        schema:
+          type: string
+          default: '{"rootfi_created_at": "desc"}'
+      - name: period
+        in: query
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/balance-sheet-fields'
+                        x-stoplight:
+                          id: 4lkfcm9qwbnmc
+                      total_count:
+                        type: number
+                        x-stoplight:
+                          id: xptf94oe00ehf
+                    x-stoplight:
+                      id: y1s76081dpfck
+      x-stoplight:
+        id: vqj26n37qyu2u
+  /read/cash_flow_statement:
+    get:
+      tags:
+      - Cash Flow Statements
+      summary: Your GET endpoint
+      operationId: get-read-cash_flow_statements
+      parameters:
+      - name: take
+        in: query
+        schema:
+          type: string
+      - name: orderBy
+        in: query
+        schema:
+          type: string
+          default: '{"rootfi_created_at": "desc"}'
+      - name: period
+        in: query
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/cash-flow-statement-fields'
+                        x-stoplight:
+                          id: 4c77y1c5pc9i9
+                      total_count:
+                        type: number
+                        x-stoplight:
+                          id: wt7s73syzi7gi
+                    x-stoplight:
+                      id: z0wzu3ojgelxs
+      x-stoplight:
+        id: 6vvf5zvnze5o0
+  /read/income_statement:
+    get:
+      tags:
+      - Income Statements
+      summary: Your GET endpoint
+      operationId: get-read-income_statements
+      parameters:
+      - name: take
+        in: query
+        schema:
+          type: string
+      - name: period
+        in: query
+        schema:
+          type: string
+      - name: orderBy
+        in: query
+        schema:
+          type: string
+          default: '{"rootfi_created_at": "desc"}'
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  base-response:
+                    $ref: '#/components/schemas/base-response'
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/income-statement-fields'
+                        x-stoplight:
+                          id: 2lwrc1vwa3emv
+                      total_count:
+                        type: number
+                        x-stoplight:
+                          id: n7l3ar4zlaoiz
+                    x-stoplight:
+                      id: 26z3eyvztxm7e
+      x-stoplight:
+        id: ul6ofld1m60cz
+components:
+  schemas:
+    currency:
+      title: currency
+      type: string
+      x-stoplight:
+        id: 0ce9g8lnjt5o0
+    status:
+      title: status
+      type: string
+      x-stoplight:
+        id: nq1fl7ry523ci
+    common-fields:
+      type: object
+      properties:
+        rootfi_id:
+          type: integer
+        rootfi_company_id:
+          type: integer
+        rootfi_organisation_id:
+          type: integer
+        rootfi_integration_type:
+          type: string
+        rootfi_updated_at:
+          type: string
+        rootfi_created_at:
+          type: string
+        platform_id:
+          type: string
+      x-examples: {}
+    base-response:
+      type: object
+      properties:
+        request_timestamp:
+          type: string
+        response_timestamp:
+          type: string
+        request_id:
+          type: string
+      x-examples:
+        Example 1:
+          request_timestamp: 2023-07-04T09:56:34.131Z
+          response_timestamp: 2023-07-04T09:56:36.773Z
+          request_id: 13cf3158-b7d0-4916-b386-9585efb2db32
+    upload-job-id-response:
+      type: object
+      properties:
+        status:
+          type: string
+        upload_job_id:
+          type: string
+      x-examples:
+        Example 1:
+          status: SUCCESS
+          upload_job_id: cH9nn76F5CDkLBV
+    job-id-response:
+      type: object
+      properties:
+        job_id:
+          type: string
+        status:
+          type: string
+      x-examples: {}
+    accounts-fields:
+      allOf:
+      - type: object
+        properties:
+          nominal_code:
+            type: string
+          name:
+            type: string
+          description:
+            type: string
+          category:
+            type: string
+          sub_category:
+            type: string
+          status:
+            $ref: '#/components/schemas/status'
+          currency:
+            type: string
+          current_balance:
+            type: number
+          updated_at:
+            type: string
+            format: date-time
+          parent_account_id:
+            type: string
+            x-stoplight:
+              id: 4dqagtapggcx5
+      - $ref: '#/components/schemas/common-fields'
+    accounts-write-fields:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        nominal_code:
+          type: string
+        currency:
+          type: string
+        sub_category:
+          type: string
+        parent_account_id:
+          type: string
+      x-examples: {}
+    accounts-write-response:
+      title: accounts-write-response
+      allOf:
+      - type: object
+        properties:
+          error:
+            type: string
+            x-stoplight:
+              id: xojse6nsm7lmo
+          response:
+            type: object
+            allOf:
+            - type: object
+              properties:
+                raw_data:
+                  type: object
+                  properties: {}
+                  x-stoplight:
+                    id: 0htfy000u191f
+                data_hash:
+                  type: string
+                  x-stoplight:
+                    id: vozqjv8mguelu
+            - $ref: '#/components/schemas/accounts-fields'
+            x-stoplight:
+              id: kmje4viqnhx39
+      - $ref: '#/components/schemas/job-id-response'
+      x-stoplight:
+        id: wevcn0mv7bksy
+    bank-accounts-fields:
+      allOf:
+      - type: object
+        properties:
+          institution_name:
+            type: string
+          account_name:
+            type: string
+          account_number:
+            type: string
+          category:
+            type: string
+          balance:
+            type: number
+          currency:
+            $ref: '#/components/schemas/currency'
+          updated_at:
+            type: string
+            format: date-time
+      - $ref: '#/components/schemas/common-fields'
+    bank-accounts-write-fields:
+      type: object
+      properties:
+        account_name:
+          type: string
+        category:
+          type: string
+        institution_name:
+          type: string
+        account_number:
+          type: string
+        balance:
+          type: number
+      x-examples: {}
+    bank-accounts-write-response:
+      title: bank-accounts-write-response
+      allOf:
+      - type: object
+        properties:
+          error:
+            type: string
+            x-stoplight:
+              id: r908wfjhtbz5v
+          response:
+            type: object
+            allOf:
+            - type: object
+              properties:
+                raw_data:
+                  type: object
+                  properties: {}
+                  x-stoplight:
+                    id: fcqwimuzw004c
+                data_hash:
+                  type: string
+                  x-stoplight:
+                    id: hgxgxth4p3gxh
+            - $ref: '#/components/schemas/bank-accounts-fields'
+            x-stoplight:
+              id: ntzgh1g6te779
+      - $ref: '#/components/schemas/job-id-response'
+      x-stoplight:
+        id: kti2dblixj24q
+    bank-transactions-fields:
+      allOf:
+      - type: object
+        properties:
+          account_id:
+            type: string
+          contact_id:
+            type: string
+          transaction_date:
+            type: string
+            format: date-time
+          amount:
+            type: number
+          type:
+            type: string
+          status:
+            $ref: '#/components/schemas/status'
+          currency:
+            $ref: '#/components/schemas/currency'
+          currency_rate:
+            type: number
+          updated_at:
+            type: string
+            format: date-time
+          contact:
+            type: object
+            properties:
+              data:
+                type: object
+                properties: {}
+                nullable: true
+          account:
+            type: object
+            properties:
+              data:
+                $ref: '#/components/schemas/accounts-fields'
+    line-items-fields:
+      title: ""
+      type: object
+      properties:
+        platform_id:
+          type: string
+        line_item_type:
+          type: string
+        line_item_type_id:
+          type: string
+        tracking_category_ids:
+          type: array
+          items:
+            type: string
+        item_id:
+          type: string
+        tax_id:
+          type: string
+        account_id:
+          type: string
+        description:
+          type: string
+        quantity:
+          type: integer
+        unit_amount:
+          type: number
+        total_amount:
+          type: number
+        sub_total:
+          type: number
+        tax_amount:
+          type: number
+        total_discount:
+          type: number
+        updated_at:
+          type: string
+          format: date-time
+      x-examples: {}
+    line-items-create-fields:
+      type: object
+      properties:
+        item_id:
+          type: string
+        tax_id:
+          type: string
+        account_id:
+          type: string
+        description:
+          type: string
+        quantity:
+          type: integer
+        unit_amount:
+          type: number
+        total_discount:
+          type: number
+      x-examples:
+        Example 1:
+          item_id: "3770712000000085075"
+          tax_id: "3770712000000106071"
+          account_id: "3770712000000076012"
+          description: Item 111 testtt
+          quantity: 10
+          unit_amount: 20
+          total_discount: 10
+    bills-fields:
+      allOf:
+      - type: object
+        properties:
+          contact_id:
+            type: string
+          document_number:
+            type: string
+          posted_date:
+            type: string
+            format: date-time
+          due_date:
+            type: string
+            format: date-time
+          currency:
+            $ref: '#/components/schemas/currency'
+          currency_rate:
+            type: number
+          memo:
+            type: string
+          status:
+            $ref: '#/components/schemas/status'
+          total_amount:
+            type: number
+          sub_total:
+            type: number
+          total_discount:
+            type: number
+          tax_amount:
+            type: number
+          amount_due:
+            type: number
+          purchase_order_ids:
+            type: array
+            nullable: true
+            items:
+              type: string
+              x-stoplight:
+                id: 5t25u7928dbod
+          updated_at:
+            type: string
+            format: date-time
+          line_items:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/line-items-fields'
+          documents:
+            type: object
+            properties:
+              data:
+                type: string
+                nullable: true
+          payments:
+            type: object
+            properties:
+              data:
+                type: string
+                nullable: true
+      - $ref: '#/components/schemas/common-fields'
+    bills-write-fields:
+      type: object
+      properties:
+        contact_id:
+          type: string
+        document_number:
+          type: string
+        posted_date:
+          type: string
+          format: date-time
+        due_date:
+          type: string
+          format: date-time
+        memo:
+          type: string
+        line_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/line-items-create-fields'
+      x-examples:
+        Example 1:
+          contact_id: "3770712000000418001"
+          document_number: BILLT13984705
+          posted_date: 2023-03-17
+          due_date: 2024-03-19
+          memo: Test Invoice
+          line_items:
+          - item_id: "3770712000000085075"
+            tax_id: "3770712000000106071"
+            account_id: "3770712000000076012"
+            description: Item 111 testtt
+            quantity: 10
+            unit_amount: 20
+            total_discount: 10
+    bills-write-response:
+      title: bills-write-response
+      allOf:
+      - type: object
+        properties:
+          error:
+            type: string
+            x-stoplight:
+              id: r908wfjhtbz5v
+          response:
+            type: object
+            allOf:
+            - type: object
+              properties:
+                raw_data:
+                  type: object
+                  properties: {}
+                  x-stoplight:
+                    id: fcqwimuzw004c
+                data_hash:
+                  type: string
+                  x-stoplight:
+                    id: hgxgxth4p3gxh
+            - $ref: '#/components/schemas/bills-fields'
+            x-stoplight:
+              id: ntzgh1g6te779
+      - $ref: '#/components/schemas/job-id-response'
+      x-stoplight:
+        id: 5qkcb17zbx8be
+    bill-payments-fields:
+      allOf:
+      - type: object
+        properties:
+          contact_id:
+            type: string
+          account_id:
+            type: string
+          amount:
+            type: number
+          payment_date:
+            type: string
+            format: date-time
+          payment_mode:
+            type: string
+          currency:
+            $ref: '#/components/schemas/currency'
+          currency_rate:
+            type: string
+          memo:
+            type: string
+          document_number:
+            type: string
+          updated_at:
+            type: string
+            format: date-time
+          bill:
+            type: object
+            properties:
+              data:
+                $ref: '#/components/schemas/bills-fields'
+      - $ref: '#/components/schemas/common-fields'
+    bill-payments-write-fields:
+      type: object
+      properties:
+        bill_id:
+          type: string
+        contact_id:
+          type: string
+        account_id:
+          type: string
+        amount:
+          type: number
+        payment_date:
+          type: string
+          format: date-time
+        currency:
+          $ref: '#/components/schemas/currency'
+        memo:
+          type: string
+        document_number:
+          type: string
+      x-examples: {}
+    bill-payments-write-response:
+      title: bill-payments-write-response
+      allOf:
+      - type: object
+        properties:
+          error:
+            type: string
+            x-stoplight:
+              id: r908wfjhtbz5v
+          response:
+            type: object
+            allOf:
+            - type: object
+              properties:
+                raw_data:
+                  type: object
+                  properties: {}
+                  x-stoplight:
+                    id: fcqwimuzw004c
+                data_hash:
+                  type: string
+                  x-stoplight:
+                    id: hgxgxth4p3gxh
+            - $ref: '#/components/schemas/bill-payments-fields'
+            x-stoplight:
+              id: ntzgh1g6te779
+      - $ref: '#/components/schemas/job-id-response'
+      x-stoplight:
+        id: 5qkcb17zbx8be
+    bill-credit-notes-fields:
+      allOf:
+      - type: object
+        properties:
+          contact_id:
+            type: string
+          document_number:
+            type: string
+          total_amount:
+            type: number
+          remaining_credit:
+            type: number
+          posted_date:
+            type: string
+            format: date-time
+          currency:
+            $ref: '#/components/schemas/currency'
+          memo:
+            type: string
+          status:
+            type: string
+          tax_amount:
+            type: number
+          bill_ids:
+            type: array
+            items:
+              type: string
+          updated_at:
+            type: string
+            format: date-time
+          line_items:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/line-items-fields'
+      - $ref: '#/components/schemas/common-fields'
+    bill-credit-notes-write-fields:
+      title: ""
+      type: object
+      properties:
+        contact_id:
+          type: string
+        document_number:
+          type: string
+        posted_date:
+          type: string
+          format: date-time
+        memo:
+          type: string
+        bill_ids:
+          type: array
+          items:
+            type: string
+        line_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/line-items-create-fields'
+      x-examples:
+        Example 1:
+          contact_id: "3770712000000209007"
+          document_number: BCN-5200
+          posted_date: 2023-04-17
+          memo: psssss
+          bill_ids:
+          - "3770712000000213001"
+          line_items:
+          - unit_amount: 25
+            quantity: 5
+            item_id: "3770712000000085075"
+            description: test line items desc
+            tax_id: "3770712000000106071"
+            account_id: "3770712000000076064"
+    bill-credit-notes-write-response:
+      title: bill-credit-notes-write-response
+      allOf:
+      - type: object
+        properties:
+          error:
+            type: string
+            x-stoplight:
+              id: r908wfjhtbz5v
+          response:
+            type: object
+            allOf:
+            - type: object
+              properties:
+                raw_data:
+                  type: object
+                  properties: {}
+                  x-stoplight:
+                    id: fcqwimuzw004c
+                data_hash:
+                  type: string
+                  x-stoplight:
+                    id: hgxgxth4p3gxh
+            - $ref: '#/components/schemas/bill-credit-notes-fields'
+            x-stoplight:
+              id: ntzgh1g6te779
+      - $ref: '#/components/schemas/job-id-response'
+      x-stoplight:
+        id: 5qkcb17zbx8be
+    addresses-fields:
+      type: object
+      properties:
+        platform_id:
+          type: string
+        type:
+          type: string
+        data_model:
+          type: string
+        data_model_id:
+          type: string
+        street:
+          type: string
+        locality:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        country:
+          type: string
+        pincode:
+          type: string
+        updated_at:
+          type: string
+          format: date-time
+      x-examples: {}
+    addresses-write-fields:
+      type: object
+      properties:
+        type:
+          type: string
+        street:
+          type: string
+        locality:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        pincode:
+          type: string
+        country:
+          type: string
+      x-examples: {}
+    phone-numbers-fields:
+      type: object
+      properties:
+        platform_id:
+          type: string
+        data_model:
+          type: string
+        data_model_id:
+          type: string
+        number:
+          type: string
+        type:
+          type: string
+        updated_at:
+          type: string
+          format: date-time
+      x-examples: {}
+    external-links-fields:
+      type: object
+      properties:
+        platform_id:
+          type: string
+        data_model:
+          type: string
+        data_model_id:
+          type: string
+        link:
+          type: string
+        type:
+          type: string
+        updated_at:
+          type: string
+          format: date-time
+      x-examples: {}
+    contacts-fields:
+      title: ""
+      allOf:
+      - type: object
+        properties:
+          name:
+            type: string
+          contact_name:
+            type: string
+          contact_type:
+            type: string
+          currency:
+            $ref: '#/components/schemas/currency'
+          tax_number:
+            type: number
+          registration_number:
+            type: string
+            nullable: true
+          status:
+            $ref: '#/components/schemas/status'
+          updated_at:
+            type: string
+            format: date-time
+          addresses:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/addresses-fields'
+          phone_numbers:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/phone-numbers-fields'
+          external_links:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/external-links-fields'
+      - $ref: '#/components/schemas/common-fields'
+    contacts-write-fields:
+      type: object
+      properties:
+        name:
+          type: string
+        contact_name:
+          type: string
+        registration_number:
+          type: string
+        tax_number:
+          type: string
+        contact_type:
+          type: string
+        website:
+          type: string
+        email:
+          type: string
+        currency:
+          type: string
+        mobile:
+          type: string
+        telephone:
+          type: string
+        addresses:
+          type: array
+          items:
+            $ref: '#/components/schemas/addresses-write-fields'
+      x-examples:
+        Example 1:
+          name: Imperial Army 22
+          contact_name: Imperial Army 2
+          registration_number: 07CEUPK5322M1ZX
+          tax_number: ODSPS1279G
+          contact_type: CUSTOMER
+          website: https://contact-website.com
+          email: test@rootfi.in
+          currency: INR
+          mobile: +919876543210
+          telephone: "8043784657"
+          addresses:
+          - type: BILLING
+            street: ABC house
+            locality: Koramanager
+            city: Hyderabad
+            state: AP
+            pincode: "500045"
+            country: India
+          - type: SHIPPING
+            street: ABC house
+            locality: Indrmangala
+            city: Hyderabad
+            state: AP
+            pincode: "500045"
+            country: India
+    contacts-write-response:
+      title: contacts-write-response
+      allOf:
+      - type: object
+        properties:
+          error:
+            type: string
+            x-stoplight:
+              id: r908wfjhtbz5v
+          response:
+            type: object
+            allOf:
+            - type: object
+              properties:
+                raw_data:
+                  type: object
+                  properties: {}
+                  x-stoplight:
+                    id: fcqwimuzw004c
+                data_hash:
+                  type: string
+                  x-stoplight:
+                    id: hgxgxth4p3gxh
+            - $ref: '#/components/schemas/contacts-fields'
+            x-stoplight:
+              id: ntzgh1g6te779
+      - $ref: '#/components/schemas/job-id-response'
+      x-stoplight:
+        id: deyfnijlx3hsy
+    company-info-fields:
+      allOf:
+      - type: object
+        properties:
+          name:
+            type: string
+          legal_name:
+            type: string
+          tax_number:
+            type: string
+          registration_number:
+            type: string
+          base_currency:
+            type: string
+          fiscal_start_at:
+            type: string
+            format: date-time
+          org_created_at:
+            type: string
+            format: date-time
+          updated_at:
+            type: string
+            format: date-time
+      - $ref: '#/components/schemas/common-fields'
+    documents-fields:
+      allOf:
+      - type: object
+        properties:
+          platform_id:
+            type: string
+          file_name:
+            type: string
+          file_type:
+            type: string
+          file_size:
+            type: number
+          document_type_id:
+            type: string
+          document_type:
+            type: string
+          document_uploaded:
+            type: boolean
+          download_link:
+            type: string
+          updated_at:
+            type: string
+            format: date-time
+      - $ref: '#/components/schemas/common-fields'
+    documents-write-response:
+      title: documents-write-response
+      allOf:
+      - type: object
+        properties:
+          error:
+            type: string
+            x-stoplight:
+              id: r908wfjhtbz5v
+          response:
+            type: object
+            allOf:
+            - type: object
+              properties:
+                raw_data:
+                  type: object
+                  properties: {}
+                  x-stoplight:
+                    id: fcqwimuzw004c
+                data_hash:
+                  type: string
+                  x-stoplight:
+                    id: hgxgxth4p3gxh
+            - $ref: '#/components/schemas/documents-fields'
+            x-stoplight:
+              id: ntzgh1g6te779
+      - $ref: '#/components/schemas/job-id-response'
+      x-stoplight:
+        id: awcz9bll275ai
+    expenses-fields:
+      allOf:
+      - type: object
+        properties:
+          document_number:
+            type: string
+          payment_mode:
+            type: string
+          posted_date:
+            type: string
+            format: date-time
+          total_amount:
+            type: integer
+          sub_total:
+            type: number
+          tax_amount:
+            type: number
+          currency:
+            type: string
+          currency_rate:
+            type: number
+          memo:
+            type: number
+          account_id:
+            type: string
+          contact_id:
+            type: string
+          updated_at:
+            type: string
+            format: date-time
+          line_items:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/line-items-fields'
+          documents:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/documents-fields'
+      - $ref: '#/components/schemas/common-fields'
+    expenses-write-fields:
+      type: object
+      properties:
+        account_id:
+          type: string
+        contact_id:
+          type: string
+        posted_date:
+          type: string
+          format: date-time
+        document_number:
+          type: string
+        memo:
+          type: string
+        payment_mode:
+          type: string
+        line_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/line-items-create-fields'
+      x-examples: {}
+    expenses-write-response:
+      title: expenses-write-response
+      allOf:
+      - type: object
+        properties:
+          error:
+            type: string
+            x-stoplight:
+              id: r908wfjhtbz5v
+          response:
+            type: object
+            allOf:
+            - type: object
+              properties:
+                raw_data:
+                  type: object
+                  properties: {}
+                  x-stoplight:
+                    id: fcqwimuzw004c
+                data_hash:
+                  type: string
+                  x-stoplight:
+                    id: hgxgxth4p3gxh
+            - $ref: '#/components/schemas/expenses-fields'
+            x-stoplight:
+              id: ntzgh1g6te779
+      - $ref: '#/components/schemas/job-id-response'
+      x-stoplight:
+        id: 7xm843tzhgcbu
+    invoice-credit-notes-fields:
+      title: ""
+      allOf:
+      - type: object
+        properties:
+          contact_id:
+            type: string
+          document_number:
+            type: string
+          total_amount:
+            type: number
+          remaining_credit:
+            type: number
+          posted_date:
+            type: string
+            format: date-time
+          currency:
+            $ref: '#/components/schemas/currency'
+          memo:
+            type: string
+          status:
+            type: string
+          tax_amount:
+            type: number
+          invoice_ids:
+            type: array
+            items:
+              type: string
+          updated_at:
+            type: string
+            format: date-time
+          line_items:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/line-items-fields'
+      - $ref: '#/components/schemas/common-fields'
+    invoice-credit-notes-write-fields:
+      type: object
+      properties:
+        contact_id:
+          type: string
+        posted_date:
+          type: string
+          format: date-time
+        document_number:
+          type: string
+        memo:
+          type: string
+        invoice_ids:
+          type: array
+          items:
+            type: string
+        line_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/line-items-create-fields'
+      x-examples: {}
+    invoice-credit-notes-write-response:
+      title: invoice-credit-notes-write-response
+      allOf:
+      - type: object
+        properties:
+          error:
+            type: string
+            x-stoplight:
+              id: r908wfjhtbz5v
+          response:
+            type: object
+            allOf:
+            - type: object
+              properties:
+                raw_data:
+                  type: object
+                  properties: {}
+                  x-stoplight:
+                    id: fcqwimuzw004c
+                data_hash:
+                  type: string
+                  x-stoplight:
+                    id: hgxgxth4p3gxh
+            - $ref: '#/components/schemas/invoice-credit-notes-fields'
+            x-stoplight:
+              id: ntzgh1g6te779
+      - $ref: '#/components/schemas/job-id-response'
+      x-stoplight:
+        id: xceuhe3mxmb6a
+    invoices-fields:
+      allOf:
+      - type: object
+        properties:
+          contact_id:
+            type: string
+          sales_order_ids:
+            type: array
+            items:
+              type: string
+          document_number:
+            type: string
+          posted_date:
+            type: string
+            format: date-time
+          due_date:
+            type: string
+            format: date-time
+          currency:
+            type: string
+          currency_rate:
+            type: number
+          status:
+            $ref: '#/components/schemas/status'
+          total_amount:
+            type: number
+          sub_total:
+            type: number
+          total_discount:
+            type: number
+          tax_amount:
+            type: number
+          amount_due:
+            type: number
+          memo:
+            type: string
+          updated_at:
+            type: string
+            format: date-time
+          payments:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  type: object
+                  properties: {}
+          line_items:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/line-items-fields'
+          documents:
+            type: object
+            properties:
+              data:
+                type: array
+                nullable: true
+                items:
+                  $ref: '#/components/schemas/documents-fields'
+      - $ref: '#/components/schemas/common-fields'
+      x-tags:
+      - Invoices
+    invoices-write-fields:
+      type: object
+      properties:
+        contact_id:
+          type: string
+        document_number:
+          type: string
+        posted_date:
+          type: string
+          format: date-time
+        due_date:
+          type: string
+          format: date-time
+        currency:
+          type: string
+        memo:
+          type: string
+        line_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/line-items-create-fields'
+      x-examples: {}
+    invoices-write-response:
+      title: invoices-write-response
+      allOf:
+      - type: object
+        properties:
+          error:
+            type: string
+            x-stoplight:
+              id: r908wfjhtbz5v
+          response:
+            type: object
+            allOf:
+            - type: object
+              properties:
+                raw_data:
+                  type: object
+                  properties: {}
+                  x-stoplight:
+                    id: fcqwimuzw004c
+                data_hash:
+                  type: string
+                  x-stoplight:
+                    id: hgxgxth4p3gxh
+            - $ref: '#/components/schemas/invoices-fields'
+            x-stoplight:
+              id: ntzgh1g6te779
+      - $ref: '#/components/schemas/job-id-response'
+      x-stoplight:
+        id: g7w5ll34m3nr9
+    invoice-payments-fields:
+      allOf:
+      - type: object
+        properties:
+          payment_id:
+            type: string
+          invoice_id:
+            type: string
+          account_id:
+            type: string
+          contact_id:
+            type: string
+          amount:
+            type: integer
+          payment_date:
+            type: string
+            format: date-time
+          payment_mode:
+            type: string
+          currency:
+            $ref: '#/components/schemas/currency'
+          currency_rate:
+            type: number
+            nullable: true
+          document_number:
+            type: string
+          memo:
+            type: string
+          updated_at:
+            type: string
+            format: date-time
+          invoice:
+            type: object
+            properties:
+              data:
+                $ref: '#/components/schemas/invoices-fields'
+      - $ref: '#/components/schemas/common-fields'
+    invoice-payments-write-fields:
+      type: object
+      properties:
+        invoice_id:
+          type: string
+        account_id:
+          type: string
+        contact_id:
+          type: string
+        amount:
+          type: integer
+        payment_date:
+          type: string
+          format: date-time
+        payment_mode:
+          type: string
+        memo:
+          type: string
+      x-examples:
+        Example 1:
+          invoice_id: "3770712000000707001"
+          account_id: "3770712000000000361"
+          contact_id: "3770712000000226001"
+          amount: 19
+          payment_date: 2023-03-01
+          payment_mode: CASH
+          memo: description
+    invoice-payments-write-response:
+      title: invoice-payments-write-response
+      allOf:
+      - type: object
+        properties:
+          error:
+            type: string
+            x-stoplight:
+              id: r908wfjhtbz5v
+          response:
+            type: object
+            allOf:
+            - type: object
+              properties:
+                raw_data:
+                  type: object
+                  properties: {}
+                  x-stoplight:
+                    id: fcqwimuzw004c
+                data_hash:
+                  type: string
+                  x-stoplight:
+                    id: hgxgxth4p3gxh
+            - $ref: '#/components/schemas/invoice-payments-fields'
+            x-stoplight:
+              id: ntzgh1g6te779
+      - $ref: '#/components/schemas/job-id-response'
+      x-stoplight:
+        id: 9dm9hszfpoucb
+    items-fields:
+      description: ""
+      allOf:
+      - type: object
+        properties:
+          name:
+            type: string
+          description:
+            type: string
+          status:
+            type: string
+          type:
+            type: string
+          code:
+            type: string
+          quantity_on_hand:
+            type: integer
+          bill_item:
+            type: object
+            properties:
+              account_id:
+                type: string
+              unit_price:
+                type: integer
+              description:
+                type: string
+          invoice_item:
+            type: object
+            properties:
+              account_id:
+                type: string
+              unit_price:
+                type: integer
+              description:
+                type: string
+          is_bill_item:
+            type: boolean
+          is_invoice_item:
+            type: boolean
+          updated_at:
+            type: string
+            format: date-time
+      - $ref: '#/components/schemas/common-fields'
+    items-write-fields:
+      type: object
+      properties:
+        name:
+          type: string
+        code:
+          type: string
+        type:
+          type: string
+        quantity_on_hand:
+          type: integer
+        invoice_item:
+          type: object
+          properties:
+            description:
+              type: string
+            unit_price:
+              type: number
+            account_id:
+              type: string
+        bill_item:
+          type: object
+          properties:
+            description:
+              type: string
+            unit_price:
+              type: number
+            account_id:
+              type: string
+      x-examples:
+        Example 1:
+          name: Item 9618
+          code: ITM2902
+          type: INVENTORY
+          quantity_on_hand: 12
+          invoice_item:
+            description: Invoice Item Description
+            unit_price: 11
+            account_id: "3770712000000000388"
+          bill_item:
+            description: Bill Item Description
+            unit_price: 10
+            account_id: "3770712000000076060"
+    items-write-response:
+      title: items-write-response
+      allOf:
+      - type: object
+        properties:
+          error:
+            type: string
+            x-stoplight:
+              id: r908wfjhtbz5v
+          response:
+            type: object
+            allOf:
+            - type: object
+              properties:
+                raw_data:
+                  type: object
+                  properties: {}
+                  x-stoplight:
+                    id: fcqwimuzw004c
+                data_hash:
+                  type: string
+                  x-stoplight:
+                    id: hgxgxth4p3gxh
+            - $ref: '#/components/schemas/items-fields'
+            x-stoplight:
+              id: ntzgh1g6te779
+      - $ref: '#/components/schemas/job-id-response'
+      x-stoplight:
+        id: e54ogkx2o8p3d
+    journal-lines-fields:
+      type: object
+      properties:
+        platform_id:
+          type: string
+        journal_entry_id:
+          type: string
+        account_id:
+          type: string
+        contact_id:
+          type: string
+        tax_id:
+          type: string
+        tracking_category_ids:
+          type: array
+          items:
+            type: string
+        type:
+          type: string
+        description:
+          type: string
+        net_amount:
+          type: number
+        tax_amount:
+          type: number
+        updated_at:
+          type: string
+          format: date-time
+      x-examples: {}
+    journal-entries-fields:
+      allOf:
+      - type: object
+        properties:
+          account_id:
+            type: object
+            nullable: true
+          amount:
+            type: number
+          document_number:
+            type: string
+          currency:
+            $ref: '#/components/schemas/currency'
+          currency_rate:
+            type: string
+          journal_entry_type:
+            type: string
+          description:
+            type: string
+          posted_date:
+            type: string
+            format: date-time
+          updated_at:
+            type: string
+            format: date-time
+          journal_lines:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/journal-lines-fields'
+      - $ref: '#/components/schemas/common-fields'
+    journal-lines-write-fields:
+      type: object
+      properties:
+        account_id:
+          type: string
+        net_amount:
+          type: number
+        type:
+          type: string
+        description:
+          type: string
+        tax_id:
+          type: string
+        tracking_category_ids:
+          type: array
+          items:
+            type: string
+      x-examples: {}
+    journal-entries-write-fields:
+      type: object
+      properties:
+        posted_date:
+          type: string
+          format: date-time
+        description:
+          type: string
+        document_number:
+          type: string
+        journal_lines:
+          type: array
+          items:
+            $ref: '#/components/schemas/journal-lines-write-fields'
+      x-examples:
+        Example 1:
+          posted_date: 2023-06-12
+          description: journal_desc
+          document_number: "772706"
+          journal_lines: []
+    journal-entries-write-response:
+      title: journal-entries-write-response
+      allOf:
+      - type: object
+        properties:
+          error:
+            type: string
+            x-stoplight:
+              id: r908wfjhtbz5v
+          response:
+            type: object
+            allOf:
+            - type: object
+              properties:
+                raw_data:
+                  type: object
+                  properties: {}
+                  x-stoplight:
+                    id: fcqwimuzw004c
+                data_hash:
+                  type: string
+                  x-stoplight:
+                    id: hgxgxth4p3gxh
+            - $ref: '#/components/schemas/journal-entries-fields'
+            x-stoplight:
+              id: ntzgh1g6te779
+      - $ref: '#/components/schemas/job-id-response'
+      x-stoplight:
+        id: yxmlzt6lgmxf5
+    purchase-orders-fields:
+      allOf:
+      - type: object
+        properties:
+          contact_id:
+            type: string
+          bill_ids:
+            type: array
+            items:
+              type: string
+          document_number:
+            type: string
+          delivery_date:
+            type: string
+            format: date-time
+          posted_date:
+            type: string
+            format: date-time
+          description:
+            type: string
+          payment_mode:
+            type: string
+          currency:
+            type: string
+          currency_rate:
+            type: string
+          status:
+            $ref: '#/components/schemas/status'
+          total_amount:
+            type: number
+          sub_total:
+            type: number
+          tax_amount:
+            type: number
+          total_discount:
+            type: number
+          updated_at:
+            type: string
+            format: date-time
+          addresses:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/addresses-fields'
+          line_items:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/line-items-fields'
+      - $ref: '#/components/schemas/common-fields'
+    purchase-orders-write-fields:
+      type: object
+      properties:
+        contact_id:
+          type: string
+        posted_date:
+          type: string
+          format: date-time
+        description:
+          type: string
+        document_number:
+          type: string
+        addresses:
+          type: array
+          items:
+            $ref: '#/components/schemas/addresses-write-fields'
+        line_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/line-items-create-fields'
+      x-examples: {}
+    purchase-orders-write-response:
+      title: purchase-orders-write-response
+      allOf:
+      - type: object
+        properties:
+          error:
+            type: string
+            x-stoplight:
+              id: r908wfjhtbz5v
+          response:
+            type: object
+            allOf:
+            - type: object
+              properties:
+                raw_data:
+                  type: object
+                  properties: {}
+                  x-stoplight:
+                    id: fcqwimuzw004c
+                data_hash:
+                  type: string
+                  x-stoplight:
+                    id: hgxgxth4p3gxh
+            - $ref: '#/components/schemas/purchase-orders-fields'
+            x-stoplight:
+              id: ntzgh1g6te779
+      - $ref: '#/components/schemas/job-id-response'
+      x-stoplight:
+        id: hndeahf1kkwem
+    sales-orders-fields:
+      allOf:
+      - type: object
+        properties:
+          contact_id:
+            type: string
+          invoice_ids:
+            type: array
+            items:
+              type: string
+          document_number:
+            type: string
+          posted_date:
+            type: string
+            format: date-time
+          delivery_date:
+            type: string
+            format: date-time
+          description:
+            type: string
+          currency:
+            type: string
+          currency_rate:
+            type: number
+          status:
+            $ref: '#/components/schemas/status'
+          total_amount:
+            type: integer
+          sub_total:
+            type: number
+          tax_amount:
+            type: number
+          total_discount:
+            type: number
+          updated_at:
+            type: string
+            format: date-time
+          addresses:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/addresses-fields'
+          line_items:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/line-items-fields'
+      - $ref: '#/components/schemas/common-fields'
+    sales-orders-write-fields:
+      type: object
+      properties:
+        contact_id:
+          type: string
+        posted_date:
+          type: string
+          format: date-time
+        delivery_date:
+          type: string
+          format: date-time
+        description:
+          type: string
+        document_number:
+          type: string
+        status:
+          $ref: '#/components/schemas/status'
+        line_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/line-items-create-fields'
+      x-examples: {}
+    sales-orders-write-response:
+      title: sales-orders-write-response
+      allOf:
+      - type: object
+        properties:
+          error:
+            type: string
+            x-stoplight:
+              id: r908wfjhtbz5v
+          response:
+            type: object
+            allOf:
+            - type: object
+              properties:
+                raw_data:
+                  type: object
+                  properties: {}
+                  x-stoplight:
+                    id: fcqwimuzw004c
+                data_hash:
+                  type: string
+                  x-stoplight:
+                    id: hgxgxth4p3gxh
+            - $ref: '#/components/schemas/sales-orders-fields'
+            x-stoplight:
+              id: ntzgh1g6te779
+      - $ref: '#/components/schemas/job-id-response'
+      x-stoplight:
+        id: b2d4lk6cr1xkc
+    tax-rates-fields:
+      allOf:
+      - type: object
+        properties:
+          name:
+            type: string
+          code:
+            type: string
+          effective_tax_rate:
+            type: number
+          total_tax_rate:
+            type: number
+          tax_type:
+            type: string
+          components:
+            type: array
+            items:
+              type: object
+              properties:
+                name:
+                  type: string
+                rate:
+                  type: string
+                tax_agency:
+                  type: object
+                  nullable: true
+                is_compound:
+                  type: number
+          updated_at:
+            type: string
+            format: date-time
+      - $ref: '#/components/schemas/common-fields'
+    tax-rates-write-fields:
+      type: object
+      properties:
+        name:
+          type: string
+        code:
+          type: string
+        tax_type:
+          type: string
+        total_tax_rate:
+          type: number
+        components:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              rate:
+                type: number
+              is_compound:
+                type: boolean
+              tax_agency:
+                type: string
+              tax_applicable_on:
+                type: string
+      x-examples: {}
+    tax-rates-write-response:
+      title: tax-rates-write-response
+      allOf:
+      - type: object
+        properties:
+          error:
+            type: string
+            x-stoplight:
+              id: r908wfjhtbz5v
+          response:
+            type: object
+            allOf:
+            - type: object
+              properties:
+                raw_data:
+                  type: object
+                  properties: {}
+                  x-stoplight:
+                    id: fcqwimuzw004c
+                data_hash:
+                  type: string
+                  x-stoplight:
+                    id: hgxgxth4p3gxh
+            - $ref: '#/components/schemas/tax-rates-fields'
+            x-stoplight:
+              id: ntzgh1g6te779
+      - $ref: '#/components/schemas/job-id-response'
+      x-stoplight:
+        id: h7zhim6k7sj07
+    tracking-category-fields:
+      allOf:
+      - type: object
+        properties:
+          name:
+            type: string
+          status:
+            $ref: '#/components/schemas/status'
+          parent_id:
+            type: string
+          has_children:
+            type: boolean
+          updated_at:
+            type: string
+            format: date-time
+      - $ref: '#/components/schemas/common-fields'
+    balance-sheet-fields:
+      allOf:
+      - type: object
+        properties:
+          assets:
+            type: array
+            items:
+              $ref: '#/components/schemas/financial-statement-nested-fields'
+          liabilities:
+            type: array
+            items:
+              $ref: '#/components/schemas/financial-statement-nested-fields'
+          equity:
+            type: array
+            items:
+              $ref: '#/components/schemas/financial-statement-nested-fields'
+          period_start:
+            type: string
+            format: date-time
+          period_end:
+            type: string
+            format: date-time
+          net_assets:
+            type: number
+          currency:
+            type: string
+          updated_at:
+            type: string
+            format: date-time
+      - $ref: '#/components/schemas/common-fields'
+    financial-statement-nested-fields:
+      title: financial-statement-nested-fields
+      type: object
+      properties:
+        name:
+          type: string
+          x-stoplight:
+            id: fd4sfyoio0i8c
+        value:
+          type: number
+          x-stoplight:
+            id: 4ilz292j3ans8
+        account_id:
+          type: string
+          x-stoplight:
+            id: 4b9dd7sia0gnt
+        line_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/financial-statement-nested-line-item-fields'
+          x-stoplight:
+            id: zv2tsoaifhy54
+      x-stoplight:
+        id: xf3hygz231nh6
+    financial-statement-nested-line-item-fields:
+      title: financial-statement-nested-line-item-fields
+      type: object
+      properties:
+        name:
+          type: string
+          x-stoplight:
+            id: 7sdpy7gczfpy5
+        value:
+          type: number
+          x-stoplight:
+            id: epjggz6d3pz2x
+        account_id:
+          type: string
+          x-stoplight:
+            id: 6xm4tdavax98n
+        line_items:
+          type: array
+          items:
+            type: object
+            properties: {}
+            x-stoplight:
+              id: u5nsmoadq6m6w
+          x-stoplight:
+            id: 4q9ughg2y5c7z
+      x-stoplight:
+        id: pxeo2vvsw95ej
+    cash-flow-statement-fields:
+      allOf:
+      - type: object
+        properties:
+          period_start:
+            type: string
+            format: date-time
+          period_end:
+            type: string
+            format: date-time
+          operating_activities:
+            type: array
+            items:
+              $ref: '#/components/schemas/financial-statement-nested-fields'
+          investing_activities:
+            type: array
+            items:
+              $ref: '#/components/schemas/financial-statement-nested-fields'
+          financing_activities:
+            type: array
+            items:
+              $ref: '#/components/schemas/financial-statement-nested-fields'
+          cash_at_beginning_of_period:
+            type: number
+          cash_at_end_of_period:
+            type: number
+          updated_at:
+            type: string
+            format: date-time
+      - $ref: '#/components/schemas/common-fields'
+    income-statement-fields:
+      allOf:
+      - type: object
+        properties:
+          period_start:
+            type: string
+            format: date-time
+          period_end:
+            type: string
+            format: date-time
+          currency:
+            type: string
+          revenue:
+            type: array
+            items:
+              $ref: '#/components/schemas/financial-statement-nested-fields'
+          cost_of_goods_sold:
+            type: array
+            items:
+              $ref: '#/components/schemas/financial-statement-nested-fields'
+          gross_profit:
+            type: number
+          operating_expenses:
+            type: array
+            items:
+              $ref: '#/components/schemas/financial-statement-nested-fields'
+          operating_profit:
+            type: number
+          non_operating_revenue:
+            type: array
+            items:
+              $ref: '#/components/schemas/financial-statement-nested-fields'
+          non_operating_expenses:
+            type: array
+            items:
+              $ref: '#/components/schemas/financial-statement-nested-fields'
+          earnings_before_taxes:
+            type: number
+          taxes:
+            type: array
+            items:
+              type: object
+          net_profit:
+            type: number
+          updated_at:
+            type: string
+            format: date-time
+      - $ref: '#/components/schemas/common-fields'
+  parameters:
+    take:
+      name: take
+      in: query
+      schema:
+        type: string
+    skip:
+      name: skip
+      in: query
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      schema:
+        type: string
+        default: '{"rootfi_created_at": "desc"}'
+    filter:
+      name: filter
+      in: query
+      schema:
+        type: string
+        default: '{ "rootfi_company_id": {"eq": 21}}'
+    period:
+      name: period
+      in: query
+      schema:
+        type: string
+  securitySchemes:
+    api_key:
+      type: apiKey
+      description: ""
+      name: api_key
+      in: header
+x-stoplight:
+  id: g0nu61mbyfi2c
