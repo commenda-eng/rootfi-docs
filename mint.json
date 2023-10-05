@@ -1,5 +1,5 @@
 {
-  "name": "Rootfi",
+  "name": "RootFi",
   "logo": {
     "light": "/logo/light.png",
     "dark": "/logo/dark.png"
@@ -30,6 +30,11 @@
       "url": "https://www.rootfi.dev/blog"
     },
     {
+      "name": "Roadmap",
+      "icon": "road",
+      "url": "https://trello.com/b/ISjLnO29/building-rootfi"
+    },
+    {
       "name": "Security",
       "icon": "lock",
       "url": "https://www.rootfi.dev/security"
@@ -37,14 +42,14 @@
   ],
   "tabs": [
     {
-        "name": "API Reference",
-        "url": "api-reference"
+      "name": "API Reference",
+      "url": "api-reference"
     },
     {
       "name": "Changelog",
       "url": "changelog"
-  }
-],
+    }
+  ],
   "navigation": [
     {
       "group": "Getting Started",
