@@ -1,7 +1,7 @@
 {
   "name": "RootFi",
   "logo": {
-    "light": "/logo/light.png",
+    "light": "/logo/logo_documentation_transparent.png",
     "dark": "/logo/dark.png"
   },
   "favicon": "/logomark_favicon_rounded.png",
@@ -44,8 +44,7 @@
   "tabs": [
     {
       "name": "API Reference",
-      "url": "api-reference",
-      "version": "v2"
+      "url": "api-reference"
     },
     {
       "name": "Changelog",
