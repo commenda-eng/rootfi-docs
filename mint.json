@@ -1,7 +1,7 @@
 {
   "name": "RootFi",
   "logo": {
-    "light": "/logo/logo_documentation_transparent.png",
+    "light": "/logo/light.png",
     "dark": "/logo/dark.png"
   },
   "favicon": "/logomark_favicon_rounded.png",
