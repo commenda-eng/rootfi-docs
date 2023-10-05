@@ -37,7 +37,8 @@
     {
       "name": "Security",
       "icon": "lock",
-      "url": "https://www.rootfi.dev/security"
+      "url": "https://www.rootfi.dev/security",
+      "isDefaultHidden": "true"
     }
   ],
   "tabs": [
