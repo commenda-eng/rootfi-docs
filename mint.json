@@ -24,7 +24,7 @@
       "url": "https://integrate.rootfi.dev/login"
     }
   ],
-  "topAnchors": [
+  "anchors": [
     {
       "name": "Overview & Guides",
       "icon": "book",
@@ -51,7 +51,6 @@
       "url": "https://statuspage.freshping.io/66138-RootFi"
     }
   ],
-  
   "navigation": [
     {
       "group": "General",
