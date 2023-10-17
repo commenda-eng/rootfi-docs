@@ -27,7 +27,7 @@
     {
       "name": "Overview & Guides",
       "icon": "book",
-      "url": "https://docs.rootfi.dev/introduction"
+      "url": "introduction"
     },
     {
       "name": "Accounting API",
@@ -90,14 +90,14 @@
     {
       "group": "Features",
       "pages": [
-         {
-      "group": "Rootfi Connect",
-      "pages": [
-        "rootfi-connect-overview",
-        "rootfi-connect-link",
-        "rootfi-connect-sdk"
-      ]
-    },
+        {
+          "group": "Rootfi Connect",
+          "pages": [
+            "rootfi-connect-overview",
+            "rootfi-connect-link",
+            "rootfi-connect-sdk"
+          ]
+        },
         {
           "group": "Syncing Data",
           "pages": [
@@ -127,7 +127,7 @@
             "passing-raw-data"
           ]
         },
-         {
+        {
           "group": "Webhooks",
           "pages": [
             "webhooks"
