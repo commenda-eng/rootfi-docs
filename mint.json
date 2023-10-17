@@ -23,18 +23,16 @@
       "url": "https://integrate.rootfi.dev/login"
     }
   ],
-  "top-anchors": [
-    {
-      "name": "Accounting API",
-      "icon": "code",
-      "url": "api-reference/companies/get-all-companies"
-    }
-  ],
   "anchors": [
     {
       "name": "Overview & Guides",
       "icon": "book",
       "url": "introduction"
+    },
+     {
+      "name": "Accounting API",
+      "icon": "code",
+      "url": "api-reference/companies/get-all-companies"
     },
     {
       "name": "Roadmap",
