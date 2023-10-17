@@ -63,6 +63,7 @@
   ],
   "navigation": [
     {
+      "group": "Introduction",
       "pages": [
         "introduction"
       ]
