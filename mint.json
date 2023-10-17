@@ -25,10 +25,7 @@
     }
   ],
   "topAnchor": {
-    "name": "Overview & Guides",
-    "icon": "book",
-    "url": "introduction"
-},
+  },
   "anchors": [
     {
       "name": "Overview & Guides",
