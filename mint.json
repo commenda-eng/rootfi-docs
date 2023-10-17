@@ -28,12 +28,12 @@
       "name": "Overview & Guides",
       "icon": "book",
       "url": "https://docs.rootfi.dev/introduction"
-    }
+    },
     {
       "name": "Accounting API",
       "icon": "code",
       "url": "api-reference"
-    }
+    },
     {
       "name": "Blog",
       "icon": "newspaper",
@@ -48,7 +48,7 @@
       "name": "Security",
       "icon": "lock",
       "url": "https://www.rootfi.dev/security"
-    }
+    },
     {
       "name": "Status",
       "icon": "wave-pulse",
@@ -84,7 +84,7 @@
     {
       "group": "Glossary",
       "pages": [
-        "glossary-key-terms",
+        "glossary-key-terms"
       ]
     },
     {
@@ -126,13 +126,13 @@
             "raw-data",
             "passing-raw-data"
           ]
-        }
-         {
+        },
+        {
           "group": "Webhooks",
           "pages": [
             "webhooks"
           ]
-        },
+        }
       ]
     },
     {
