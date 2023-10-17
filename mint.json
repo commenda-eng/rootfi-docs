@@ -31,11 +31,6 @@
       "url": "introduction"
     },
     {
-      "name": "Accounting API",
-      "icon": "code",
-      "url": "api-reference"
-    },
-    {
       "name": "Roadmap",
       "icon": "road",
       "url": "https://trello.com/b/ISjLnO29/building-rootfi"
@@ -52,6 +47,10 @@
     }
   ],
   "tabs": [
+    {
+      "name": "API Reference",
+      "url": "api-reference"
+    },
     {
       "name": "Changelog",
       "url": "changelog"
