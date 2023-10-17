@@ -13,6 +13,7 @@
   "api": {
     "baseUrl": "https://integrate.rootfi.dev"
   },
+  "backgroundImage": "images/documentation_background_image",
   "topbarCtaButton": {
     "name": "Sign Up",
     "url": "https://integrate.rootfi.dev/signup"
