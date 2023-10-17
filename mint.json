@@ -69,13 +69,12 @@
     {
       "group": "Introduction",
       "pages": [
-        "introduction",
+        "introduction"
       ]
     },
     {
       "group": "Getting Started",
       "pages": [
-        "introduction",
         "authentication-api-keys",
         "supported-platforms",
         "rootfi-postman-collection",
