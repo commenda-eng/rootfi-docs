@@ -25,6 +25,11 @@
   ],
   "anchors": [
     {
+      "name": "Overview & Guides",
+      "icon": "book",
+      "url": "https://docs.rootfi.dev/introduction"
+    }
+    {
       "name": "Blog",
       "icon": "newspaper",
       "url": "https://www.rootfi.dev/blog"
@@ -38,6 +43,11 @@
       "name": "Security",
       "icon": "lock",
       "url": "https://www.rootfi.dev/security"
+    }
+    {
+      "name": "Status",
+      "icon": "wave-pulse",
+      "url": "https://statuspage.freshping.io/66138-RootFi"
     }
   ],
   "tabs": [
