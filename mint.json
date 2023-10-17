@@ -27,7 +27,7 @@
     {
       "name": "Accounting API",
       "icon": "code",
-      "url": "api-reference"
+      "url": "api-reference/companies/get-all-companies"
     }
   ],
   "anchors": [
@@ -36,7 +36,6 @@
       "icon": "book",
       "url": "introduction"
     },
-    
     {
       "name": "Roadmap",
       "icon": "road",
