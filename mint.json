@@ -62,7 +62,7 @@
   ],
   "navigation": [
     {
-      "group": "Getting Started",
+      "group": "Introduction",
       "pages": [
         "introduction",
         "glossary-key-terms",
@@ -72,16 +72,34 @@
       ]
     },
     {
-      "group": "Using our API",
+      "group": "Getting Started",
       "pages": [
+        "introduction",
         "authentication-api-keys",
+        "supported-platforms",
+        "rootfi-postman-collection",
+        "graphql-playground"
+      ]
+    },
+    {
+      "group": "Glossary",
+      "pages": [
+        "glossary-key-terms",
         "webhooks",
         "syncing-data"
       ]
     },
     {
-      "group": "Data API's",
+      "group": "Features",
       "pages": [
+         {
+      "group": "Rootfi Connect",
+      "pages": [
+        "rootfi-connect-overview",
+        "rootfi-connect-link",
+        "rootfi-connect-sdk"
+      ]
+    },
         {
           "group": "Writing Data",
           "pages": [
@@ -105,14 +123,6 @@
             "passing-raw-data"
           ]
         }
-      ]
-    },
-    {
-      "group": "Rootfi Connect",
-      "pages": [
-        "rootfi-connect-overview",
-        "rootfi-connect-link",
-        "rootfi-connect-sdk"
       ]
     },
     {
