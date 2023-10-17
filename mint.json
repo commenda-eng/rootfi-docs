@@ -23,18 +23,6 @@
       "url": "https://integrate.rootfi.dev/login"
     }
   ],
-  "top-anchors": [
-    {
-      "name": "Overview & Guides",
-      "icon": "book",
-      "url": "introduction"
-    },
-    {
-      "name": "Accounting API",
-      "icon": "code",
-      "url": "api-reference"
-    }
-  ],
   "anchors": [
     {
       "name": "Overview & Guides",
@@ -75,25 +63,19 @@
   ],
   "navigation": [
     {
-      "group": "Introduction",
-      "pages": [
-        "introduction"
-      ]
-    },
-    {
-      "group": "Getting Started",
-      "pages": [
-        "authentication-api-keys",
-        "supported-platforms",
-        "rootfi-postman-collection",
-        "graphql-playground"
-      ]
-    },
-    {
-      "group": "Glossary",
-      "pages": [
-        "glossary-key-terms"
-      ]
+      "group": "General",
+        "pages": [
+            "introduction",
+            "supported-platforms",
+            {
+                "group": "Getting Started",
+                "pages": ["authentication-api-keys",
+                "rootfi-postman-collection",
+                "graphql-playground"
+                ]
+            },
+            "glossary-key-terms"
+        ]
     },
     {
       "group": "Features",
