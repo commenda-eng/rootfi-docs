@@ -86,12 +86,7 @@
             "rootfi-connect-sdk"
           ]
         },
-        {
-          "group": "Syncing Data",
-          "pages": [
-            "syncing-data"
-          ]
-        },
+        "syncing-data",
         {
           "group": "Writing Data",
           "pages": [
