@@ -85,8 +85,6 @@
       "group": "Glossary",
       "pages": [
         "glossary-key-terms",
-        "webhooks",
-        "syncing-data"
       ]
     },
     {
@@ -100,6 +98,12 @@
         "rootfi-connect-sdk"
       ]
     },
+        {
+          "group": "Syncing Data",
+          "pages": [
+            "syncing-data"
+          ]
+        },
         {
           "group": "Writing Data",
           "pages": [
@@ -123,6 +127,12 @@
             "passing-raw-data"
           ]
         }
+         {
+          "group": "Webhooks",
+          "pages": [
+            "webhooks"
+          ]
+        },
       ]
     },
     {
