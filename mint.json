@@ -67,7 +67,6 @@
   ],
   "navigation": [
     {
-      "group": "Introduction",
       "pages": [
         "introduction"
       ]
@@ -91,7 +90,7 @@
       "group": "Features",
       "pages": [
         {
-          "group": "Rootfi Connect",
+          "group": "RootFi Connect",
           "pages": [
             "rootfi-connect-overview",
             "rootfi-connect-link",
@@ -128,7 +127,6 @@
           ]
         },
         {
-          "group": "Webhooks",
           "pages": [
             "webhooks"
           ]
