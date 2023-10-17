@@ -24,8 +24,7 @@
       "url": "https://integrate.rootfi.dev/login"
     }
   ],
-  "topAnchor": {
-  },
+  "topAnchor": {},
   "anchors": [
     {
       "name": "Overview & Guides",
@@ -33,9 +32,9 @@
       "url": "introduction"
     },
     {
-      "name": "Accounting API",
+      "name": "Postman Collection",
       "icon": "code",
-      "url": "api-reference"
+      "url": "https://postman.rootfi.dev/"
     },
     {
       "name": "Roadmap",
