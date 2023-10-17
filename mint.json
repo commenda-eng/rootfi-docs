@@ -70,10 +70,6 @@
       "group": "Introduction",
       "pages": [
         "introduction",
-        "glossary-key-terms",
-        "supported-platforms",
-        "rootfi-postman-collection",
-        "graphql-playground"
       ]
     },
     {
