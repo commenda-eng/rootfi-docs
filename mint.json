@@ -35,11 +35,6 @@
       "url": "api-reference"
     },
     {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://www.rootfi.dev/blog"
-    },
-    {
       "name": "Roadmap",
       "icon": "road",
       "url": "https://trello.com/b/ISjLnO29/building-rootfi"
@@ -64,18 +59,19 @@
   "navigation": [
     {
       "group": "General",
-        "pages": [
-            "introduction",
-            "supported-platforms",
-            {
-                "group": "Getting Started",
-                "pages": ["authentication-api-keys",
-                "rootfi-postman-collection",
-                "graphql-playground"
-                ]
-            },
-            "glossary-key-terms"
-        ]
+      "pages": [
+        "introduction",
+        "supported-platforms",
+        {
+          "group": "Getting Started",
+          "pages": [
+            "authentication-api-keys",
+            "rootfi-postman-collection",
+            "graphql-playground"
+          ]
+        },
+        "glossary-key-terms"
+      ]
     },
     {
       "group": "Features",
