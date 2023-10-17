@@ -24,11 +24,16 @@
       "url": "https://integrate.rootfi.dev/login"
     }
   ],
-  "anchors": [
+  "topAnchors": [
     {
       "name": "Overview & Guides",
       "icon": "book",
       "url": "introduction"
+    },
+    {
+      "name": "Accounting API",
+      "icon": "code",
+      "url": "api-reference"
     },
     {
       "name": "Roadmap",
@@ -46,16 +51,7 @@
       "url": "https://statuspage.freshping.io/66138-RootFi"
     }
   ],
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    },
-    {
-      "name": "Changelog",
-      "url": "changelog"
-    }
-  ],
+  
   "navigation": [
     {
       "group": "General",
