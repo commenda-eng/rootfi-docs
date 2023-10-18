@@ -24,35 +24,26 @@
       "url": "https://integrate.rootfi.dev/login"
     }
   ],
-  
-  "anchors": [
+  "topAnchor": {
+    "name": "Overview & Guides",
+    "icon": "building"
+  },
+  "tabs": [
     {
-      "name": "Overview & Guides",
-      "icon": "book",
-      "url": "introduction"
-    },
-    {
-      "name": "Postman Collection",
+      "name": "Developer Reference",
       "icon": "code",
-      "url": "https://postman.rootfi.dev/"
-    },
-    {
-      "name": "Roadmap",
-      "icon": "road",
-      "url": "https://trello.com/b/ISjLnO29/building-rootfi"
-    },
-    {
-      "name": "Security",
-      "icon": "lock",
-      "url": "https://www.rootfi.dev/security"
-    },
-    {
-      "name": "Status",
-      "icon": "wave-pulse",
-      "url": "https://statuspage.freshping.io/66138-RootFi"
+      "url": "api-reference"
     }
   ],
   "navigation": [
+    {
+      "group": "",
+      "pages": [
+        "status",
+        "roadmap",
+        "security"
+      ]
+    },
     {
       "group": "General",
       "pages": [
@@ -129,7 +120,7 @@
             "wafeq",
             "wave",
             "xero",
-            "zoho-books-integration"
+            "zoho-books"
           ]
         }
       ]
@@ -198,7 +189,13 @@
       ]
     },
     {
-      "group": "Unified API",
+      "group": "",
+      "pages": [
+        "api-reference/postman"
+      ]
+    },
+    {
+      "group": "Core API",
       "pages": [
         {
           "group": "Companies",
@@ -253,158 +250,163 @@
       ]
     },
     {
-      "group": "Accounting",
+      "group": "Unified API",
       "pages": [
         {
-          "group": "Accounts",
+          "group": "Accounting",
           "pages": [
-            "api-reference/accounts/get-all-accounts",
-            "api-reference/accounts/create-accounts"
-          ]
-        },
-        {
-          "group": "Bank Accounts",
-          "pages": [
-            "api-reference/bank-accounts/get-all-bank-accounts",
-            "api-reference/bank-accounts/create-bank-accounts"
-          ]
-        },
-        {
-          "group": "Bank Transactions",
-          "pages": [
-            "api-reference/bank-transactions/get-all-bank-transactions"
-          ]
-        },
-        {
-          "group": "Bills",
-          "pages": [
-            "api-reference/bills/get-all-bills",
-            "api-reference/bills/create-bills"
-          ]
-        },
-        {
-          "group": "Bill Payments",
-          "pages": [
-            "api-reference/bill-payments/get-all-bill-payments",
-            "api-reference/bill-payments/create-bill-payments"
-          ]
-        },
-        {
-          "group": "Bill Credit Notes",
-          "pages": [
-            "api-reference/bill-credit-notes/get-all-bill-credit-notes",
-            "api-reference/bill-credit-notes/create-bill-credit-notes"
-          ]
-        },
-        {
-          "group": "Contacts",
-          "pages": [
-            "api-reference/contacts/get-all-contacts",
-            "api-reference/contacts/create-contacts",
-            "api-reference/contacts/update-contacts"
-          ]
-        },
-        {
-          "group": "Company Info",
-          "pages": [
-            "api-reference/company-info/get-all-company-info"
-          ]
-        },
-        {
-          "group": "Documents",
-          "pages": [
-            "api-reference/documents/get-all-documents",
-            "api-reference/documents/create-documents"
-          ]
-        },
-        {
-          "group": "Expenses",
-          "pages": [
-            "api-reference/expenses/get-all-expenses",
-            "api-reference/expenses/create-expenses"
-          ]
-        },
-        {
-          "group": "Invoice Credit Notes",
-          "pages": [
-            "api-reference/invoice-credit-notes/get-all-invoice-credit-notes",
-            "api-reference/invoice-credit-notes/create-invoice-credit-notes"
-          ]
-        },
-        {
-          "group": "Invoices",
-          "pages": [
-            "api-reference/invoices/get-all-invoices",
-            "api-reference/invoices/create-invoices",
-            "api-reference/invoices/update-invoices"
-          ]
-        },
-        {
-          "group": "Invoice Payments",
-          "pages": [
-            "api-reference/invoice-payments/get-all-invoice-payments",
-            "api-reference/invoice-payments/create-invoice-payments"
-          ]
-        },
-        {
-          "group": "Items",
-          "pages": [
-            "api-reference/items/get-all-items",
-            "api-reference/items/create-items",
-            "api-reference/items/update-items"
-          ]
-        },
-        {
-          "group": "Journal Entries",
-          "pages": [
-            "api-reference/journal-entries/get-all-journal-entries",
-            "api-reference/journal-entries/create-journal-entries"
-          ]
-        },
-        {
-          "group": "Purchase Orders",
-          "pages": [
-            "api-reference/purchase-orders/get-all-purchase-orders",
-            "api-reference/purchase-orders/create-purchase-orders"
-          ]
-        },
-        {
-          "group": "Sales Orders",
-          "pages": [
-            "api-reference/sales-orders/get-all-sales-orders",
-            "api-reference/sales-orders/create-sales-orders"
-          ]
-        },
-        {
-          "group": "Tax Rates",
-          "pages": [
-            "api-reference/tax-rates/get-all-tax-rates",
-            "api-reference/tax-rates/create-tax-rates",
-            "api-reference/tax-rates/update-tax-rates"
-          ]
-        },
-        {
-          "group": "Tracking Categories",
-          "pages": [
-            "api-reference/tracking-categories/get-all-tracking-categories"
-          ]
-        },
-        {
-          "group": "Balance Sheet",
-          "pages": [
-            "api-reference/balance-sheet/get-balance-sheet"
-          ]
-        },
-        {
-          "group": "Cash Flow Statements",
-          "pages": [
-            "api-reference/cash-flow-statements/your-get-endpoint"
-          ]
-        },
-        {
-          "group": "Income Statements",
-          "pages": [
-            "api-reference/income-statements/your-get-endpoint"
+            {
+              "group": "Accounts",
+              "pages": [
+                "api-reference/accounts/get-all-accounts",
+                "api-reference/accounts/create-accounts"
+              ]
+            },
+            {
+              "group": "Bank Accounts",
+              "pages": [
+                "api-reference/bank-accounts/get-all-bank-accounts",
+                "api-reference/bank-accounts/create-bank-accounts"
+              ]
+            },
+            {
+              "group": "Bank Transactions",
+              "pages": [
+                "api-reference/bank-transactions/get-all-bank-transactions"
+              ]
+            },
+            {
+              "group": "Bills",
+              "pages": [
+                "api-reference/bills/get-all-bills",
+                "api-reference/bills/create-bills"
+              ]
+            },
+            {
+              "group": "Bill Payments",
+              "pages": [
+                "api-reference/bill-payments/get-all-bill-payments",
+                "api-reference/bill-payments/create-bill-payments"
+              ]
+            },
+            {
+              "group": "Bill Credit Notes",
+              "pages": [
+                "api-reference/bill-credit-notes/get-all-bill-credit-notes",
+                "api-reference/bill-credit-notes/create-bill-credit-notes"
+              ]
+            },
+            {
+              "group": "Contacts",
+              "pages": [
+                "api-reference/contacts/get-all-contacts",
+                "api-reference/contacts/create-contacts",
+                "api-reference/contacts/update-contacts"
+              ]
+            },
+            {
+              "group": "Company Info",
+              "pages": [
+                "api-reference/company-info/get-all-company-info"
+              ]
+            },
+            {
+              "group": "Documents",
+              "pages": [
+                "api-reference/documents/get-all-documents",
+                "api-reference/documents/create-documents"
+              ]
+            },
+            {
+              "group": "Expenses",
+              "pages": [
+                "api-reference/expenses/get-all-expenses",
+                "api-reference/expenses/create-expenses"
+              ]
+            },
+            {
+              "group": "Invoice Credit Notes",
+              "pages": [
+                "api-reference/invoice-credit-notes/get-all-invoice-credit-notes",
+                "api-reference/invoice-credit-notes/create-invoice-credit-notes"
+              ]
+            },
+            {
+              "group": "Invoices",
+              "pages": [
+                "api-reference/invoices/get-all-invoices",
+                "api-reference/invoices/create-invoices",
+                "api-reference/invoices/update-invoices"
+              ]
+            },
+            {
+              "group": "Invoice Payments",
+              "pages": [
+                "api-reference/invoice-payments/get-all-invoice-payments",
+                "api-reference/invoice-payments/create-invoice-payments"
+              ]
+            },
+            {
+              "group": "Items",
+              "pages": [
+                "api-reference/items/get-all-items",
+                "api-reference/items/create-items",
+                "api-reference/items/update-items"
+              ]
+            },
+            {
+              "group": "Journal Entries",
+              "pages": [
+                "api-reference/journal-entries/get-all-journal-entries",
+                "api-reference/journal-entries/create-journal-entries"
+              ]
+            },
+            {
+              "group": "Purchase Orders",
+              "pages": [
+                "api-reference/purchase-orders/get-all-purchase-orders",
+                "api-reference/purchase-orders/create-purchase-orders"
+              ]
+            },
+            {
+              "group": "Sales Orders",
+              "pages": [
+                "api-reference/sales-orders/get-all-sales-orders",
+                "api-reference/sales-orders/create-sales-orders"
+              ]
+            },
+            {
+              "group": "Tax Rates",
+              "pages": [
+                "api-reference/tax-rates/get-all-tax-rates",
+                "api-reference/tax-rates/create-tax-rates",
+                "api-reference/tax-rates/update-tax-rates"
+              ]
+            },
+            {
+              "group": "Tracking Categories",
+              "pages": [
+                "api-reference/tracking-categories/get-all-tracking-categories"
+              ]
+            },
+            {
+              "group": "Balance Sheet",
+              "pages": [
+                "api-reference/balance-sheet/get-balance-sheet"
+              ]
+            },
+            {
+              "group": "Cash Flow Statements",
+              "pages": [
+                "api-reference/cash-flow-statements/your-get-endpoint"
+              ]
+            },
+            {
+              "group": "Income Statements",
+              "pages": [
+                "api-reference/income-statements/your-get-endpoint"
+              ]
+            }
           ]
         }
       ]

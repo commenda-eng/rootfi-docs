@@ -11,11 +11,11 @@ description: "**The Accounts Data Model** is designed to streamline the manageme
 
 | Property          | Type   | Description                                                                                                         |
 | ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------- |
-| platform_id     | string | The ID that the accounting platform uses to identify this account                                                   |
+| platform_id       | string | The ID that the accounting platform uses to identify this account                                                   |
 | name              | string | The name of the account                                                                                             |
 | description       | string | Description of the account                                                                                          |
 | nominal_code      | string | Reference given to each account for a business. It ensures money is allocated to the correct account.               |
-| currency_id          | string | The ISO-4217 currency code of the account                                                                           |
+| currency_id       | string | The Accounting Platform's unique ID for the currency                                                                |
 | current_balance   | float  | Current balance of the account                                                                                      |
 | status            | enum   | The status of the account. Values are: ACTIVE, ARCHIVED, UNKNOWN                                                    |
 | category          | enum   | The category of the account. Values are: ASSET, EXPENSE, LIABILITY, EQUITY,INCOME, PRIMARY, BANK, REVENUE , UNKNOWN |
