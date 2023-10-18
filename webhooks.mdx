@@ -1,93 +1,117 @@
 ---
 title: "Webhooks"
-description: "The RootFi Platform provides support for webhooks, allowing you to sync data to your systems in real-time. When data is synced from the accounting platform, the webhook is triggered immediately. To configure a webhook, please follow the steps outlined below."
+description: "The RootFi Platform offers robust webhook functionality, ensuring that your systems remain up-to-date with real-time data synchronization. With webhooks, as soon as data is synchronized from the accounting platform, the corresponding webhook is instantly activated. This guide will walk you through the steps to set up a webhook on the RootFi platform."
 ---
   
 ### How to Configure?
 
-1. Go to Webhooks section from the Settings page and Click on the 'Create Webhook' button.
+1. **Accessing Webhooks Settings**
+   - Navigate to the `Settings` page.
+   - Select the `Webhooks` section.
+   - Click the `Create Webhook` button.
 
 ![](/images/443662f-image_4.png)
 
-1. Fill the required details  
-   1. Enter the name and url of the Webhook.  
-   2. Select the kind of Webhook you want: **Data Model Changes**, **Company Linked** or **Sync Completed**  
-   3. **Headers**: You can add an authorisation to your webhook such as a `token`.
-
+2. **Entering Webhook Details**
+   - Provide a suitable name for the webhook.
+   - Input the desired URL for the webhook.
+   - Determine the type of webhook you need:
+     - Data Model Changes
+     - Connection Changed
+     - Sync Completed
+   - For added security, you can integrate an authorization token in the headers.
 ![](/images/4aa98b8-Screenshot_2023-06-21_at_5.54.18_PM.png)
 
-#### Company Linked Webhook
+3. **Webhook Types & Configurations**
 
-The Company Linked Webhook fires when a connection is successfully linked to an invite link. 
+   - **Connection Changed Webhook**:
+     This webhook is activated when a new connection is made via an invite link or if there's a change in connection status.
 
-#### Sync Completed Webhook
+   - **Sync Completed Webhook**:
+     This webhook is activated upon the completion of an asynchronous data sync. It can be initiated either manually for a specific company or when asynchronous data is written.
 
-The Sync Completed Webhook fires when an asynchronous sync is completed. This occurs when you [trigger a sync](/docs/syncing-data) for the company or when you [write asynchronous data](/docs/asynchronous-writes). 
+   - **Data Model Changes Webhook**:
+     - You must specify the Event Types for this webhook:
+       - **CREATE**: Triggered when data is initially synced or when a new record is imported from the Accounting Platform.
+       - **UPDATE**: Only triggered when data undergoes changes, not during every RootFi sync operation. For instance, even if RootFi performs daily syncs, but no changes are detected on the Accounting platform, no webhook notifications will be sent.
+       - **DELETE**: Activated if data is removed from the Accounting platform, but only after a full_sync operation.
+     - Select the specific data models to activate this webhook. Options can be chosen from a dropdown list or you can select all.
 
-#### Data Model Changes Webhook
+### Developer Notes
 
-You need to further configure the Event Types for the Data Model Changes Webhook
+- **Webhook Retry Mechanism**:
+  In the event of server congestion or high request volumes, webhooks will be retried three times with exponentially increasing delays. This ensures you never miss out on vital data.
 
-1. **CREATE:** This type of event will be called when the data is synced for the first time or when a new record is pulled from Accounting Platform.
-2. **UPDATE:**This type of event will be called only when the data changes (not everytime RootFi syncs data). So, even if RootFi syncs data everyday but data has not changed on Accounting platform, you will not be notified through a webhook.
-3. **DELETE**: This type of event will be called if data is deleted on the Accounting platform. This webhook will be called only if a `full_sync` has been performed.
+- **Webhook Request Type**:
+  All webhooks will be dispatched using a POST request with a structured body.
 
-You can select the data models you want this webhook to fire for. You can select certain data models from the dropdown or select all.
+- **Sample JSON Payloads**:
 
-![](/images/da7428c-image_5.png)
+  - **Data Model Changes**:
+    ```json
+    {
+        "company_id": 285,
+        "integration_type": "ZOHO_BOOKS",
+        "data_model": "ACCOUNTS",
+        "webhook_type": "DATA_MODEL_CHANGES",
+        "type": "CREATE",
+        "created_at": "2023-01-01T00:00:00.000Z"
+        "data": [
+            {
+                "platform_id": "3124930487",
+                "name": "Cost of Good sold",
+                {.....}
+            },
+            {
+                "platform_id": "3147384833",
+                "name": "Revenue Account",
+                {.....}
+            }
+        ],
+    }
+    ```
 
-### Developer Reference
 
-<Note>
-    **Webhooks are retried**
-
-    Webhooks will be retried 3 times with an exponential delay. So, even if your server is busy due to large number of requests, there's no worry of loosing data 😃.
-
-    Webhooks will be triggered with a **POST** request in the following body:
-</Note>
-#### Data Model Changes
-
-```JSON JSON
-{
-    "webhook_type": "DATA_MODEL_CHANGES",
-    "company_id": 285,
-    "integration_type": "ZOHO_BOOKS",
-    "data_model": "ACCOUNTS",
-    "type": "CREATE",
-    "data": [],
-    "created_at": "2023-01-01T00:00:00.000Z"
-}
-```
-
-#### Sync Completed
-
-```json JSON
-{
-    "webhook_type": "SYNC_COMPLETED",
-    "company_id": 285,
-    "integration_type": "ZOHO_BOOKS",
-    "data": {
-        "sync_id": "4yCSPQkVNAhV4Li",
-        "sync_start_time": "2023-03-03T00:00:00.000Z",
-        "sync_end_time": "2023-03-03T02:00:00.000Z",
-        "data_models_synced": {
-            "ACCOUNTS": "SUCCESS",
-            "BANK_ACCOUNTS": "SUCCESS",
-            "INVOICES": "SUCCESS",
-            "BILLS": "FAILED"
+  - **Sync Completed**:
+    ```json
+    {
+        "webhook_type": "SYNC_COMPLETED",
+        "company_id": 1244,
+        "integration_type": "MS_DYNAMICS_365",
+        "data": {
+            "id": "ZqpzbJNs4MvzrFz",
+            "status": "SUCCESS",
+            "total_jobs_count": 1,
+            "type": "PULL",
+            "success_jobs_count": 1,
+            "failed_jobs_count": 0,
+            "running_jobs_count": 0,
+            "created_jobs_count": 0,
+            "start_time": "2023-10-18T03:01:08.576Z",
+            "end_time": "2023-10-18T03:01:16.512Z",
+            "jobs": [
+                {
+                    "rootfi_id": "V6KXGlvt13sd81G",
+                    "status": "SUCCESS",
+                    "error": {},
+                    "data_model": "INVOICES",
+                    "job_type": "PULL",
+                    "start_time": "2023-10-18T03:01:08.576Z",
+                    "end_time": "2023-10-18T03:01:16.512Z",
+                    "upload_job_id": "ZqpzbJNs4MvzrFz"
+                }
+            ]
         }
-    },
-    "created_at": "created_at"
-}
-```
+    }
+    ```
 
-#### Company Linked
-
-```json JSON
-{
-    "webhook_type": "COMPANY_LINKED",
-    "company_id": 285,
-    "integration_type": "ZOHO_BOOKS",
-    "created_at": "2023-01-01T00:00:00.000Z"
-}
-```
+  - **Connection Changed**:
+    ```json
+    {
+        "webhook_type": "CONNECTION_CHANGED",
+        "company_id": 285,
+        "integration_type": "ZOHO_BOOKS",
+        "connection_status": "HEALTHY",
+        "created_at": "2023-01-01T00:00:00.000Z"
+    }
+    ```
