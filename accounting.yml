@@ -81,31 +81,31 @@ paths:
                           id: 2l7z0blnjhvxk
                     x-stoplight:
                       id: 990n1gyfu1w26
-            Example 1:
-              example:
-                data:
-                  data:
-                  - nominal_code: string
-                    name: string
-                    description: string
-                    category: string
-                    sub_category: string
-                    status: string
-                    currency: string
-                    current_balance: 0
-                    updated_at: 2019-08-24T14:15:22Z
-                    parent_account_id: string
-                    rootfi_id: 0
-                    rootfi_company_id: 0
-                    rootfi_organisation_id: 0
-                    rootfi_integration_type: string
-                    rootfi_updated_at: string
-                    rootfi_created_at: string
-                    platform_id: string
-                  total_count: 0
-                request_timestamp: string
-                response_timestamp: string
-                request_id: string
+            # Example 1:
+            #   example:
+            #     data:
+            #       data:
+            #       - nominal_code: string
+            #         name: string
+            #         description: string
+            #         category: string
+            #         sub_category: string
+            #         status: string
+            #         currency: string
+            #         current_balance: 0
+            #         updated_at: 2019-08-24T14:15:22Z
+            #         parent_account_id: string
+            #         rootfi_id: 0
+            #         rootfi_company_id: 0
+            #         rootfi_organisation_id: 0
+            #         rootfi_integration_type: string
+            #         rootfi_updated_at: string
+            #         rootfi_created_at: string
+            #         platform_id: string
+            #       total_count: 0
+            #     request_timestamp: string
+            #     response_timestamp: string
+            #     request_id: string
   /write/accounts:
     post:
       tags:
