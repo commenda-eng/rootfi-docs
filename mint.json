@@ -1,8 +1,8 @@
 {
   "name": "RootFi",
   "logo": {
-    "light": "images/logo/dark.png",
-    "dark": "images/logo/light.png"
+    "light": "logo/dark.png",
+    "dark": "logo/light.png"
   },
   "favicon": "images/logo/logomark_favicon_rounded.png",
   "colors": {
@@ -13,7 +13,7 @@
   "api": {
     "baseUrl": "https://integrate.rootfi.dev"
   },
-  "backgroundImage": "images/documentation_background_image",
+  "backgroundImage": "images/documentation_background.png",
   "topbarCtaButton": {
     "name": "Log In",
     "url": "https://integrate.rootfi.dev/login"
@@ -32,7 +32,7 @@
     "prompt": "Ask any question (powered by ChatGPT)"
   },
   "versions": [
-    "v2",
+    "v2 (latest)",
     "v1"
   ],
   "tabs": [
@@ -75,16 +75,6 @@
       ]
     },
     {
-      "group": "Tutorial",
-      "pages": [
-        "documentation/getting-started/getting-started",
-        "documentation/getting-started/configure-sync",
-        "documentation/getting-started/create-invite-link",
-        "documentation/getting-started/connect-platform",
-        "documentation/getting-started/monitor-data"
-      ]
-    },
-    {
       "group": "Concepts",
       "pages": [
         {
@@ -98,15 +88,12 @@
         {
           "group": "Sync Data",
           "pages": [
-            "documentation/concepts/sync-data/overview",
-            "documentation/concepts/sync-data/auto-sync",
-            "documentation/concepts/sync-data/manual-sync"
+            "documentation/concepts/sync-data/overview"
           ]
         },
         {
           "group": "Writing Data",
           "pages": [
-            "documentation/concepts/write-data/overview",
             "documentation/concepts/write-data/synchronous-writes",
             "documentation/concepts/write-data/asynchronous-writes"
           ]
@@ -114,7 +101,6 @@
         {
           "group": "Reading Data",
           "pages": [
-            "documentation/concepts/read-data/overview",
             "documentation/concepts/read-data/rest-apis",
             "documentation/concepts/read-data/graphql-apis"
           ]
@@ -122,7 +108,6 @@
         {
           "group": "Supplemental Data",
           "pages": [
-            "documentation/concepts/supplemental-data/overview",
             "documentation/concepts/supplemental-data/raw-data",
             "documentation/concepts/supplemental-data/passthrough-api",
             "documentation/concepts/supplemental-data/realtime-api"
@@ -222,7 +207,7 @@
             {
               "group": "Accounts",
               "pages": [
-                "api-reference/accounts/accounts",
+                "api-reference/accounts/overview",
                 "api-reference/accounts/get-all-accounts",
                 "api-reference/accounts/create-accounts"
               ]
@@ -230,6 +215,7 @@
             {
               "group": "Bank Accounts",
               "pages": [
+                "api-reference/bank-accounts/overview",
                 "api-reference/bank-accounts/get-all-bank-accounts",
                 "api-reference/bank-accounts/create-bank-accounts"
               ]
@@ -237,12 +223,14 @@
             {
               "group": "Bank Transactions",
               "pages": [
+                "api-reference/bank-transactions/overview",
                 "api-reference/bank-transactions/get-all-bank-transactions"
               ]
             },
             {
               "group": "Bills",
               "pages": [
+                "api-reference/bills/overview",
                 "api-reference/bills/get-all-bills",
                 "api-reference/bills/create-bills"
               ]
@@ -250,6 +238,7 @@
             {
               "group": "Bill Payments",
               "pages": [
+                "api-reference/bill-payments/overview",
                 "api-reference/bill-payments/get-all-bill-payments",
                 "api-reference/bill-payments/create-bill-payments"
               ]
@@ -257,6 +246,7 @@
             {
               "group": "Bill Credit Notes",
               "pages": [
+                "api-reference/bill-credit-notes/overview",
                 "api-reference/bill-credit-notes/get-all-bill-credit-notes",
                 "api-reference/bill-credit-notes/create-bill-credit-notes"
               ]
@@ -264,6 +254,7 @@
             {
               "group": "Contacts",
               "pages": [
+                "api-reference/contacts/overview",
                 "api-reference/contacts/get-all-contacts",
                 "api-reference/contacts/create-contacts",
                 "api-reference/contacts/update-contacts"
@@ -272,12 +263,14 @@
             {
               "group": "Company Info",
               "pages": [
+                "api-reference/company-info/overview",
                 "api-reference/company-info/get-all-company-info"
               ]
             },
             {
               "group": "Documents",
               "pages": [
+                "api-reference/documents/overview",
                 "api-reference/documents/get-all-documents",
                 "api-reference/documents/create-documents"
               ]
@@ -285,6 +278,7 @@
             {
               "group": "Expenses",
               "pages": [
+                "api-reference/expenses/overview",
                 "api-reference/expenses/get-all-expenses",
                 "api-reference/expenses/create-expenses"
               ]
@@ -292,6 +286,7 @@
             {
               "group": "Invoice Credit Notes",
               "pages": [
+                "api-reference/invoice-credit-notes/overview",
                 "api-reference/invoice-credit-notes/get-all-invoice-credit-notes",
                 "api-reference/invoice-credit-notes/create-invoice-credit-notes"
               ]
@@ -299,6 +294,7 @@
             {
               "group": "Invoices",
               "pages": [
+                "api-reference/invoices/overview",
                 "api-reference/invoices/get-all-invoices",
                 "api-reference/invoices/create-invoices",
                 "api-reference/invoices/update-invoices"
@@ -307,6 +303,7 @@
             {
               "group": "Invoice Payments",
               "pages": [
+                "api-reference/invoice-payments/overview",
                 "api-reference/invoice-payments/get-all-invoice-payments",
                 "api-reference/invoice-payments/create-invoice-payments"
               ]
@@ -314,6 +311,7 @@
             {
               "group": "Items",
               "pages": [
+                "api-reference/items/overview",
                 "api-reference/items/get-all-items",
                 "api-reference/items/create-items",
                 "api-reference/items/update-items"
@@ -322,6 +320,7 @@
             {
               "group": "Journal Entries",
               "pages": [
+                "api-reference/journal-entries/overview",
                 "api-reference/journal-entries/get-all-journal-entries",
                 "api-reference/journal-entries/create-journal-entries"
               ]
@@ -329,6 +328,7 @@
             {
               "group": "Purchase Orders",
               "pages": [
+                "api-reference/purchase-orders/overview",
                 "api-reference/purchase-orders/get-all-purchase-orders",
                 "api-reference/purchase-orders/create-purchase-orders"
               ]
@@ -336,6 +336,7 @@
             {
               "group": "Sales Orders",
               "pages": [
+                "api-reference/sales-orders/overview",
                 "api-reference/sales-orders/get-all-sales-orders",
                 "api-reference/sales-orders/create-sales-orders"
               ]
@@ -343,6 +344,7 @@
             {
               "group": "Tax Rates",
               "pages": [
+                "api-reference/tax-rates/overview",
                 "api-reference/tax-rates/get-all-tax-rates",
                 "api-reference/tax-rates/create-tax-rates",
                 "api-reference/tax-rates/update-tax-rates"
@@ -351,24 +353,28 @@
             {
               "group": "Tracking Categories",
               "pages": [
+                "api-reference/tracking-categories/overview",
                 "api-reference/tracking-categories/get-all-tracking-categories"
               ]
             },
             {
               "group": "Balance Sheet",
               "pages": [
+                "api-reference/balance-sheet/overview",
                 "api-reference/balance-sheet/get-balance-sheet"
               ]
             },
             {
               "group": "Cash Flow Statements",
               "pages": [
+                "api-reference/cash-flow-statements/overview",
                 "api-reference/cash-flow-statements/your-get-endpoint"
               ]
             },
             {
               "group": "Income Statements",
               "pages": [
+                "api-reference/income-statements/overview",
                 "api-reference/income-statements/your-get-endpoint"
               ]
             }
