@@ -1,10 +1,10 @@
 {
   "name": "RootFi",
   "logo": {
-    "light": "/logo/light.png",
-    "dark": "/logo/dark.png"
+    "light": "images/logo/dark.png",
+    "dark": "images/logo/light.png"
   },
-  "favicon": "/logomark_favicon_rounded.png",
+  "favicon": "images/logo/logomark_favicon_rounded.png",
   "colors": {
     "primary": "#0E0E0E",
     "light": "#FAFAFA",
@@ -15,84 +15,117 @@
   },
   "backgroundImage": "images/documentation_background_image",
   "topbarCtaButton": {
-    "name": "Sign Up",
-    "url": "https://integrate.rootfi.dev/signup"
+    "name": "Log In",
+    "url": "https://integrate.rootfi.dev/login"
   },
   "topbarLinks": [
     {
-      "name": "Log In",
-      "url": "https://integrate.rootfi.dev/login"
+      "name": "Postman Collection",
+      "url": "https://postman.rootfi.dev"
     }
   ],
   "topAnchor": {
     "name": "Overview & Guides",
-    "icon": "building"
+    "icon": "book"
   },
+  "search": {
+    "prompt": "Ask any question (powered by ChatGPT)"
+  },
+  "versions": [
+    "v2",
+    "v1"
+  ],
   "tabs": [
     {
-      "name": "Developer Reference",
-      "icon": "code",
+      "name": "API Reference",
       "url": "api-reference"
+    },
+    {
+      "name": "Changelog",
+      "url": "changelog"
     }
   ],
-  "navigation": [
+  "anchors": [
     {
-      "group": "",
-      "pages": [
-        "status",
-        "roadmap",
-        "security"
-      ]
+      "name": "Roadmap",
+      "icon": "road",
+      "url": "https://trello.com/b/ISjLnO29/building-rootfi"
     },
+    {
+      "name": "Security",
+      "icon": "shield-halved",
+      "url": "https://rootfi.dev/security"
+    },
+    {
+      "name": "Status",
+      "icon": "wave-pulse",
+      "url": "https://statuspage.freshping.io/66138-RootFi"
+    }
+  ],
+  "footerSocials": {
+    "twitter": "https://twitter.com/RootFiAPI",
+    "linkedin": "https://www.linkedin.com/company/rootfi/"
+  },
+  "navigation": [
     {
       "group": "General",
       "pages": [
-        "introduction",
-        "supported-platforms",
-        {
-          "group": "Getting Started",
-          "pages": [
-            "authentication-api-keys",
-            "rootfi-postman-collection",
-            "graphql-playground"
-          ]
-        },
-        "glossary-key-terms"
+        "documentation/general/introduction",
+        "documentation/general/glossary-key-terms"
       ]
     },
     {
-      "group": "Guides",
+      "group": "Tutorial",
+      "pages": [
+        "documentation/getting-started/getting-started",
+        "documentation/getting-started/configure-sync",
+        "documentation/getting-started/create-invite-link",
+        "documentation/getting-started/connect-platform",
+        "documentation/getting-started/monitor-data"
+      ]
+    },
+    {
+      "group": "Concepts",
       "pages": [
         {
           "group": "RootFi Connect",
           "pages": [
-            "rootfi-connect-overview",
-            "rootfi-connect-link",
-            "rootfi-connect-sdk"
+            "documentation/concepts/rootfi-connect/overview",
+            "documentation/concepts/rootfi-connect/connect-link",
+            "documentation/concepts/rootfi-connect/connect-sdk"
           ]
         },
-        "syncing-data",
+        {
+          "group": "Sync Data",
+          "pages": [
+            "documentation/concepts/sync-data/overview",
+            "documentation/concepts/sync-data/auto-sync",
+            "documentation/concepts/sync-data/manual-sync"
+          ]
+        },
         {
           "group": "Writing Data",
           "pages": [
-            "synchronous-writes",
-            "asynchronous-writes",
-            "unified-error-messages"
+            "documentation/concepts/write-data/overview",
+            "documentation/concepts/write-data/synchronous-writes",
+            "documentation/concepts/write-data/asynchronous-writes"
           ]
         },
         {
           "group": "Reading Data",
           "pages": [
-            "reading-data",
-            "rest-apis",
-            "graphql-apis"
+            "documentation/concepts/read-data/overview",
+            "documentation/concepts/read-data/rest-apis",
+            "documentation/concepts/read-data/graphql-apis"
           ]
         },
         {
           "group": "Supplemental Data",
           "pages": [
-            "raw-data",
-            "passing-raw-data"
+            "documentation/concepts/supplemental-data/overview",
+            "documentation/concepts/supplemental-data/raw-data",
+            "documentation/concepts/supplemental-data/passthrough-api",
+            "documentation/concepts/supplemental-data/realtime-api"
           ]
         },
         "webhooks"
@@ -123,75 +156,6 @@
             "zoho-books"
           ]
         }
-      ]
-    },
-    {
-      "group": "Accounting Data Models",
-      "pages": [
-        "accounting-data-model",
-        "enums",
-        {
-          "group": "Common Data Models",
-          "pages": [
-            "company-info",
-            "accounts",
-            "documents",
-            "contacts",
-            "journal-entries",
-            "tax-rates",
-            "expenses",
-            "currencies"
-          ]
-        },
-        {
-          "group": "Sub Data Models",
-          "pages": [
-            "address",
-            "contact-person",
-            "external-link",
-            "items",
-            "phone-number"
-          ]
-        },
-        {
-          "group": "Accounts Payable",
-          "pages": [
-            "bills",
-            "bill-credit-notes",
-            "bill-payments",
-            "purchase-orders"
-          ]
-        },
-        {
-          "group": "Accounts Receivable",
-          "pages": [
-            "invoices",
-            "invoice-credit-notes",
-            "invoice-payments",
-            "sales-orders"
-          ]
-        },
-        {
-          "group": "Bank Data",
-          "pages": [
-            "bank-accounts",
-            "bank-transactions"
-          ]
-        },
-        {
-          "group": "Financial Statements Data Models",
-          "pages": [
-            "income-statements",
-            "cash-flow-statements",
-            "balance-sheet"
-          ]
-        }
-      ]
-    },
-    {
-      "group": "",
-      "pages": [
-        "api-reference/postman"
       ]
     },
     {
@@ -258,6 +222,7 @@
             {
               "group": "Accounts",
               "pages": [
+                "api-reference/accounts/accounts",
                 "api-reference/accounts/get-all-accounts",
                 "api-reference/accounts/create-accounts"
               ]
@@ -417,9 +382,5 @@
         "changelog/july-31"
       ]
     }
-  ],
-  "footerSocials": {
-    "twitter": "https://twitter.com/RootFiAPI",
-    "linkedin": "https://www.linkedin.com/company/rootfi/"
-  }
+  ]
 }
