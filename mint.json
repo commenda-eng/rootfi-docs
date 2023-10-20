@@ -385,7 +385,18 @@
     {
       "group": "Changelog",
       "pages": [
-        "changelog/july-31"
+        "changelog/july-31",
+        "changelog/june-30",
+        "changelog/may-31",
+        "changelog/april-30",
+        "changelog/march-31",
+        "changelog/feb-28",
+        "changelog/jan-31",
+        "changelog/dec-31",
+        "changelog/nov-30",
+        "changelog/nov-14",
+        "changelog/oct-31",
+        "changelog/oct-14"
       ]
     }
   ]
