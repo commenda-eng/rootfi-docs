@@ -4,7 +4,7 @@
     "light": "/logo/light.png",
     "dark": "/logo/dark.png"
   },
-  "favicon": "images/logo/logomark_favicon_rounded.png",
+  "favicon": "logo/logomark_favicon_rounded.png",
   "colors": {
     "primary": "#0E0E0E",
     "light": "#FAFAFA",
@@ -84,12 +84,7 @@
             "documentation/concepts/rootfi-connect/connect-sdk"
           ]
         },
-        {
-          "group": "Sync Data",
-          "pages": [
-            "documentation/concepts/sync-data/overview"
-          ]
-        },
+        "documentation/concepts/sync-data/syncing-data",
         {
           "group": "Writing Data",
           "pages": [
