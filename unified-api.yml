@@ -2,17 +2,20 @@ openapi: 3.0.1
 info:
   title: rootfi
   version: ""
+  description: https://docs.rootfi.dev
 paths:
   /company/all:
     get:
-      description: Retrieve all companies from the database
+      description: >-
+        Retrieve all companies from the database based on the query parameters
+        provided (limit, offset).
       operationId: core_companies_list
       tags:
         - CoreCompanies
       parameters:
         - name: limit
           in: query
-          description: The number of records to return
+          description: The number of records to return.
           required: false
           schema:
             type: integer
@@ -22,7 +25,7 @@ paths:
               value: 10
         - name: offset
           in: query
-          description: The number of records to skip
+          description: The number of records to skip.
           required: false
           schema:
             type: integer
@@ -48,7 +51,7 @@ paths:
                           rootfi_created_at: "2021-06-01T00:00:00.000Z"
                           rootfi_updated_at: "2021-06-01T00:00:00.000Z"
                           rootfi_company_id: 0
-                          integration_type: XERO
+                          integration_type: ZOHO_BOOKS
                           status: HEALTHY
                           auth:
                             type: oauth
@@ -86,13 +89,14 @@ paths:
         - MyAuthSchemeAuth: []
   /company/{id}:
     get:
-      description: Retrieve one company from the database based on the ID
+      description: Retrieve one company from the database based on the ID.
       operationId: core_companies_retrieveByID
       tags:
         - CoreCompanies
       parameters:
         - name: id
           in: path
+          description: The ID of the company to retrieve.
           required: true
           schema:
             type: string
@@ -120,7 +124,7 @@ paths:
                         invite_link_id: 00000000-0000-0000-0000-000000000000
                       Connections:
                         - status: HEALTHY
-                          integration_type: XERO
+                          integration_type: ZOHO_BOOKS
                           last_synced: "2021-06-01T00:00:00.000Z"
                           rate_limits:
                             max_rate_limit: 10000
@@ -134,13 +138,14 @@ paths:
       summary: Get One Company
       security: *ref_0
     put:
-      description: Update a company
+      description: Update a company in the database based on the ID.
       operationId: core_companies_update
       tags:
         - CoreCompanies
       parameters:
         - name: id
           in: path
+          description: The ID of the company to update.
           required: true
           schema:
             type: string
@@ -168,7 +173,7 @@ paths:
                         invite_link_id: 00000000-0000-0000-0000-000000000000
                       Connections:
                         - status: HEALTHY
-                          integration_type: XERO
+                          integration_type: ZOHO_BOOKS
                           last_synced: "2021-06-01T00:00:00.000Z"
                           rate_limits:
                             max_rate_limit: 10000
@@ -190,15 +195,16 @@ paths:
             examples:
               Example1:
                 value:
-                  name: Company 1
+                  name: Test Company
     delete:
-      description: Delete a company
+      description: Delete a company from the database based on the ID.
       operationId: core_companies_delete
       tags:
         - CoreCompanies
       parameters:
         - name: id
           in: path
+          description: The ID of the company to delete.
           required: true
           schema:
             type: string
@@ -224,7 +230,7 @@ paths:
       security: *ref_0
   /integrations:
     get:
-      description: Retrieve all integrations from the database
+      description: Retrieve all integrations from the database.
       operationId: core_integrations_list
       tags:
         - CoreIntegrations
@@ -234,7 +240,7 @@ paths:
           description: The type of integrations to return
           required: false
           schema:
-            $ref: "#/components/schemas/coregetAllIntegrationsRequestTypes"
+            $ref: "#/components/schemas/getAllIntegrationsRequestTypes"
             nullable: true
           examples:
             Example1:
@@ -255,15 +261,19 @@ paths:
                       data:
                         - integration_type: ZOHO_BOOKS
                           rootfi_id: 1
-                          client_id: gfdsxcvghfredcvbhgtfdc
-                          client_secret: ngfdsxcvbnjhgfdszcvbn
+                          client_id: >-
+                            gfdsxcvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm
+                          client_secret: >-
+                            jnokmwvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm
                           is_disabled: false
                           is_rootfi_identity: true
                           count: 1
-                        - integration_type: XERO
+                        - integration_type: ZOHO_BOOKS
                           rootfi_id: 2
-                          client_id: gfdsxcvghfredcvbhgtfdc
-                          client_secret: ngfdsxcvbnjhgfdszcvbn
+                          client_id: >-
+                            gfdsxcvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm
+                          client_secret: >-
+                            jnokmwvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm
                           is_disabled: true
                           is_rootfi_identity: false
                           count: 1
@@ -273,7 +283,7 @@ paths:
       summary: Get All Integrations
       security: *ref_0
     post:
-      description: Add an integration.
+      description: Create a integration for a company to connect to the platform.
       operationId: core_integrations_create
       tags:
         - CoreIntegrations
@@ -293,8 +303,10 @@ paths:
                       rootfi_id: 1
                       rootfi_created_at: "2021-08-10T15:00:00.000Z"
                       rootfi_updated_at: "2021-08-10T15:00:00.000Z"
-                      client_id: gfdsxcvghfredcvbhgtfdc
-                      client_secret: ngfdsxcvbnjhgfdszcvbn
+                      client_id: >-
+                        gfdsxcvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm
+                      client_secret: >-
+                        jnokmwvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm
                       is_disabled: false
                       metadata: {}
                       is_rootfi_identity: true
@@ -314,23 +326,27 @@ paths:
                 value:
                   integration_type: ZOHO_BOOKS
                   is_rootfi_identity: true
-                  client_id: gfdsxcvghfredcvbhgtfdc
-                  client_secret: ngfdsxcvbnjhgfdszcvbn
+                  client_id: >-
+                    gfdsxcvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm
+                  client_secret: >-
+                    wsxedcfvtgbyhnujmcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm
   /integrations/{integration_id}:
     get:
-      description: Retrieve one integration from the database based on the ID
+      description: Retrieve one integration from the database based on the ID.
       operationId: core_integrations_retrieveByID
       tags:
         - CoreIntegrations
       parameters:
         - name: integration_id
           in: path
+          description: The ID of the integration to retrieve.
           required: true
           schema:
-            type: integer
+            type: number
+            format: double
           examples:
             Example1:
-              value: 1
+              value: 0
       responses:
         "200":
           description: ""
@@ -346,8 +362,10 @@ paths:
                       rootfi_id: 1
                       rootfi_created_at: "2021-08-10T15:00:00.000Z"
                       rootfi_updated_at: "2021-08-10T15:00:00.000Z"
-                      client_id: gfdsxcvghfredcvbhgtfdc
-                      client_secret: ngfdsxcvbnjhgfdszcvbn
+                      client_id: >-
+                        gfdsxcvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm
+                      client_secret: >-
+                        jnokmwvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm
                       is_disabled: false
                       metadata: {}
                       is_rootfi_identity: true
@@ -357,16 +375,18 @@ paths:
       summary: Get One Integration
       security: *ref_0
     put:
-      description: Update a integration.
+      description: Update a integration based on the ID.
       operationId: core_integrations_update
       tags:
         - CoreIntegrations
       parameters:
         - name: integration_id
           in: path
+          description: The ID of the integration to update.
           required: true
           schema:
-            type: integer
+            type: number
+            format: double
           examples:
             Example1:
               value: 1
@@ -385,8 +405,10 @@ paths:
                       rootfi_id: 1
                       rootfi_created_at: "2021-08-10T15:00:00.000Z"
                       rootfi_updated_at: "2021-08-10T15:00:00.000Z"
-                      client_id: gfdsxcvghfredcvbhgtfdc
-                      client_secret: ngfdsxcvbnjhgfdszcvbn
+                      client_id: >-
+                        gfdsxcvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm
+                      client_secret: >-
+                        jnokmwvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm
                       is_disabled: false
                       metadata: {}
                       is_rootfi_identity: true
@@ -406,20 +428,22 @@ paths:
                 value:
                   is_disabled: false
                   is_rootfi_identity: true
-                  client_id: gfdsxcvghfredcvbhgtfdc
-                  client_secret: ngfdsxcvbnjhgfdszcvbn
+                  client_id: >-
+                    gfdsxcvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm
+                  client_secret: >-
+                    jnokmwvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm
   /invite_link:
     get:
       description: >-
         Retrieve all invite links from the database based on the query
-        parameters provided (limit, offset)
+        parameters provided (limit, offset).
       operationId: core_inviteLinks_list
       tags:
         - CoreInviteLinks
       parameters:
         - name: limit
           in: query
-          description: The number of records to return
+          description: The number of records to return.
           required: false
           schema:
             type: integer
@@ -429,7 +453,7 @@ paths:
               value: 10
         - name: offset
           in: query
-          description: The number of records to skip
+          description: The number of records to skip.
           required: false
           schema:
             type: integer
@@ -472,7 +496,7 @@ paths:
       summary: Get All Invite Links
       security: *ref_0
     post:
-      description: Add an invite link.
+      description: Create an invite link for a company to connect to the platform.
       operationId: core_inviteLinks_create
       tags:
         - CoreInviteLinks
@@ -514,18 +538,19 @@ paths:
             examples:
               Example1:
                 value:
-                  company_name: Company Name
+                  company_name: Test Company
                   integrations:
                     - ZOHO_BOOKS
   /invite_link/{id}:
     get:
-      description: Retrieve one invite link from the database based on the ID
+      description: Retrieve one invite link from the database based on the ID.
       operationId: core_inviteLinks_retrieveByID
       tags:
         - CoreInviteLinks
       parameters:
         - name: id
           in: path
+          description: The ID of the invite link to retrieve.
           required: true
           schema:
             type: string
@@ -558,12 +583,12 @@ paths:
                         rootfi_updated_at: "2021-01-01T00:00:00Z"
                         rootfi_company_id: 0
                         rootfi_organisation_id: 0
-                        name: Company Name
+                        name: Test Company
                         sync_enabled: true
                         Connections: []
                         Organisation:
                           rootfi_id: 0
-                          name: Organisation Name
+                          name: Test Organisation
                           Integrations: []
                           sync_config: []
                     request_timestamp: "2021-01-01T00:00:00Z"
@@ -572,13 +597,14 @@ paths:
       summary: Get One Invite Link
       security: *ref_0
     delete:
-      description: Delete an invite link.
+      description: Delete an invite link from the database based on the ID.
       operationId: core_inviteLinks_delete
       tags:
         - CoreInviteLinks
       parameters:
         - name: id
           in: path
+          description: The ID of the invite link to delete.
           required: true
           schema:
             type: string
@@ -664,7 +690,7 @@ paths:
                     params: {}
   /sync:
     post:
-      description: Add an Sync.
+      description: Sync a company to the platform.
       operationId: core_sync_create
       tags:
         - CoreSync
@@ -700,7 +726,7 @@ paths:
                   full_sync: false
   /webhooks:
     get:
-      description: Retrieve all webhooks from the database
+      description: Retrieve all webhooks from the database.
       operationId: core_webhooks_list
       tags:
         - CoreWebhooks
@@ -722,7 +748,7 @@ paths:
                         operations:
                           - CREATE
                         data_models:
-                          - DATA_MODEL_CHANGES
+                          - ACCOUNTS
                         org_id: 1
                         name: New Webhook
                         created_at: "2021-08-10T18:00:00.000Z"
@@ -735,7 +761,7 @@ paths:
       summary: Get All Webhooks
       security: *ref_0
     post:
-      description: Add a webhook.
+      description: Create a webhook to get the data from the database.
       operationId: core_webhooks_create
       tags:
         - CoreWebhooks
@@ -757,7 +783,7 @@ paths:
                       operations:
                         - CREATE
                       data_models:
-                        - DATA_MODEL_CHANGES
+                        - ACCOUNTS
                       org_id: 1
                       name: New Webhook
                       created_at: "2021-08-10T18:00:00.000Z"
@@ -786,7 +812,8 @@ paths:
                       - ACCOUNTS
                     url: https://webhook.site/eec24873-a381-4694-b684-a1d77d9e0697
                     headers:
-                      api_key: fhsjd
+                      api_key: >-
+                        BC3pyMVNbsbIU1phfhwe.0gfdsxbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm
   /webhooks/{webhook_id}:
     put:
       description: Update a webhook.
@@ -819,7 +846,7 @@ paths:
                       operations:
                         - CREATE
                       data_models:
-                        - DATA_MODEL_CHANGES
+                        - ACCOUNTS
                       org_id: 1
                       name: New Webhook
                       created_at: "2021-08-10T18:00:00.000Z"
@@ -879,6 +906,7 @@ components:
     coreGetAllCompaniesResponse:
       title: coreGetAllCompaniesResponse
       type: object
+      description: The response of the get all companies endpoint.
       properties:
         data:
           $ref: "#/components/schemas/FinalCompanyResponse"
@@ -889,6 +917,7 @@ components:
     coreGetOneCompanyResponse:
       title: coreGetOneCompanyResponse
       type: object
+      description: Response object for the get one company endpoint.
       properties:
         data:
           $ref: "#/components/schemas/FinalOneCompanyResponse"
@@ -906,12 +935,13 @@ components:
             Name of the company you are sending this invite link to. Useful
             identifier for you to internally reference this company. Can be
             changed later.
-          example: Company 1
+          example: Test Company
       required:
         - name
     coreUpdateCompanyResponse:
       title: coreUpdateCompanyResponse
       type: object
+      description: The response of the update company endpoint.
       properties:
         data:
           $ref: "#/components/schemas/FinalOneCompanyResponse"
@@ -922,6 +952,7 @@ components:
     coreDeleteCompanyResponse:
       title: coreDeleteCompanyResponse
       type: object
+      description: Response object for the delete company endpoint.
       properties:
         data:
           $ref: "#/components/schemas/DeleteResponseData"
@@ -929,16 +960,10 @@ components:
         - data
       allOf:
         - $ref: "#/components/schemas/timestamp"
-    coregetAllIntegrationsRequestTypes:
-      title: coregetAllIntegrationsRequestTypes
-      type: string
-      enum:
-        - ALL
-        - DISABLED
-        - ENABLED
     coreGetAllIntegrationsResponse:
       title: coreGetAllIntegrationsResponse
       type: object
+      description: Response for retrieving all integrations endpoint.
       properties:
         data:
           $ref: "#/components/schemas/GetAllIntegrationsResponseData"
@@ -959,46 +984,59 @@ components:
     coreCreateIntegrationRequest:
       title: coreCreateIntegrationRequest
       type: object
+      description: Request object for creating a integration.
       properties:
         integration_type:
           $ref: "#/components/schemas/IntegrationType"
+          description: The type of integration to create.
         is_rootfi_identity:
           type: boolean
           nullable: true
-          description: Pass true to use RootFi's oauth credentials. (Default is true)
+          description: Pass true to use RootFi's oauth credentials. (Default is true).
         client_id:
           type: string
-          nullable: true
-          description: Developer OAUTH Client ID from Integration Platform
+          description: Developer OAUTH Client ID from Integration Platform.
+          example: >-
+            gfdsxcvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm
         client_secret:
           type: string
-          nullable: true
-          description: Developer OAUTH Client Secret from Integration Platform
+          description: Developer OAUTH Client Secret from Integration Platform.
+          example: wsxedcfvtgbyhnujmcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm
       required:
         - integration_type
+        - client_id
+        - client_secret
     coreUpdateIntegrationRequest:
       title: coreUpdateIntegrationRequest
       type: object
+      description: Request object for updating a integration.
       properties:
         is_disabled:
           type: boolean
-          nullable: true
-          description: Pass true to disable the integration
+          description: Pass true to disable the integration.
+          example: false
         client_id:
           type: string
-          nullable: true
-          description: Developer OAUTH Client ID from Integration Platform
+          description: Developer OAUTH Client ID from Integration Platform.
+          example: >-
+            gfdsxcvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm
         client_secret:
           type: string
-          nullable: true
-          description: Developer OAUTH Client Secret from Integration Platform
+          description: Developer OAUTH Client Secret from Integration Platform.
+          example: >-
+            jnokmwvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm
         is_rootfi_identity:
           type: boolean
           nullable: true
-          description: Pass true to use RootFi's oauth credentials. (Default is true)
+          description: Pass true to use RootFi's oauth credentials. (Default is false).
+      required:
+        - is_disabled
+        - client_id
+        - client_secret
     coreGetAllInviteLinkResponse:
       title: coreGetAllInviteLinkResponse
       type: object
+      description: Response object for the get all invite links endpoint.
       properties:
         data:
           type: array
@@ -1011,6 +1049,7 @@ components:
     coreGetOneInviteLinkResponse:
       title: coreGetOneInviteLinkResponse
       type: object
+      description: Response object for the get one invite link endpoint.
       properties:
         data:
           $ref: "#/components/schemas/FinalAllInviteLinkResponse"
@@ -1024,20 +1063,23 @@ components:
       properties:
         company_name:
           type: string
-          nullable: true
           description: >-
             Name of the company you are sending this invite link to. Useful
             identifier for you to internally reference this company. Can be
             changed later.
+          example: Test Company
         integrations:
           type: array
           items:
             $ref: "#/components/schemas/IntegrationType"
-          nullable: true
-          description: Integrations list the company is allowed to connect to
+          description: Integrations list the company is allowed to connect.
+      required:
+        - company_name
+        - integrations
     coreCreateInviteLinkResponse:
       title: coreCreateInviteLinkResponse
       type: object
+      description: Response object for the create invite link endpoint.
       properties:
         data:
           $ref: "#/components/schemas/createInviteLinkResponseData"
@@ -1048,6 +1090,7 @@ components:
     coreDeleteInviteLinkResponse:
       title: coreDeleteInviteLinkResponse
       type: object
+      description: Response object for the delete invite link endpoint.
       properties:
         data:
           $ref: "#/components/schemas/DeleteResponseData"
@@ -1104,6 +1147,7 @@ components:
       properties:
         data:
           $ref: "#/components/schemas/PassthroughDataResponse"
+          description: The response data from the integration platform
       required:
         - data
       allOf:
@@ -1111,6 +1155,7 @@ components:
     coreCreateSyncRequest:
       title: coreCreateSyncRequest
       type: object
+      description: Request body for creating an Sync
       properties:
         company_id:
           type: number
@@ -1148,6 +1193,7 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/FinalWebhookResponse"
+          description: Response object for the get all webhooks endpoint.
       required:
         - data
       allOf:
@@ -1158,6 +1204,7 @@ components:
       properties:
         data:
           $ref: "#/components/schemas/FinalWebhookResponse"
+          description: Response object for the create webhook endpoint.
       required:
         - data
       allOf:
@@ -1168,6 +1215,7 @@ components:
       properties:
         data:
           $ref: "#/components/schemas/DeleteResponseData"
+          description: Response object for the delete webhook endpoint.
       required:
         - data
       allOf:
@@ -1179,27 +1227,25 @@ components:
         rootfi_id:
           type: number
           format: double
-          description: ID of the invite link in the platform database (e.g. Xero)
+          description: ID of the invite link in the platform database
         rootfi_created_at:
           type: string
-          description: >-
-            Timestamp when the record was created in the platform database (e.g.
-            Xero)
+          format: date-time
+          description: Timestamp when the record was created in the platform database
         rootfi_updated_at:
           type: string
-          description: >-
-            Timestamp when the record was updated in the platform database (e.g.
-            Xero)
+          format: date-time
+          description: Timestamp when the record was updated in the platform database
         rootfi_company_id:
           type: number
           format: double
           nullable: true
-          description: ID of the company in the platform database (e.g. Xero)
+          description: ID of the company in the platform database
         rootfi_organisation_id:
           type: number
           format: double
           nullable: true
-          description: ID of the organisation in the platform database (e.g. Xero)
+          description: ID of the organisation in the platform database
       required:
         - rootfi_id
         - rootfi_created_at
@@ -1446,14 +1492,15 @@ components:
         metadata:
           type: string
           nullable: true
+          description: Metadata of the invite link
         invite_link_id:
           type: string
-          description: ID of the invite link in the platform database (e.g. Xero)
+          description: Unique ID of the invite link in the platform database
         integrations:
           type: array
           items:
             $ref: "#/components/schemas/IntegrationType"
-          description: Integrations list the company is allowed to connect to (e.g. Xero)
+          description: Integrations list the company is allowed to connect to
         Companies:
           $ref: "#/components/schemas/InviteLinkCompanyTypes"
       required:
@@ -1465,6 +1512,7 @@ components:
     InviteLinkCompanyTypes:
       title: InviteLinkCompanyTypes
       type: object
+      description: The companies of the invite link
       properties:
         name:
           type: string
@@ -1474,16 +1522,17 @@ components:
             changed later.
         sync_enabled:
           type: boolean
-          description: >-
-            Whether the company is currently syncing with the platform (e.g.
-            Xero)
+          description: Whether the company is currently syncing with the platform
         Connections:
           type: array
           items:
-            type: string
+            type: object
+            additionalProperties: true
+          description: The connections of the company
         Organisation:
           $ref: "#/components/schemas/InviteLinkOrganisationTypes"
           nullable: true
+          description: The organisation of the invite link
       required:
         - name
         - sync_enabled
@@ -1497,18 +1546,22 @@ components:
         rootfi_id:
           type: number
           format: double
+          description: ID of the organisation in the platform database
         name:
           type: string
+          description: Name of the organisation
         Integrations:
           type: array
           items:
             type: object
             additionalProperties: true
+          description: The integrations of the organisation
         sync_config:
           type: array
           items:
             type: object
             additionalProperties: true
+          description: The sync config of the organisation
       required:
         - rootfi_id
         - name
@@ -1517,12 +1570,15 @@ components:
     createInviteLinkResponseData:
       title: createInviteLinkResponseData
       type: object
+      description: The response data of the create invite link endpoint
       properties:
         invite_link:
           type: string
+          description: The invite link of the response
         company_id:
           type: number
           format: double
+          description: The company id of the response
         invite_link_data:
           $ref: "#/components/schemas/CreateInviteLinkdata"
       required:
@@ -1532,12 +1588,15 @@ components:
     CreateInviteLinkdata:
       title: CreateInviteLinkdata
       type: object
+      description: The data of the create invite link endpoint
       properties:
         metadata:
           type: string
           nullable: true
+          description: The metadata of the invite link
         invite_link_id:
           type: string
+          description: The invite link id of the invite link
         integrations:
           type: array
           items:
@@ -1550,22 +1609,26 @@ components:
     DeleteResponseData:
       title: DeleteResponseData
       type: object
+      description: The response data of the delete invite link endpoint
       properties:
         status:
-          type: string
+          $ref: "#/components/schemas/Status"
           description: The status of the Response
       required:
         - status
     FinalCompanyResponse:
       title: FinalCompanyResponse
       type: object
+      description: The response of the company endpoint
       properties:
         pending_companies:
           type: number
           format: double
+          description: The Number pending companies
         active_companies:
           type: number
           format: double
+          description: The Number active companies
         data:
           type: array
           items:
@@ -1577,71 +1640,68 @@ components:
     FinalCompanyData:
       title: FinalCompanyData
       type: object
+      description: The data of the company endpoint
       properties:
         integration_type:
-          type: string
-          description: The integration type of the company (e.g. Xero)
+          $ref: "#/components/schemas/IntegrationType"
+          nullable: true
+          description: The integration type of the company
         status:
-          type: string
-          description: The status of the company (e.g. Xero)
+          $ref: "#/components/schemas/Status"
+          description: The status of the company
         auth:
           $ref: "#/components/schemas/CompanyAuthStatus"
-          description: The auth status of the company (e.g. Xero)
+          description: The auth status of the company
         last_synced:
           type: string
-          description: The last time the company was synced (e.g. Xero)
+          description: The last time the company was synced
         rate_limit_sleep_time:
           type: string
           nullable: true
-          description: The time the company will be rate limited (e.g. Xero)
+          description: The time the company will be rate limited
         variables:
           type: object
           additionalProperties: true
-          description: The variables of the company (e.g. Xero)
+          description: The variables of the company
         rate_limits:
           type: object
           additionalProperties: true
-          description: The rate limits of the company (e.g. Xero)
+          description: The rate limits of the company
         tally_last_active_at:
           type: string
           nullable: true
-          description: The last time the company was active in tally (e.g. Xero)
+          description: The last time the company was active in tally
         zoho_sub_calls_enabled:
           type: boolean
-          description: Whether the company is allowed to make sub calls to zoho (e.g. Xero)
+          description: Whether the company is allowed to make sub calls to zoho
         name:
           type: string
-          description: >-
-            Name of the company you are sending this invite link to. Useful
-            identifier for you to internally reference this company. Can be
-            changed later.
+          description: Name of the company
         sync_enabled:
           type: boolean
-          description: >-
-            Whether the company is currently syncing with the platform (e.g.
-            Xero)
+          description: Whether the company is currently syncing with the platform
         metadata:
           type: string
           nullable: true
+          description: Metadata
         invite_link_id:
           type: string
-          description: ID of the invite link in the platform database (e.g. Xero)
+          description: ID of the invite link in the platform database
         integrations:
           type: array
           items:
             $ref: "#/components/schemas/IntegrationType"
-          description: Integrations list the company is allowed to connect to (e.g. Xero)
+          description: Integrations list the company is allowed to connect to
         last_synced_at:
           type: string
-          description: The last time the company was synced (e.g. Xero)
+          description: The last time the company was synced
         jobs:
           type: array
           items:
             type: object
             additionalProperties: true
-          description: The jobs of the company (e.g. Xero)
+          description: The jobs of the company
       required:
-        - integration_type
         - status
         - auth
         - last_synced
@@ -1662,13 +1722,18 @@ components:
       properties:
         type:
           type: string
+          description: The type of the auth
         config:
           type: object
           additionalProperties: true
+          description: The configs of the company
         access_token:
           type: string
+          description: The access token of the company
         access_token_expiry_time:
           type: string
+          format: date-time
+          description: The access token expiry time
       required:
         - type
         - config
@@ -1677,6 +1742,7 @@ components:
     FinalOneCompanyResponse:
       title: FinalOneCompanyResponse
       type: object
+      description: One company response object
       properties:
         name:
           type: string
@@ -1686,13 +1752,16 @@ components:
             changed later.
         sync_enabled:
           type: boolean
+          description: Whether the sync is enabled for the company or not
         InviteLinks:
           type: object
           additionalProperties: true
+          description: The invite links of the company
         Connections:
           type: array
           items:
             $ref: "#/components/schemas/CompanyConnectionData"
+          description: The connections data of the company
       required:
         - name
         - sync_enabled
@@ -1703,21 +1772,28 @@ components:
     CompanyConnectionData:
       title: CompanyConnectionData
       type: object
+      description: The connection data of the company
       properties:
         status:
-          type: string
+          $ref: "#/components/schemas/Status"
+          description: The status of the company
         integration_type:
           $ref: "#/components/schemas/IntegrationType"
+          description: The integration type of the company
         last_synced:
           type: string
+          description: The last time the company was synced
         rate_limits:
           type: object
           additionalProperties: true
+          description: The rate limits of the company
         tally_last_active_at:
           type: string
           nullable: true
+          description: The last time the company was active in tally
         sync_status:
           $ref: "#/components/schemas/ConnectionHealth"
+          description: The sync status of the company
       required:
         - status
         - integration_type
@@ -1727,17 +1803,21 @@ components:
     GetAllIntegrationsResponseData:
       title: GetAllIntegrationsResponseData
       type: object
+      description: The response data of the get all integrations endpoint.
       properties:
         enabled_integrations:
           type: number
           format: double
+          description: The enabled integrations of the company.
         disabled_integrations:
           type: number
           format: double
+          description: The disabled integrations of the company.
         data:
           type: array
           items:
             $ref: "#/components/schemas/FinalAllIntegrationsResponse"
+          description: The data of the get all integrations endpoint.
       required:
         - enabled_integrations
         - disabled_integrations
@@ -1748,20 +1828,27 @@ components:
       properties:
         integration_type:
           $ref: "#/components/schemas/IntegrationType"
+          description: The integration type of the company
         rootfi_id:
           type: number
           format: double
+          description: The id of the integration
         client_id:
           type: string
+          description: The client id of the integration
         client_secret:
           type: string
+          description: The client secret of the integration
         is_disabled:
           type: boolean
+          description: Whether the integration is disabled or not
         is_rootfi_identity:
           type: boolean
+          description: Whether the integration is a rootfi identity or not
         count:
           type: number
           format: double
+          description: The count of the integration
       required:
         - integration_type
         - rootfi_id
@@ -1773,21 +1860,28 @@ components:
     FinalOneIntegrationResponse:
       title: FinalOneIntegrationResponse
       type: object
+      description: The response of the get one integration endpoint
       properties:
         client_id:
           type: string
+          description: The client id of the integration
         client_secret:
           type: string
+          description: The client secret of the integration
         is_disabled:
           type: boolean
+          description: Whether the integration is disabled or not
         metadata:
           type: object
           additionalProperties: true
           nullable: true
+          description: The metadata of the integration
         integration_type:
           $ref: "#/components/schemas/IntegrationType"
+          description: The integration type of the integration
         is_rootfi_identity:
           type: boolean
+          description: Whether the integration is a rootfi identity or not
       required:
         - client_id
         - client_secret
@@ -1802,29 +1896,38 @@ components:
       properties:
         id:
           type: string
+          description: The id of the webhook
         headers:
           type: object
-          additionalProperties:
-            type: string
+          additionalProperties: true
+          description: The headers of the webhook
         operations:
           type: array
           items:
             $ref: "#/components/schemas/WebhookOperation"
+          description: The operations of the webhook
         data_models:
           type: array
           items:
-            type: string
+            $ref: "#/components/schemas/DataModels"
+          description: The data models of the webhook
         org_id:
           type: number
           format: double
+          description: The org id of the webhook
         name:
           type: string
+          description: The name of the webhook
         created_at:
           type: string
+          format: date-time
+          description: The created at of the webhook
         type:
           $ref: "#/components/schemas/WebhookTypes"
+          description: The type of the webhook
         url:
           type: string
+          description: The url of the webhook
       required:
         - id
         - headers
@@ -1841,18 +1944,23 @@ components:
       properties:
         Id:
           type: string
+          description: The ID of the account
         Status:
           type: string
+          description: The status of the account
         ProviderName:
           type: string
+          description: The provider name of the account
         DateTimeUTC:
           type: string
+          description: The date time utc of the account
         Accounts:
           type: array
           items:
             type: object
             additionalProperties: true
           nullable: true
+          description: Passthrough response data
       required:
         - Id
         - Status
@@ -1865,45 +1973,32 @@ components:
         request_timestamp:
           type: string
           format: date-time
+          description: The time at which the request was received by the server
         response_timestamp:
           type: string
           format: date-time
+          description: The time at which the response was sent by the server
         request_id:
           type: string
+          description: The unique ID of the request
       required:
         - request_timestamp
         - response_timestamp
         - request_id
-    RootFiFields:
-      title: RootFiFields
-      type: object
-      properties:
-        rootfi_id:
-          type: integer
-        rootfi_created_at:
-          type: string
-          format: date-time
-        rootfi_updated_at:
-          type: string
-          format: date-time
-        rootfi_organisation_id:
-          type: integer
-      required:
-        - rootfi_id
-        - rootfi_created_at
-        - rootfi_updated_at
-        - rootfi_organisation_id
     CreateWebhookRequest:
       title: CreateWebhookRequest
       type: object
+      description: Create a webhook for the company
       properties:
         webhook:
           $ref: "#/components/schemas/WebhookRequestData"
+          description: The webhook to create
       required:
         - webhook
     UpdateWebhookRequest:
       title: UpdateWebhookRequest
       type: object
+      description: Update a webhook for the company
       properties:
         webhook:
           $ref: "#/components/schemas/UpdateWebhookRequestData"
@@ -1912,6 +2007,7 @@ components:
     CreatePassthroughRequest:
       title: CreatePassthroughRequest
       type: object
+      description: Create a passthrough request for the company
       properties:
         company_id:
           type: integer
@@ -1923,6 +2019,7 @@ components:
     CreateAccountsRequest:
       title: CreateAccountsRequest
       type: object
+      description: Create accounts for the company
       properties:
         company_id:
           type: integer
@@ -1936,6 +2033,7 @@ components:
     CreateInvoiceRequest:
       title: CreateInvoiceRequest
       type: object
+      description: Create invoices for the company
       properties:
         company_id:
           type: integer
@@ -1949,6 +2047,7 @@ components:
     CreateContactsRequest:
       title: CreateContactsRequest
       type: object
+      description: Create contacts
       properties:
         company_id:
           type: integer
@@ -1962,6 +2061,7 @@ components:
     CreateItemsRequest:
       title: CreateItemsRequest
       type: object
+      description: Create items
       properties:
         company_id:
           type: integer
@@ -2189,25 +2289,31 @@ components:
           items:
             $ref: "#/components/schemas/WebhookOperation"
           nullable: true
+          description: The operations to listen for
         type:
           type: array
           items:
             $ref: "#/components/schemas/WebhookTypes"
           nullable: true
+          description: The type of webhook
         name:
           type: string
+          description: The name of the webhook
         url:
           type: string
+          description: The url of the webhook
         headers:
           type: object
           additionalProperties:
             type: string
           nullable: true
+          description: The headers of the webhook
         data_models:
           type: array
           items:
             $ref: "#/components/schemas/DataModels"
           nullable: true
+          description: The data models to listen for
       required:
         - name
         - url
@@ -3111,9 +3217,32 @@ components:
         - TRACKING_CATEGORIES
         - CASH_FLOW_STATEMENT
         - CURRENCIES
+    Status:
+      title: Status
+      type: string
+      enum:
+        - SUCCESS
+        - FAILED
+        - PENDING
+        - IN_PROGRESS
+        - NOT_FOUND
+        - UNAUTHORIZED
+        - BAD_REQUEST
+        - FORBIDDEN
+        - CONFLICT
+        - HEALTHY
+        - success
+    getAllIntegrationsRequestTypes:
+      title: getAllIntegrationsRequestTypes
+      type: string
+      enum:
+        - ALL
+        - DISABLED
+        - ENABLED
   securitySchemes:
     MyAuthSchemeAuth:
       type: apiKey
+      description: Rootfi uses API Key to control access to our API. You can find your keys in your dashboard.
       in: header
       name: api_key
 servers:
