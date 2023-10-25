@@ -85,6 +85,9 @@
           ]
         },
         "documentation/concepts/sync-data/syncing-data",
+        "documentation/concepts/data-cache",
+        "documentation/concepts/partner-credentials",
+        "documentation/concepts/scopes",
         {
           "group": "Writing Data",
           "pages": [

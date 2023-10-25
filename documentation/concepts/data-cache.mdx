@@ -1,0 +1,18 @@
+---
+title: "Data Cache"
+description: "Learn how RootFi stores, manages, and deletes your customers data."
+---
+
+## How we store data
+
+RootFi mirrors the data in the underlying platform and syncs the data into our database at regular intervals. When you call our APIs you are querying our database allowing you to fetch the required data points quickly and reliably.
+
+By default, RootFi unifies and caches all data synced for all companies. We internally link the primary keys of all related data models together providing you with a seamless ability to query deeply nested objects together.
+
+## Disabling Save Data (Enterprise Only)
+
+If you do not want RootFi to cache the sync data for regulatory concerns or otherwise, you have the option.
+
+Go to the Webhooks section from the Settings page and disable the 'Save Data' toggle.
+
+**Make sure to enable a Data Model changes webhook so that you can receive all the synced data**
