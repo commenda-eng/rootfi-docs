@@ -80,7 +80,7 @@
           "group": "RootFi Connect",
           "pages": [
             "documentation/concepts/rootfi-connect/overview",
-            "documentation/concepts/rootfi-connect/connect-link",
+            "documentation/concepts/rootfi-connect/invite-link",
             "documentation/concepts/rootfi-connect/connect-sdk"
           ]
         },
