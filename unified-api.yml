@@ -3244,6 +3244,7 @@ components:
   securitySchemes:
     MyAuthSchemeAuth:
       type: apiKey
+      description: Rootfi uses API Key to control access to our API. You can find your keys in your dashboard.
       in: header
       name: api_key
 servers:
