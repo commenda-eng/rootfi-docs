@@ -1946,16 +1946,16 @@ components:
       properties:
         Id:
           type: string
-          description: The ID of the account
+          description: The Document Id
         Status:
           type: string
-          description: The status of the account
+          description: Status of the webhook
         ProviderName:
           type: string
-          description: The provider name of the account
+          description: The provider name of the webhook
         DateTimeUTC:
           type: string
-          description: The date time utc of the account
+          description: The date time utc.
         Accounts:
           type: array
           items:
