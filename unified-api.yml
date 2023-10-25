@@ -823,6 +823,7 @@ paths:
       parameters:
         - name: webhook_id
           in: path
+          description: The ID of the webhook to update.
           required: true
           schema:
             type: string
@@ -878,6 +879,7 @@ paths:
       parameters:
         - name: webhook_id
           in: path
+          description: The ID of the webhook to delete.
           required: true
           schema:
             type: string
@@ -3242,7 +3244,6 @@ components:
   securitySchemes:
     MyAuthSchemeAuth:
       type: apiKey
-      description: Rootfi uses API Key to control access to our API. You can find your keys in your dashboard.
       in: header
       name: api_key
 servers:
