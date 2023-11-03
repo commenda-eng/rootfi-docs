@@ -4,18 +4,38 @@ description: "**The Bank Accounts Data Model** streamlines access of bank accoun
 icon: "hand-wave"
 ---
 
-* Unified bank account properties: The model consolidates essential bank account details such as institution name, account name, balance, and currency, simplifying interactions with bank account data from different platforms.
-* Currency support: The model includes the ISO-4217 currency code for each bank account, enabling seamless handling of international transactions and reporting.
+- Unified bank account properties: The model consolidates essential bank account details such as institution name, account name, balance, and currency, simplifying interactions with bank account data from different platforms.
+- Currency support: The model includes the ISO-4217 currency code for each bank account, enabling seamless handling of international transactions and reporting.
 
-  
+## Attributes
+
+<Snippet file="bank_accounts_snippet.mdx" />
+
+<ResponseExample name="The Account Object" >
+
+```json The Bank Account Object
+{
+  "platform_id": "7382076f-57d8-4938-b280-dd83175cea0c",
+  "institution_name": "Rootfi Test",
+  "account_name": "Rootfi Test Account",
+  "account_number": "1234567890",
+  "category": "BANK",
+  "balance": 12345,
+  "currency_id": null,
+  "updated_at": "2023-06-22T10:07:44.087Z"
+}
+```
+
+</ResponseExample>
+
 ## Properties Supported
 
-| Property          | Type   | Description                                              |
-| ----------------- | ------ | -------------------------------------------------------- |
-| platform\_id      | string | The accounting Platform's id for the bank account        |
-| institution\_name | string | The name of the bank account                             |
-| account\_name     | string | Name of the bank account                                 |
-| account\_number   | string | The bank account number                                  |
-| balance           | float  | Balance of the bank account                              |
-| currency          | string | The ISO-4217 currency code                               |
-| updated\_at       | date   | The last ISO 8601 timestamp that the data was updated at |
+| Property         | Type   | Description                                              |
+| ---------------- | ------ | -------------------------------------------------------- |
+| platform_id      | string | The accounting Platform's id for the bank account        |
+| institution_name | string | The name of the bank account                             |
+| account_name     | string | Name of the bank account                                 |
+| account_number   | string | The bank account number                                  |
+| balance          | float  | Balance of the bank account                              |
+| currency         | string | The ISO-4217 currency code                               |
+| updated_at       | date   | The last ISO 8601 timestamp that the data was updated at |

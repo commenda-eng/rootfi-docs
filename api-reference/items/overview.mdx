@@ -4,47 +4,122 @@ description: "**The Items Data Model** is designed to simplify the management an
 icon: "hand-wave"
 ---
 
-* Unified item properties: The model unifies essential item details such as name, description, status, and type, making it easier to work with item data from different platforms.
-* Item detail flexibility: The model supports separate details for items being purchased (`bill_item`) and items being sold (`invoice_item`), enabling accurate tracking of item-related transactions.
-* Associated accounts and tax rates: Each item can be linked to specific purchase and sales accounts, as well as purchase and sales tax rates, for seamless integration with other accounting data models.
+- Unified item properties: The model unifies essential item details such as name, description, status, and type, making it easier to work with item data from different platforms.
+- Item detail flexibility: The model supports separate details for items being purchased (`bill_item`) and items being sold (`invoice_item`), enabling accurate tracking of item-related transactions.
+- Associated accounts and tax rates: Each item can be linked to specific purchase and sales accounts, as well as purchase and sales tax rates, for seamless integration with other accounting data models.
 
-  
+## Attributes
+
+<ResponseField name="platform_id" type="string" required>
+  The accounting platforms ID for this item
+</ResponseField>
+
+<ResponseField name="name" type="string" required>
+  Name of the item
+</ResponseField>
+
+<ResponseField name="description" type="string" optional>
+  Description of the item
+</ResponseField>
+
+<ResponseField name="status" type="enum" required>
+  Status of the item. Values are: `ACTIVE`, `ARCHIVED`, `UNKNOWN`
+</ResponseField>
+
+<ResponseField name="type" type="enum" required>
+  Type of the item. Values are: `INVENTORY`, `NON_INVENTORY`, `SERVICE`, `UNKNOWN`.
+</ResponseField>
+
+<ResponseField name="code" type="string" optional>
+  Reference code of the item
+</ResponseField>
+
+<ResponseField name="quantity_on_hand" type="float" optional>
+  Quantity on hand
+</ResponseField>
+
+<ResponseField name="is_bill_item" type="boolean" required>
+  Check if there are details (bill_item) of this item getting purchased
+</ResponseField>
+
+<ResponseField name="bill_item" type="Item Detail" optional>
+  <Expandable title="properties">
+    <Snippet file="item_details_snippet.mdx" />
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="is_invoice_item" type="boolean" required>
+  Check if there are details (invoice_item) of this item getting sold
+</ResponseField>
+
+<ResponseField name="invoice_item" type="Item Detail" optional>
+  <Expandable title="properties">
+    <Snippet file="item_details_snippet.mdx" />
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="purchase_account" type="Account" optional>
+  <Expandable title="properties">
+    <Snippet file="accounts_snippets.mdx" />
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="sales_account" type="Account" optional>
+  <Expandable title="properties">
+    <Snippet file="accounts_snippets.mdx" />
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="sales_tax" type="Tax Rate" optional>
+  <Expandable title="properties">
+    <Snippet file="tax_rates_snippet.mdx" />
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="purchase_tax" type="Tax Rate" optional>
+  <Expandable title="properties">
+    <Snippet file="tax_rates_snippet.mdx" />
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="updated_at" type="date" required>
+  The date on which the information was updated on the accounting platform
+</ResponseField>
+
 ### Properties Supported
 
-| Property           | Type                                   | Description                                                                   |
-| ------------------ | -------------------------------------- | ----------------------------------------------------------------------------- |
-| platform\_id       | string                                 | The accounting platforms ID for this item                                     |
-| name               | string                                 | Name of the item                                                              |
-| description        | string                                 | Description of the item                                                       |
-| status             | enum                                   | Status of the item. Values are: ACTIVE, ARCHIVED, UNKNOWN                     |
-| type               | enum                                   | Type of the item. Values are: INVENTORY, NON\_INVENTORY, SERVICE, UNKNOWN     |
-| code               | string                                 | Reference code of the item                                                    |
-| quantity\_on\_hand | float                                  | Quantity on hand                                                              |
-| is\_bill\_item     | boolean                                | Check if there are details (bill\_item) of this item getting purchased        |
-| bill\_item         | [Item Detail](/docs/items#item-detail) | Item details of this item getting purchased                                   |
-| is\_invoice\_item  | boolean                                | Check if there are details (invoice\_item) of this item getting sold          |
-| invoice\_item      | [Item Detail](/docs/items#item-detail) | Item details of this item getting sold                                        |
-| purchase\_account  | [Account](/docs/accounts)              | The account which is associated with the (bill) item that are being purchased |
-| sales\_account     | [Account](/docs/accounts)              | The account which is associated with the (invoice) item that are being sold   |
-| sales\_tax         | [Tax Rate](/docs/tax-rates)            | The tax which is associated with the (invoice) item that are being sold       |
-| purchase\_tax      | [Tax Rate](/docs/tax-rates)            | The tax which is associated with the (bill) item that are being purchased     |
-| updated\_at        | date                                   | The date on which the information was updated on the accounting platform      |
+| Property         | Type                                   | Description                                                                   |
+| ---------------- | -------------------------------------- | ----------------------------------------------------------------------------- |
+| platform_id      | string                                 | The accounting platforms ID for this item                                     |
+| name             | string                                 | Name of the item                                                              |
+| description      | string                                 | Description of the item                                                       |
+| status           | enum                                   | Status of the item. Values are: ACTIVE, ARCHIVED, UNKNOWN                     |
+| type             | enum                                   | Type of the item. Values are: INVENTORY, NON_INVENTORY, SERVICE, UNKNOWN      |
+| code             | string                                 | Reference code of the item                                                    |
+| quantity_on_hand | float                                  | Quantity on hand                                                              |
+| is_bill_item     | boolean                                | Check if there are details (bill_item) of this item getting purchased         |
+| bill_item        | [Item Detail](/docs/items#item-detail) | Item details of this item getting purchased                                   |
+| is_invoice_item  | boolean                                | Check if there are details (invoice_item) of this item getting sold           |
+| invoice_item     | [Item Detail](/docs/items#item-detail) | Item details of this item getting sold                                        |
+| purchase_account | [Account](/docs/accounts)              | The account which is associated with the (bill) item that are being purchased |
+| sales_account    | [Account](/docs/accounts)              | The account which is associated with the (invoice) item that are being sold   |
+| sales_tax        | [Tax Rate](/docs/tax-rates)            | The tax which is associated with the (invoice) item that are being sold       |
+| purchase_tax     | [Tax Rate](/docs/tax-rates)            | The tax which is associated with the (bill) item that are being purchased     |
+| updated_at       | date                                   | The date on which the information was updated on the accounting platform      |
 
-  
 ## Item Detail
 
 **The Item Details Data Model** is a complementary model providing additional information about individual items.
 
-* Associated account and tax: The model links items to their respective accounts and tax rates using `account_id` and `tax_id`, enabling seamless integration with other accounting data models.
-* Detailed item description: The `description` property allows for a more in-depth understanding of each item's nature and purpose.
-* Unit price tracking: The `unit_price` property records the cost of a single unit of the item, making it easy to calculate the total cost of transactions involving the item.
+- Associated account and tax: The model links items to their respective accounts and tax rates using `account_id` and `tax_id`, enabling seamless integration with other accounting data models.
+- Detailed item description: The `description` property allows for a more in-depth understanding of each item's nature and purpose.
+- Unit price tracking: The `unit_price` property records the cost of a single unit of the item, making it easy to calculate the total cost of transactions involving the item.
 
-  
 ### Properties Supported
 
 | Property    | Type   | Description                                              |
 | ----------- | ------ | -------------------------------------------------------- |
-| account\_id | string | The platform ID of the account associated with this item |
-| tax\_id     | string | The platform ID of the tax associated with this item     |
+| account_id  | string | The platform ID of the account associated with this item |
+| tax_id      | string | The platform ID of the tax associated with this item     |
 | description | string | A description of the item                                |
-| unit\_price | float  | The unit price of the item                               |
+| unit_price  | float  | The unit price of the item                               |

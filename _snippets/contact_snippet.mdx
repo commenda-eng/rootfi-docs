@@ -1,0 +1,51 @@
+<ResponseField name="platform_id" type="string" required>
+  The accounting platform’s ID for the contact
+</ResponseField>
+
+<ResponseField name="name" type="string" required>
+  Name of the customer on the accounting platform
+</ResponseField>
+
+<ResponseField name="contact_name" type="string" required>
+  Name of the contact person for the contact
+</ResponseField>
+
+<ResponseField name="contact_type" type="enum" required>
+  The type of customer. Values are either CUSTOMER or VENDOR
+</ResponseField>
+
+<ResponseField name="currency" type="string" required>
+  The ISO-4217 currency code
+</ResponseField>
+
+<ResponseField name="tax_number" type="string" required>
+  Contact’s tax number
+</ResponseField>
+
+<ResponseField name="registration_number" type="string" required>
+  Contact’s identifying number
+</ResponseField>
+
+<ResponseField name="status" type="enum" required>
+  The status of the customer. Values are: ACTIVE, ARCHIVED, UNKNOWN
+</ResponseField>
+
+<ResponseField name="contact_persons" type="Contact Person" required>
+  List of contacts stored for the contact.
+</ResponseField>
+
+<ResponseField name="external_links" type="External Link" required>
+  The external links associated with the contact
+</ResponseField>
+
+<ResponseField name="phone_numbers" type="Phone Number" required>
+  The phone numbers associated with the contact
+</ResponseField>
+
+<ResponseField name="addresses" type="Address" required>
+  The addresses associated with the contact
+</ResponseField>
+
+<ResponseField name="updated_at" type="date" required>
+  The last ISO 8601 timestamp at which the data was updated
+</ResponseField>

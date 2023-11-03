@@ -8,6 +8,10 @@ icon: "hand-wave"
 - Hierarchical structure: Accounts can be linked to parent accounts using the `parent_account_id`, enabling the representation of complex account structures and relationships.
 - Categorisation and status: The model supports account categorisation with main categories and subcategories, as well as tracking account status for better organisation and reporting.
 
+## Attributes
+
+<Snippet file="accounts_snippets.mdx" />
+
 ## Properties Supported
 
 | Property          | Type   | Description                                                                                                         |
@@ -23,3 +27,23 @@ icon: "hand-wave"
 | sub_category      | string | The sub category of the account                                                                                     |
 | parent_account_id | string | The platform ID of the parent account                                                                               |
 | updated_at        | date   | Date the record was last updated in the accounting platform.                                                        |
+
+<ResponseExample name="The Account Object" >
+
+```json The Account Object
+{
+  "platform_id": "3770712000001482007",
+  "nominal_code": "Rootfi 01",
+  "name": "Test Account",
+  "description": "Test Description",
+  "category": "LIABILITY",
+  "sub_category": "long_term_liability",
+  "status": "ACTIVE",
+  "currency_id": null,
+  "current_balance": 1234,
+  "updated_at": "2021-09-28T15:00:00.000Z",
+  "parent_account_id": null
+}
+```
+
+</ResponseExample>

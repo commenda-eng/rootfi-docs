@@ -1,0 +1,79 @@
+<ResponseField name="platform_id" type="string" required>
+  Accounting platform’s ID for the purchase order
+</ResponseField>
+
+<ResponseField name="contact_id" type="string" required>
+  The accounting platform’s unique ID of the contact associated with this purchase order
+</ResponseField>
+
+<ResponseField name="document_number" type="string" required>
+  Reference number for the purchase order
+</ResponseField>
+
+<ResponseField name="posted_date" type="string" required>
+  Date of creation of the purchase order
+</ResponseField>
+
+<ResponseField name="delivery_date" type="string" required>
+  The delivery date for the purchase order
+</ResponseField>
+
+<ResponseField name="description" type="string" optional>
+  Description of the purchase order
+</ResponseField>
+
+<ResponseField name="payment_mode" type="string" optional>
+  The payment mode from which the payment was made
+</ResponseField>
+
+<ResponseField name="currency" type="string" required>
+  The ISO-4217 currency code
+</ResponseField>
+
+<ResponseField name="currency_rate" type="float" required>
+  Rate between the currency of the payment and the base currency
+</ResponseField>
+
+<ResponseField name="status" type="enum" required>
+  The status of the purchase order. Values are: `DRAFT`, `SUBMITTED`, `PARTIALLY_PAID`, `PAID`, `OVERDUE`, `VOID`, `UNKNOWN`
+</ResponseField>
+
+<ResponseField name="total_discount" type="float" optional>
+  Total value of discounts applied to the purchase order
+</ResponseField>
+
+<ResponseField name="tax_amount" type="float" optional>
+  Total tax amount levied on the purchase order
+</ResponseField>
+
+<ResponseField name="sub_total" type="float" required>
+  Total pre tax value of the purchase order
+</ResponseField>
+
+<ResponseField name="total_amount" type="float" required>
+  Total value of the purchase order
+</ResponseField>
+
+<ResponseField name="line_items" type="Line Item" optional>
+  <Expandable title="properties">
+    <Snippet file="line_items_snippeet.mdx" />
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="bills" type="Bill" optional>
+  Array of Bills associated with the purchase order
+</ResponseField>
+
+<ResponseField name="addresses" type="Address" optional>
+  Array of addresses associated with this purchase order
+</ResponseField>
+
+<ResponseField name="contact" type="Contact" optional>
+  <Expandable title="properties">
+    <Snippet file="contact_snippet.mdx" />
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="updated_at" type="string" required>
+  The date at which the information was updated on the accounting platform
+</ResponseField>

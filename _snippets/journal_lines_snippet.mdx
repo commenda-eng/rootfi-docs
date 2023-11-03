@@ -1,0 +1,35 @@
+<ResponseField name="platform_id" type="string" required>
+  The accounting Platform’s ID for this journal entry
+</ResponseField>
+
+    <ResponseField name="journal_entry_id" type="string" required>
+      The platform ID for the journal entry associated with this journal line
+    </ResponseField>
+
+    <ResponseField name="account_id" type="string" required>
+      The platform ID for the account associated with this journal line
+    </ResponseField>
+
+    <ResponseField name="customer_id" type="string" optional>
+      The platform ID for the customer associated with this journal line
+    </ResponseField>
+
+    <ResponseField name="tax_id" type="string" optional>
+      The platform ID for the tax associated with this journal line
+    </ResponseField>
+
+    <ResponseField name="type" type="enum" required>
+      Type of the journal line item. Values are: DEBIT, CREDIT
+    </ResponseField>
+
+    <ResponseField name="description" type="string" optional>
+      Description of the journal line
+    </ResponseField>
+
+    <ResponseField name="net_amount" type="float" required>
+      The total amount of this journal line
+    </ResponseField>
+
+    <ResponseField name="tax_amount" type="float" optional>
+      The total tax amount of this journal line
+    </ResponseField>

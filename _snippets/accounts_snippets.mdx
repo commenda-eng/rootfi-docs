@@ -1,0 +1,43 @@
+<ResponseField name="platform_id" type="string" required>
+  The ID that the accounting platform uses to identify this account
+</ResponseField>
+
+<ResponseField name="name" type="string" required>
+  The name of the account
+</ResponseField>
+
+<ResponseField name="description" type="string" required>
+  Description of the account
+</ResponseField>
+
+<ResponseField name="nominal_code" type="string" required>
+  Reference given to each account for a business. It ensures money is allocated to the correct account.
+</ResponseField>
+
+<ResponseField name="currency_id" type="string" required>
+  The Accounting Platform's unique ID for the currency
+</ResponseField>
+
+<ResponseField name="current_balance" type="float" required>
+  Current balance of the account
+</ResponseField>
+
+<ResponseField name="status" type="enum" required>
+  The status of the account. Values are: `ACTIVE`, `ARCHIVED`, `UNKNOWN`
+</ResponseField>
+
+<ResponseField name="category" type="enum" required>
+  The category of the account. Values are: `ASSET`, `EXPENSE`, `LIABILITY`, `EQUITY`, `INCOME`, `PRIMARY`, `BANK`, `REVENUE`, `UNKNOWN`.
+</ResponseField>
+
+<ResponseField name="sub_category" type="string" required>
+  The sub category of the account
+</ResponseField>
+
+<ResponseField name="parent_account_id" type="string" required>
+  The platform ID of the parent account
+</ResponseField>
+
+<ResponseField name="updated_at" type="date" required>
+  Date the record was last updated in the accounting platform.
+</ResponseField>

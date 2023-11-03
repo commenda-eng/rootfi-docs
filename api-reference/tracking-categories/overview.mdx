@@ -3,16 +3,38 @@ title: "Overview"
 icon: "hand-wave"
 ---
 
-* Tracking categories allow businesses to track financial transactions or expenses separately.
-* They help businesses gain greater visibility into their financial performance and make better-informed decisions.
-* Linking tracking categories groups related categories together and enables businesses to view them in a consolidated report.
+- Tracking categories allow businesses to track financial transactions or expenses separately.
+- They help businesses gain greater visibility into their financial performance and make better-informed decisions.
+- Linking tracking categories groups related categories together and enables businesses to view them in a consolidated report.
+
+## Attributes
+
+<ResponseField name="platform_id" type="string" required>
+  The accounting platforms ID for the tax rate
+</ResponseField>
+
+<ResponseField name="name" type="string" required>
+  The name of the tracking category
+</ResponseField>
+
+<ResponseField name="status" type="string" required>
+  Indicates the current state of the tracking category
+</ResponseField>
+
+<ResponseField name="parent_id" type="string" required>
+  The identifier for this item’s parent
+</ResponseField>
+
+<ResponseField name="has_children" type="boolean" required>
+  This boolean indicates if it has subcategories
+</ResponseField>
 
 ### Properties Supported
 
-| Property      | Type    | Description                                           |
-| ------------- | ------- | ----------------------------------------------------- |
-| platform\_id  | string  | The accounting platforms ID for the tax rate          |
-| name          | string  | The name of the tracking category                     |
-| status        | string  | indicates the current state of the tracking category. |
-| parent\_id    | string  | The identifier for this item's parent                 |
-| has\_children | boolean | this boolean indicates if it has sub categories       |
+| Property     | Type    | Description                                           |
+| ------------ | ------- | ----------------------------------------------------- |
+| platform_id  | string  | The accounting platforms ID for the tax rate          |
+| name         | string  | The name of the tracking category                     |
+| status       | string  | indicates the current state of the tracking category. |
+| parent_id    | string  | The identifier for this item's parent                 |
+| has_children | boolean | this boolean indicates if it has sub categories       |

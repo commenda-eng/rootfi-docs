@@ -4,13 +4,53 @@ description: "Cash flow statements are financial statements that show the inflow
 icon: "hand-wave"
 ---
 
-| Property                        | Type                          | Description                                                     |
-| ------------------------------- | ----------------------------- | --------------------------------------------------------------- |
-| platform\_id                    | string                        | The accounting platforms ID for this item                       |
-| period\_start                   | date                          | start date of the cash flow statement report                    |
-| period\_end                     | date                          | end date of the cash flow statement report                      |
-| operating\_activities           | [Line Item](/docs/line-items) | line\_items for operating activities of income statement report |
-| investing\_activities           | [Line Item](/docs/line-items) | line\_items for investing activities of income statement report |
-| financing\_activities           | [Line Item](/docs/line-items) | line\_items for financing activities of income statement report |
-| cash\_at\_beginning\_of\_period | float                         | total amount at the beginning of the period                     |
-| cash\_at\_end\_of\_period       | float                         | total amount at the end of the period                           |
+## Attributes
+
+<ResponseField name="platform_id" type="string" required>
+  The accounting platforms ID for this item
+</ResponseField>
+
+<ResponseField name="period_start" type="date" required>
+  Start date of the cash flow statement report
+</ResponseField>
+
+<ResponseField name="period_end" type="date" required>
+  End date of the cash flow statement report
+</ResponseField>
+
+<ResponseField name="operating_activities" type="Line Item" required>
+  <Expandable title="properties">
+    <Snippet file="line_items_snippeet.mdx" />
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="investing_activities" type="Line Item" required>
+  <Expandable title="properties">
+    <Snippet file="line_items_snippeet.mdx" />
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="financing_activities" type="Line Item" required>
+  <Expandable title="properties">
+    <Snippet file="line_items_snippeet.mdx" />
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="cash_at_beginning_of_period" type="float" required>
+  Total amount at the beginning of the period
+</ResponseField>
+
+<ResponseField name="cash_at_end_of_period" type="float" required>
+  Total amount at the end of the period
+</ResponseField>
+
+| Property                    | Type                          | Description                                                    |
+| --------------------------- | ----------------------------- | -------------------------------------------------------------- |
+| platform_id                 | string                        | The accounting platforms ID for this item                      |
+| period_start                | date                          | start date of the cash flow statement report                   |
+| period_end                  | date                          | end date of the cash flow statement report                     |
+| operating_activities        | [Line Item](/docs/line-items) | line_items for operating activities of income statement report |
+| investing_activities        | [Line Item](/docs/line-items) | line_items for investing activities of income statement report |
+| financing_activities        | [Line Item](/docs/line-items) | line_items for financing activities of income statement report |
+| cash_at_beginning_of_period | float                         | total amount at the beginning of the period                    |
+| cash_at_end_of_period       | float                         | total amount at the end of the period                          |

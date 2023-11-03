@@ -1,0 +1,55 @@
+<ResponseField name="platform_id" type="string" required>
+  The accounting platforms ID for this invoice payment
+</ResponseField>
+
+<ResponseField name="contact_id" type="string" required>
+  The platform’s ID for the contact that makes the payment
+</ResponseField>
+
+<ResponseField name="account_id" type="string" required>
+  The platform’s ID for the account to which this payment belongs
+</ResponseField>
+
+<ResponseField name="invoice_id" type="string" required>
+  The platform’s ID for the invoice which this payment is associated with
+</ResponseField>
+
+<ResponseField name="amount" type="float" required>
+  The total value of this payment
+</ResponseField>
+
+<ResponseField name="currency" type="string" required>
+  The ISO-4217 currency code of the account
+</ResponseField>
+
+<ResponseField name="currency_rate" type="float" required>
+  Rate between the currency of the payment and the base currency
+</ResponseField>
+
+<ResponseField name="payment_date" type="date" required>
+  The date on which the payment was made
+</ResponseField>
+
+<ResponseField name="payment_mode" type="string" required>
+  The payment mode from which the payment was made
+</ResponseField>
+
+<ResponseField name="memo" type="string" optional>
+  Optional description for the payment
+</ResponseField>
+
+<ResponseField name="invoice" type="Invoice" required>
+  The invoice which this payment is associated with
+</ResponseField>
+
+<ResponseField name="contact" type="Contact" required>
+  The contact that makes the payment
+</ResponseField>
+
+<ResponseField name="account" type="Account" required>
+  The account to which this payment belongs
+</ResponseField>
+
+<ResponseField name="updated_at" type="date" required>
+  The date at which the information was updated on the accounting platform
+</ResponseField>
