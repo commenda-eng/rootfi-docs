@@ -49,13 +49,21 @@ icon: "hand-wave"
 
 <ResponseField name="journal_lines" type="Journal Lines" optional>
   <Expandable title="properties">
-    <Snippet file="journal_lines_snippet.mdx" />
+    <ResponseField name="data" type="Object" required>
+      <Expandable title="properties">
+        <Snippet file="journal_lines_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
   </Expandable>
 </ResponseField>
 
 <ResponseField name="account" type="Account" optional>
   <Expandable title="properties">
-    <Snippet file="accounts_snippets.mdx" />
+    <ResponseField name="data" type="Object" required>
+      <Expandable title="properties">
+        <Snippet file="accounts_snippets.mdx" />
+      </Expandable>
+    </ResponseField>
   </Expandable>
 </ResponseField>
 
@@ -101,3 +109,65 @@ icon: "hand-wave"
 | description      | string | Description of the journal line                                         |
 | net_amount       | float  | The total amount of this journal line                                   |
 | tax_amount       | float  | The total tax amount of this journal line                               |
+
+<ResponseExample name="The Bank Transaction Object" >
+
+```json The Bank Transaction Object
+{
+  "platform_id": "1234567890123456789",
+  "account_id": "1234567890123456789",
+  "amount": 1234,
+  "currency_id": "3770712000000000099",
+  "currency": {
+    "data": {
+      "platform_id": "3770712000000000099",
+      "name": "Indian Rupee",
+      "code": "INR",
+      "symbol": "₹",
+      "is_base_currency": true,
+      "exchange_rate": 0,
+      "updated_at": null
+    }
+  },
+  "currency_rate": 1,
+  "document_number": "AO-123",
+  "journal_entry_type": "both",
+  "description": "Journal Entries For Proper Accounting",
+  "posted_date": "2023-06-12T00:00:00.000Z",
+  "journal_lines": {
+    "data": [
+      {
+        "platform_id": "3770712000001725038",
+        "journal_entry_id": "3770712000001725026",
+        "account_id": "3770712000000035001",
+        "contact_id": "3770712000000080780",
+        "tax_id": null,
+        "tracking_category_ids": ["3770712000000000335_3770712000001122010"],
+        "type": "DEBIT",
+        "description": "Test Description for Journal",
+        "net_amount": 5,
+        "tax_amount": null,
+        "updated_at": null
+      },
+      ,
+      {
+        "platform_id": "3770712000001725036",
+        "journal_entry_id": "3770712000001725026",
+        "account_id": "3770712000000035001",
+        "contact_id": "3770712000000080780",
+        "tax_id": null,
+        "tracking_category_ids": ["3770712000000000335_3770712000001122010"],
+        "type": "CREDIT",
+        "description": "Test Description for Journal",
+        "net_amount": 5,
+        "tax_amount": null,
+        "updated_at": null
+      }
+    ]
+  },
+  "account": {},
+  "updated_at": "2023-11-05T00:00:00.000Z"
+}
+```
+
+</ResponseExample>

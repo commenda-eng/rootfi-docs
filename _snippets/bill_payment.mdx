@@ -1,0 +1,61 @@
+<ResponseField name="platform_id" type="string" required>
+  The accounting platform's ID for this payment
+</ResponseField>
+
+<ResponseField name="payment_id" type="string" required>
+  The unique ID for this payment within the accounting platform
+</ResponseField>
+
+<ResponseField name="bill_id" type="string" required>
+  The ID of the bill associated with this payment
+</ResponseField>
+
+<ResponseField name="contact_id" type="string" required>
+  The ID of the contact associated with this payment
+</ResponseField>
+
+<ResponseField name="account_id" type="string" required>
+  The ID of the account from which this payment was made
+</ResponseField>
+
+<ResponseField name="amount" type="float" required>
+  The total amount of this payment
+</ResponseField>
+
+<ResponseField name="payment_date" type="date" required>
+  The date on which the payment was made
+</ResponseField>
+
+<ResponseField name="payment_mode" type="string" required>
+  The mode of payment used for this transaction
+</ResponseField>
+
+<ResponseField name="currency_id" type="string" required>
+  The accounting platform's ID for the currency used in this payment
+</ResponseField>
+
+<ResponseField name="currency" type="object" required>
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object" required>
+      <Expandable title="properties">
+        <Snippet file="currency_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="currency_rate" type="float" required>
+  The exchange rate between the currency of the payment and the base currency
+</ResponseField>
+
+<ResponseField name="memo" type="string" optional>
+  An optional memo or description for the payment
+</ResponseField>
+
+<ResponseField name="document_number" type="string" optional>
+  A reference number or document number associated with the payment
+</ResponseField>
+
+<ResponseField name="updated_at" type="date" required>
+  The date and time at which the payment information was last updated in the accounting platform
+</ResponseField>

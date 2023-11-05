@@ -31,3 +31,74 @@ icon: "hand-wave"
 | phone_numbers       | [Phone Number](/docs/phone-number)     | The phone numbers associated with the contact                     |
 | addresses           | [Address](/docs/address)               | The addresses associated with the contact                         |
 | updated_at          | date                                   | The last ISO 8601 timestamp at which the data was updated         |
+
+<ResponseExample name="The Bank Transaction Object" >
+
+```json The Bank Transaction Object
+{
+  "platform_id": "1234567890123456789",
+  "name": "Darth Vader",
+  "contact_name": "Darth Vader",
+  "contact_type": "CUSTOMER",
+  "currency_id": "3770712000000000099",
+  "currency": {
+    "data": {
+      "platform_id": "3770712000000000099",
+      "name": "Indian Rupee",
+      "code": "INR",
+      "symbol": "₹",
+      "is_base_currency": true,
+      "exchange_rate": 0,
+      "updated_at": null
+    }
+  },
+  "tax_number": "ODSPS1279G",
+  "registration_number": "07CEUPK5322M1ZX",
+  "status": "ACTIVE",
+  "contact_persons": {},
+  "external_links": {
+    "data": [
+      {
+        "platform_id": "CONTACTS_3770712000001721005_WEBSITE",
+        "data_model": "CONTACTS",
+        "data_model_id": "3770712000001721005",
+        "link": "https://www.rootfi.dev",
+        "type": "WEBSITE",
+        "updated_at": "2023-11-05T00:00:00.000Z"
+      }
+    ]
+  },
+  "phone_numbers": {
+    "data": [
+      {
+        "platform_id": "CONTACTS_3770712000001721005_MOBILE",
+        "data_model": "CONTACTS",
+        "data_model_id": "3770712000001721005",
+        "number": "+919*********",
+        "type": "MOBILE",
+        "updated_at": "2023-11-05T00:00:00.000Z"
+      }
+    ]
+  },
+  "addresses": {
+    "data": [
+      {
+        "platform_id": "3770712000001721013_CONTACTS_3770712000001721005_SHIPPING",
+        "type": "SHIPPING",
+        "data_model": "CONTACTS",
+        "data_model_id": "3770712000001721005",
+        "street": "21 street house",
+        "locality": "Koramanager",
+        "city": "Hyderabad",
+        "state": "Bengalore",
+        "country": "India",
+        "pincode": "500045",
+        "updated_at": "2023-11-05T00:00:00.000Z"
+      }
+    ]
+  },
+  "updated_at": "2023-11-05T00:00:00.000Z"
+}
+```
+
+</ResponseExample>

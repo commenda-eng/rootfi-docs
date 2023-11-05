@@ -123,3 +123,34 @@ icon: "hand-wave"
 | tax_id      | string | The platform ID of the tax associated with this item     |
 | description | string | A description of the item                                |
 | unit_price  | float  | The unit price of the item                               |
+
+<ResponseExample name="The Bank Transaction Object" >
+
+```json The Bank Transaction Object
+{
+  "platform_id": "3770712000001345066",
+  "name": "Toy",
+  "description": "Toy Story Joey",
+  "status": "ACTIVE",
+  "type": "INVENTORY",
+  "code": "T-40",
+  "quantity_on_hand": 44,
+  "bill_item": {
+    "account_id": "3770712000001313073",
+    "tax_id": "3770712000001313073",
+    "description": "Bill Item Description",
+    "unit_price": 1320
+  },
+  "invoice_item": {
+    "account_id": "3770712000000000394",
+    "tax_id": "3770712000000000394",
+    "description": "Invoice Item Description",
+    "unit_price": 1500
+  },
+  "is_bill_item": true,
+  "is_invoice_item": true,
+  "updated_at": "2023-09-22T00:00:00.000Z"
+}
+```
+
+</ResponseExample>

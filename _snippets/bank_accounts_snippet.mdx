@@ -14,12 +14,22 @@
   The bank account number
 </ResponseField>
 
+<ResponseField name="category" type="string" required>
+  The category of the bank account
+</ResponseField>
+
 <ResponseField name="balance" type="float" required>
   Balance of the bank account
 </ResponseField>
 
-<ResponseField name="currency" type="string" required>
-  The ISO-4217 currency code
+<ResponseField name="currency" type="Object" required>
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object" required>
+      <Expandable title="properties">
+        <Snippet file="currency_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseField name="updated_at" type="date" required>

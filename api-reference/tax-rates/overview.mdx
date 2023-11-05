@@ -40,3 +40,27 @@ icon: "hand-wave"
 | code        | string  | Simple ID for the tax component          |
 | rate        | float   | Tax Rate                                 |
 | is_compound | boolean | If the tax rate has a compounding effect |
+
+<ResponseExample name="The Bank Transaction Object" >
+
+```json The Bank Transaction Object
+{
+  "platform_id": "3770712000001298001",
+  "name": "Inter State Exchange Taxes",
+  "code": "GST",
+  "tax_type": "sgst",
+  "effective_tax_rate": 18,
+  "total_tax_rate": 18,
+  "components": [
+    {
+      "name": "Inter State Exchange Taxes",
+      "rate": 18,
+      "tax_agency": "igst",
+      "is_compound": false
+    }
+  ],
+  "updated_at": "2000-12-31T18:30:00.000Z"
+}
+```
+
+</ResponseExample>

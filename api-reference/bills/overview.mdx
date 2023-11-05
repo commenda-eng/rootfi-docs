@@ -71,32 +71,30 @@ icon: "hand-wave"
 
 <ResponseField name="line_items" type="Line Item" required>
   <Expandable title="properties">
-    <Snippet file="line_items_snippeet.mdx" />
+    <ResponseField name="data" type="Object" required>
+      <Expandable title="properties">
+        <Snippet file="line_items_snippeet.mdx" />
+      </Expandable>
+    </ResponseField>
   </Expandable>
 </ResponseField>
 
 <ResponseField name="payments" type="Bill Payment" required>
   <Expandable title="properties">
-    <Snippet file="bill_payments_snippet.mdx" />
+    <ResponseField name="data" type="Object" required>
+      <Expandable title="properties">
+        <Snippet file="bill_payment.mdx" />
+      </Expandable>
+    </ResponseField>
   </Expandable>
 </ResponseField>
 
-<ResponseField name="account" type="Account" required>
-  <Expandable title="properties">
-    <Snippet file="accounts_snippets.mdx" />
-  </Expandable>
+<ResponseField name="contact" type="Contact">
+  The contact who receives this bill
 </ResponseField>
 
-<ResponseField name="contact" type="Contact" required>
-  <Expandable title="properties">
-    <Snippet file="contact_snippet.mdx" />
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="purchase_orders" type="Purchase Order" required>
-  <Expandable title="properties">
-    <Snippet file="purchase_order_snippet.mdx" />
-  </Expandable>
+<ResponseField name="purchase_order_ids" type="Array" required>
+  Array of Purchase Orders Id associated with the bill
 </ResponseField>
 
 <ResponseField name="documents" type="Document" required>
@@ -111,49 +109,47 @@ icon: "hand-wave"
 
 ## Properties Supported
 
-| Property        | Type                                    | Description                                                                                        |
-| --------------- | --------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| platform_id     | string                                  | Accounting platform's ID for the bill                                                              |
-| account_id      | string                                  | The accounting platform's unique ID of the account associated with the bill                        |
-| contact_id      | string                                  | The accounting platform's unique ID of the contact associated with this bill                       |
-| document_number | string                                  | Reference number for the bill                                                                      |
-| posted_date     | date                                    | Date of creation of the bill                                                                       |
-| due_date        | date                                    | The due date for the bill                                                                          |
-| currency        | string                                  | The ISO-4217 currency code                                                                         |
-| currency_rate   | float                                   | Rate between the currency of the payment and the base currency                                     |
-| status          | enum                                    | The status of the bill. Values are: DRAFT, SUBMITTED, PARTIALLY_PAID, PAID, OVERDUE, VOID, UNKNOWN |
-| total_amount    | float                                   | Total amount of the Bill                                                                           |
-| sub_total       | float                                   | Total pre tax amount of the Bill                                                                   |
-| total_discount  | float                                   | Total discount amount levied on the Bill                                                           |
-| tax_amount      | float                                   | Total tax amount levied on the bill                                                                |
-| amount_due      | float                                   | Outstanding amount to be paid for the Bill                                                         |
-| line_items      | [Line Item](/docs/line-items)           | Array of Bill Line items associated with the bill                                                  |
-| payments        | [Bill Payment](/docs/bill-payments)     | Array of Bill Payments associated with the bill                                                    |
-| account         | [Account](/docs/accounts)               | The account to which this bill belongs                                                             |
-| contact         | [Contact](/docs/contacts)               | The contact who receives this bill                                                                 |
-| purchase_orders | [Purchase Order](/docs/purchase-orders) | Array of Purchase Orders associated with the bill                                                  |
-| documents       | [Document](/docs/documents)             | Array of Documents associated with the bill                                                        |
-| updated_at      | date                                    | The date at which the information was updated on the accounting platform                           |
+| Property           | Type                                    | Description                                                                                        |
+| ------------------ | --------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| platform_id        | string                                  | Accounting platform's ID for the bill                                                              |
+| account_id         | string                                  | The accounting platform's unique ID of the account associated with the bill                        |
+| contact_id         | string                                  | The accounting platform's unique ID of the contact associated with this bill                       |
+| document_number    | string                                  | Reference number for the bill                                                                      |
+| posted_date        | date                                    | Date of creation of the bill                                                                       |
+| due_date           | date                                    | The due date for the bill                                                                          |
+| currency           | string                                  | The ISO-4217 currency code                                                                         |
+| currency_rate      | float                                   | Rate between the currency of the payment and the base currency                                     |
+| status             | enum                                    | The status of the bill. Values are: DRAFT, SUBMITTED, PARTIALLY_PAID, PAID, OVERDUE, VOID, UNKNOWN |
+| total_amount       | float                                   | Total amount of the Bill                                                                           |
+| sub_total          | float                                   | Total pre tax amount of the Bill                                                                   |
+| total_discount     | float                                   | Total discount amount levied on the Bill                                                           |
+| tax_amount         | float                                   | Total tax amount levied on the bill                                                                |
+| amount_due         | float                                   | Outstanding amount to be paid for the Bill                                                         |
+| line_items         | [Line Item](/docs/line-items)           | Array of Bill Line items associated with the bill                                                  |
+| payments           | [Bill Payment](/docs/bill-payments)     | Array of Bill Payments associated with the bill                                                    |
+| contact            | [Contact](/docs/contacts)               | The contact who receives this bill                                                                 |
+| purchase_order_ids | [Purchase Order](/docs/purchase-orders) | Array of Purchase Orders Id associated with the bill                                               |
+| documents          | [Document](/docs/documents)             | Array of Documents associated with the bill                                                        |
+| updated_at         | date                                    | The date at which the information was updated on the accounting platform                           |
 
 <ResponseExample name="The Account Object" >
 
 ```json The Bank Account Object
 {
-  "platform_id": "3770712000000085084",
-  "contact_id": "3770712000000080780",
-  "document_number": "1234567u8i9o",
+  "platform_id": "1234567890123456789",
+  "contact_id": "1234567890123456789",
+  "document_number": "AO-0001",
   "posted_date": "2023-01-24T00:00:00.000Z",
   "due_date": "2023-01-24T00:00:00.000Z",
-  "currency_id": "3770712000000000099",
   "currency": {
     "data": {
-      "platform_id": "3770712000000000099",
+      "platform_id": "1234567890123456789",
       "name": "Indian Rupee",
       "code": "INR",
       "symbol": "₹",
       "is_base_currency": true,
       "exchange_rate": 0,
-      "updated_at": null
+      "updated_at":
     }
   },
   "currency_rate": 1,
@@ -164,29 +160,59 @@ icon: "hand-wave"
   "total_discount": 0,
   "tax_amount": 0,
   "amount_due": 0,
-  "purchase_order_ids": [],
-  "updated_at": "2023-07-05T00:00:00.000Z",
   "line_items": {
     "data": [
       {
-        "platform_id": "3770712000000085086",
+        "platform_id": "1234567890123456789",
         "line_item_type": "BILLS",
-        "line_item_type_id": "3770712000000085084",
+        "line_item_type_id": "1234567890123456789",
         "tracking_category_ids": [],
-        "item_id": "3770712000000085075",
+        "item_id": "1234567890123456789",
         "tax_id": null,
-        "account_id": "3770712000000034003",
-        "description": null,
-        "quantity": 1,
+        "account_id": "1234567890123456789",
+        "description": "Line Items Description",
+        "quantity": 123,
         "unit_amount": 150,
         "total_amount": 150,
         "sub_total": 150,
         "tax_amount": 0,
         "total_discount": 0,
-        "updated_at": null
+        "updated_at": "2023-02-17T00:00:00.000Z"
       }
     ]
   },
+  "payments": {
+    "data": [
+      {
+        "platform_id": "1234567890123456789",
+        "payment_id": "7890123456789012345",
+        "bill_id": "1234567890123456789",
+        "contact_id": null,
+        "account_id": "1234567890123456789",
+        "amount": 150,
+        "payment_date": "2023-02-03T00:00:00.000Z",
+        "payment_mode": "Cash",
+        "currency_id": "3770712000000000099",
+        "currency": {
+          "data": {
+            "platform_id": "3770712000000000099",
+            "name": "Indian Rupee",
+            "code": "INR",
+            "symbol": "₹",
+            "is_base_currency": true,
+            "exchange_rate": 0,
+            "updated_at": "2023-02-17T00:00:00.000Z"
+          }
+        },
+        "currency_rate": 80,
+        "memo": "Payment For Items Purchased",
+        "document_number": "AO-0001",
+        "updated_at": "2023-02-17T00:00:00.000Z"
+      }
+    ]
+  },
+  "contact": {},
+  "purchase_order_ids": ["3770712000000085084", "3770712000000085084"],
   "documents": {
     "data": [
       {
@@ -202,36 +228,7 @@ icon: "hand-wave"
       }
     ]
   },
-  "payments": {
-    "data": [
-      {
-        "platform_id": "3770712000000106211",
-        "payment_id": "3770712000000106209",
-        "bill_id": "3770712000000085084",
-        "contact_id": null,
-        "account_id": "3770712000000000361",
-        "amount": 150,
-        "payment_date": "2023-02-03T00:00:00.000Z",
-        "payment_mode": "Cash",
-        "currency_id": null,
-        "currency": {
-          "data": {
-            "platform_id": null,
-            "name": null,
-            "code": null,
-            "symbol": null,
-            "is_base_currency": null,
-            "exchange_rate": null,
-            "updated_at": null
-          }
-        },
-        "currency_rate": 1,
-        "memo": "Test Description",
-        "document_number": "2",
-        "updated_at": null
-      }
-    ]
-  }
+  "updated_at": "2023-07-05T00:00:00.000Z"
 }
 ```
 

@@ -11,11 +11,17 @@
 </ResponseField>
 
 <ResponseField name="contact_type" type="enum" required>
-  The type of customer. Values are either CUSTOMER or VENDOR
+  The type of customer. Values are either `CUSTOMER` or `VENDOR`
 </ResponseField>
 
-<ResponseField name="currency" type="string" required>
-  The ISO-4217 currency code
+<ResponseField name="currency" type="object" required>
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object" required>
+      <Expandable title="properties">
+        <Snippet file="currency_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseField name="tax_number" type="string" required>
@@ -35,15 +41,33 @@
 </ResponseField>
 
 <ResponseField name="external_links" type="External Link" required>
-  The external links associated with the contact
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object" required>
+      <Expandable title="properties">
+        <Snippet file="externalLink.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseField name="phone_numbers" type="Phone Number" required>
-  The phone numbers associated with the contact
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object" required>
+      <Expandable title="properties">
+        <Snippet file="phone.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseField name="addresses" type="Address" required>
-  The addresses associated with the contact
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object" required>
+      <Expandable title="properties">
+        <Snippet file="addresses.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseField name="updated_at" type="date" required>

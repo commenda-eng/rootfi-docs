@@ -54,3 +54,69 @@ icon: "hand-wave"
 | financing_activities        | [Line Item](/docs/line-items) | line_items for financing activities of income statement report |
 | cash_at_beginning_of_period | float                         | total amount at the beginning of the period                    |
 | cash_at_end_of_period       | float                         | total amount at the end of the period                          |
+
+<ResponseExample name="The Bank Transaction Object" >
+
+```json The Bank Transaction Object
+{
+  "platform_id": "1234567890123456789"
+  "period_start":"2020-11-30T00:00:00.000Z",
+  "period_end": "2020-12-31T00:00:00.000Z",
+  "operating_activities": [
+    {
+      "name": "Sales Revenue",
+      "value": 75000.0,
+      "line_items": [
+        {
+          "account_id": "REV-1001",
+          "value": 75000.0,
+          "name": "Sales"
+        }
+      ]
+    },
+    {
+      "name": "Service Income",
+      "value": 18000.0,
+      "line_items": [
+        {
+          "account_id": "REV-1002",
+          "value": 18000.0,
+          "name": "Service Income"
+        }
+      ]
+    }
+  ],
+  "investing_activities": [
+    {
+      "name": "Purchase of Equipment",
+      "value": -15000.0,
+      "line_items": [
+        {
+          "account_id": "INV-2001",
+          "value": -15000.0,
+          "name": "Equipment"
+        }
+      ]
+    }
+  ],
+  "financing_activities": [
+    {
+      "name": "Loan Proceeds",
+      "value": 20000.0,
+      "line_items": [
+        {
+          "account_id": "FIN-3001",
+          "value": 20000.0,
+          "name": "Loan"
+        }
+      ]
+    }
+  ],
+  "cash_at_beginning_of_period": 50000.0,
+  "cash_at_end_of_period": 73000.0,
+  "updated_at": "2021-01-01T00:00:00.000Z",
+}
+
+```
+
+</ResponseExample>

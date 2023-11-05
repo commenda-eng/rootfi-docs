@@ -50,18 +50,20 @@ icon: "hand-wave"
 
 <ResponseField name="line_Items" type="Line Item" required>
   <Expandable title="properties">
-    <Snippet file="line_items_snippeet.mdx" />
+    <ResponseField name="data" type="Object" required>
+      <Expandable title="properties">
+        <Snippet file="line_items_snippeet.mdx" />
+      </Expandable>
+    </ResponseField>
   </Expandable>
 </ResponseField>
 
-<ResponseField name="bills" type="Bills" required>
+<ResponseField name="bill_id" type="string[]" required>
   An Array of bills associated with the credit note
 </ResponseField>
 
 <ResponseField name="contact" type="Contact" required>
-  <Expandable title="properties">
-    <Snippet file="contact_snippet.mdx" />
-  </Expandable>
+  The [contact](/docs/contacts) associated with this credit note
 </ResponseField>
 
 <ResponseField name="updated_at" type="date" required>
@@ -82,6 +84,58 @@ icon: "hand-wave"
 | memo             | string                        | Description of the credit note                                                                            |
 | currency         | string                        | Currency of the credit note                                                                               |
 | line_Items       | [Line Item](/docs/line-items) | An array of Credit Note Line Items                                                                        |
-| bills            | [Bills](/docs/bills)          | An Array of bills associated with the credit note                                                         |
+| bill_id          | [Bills](/docs/bills)          | An Array of bills associated with the credit note                                                         |
 | contact          | [Contact](/docs/contacts)     | The contact associated with this credit note                                                              |
 | updated_at       | date                          | The last ISO 8601 timestamp that the data was updated at                                                  |
+
+<ResponseExample name="The Bank Transaction Object" >
+
+```json The Bank Transaction Object
+{
+  "platform_id": "3770712000001725001",
+  "contact_id": "3770712000000209007",
+  "document_number": "BCN2023-001",
+  "total_amount": 140.0,
+  "remaining_credit": 140.0,
+  "posted_date": "2023-04-17T00:00:00.000Z",
+  "status": "SUBMITTED",
+  "memo": "Payment for Services",
+  "currency": {
+    "data": {
+      "platform_id": "INR",
+      "name": "Indian Rupee",
+      "code": "INR",
+      "symbol": "₹",
+      "is_base_currency": true,
+      "exchange_rate": 1.0,
+      "updated_at": "2023-11-05T16:30:00.000Z"
+    }
+  },
+  "line_Items": {
+    "data": [
+      {
+        "platform_id": "3770712000001725011",
+        "line_item_type": "Bill Credit Notes",
+        "line_item_type_id": "3770712000001725001",
+        "tracking_category_ids": [],
+        "item_id": "3770712000000085075",
+        "tax_id": "3770712000000106071",
+        "account_id": "3770712000000076064",
+        "description": "Test Line Item Description",
+        "quantity": 5,
+        "unit_amount": 25.0,
+        "total_amount": 140.0,
+        "sub_total": 125.0,
+        "tax_amount": 15.0,
+        "total_discount": null,
+        "updated_at": "2023-11-05T16:30:00.000Z"
+      }
+    ]
+  },
+  "bill_id": ["3770712000001725001"],
+  "contact": null,
+  "updated_at": "2023-11-05T16:30:00.000Z"
+}
+```
+
+</ResponseExample>

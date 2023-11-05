@@ -99,3 +99,96 @@ icon: "hand-wave"
 | value      | float                                         | value for the account                        |
 | name       | string                                        | the name of the account                      |
 | line_items | [LineItem](/docs/income-statements#line-item) | line_items for the account                   |
+
+<ResponseExample name="The Bank Transaction Object" >
+
+```json The Bank Transaction Object
+{
+  "platform_id": "IS2023-123",
+  "period_start_date": "2023-09-28T00:00:00.000Z",
+  "period_end_date": "2023-09-28T00:00:00.000Z",
+  "currency_id": "3770712000000000099",
+  "revenue": [
+    {
+      "name": "Operating Revenue",
+      "value": 0,
+      "line_items": [
+        {
+          "name": "Discount",
+          "value": 0,
+          "account_id": "3770712000000000406"
+        },
+        {
+          "name": "General Income",
+          "value": 0,
+          "account_id": "3770712000000000391"
+        }
+      ]
+    }
+  ],
+  "cost_of_goods_sold": [
+    {
+      "name": "Cost of Goods Sold",
+      "value": 0,
+      "line_items": [
+        {
+          "name": "Cost of Goods Sold",
+          "value": 0,
+          "account_id": "3770712000000034003"
+        },
+        {
+          "name": "Job Costing",
+          "value": 0,
+          "account_id": "3770712000000076066"
+        }
+      ]
+    }
+  ],
+  "gross_profit": 58000.0,
+  "operating_expenses": [
+    {
+      "name": "Operating Expenses",
+      "value": -8.5,
+      "line_items": [
+        {
+          "name": "Automobile Expense",
+          "value": 0,
+          "account_id": "3770712000000000424"
+        },
+        {
+          "name": "Consultant Expense",
+          "value": -8.5,
+          "account_id": "3770712000000000454"
+        }
+      ]
+    }
+  ],
+  "operating_profit": 30000.0,
+  "non_operating_revenue": [
+    {
+      "name": "Non Operating Revenue",
+      "value": 0,
+      "line_items": []
+    }
+  ],
+  "non_operating_expenses": [
+    {
+      "name": "Non Operating Expenses",
+      "value": 0,
+      "line_items": []
+    }
+  ],
+  "earnings_before_taxes": 31800.0,
+  "taxes": [
+    {
+      "account_id": "TAX-4001",
+      "value": 8200.0,
+      "name": "Income Tax"
+    }
+  ],
+  "net_profit": 23500.0
+  "updated_at": "2021-09-28T00:00:00.000Z",
+}
+```
+
+</ResponseExample>

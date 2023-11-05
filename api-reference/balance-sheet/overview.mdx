@@ -54,3 +54,57 @@ icon: "hand-wave"
 | period_end   | date                          | end date of the balance sheet report                 |
 | net_assets   | number                        | total value of net assets                            |
 | currency_id  | string                        | The Accounting Platform's unique ID for the currency |
+
+<ResponseExample name="The Bank Transaction Object" >
+
+```json The Bank Transaction Object
+{
+  "platform_id": "2023-11-01_2023-11-30",
+  "assets": [
+    {
+      "name": "Assets",
+      "value": 2079851207.32,
+      "line_items": [
+        {
+          "name": "Current Assets",
+          "value": 2079851270.32,
+          "line_items": []
+        }
+      ]
+    }
+  ],
+  "liabilities": [
+    {
+      "name": "Liabilities",
+      "value": 2078823618.82,
+      "line_items": [
+        {
+          "name": "Current Liabilities",
+          "value": 2078823450.67,
+          "line_items": []
+        }
+      ]
+    }
+  ],
+  "equity": [
+    {
+      "name": "Equities",
+      "value": 1027588.5,
+      "line_items": [
+        {
+          "name": "13 EquityACC",
+          "value": 1,
+          "account_id": "3770712000001313061"
+        }
+      ]
+    }
+  ],
+  "period_start": "2023-11-01T00:00:00.000Z",
+  "period_end": "2023-11-30T00:00:00.000Z",
+  "net_assets": 1027588.5,
+  "currency_id": "3770712000000000001",
+  "updated_at": "2020-11-30T00:00:00.000Z"
+}
+```
+
+</ResponseExample>

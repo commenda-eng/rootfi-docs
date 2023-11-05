@@ -37,7 +37,7 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="status" type="enum" required>
-  The status of the credit note. Values are: DRAFT, SUBMITTED, PARTIALLY_PAID, PAID, OVERDUE, VOID, UNKNOWN
+  The status of the credit note. Values are: `DRAFT`, `SUBMITTED`, `PARTIALLY_PAID`, `PAID`, `OVERDUE`, `VOID`, `UNKNOWN`.
 </ResponseField>
 
 <ResponseField name="memo" type="string" required>
@@ -50,19 +50,31 @@ icon: "hand-wave"
 
 <ResponseField name="line_Items" type="Line Item" required>
   <Expandable title="properties">
-    <Snippet file="line_items_snippeet.mdx" />
+    <ResponseField name="data" type="Object" required>
+      <Expandable title="properties">
+        <Snippet file="line_items_snippeet.mdx" />
+      </Expandable>
+    </ResponseField>
   </Expandable>
 </ResponseField>
 
 <ResponseField name="invoices" type="Invoices" required>
   <Expandable title="properties">
-    <Snippet file="invoice_snippet.mdx" />
+    <ResponseField name="data" type="Object" required>
+      <Expandable title="properties">
+        <Snippet file="invoice_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
   </Expandable>
 </ResponseField>
 
 <ResponseField name="contact" type="Contact" required>
   <Expandable title="properties">
-    <Snippet file="contact_snippet.mdx" />
+    <ResponseField name="data" type="Object" required>
+      <Expandable title="properties">
+        <Snippet file="contact_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
   </Expandable>
 </ResponseField>
 
@@ -87,3 +99,57 @@ icon: "hand-wave"
 | invoices         | [Invoices](/docs/invoices)    | An Array of Invoices associated with the credit note                                                      |
 | contact          | [Contact](/docs/contacts)     | The contact associated with this credit note                                                              |
 | updated_at       | date                          | The last ISO 8601 timestamp that the data was updated at                                                  |
+
+<ResponseExample name="The Bank Transaction Object" >
+
+```json The Bank Transaction Object
+{
+  "platform_id": "3770712000001365001",
+  "contact_id": "3770712000000225001",
+  "document_number": "CN-00029",
+  "total_amount": 49,
+  "remaining_credit": 49,
+  "posted_date": "2023-04-16T00:00:00.000Z",
+  "status": "SUBMITTED",
+  "memo": null,
+  "currency_id": "3770712000000000099",
+  "currency": {
+    "data": {
+      "platform_id": "3770712000000000099",
+      "name": "Indian Rupee",
+      "code": "INR",
+      "symbol": "₹",
+      "is_base_currency": true,
+      "exchange_rate": 0,
+      "updated_at": "2023-09-22T00:00:00.000Z"
+    }
+  },
+  "line_items": {
+    "data": [
+      {
+        "platform_id": "1234567890123456789",
+        "line_item_type": "EXPENSE",
+        "line_item_type_id": "1234567890123456789",
+        "tracking_category_ids": [],
+        "item_id": "1234567890123456789",
+        "tax_id": null,
+        "account_id": "1234567890123456789",
+        "description": "Line Items Description",
+        "quantity": 123,
+        "unit_amount": 150.0,
+        "total_amount": 150.0,
+        "sub_total": 150.0,
+        "tax_amount": 0,
+        "total_discount": 0,
+        "updated_at": "2023-02-17T00:00:00.000Z"
+      }
+    ]
+  }
+  "invoice_ids": [
+    "3770712000001365001"
+  ],
+  "updated_at": "2023-09-22T00:00:00.000Z",
+}
+```
+
+</ResponseExample>

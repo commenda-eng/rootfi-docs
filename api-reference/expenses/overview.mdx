@@ -37,8 +37,18 @@ icon: "hand-wave"
   The payment mode from which the payment was made
 </ResponseField>
 
-<ResponseField name="currency" type="string" required>
-  The ISO-4217 currency code
+<ResponseField name="currency_id" type="string" required>
+  The payment mode from which the payment was made
+</ResponseField>
+
+<ResponseField name="currency" type="object" required>
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object" required>
+      <Expandable title="properties">
+        <Snippet file="currency_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseField name="currency_rate" type="float" required>
@@ -67,19 +77,31 @@ icon: "hand-wave"
 
 <ResponseField name="line_items" type="Line Item" required>
   <Expandable title="properties">
-    <Snippet file="line_items_snippeet.mdx" />
+    <ResponseField name="data" type="Object" required>
+      <Expandable title="properties">
+        <Snippet file="line_items_snippeet.mdx" />
+      </Expandable>
+    </ResponseField>
   </Expandable>
 </ResponseField>
 
 <ResponseField name="contact" type="Contact" required>
   <Expandable title="properties">
-    <Snippet file="contact_snippet.mdx" />
+    <ResponseField name="data" type="Object" required>
+      <Expandable title="properties">
+        <Snippet file="contact_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
   </Expandable>
 </ResponseField>
 
 <ResponseField name="account" type="Account" required>
   <Expandable title="properties">
-    <Snippet file="accounts_snippets.mdx" />
+    <ResponseField name="data" type="Object" required>
+      <Expandable title="properties">
+        <Snippet file="accounts_snippets.mdx" />
+      </Expandable>
+    </ResponseField>
   </Expandable>
 </ResponseField>
 
@@ -108,3 +130,73 @@ icon: "hand-wave"
 | contact         | [Contact](/docs/contacts)     | The contact to which this expense belongs                            |
 | account         | [Account](/docs/accounts)     | The account to which this expense belongs                            |
 | updated_at      | date                          | The date at which the expense was updated on the accounting platform |
+
+<ResponseExample name="The Bank Transaction Object" >
+
+```json The Bank Transaction Object
+{
+  "platform_id": "1234567890123456789",
+  "contact_id": "3770712000000000099",
+  "account_id": "3770712000000000099",
+  "document_number": "AO-123",
+  "posted_date": "2023-09-21T00:00:00.000Z",
+  "payment_mode": "Cash",
+  "currency_id": "3770712000000000099",
+  "currency": {
+    "data": {
+      "platform_id": "3770712000000000099",
+      "name": "Indian Rupee",
+      "code": "INR",
+      "symbol": "₹",
+      "is_base_currency": true,
+      "exchange_rate": 0,
+      "updated_at": null
+    }
+  },
+  "currency_rate": 1,
+  "total_amount": 20.0,
+  "sub_total": 20.0,
+  "tax_amount": 0,
+  "total_discount": 0,
+  "memo": "This is a test expense",
+  "line_items": {
+    "data": [
+      {
+        "platform_id": "1234567890123456789",
+        "line_item_type": "EXPENSE",
+        "line_item_type_id": "1234567890123456789",
+        "tracking_category_ids": [],
+        "item_id": "1234567890123456789",
+        "tax_id": null,
+        "account_id": "1234567890123456789",
+        "description": "Line Items Description",
+        "quantity": 123,
+        "unit_amount": 150.0,
+        "total_amount": 150.0,
+        "sub_total": 150.0,
+        "tax_amount": 0,
+        "total_discount": 0,
+        "updated_at": "2023-02-17T00:00:00.000Z"
+      }
+    ]
+  },
+  "documents": {
+    "data": [
+      {
+        "platform_id": "3770712000000085065_3770712000000080327",
+        "file_name": "Documents.csv",
+        "file_type": "text/csv",
+        "file_size": 254.88,
+        "document_type_id": "3770712000000080327",
+        "document_type": "Invoices",
+        "document_uploaded": false,
+        "download_link": "https://rootfi-dev.s3.amazonaws.com/3770712000000085065_3770712000000080327",
+        "updated_at": "2021-03-03T10:00:00.000Z"
+      }
+    ]
+  },
+  "updated_at": "2023-09-21T00:00:00.000Z"
+}
+```
+
+</ResponseExample>

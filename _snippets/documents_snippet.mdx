@@ -22,12 +22,12 @@
   The name of the data model with which this document is linked. Currently only these data models are supported: `BILLS`,`INVOICES`,`EXPENSES`.
 </ResponseField>
 
-<ResponseField name="download_link" type="string" required>
-  A temporary download link through which you can download the attachment. Will only be present if document_uploaded is true
-</ResponseField>
-
 <ResponseField name="document_uploaded" type="boolean" required>
   A value to verify that Rootfi that uploaded the document to its servers
+</ResponseField>
+
+<ResponseField name="download_link" type="string" required>
+  A temporary download link through which you can download the attachment. Will only be present if document_uploaded is true
 </ResponseField>
 
 <ResponseField name="updated_at" type="date" required>
