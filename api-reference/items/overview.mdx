@@ -14,75 +14,75 @@ icon: "hand-wave"
   The accounting platforms ID for this item
 </ResponseField>
 
-<ResponseField name="name" type="string" required>
+<ResponseField name="name" type="string">
   Name of the item
 </ResponseField>
 
-<ResponseField name="description" type="string" optional>
+<ResponseField name="description" type="string">
   Description of the item
 </ResponseField>
 
-<ResponseField name="status" type="enum" required>
+<ResponseField name="status" type="enum">
   Status of the item. Values are: `ACTIVE`, `ARCHIVED`, `UNKNOWN`
 </ResponseField>
 
-<ResponseField name="type" type="enum" required>
+<ResponseField name="type" type="enum">
   Type of the item. Values are: `INVENTORY`, `NON_INVENTORY`, `SERVICE`, `UNKNOWN`.
 </ResponseField>
 
-<ResponseField name="code" type="string" optional>
+<ResponseField name="code" type="string">
   Reference code of the item
 </ResponseField>
 
-<ResponseField name="quantity_on_hand" type="float" optional>
+<ResponseField name="quantity_on_hand" type="float">
   Quantity on hand
 </ResponseField>
 
-<ResponseField name="is_bill_item" type="boolean" required>
+<ResponseField name="is_bill_item" type="boolean">
   Check if there are details (bill_item) of this item getting purchased
 </ResponseField>
 
-<ResponseField name="bill_item" type="Item Detail" optional>
+<ResponseField name="bill_item" type="Item Detail">
   <Expandable title="properties">
     <Snippet file="item_details_snippet.mdx" />
   </Expandable>
 </ResponseField>
 
-<ResponseField name="is_invoice_item" type="boolean" required>
+<ResponseField name="is_invoice_item" type="boolean">
   Check if there are details (invoice_item) of this item getting sold
 </ResponseField>
 
-<ResponseField name="invoice_item" type="Item Detail" optional>
+<ResponseField name="invoice_item" type="Item Detail">
   <Expandable title="properties">
     <Snippet file="item_details_snippet.mdx" />
   </Expandable>
 </ResponseField>
 
-<ResponseField name="purchase_account" type="Account" optional>
+<ResponseField name="purchase_account" type="Account">
   <Expandable title="properties">
     <Snippet file="accounts_snippets.mdx" />
   </Expandable>
 </ResponseField>
 
-<ResponseField name="sales_account" type="Account" optional>
+<ResponseField name="sales_account" type="Account">
   <Expandable title="properties">
     <Snippet file="accounts_snippets.mdx" />
   </Expandable>
 </ResponseField>
 
-<ResponseField name="sales_tax" type="Tax Rate" optional>
+<ResponseField name="sales_tax" type="Tax Rate">
   <Expandable title="properties">
     <Snippet file="tax_rates_snippet.mdx" />
   </Expandable>
 </ResponseField>
 
-<ResponseField name="purchase_tax" type="Tax Rate" optional>
+<ResponseField name="purchase_tax" type="Tax Rate">
   <Expandable title="properties">
     <Snippet file="tax_rates_snippet.mdx" />
   </Expandable>
 </ResponseField>
 
-<ResponseField name="updated_at" type="date" required>
+<ResponseField name="updated_at" type="date">
   The date on which the information was updated on the accounting platform
 </ResponseField>
 

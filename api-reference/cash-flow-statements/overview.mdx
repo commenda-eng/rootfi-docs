@@ -10,37 +10,37 @@ icon: "hand-wave"
   The accounting platforms ID for this item
 </ResponseField>
 
-<ResponseField name="period_start" type="date" required>
+<ResponseField name="period_start" type="date">
   Start date of the cash flow statement report
 </ResponseField>
 
-<ResponseField name="period_end" type="date" required>
+<ResponseField name="period_end" type="date">
   End date of the cash flow statement report
 </ResponseField>
 
-<ResponseField name="operating_activities" type="Line Item" required>
+<ResponseField name="operating_activities" type="Line Item">
   <Expandable title="properties">
     <Snippet file="line_items_snippeet.mdx" />
   </Expandable>
 </ResponseField>
 
-<ResponseField name="investing_activities" type="Line Item" required>
+<ResponseField name="investing_activities" type="Line Item">
   <Expandable title="properties">
     <Snippet file="line_items_snippeet.mdx" />
   </Expandable>
 </ResponseField>
 
-<ResponseField name="financing_activities" type="Line Item" required>
+<ResponseField name="financing_activities" type="Line Item">
   <Expandable title="properties">
     <Snippet file="line_items_snippeet.mdx" />
   </Expandable>
 </ResponseField>
 
-<ResponseField name="cash_at_beginning_of_period" type="float" required>
+<ResponseField name="cash_at_beginning_of_period" type="float">
   Total amount at the beginning of the period
 </ResponseField>
 
-<ResponseField name="cash_at_end_of_period" type="float" required>
+<ResponseField name="cash_at_end_of_period" type="float">
   Total amount at the end of the period
 </ResponseField>
 

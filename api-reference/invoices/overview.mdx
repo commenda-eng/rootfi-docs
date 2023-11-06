@@ -16,69 +16,69 @@ icon: "hand-wave"
   The accounting Platform’s ID for this invoice
 </ResponseField>
 
-<ResponseField name="account_id" type="string" required>
+<ResponseField name="account_id" type="string">
   The platform’s ID for the account to which this invoice belongs
 </ResponseField>
 
-<ResponseField name="contact_id" type="string" required>
+<ResponseField name="contact_id" type="string">
   The Accounting Platform’s unique ID for the contact who receives this invoice
 </ResponseField>
 
-<ResponseField name="document_number" type="string" required>
+<ResponseField name="document_number" type="string">
   Reference document number for the invoice
 </ResponseField>
 
-<ResponseField name="posted_date" type="date" required>
+<ResponseField name="posted_date" type="date">
   Date of the invoice as recorded by the accounting platform
 </ResponseField>
 
-<ResponseField name="due_date" type="date" required>
+<ResponseField name="due_date" type="date">
   The due date for the invoice as an ISO 8601 timestamp
 </ResponseField>
 
-<ResponseField name="currency_id" type="string" required>
+<ResponseField name="currency_id" type="string">
   The ISO-4217 currency code
 </ResponseField>
 
-<ResponseField name="currency" type="string" required>
+<ResponseField name="currency" type="string">
   The ISO-4217 currency code
 </ResponseField>
 
-<ResponseField name="currency_rate" type="float" required>
+<ResponseField name="currency_rate" type="float">
   Rate between the currency of the payment and the base currency
 </ResponseField>
 
-<ResponseField name="status" type="enum" required>
+<ResponseField name="status" type="enum">
   The status of the invoice. Values are: `DRAFT`, `SUBMITTED`, `PARTIALLY_PAID`, `PAID`, `OVERDUE`, `VOID`, `UNKNOWN`.
 </ResponseField>
 
-<ResponseField name="total_discount" type="float" required>
+<ResponseField name="total_discount" type="float">
   Total value of discounts applied to the invoice
 </ResponseField>
 
-<ResponseField name="tax_amount" type="float" required>
+<ResponseField name="tax_amount" type="float">
   Total tax amount levied on the invoice
 </ResponseField>
 
-<ResponseField name="sub_total" type="float" required>
+<ResponseField name="sub_total" type="float">
   Total pre tax value of the invoice
 </ResponseField>
 
-<ResponseField name="total_amount" type="float" required>
+<ResponseField name="total_amount" type="float">
   Total value of the invoice
 </ResponseField>
 
-<ResponseField name="amount_due" type="float" required>
+<ResponseField name="amount_due" type="float">
   Total amount pending for the invoice
 </ResponseField>
 
-<ResponseField name="memo" type="string" required>
+<ResponseField name="memo" type="string">
   Description of the invoice
 </ResponseField>
 
-<ResponseField name="line_items" type="Line Item" required>
+<ResponseField name="line_items" type="Line Item">
   <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
+    <ResponseField name="data" type="Object">
       <Expandable title="properties">
         <Snippet file="line_items_snippeet.mdx" />
       </Expandable>
@@ -86,9 +86,9 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="payments" type="Invoice Payment" required>
+<ResponseField name="payments" type="Invoice Payment">
   <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
+    <ResponseField name="data" type="Object">
       <Expandable title="properties">
         <Snippet file="invoice_payment.mdx" />
       </Expandable>
@@ -96,15 +96,15 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="sales_orders" type="Sales Order" required>
+<ResponseField name="sales_orders" type="Sales Order">
   <Expandable title="properties">
     <Snippet file="sales_order_snippet.mdx" />
   </Expandable>
 </ResponseField>
 
-<ResponseField name="documents" type="Document" required>
+<ResponseField name="documents" type="Document">
   <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
+    <ResponseField name="data" type="Object">
       <Expandable title="properties">
         <Snippet file="documents_snippet.mdx" />
       </Expandable>
@@ -112,9 +112,9 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="account" type="Account" required>
+<ResponseField name="account" type="Account">
   <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
+    <ResponseField name="data" type="Object">
       <Expandable title="properties">
         <Snippet file="accounts_snippets.mdx" />
       </Expandable>
@@ -122,9 +122,9 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="contact" type="Contact" required>
+<ResponseField name="contact" type="Contact">
   <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
+    <ResponseField name="data" type="Object">
       <Expandable title="properties">
         <Snippet file="contact_snippet.mdx" />
       </Expandable>
@@ -132,7 +132,7 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="updated_at" type="date" required>
+<ResponseField name="updated_at" type="date">
   Date the record was last updated in the accounting platform.
 </ResponseField>
 

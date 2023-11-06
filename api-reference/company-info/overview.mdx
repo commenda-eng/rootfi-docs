@@ -14,37 +14,37 @@ icon: "hand-wave"
   The accounting Platform’s id for the company
 </ResponseField>
 
-<ResponseField name="name" type="string" required>
+<ResponseField name="name" type="string">
   The company name
 </ResponseField>
 
-<ResponseField name="legal_name" type="string" required>
+<ResponseField name="legal_name" type="string">
   Legal name of the company
 </ResponseField>
 
-<ResponseField name="base_currency" type="string" required>
+<ResponseField name="base_currency" type="string">
   The primary currency of the company
 </ResponseField>
 
-<ResponseField name="fiscal_start_at" type="date" required>
+<ResponseField name="fiscal_start_at" type="date">
   The starting date of the Financial year for this company
 </ResponseField>
 
-<ResponseField name="org_created_at" type="date" required>
+<ResponseField name="org_created_at" type="date">
   Date the record was created in the RootFi system.
 </ResponseField>
 
-<ResponseField name="registration_number" type="string" required>
+<ResponseField name="registration_number" type="string">
   Reference of the registration number
 </ResponseField>
 
-<ResponseField name="tax_number" type="string" required>
+<ResponseField name="tax_number" type="string">
   Company tax number
 </ResponseField>
 
-<ResponseField name="addresses" type="Address" required>
+<ResponseField name="addresses" type="Address">
   <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
+    <ResponseField name="data" type="Object">
       <Expandable title="properties">
         <Snippet file="addresses.mdx" />
       </Expandable>
@@ -52,9 +52,9 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="external_links" type="External Link" required>
+<ResponseField name="external_links" type="External Link">
   <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
+    <ResponseField name="data" type="Object">
       <Expandable title="properties">
         <Snippet file="externalLink.mdx" />
       </Expandable>
@@ -62,9 +62,9 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="phone_numbers" type="Phone Number" required>
+<ResponseField name="phone_numbers" type="Phone Number">
   <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
+    <ResponseField name="data" type="Object">
       <Expandable title="properties">
         <Snippet file="phone.mdx" />
       </Expandable>
@@ -72,7 +72,7 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="updated_at" type="date" required>
+<ResponseField name="updated_at" type="date">
   Date the record was last updated in the accounting platform.
 </ResponseField>
 

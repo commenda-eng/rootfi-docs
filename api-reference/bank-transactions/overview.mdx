@@ -16,37 +16,37 @@ icon: "hand-wave"
   The accounting platforms ID for the transaction
 </ResponseField>
 
-<ResponseField name="account_id" type="string" required>
+<ResponseField name="account_id" type="string">
   Platform ID for the account to which this transaction belongs
 </ResponseField>
 
-<ResponseField name="contact_id" type="string" required>
+<ResponseField name="contact_id" type="string">
   The platform’s ID for the contact to that made the transaction
 </ResponseField>
 
-<ResponseField name="transaction_date" type="date" required>
+<ResponseField name="transaction_date" type="date">
   Date of the transaction
 </ResponseField>
 
-<ResponseField name="amount" type="float" required>
+<ResponseField name="amount" type="float">
   The total transaction amount
 </ResponseField>
 
-<ResponseField name="type" type="string" required>
+<ResponseField name="type" type="string">
   The type of the transaction
 </ResponseField>
 
-<ResponseField name="status" type="string" required>
+<ResponseField name="status" type="string">
   The status of the transaction
 </ResponseField>
 
-<ResponseField name="currency_id" type="string" required>
+<ResponseField name="currency_id" type="string">
   The ISO-4217 currency code of the transaction
 </ResponseField>
 
-<ResponseField name="currency" type="Object" required>
+<ResponseField name="currency" type="Object">
   <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
+    <ResponseField name="data" type="Object">
       <Expandable title="properties">
         <Snippet file="currency_snippet.mdx" />
       </Expandable>
@@ -54,7 +54,7 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="currency_rate" type="float" required>
+<ResponseField name="currency_rate" type="float">
   Rate between the currency of the payment and the base currency
 </ResponseField>
 
@@ -64,9 +64,9 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="account" type="Account" required>
+<ResponseField name="account" type="Account">
   <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
+    <ResponseField name="data" type="Object">
       <Expandable title="properties">
         <Snippet file="bank_accounts_snippet.mdx" />
       </Expandable>
@@ -74,33 +74,33 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="contact" type="Contact" required>
+<ResponseField name="contact" type="Contact" >
   <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
+    <ResponseField name="data" type="Object" >
       <Expandable title="properties">
-    <ResponseField name="platform_id" type="string" required>
+    <ResponseField name="platform_id" type="string" >
       The accounting platform’s ID for the contact
     </ResponseField>
 
-    <ResponseField name="name" type="string" required>
+    <ResponseField name="name" type="string" >
       Name of the customer on the accounting platform
     </ResponseField>
 
-    <ResponseField name="contact_name" type="string" required>
+    <ResponseField name="contact_name" type="string" >
       Name of the contact person for the contact
     </ResponseField>
 
-    <ResponseField name="contact_type" type="enum" required>
+    <ResponseField name="contact_type" type="enum" >
       The type of customer. Values are either `CUSTOMER` or `VENDOR`
     </ResponseField>
 
-    <ResponseField name="currency_id" type="string" required>
+    <ResponseField name="currency_id" type="string" >
       The ISO-4217 currency code of the transaction
     </ResponseField>
 
-    <ResponseField name="currency" type="string" required>
+    <ResponseField name="currency" type="string" >
       <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
+    <ResponseField name="data" type="Object" >
       <Expandable title="properties">
         <Snippet file="currency_snippet.mdx" />
       </Expandable>
@@ -109,19 +109,19 @@ icon: "hand-wave"
   </Expandable>
     </ResponseField>
 
-    <ResponseField name="tax_number" type="string" required>
+    <ResponseField name="tax_number" type="string" >
       Contact’s tax number
     </ResponseField>
 
-    <ResponseField name="registration_number" type="string" required>
+    <ResponseField name="registration_number" type="string" >
       Contact’s identifying number
     </ResponseField>
 
-    <ResponseField name="status" type="enum" required>
+    <ResponseField name="status" type="enum" >
       The status of the customer. Values are: `ACTIVE`, `ARCHIVED`, `UNKNOWN`.
     </ResponseField>
 
-    <ResponseField name="updated_at" type="date" required>
+    <ResponseField name="updated_at" type="date" >
       The last ISO 8601 timestamp at which the data was updated
     </ResponseField>
         </Expandable>
@@ -130,7 +130,7 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="updated_at" type="date" required>
+<ResponseField name="updated_at" type="date">
   The date at which the transaction was updated on the accounting platform
 </ResponseField>
 

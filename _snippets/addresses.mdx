@@ -2,15 +2,15 @@
   The accounting platform's unique identifier for the address
 </ResponseField>
 
-<ResponseField name="type" type="enum" required>
+<ResponseField name="type" type="enum">
   The type of address. Values can be: BILLING, SHIPPING, etc.
 </ResponseField>
 
-<ResponseField name="data_model" type="string" required>
+<ResponseField name="data_model" type="string">
   The data model to which this address is linked. Example values can be: CONTACT, INVOICE, ORDER, etc.
 </ResponseField>
 
-<ResponseField name="data_model_id" type="string" required>
+<ResponseField name="data_model_id" type="string">
   The unique identifier for the data model associated with this address
 </ResponseField>
 
@@ -22,15 +22,15 @@
   The locality or neighborhood information of the address
 </ResponseField>
 
-<ResponseField name="city" type="string" required>
+<ResponseField name="city" type="string">
   The city information of the address
 </ResponseField>
 
-<ResponseField name="state" type="string" required>
+<ResponseField name="state" type="string">
   The state or region information of the address
 </ResponseField>
 
-<ResponseField name="country" type="string" required>
+<ResponseField name="country" type="string">
   The country information of the address
 </ResponseField>
 
@@ -38,6 +38,6 @@
   The postal or zip code of the address
 </ResponseField>
 
-<ResponseField name="updated_at" type="date" required>
+<ResponseField name="updated_at" type="date">
   The date and time at which the address information was last updated in the accounting platform
 </ResponseField>

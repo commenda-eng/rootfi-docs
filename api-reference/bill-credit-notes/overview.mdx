@@ -16,41 +16,41 @@ icon: "hand-wave"
   The accounting Platform’s ID for the credit note
 </ResponseField>
 
-<ResponseField name="contact_id" type="string" required>
+<ResponseField name="contact_id" type="string">
   The accounting platform’s unique identifier for the contact associated with this credit note
 </ResponseField>
 
-<ResponseField name="document_number" type="string" required>
+<ResponseField name="document_number" type="string">
   Reference number for the credit note
 </ResponseField>
 
-<ResponseField name="total_amount" type="float" required>
+<ResponseField name="total_amount" type="float">
   Total amount of credit note
 </ResponseField>
 
-<ResponseField name="remaining_credit" type="float" required>
+<ResponseField name="remaining_credit" type="float">
   The balance amount remaining on the credit note
 </ResponseField>
 
-<ResponseField name="posted_date" type="date" required>
+<ResponseField name="posted_date" type="date">
   Date on which the credit note was posted
 </ResponseField>
 
-<ResponseField name="status" type="enum" required>
+<ResponseField name="status" type="enum">
   The status of the credit note. Values are: `DRAFT`, `SUBMITTED`, `PARTIALLY_PAID`, `PAID`, `OVERDUE`, `VOID`, `UNKNOWN`.
 </ResponseField>
 
-<ResponseField name="memo" type="string" required>
+<ResponseField name="memo" type="string">
   Description of the credit note
 </ResponseField>
 
-<ResponseField name="currency" type="string" required>
+<ResponseField name="currency" type="string">
   Currency of the credit note
 </ResponseField>
 
-<ResponseField name="line_Items" type="Line Item" required>
+<ResponseField name="line_Items" type="Line Item">
   <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
+    <ResponseField name="data" type="Object">
       <Expandable title="properties">
         <Snippet file="line_items_snippeet.mdx" />
       </Expandable>
@@ -58,15 +58,15 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="bill_id" type="string[]" required>
+<ResponseField name="bill_id" type="string[]">
   An Array of bills associated with the credit note
 </ResponseField>
 
-<ResponseField name="contact" type="Contact" required>
+<ResponseField name="contact" type="Contact">
   The [contact](/docs/contacts) associated with this credit note
 </ResponseField>
 
-<ResponseField name="updated_at" type="date" required>
+<ResponseField name="updated_at" type="date">
   The last ISO 8601 timestamp that the data was updated at
 </ResponseField>
 

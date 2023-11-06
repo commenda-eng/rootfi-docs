@@ -10,63 +10,63 @@ icon: "hand-wave"
   The accounting Platform’s id for the income statement
 </ResponseField>
 
-<ResponseField name="period_start_date" type="date" required>
+<ResponseField name="period_start_date" type="date">
   Start date of the income statement report
 </ResponseField>
 
-<ResponseField name="period_end_date" type="date" required>
+<ResponseField name="period_end_date" type="date">
   End date of the income statement report
 </ResponseField>
 
-<ResponseField name="currency" type="string" required>
+<ResponseField name="currency" type="string">
   Currency of the income statement
 </ResponseField>
 
-<ResponseField name="revenue" type="LineItem" required>
+<ResponseField name="revenue" type="LineItem">
   <Expandable title="properties">
     <Snippet file="line_items_snippeet.mdx" />
   </Expandable>
 </ResponseField>
 
-<ResponseField name="cost_of_goods_sold" type="LineItem" required>
+<ResponseField name="cost_of_goods_sold" type="LineItem">
   <Expandable title="properties">
     <Snippet file="line_items_snippeet.mdx" />
   </Expandable>
 </ResponseField>
 
-<ResponseField name="gross_profit" type="float" required>
+<ResponseField name="gross_profit" type="float">
   Gross profit of the income statement report
 </ResponseField>
 
-<ResponseField name="operating_expenses" type="LineItem" required>
+<ResponseField name="operating_expenses" type="LineItem">
   <Expandable title="properties">
     <Snippet file="line_items_snippeet.mdx" />
   </Expandable>
 </ResponseField>
 
-<ResponseField name="operating_profit" type="float" required>
+<ResponseField name="operating_profit" type="float">
   Operating profit of the income statement report
 </ResponseField>
 
-<ResponseField name="non_operating_revenue" type="float" required>
+<ResponseField name="non_operating_revenue" type="float">
   Non operating revenue of the income statement report
 </ResponseField>
 
-<ResponseField name="non_operating_expenses" type="float" required>
+<ResponseField name="non_operating_expenses" type="float">
   Non operating expense of the income statement report
 </ResponseField>
 
-<ResponseField name="earnings_before_taxes" type="float" required>
+<ResponseField name="earnings_before_taxes" type="float">
   Earnings before taxes of the income statement report
 </ResponseField>
 
-<ResponseField name="taxes" type="LineItem" required>
+<ResponseField name="taxes" type="LineItem">
   <Expandable title="properties">
     <Snippet file="line_items_snippeet.mdx" />
   </Expandable>
 </ResponseField>
 
-<ResponseField name="net_profit" type="float" required>
+<ResponseField name="net_profit" type="float">
   Net profit of the income statement report
 </ResponseField>
 

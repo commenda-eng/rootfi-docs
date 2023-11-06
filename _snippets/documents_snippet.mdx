@@ -2,34 +2,34 @@
   The accounting platforms ID for the document
 </ResponseField>
 
-<ResponseField name="file_name" type="string" required>
+<ResponseField name="file_name" type="string">
   Name of the document that was used on the accounting platform
 </ResponseField>
 
-<ResponseField name="file_type" type="string" required>
+<ResponseField name="file_type" type="string">
   The file type of the document as given by the accounting platform. Formatted as a MIME Type
 </ResponseField>
 
-<ResponseField name="file_size" type="float" required>
+<ResponseField name="file_size" type="float">
   The file size of the document in bytes
 </ResponseField>
 
-<ResponseField name="document_type_id" type="string" required>
+<ResponseField name="document_type_id" type="string">
   The platform ID of the document type with which this document is linked to
 </ResponseField>
 
-<ResponseField name="document_type" type="Data Model" required>
+<ResponseField name="document_type" type="Data Model">
   The name of the data model with which this document is linked. Currently only these data models are supported: `BILLS`,`INVOICES`,`EXPENSES`.
 </ResponseField>
 
-<ResponseField name="document_uploaded" type="boolean" required>
+<ResponseField name="document_uploaded" type="boolean">
   A value to verify that Rootfi that uploaded the document to its servers
 </ResponseField>
 
-<ResponseField name="download_link" type="string" required>
+<ResponseField name="download_link" type="string">
   A temporary download link through which you can download the attachment. Will only be present if document_uploaded is true
 </ResponseField>
 
-<ResponseField name="updated_at" type="date" required>
+<ResponseField name="updated_at" type="date">
   The last ISO 8601 timestamp that the data was updated at
 </ResponseField>

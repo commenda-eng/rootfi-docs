@@ -2,29 +2,29 @@
   The accounting Platform’s id for the bank account
 </ResponseField>
 
-<ResponseField name="institution_name" type="string" required>
+<ResponseField name="institution_name" type="string">
   The name of the bank account
 </ResponseField>
 
-<ResponseField name="account_name" type="string" required>
+<ResponseField name="account_name" type="string">
   Name of the bank account
 </ResponseField>
 
-<ResponseField name="account_number" type="string" required>
+<ResponseField name="account_number" type="string">
   The bank account number
 </ResponseField>
 
-<ResponseField name="category" type="string" required>
+<ResponseField name="category" type="string">
   The category of the bank account
 </ResponseField>
 
-<ResponseField name="balance" type="float" required>
+<ResponseField name="balance" type="float">
   Balance of the bank account
 </ResponseField>
 
-<ResponseField name="currency" type="Object" required>
+<ResponseField name="currency" type="Object">
   <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
+    <ResponseField name="data" type="Object">
       <Expandable title="properties">
         <Snippet file="currency_snippet.mdx" />
       </Expandable>

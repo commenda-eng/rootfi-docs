@@ -14,41 +14,41 @@ icon: "hand-wave"
   The accounting platforms ID for this bill payment
 </ResponseField>
 
-<ResponseField name="payment_id" type="string" required>
+<ResponseField name="payment_id" type="string">
   The accounting platforms ID for the payment
 </ResponseField>
 
-<ResponseField name="bill_id" type="string" required>
+<ResponseField name="bill_id" type="string">
   The platform’s ID of the bill which this payment is associated with
 </ResponseField>
 
-<ResponseField name="contact_id" type="string" required>
+<ResponseField name="contact_id" type="string">
   The platform’s ID of the contact that makes the payment
 </ResponseField>
 
-<ResponseField name="account_id" type="string" required>
+<ResponseField name="account_id" type="string">
   The platform’s ID of the account to which this payment belongs
 </ResponseField>
 
-<ResponseField name="amount" type="float" required>
+<ResponseField name="amount" type="float">
   The total value of this payment
 </ResponseField>
 
-<ResponseField name="payment_date" type="date" required>
+<ResponseField name="payment_date" type="date">
   The date on which the payment was made
 </ResponseField>
 
-<ResponseField name="payment_mode" type="string" required>
+<ResponseField name="payment_mode" type="string">
   The payment method used
 </ResponseField>
 
-<ResponseField name="currency_id" type="string" required>
+<ResponseField name="currency_id" type="string">
   The ISO-4217 currency code
 </ResponseField>
 
-<ResponseField name="currency" type="string" required>
+<ResponseField name="currency" type="string">
   <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
+    <ResponseField name="data" type="Object">
       <Expandable title="properties">
         <Snippet file="currency_snippet.mdx" />
       </Expandable>
@@ -56,17 +56,17 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="currency_rate" type="float" required>
+<ResponseField name="currency_rate" type="float">
   Rate between the currency of the payment and the base currency
 </ResponseField>
 
-<ResponseField name="memo" type="string" required>
+<ResponseField name="memo" type="string">
   Description of the payment
 </ResponseField>
 
-<ResponseField name="bill" type="Bill" required>
+<ResponseField name="bill" type="Bill">
   <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
+    <ResponseField name="data" type="Object">
       <Expandable title="properties">
         <Snippet file="bill.mdx" />
       </Expandable>
@@ -74,9 +74,9 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="contact" type="Contact" required>
+<ResponseField name="contact" type="Contact">
   <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
+    <ResponseField name="data" type="Object">
       <Expandable title="properties">
         <Snippet file="contact_snippet.mdx" />
       </Expandable>
@@ -88,7 +88,7 @@ icon: "hand-wave"
   The [account](/docs/accounts) to which this payment belongs
 </ResponseField>
 
-<ResponseField name="updated_at" type="date" required>
+<ResponseField name="updated_at" type="date">
   The date at which the information was updated on the accounting platform
 </ResponseField>
 

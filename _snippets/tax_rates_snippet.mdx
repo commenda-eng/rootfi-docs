@@ -2,27 +2,27 @@
   The accounting platforms ID for the tax rate
 </ResponseField>
 
-<ResponseField name="name" type="string" required>
+<ResponseField name="name" type="string">
   Display name
 </ResponseField>
 
-<ResponseField name="code" type="string" required>
+<ResponseField name="code" type="string">
   Simple ID for the tax rate
 </ResponseField>
 
-<ResponseField name="tax_type" type="string" required>
+<ResponseField name="tax_type" type="string">
   The type of tax as mentioned in the accounting platform
 </ResponseField>
 
-<ResponseField name="effective_tax_rate" type="float" required>
+<ResponseField name="effective_tax_rate" type="float">
   The total tax rate after accounting for the compounding effects of all the tax components
 </ResponseField>
 
-<ResponseField name="total_tax_rate" type="float" required>
+<ResponseField name="total_tax_rate" type="float">
   The sum of all the tax rate components
 </ResponseField>
 
-<ResponseField name="components" type="Tax Component" required>
+<ResponseField name="components" type="Tax Component">
   <Expandable title="properties">
     <Snippet file="tax_component_snippet.mdx" />
   </Expandable>

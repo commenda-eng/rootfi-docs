@@ -17,61 +17,61 @@ icon: "hand-wave"
   Accounting platform’s ID for the bill
 </ResponseField>
 
-<ResponseField name="account_id" type="string" required>
+<ResponseField name="account_id" type="string">
   The accounting platform’s unique ID of the account associated with the bill
 </ResponseField>
 
-<ResponseField name="contact_id" type="string" required>
+<ResponseField name="contact_id" type="string">
   The accounting platform’s unique ID of the contact associated with this bill
 </ResponseField>
 
-<ResponseField name="document_number" type="string" required>
+<ResponseField name="document_number" type="string">
   Reference number for the bill
 </ResponseField>
 
-<ResponseField name="posted_date" type="date" required>
+<ResponseField name="posted_date" type="date">
   Date of creation of the bill
 </ResponseField>
 
-<ResponseField name="due_date" type="date" required>
+<ResponseField name="due_date" type="date">
   The due date for the bill
 </ResponseField>
 
-<ResponseField name="currency" type="string" required>
+<ResponseField name="currency" type="string">
   The ISO-4217 currency code
 </ResponseField>
 
-<ResponseField name="currency_rate" type="float" required>
+<ResponseField name="currency_rate" type="float">
   Rate between the currency of the payment and the base currency
 </ResponseField>
 
-<ResponseField name="status" type="enum" required>
+<ResponseField name="status" type="enum">
   The status of the bill. Values are: `DRAFT`, `SUBMITTED`, `PARTIALLY_PAID`, `PAID`, `OVERDUE`, `VOID`, `UNKNOWN`.
 </ResponseField>
 
-<ResponseField name="total_amount" type="float" required>
+<ResponseField name="total_amount" type="float">
   Total amount of the Bill
 </ResponseField>
 
-<ResponseField name="sub_total" type="float" required>
+<ResponseField name="sub_total" type="float">
   Total pre tax amount of the Bill
 </ResponseField>
 
-<ResponseField name="total_discount" type="float" required>
+<ResponseField name="total_discount" type="float">
   Total discount amount levied on the Bill
 </ResponseField>
 
-<ResponseField name="tax_amount" type="float" required>
+<ResponseField name="tax_amount" type="float">
   Total tax amount levied on the bill
 </ResponseField>
 
-<ResponseField name="amount_due" type="float" required>
+<ResponseField name="amount_due" type="float">
   Outstanding amount to be paid for the Bill
 </ResponseField>
 
-<ResponseField name="line_items" type="Line Item" required>
+<ResponseField name="line_items" type="Line Item">
   <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
+    <ResponseField name="data" type="Object">
       <Expandable title="properties">
         <Snippet file="line_items_snippeet.mdx" />
       </Expandable>
@@ -79,9 +79,9 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="payments" type="Bill Payment" required>
+<ResponseField name="payments" type="Bill Payment">
   <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
+    <ResponseField name="data" type="Object">
       <Expandable title="properties">
         <Snippet file="bill_payment.mdx" />
       </Expandable>
@@ -93,17 +93,17 @@ icon: "hand-wave"
   The contact who receives this bill
 </ResponseField>
 
-<ResponseField name="purchase_order_ids" type="Array" required>
+<ResponseField name="purchase_order_ids" type="Array">
   Array of Purchase Orders Id associated with the bill
 </ResponseField>
 
-<ResponseField name="documents" type="Document" required>
+<ResponseField name="documents" type="Document">
   <Expandable title="properties">
     <Snippet file="documents_snippet.mdx" />
   </Expandable>
 </ResponseField>
 
-<ResponseField name="updated_at" type="date" required>
+<ResponseField name="updated_at" type="date">
   The date at which the information was updated on the accounting platform
 </ResponseField>
 
