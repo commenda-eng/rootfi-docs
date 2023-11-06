@@ -75,7 +75,7 @@ paths:
                           category: LIABILITY
                           sub_category: Long Term Liabilities
                           status: ACTIVE
-                          currency_id: "1"
+                          currency_id: null
                           currency:
                             data:
                               platform_id: null
@@ -986,7 +986,7 @@ paths:
                           document_number: ROOTFI01
                           posted_date: "2021-09-28T15:00:00.000Z"
                           due_date: "2021-09-28T15:00:00.000Z"
-                          currency_id: GBP
+                          currency_id: null
                           currency:
                             data:
                               platform_id: null
@@ -1026,7 +1026,29 @@ paths:
                           documents:
                             data: []
                           payments:
-                            data: []
+                            data:
+                              - platform_id: "3770712000000106211"
+                                payment_id: "3770712000000106209"
+                                bill_id: "3770712000000085084"
+                                contact_id: null
+                                account_id: "3770712000000000361"
+                                amount: 150
+                                payment_date: "2023-02-03T00:00:00.000Z"
+                                payment_mode: Cash
+                                currency_id: null
+                                currency:
+                                  data:
+                                    platform_id: null
+                                    name: null
+                                    code: null
+                                    symbol: null
+                                    is_base_currency: null
+                                    exchange_rate: null
+                                    updated_at: null
+                                currency_rate: 1
+                                memo: Description?
+                                document_number: "2"
+                                updated_at: null
                       total_count: 0
                     request_timestamp: "2021-09-28T15:00:00.000Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
@@ -1491,6 +1513,80 @@ paths:
                       tax_number: "1234567890"
                       registration_number: "1234567890"
                       email: ""
+  /read/documents:
+    get:
+      description: Retrieve Documents from the database based on the ID
+      operationId: accounting_documents_documents_list
+      tags:
+        - AccountingDocumentsDocuments
+      parameters:
+        - name: take
+          in: query
+          description: The number of objects you want to retrieve.
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 10
+        - name: skip
+          in: query
+          description: The index from where you want to start retrieving objects.
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 0
+        - name: orderBy
+          in: query
+          description: A json string you can pass to sort the data
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: '{ "rootfi_created_at": "asc" }'
+        - name: filter
+          in: query
+          description: A json string you can pass to filter the data
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: '{ "name": { "eq": "Rootfi Test " } }'
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/accountingdocumentsGetDocumentsResponse"
+              examples:
+                Example1:
+                  value:
+                    data:
+                      data:
+                        - platform_id: "3770712000000085065_3770712000000080327"
+                          file_name: test.pdf
+                          file_type: application/pdf
+                          file_size: 254.8828125
+                          document_type_id: "3770712000000080327"
+                          document_type: INVOICES
+                          document_uploaded: false
+                          download_link: https://Example.com/upload?file=test.pdf
+                          updated_at: "2021-08-04T10:00:00+05:30"
+                      total_count: 1
+                    request_timestamp: "2021-09-28T15:00:00.000Z"
+                    response_timestamp: "2021-09-28T15:00:00.000Z"
+                    request_id: 00000000-0000-0000-0000-000000000000
+      summary: Get Documents
+      security: *ref_0
   /read/expenses:
     get:
       description: Retrieve expenses from the database based on the ID
@@ -1563,7 +1659,7 @@ paths:
                           total_amount: 40
                           sub_total: 40
                           tax_amount: 0
-                          currency_id: "3770712000000000099"
+                          currency_id: null
                           currency:
                             data:
                               platform_id: null
@@ -1690,6 +1786,51 @@ paths:
                           unit_amount: 100
                           total_discount: 0
                           description: Test Item
+  /read/income_statement:
+    get:
+      description: Retrieve income statement from the database based on the ID
+      operationId: accounting_incomeStatements_incomeStatement_list
+      tags:
+        - AccountingIncomeStatementsIncomeStatement
+      parameters:
+        - name: take
+          in: query
+          description: The number of records to return.
+          required: false
+          schema:
+            type: integer
+            nullable: true
+        - name: skip
+          in: query
+          description: The number of records to skip.
+          required: false
+          schema:
+            type: integer
+            nullable: true
+        - name: orderBy
+          in: query
+          description: The field to order by.
+          required: false
+          schema:
+            type: string
+            nullable: true
+        - name: filter
+          in: query
+          description: The filter to apply.
+          required: false
+          schema:
+            type: string
+            nullable: true
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: >-
+                  #/components/schemas/accountingincome_statementsgetIncomeStatementResponse
+      summary: Get Income Statement
+      security: *ref_0
   /read/invoice_credit_notes:
     get:
       description: Retrieve invoice credit notes from the database based on the ID
@@ -2070,51 +2211,6 @@ paths:
                       payment_date: "2021-09-28T15:00:00.000Z"
                       document_number: ROOTFI01
                       memo: Test Memo
-  /read/income_statement:
-    get:
-      description: Retrieve income statement from the database based on the ID
-      operationId: accounting_invoiceStatements_incomeStatement_list
-      tags:
-        - AccountingInvoiceStatementsIncomeStatement
-      parameters:
-        - name: take
-          in: query
-          description: The number of records to return.
-          required: false
-          schema:
-            type: integer
-            nullable: true
-        - name: skip
-          in: query
-          description: The number of records to skip.
-          required: false
-          schema:
-            type: integer
-            nullable: true
-        - name: orderBy
-          in: query
-          description: The field to order by.
-          required: false
-          schema:
-            type: string
-            nullable: true
-        - name: filter
-          in: query
-          description: The filter to apply.
-          required: false
-          schema:
-            type: string
-            nullable: true
-      responses:
-        "200":
-          description: ""
-          content:
-            application/json:
-              schema:
-                $ref: >-
-                  #/components/schemas/accountinginvoice_statementsgetIncomeStatementResponse
-      summary: Get Income Statement
-      security: *ref_0
   /read/invoices:
     get:
       description: Retrieve invoice from the database based on the ID
@@ -2226,7 +2322,7 @@ paths:
                                 total_discount: null
                                 updated_at: null
                           documents:
-                            data: null
+                            data: []
                       total_count: 1
                     request_timestamp: "2023-10-27T05:05:28.522Z"
                     response_timestamp: "2023-10-27T05:05:28.522Z"
@@ -3602,8 +3698,6 @@ paths:
                               value: "5000000000000279512"
                             SyncToken: "0"
                             FullyQualifiedName: France:City in France
-                          data_hash: >-
-                            545cbf67da9ab54fd03403c98da99d3896d2f590ef995042a8ecc699d1f26ae5
                       total_count: 1
                     request_timestamp: "2023-10-27T05:05:28.522Z"
                     response_timestamp: "2023-10-27T05:05:28.522Z"
@@ -4540,6 +4634,20 @@ components:
       title: accountingaccountsAccountsAllResponsesCommonFields
       type: object
       properties:
+        currency_id:
+          type: string
+          nullable: true
+          description: The Accounting Platform’s unique ID for the currency
+        parent_account_id:
+          type: string
+          nullable: true
+          description: The platform ID of the parent account
+        nominal_code:
+          type: string
+          nullable: true
+          description: >-
+            Reference given to each account for a business. It ensures money is
+            allocated to the correct account.
         name:
           type: string
           nullable: true
@@ -4552,34 +4660,19 @@ components:
           type: string
           nullable: true
           description: The sub category of the account
-        nominal_code:
-          type: string
-          nullable: true
-          description: >-
-            Reference given to each account for a business. It ensures money is
-            allocated to the correct account.
-        currency_id:
-          type: string
-          nullable: true
-          description: The Accounting Platform’s unique ID for the currency
         current_balance:
           type: integer
           nullable: true
           description: Current balance of the account
-        parent_account_id:
-          type: string
-          nullable: true
-          description: The platform ID of the parent account
     accountingaccountsAccountsWriteRequestFields:
       title: accountingaccountsAccountsWriteRequestFields
       type: object
       properties:
         raw_data:
+          nullable: true
           description: >-
             The raw JSON response we get from the accounting platform for that
             data
-      required:
-        - raw_data
       allOf:
         - $ref: >-
             #/components/schemas/accountingaccountsAccountsAllResponsesCommonFields
@@ -4588,41 +4681,17 @@ components:
       type: object
       properties:
         category:
-          type: string
+          $ref: "#/components/schemas/CategoryEnum"
           nullable: true
-          description: >-
-            The category of the account. Values are `ASSET`, `EXPENSE`,
-            `LIABILITY`, `EQUITY`, `INCOME`, `PRIMARY`, `BANK`, `REVENUE`,
-            `UNKNOWN`.
+          description: The category of the account.
         status:
-          type: string
+          $ref: "#/components/schemas/BaseStaus"
           nullable: true
-          description: >-
-            The status of the account. Values are `ACTIVE`, `ARCHIVED`,
-            `UNKNOWN`.
+          description: The status of the account.
         updated_at:
           type: string
           nullable: true
           description: Date the record was last updated in the accounting platform.
-      allOf:
-        - $ref: "#/components/schemas/accountingaccountsAccountsPlatformId"
-        - $ref: >-
-            #/components/schemas/accountingaccountsAccountsAllResponsesCommonFields
-    accountingaccountsAccountExportResponseField:
-      title: accountingaccountsAccountExportResponseField
-      type: object
-      properties:
-        currency:
-          $ref: "#/components/schemas/currencyObject"
-          nullable: true
-          description: The currency of the account
-        updated_at:
-          type: string
-          description: >-
-            The date at which the transaction was updated on the accounting
-            platform
-      required:
-        - updated_at
       allOf:
         - $ref: "#/components/schemas/accountingaccountsAccountsPlatformId"
         - $ref: >-
@@ -4707,15 +4776,20 @@ components:
         - data
       allOf:
         - $ref: "#/components/schemas/SuccessResponse"
-    accountingaccountsCreateAccountsResponse:
-      title: accountingaccountsCreateAccountsResponse
+    accountingaccountsFinalCreateAccount:
+      title: accountingaccountsFinalCreateAccount
       type: object
       properties:
         data:
           $ref: "#/components/schemas/accountingaccountsCreateAccountsResponseHelper"
       required:
         - data
+    accountingaccountsCreateAccountsResponse:
+      title: accountingaccountsCreateAccountsResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: "#/components/schemas/accountingaccountsFinalCreateAccount"
         - $ref: "#/components/schemas/timestamp"
     accountingaccountsGetAllAccountsResponseHelper:
       title: accountingaccountsGetAllAccountsResponseHelper
@@ -4732,15 +4806,21 @@ components:
       required:
         - data
         - total_count
-    accountingaccountsGetAllAccountsResponse:
-      title: accountingaccountsGetAllAccountsResponse
+    accountingaccountsFinalGetBankTransactionresponse:
+      title: accountingaccountsFinalGetBankTransactionresponse
       type: object
       properties:
         data:
           $ref: "#/components/schemas/accountingaccountsGetAllAccountsResponseHelper"
       required:
         - data
+    accountingaccountsGetAllAccountsResponse:
+      title: accountingaccountsGetAllAccountsResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: >-
+            #/components/schemas/accountingaccountsFinalGetBankTransactionresponse
         - $ref: "#/components/schemas/timestamp"
     accountingbalance_sheetBalanceSheetCommonFields:
       title: accountingbalance_sheetBalanceSheetCommonFields
@@ -4749,51 +4829,51 @@ components:
         platform_id:
           type: string
           description: The accounting platforms ID for this item
+        currency_id:
+          type: string
+          nullable: true
+          description: The Accounting Platform’s unique ID for the currency
         assets:
           type: array
           items:
             $ref: >-
               #/components/schemas/accountingbalance_sheetFinancialStetementObjectType
+          nullable: true
           description: line_items for assets of balance sheet report
         liabilities:
           type: array
           items:
             $ref: >-
               #/components/schemas/accountingbalance_sheetFinancialStetementObjectType
+          nullable: true
           description: line_items for liabilities of balance sheet report
         equity:
           type: array
           items:
             $ref: >-
               #/components/schemas/accountingbalance_sheetFinancialStetementObjectType
+          nullable: true
           description: line_items for equity of balance sheet report
         period_start:
           type: string
+          nullable: true
           description: start date of the balance sheet report
         period_end:
           type: string
+          nullable: true
           description: end date of the balance sheet report
         net_assets:
           type: number
           format: double
+          nullable: true
           description: total value of net assets
-        currency_id:
-          type: string
-          description: The Accounting Platform’s unique ID for the currency
         updated_at:
           type: string
           format: date-time
+          nullable: true
           description: The last ISO 8601 timestamp that the data was updated at
       required:
         - platform_id
-        - assets
-        - liabilities
-        - equity
-        - period_start
-        - period_end
-        - net_assets
-        - currency_id
-        - updated_at
     accountingbalance_sheetFinancialStetementObjectType:
       title: accountingbalance_sheetFinancialStetementObjectType
       type: object
@@ -4829,8 +4909,8 @@ components:
       required:
         - data
         - total_count
-    accountingbalance_sheetGetBalanceSheetResponse:
-      title: accountingbalance_sheetGetBalanceSheetResponse
+    accountingbalance_sheetFinalBalanceSheeetResponse:
+      title: accountingbalance_sheetFinalBalanceSheeetResponse
       type: object
       properties:
         data:
@@ -4838,7 +4918,13 @@ components:
             #/components/schemas/accountingbalance_sheetgetBalanceSheetResponseData
       required:
         - data
+    accountingbalance_sheetGetBalanceSheetResponse:
+      title: accountingbalance_sheetGetBalanceSheetResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: >-
+            #/components/schemas/accountingbalance_sheetFinalBalanceSheeetResponse
         - $ref: "#/components/schemas/timestamp"
     accountingbank_accountsBankAccountsPlatformId:
       title: accountingbank_accountsBankAccountsPlatformId
@@ -4853,30 +4939,30 @@ components:
       title: accountingbank_accountsBankAccountsAllResponsesCommonFields
       type: object
       properties:
-        balance:
-          type: integer
-          nullable: true
-          description: Balance of the bank account
-        account_name:
-          type: string
-          nullable: true
-          description: Name of the bank account
-        category:
-          type: string
-          nullable: true
-          description: The category of the bank account
-        institution_name:
-          type: string
-          nullable: true
-          description: The name of the bank account
-        account_number:
-          type: string
-          nullable: true
-          description: The bank account number
         currency_id:
           type: string
           nullable: true
           description: The ISO-4217 currency code
+        institution_name:
+          type: string
+          nullable: true
+          description: The name of the bank account
+        account_name:
+          type: string
+          nullable: true
+          description: Name of the bank account
+        account_number:
+          type: string
+          nullable: true
+          description: The bank account number
+        category:
+          type: string
+          nullable: true
+          description: The category of the bank account
+        balance:
+          type: integer
+          nullable: true
+          description: Balance of the bank account
     accountingbank_accountsBankAccountsWriteRequestFields:
       title: accountingbank_accountsBankAccountsWriteRequestFields
       type: object
@@ -4906,25 +4992,16 @@ components:
         - $ref: "#/components/schemas/accountingbank_accountsBankAccountsPlatformId"
         - $ref: >-
             #/components/schemas/accountingbank_accountsBankAccountsAllResponsesCommonFields
-    accountingbank_accountsBankAccountExportResponseField:
-      title: accountingbank_accountsBankAccountExportResponseField
+    accountingbank_accountsBankAccountExport:
+      title: accountingbank_accountsBankAccountExport
       type: object
       properties:
         currency:
           $ref: "#/components/schemas/currencyObject"
           nullable: true
           description: The currency of the bank account
-        updated_at:
-          type: string
-          description: >-
-            The date at which the transaction was updated on the accounting
-            platform
-      required:
-        - updated_at
       allOf:
-        - $ref: "#/components/schemas/accountingbank_accountsBankAccountsPlatformId"
-        - $ref: >-
-            #/components/schemas/accountingbank_accountsBankAccountsAllResponsesCommonFields
+        - $ref: "#/components/schemas/accountingbank_accountsBankAccountResponseField"
     accountingbank_accountsBankAccountsWriteResponseFields:
       title: accountingbank_accountsBankAccountsWriteResponseFields
       type: object
@@ -4994,8 +5071,8 @@ components:
         - response
       allOf:
         - $ref: "#/components/schemas/JobSuccessResponse"
-    accountingbank_accountsCreateBankAccountsResponse:
-      title: accountingbank_accountsCreateBankAccountsResponse
+    accountingbank_accountsFinalCreateBankAccount:
+      title: accountingbank_accountsFinalCreateBankAccount
       type: object
       properties:
         data:
@@ -5003,7 +5080,12 @@ components:
             #/components/schemas/accountingbank_accountsCreateBankAccountsResponseDataHelper
       required:
         - data
+    accountingbank_accountsCreateBankAccountsResponse:
+      title: accountingbank_accountsCreateBankAccountsResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: "#/components/schemas/accountingbank_accountsFinalCreateBankAccount"
         - $ref: "#/components/schemas/timestamp"
     accountingbank_accountsGetAllBankAccountsResponseDataHelper:
       title: accountingbank_accountsGetAllBankAccountsResponseDataHelper
@@ -5020,8 +5102,8 @@ components:
       required:
         - data
         - total_count
-    accountingbank_accountsGetAllBankAccountsResponse:
-      title: accountingbank_accountsGetAllBankAccountsResponse
+    accountingbank_accountsFinalGetAllBankAccountsResponse:
+      title: accountingbank_accountsFinalGetAllBankAccountsResponse
       type: object
       properties:
         data:
@@ -5029,7 +5111,13 @@ components:
             #/components/schemas/accountingbank_accountsGetAllBankAccountsResponseDataHelper
       required:
         - data
+    accountingbank_accountsGetAllBankAccountsResponse:
+      title: accountingbank_accountsGetAllBankAccountsResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: >-
+            #/components/schemas/accountingbank_accountsFinalGetAllBankAccountsResponse
         - $ref: "#/components/schemas/timestamp"
     accountingbank_transactionsBankTranscationPlatformId:
       title: accountingbank_transactionsBankTranscationPlatformId
@@ -5037,8 +5125,9 @@ components:
       properties:
         platform_id:
           type: string
-          nullable: true
           description: The ID that the accounting platform uses to identify this account
+      required:
+        - platform_id
     accountingbank_transactionsBankTransactionAllResponsesCommonFields:
       title: accountingbank_transactionsBankTransactionAllResponsesCommonFields
       type: object
@@ -5062,6 +5151,7 @@ components:
         amount:
           type: number
           format: double
+          nullable: true
           description: The total transaction amount
         type:
           type: string
@@ -5071,8 +5161,6 @@ components:
           type: string
           nullable: true
           description: The status of the transaction
-      required:
-        - amount
     accountingbank_transactionsBankTransactionWriteRequestFields:
       title: accountingbank_transactionsBankTransactionWriteRequestFields
       type: object
@@ -5091,6 +5179,11 @@ components:
       title: accountingbank_transactionsBankTransactionResponseField
       type: object
       properties:
+        currency_rate:
+          type: number
+          format: double
+          nullable: true
+          description: Rate between the currency of the payment and the base currency
         updated_at:
           type: string
           nullable: true
@@ -5126,36 +5219,36 @@ components:
           description: >-
             The ISO-4217 currency code of the transaction, represented as a map
             with string keys.
-        currency_rate:
-          type: number
-          format: double
-          nullable: true
-          description: Rate between the currency of the payment and the base currency
         contact:
-          type: object
-          additionalProperties: true
+          $ref: "#/components/schemas/accountingbank_transactionsContactResponse"
           nullable: true
           description: >-
             The contact to that made the transaction, represented as a map with
             string keys.
         account:
           $ref: "#/components/schemas/accountingbank_transactionsBankAccountsResponse"
+          nullable: true
           description: >-
             The account to which this transaction belongs, represented as a map
             with string keys.
-      required:
-        - account
       allOf:
         - $ref: "#/components/schemas/RootfiFields"
         - $ref: >-
             #/components/schemas/accountingbank_transactionsBankTransactionResponseField
+    accountingbank_transactionsContactResponse:
+      title: accountingbank_transactionsContactResponse
+      type: object
+      properties:
+        data:
+          $ref: "#/components/schemas/accountingcontactsContactExport"
+      required:
+        - data
     accountingbank_transactionsBankAccountsResponse:
       title: accountingbank_transactionsBankAccountsResponse
       type: object
       properties:
         data:
-          $ref: >-
-            #/components/schemas/accountingbank_accountsBankAccountExportResponseField
+          $ref: "#/components/schemas/accountingbank_accountsBankAccountExport"
       required:
         - data
     accountingbank_transactionsCreateBankTransactionsRequest:
@@ -5183,7 +5276,7 @@ components:
           $ref: >-
             #/components/schemas/accountingbank_transactionsBankTransactionWriteResponseFields
         error:
-          type: string
+          $ref: "#/components/schemas/ErrorObject"
           nullable: true
           description: The error message if the job failed.
       required:
@@ -5203,8 +5296,8 @@ components:
         - data
       allOf:
         - $ref: "#/components/schemas/SuccessResponse"
-    accountingbank_transactionsCreateBankTransactionsResponse:
-      title: accountingbank_transactionsCreateBankTransactionsResponse
+    accountingbank_transactionsFinalBankTransactionResponse:
+      title: accountingbank_transactionsFinalBankTransactionResponse
       type: object
       properties:
         data:
@@ -5212,7 +5305,13 @@ components:
             #/components/schemas/accountingbank_transactionsCreateBankTransactionResponseData
       required:
         - data
+    accountingbank_transactionsCreateBankTransactionsResponse:
+      title: accountingbank_transactionsCreateBankTransactionsResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: >-
+            #/components/schemas/accountingbank_transactionsFinalBankTransactionResponse
         - $ref: "#/components/schemas/timestamp"
     accountingbank_transactionsGetAllBankTransactionsResponseData:
       title: accountingbank_transactionsGetAllBankTransactionsResponseData
@@ -5253,8 +5352,9 @@ components:
       properties:
         platform_id:
           type: string
-          nullable: true
           description: The ID that the accounting platform uses to identify this account
+      required:
+        - platform_id
     accountingbill_credit_notesBillCreditNotesAllResponseCommonFields:
       title: accountingbill_credit_notesBillCreditNotesAllResponseCommonFields
       type: object
@@ -5313,23 +5413,24 @@ components:
       properties:
         remaining_credit:
           type: integer
+          nullable: true
           description: The balance amount remaining on the credit note
         total_amount:
           type: integer
+          nullable: true
           description: Total amount of credit note
         status:
-          type: string
+          $ref: "#/components/schemas/ArtifactStatus"
           nullable: true
-          description: >-
-            The status of the credit note. Values are `DRAFT`, `SUBMITTED`,
-            `PARTIALLY_PAID`, `PAID`, `OVERDUE`, `VOID`, `UNKNOWN`.
+          description: The status of the credit note.
+        tax_amount:
+          type: integer
+          nullable: true
+          description: The total tax amount of the credit note
         updated_at:
           type: string
           nullable: true
           description: The last ISO 8601 timestamp that the data was updated at
-      required:
-        - remaining_credit
-        - total_amount
       allOf:
         - $ref: >-
             #/components/schemas/accountingbill_credit_notesBillCreditNotesPlatformId
@@ -5356,14 +5457,9 @@ components:
       type: object
       properties:
         currency:
-          type: object
-          additionalProperties: true
+          $ref: "#/components/schemas/currencyObject"
           nullable: true
           description: Currency of the credit note, represented as a map with string keys
-        tax_amount:
-          type: integer
-          nullable: true
-          description: The total tax amount of the credit note
         line_items:
           $ref: "#/components/schemas/LineItemObjectData"
           nullable: true
@@ -5409,15 +5505,15 @@ components:
           $ref: >-
             #/components/schemas/accountingbill_credit_notesBillCreditNotesWriteResponseFields
         error:
-          type: string
+          $ref: "#/components/schemas/ErrorObject"
           nullable: true
           description: The error message if the job failed.
       required:
         - response
       allOf:
         - $ref: "#/components/schemas/JobSuccessResponse"
-    accountingbill_credit_notesCreateBillCreditNotesResponse:
-      title: accountingbill_credit_notesCreateBillCreditNotesResponse
+    accountingbill_credit_notesFinalCreateBillCreditNotes:
+      title: accountingbill_credit_notesFinalCreateBillCreditNotes
       type: object
       properties:
         data:
@@ -5425,7 +5521,13 @@ components:
             #/components/schemas/accountingbill_credit_notesCreateBillCreditNotesResponseData
       required:
         - data
+    accountingbill_credit_notesCreateBillCreditNotesResponse:
+      title: accountingbill_credit_notesCreateBillCreditNotesResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: >-
+            #/components/schemas/accountingbill_credit_notesFinalCreateBillCreditNotes
         - $ref: "#/components/schemas/timestamp"
     accountingbill_credit_notesGetAllBillCreditNotesResponseData:
       title: accountingbill_credit_notesGetAllBillCreditNotesResponseData
@@ -5442,8 +5544,8 @@ components:
       required:
         - data
         - total_count
-    accountingbill_credit_notesGetAllBillCreditNotesResponse:
-      title: accountingbill_credit_notesGetAllBillCreditNotesResponse
+    accountingbill_credit_notesFinalBillCreditNotesResponse:
+      title: accountingbill_credit_notesFinalBillCreditNotesResponse
       type: object
       properties:
         data:
@@ -5451,7 +5553,13 @@ components:
             #/components/schemas/accountingbill_credit_notesGetAllBillCreditNotesResponseData
       required:
         - data
+    accountingbill_credit_notesGetAllBillCreditNotesResponse:
+      title: accountingbill_credit_notesGetAllBillCreditNotesResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: >-
+            #/components/schemas/accountingbill_credit_notesFinalBillCreditNotesResponse
         - $ref: "#/components/schemas/timestamp"
     accountingbill_paymentsBillPaymentsPlatformId:
       title: accountingbill_paymentsBillPaymentsPlatformId
@@ -5468,25 +5576,27 @@ components:
       properties:
         payment_id:
           type: string
+          nullable: true
           description: The ID that the accounting platform uses to identify this account
-      required:
-        - payment_id
     accountingbill_paymentsBillPaymentsAllResponseCommonFields:
       title: accountingbill_paymentsBillPaymentsAllResponseCommonFields
       type: object
       properties:
         bill_id:
           type: string
+          nullable: true
           description: >-
             The accounting platform’s unique identifier for the bill associated
             with this bill payment
         contact_id:
           type: string
+          nullable: true
           description: >-
             The accounting platform’s unique identifier for the contact
             associated with this bill payment
         account_id:
           type: string
+          nullable: true
           description: >-
             The accounting platform’s unique identifier for the account
             associated with this bill payment
@@ -5502,6 +5612,7 @@ components:
           description: The amount of the bill payment
         payment_date:
           type: string
+          nullable: true
           description: The date of the bill payment
         payment_mode:
           type: string
@@ -5521,11 +5632,7 @@ components:
           nullable: true
           description: Description of the bill payment
       required:
-        - bill_id
-        - contact_id
-        - account_id
         - amount
-        - payment_date
     accountingbill_paymentsBillPaymentsWriteRequestFields:
       title: accountingbill_paymentsBillPaymentsWriteRequestFields
       type: object
@@ -5544,32 +5651,24 @@ components:
       properties:
         updated_at:
           type: string
+          nullable: true
           description: The last ISO 8601 timestamp that the data was updated at
-      required:
-        - updated_at
       allOf:
         - $ref: "#/components/schemas/accountingbill_paymentsBillPaymentsPlatformId"
         - $ref: "#/components/schemas/accountingbill_paymentsBillPaymentsPaymentID"
         - $ref: >-
             #/components/schemas/accountingbill_paymentsBillPaymentsAllResponseCommonFields
-    accountingbill_paymentsBillPaymentsExportObject:
-      title: accountingbill_paymentsBillPaymentsExportObject
+    accountingbill_paymentsBillPaymentsExport:
+      title: accountingbill_paymentsBillPaymentsExport
       type: object
       properties:
         currency:
           $ref: "#/components/schemas/currencyObject"
           nullable: true
           description: The currency of the bill payment
-        updated_at:
-          type: string
-          description: The last ISO 8601 timestamp that the data was updated at
-      required:
-        - updated_at
       allOf:
-        - $ref: "#/components/schemas/accountingbill_paymentsBillPaymentsPlatformId"
-        - $ref: "#/components/schemas/accountingbill_paymentsBillPaymentsPaymentID"
         - $ref: >-
-            #/components/schemas/accountingbill_paymentsBillPaymentsAllResponseCommonFields
+            #/components/schemas/accountingbill_paymentsBillPaymentsResponseFields
     accountingbill_paymentsBillPaymentsWriteResponseFields:
       title: accountingbill_paymentsBillPaymentsWriteResponseFields
       type: object
@@ -5591,14 +5690,21 @@ components:
           nullable: true
           description: The currency of the bill payment
         bill:
-          type: object
-          additionalProperties: true
+          $ref: "#/components/schemas/accountingbill_paymentsBillsReponse"
           nullable: true
           description: The bill associated with this bill payment
       allOf:
         - $ref: "#/components/schemas/RootfiFields"
         - $ref: >-
             #/components/schemas/accountingbill_paymentsBillPaymentsResponseFields
+    accountingbill_paymentsBillsReponse:
+      title: accountingbill_paymentsBillsReponse
+      type: object
+      properties:
+        data:
+          $ref: "#/components/schemas/accountingbillsBillsExport"
+      required:
+        - data
     accountingbill_paymentsCreateBillPaymentRequest:
       title: accountingbill_paymentsCreateBillPaymentRequest
       type: object
@@ -5634,15 +5740,15 @@ components:
           $ref: >-
             #/components/schemas/accountingbill_paymentsBillPaymentsWriteResponseFields
         error:
-          type: string
+          $ref: "#/components/schemas/ErrorObject"
           nullable: true
           description: The error message if the job failed.
       required:
         - response
       allOf:
         - $ref: "#/components/schemas/JobSuccessResponse"
-    accountingbill_paymentsCreateBillPaymentResponse:
-      title: accountingbill_paymentsCreateBillPaymentResponse
+    accountingbill_paymentsFinalCreateBillPaymentResponse:
+      title: accountingbill_paymentsFinalCreateBillPaymentResponse
       type: object
       properties:
         data:
@@ -5650,7 +5756,13 @@ components:
             #/components/schemas/accountingbill_paymentsCreateBillpaymentResponseData
       required:
         - data
+    accountingbill_paymentsCreateBillPaymentResponse:
+      title: accountingbill_paymentsCreateBillPaymentResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: >-
+            #/components/schemas/accountingbill_paymentsFinalCreateBillPaymentResponse
         - $ref: "#/components/schemas/timestamp"
     accountingbill_paymentsGetBillPaymentsResponseData:
       title: accountingbill_paymentsGetBillPaymentsResponseData
@@ -5667,8 +5779,8 @@ components:
       required:
         - data
         - total_count
-    accountingbill_paymentsGetAllBillPaymentsResponse:
-      title: accountingbill_paymentsGetAllBillPaymentsResponse
+    accountingbill_paymentsFinalBillPaymentsGetAllResponse:
+      title: accountingbill_paymentsFinalBillPaymentsGetAllResponse
       type: object
       properties:
         data:
@@ -5676,7 +5788,13 @@ components:
             #/components/schemas/accountingbill_paymentsGetBillPaymentsResponseData
       required:
         - data
+    accountingbill_paymentsGetAllBillPaymentsResponse:
+      title: accountingbill_paymentsGetAllBillPaymentsResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: >-
+            #/components/schemas/accountingbill_paymentsFinalBillPaymentsGetAllResponse
         - $ref: "#/components/schemas/timestamp"
     accountingbillsBillsPlatformId:
       title: accountingbillsBillsPlatformId
@@ -5745,11 +5863,9 @@ components:
           nullable: true
           description: Rate between the currency of the bill and the base currency
         status:
-          type: string
+          $ref: "#/components/schemas/ArtifactStatus"
           nullable: true
-          description: >-
-            The status of the bill. Values can be `DRAFT`, `SUBMITTED`,
-            `PARTIALLY_PAID`, `PAID`, `OVERDUE`, `VOID`, `UNKNOWN`.
+          description: The status of the bill.
         total_amount:
           type: number
           format: double
@@ -5768,6 +5884,7 @@ components:
         tax_amount:
           type: number
           format: double
+          nullable: true
           description: Total tax amount levied on the bill
         amount_due:
           type: number
@@ -5784,11 +5901,19 @@ components:
           type: string
           nullable: true
           description: The date at which the bill was updated on the accounting platform
-      required:
-        - tax_amount
       allOf:
         - $ref: "#/components/schemas/accountingbillsBillsPlatformId"
         - $ref: "#/components/schemas/accountingbillsBillsAllResponsesCommonFields"
+    accountingbillsBillsExport:
+      title: accountingbillsBillsExport
+      type: object
+      properties:
+        currency:
+          $ref: "#/components/schemas/currencyObject"
+          nullable: true
+          description: The currency associated with the bill
+      allOf:
+        - $ref: "#/components/schemas/accountingbillsBillsResponseField"
     accountingbillsBillsWriteResponseFields:
       title: accountingbillsBillsWriteResponseFields
       type: object
@@ -5822,24 +5947,22 @@ components:
           nullable: true
           description: A map containing details of documents associated with the bill
         payments:
-          $ref: "#/components/schemas/accountingbillsBillPaymentObjectHelper"
+          $ref: "#/components/schemas/accountingbillsBillPaymentsResponse"
+          nullable: true
           description: A map containing details of payments made towards the bill
-      required:
-        - payments
       allOf:
         - $ref: "#/components/schemas/RootfiFields"
         - $ref: "#/components/schemas/accountingbillsBillsResponseField"
-    accountingbillsBillPaymentObjectHelper:
-      title: accountingbillsBillPaymentObjectHelper
+    accountingbillsBillPaymentsResponse:
+      title: accountingbillsBillPaymentsResponse
       type: object
       properties:
         data:
           type: array
           items:
-            $ref: >-
-              #/components/schemas/accountingbill_paymentsBillPaymentsExportObject
-          nullable: true
-          description: Array of Bill Payment Objects
+            $ref: "#/components/schemas/accountingbill_paymentsBillPaymentsExport"
+      required:
+        - data
     accountingbillsCreateBillsRequest:
       title: accountingbillsCreateBillsRequest
       type: object
@@ -5875,32 +5998,27 @@ components:
         response:
           $ref: "#/components/schemas/accountingbillsBillsWriteResponseFields"
         error:
-          type: string
+          $ref: "#/components/schemas/ErrorObject"
           nullable: true
           description: The error message if the job failed.
       required:
         - response
       allOf:
         - $ref: "#/components/schemas/JobSuccessResponse"
-    accountingbillsCreateBillsResponse:
-      title: accountingbillsCreateBillsResponse
+    accountingbillsFinalCreateBillsResponse:
+      title: accountingbillsFinalCreateBillsResponse
       type: object
       properties:
         data:
           $ref: "#/components/schemas/accountingbillsCreateBillsResponseData"
       required:
         - data
-      allOf:
-        - $ref: "#/components/schemas/timestamp"
-    accountingbillsGetAllBillsResponse:
-      title: accountingbillsGetAllBillsResponse
+    accountingbillsCreateBillsResponse:
+      title: accountingbillsCreateBillsResponse
       type: object
-      properties:
-        data:
-          $ref: "#/components/schemas/accountingbillsGetAllBillsResponseData"
-      required:
-        - data
+      properties: {}
       allOf:
+        - $ref: "#/components/schemas/accountingbillsFinalCreateBillsResponse"
         - $ref: "#/components/schemas/timestamp"
     accountingbillsGetAllBillsResponseData:
       title: accountingbillsGetAllBillsResponseData
@@ -5917,16 +6035,20 @@ components:
       required:
         - data
         - total_count
-    accountingcashflow_statementsgetCashFlowStatementResponse:
-      title: accountingcashflow_statementsgetCashFlowStatementResponse
+    accountingbillsFinalGetAllBillsResponse:
+      title: accountingbillsFinalGetAllBillsResponse
       type: object
       properties:
         data:
-          $ref: >-
-            #/components/schemas/accountingcashflow_statementsgetCashFlowStatementResponseData
+          $ref: "#/components/schemas/accountingbillsGetAllBillsResponseData"
       required:
         - data
+    accountingbillsGetAllBillsResponse:
+      title: accountingbillsGetAllBillsResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: "#/components/schemas/accountingbillsFinalGetAllBillsResponse"
         - $ref: "#/components/schemas/timestamp"
     accountingcashflow_statementsgetCashFlowStatementResponseData:
       title: accountingcashflow_statementsgetCashFlowStatementResponseData
@@ -5944,6 +6066,23 @@ components:
       required:
         - data
         - total_count
+    accountingcashflow_statementsFinalCashFlowStatementResponse:
+      title: accountingcashflow_statementsFinalCashFlowStatementResponse
+      type: object
+      properties:
+        data:
+          $ref: >-
+            #/components/schemas/accountingcashflow_statementsgetCashFlowStatementResponseData
+      required:
+        - data
+    accountingcashflow_statementsgetCashFlowStatementResponse:
+      title: accountingcashflow_statementsgetCashFlowStatementResponse
+      type: object
+      properties: {}
+      allOf:
+        - $ref: >-
+            #/components/schemas/accountingcashflow_statementsFinalCashFlowStatementResponse
+        - $ref: "#/components/schemas/timestamp"
     accountingcashflow_statementsFinalCashFlowStatement:
       title: accountingcashflow_statementsFinalCashFlowStatement
       type: object
@@ -5954,61 +6093,63 @@ components:
         period_start:
           type: string
           format: date-time
+          nullable: true
           description: start date of the cash flow statement report
         period_end:
           type: string
           format: date-time
+          nullable: true
           description: end date of the cash flow statement report
         operating_activities:
           type: array
           items:
             $ref: >-
               #/components/schemas/accountingcashflow_statementsCashFlowObjectType
+          nullable: true
           description: line_items for operating activities of income statement report
         investing_activities:
           type: array
           items:
             $ref: >-
               #/components/schemas/accountingcashflow_statementsCashFlowObjectType
+          nullable: true
           description: line_items for investing activities of income statement report
         financing_activities:
           type: array
           items:
             $ref: >-
               #/components/schemas/accountingcashflow_statementsCashFlowObjectType
+          nullable: true
           description: line_items for financing activities of income statement report
         cash_at_beginning_of_period:
           type: number
           format: double
+          nullable: true
           description: total amount at the beginning of the period
         cash_at_end_of_period:
           type: number
           format: double
+          nullable: true
           description: total amount at the end of the period
         updated_at:
           type: string
           format: date-time
+          nullable: true
           description: The last ISO 8601 timestamp that the data was updated at
       required:
         - platform_id
-        - period_start
-        - period_end
-        - operating_activities
-        - investing_activities
-        - financing_activities
-        - cash_at_beginning_of_period
-        - cash_at_end_of_period
-        - updated_at
     accountingcashflow_statementsCashFlowObjectType:
       title: accountingcashflow_statementsCashFlowObjectType
       type: object
       properties:
         name:
           type: string
+          nullable: true
           description: Name of the line item
         value:
           type: number
           format: double
+          nullable: true
           description: Total value of the statement.
         line_items:
           type: array
@@ -6017,20 +6158,7 @@ components:
             additionalProperties: true
           description: List of line items for the statement.
       required:
-        - name
-        - value
         - line_items
-    accountingcompany_infogetCompanyInfoResponse:
-      title: accountingcompany_infogetCompanyInfoResponse
-      type: object
-      properties:
-        data:
-          $ref: >-
-            #/components/schemas/accountingcompany_infoGetCompanyInfoResponseData
-      required:
-        - data
-      allOf:
-        - $ref: "#/components/schemas/timestamp"
     accountingcompany_infoGetCompanyInfoResponseData:
       title: accountingcompany_infoGetCompanyInfoResponseData
       type: object
@@ -6046,6 +6174,23 @@ components:
       required:
         - data
         - total_count
+    accountingcompany_infoFinalCompanyInfoResponseData:
+      title: accountingcompany_infoFinalCompanyInfoResponseData
+      type: object
+      properties:
+        data:
+          $ref: >-
+            #/components/schemas/accountingcompany_infoGetCompanyInfoResponseData
+      required:
+        - data
+    accountingcompany_infogetCompanyInfoResponse:
+      title: accountingcompany_infogetCompanyInfoResponse
+      type: object
+      properties: {}
+      allOf:
+        - $ref: >-
+            #/components/schemas/accountingcompany_infoFinalCompanyInfoResponseData
+        - $ref: "#/components/schemas/timestamp"
     accountingcompany_infoFinalCompanyInfoResponse:
       title: accountingcompany_infoFinalCompanyInfoResponse
       type: object
@@ -6055,6 +6200,7 @@ components:
           description: The platform id of the company info
         name:
           type: string
+          nullable: true
           description: The name of the company info
         legal_name:
           type: string
@@ -6075,6 +6221,7 @@ components:
         fiscal_start_at:
           type: string
           format: date-time
+          nullable: true
           description: The fiscal start at of the company info
         org_created_at:
           type: string
@@ -6083,12 +6230,10 @@ components:
         updated_at:
           type: string
           format: date-time
+          nullable: true
           description: The last ISO 8601 timestamp that the data was updated at
       required:
         - platform_id
-        - name
-        - fiscal_start_at
-        - updated_at
       allOf:
         - $ref: "#/components/schemas/RootfiFields"
     accountingcontactsContactsPlatformId:
@@ -6104,17 +6249,22 @@ components:
       title: accountingcontactsContactsAllResponsesCommonFields
       type: object
       properties:
+        currency_id:
+          type: string
+          nullable: true
+          description: The ISO-4217 currency code
         name:
           type: string
+          nullable: true
           description: Name of the customer on the accounting platform
         contact_name:
           type: string
           nullable: true
           description: Name of the contact person for the contact
         contact_type:
-          type: string
+          $ref: "#/components/schemas/ContactType"
           nullable: true
-          description: The type of customer. Values are either `CUSTOMER` or `VENDOR`.
+          description: The type of customer.
         tax_number:
           type: string
           nullable: true
@@ -6143,21 +6293,17 @@ components:
           type: string
           nullable: true
           description: The phone numbers associated with the contact
-        addresses:
-          type: object
-          additionalProperties: true
-          nullable: true
-          description: The addresses associated with the contact
-        currency_id:
-          type: string
-          nullable: true
-          description: The ISO-4217 currency code
-      required:
-        - name
     accountingcontactsContactsWriteRequestFields:
       title: accountingcontactsContactsWriteRequestFields
       type: object
       properties:
+        addresses:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+          nullable: true
+          description: Array of addresses associated with the contact
         raw_data:
           type: object
           additionalProperties: true
@@ -6171,20 +6317,27 @@ components:
       type: object
       properties:
         status:
-          type: string
-          description: >-
-            The status of the contact on the accounting platform. Values are
-            `ACTIVE`, `ARCHIVED`, `UNKNOWN`.
+          $ref: "#/components/schemas/BaseStaus"
+          nullable: true
+          description: The status of the contact on the accounting platform.
         updated_at:
           type: string
+          nullable: true
           description: The date and time the contact was last updated
-      required:
-        - status
-        - updated_at
       allOf:
         - $ref: "#/components/schemas/accountingcontactsContactsPlatformId"
         - $ref: >-
             #/components/schemas/accountingcontactsContactsAllResponsesCommonFields
+    accountingcontactsContactExport:
+      title: accountingcontactsContactExport
+      type: object
+      properties:
+        currency:
+          $ref: "#/components/schemas/currencyObject"
+          nullable: true
+          description: The currency associated with the contact
+      allOf:
+        - $ref: "#/components/schemas/accountingcontactsContactResponseFields"
     accountingcontactsContactsWriteAndUpdateResponseFields:
       title: accountingcontactsContactsWriteAndUpdateResponseFields
       type: object
@@ -6204,6 +6357,10 @@ components:
           $ref: "#/components/schemas/currencyObject"
           nullable: true
           description: The currency associated with the contact
+        addresses:
+          $ref: "#/components/schemas/AddressesObject"
+          nullable: true
+          description: The addresses associated with the contact
         phone_numbers:
           $ref: "#/components/schemas/PhoneNumberObject"
           nullable: true
@@ -6252,22 +6409,27 @@ components:
           $ref: >-
             #/components/schemas/accountingcontactsContactsWriteAndUpdateResponseFields
         error:
-          type: string
+          $ref: "#/components/schemas/ErrorObject"
           nullable: true
           description: The error message if the job failed.
       required:
         - response
       allOf:
         - $ref: "#/components/schemas/JobSuccessResponse"
-    accountingcontactsCreateContactsResponse:
-      title: accountingcontactsCreateContactsResponse
+    accountingcontactsFinalCreateContactsResponse:
+      title: accountingcontactsFinalCreateContactsResponse
       type: object
       properties:
         data:
           $ref: "#/components/schemas/accountingcontactsCreateContactsResponseData"
       required:
         - data
+    accountingcontactsCreateContactsResponse:
+      title: accountingcontactsCreateContactsResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: "#/components/schemas/accountingcontactsFinalCreateContactsResponse"
         - $ref: "#/components/schemas/timestamp"
     accountingcontactsGetAllContactsResponseData:
       title: accountingcontactsGetAllContactsResponseData
@@ -6283,15 +6445,20 @@ components:
       required:
         - data
         - total_count
-    accountingcontactsGetAllContactsResponse:
-      title: accountingcontactsGetAllContactsResponse
+    accountingcontactsFianlAllContactsResponseData:
+      title: accountingcontactsFianlAllContactsResponseData
       type: object
       properties:
         data:
           $ref: "#/components/schemas/accountingcontactsGetAllContactsResponseData"
       required:
         - data
+    accountingcontactsGetAllContactsResponse:
+      title: accountingcontactsGetAllContactsResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: "#/components/schemas/accountingcontactsFianlAllContactsResponseData"
         - $ref: "#/components/schemas/timestamp"
     accountingcontactsUpdateContactsResponseData:
       title: accountingcontactsUpdateContactsResponseData
@@ -6314,22 +6481,102 @@ components:
           $ref: >-
             #/components/schemas/accountingcontactsContactsWriteAndUpdateResponseFields
         error:
-          type: string
+          $ref: "#/components/schemas/ErrorObject"
           nullable: true
           description: The error message if the job failed.
       required:
         - response
       allOf:
         - $ref: "#/components/schemas/JobSuccessResponse"
-    accountingcontactsUpdateContactsResponse:
-      title: accountingcontactsUpdateContactsResponse
+    accountingcontactsFinalUpdateContactsResponse:
+      title: accountingcontactsFinalUpdateContactsResponse
       type: object
       properties:
         data:
           $ref: "#/components/schemas/accountingcontactsUpdateContactsResponseData"
       required:
         - data
+    accountingcontactsUpdateContactsResponse:
+      title: accountingcontactsUpdateContactsResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: "#/components/schemas/accountingcontactsFinalUpdateContactsResponse"
+        - $ref: "#/components/schemas/timestamp"
+    accountingdocumentsDocumentAllresponseCommonFields:
+      title: accountingdocumentsDocumentAllresponseCommonFields
+      type: object
+      properties:
+        platform_id:
+          type: string
+          description: The ID that the accounting platform uses to identify this document
+        document_type_id:
+          type: string
+          nullable: true
+          description: >-
+            The ID that the accounting platform uses to identify this document
+            type
+        file_name:
+          type: string
+          nullable: true
+          description: The name of the file
+        file_type:
+          type: string
+          nullable: true
+          description: The type of file
+        file_size:
+          type: number
+          format: double
+          nullable: true
+          description: The size of the file
+        document_type:
+          type: string
+          nullable: true
+          description: The type of document
+        document_uploaded:
+          type: boolean
+          nullable: true
+          description: The date the document was uploaded
+        download_link:
+          type: string
+          nullable: true
+          description: The link to download the document
+        updated_at:
+          type: string
+          nullable: true
+          description: The date the document was last updated
+      required:
+        - platform_id
+    accountingdocumentsGetAllDocumentsResponseHelper:
+      title: accountingdocumentsGetAllDocumentsResponseHelper
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: >-
+              #/components/schemas/accountingdocumentsDocumentAllresponseCommonFields
+          nullable: true
+          description: An array of all the documents
+        total_count:
+          type: integer
+          nullable: true
+          description: The total number of documents
+    accountingdocumentsFinalGetAllDocument:
+      title: accountingdocumentsFinalGetAllDocument
+      type: object
+      properties:
+        data:
+          $ref: >-
+            #/components/schemas/accountingdocumentsGetAllDocumentsResponseHelper
+      required:
+        - data
+    accountingdocumentsGetDocumentsResponse:
+      title: accountingdocumentsGetDocumentsResponse
+      type: object
+      properties: {}
+      allOf:
+        - $ref: "#/components/schemas/accountingdocumentsFinalGetAllDocument"
         - $ref: "#/components/schemas/timestamp"
     accountingexpensesExpensesPlatformId:
       title: accountingexpensesExpensesPlatformId
@@ -6346,6 +6593,7 @@ components:
       properties:
         account_id:
           type: string
+          nullable: true
           description: Account ID of the expense
         contact_id:
           type: string
@@ -6365,14 +6613,12 @@ components:
           description: Payment mode of the expense
         posted_date:
           type: string
+          nullable: true
           description: Date of creation of the expense
         memo:
           type: string
           nullable: true
           description: Memo description of the expense
-      required:
-        - account_id
-        - posted_date
     accountingexpensesExpensesWriteRequest:
       title: accountingexpensesExpensesWriteRequest
       type: object
@@ -6417,9 +6663,8 @@ components:
           description: Total pre tax value of the expense
         updated_at:
           type: string
+          nullable: true
           description: The date at which the expense was updated on the accounting platform
-      required:
-        - updated_at
       allOf:
         - $ref: "#/components/schemas/accountingexpensesExpensesPlatformId"
         - $ref: >-
@@ -6439,20 +6684,18 @@ components:
       title: accountingexpensesExpensesGetAllResponseFields
       type: object
       properties:
-        line_items:
-          $ref: "#/components/schemas/LineItemObjectData"
-          nullable: true
-          description: Array of Expense Line items associated with the expense
         currency:
-          type: object
-          additionalProperties: true
+          $ref: "#/components/schemas/currencyObject"
           nullable: true
           description: >-
             The ISO-4217 currency code and related financial details of the
             transaction or entity
+        line_items:
+          $ref: "#/components/schemas/LineItemObjectData"
+          nullable: true
+          description: Array of Expense Line items associated with the expense
         documents:
-          type: object
-          additionalProperties: true
+          $ref: "#/components/schemas/accountingexpensesDocumentResponse"
           nullable: true
           description: >-
             Array or collection of documents associated with the transaction or
@@ -6460,6 +6703,17 @@ components:
       allOf:
         - $ref: "#/components/schemas/RootfiFields"
         - $ref: "#/components/schemas/accountingexpensesExpensesResponseField"
+    accountingexpensesDocumentResponse:
+      title: accountingexpensesDocumentResponse
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: >-
+              #/components/schemas/accountingdocumentsDocumentAllresponseCommonFields
+      required:
+        - data
     accountingexpensesCreateExpensesRequest:
       title: accountingexpensesCreateExpensesRequest
       type: object
@@ -6493,22 +6747,27 @@ components:
         response:
           $ref: "#/components/schemas/accountingexpensesExpensesWriteResponseFields"
         error:
-          type: string
+          $ref: "#/components/schemas/ErrorObject"
           nullable: true
           description: The error message if the job failed.
       required:
         - response
       allOf:
         - $ref: "#/components/schemas/JobSuccessResponse"
-    accountingexpensesCreateExpensesResponse:
-      title: accountingexpensesCreateExpensesResponse
+    accountingexpensesFinalCreateExpensesResponse:
+      title: accountingexpensesFinalCreateExpensesResponse
       type: object
       properties:
         data:
           $ref: "#/components/schemas/accountingexpensesCreateExpensesResponseData"
       required:
         - data
+    accountingexpensesCreateExpensesResponse:
+      title: accountingexpensesCreateExpensesResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: "#/components/schemas/accountingexpensesFinalCreateExpensesResponse"
         - $ref: "#/components/schemas/timestamp"
     accountingexpensesGetAllExpensesResponseData:
       title: accountingexpensesGetAllExpensesResponseData
@@ -6525,16 +6784,164 @@ components:
       required:
         - data
         - total_count
-    accountingexpensesGetAllExpensesResponse:
-      title: accountingexpensesGetAllExpensesResponse
+    accountingexpensesFinalGetAllExpenses:
+      title: accountingexpensesFinalGetAllExpenses
       type: object
       properties:
         data:
           $ref: "#/components/schemas/accountingexpensesGetAllExpensesResponseData"
       required:
         - data
+    accountingexpensesGetAllExpensesResponse:
+      title: accountingexpensesGetAllExpensesResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: "#/components/schemas/accountingexpensesFinalGetAllExpenses"
         - $ref: "#/components/schemas/timestamp"
+    accountingincome_statementsgetIncomeStatementResponseData:
+      title: accountingincome_statementsgetIncomeStatementResponseData
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: >-
+              #/components/schemas/accountingincome_statementsFinalIncomeStatement
+          description: List of Income Statement
+        total_count:
+          type: integer
+          description: Total Count of response object
+      required:
+        - data
+        - total_count
+    accountingincome_statementsFinalGetAllIncomeStatement:
+      title: accountingincome_statementsFinalGetAllIncomeStatement
+      type: object
+      properties:
+        data:
+          $ref: >-
+            #/components/schemas/accountingincome_statementsgetIncomeStatementResponseData
+      required:
+        - data
+    accountingincome_statementsgetIncomeStatementResponse:
+      title: accountingincome_statementsgetIncomeStatementResponse
+      type: object
+      properties: {}
+      allOf:
+        - $ref: >-
+            #/components/schemas/accountingincome_statementsFinalGetAllIncomeStatement
+        - $ref: "#/components/schemas/timestamp"
+    accountingincome_statementsFinalIncomeStatement:
+      title: accountingincome_statementsFinalIncomeStatement
+      type: object
+      properties:
+        platform_id:
+          type: string
+          description: The accounting Platform’s id for the income statement
+        currency_id:
+          type: string
+          nullable: true
+          description: currency of the income statement
+        period_start:
+          type: string
+          format: date-time
+          nullable: true
+          description: start date of the income statement report
+        period_end:
+          type: string
+          format: date-time
+          nullable: true
+          description: end date of the income statement report
+        revenue:
+          type: array
+          items:
+            $ref: >-
+              #/components/schemas/accountingincome_statementsIncomeStatementObjectTypes
+          nullable: true
+          description: line_items for revenue of income statement report
+        cost_of_goods_sold:
+          type: array
+          items:
+            $ref: >-
+              #/components/schemas/accountingincome_statementsIncomeStatementObjectTypes
+          nullable: true
+          description: line_items for revenue of income statement report
+        gross_profit:
+          type: number
+          format: double
+          nullable: true
+          description: gross profit of the income statement report
+        operating_expenses:
+          type: array
+          items:
+            $ref: >-
+              #/components/schemas/accountingincome_statementsIncomeStatementObjectTypes
+          nullable: true
+          description: line_items for operating_expenses of income statement report
+        operating_profit:
+          type: number
+          format: double
+          nullable: true
+          description: operating profit of the income statement report
+        non_operating_revenue:
+          type: array
+          items:
+            $ref: >-
+              #/components/schemas/accountingincome_statementsIncomeStatementObjectTypes
+          nullable: true
+          description: non operating revenue of the income statement report
+        non_operating_expenses:
+          type: array
+          items:
+            $ref: >-
+              #/components/schemas/accountingincome_statementsIncomeStatementObjectTypes
+          nullable: true
+          description: non operating expenses of the income statement report
+        earnings_before_taxes:
+          type: number
+          format: double
+          nullable: true
+          description: earnings before taxes of the income statement report
+        taxes:
+          type: array
+          items:
+            $ref: >-
+              #/components/schemas/accountingincome_statementsIncomeStatementObjectTypes
+          nullable: true
+          description: line_items for taxes of income statement report
+        net_profit:
+          type: number
+          format: double
+          nullable: true
+          description: net profit of the income statement report
+        updated_at:
+          type: string
+          format: date-time
+          nullable: true
+          description: The last ISO 8601 timestamp that the data was updated at
+      required:
+        - platform_id
+    accountingincome_statementsIncomeStatementObjectTypes:
+      title: accountingincome_statementsIncomeStatementObjectTypes
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+          description: Name of the line item
+        value:
+          type: number
+          format: double
+          nullable: true
+          description: Total value of the statement.
+        line_items:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+          nullable: true
+          description: List of line items for the statement.
     accountinginvoice_credit_notesInvoiceCreditNotesPlatformId:
       title: accountinginvoice_credit_notesInvoiceCreditNotesPlatformId
       type: object
@@ -6548,8 +6955,15 @@ components:
       title: accountinginvoice_credit_notesInvoiceCreditNotesAllResponsesCommonFields
       type: object
       properties:
+        invoice_ids:
+          type: array
+          items:
+            type: string
+          nullable: true
+          description: An Array of Invoices associated with the credit note
         contact_id:
           type: string
+          nullable: true
           description: >-
             The accounting platform’s unique identifier for the contact
             associated with this credit note
@@ -6564,20 +6978,12 @@ components:
         posted_date:
           type: string
           format: date-time
+          nullable: true
           description: Date on which the credit note was posted
         memo:
           type: string
           nullable: true
           description: Description of the credit note
-        invoice_ids:
-          type: array
-          items:
-            type: string
-          nullable: true
-          description: An Array of Invoices associated with the credit note
-      required:
-        - contact_id
-        - posted_date
     accountinginvoice_credit_notesInvoiceCreditNotesWriteRequest:
       title: accountinginvoice_credit_notesInvoiceCreditNotesWriteRequest
       type: object
@@ -6600,30 +7006,27 @@ components:
       title: accountinginvoice_credit_notesInvoiceCreditNotesResponseFields
       type: object
       properties:
+        status:
+          $ref: "#/components/schemas/ArtifactStatus"
+          nullable: true
+          description: The status of the credit note.
         tax_amount:
           type: integer
           nullable: true
           description: Total tax amount levied on the credit note
-        remaining_credit:
-          type: integer
-          nullable: true
-          description: The balance amount remaining on the credit note
         total_amount:
           type: integer
           nullable: true
           description: Total amount of the credit note
-        status:
-          type: string
-          description: >-
-            The status of the credit note. Values are `DRAFT`, `SUBMITTED`,
-            `PARTIALLY_PAID`, `PAID`, `OVERDUE`, `VOID`, `UNKNOWN`.
+        remaining_credit:
+          type: integer
+          nullable: true
+          description: The balance amount remaining on the credit note
         updated_at:
           type: string
           format: date-time
+          nullable: true
           description: The last ISO 8601 timestamp that the data was updated at
-      required:
-        - status
-        - updated_at
       allOf:
         - $ref: >-
             #/components/schemas/accountinginvoice_credit_notesInvoiceCreditNotesPlatformId
@@ -6647,21 +7050,14 @@ components:
       title: accountinginvoice_credit_notesInvoiceCreditNotesGetAllResponseFields
       type: object
       properties:
-        line_items:
-          $ref: "#/components/schemas/LineItemObjectData"
-          nullable: true
-          description: An array of Credit Note Line Items
         currency:
           $ref: "#/components/schemas/currencyObject"
           nullable: true
           description: The ISO-4217 currency code used in the credit note
-        invoices:
-          type: array
-          items:
-            type: object
-            additionalProperties: true
+        line_items:
+          $ref: "#/components/schemas/LineItemObjectData"
           nullable: true
-          description: An array of invoice data associated with the credit note
+          description: An array of Credit Note Line Items
       allOf:
         - $ref: "#/components/schemas/RootfiFields"
         - $ref: >-
@@ -6702,15 +7098,15 @@ components:
           $ref: >-
             #/components/schemas/accountinginvoice_credit_notesInvoiceCreditNotesWriteResponseFields
         error:
-          type: string
+          $ref: "#/components/schemas/ErrorObject"
           nullable: true
           description: The error message if the job failed.
       required:
         - response
       allOf:
         - $ref: "#/components/schemas/JobSuccessResponse"
-    accountinginvoice_credit_notesCreateInvoiceCreditNotesResponse:
-      title: accountinginvoice_credit_notesCreateInvoiceCreditNotesResponse
+    accountinginvoice_credit_notesFinalCreateInvoiceCreditNotesResponse:
+      title: accountinginvoice_credit_notesFinalCreateInvoiceCreditNotesResponse
       type: object
       properties:
         data:
@@ -6718,7 +7114,13 @@ components:
             #/components/schemas/accountinginvoice_credit_notesCreateInvoiceCreditNotesResponseData
       required:
         - data
+    accountinginvoice_credit_notesCreateInvoiceCreditNotesResponse:
+      title: accountinginvoice_credit_notesCreateInvoiceCreditNotesResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: >-
+            #/components/schemas/accountinginvoice_credit_notesFinalCreateInvoiceCreditNotesResponse
         - $ref: "#/components/schemas/timestamp"
     accountinginvoice_credit_notesGetAllInvoiceCreditNotesResponseData:
       title: accountinginvoice_credit_notesGetAllInvoiceCreditNotesResponseData
@@ -6735,8 +7137,8 @@ components:
       required:
         - data
         - total_count
-    accountinginvoice_credit_notesGetAllInvoiceCreditNotesResponse:
-      title: accountinginvoice_credit_notesGetAllInvoiceCreditNotesResponse
+    accountinginvoice_credit_notesFinalGetAllInvoiceCreditNotes:
+      title: accountinginvoice_credit_notesFinalGetAllInvoiceCreditNotes
       type: object
       properties:
         data:
@@ -6744,7 +7146,13 @@ components:
             #/components/schemas/accountinginvoice_credit_notesGetAllInvoiceCreditNotesResponseData
       required:
         - data
+    accountinginvoice_credit_notesGetAllInvoiceCreditNotesResponse:
+      title: accountinginvoice_credit_notesGetAllInvoiceCreditNotesResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: >-
+            #/components/schemas/accountinginvoice_credit_notesFinalGetAllInvoiceCreditNotes
         - $ref: "#/components/schemas/timestamp"
     accountinginvoice_paymentsInvoicePaymentsPlatformId:
       title: accountinginvoice_paymentsInvoicePaymentsPlatformId
@@ -6755,22 +7163,35 @@ components:
           description: The ID that the accounting platform uses to identify this account
       required:
         - platform_id
+    accountinginvoice_paymentsInvoicePaymentId:
+      title: accountinginvoice_paymentsInvoicePaymentId
+      type: object
+      properties:
+        payment_id:
+          type: string
+          nullable: true
+          description: >-
+            The accounting platform’s unique identifier for this specific
+            payment
     accountinginvoice_paymentsInvoicePaymentsAllResponsesCommonFields:
       title: accountinginvoice_paymentsInvoicePaymentsAllResponsesCommonFields
       type: object
       properties:
         invoice_id:
           type: string
+          nullable: true
           description: >-
             The accounting platform’s unique identifier for the invoice
             associated with this invoice payment
         account_id:
           type: string
+          nullable: true
           description: >-
             The accounting platform’s unique identifier for the account
             associated with this invoice payment
         contact_id:
           type: string
+          nullable: true
           description: >-
             The accounting platform’s unique identifier for the contact
             associated with this invoice payment
@@ -6783,7 +7204,12 @@ components:
         amount:
           type: number
           format: double
+          nullable: true
           description: The amount of the invoice payment
+        payment_date:
+          type: string
+          nullable: true
+          description: The date of the invoice payment
         payment_mode:
           type: string
           nullable: true
@@ -6796,15 +7222,6 @@ components:
           type: string
           nullable: true
           description: Description of the invoice payment
-        payment_date:
-          type: string
-          description: The date of the invoice payment
-      required:
-        - invoice_id
-        - account_id
-        - contact_id
-        - amount
-        - payment_date
     accountinginvoice_paymentsInvoicePaymentsWriteRequestFields:
       title: accountinginvoice_paymentsInvoicePaymentsWriteRequestFields
       type: object
@@ -6826,22 +7243,27 @@ components:
           format: double
           nullable: true
           description: Rate between the currency of the payment and the base currency
-        payment_id:
-          type: string
-          description: >-
-            The accounting platform’s unique identifier for this specific
-            payment
         updated_at:
           type: string
+          nullable: true
           description: The last ISO 8601 timestamp at which the payment data was updated
-      required:
-        - payment_id
-        - updated_at
       allOf:
         - $ref: >-
             #/components/schemas/accountinginvoice_paymentsInvoicePaymentsPlatformId
+        - $ref: "#/components/schemas/accountinginvoice_paymentsInvoicePaymentId"
         - $ref: >-
             #/components/schemas/accountinginvoice_paymentsInvoicePaymentsAllResponsesCommonFields
+    accountinginvoice_paymentsInvoicePaymentExport:
+      title: accountinginvoice_paymentsInvoicePaymentExport
+      type: object
+      properties:
+        currency:
+          $ref: "#/components/schemas/currencyObject"
+          nullable: true
+          description: A map containing details of the currency used for this payment
+      allOf:
+        - $ref: >-
+            #/components/schemas/accountinginvoice_paymentsInvoicePaymentsResponseFields
     accountinginvoice_paymentsInvoicePaymentsWriteResponseFields:
       title: accountinginvoice_paymentsInvoicePaymentsWriteResponseFields
       type: object
@@ -6865,14 +7287,21 @@ components:
           nullable: true
           description: A map containing details of the currency used for this payment
         invoice:
-          type: object
-          additionalProperties: true
+          $ref: "#/components/schemas/accountinginvoice_paymentsInvoiceResponse"
           nullable: true
           description: A map containing details of the invoice associated with this payment
       allOf:
         - $ref: "#/components/schemas/RootfiFields"
         - $ref: >-
             #/components/schemas/accountinginvoice_paymentsInvoicePaymentsResponseFields
+    accountinginvoice_paymentsInvoiceResponse:
+      title: accountinginvoice_paymentsInvoiceResponse
+      type: object
+      properties:
+        data:
+          $ref: "#/components/schemas/accountinginvoicesinvoiceExport"
+      required:
+        - data
     accountinginvoice_paymentsCreateInvoicePaymentRequest:
       title: accountinginvoice_paymentsCreateInvoicePaymentRequest
       type: object
@@ -6909,15 +7338,15 @@ components:
           $ref: >-
             #/components/schemas/accountinginvoice_paymentsInvoicePaymentsWriteResponseFields
         error:
-          type: string
+          $ref: "#/components/schemas/ErrorObject"
           nullable: true
           description: The error message if the job failed.
       required:
         - response
       allOf:
         - $ref: "#/components/schemas/JobSuccessResponse"
-    accountinginvoice_paymentsCreateInvoicePaymentsResponse:
-      title: accountinginvoice_paymentsCreateInvoicePaymentsResponse
+    accountinginvoice_paymentsFinalCreateInvoicePaymentsResponse:
+      title: accountinginvoice_paymentsFinalCreateInvoicePaymentsResponse
       type: object
       properties:
         data:
@@ -6925,7 +7354,13 @@ components:
             #/components/schemas/accountinginvoice_paymentsCreateInvoicePaymentsResponseData
       required:
         - data
+    accountinginvoice_paymentsCreateInvoicePaymentsResponse:
+      title: accountinginvoice_paymentsCreateInvoicePaymentsResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: >-
+            #/components/schemas/accountinginvoice_paymentsFinalCreateInvoicePaymentsResponse
         - $ref: "#/components/schemas/timestamp"
     accountinginvoice_paymentsGetAllInvoicePaymentsResponseData:
       title: accountinginvoice_paymentsGetAllInvoicePaymentsResponseData
@@ -6942,8 +7377,8 @@ components:
       required:
         - data
         - total_count
-    accountinginvoice_paymentsGetAllInvoicePaymentsResponse:
-      title: accountinginvoice_paymentsGetAllInvoicePaymentsResponse
+    accountinginvoice_paymentsFinalGetAllInvoicePayments:
+      title: accountinginvoice_paymentsFinalGetAllInvoicePayments
       type: object
       properties:
         data:
@@ -6951,146 +7386,14 @@ components:
             #/components/schemas/accountinginvoice_paymentsGetAllInvoicePaymentsResponseData
       required:
         - data
+    accountinginvoice_paymentsGetAllInvoicePaymentsResponse:
+      title: accountinginvoice_paymentsGetAllInvoicePaymentsResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: >-
+            #/components/schemas/accountinginvoice_paymentsFinalGetAllInvoicePayments
         - $ref: "#/components/schemas/timestamp"
-    accountinginvoice_statementsgetIncomeStatementResponse:
-      title: accountinginvoice_statementsgetIncomeStatementResponse
-      type: object
-      properties:
-        data:
-          $ref: >-
-            #/components/schemas/accountinginvoice_statementsgetIncomeStatementResponseData
-      required:
-        - data
-      allOf:
-        - $ref: "#/components/schemas/timestamp"
-    accountinginvoice_statementsgetIncomeStatementResponseData:
-      title: accountinginvoice_statementsgetIncomeStatementResponseData
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: >-
-              #/components/schemas/accountinginvoice_statementsFinalIncomeStatement
-          description: List of Income Statement
-        total_count:
-          type: integer
-          description: Total Count of response object
-      required:
-        - data
-        - total_count
-    accountinginvoice_statementsFinalIncomeStatement:
-      title: accountinginvoice_statementsFinalIncomeStatement
-      type: object
-      properties:
-        platform_id:
-          type: string
-          description: The accounting Platform’s id for the income statement
-        period_start:
-          type: string
-          format: date-time
-          nullable: true
-          description: start date of the income statement report
-        period_end:
-          type: string
-          format: date-time
-          nullable: true
-          description: end date of the income statement report
-        currency_id:
-          type: string
-          nullable: true
-          description: currency of the income statement
-        revenue:
-          type: array
-          items:
-            $ref: >-
-              #/components/schemas/accountinginvoice_statementsIncomeStatementObjectTypes
-          description: line_items for revenue of income statement report
-        cost_of_goods_sold:
-          type: array
-          items:
-            $ref: >-
-              #/components/schemas/accountinginvoice_statementsIncomeStatementObjectTypes
-          description: line_items for revenue of income statement report
-        gross_profit:
-          type: number
-          format: double
-          description: gross profit of the income statement report
-        operating_expenses:
-          type: array
-          items:
-            $ref: >-
-              #/components/schemas/accountinginvoice_statementsIncomeStatementObjectTypes
-          description: line_items for operating_expenses of income statement report
-        operating_profit:
-          type: number
-          format: double
-          description: operating profit of the income statement report
-        non_operating_revenue:
-          type: array
-          items:
-            $ref: >-
-              #/components/schemas/accountinginvoice_statementsIncomeStatementObjectTypes
-          description: non operating revenue of the income statement report
-        non_operating_expenses:
-          type: array
-          items:
-            $ref: >-
-              #/components/schemas/accountinginvoice_statementsIncomeStatementObjectTypes
-          description: non operating expenses of the income statement report
-        earnings_before_taxes:
-          type: number
-          format: double
-          description: earnings before taxes of the income statement report
-        taxes:
-          type: array
-          items:
-            $ref: >-
-              #/components/schemas/accountinginvoice_statementsIncomeStatementObjectTypes
-          description: line_items for taxes of income statement report
-        net_profit:
-          type: number
-          format: double
-          description: net profit of the income statement report
-        updated_at:
-          type: string
-          format: date-time
-          description: The last ISO 8601 timestamp that the data was updated at
-      required:
-        - platform_id
-        - revenue
-        - cost_of_goods_sold
-        - gross_profit
-        - operating_expenses
-        - operating_profit
-        - non_operating_revenue
-        - non_operating_expenses
-        - earnings_before_taxes
-        - taxes
-        - net_profit
-        - updated_at
-    accountinginvoice_statementsIncomeStatementObjectTypes:
-      title: accountinginvoice_statementsIncomeStatementObjectTypes
-      type: object
-      properties:
-        name:
-          type: string
-          description: Name of the line item
-        value:
-          type: number
-          format: double
-          description: Total value of the statement.
-        line_items:
-          type: array
-          items:
-            type: object
-            additionalProperties: true
-          description: List of line items for the statement.
-      required:
-        - name
-        - value
-        - line_items
     accountinginvoicesInvoicesPlatformId:
       title: accountinginvoicesInvoicesPlatformId
       type: object
@@ -7106,42 +7409,45 @@ components:
       properties:
         contact_id:
           type: string
+          nullable: true
           description: >-
             The Accounting Platform’s unique ID for the contact who receives
             this invoice
+        currency_id:
+          type: string
+          nullable: true
+          description: The ISO-4217 currency code of the invoice
         document_number:
           type: string
           nullable: true
           description: Reference document number for the invoice
         posted_date:
           type: string
+          nullable: true
           description: Date of the invoice as recorded by the accounting platform
         due_date:
           type: string
+          nullable: true
           description: The due date for the invoice as an ISO 8601 timestamp
         memo:
           type: string
           nullable: true
           description: Description of the invoice
-      required:
-        - contact_id
-        - posted_date
-        - due_date
     accountinginvoicesInvoicesWriteAndUpdateRequest:
       title: accountinginvoicesInvoicesWriteAndUpdateRequest
       type: object
       properties:
-        raw_data:
-          type: object
-          additionalProperties: true
-          nullable: true
-          description: Raw data of the invoice
         line_items:
           type: array
           items:
             $ref: "#/components/schemas/LineItems"
           nullable: true
           description: Array of Invoice Line items associated with the invoice
+        raw_data:
+          type: object
+          additionalProperties: true
+          nullable: true
+          description: Raw data of the invoice
       allOf:
         - $ref: >-
             #/components/schemas/accountinginvoicesInvoicesAllResponsesCommonFields
@@ -7149,11 +7455,15 @@ components:
       title: accountinginvoicesInvoicesResponseField
       type: object
       properties:
+        currency_rate:
+          type: number
+          format: double
+          nullable: true
+          description: Rate between the currency of the payment and the base currency
         status:
-          type: string
-          description: >-
-            The status of the invoice. Values are `DRAFT`, `SUBMITTED`,
-            `PARTIALLY_PAID`, `PAID`, `OVERDUE`, `VOID`, `UNKNOWN`.
+          $ref: "#/components/schemas/ArtifactStatus"
+          nullable: true
+          description: The status of the invoice.
         tax_amount:
           type: number
           format: double
@@ -7164,11 +7474,6 @@ components:
           format: double
           nullable: true
           description: Total value of discounts applied to the invoice
-        currency_rate:
-          type: number
-          format: double
-          nullable: true
-          description: Rate between the currency of the payment and the base currency
         total_amount:
           type: number
           format: double
@@ -7190,20 +7495,24 @@ components:
           format: double
           nullable: true
           description: Total amount pending for the invoice
-        currency_id:
-          type: string
-          nullable: true
-          description: The ISO-4217 currency code of the invoice
         updated_at:
           type: string
+          nullable: true
           description: Date the record was last updated in the accounting platform.
-      required:
-        - status
-        - updated_at
       allOf:
         - $ref: "#/components/schemas/accountinginvoicesInvoicesPlatformId"
         - $ref: >-
             #/components/schemas/accountinginvoicesInvoicesAllResponsesCommonFields
+    accountinginvoicesinvoiceExport:
+      title: accountinginvoicesinvoiceExport
+      type: object
+      properties:
+        currency:
+          $ref: "#/components/schemas/currencyObject"
+          nullable: true
+          description: A map containing details of the currency used for this invoice
+      allOf:
+        - $ref: "#/components/schemas/accountinginvoicesInvoicesResponseField"
     accountinginvoicesInvoicesWriteAndUpdateResponseFields:
       title: accountinginvoicesInvoicesWriteAndUpdateResponseFields
       type: object
@@ -7219,31 +7528,49 @@ components:
       title: accountinginvoicesInvoicesGetAllResponseFields
       type: object
       properties:
+        currency:
+          $ref: "#/components/schemas/currencyObject"
+          nullable: true
+          description: A map containing details of the currency used for this invoice
+        payments:
+          $ref: "#/components/schemas/accountinginvoicesInvoicePaymentResponse"
+          nullable: true
+          description: A map containing details of the payments made for this invoice
         line_items:
           $ref: "#/components/schemas/LineItemObjectData"
           nullable: true
           description: Array of Invoice Line items associated with the invoice (see below)
-        currency:
-          type: object
-          additionalProperties: true
-          description: A map containing details of the currency used for this invoice
-        payments:
-          type: object
-          additionalProperties: true
-          nullable: true
-          description: A map containing details of the payments made for this invoice
         documents:
-          type: object
-          additionalProperties: true
+          $ref: "#/components/schemas/accountinginvoicesDocumentResponse"
           nullable: true
           description: >-
             A map containing details of the documents associated with this
             invoice
-      required:
-        - currency
       allOf:
         - $ref: "#/components/schemas/RootfiFields"
         - $ref: "#/components/schemas/accountinginvoicesInvoicesResponseField"
+    accountinginvoicesDocumentResponse:
+      title: accountinginvoicesDocumentResponse
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: >-
+              #/components/schemas/accountingdocumentsDocumentAllresponseCommonFields
+      required:
+        - data
+    accountinginvoicesInvoicePaymentResponse:
+      title: accountinginvoicesInvoicePaymentResponse
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: >-
+              #/components/schemas/accountinginvoice_paymentsInvoicePaymentExport
+      required:
+        - data
     accountinginvoicesCreateInvoiceRequest:
       title: accountinginvoicesCreateInvoiceRequest
       type: object
@@ -7280,22 +7607,27 @@ components:
           $ref: >-
             #/components/schemas/accountinginvoicesInvoicesWriteAndUpdateResponseFields
         error:
-          type: string
+          $ref: "#/components/schemas/ErrorObject"
           nullable: true
           description: The error message if the job failed.
       required:
         - response
       allOf:
         - $ref: "#/components/schemas/JobSuccessResponse"
-    accountinginvoicesCreateInvoicesResponse:
-      title: accountinginvoicesCreateInvoicesResponse
+    accountinginvoicesFinalCreateInvoicesResponse:
+      title: accountinginvoicesFinalCreateInvoicesResponse
       type: object
       properties:
         data:
           $ref: "#/components/schemas/accountinginvoicesCreateInvoiceResponseData"
       required:
         - data
+    accountinginvoicesCreateInvoicesResponse:
+      title: accountinginvoicesCreateInvoicesResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: "#/components/schemas/accountinginvoicesFinalCreateInvoicesResponse"
         - $ref: "#/components/schemas/timestamp"
     accountinginvoicesGetAllInvoicesResponseData:
       title: accountinginvoicesGetAllInvoicesResponseData
@@ -7312,15 +7644,20 @@ components:
       required:
         - data
         - total_count
-    accountinginvoicesGetAllInvoicesResponse:
-      title: accountinginvoicesGetAllInvoicesResponse
+    accountinginvoicesFianlGetAllInvoices:
+      title: accountinginvoicesFianlGetAllInvoices
       type: object
       properties:
         data:
           $ref: "#/components/schemas/accountinginvoicesGetAllInvoicesResponseData"
       required:
         - data
+    accountinginvoicesGetAllInvoicesResponse:
+      title: accountinginvoicesGetAllInvoicesResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: "#/components/schemas/accountinginvoicesFianlGetAllInvoices"
         - $ref: "#/components/schemas/timestamp"
     accountinginvoicesUpdateInvoicesResponseData:
       title: accountinginvoicesUpdateInvoicesResponseData
@@ -7342,7 +7679,7 @@ components:
           $ref: >-
             #/components/schemas/accountinginvoicesInvoicesWriteAndUpdateResponseFields
         error:
-          type: string
+          $ref: "#/components/schemas/ErrorObject"
           nullable: true
           description: The error message if the job failed.
       required:
@@ -7365,25 +7702,25 @@ components:
       properties:
         platform_id:
           type: string
-          nullable: true
           description: The ID that the accounting platform uses to identify this item
+      required:
+        - platform_id
     accountingitemsItemsAllResponsesCommonFields:
       title: accountingitemsItemsAllResponsesCommonFields
       type: object
       properties:
         name:
           type: string
+          nullable: true
           description: Name of the item
         description:
           type: string
           nullable: true
           description: Description of the item
         type:
-          type: string
+          $ref: "#/components/schemas/ItemEnum"
           nullable: true
-          description: >-
-            Type of the item. Values are `INVENTORY`, `NON_INVENTORY`,
-            `SERVICE`, `UNKNOWN`.
+          description: Type of the item.
         code:
           type: string
           nullable: true
@@ -7401,8 +7738,6 @@ components:
           $ref: "#/components/schemas/BillInvoiceItem"
           nullable: true
           description: Item details of this item getting sold
-      required:
-        - name
     accountingitemsItemsWriteRequestFields:
       title: accountingitemsItemsWriteRequestFields
       type: object
@@ -7427,8 +7762,9 @@ components:
           type: boolean
           description: Check if there are details (invoice_item) of this item getting sold
         status:
-          type: string
-          description: Status of the item. Values are `ACTIVE`, `ARCHIVED`, `UNKNOWN`.
+          $ref: "#/components/schemas/BaseStaus"
+          nullable: true
+          description: Status of the item.
         updated_at:
           type: string
           description: >-
@@ -7437,7 +7773,6 @@ components:
       required:
         - is_bill_item
         - is_invoice_item
-        - status
         - updated_at
       allOf:
         - $ref: "#/components/schemas/accountingitemsItemsPlatformId"
@@ -7494,22 +7829,27 @@ components:
         response:
           $ref: "#/components/schemas/accountingitemsItemsWriteResponseFields"
         error:
-          type: string
+          $ref: "#/components/schemas/ErrorObject"
           nullable: true
           description: The error message if the job failed.
       required:
         - response
       allOf:
         - $ref: "#/components/schemas/JobSuccessResponse"
-    accountingitemsCreateItemsResponse:
-      title: accountingitemsCreateItemsResponse
+    accountingitemsFinalCreateitemsResponse:
+      title: accountingitemsFinalCreateitemsResponse
       type: object
       properties:
         data:
           $ref: "#/components/schemas/accountingitemsCreateItemsResponseData"
       required:
         - data
+    accountingitemsCreateItemsResponse:
+      title: accountingitemsCreateItemsResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: "#/components/schemas/accountingitemsFinalCreateitemsResponse"
         - $ref: "#/components/schemas/timestamp"
     accountingitemsGetAllItemsResponseData:
       title: accountingitemsGetAllItemsResponseData
@@ -7525,15 +7865,20 @@ components:
       required:
         - data
         - total_count
-    accountingitemsGetAllItemsResponse:
-      title: accountingitemsGetAllItemsResponse
+    accountingitemsFinalGetAllItems:
+      title: accountingitemsFinalGetAllItems
       type: object
       properties:
         data:
           $ref: "#/components/schemas/accountingitemsGetAllItemsResponseData"
       required:
         - data
+    accountingitemsGetAllItemsResponse:
+      title: accountingitemsGetAllItemsResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: "#/components/schemas/accountingitemsFinalGetAllItems"
         - $ref: "#/components/schemas/timestamp"
     accountingjournal_entriesJournalEntriesPlatformId:
       title: accountingjournal_entriesJournalEntriesPlatformId
@@ -7541,10 +7886,11 @@ components:
       properties:
         platform_id:
           type: string
-          nullable: true
           description: >-
             The ID that the accounting platform uses to identify this journal
             entry
+      required:
+        - platform_id
     accountingjournal_entriesJournalEntriesAllResponsesCommonFields:
       title: accountingjournal_entriesJournalEntriesAllResponsesCommonFields
       type: object
@@ -7557,6 +7903,7 @@ components:
             the journal entry
         currency_id:
           type: string
+          nullable: true
           description: The ISO-4217 currency code
         document_number:
           type: string
@@ -7568,25 +7915,23 @@ components:
           description: Memo description of the journal entry
         posted_date:
           type: string
+          nullable: true
           description: Date of creation of the journal entry
-      required:
-        - currency_id
-        - posted_date
     accountingjournal_entriesJournalEntriesWriteRequest:
       title: accountingjournal_entriesJournalEntriesWriteRequest
       type: object
       properties:
-        raw_data:
-          type: object
-          additionalProperties: true
-          nullable: true
-          description: Raw data of the journal entry
         journal_lines:
           type: array
           items:
             $ref: "#/components/schemas/JournalLines"
           nullable: true
           description: Array of Journal Entry Line items associated with the journal entry
+        raw_data:
+          type: object
+          additionalProperties: true
+          nullable: true
+          description: Raw data of the journal entry
       allOf:
         - $ref: >-
             #/components/schemas/accountingjournal_entriesJournalEntriesAllResponsesCommonFields
@@ -7596,23 +7941,22 @@ components:
       properties:
         amount:
           type: integer
+          nullable: true
           description: The total amount of the journal entry
         currency_rate:
           type: integer
+          nullable: true
           description: Rate between the currency of the payment and the base currency
         journal_entry_type:
           type: string
+          nullable: true
           description: Type of the journal entry
         updated_at:
           type: string
+          nullable: true
           description: >-
             The date at which the information was updated on the accounting
             platform
-      required:
-        - amount
-        - currency_rate
-        - journal_entry_type
-        - updated_at
       allOf:
         - $ref: >-
             #/components/schemas/accountingjournal_entriesJournalEntriesPlatformId
@@ -7685,15 +8029,15 @@ components:
           $ref: >-
             #/components/schemas/accountingjournal_entriesJournalEntriesWriteResponseFields
         error:
-          type: string
+          $ref: "#/components/schemas/ErrorObject"
           nullable: true
           description: The error message if the job failed.
       required:
         - response
       allOf:
         - $ref: "#/components/schemas/JobSuccessResponse"
-    accountingjournal_entriesCreateJournalEntryResponse:
-      title: accountingjournal_entriesCreateJournalEntryResponse
+    accountingjournal_entriesFinalCreateJournalEntryResponse:
+      title: accountingjournal_entriesFinalCreateJournalEntryResponse
       type: object
       properties:
         data:
@@ -7701,7 +8045,13 @@ components:
             #/components/schemas/accountingjournal_entriesCreateJournalEntryResponseData
       required:
         - data
+    accountingjournal_entriesCreateJournalEntryResponse:
+      title: accountingjournal_entriesCreateJournalEntryResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: >-
+            #/components/schemas/accountingjournal_entriesFinalCreateJournalEntryResponse
         - $ref: "#/components/schemas/timestamp"
     accountingjournal_entriesGetAllJournalEntriesResponseData:
       title: accountingjournal_entriesGetAllJournalEntriesResponseData
@@ -7718,8 +8068,8 @@ components:
       required:
         - data
         - total_count
-    accountingjournal_entriesGetAllJournalEntriesResponse:
-      title: accountingjournal_entriesGetAllJournalEntriesResponse
+    accountingjournal_entriesFianlGetAllJournalEntries:
+      title: accountingjournal_entriesFianlGetAllJournalEntries
       type: object
       properties:
         data:
@@ -7727,7 +8077,13 @@ components:
             #/components/schemas/accountingjournal_entriesGetAllJournalEntriesResponseData
       required:
         - data
+    accountingjournal_entriesGetAllJournalEntriesResponse:
+      title: accountingjournal_entriesGetAllJournalEntriesResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: >-
+            #/components/schemas/accountingjournal_entriesFianlGetAllJournalEntries
         - $ref: "#/components/schemas/timestamp"
     accountingpurchase_orderPurchaseOrderPlatformId:
       title: accountingpurchase_orderPurchaseOrderPlatformId
@@ -7746,6 +8102,7 @@ components:
       properties:
         contact_id:
           type: string
+          nullable: true
           description: >-
             The accounting platform’s unique ID of the contact associated with
             this purchase order
@@ -7767,20 +8124,18 @@ components:
           description: >-
             Reference number for the purchase order Some platforms may not
             support this field because it is auto generated
-        posted_date:
-          type: string
-          description: Date of creation of the purchase order
         delivery_date:
           type: string
+          nullable: true
           description: The delivery date for the purchase order
+        posted_date:
+          type: string
+          nullable: true
+          description: Date of creation of the purchase order
         description:
           type: string
           nullable: true
           description: Description of the purchase order
-      required:
-        - contact_id
-        - posted_date
-        - delivery_date
     accountingpurchase_orderPurchaseOrderWriteRequest:
       title: accountingpurchase_orderPurchaseOrderWriteRequest
       type: object
@@ -7807,21 +8162,15 @@ components:
       title: accountingpurchase_orderPurchaseOrderResponseFields
       type: object
       properties:
-        tax_amount:
-          type: number
-          format: double
-          nullable: true
-          description: Total tax amount levied on the purchase order
-        total_discount:
-          type: number
-          format: double
-          nullable: true
-          description: Total value of discounts applied to the purchase order
         currency_rate:
           type: number
           format: double
           nullable: true
           description: Rate between the currency of the payment and the base currency
+        status:
+          $ref: "#/components/schemas/ArtifactStatus"
+          nullable: true
+          description: The status of the purchase order.
         total_amount:
           type: number
           format: double
@@ -7832,19 +8181,22 @@ components:
           format: double
           nullable: true
           description: Total pre-tax value of the purchase order
-        status:
-          type: string
-          description: >-
-            The status of the purchase order. Values can include `DRAFT`,
-            `SUBMITTED`, `PARTIALLY_PAID`, `PAID`, `OVERDUE`, `VOID`, `UNKNOWN`.
+        tax_amount:
+          type: number
+          format: double
+          nullable: true
+          description: Total tax amount levied on the purchase order
+        total_discount:
+          type: number
+          format: double
+          nullable: true
+          description: Total value of discounts applied to the purchase order
         updated_at:
           type: string
+          nullable: true
           description: >-
             The date at which the information was updated on the accounting
             platform
-      required:
-        - status
-        - updated_at
       allOf:
         - $ref: "#/components/schemas/accountingpurchase_orderPurchaseOrderPlatformId"
         - $ref: >-
@@ -7906,17 +8258,6 @@ components:
       required:
         - company_id
         - data
-    accountingpurchase_orderCreatePurchaseOrderResponse:
-      title: accountingpurchase_orderCreatePurchaseOrderResponse
-      type: object
-      properties:
-        data:
-          $ref: >-
-            #/components/schemas/accountingpurchase_orderCreatePurchaseOrderResponseData
-      required:
-        - data
-      allOf:
-        - $ref: "#/components/schemas/timestamp"
     accountingpurchase_orderCreatePurchaseOrderResponseData:
       title: accountingpurchase_orderCreatePurchaseOrderResponseData
       type: object
@@ -7937,23 +8278,29 @@ components:
           $ref: >-
             #/components/schemas/accountingpurchase_orderPurchaseOrderWriteResponseFields
         error:
-          type: string
+          $ref: "#/components/schemas/ErrorObject"
           nullable: true
           description: The error message if the job failed.
       required:
         - response
       allOf:
         - $ref: "#/components/schemas/JobSuccessResponse"
-    accountingpurchase_orderGetPurchaseOrdersResponse:
-      title: accountingpurchase_orderGetPurchaseOrdersResponse
+    accountingpurchase_orderFinalCreatePurchaseOrderResponse:
+      title: accountingpurchase_orderFinalCreatePurchaseOrderResponse
       type: object
       properties:
         data:
           $ref: >-
-            #/components/schemas/accountingpurchase_orderGetAllPurchaseOrdersResponseData
+            #/components/schemas/accountingpurchase_orderCreatePurchaseOrderResponseData
       required:
         - data
+    accountingpurchase_orderCreatePurchaseOrderResponse:
+      title: accountingpurchase_orderCreatePurchaseOrderResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: >-
+            #/components/schemas/accountingpurchase_orderFinalCreatePurchaseOrderResponse
         - $ref: "#/components/schemas/timestamp"
     accountingpurchase_orderGetAllPurchaseOrdersResponseData:
       title: accountingpurchase_orderGetAllPurchaseOrdersResponseData
@@ -7970,6 +8317,23 @@ components:
       required:
         - data
         - total_count
+    accountingpurchase_orderFinalGetAllPurchaseOrder:
+      title: accountingpurchase_orderFinalGetAllPurchaseOrder
+      type: object
+      properties:
+        data:
+          $ref: >-
+            #/components/schemas/accountingpurchase_orderGetAllPurchaseOrdersResponseData
+      required:
+        - data
+    accountingpurchase_orderGetPurchaseOrdersResponse:
+      title: accountingpurchase_orderGetPurchaseOrdersResponse
+      type: object
+      properties: {}
+      allOf:
+        - $ref: >-
+            #/components/schemas/accountingpurchase_orderFinalGetAllPurchaseOrder
+        - $ref: "#/components/schemas/timestamp"
     accountingsales_orderSalesOrderPlatformId:
       title: accountingsales_orderSalesOrderPlatformId
       type: object
@@ -7987,6 +8351,7 @@ components:
       properties:
         contact_id:
           type: string
+          nullable: true
           description: >-
             The accounting platform’s unique ID of the contact associated with
             this sales order
@@ -8000,8 +8365,13 @@ components:
           type: string
           nullable: true
           description: Currency ID of the sales order
+        document_number:
+          type: string
+          nullable: true
+          description: Reference number for the sales order
         posted_date:
           type: string
+          nullable: true
           description: Date of creation of the sales order
         delivery_date:
           type: string
@@ -8011,13 +8381,6 @@ components:
           type: string
           nullable: true
           description: Description of the sales order
-        document_number:
-          type: string
-          nullable: true
-          description: Reference number for the sales order
-      required:
-        - contact_id
-        - posted_date
     accountingsales_orderSalesOrderWriteRequest:
       title: accountingsales_orderSalesOrderWriteRequest
       type: object
@@ -8040,44 +8403,41 @@ components:
       title: accountingsales_orderSalesOrderResponseObject
       type: object
       properties:
-        tax_amount:
-          type: number
-          format: double
-          description: The total tax amount levied on the sales order
-        total_discount:
-          type: number
-          format: double
-          description: The total value of discounts applied to the sales order
         currency_rate:
           type: number
           format: double
+          nullable: true
           description: Rate between the currency of the sales order and the base currency
+        status:
+          $ref: "#/components/schemas/ArtifactStatus"
+          nullable: true
+          description: The status of the sales order.
         total_amount:
           type: number
           format: double
+          nullable: true
           description: The total value of the sales order
         sub_total:
           type: number
           format: double
+          nullable: true
           description: The total pre-tax value of the sales order
-        status:
-          type: string
-          description: >-
-            The status of the sales order. Values are `DRAFT`, `SUBMITTED`,
-            `PARTIALLY_PAID`, `PAID`, `OVERDUE`, `VOID`, `UNKNOWN`.
+        tax_amount:
+          type: number
+          format: double
+          nullable: true
+          description: The total tax amount levied on the sales order
+        total_discount:
+          type: number
+          format: double
+          nullable: true
+          description: The total value of discounts applied to the sales order
         updated_at:
           type: string
+          nullable: true
           description: >-
             The date at which the information was updated on the accounting
             platform
-      required:
-        - tax_amount
-        - total_discount
-        - currency_rate
-        - total_amount
-        - sub_total
-        - status
-        - updated_at
       allOf:
         - $ref: "#/components/schemas/accountingsales_orderSalesOrderPlatformId"
         - $ref: >-
@@ -8128,17 +8488,6 @@ components:
       required:
         - company_id
         - data
-    accountingsales_orderCreateSalesOrderResponse:
-      title: accountingsales_orderCreateSalesOrderResponse
-      type: object
-      properties:
-        data:
-          $ref: >-
-            #/components/schemas/accountingsales_orderCreateSalesOrderResponseData
-      required:
-        - data
-      allOf:
-        - $ref: "#/components/schemas/timestamp"
     accountingsales_orderCreateSalesOrderResponseData:
       title: accountingsales_orderCreateSalesOrderResponseData
       type: object
@@ -8159,23 +8508,29 @@ components:
           $ref: >-
             #/components/schemas/accountingsales_orderSalesOrderWriteResponseFields
         error:
-          type: string
+          $ref: "#/components/schemas/ErrorObject"
           nullable: true
           description: The error message if the job failed.
       required:
         - response
       allOf:
         - $ref: "#/components/schemas/JobSuccessResponse"
-    accountingsales_orderGetSalesOrdersResponse:
-      title: accountingsales_orderGetSalesOrdersResponse
+    accountingsales_orderFinalCreateSalesOrderResponse:
+      title: accountingsales_orderFinalCreateSalesOrderResponse
       type: object
       properties:
         data:
           $ref: >-
-            #/components/schemas/accountingsales_orderGetAllSalesOrdersResponseData
+            #/components/schemas/accountingsales_orderCreateSalesOrderResponseData
       required:
         - data
+    accountingsales_orderCreateSalesOrderResponse:
+      title: accountingsales_orderCreateSalesOrderResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: >-
+            #/components/schemas/accountingsales_orderFinalCreateSalesOrderResponse
         - $ref: "#/components/schemas/timestamp"
     accountingsales_orderGetAllSalesOrdersResponseData:
       title: accountingsales_orderGetAllSalesOrdersResponseData
@@ -8192,28 +8547,22 @@ components:
       required:
         - data
         - total_count
-    accountingtax_ratesTaxComponents:
-      title: accountingtax_ratesTaxComponents
+    accountingsales_orderFinalGetAllsalesOrder:
+      title: accountingsales_orderFinalGetAllsalesOrder
       type: object
       properties:
-        name:
-          type: string
-          description: The name of the component
-        rate:
-          type: number
-          format: double
-          description: The tax rate of the component
-        is_compound:
-          type: boolean
-          description: Whether the tax component is compounded or not
-        tax_agency:
-          type: string
-          nullable: true
-          description: The tax agency of the component
+        data:
+          $ref: >-
+            #/components/schemas/accountingsales_orderGetAllSalesOrdersResponseData
       required:
-        - name
-        - rate
-        - is_compound
+        - data
+    accountingsales_orderGetSalesOrdersResponse:
+      title: accountingsales_orderGetSalesOrdersResponse
+      type: object
+      properties: {}
+      allOf:
+        - $ref: "#/components/schemas/accountingsales_orderFinalGetAllsalesOrder"
+        - $ref: "#/components/schemas/timestamp"
     accountingtax_ratesTaxRatesPlatformId:
       title: accountingtax_ratesTaxRatesPlatformId
       type: object
@@ -8229,6 +8578,7 @@ components:
       properties:
         name:
           type: string
+          nullable: true
           description: Display name of the tax rate
         code:
           type: string
@@ -8256,8 +8606,27 @@ components:
             $ref: "#/components/schemas/accountingtax_ratesTaxComponents"
           nullable: true
           description: An array of all the tax components
-      required:
-        - name
+    accountingtax_ratesTaxComponents:
+      title: accountingtax_ratesTaxComponents
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+          description: The name of the component
+        rate:
+          type: number
+          format: double
+          nullable: true
+          description: The tax rate of the component
+        is_compound:
+          type: boolean
+          nullable: true
+          description: Whether the tax component is compounded or not
+        tax_agency:
+          type: string
+          nullable: true
+          description: The tax agency of the component
     accountingtax_ratesTaxRatesWriteRequestFields:
       title: accountingtax_ratesTaxRatesWriteRequestFields
       type: object
@@ -8276,9 +8645,8 @@ components:
       properties:
         updated_at:
           type: string
+          nullable: true
           description: The last ISO 8601 timestamp that the data was updated at
-      required:
-        - updated_at
       allOf:
         - $ref: "#/components/schemas/accountingtax_ratesTaxRatesPlatformId"
         - $ref: >-
@@ -8318,16 +8686,6 @@ components:
       required:
         - company_id
         - data
-    accountingtax_ratesCreateTaxRatesResponse:
-      title: accountingtax_ratesCreateTaxRatesResponse
-      type: object
-      properties:
-        data:
-          $ref: "#/components/schemas/accountingtax_ratesCreateTaxRatesResponseData"
-      required:
-        - data
-      allOf:
-        - $ref: "#/components/schemas/timestamp"
     accountingtax_ratesCreateTaxRatesResponseData:
       title: accountingtax_ratesCreateTaxRatesResponseData
       type: object
@@ -8347,22 +8705,27 @@ components:
         response:
           $ref: "#/components/schemas/accountingtax_ratesTaxRatesWriteResponseFields"
         error:
-          type: string
+          $ref: "#/components/schemas/ErrorObject"
           nullable: true
           description: The error message if the job failed.
       required:
         - response
       allOf:
         - $ref: "#/components/schemas/JobSuccessResponse"
-    accountingtax_ratesGetAllTaxRatesResponse:
-      title: accountingtax_ratesGetAllTaxRatesResponse
+    accountingtax_ratesFinalCreateTaxRatesResponse:
+      title: accountingtax_ratesFinalCreateTaxRatesResponse
       type: object
       properties:
         data:
-          $ref: "#/components/schemas/accountingtax_ratesGetAllTaxRatesResponseData"
+          $ref: "#/components/schemas/accountingtax_ratesCreateTaxRatesResponseData"
       required:
         - data
+    accountingtax_ratesCreateTaxRatesResponse:
+      title: accountingtax_ratesCreateTaxRatesResponse
+      type: object
+      properties: {}
       allOf:
+        - $ref: "#/components/schemas/accountingtax_ratesFinalCreateTaxRatesResponse"
         - $ref: "#/components/schemas/timestamp"
     accountingtax_ratesGetAllTaxRatesResponseData:
       title: accountingtax_ratesGetAllTaxRatesResponseData
@@ -8379,6 +8742,21 @@ components:
       required:
         - data
         - total_count
+    accountingtax_ratesFinalGetAllTaxRatesResponse:
+      title: accountingtax_ratesFinalGetAllTaxRatesResponse
+      type: object
+      properties:
+        data:
+          $ref: "#/components/schemas/accountingtax_ratesGetAllTaxRatesResponseData"
+      required:
+        - data
+    accountingtax_ratesGetAllTaxRatesResponse:
+      title: accountingtax_ratesGetAllTaxRatesResponse
+      type: object
+      properties: {}
+      allOf:
+        - $ref: "#/components/schemas/accountingtax_ratesFinalGetAllTaxRatesResponse"
+        - $ref: "#/components/schemas/timestamp"
     accountingtracking_categoriesTrackingCategoryFields:
       title: accountingtracking_categoriesTrackingCategoryFields
       type: object
@@ -8386,51 +8764,36 @@ components:
         platform_id:
           type: string
           description: The accounting platforms ID for the tax rate
+        parent_id:
+          type: string
+          description: The identifier for this item’s parent
         name:
           type: string
           description: The name of the tracking category
         status:
           $ref: "#/components/schemas/BaseStaus"
           description: indicates the current state of the tracking category.
-        parent_id:
-          type: string
-          description: The identifier for this item’s parent
         has_children:
           type: boolean
           description: this boolean indicates if it has sub categories
-        updated_at:
-          type: string
-          format: date-time
-          description: The last ISO 8601 timestamp that the data was updated at
         raw_data:
           type: object
           additionalProperties: true
           description: The raw data of the tracking category
-        data_hash:
+        updated_at:
           type: string
-          description: The hash of the tracking category
+          format: date-time
+          description: The last ISO 8601 timestamp that the data was updated at
       required:
         - platform_id
+        - parent_id
         - name
         - status
-        - parent_id
         - has_children
-        - updated_at
         - raw_data
-        - data_hash
+        - updated_at
       allOf:
         - $ref: "#/components/schemas/RootfiFields"
-    accountingtracking_categoriesgetTrackingCategoriesResponse:
-      title: accountingtracking_categoriesgetTrackingCategoriesResponse
-      type: object
-      properties:
-        data:
-          $ref: >-
-            #/components/schemas/accountingtracking_categoriesgetTrackingCategoriesResponseData
-      required:
-        - data
-      allOf:
-        - $ref: "#/components/schemas/timestamp"
     accountingtracking_categoriesgetTrackingCategoriesResponseData:
       title: accountingtracking_categoriesgetTrackingCategoriesResponseData
       type: object
@@ -8446,6 +8809,23 @@ components:
       required:
         - data
         - total_count
+    accountingtracking_categoriesFinalTrackingCategories:
+      title: accountingtracking_categoriesFinalTrackingCategories
+      type: object
+      properties:
+        data:
+          $ref: >-
+            #/components/schemas/accountingtracking_categoriesgetTrackingCategoriesResponseData
+      required:
+        - data
+    accountingtracking_categoriesgetTrackingCategoriesResponse:
+      title: accountingtracking_categoriesgetTrackingCategoriesResponse
+      type: object
+      properties: {}
+      allOf:
+        - $ref: >-
+            #/components/schemas/accountingtracking_categoriesFinalTrackingCategories
+        - $ref: "#/components/schemas/timestamp"
     CreateInviteLinkRequest:
       title: CreateInviteLinkRequest
       type: object
@@ -9355,7 +9735,7 @@ components:
           type: integer
           description: The RootFi designated id for the organisation
         rootfi_integration_type:
-          type: string
+          $ref: "#/components/schemas/IntegrationType"
           description: The accounting platform from which the data is being retrieved
         rootfi_updated_at:
           type: string
@@ -9407,7 +9787,7 @@ components:
           nullable: true
           description: The platform id of the line item
         line_item_type:
-          type: string
+          $ref: "#/components/schemas/LineItemEnum"
           nullable: true
           description: The line item type of the line item
         line_item_type_id:
@@ -9871,6 +10251,7 @@ components:
           description: The ID of the address in the accounting platform
         type:
           $ref: "#/components/schemas/AddressType"
+          nullable: true
           description: The type of address
         data_model:
           type: string
@@ -9909,8 +10290,6 @@ components:
           format: date-time
           nullable: true
           description: The time at which the address was last updated
-      required:
-        - type
     stringOperator:
       title: stringOperator
       type: string
@@ -9994,7 +10373,11 @@ components:
       enum:
         - BILLS
         - INVOICES
+        - BILL_CREDIT_NOTES
+        - INVOICE_CREDIT_NOTES
         - EXPENSES
+        - PURCHASE_ORDERS
+        - SALES_ORDERS
     OrderBy:
       title: OrderBy
       type: string
@@ -10092,9 +10475,53 @@ components:
         - ALL
         - DISABLED
         - ENABLED
+    CategoryEnum:
+      title: CategoryEnum
+      type: string
+      enum:
+        - ASSET
+        - EXPENSE
+        - LIABILITY
+        - EQUITY
+        - INCOME
+        - BANK
+        - REVENUE
+        - UNKNOWN
+        - PRIMARY
+    ArtifactStatus:
+      title: ArtifactStatus
+      type: string
+      enum:
+        - DRAFT
+        - SUBMITTED
+        - PARTIALLY_PAID
+        - PAID
+        - OVERDUE
+        - VOID
+        - UNKNOWN
+    LineItemEnum:
+      title: LineItemEnum
+      type: string
+      enum:
+        - BILLS
+        - INVOICES
+        - BILL_CREDIT_NOTES
+        - INVOICE_CREDIT_NOTES
+        - EXPENSES
+        - PURCHASE_ORDERS
+        - SALES_ORDERS
+    ItemEnum:
+      title: ItemEnum
+      type: string
+      enum:
+        - INVENTORY
+        - NON_INVENTORY
+        - SERVICE
+        - UNKNOWN
   securitySchemes:
     MyAuthSchemeAuth:
       type: apiKey
+      description: RootFi uses an `api_key` to control access to our API via **HTTP Basic Auth**. You can find and create your keys in your [Dashboard](https://integrate.rootfi.dev/)
       in: header
       name: api_key
 servers:
