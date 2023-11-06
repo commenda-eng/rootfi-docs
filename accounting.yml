@@ -62,37 +62,37 @@ paths:
                   value:
                     data:
                       data:
-                        - rootfi_id: 1234
+                        - rootfi_id: 123456
                           rootfi_company_id: 123456
                           rootfi_organisation_id: 1
-                          rootfi_integration_type: MEKARI_JURNAL
+                          rootfi_integration_type: ZOHO_BOOKS
                           rootfi_updated_at: "2021-09-28T15:00:00.000Z"
                           rootfi_created_at: "2021-09-28T15:00:00.000Z"
-                          platform_id: "123456"
+                          platform_id: "1234567890123456789"
+                          currency_id: "3770712000000000099"
+                          parent_account_id: null
                           nominal_code: Rootfi 01
                           name: Test Account
                           description: Test Description
+                          sub_category: long_term_liability
+                          current_balance: 12345
                           category: LIABILITY
-                          sub_category: Long Term Liabilities
                           status: ACTIVE
-                          currency_id: null
+                          updated_at: "2021-09-28T15:00:00.000Z"
                           currency:
                             data:
-                              platform_id: null
-                              name: null
-                              code: null
-                              symbol: null
-                              is_base_currency: null
-                              exchange_rate: null
+                              platform_id: "3770712000000000099"
+                              name: Indian Rupee
+                              code: INR
+                              symbol: ₹
+                              is_base_currency: true
+                              exchange_rate: 0
                               updated_at: null
-                          current_balance: 420
-                          updated_at: "2021-09-28T15:00:00.000Z"
-                          parent_account_id: "1"
                           parent_account: {}
                       total_count: 0
                     request_timestamp: "2021-09-28T15:00:00.000Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Get All Accounts
       security: &ref_0
         - MyAuthSchemeAuth: []
@@ -115,33 +115,33 @@ paths:
                   value:
                     data:
                       status: SUCCESS
-                      upload_job_id: 00000000-0000-0000-0000-000000000000
+                      upload_job_id: xQm2K441VosP8W4
                       data:
-                        - job_id: 00000000-0000-0000-0000-000000000000
+                        - job_id: aXI9pUDA5T7E2LS
                           status: success
                           response:
                             updated_at: "2021-09-28T15:00:00.000Z"
-                            sub_category: Long Term Liabilities
-                            nominal_code: Rootfi 01
-                            platform_id: "123456"
+                            sub_category: long_term_liability
+                            nominal_code: Test Account
+                            platform_id: "1234567890123456789"
                             name: Test Account
-                            currency_id: "1"
-                            parent_account_id: "1"
+                            currency_id: null
+                            parent_account_id: null
                             description: Test Description
                             category: LIABILITY
                             status: ACTIVE
                             raw_data:
-                              platform_id: "123456"
-                              nominal_code: Rootfi 01
+                              platform_id: "1234567890123456789"
+                              nominal_code: Test Account
                               name: Test Account
                               description: Test Description
                               category: LIABILITY
-                              sub_category: Long Term Liabilities
+                              sub_category: long_term_liability
                               status: ACTIVE
                           error: null
                     request_timestamp: "2021-09-28T15:00:00.000Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Create Accounts
       security: *ref_0
       requestBody:
@@ -270,23 +270,30 @@ paths:
                         - rootfi_id: 123456
                           rootfi_company_id: 123456
                           rootfi_organisation_id: 123456
-                          rootfi_integration_type: MEKARI_JURNAL
+                          rootfi_integration_type: ZOHO_BOOKS
                           rootfi_updated_at: "2021-09-28T15:00:00.000Z"
                           rootfi_created_at: "2021-09-28T15:00:00.000Z"
                           platform_id: "123456"
+                          currency_id: "3770712000000000099"
                           institution_name: Bank Central Asia
                           account_name: Rootfi Test
                           account_number: "1234567890"
                           category: DEPOSIT
-                          balance: 1000000
-                          currency_id: "3770712000000000099"
-                          currency:
-                            data: {}
+                          balance: 55000
                           updated_at: "2021-09-28T15:00:00.000Z"
+                          currency:
+                            data:
+                              platform_id: "3770712000000000099"
+                              name: Indian Rupee
+                              code: INR
+                              symbol: ₹
+                              is_base_currency: true
+                              exchange_rate: 0
+                              updated_at: null
                       total_count: 1
                     request_timestamp: "2021-10-13T15:00:00.000Z"
                     response_timestamp: "2021-10-13T15:00:00.000Z"
-                    request_id: 12345678-1234-1234-1234-123456789012
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Get All Bank Accounts
       security: *ref_0
   /write/bank_accounts:
@@ -309,9 +316,9 @@ paths:
                   value:
                     data:
                       status: SUCCESS
-                      upload_job_id: 00000000-0000-0000-0000-000000000000
+                      upload_job_id: aXI9pUDA5T7E2LS
                       data:
-                        - job_id: 00000000-0000-0000-0000-000000000000
+                        - job_id: xQm2K441VosP8W4
                           status: success
                           response:
                             balance: 0
@@ -331,7 +338,7 @@ paths:
                           error: null
                     request_timestamp: "2021-09-28T15:00:00.000Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Create Bank Account
       security: *ref_0
       requestBody:
@@ -412,20 +419,22 @@ paths:
                   value:
                     data:
                       data:
-                        - rootfi_id: 2531628
-                          rootfi_company_id: 1249
+                        - rootfi_id: 123456
+                          rootfi_company_id: 12345678
                           rootfi_organisation_id: 1
-                          rootfi_integration_type: SAGE_CLOUD_ACCOUNTING
+                          rootfi_integration_type: ZOHO_BOOKS
                           rootfi_updated_at: "2023-10-24T15:00:44.127Z"
                           rootfi_created_at: "2023-10-24T15:00:44.131Z"
-                          platform_id: 75292ff2547347c98f667f2841470bbe
-                          account_id: "3770712000000493001"
-                          contact_id: 587ef01ea74c4a36a5f64d0d16d178ac
+                          platform_id: "1234567890123456789"
+                          account_id: "1234567890123456789"
+                          contact_id: "1234567890123456789"
+                          currency_id: null
                           transaction_date: "2023-03-17T00:00:00.000Z"
                           amount: 372
                           type: PURCHASE_CREDIT_NOTE
                           status: manually_added
-                          currency_id: null
+                          currency_rate: null
+                          updated_at: "2023-10-19T00:00:00.000Z"
                           currency:
                             data:
                               platform_id: null
@@ -435,11 +444,9 @@ paths:
                               is_base_currency: null
                               exchange_rate: null
                               updated_at: null
-                          currency_rate: null
-                          updated_at: "2023-10-19T00:00:00.000Z"
                           contact:
                             data:
-                              platform_id: 587ef01ea74c4a36a5f64d0d16d178ac
+                              platform_id: "1234567890123456789"
                               name: Vendor 1
                               contact_name: Main Contact
                               contact_type: VENDOR
@@ -459,7 +466,7 @@ paths:
                               updated_at: "2023-02-01T00:00:00.000Z"
                           account:
                             data:
-                              platform_id: "3770712000000493001"
+                              platform_id: "1234567890123456789"
                               institution_name: Some name
                               account_name: dddsf
                               account_number: xxxx4397
@@ -479,7 +486,7 @@ paths:
                       total_count: 1
                     request_timestamp: "2021-10-13T15:00:00.000Z"
                     response_timestamp: "2021-10-13T15:00:00.000Z"
-                    request_id: 12345678-1234-1234-1234-123456789012
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Get All Bank Transactions
       security: *ref_0
   /write/bank_transactions:
@@ -502,9 +509,9 @@ paths:
                   value:
                     data:
                       status: SUCCESS
-                      upload_job_id: 00000000-0000-0000-0000-000000000000
+                      upload_job_id: xQm2K441VosP8W4
                       data:
-                        - job_id: 00000000-0000-0000-0000-000000000000
+                        - job_id: aXI9pUDA5T7E2LS
                           status: success
                           response:
                             transaction_date: "2022-02-17T00:00:00.000Z"
@@ -518,7 +525,7 @@ paths:
                           error: null
                     request_timestamp: "2021-09-28T15:00:00.000Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Create Bank Transaction
       security: *ref_0
       requestBody:
@@ -602,16 +609,22 @@ paths:
                         - rootfi_id: 1234
                           rootfi_company_id: 123456
                           rootfi_organisation_id: 1
-                          rootfi_integration_type: MEKARI_JURNAL
+                          rootfi_integration_type: ZOHO_BOOKS
                           rootfi_updated_at: "2021-09-28T15:00:00.000Z"
                           rootfi_created_at: "2021-09-28T15:00:00.000Z"
-                          platform_id: "3770712000001556131"
-                          contact_id: "3770712000000209007"
-                          document_number: "611"
-                          total_amount: 423
-                          remaining_credit: 423
-                          posted_date: "2023-03-16T00:00:00.000Z"
+                          platform_id: "1234567890123456789"
+                          bill_ids:
+                            - "1234567890123456789"
+                          contact_id: "1234567890123456789"
                           currency_id: "3770712000000000099"
+                          document_number: AO-0001
+                          posted_date: "2023-03-16T00:00:00.000Z"
+                          memo: Test Invoice
+                          remaining_credit: 423
+                          total_amount: 423
+                          status: SUBMITTED
+                          tax_amount: null
+                          updated_at: "2023-10-13T00:00:00.000Z"
                           currency:
                             data:
                               platform_id: "3770712000000000099"
@@ -621,19 +634,14 @@ paths:
                               is_base_currency: true
                               exchange_rate: 0
                               updated_at: null
-                          memo: Test Invoice
-                          status: SUBMITTED
-                          tax_amount: null
-                          bill_ids: []
-                          updated_at: "2023-10-13T00:00:00.000Z"
                           line_items:
                             data:
-                              - platform_id: "123456"
+                              - platform_id: "1234567890123456789"
                                 line_item_type: BILLS
-                                line_item_type_id: "123456"
+                                line_item_type_id: "1234567890123456789"
                                 tracking_category_ids: []
-                                item_id: "123456"
-                                tax_id: "123456"
+                                item_id: "1234567890123456789"
+                                tax_id: "1234567890123456789"
                                 account_id: null
                                 description: Test Item
                                 quantity: 1
@@ -646,7 +654,7 @@ paths:
                       total_count: 0
                     request_timestamp: "2021-09-28T15:00:00.000Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: b2e791f5-7384-4e4f-800f-5c032f6bb61b
       summary: Get All Bill Credit Notes
       security: *ref_0
   /write/bill_credit_notes:
@@ -669,9 +677,9 @@ paths:
                   value:
                     data:
                       status: SUCCESS
-                      upload_job_id: 00000000-0000-0000-0000-000000000000
+                      upload_job_id: aXI9pUDA5T7E2LS
                       data:
-                        - job_id: 00000000-0000-0000-0000-000000000000
+                        - job_id: xQm2K441VosP8W4
                           status: success
                           response:
                             document_number: Bd5200
@@ -697,7 +705,7 @@ paths:
                           error: null
                     request_timestamp: "2021-09-28T15:00:00.000Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Create Bill Credit Note
       security: *ref_0
       requestBody:
@@ -789,18 +797,22 @@ paths:
                         - rootfi_id: 1234
                           rootfi_company_id: 123456
                           rootfi_organisation_id: 1
-                          rootfi_integration_type: MEKARI_JURNAL
+                          rootfi_integration_type: ZOHO_BOOKS
                           rootfi_updated_at: "2021-09-28T15:00:00.000Z"
                           rootfi_created_at: "2021-09-28T15:00:00.000Z"
-                          platform_id: "123456"
-                          payment_id: "123456"
-                          bill_id: "123456"
-                          contact_id: "123456"
-                          account_id: "123456"
+                          platform_id: "1234567890123456789"
+                          payment_id: "1234567890123456789"
+                          bill_id: "1234567890123456789"
+                          contact_id: "1234567890123456789"
+                          account_id: "1234567890123456789"
+                          currency_id: null
                           amount: 123456
                           payment_date: "2021-09-28T15:00:00.000Z"
-                          payment_mode: null
-                          currency_id: GBP
+                          payment_mode: Cash
+                          currency_rate: 123456
+                          document_number: ROOTFI-123456
+                          memo: Test Memo
+                          updated_at: "2021-09-28T15:00:00.000Z"
                           currency:
                             data:
                               platform_id: null
@@ -810,17 +822,14 @@ paths:
                               is_base_currency: null
                               exchange_rate: null
                               updated_at: null
-                          currency_rate: 123456
-                          memo: Test Memo
-                          updated_at: "2021-09-28T15:00:00.000Z"
                           bill:
                             data:
-                              platform_id: "123456"
-                              contact_id: "123456"
+                              platform_id: "1234567890123456789"
+                              contact_id: "1234567890123456789"
                               document_number: ROOTFI-123456
                               posted_date: "2021-09-28T15:00:00.000Z"
                               due_date: "2021-09-28T15:00:00.000Z"
-                              currency_id: GBP
+                              currency_id: null
                               currency:
                                 data:
                                   platform_id: null
@@ -837,12 +846,13 @@ paths:
                               total_discount: 123456
                               tax_amount: 123456
                               amount_due: 123456
-                              purchase_order_ids: []
+                              purchase_order_ids:
+                                - "1234567890123456789"
                               currency_rate: 123456
                       total_count: 0
                     request_timestamp: "2021-09-28T15:00:00.000Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: b2e791f5-7384-4e4f-800f-5c032f6bb61b
       summary: Get All Bill Payments
       security: *ref_0
   /write/bill_payments:
@@ -865,9 +875,9 @@ paths:
                   value:
                     data:
                       status: SUCCESS
-                      upload_job_id: 00000000-0000-0000-0000-000000000000
+                      upload_job_id: xQm2K441VosP8W4
                       data:
-                        - job_id: 00000000-0000-0000-0000-000000000000
+                        - job_id: aXI9pUDA5T7E2LS
                           status: success
                           response:
                             bill_id: "3770712000000319001"
@@ -894,7 +904,7 @@ paths:
                           error: null
                     request_timestamp: "2021-09-28T15:00:00.000Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: b2e791f5-7384-4e4f-800f-5c032f6bb61b
       summary: Create Bill Payment
       security: *ref_0
       requestBody:
@@ -978,15 +988,26 @@ paths:
                         - rootfi_id: 1234
                           rootfi_company_id: 123456
                           rootfi_organisation_id: 1
-                          rootfi_integration_type: MEKARI_JURNAL
+                          rootfi_integration_type: ZOHO_BOOKS
                           rootfi_updated_at: "2021-09-28T15:00:00.000Z"
                           rootfi_created_at: "2021-09-28T15:00:00.000Z"
-                          platform_id: "123456"
-                          contact_id: "123456"
+                          platform_id: "1234567890123456789"
+                          contact_id: "1234567890123456789"
+                          currency_id: null
                           document_number: ROOTFI01
                           posted_date: "2021-09-28T15:00:00.000Z"
                           due_date: "2021-09-28T15:00:00.000Z"
-                          currency_id: null
+                          memo: Test Invoice
+                          currency_rate: 1234
+                          status: DRAFT
+                          total_amount: 100
+                          sub_total: 1123
+                          total_discount: 234
+                          tax_amount: 0
+                          amount_due: 100
+                          purchase_order_ids:
+                            - "1234567890123456789"
+                          updated_at: "2021-09-28T15:00:00.000Z"
                           currency:
                             data:
                               platform_id: null
@@ -996,24 +1017,14 @@ paths:
                               is_base_currency: null
                               exchange_rate: null
                               updated_at: null
-                          currency_rate: 1
-                          memo: Test Invoice
-                          status: DRAFT
-                          total_amount: 100
-                          sub_total: 1123
-                          total_discount: 234
-                          tax_amount: 0
-                          amount_due: 100
-                          purchase_order_ids: []
-                          updated_at: "2021-09-28T15:00:00.000Z"
                           line_items:
                             data:
-                              - platform_id: "123456"
+                              - platform_id: "1234567890123456789"
                                 line_item_type: BILLS
-                                line_item_type_id: "123456"
+                                line_item_type_id: "1234567890123456789"
                                 tracking_category_ids: []
-                                item_id: "123456"
-                                tax_id: "123456"
+                                item_id: "1234567890123456789"
+                                tax_id: "1234567890123456789"
                                 account_id: null
                                 description: Test Item
                                 quantity: 1
@@ -1024,7 +1035,17 @@ paths:
                                 total_discount: null
                                 updated_at: "2021-09-28T15:00:00.000Z"
                           documents:
-                            data: []
+                            data:
+                              - platform_id: "3770712000000085065_3770712000000080327"
+                                file_name: Documents.csv
+                                file_type: text/csv
+                                file_size: 254.8828125
+                                document_type_id: "3770712000000080327"
+                                document_type: INVOICES
+                                document_uploaded: false
+                                download_link: >-
+                                  https://rootfi-dev.s3.amazonaws.com/3770712000000085065_3770712000000080327
+                                updated_at: "2021-03-03T10:00:00.000Z"
                           payments:
                             data:
                               - platform_id: "3770712000000106211"
@@ -1035,15 +1056,15 @@ paths:
                                 amount: 150
                                 payment_date: "2023-02-03T00:00:00.000Z"
                                 payment_mode: Cash
-                                currency_id: null
+                                currency_id: "3770712000000000099"
                                 currency:
                                   data:
-                                    platform_id: null
-                                    name: null
-                                    code: null
-                                    symbol: null
-                                    is_base_currency: null
-                                    exchange_rate: null
+                                    platform_id: "3770712000000000099"
+                                    name: Indian Rupee
+                                    code: INR
+                                    symbol: ₹
+                                    is_base_currency: true
+                                    exchange_rate: 0
                                     updated_at: null
                                 currency_rate: 1
                                 memo: Description?
@@ -1052,7 +1073,7 @@ paths:
                       total_count: 0
                     request_timestamp: "2021-09-28T15:00:00.000Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Get All Bills
       security: *ref_0
   /write/bills:
@@ -1074,9 +1095,9 @@ paths:
                   value:
                     data:
                       status: SUCCESS
-                      upload_job_id: 00000000-0000-0000-0000-000000000000
+                      upload_job_id: aXI9pUDA5T7E2LS
                       data:
-                        - job_id: 00000000-0000-0000-0000-000000000000
+                        - job_id: xQm2K441VosP8W4
                           status: success
                           response:
                             tax_amount: 22.8
@@ -1105,7 +1126,7 @@ paths:
                           error: null
                     request_timestamp: "2021-09-28T15:00:00.000Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: b2e791f5-7384-4e4f-800f-5c032f6bb61b
       summary: Create Bills
       security: *ref_0
       requestBody:
@@ -1242,7 +1263,7 @@ paths:
                           rootfi_company_id: 1672
                           rootfi_organisation_id: 1
                           rootfi_updated_at: "2023-10-25T13:39:29.649Z"
-                          rootfi_integration_type: QUICKBOOKS_SANDBOX
+                          rootfi_integration_type: ZOHO_BOOKS
                           rootfi_created_at: "2023-10-25T13:39:29.650Z"
                           platform_id: 8635772_SB1
                           name: Rootfi Technologies Pvt Ltd
@@ -1320,14 +1341,18 @@ paths:
                         - rootfi_id: 443583
                           rootfi_company_id: 1672
                           rootfi_organisation_id: 1
-                          rootfi_integration_type: NETSUITE
+                          rootfi_integration_type: ZOHO_BOOKS
                           rootfi_updated_at: "2023-10-25T13:39:41.201Z"
                           rootfi_created_at: "2023-10-25T13:39:41.216Z"
                           platform_id: "1013"
-                          name: Test
-                          contact_name: Test
+                          currency_id: null
+                          name: Mr. John Doe
+                          contact_name: Mr. John Doe
                           contact_type: CUSTOMER
-                          currency_id: "1"
+                          tax_number: null
+                          registration_number: null
+                          status: ARCHIVED
+                          updated_at: "2023-09-25T00:00:00.000Z"
                           currency:
                             data:
                               platform_id: null
@@ -1337,42 +1362,39 @@ paths:
                               is_base_currency: null
                               exchange_rate: null
                               updated_at: null
-                          tax_number: null
-                          registration_number: null
-                          status: ARCHIVED
-                          updated_at: "2023-09-25T00:00:00.000Z"
                           addresses:
                             data:
                               - platform_id: _CONTACTS_1013_BILLING
                                 type: BILLING
                                 data_model: CONTACTS
                                 data_model_id: "1013"
-                                street: ""
-                                locality: ""
-                                city: ""
-                                state: ""
-                                country: ""
-                                pincode: ""
-                                updated_at: null
-                              - platform_id: _CONTACTS_1013_SHIPPING
-                                type: SHIPPING
-                                data_model: CONTACTS
-                                data_model_id: "1013"
-                                street: ""
-                                locality: ""
-                                city: ""
-                                state: ""
-                                country: ""
-                                pincode: ""
-                                updated_at: null
+                                street: 123 Main Street
+                                locality: Downtown
+                                city: Metropolis
+                                state: Stateville
+                                country: Countryland
+                                pincode: "12345"
+                                updated_at: "2023-11-06T10:00:00.000Z"
                           phone_numbers:
-                            data: []
+                            data:
+                              - platform_id: CONTACTS_3770712000001721005_MOBILE
+                                data_model: CONTACTS
+                                data_model_id: "3770712000001721005"
+                                number: +919*********
+                                type: MOBILE
+                                updated_at: "2023-11-05T00:00:00.000Z"
                           external_links:
-                            data: []
+                            data:
+                              - platform_id: CONTACTS_3770712000001721005_WEBSITE
+                                data_model: CONTACTS
+                                data_model_id: "3770712000001721005"
+                                link: https://www.rootfi.dev
+                                type: WEBSITE
+                                updated_at: "2023-11-05T00:00:00.000Z"
                       total_count: 1
                     request_timestamp: "2023-10-25T13:39:41.201Z"
                     response_timestamp: "2023-10-25T13:39:41.201Z"
-                    request_id: 12345678-1234-1234-1234-123456789012
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Get Contacts
       security: *ref_0
   /write/contacts:
@@ -1394,9 +1416,9 @@ paths:
                   value:
                     data:
                       status: SUCCESS
-                      upload_job_id: 12345678-1234-1234-1234-123456789012
+                      upload_job_id: xQm2K441VosP8W4
                       data:
-                        - job_id: 12345678-1234-1234-1234-123456789012
+                        - job_id: aXI9pUDA5T7E2LS
                           status: success
                           response:
                             contact_name: "Dart8736 "
@@ -1405,20 +1427,20 @@ paths:
                             updated_at: "2023-11-01T00:00:00.000Z"
                             tax_number: ODSPS1279G
                             platform_id: "3770712000001686001"
-                            name: Imp85709
+                            name: Mr. John Doe
                             currency_id: "3770712000000000099"
                             status: ACTIVE
                             raw_data:
                               platform_id: "1013"
-                              name: Test
-                              contact_name: Test
+                              name: Mr. John Doe
+                              contact_name: Mr. John Doe
                               contact_type: CUSTOMER
                               currency_id: "1"
                               status: ARCHIVED
                           error: null
                     request_timestamp: "2023-10-25T13:39:41.201Z"
                     response_timestamp: "2023-10-25T13:39:41.201Z"
-                    request_id: 12345678-1234-1234-1234-123456789012
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Create Contacts
       security: *ref_0
       requestBody:
@@ -1468,9 +1490,9 @@ paths:
                   value:
                     data:
                       status: SUCCESS
-                      upload_job_id: 12345678-1234-1234-1234-123456789012
+                      upload_job_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
                       data:
-                        - job_id: 12345678-1234-1234-1234-123456789012
+                        - job_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
                           status: success
                           response:
                             contact_name: "Dart8736 "
@@ -1492,7 +1514,7 @@ paths:
                           error: null
                     request_timestamp: "2023-10-25T13:39:41.201Z"
                     response_timestamp: "2023-10-25T13:39:41.201Z"
-                    request_id: 12345678-1234-1234-1234-123456789012
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Update Contacts
       security: *ref_0
       requestBody:
@@ -1584,7 +1606,7 @@ paths:
                       total_count: 1
                     request_timestamp: "2021-09-28T15:00:00.000Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Get Documents
       security: *ref_0
   /read/expenses:
@@ -1653,13 +1675,18 @@ paths:
                           rootfi_updated_at: "2021-09-28T15:00:00.000Z"
                           rootfi_created_at: "2021-09-28T15:00:00.000Z"
                           platform_id: "3770712000001676061"
-                          document_number: "123"
-                          payment_mode: null
+                          account_id: "3770712000000076064"
+                          contact_id: "3770712000000418001"
+                          currency_id: null
+                          document_number: A-001
+                          payment_mode: CASH
                           posted_date: "2023-06-03T00:00:00.000Z"
+                          memo: Test Invoice
+                          tax_amount: 0
+                          currency_rate: 1
                           total_amount: 40
                           sub_total: 40
-                          tax_amount: 0
-                          currency_id: null
+                          updated_at: "2023-11-01T00:00:00.000Z"
                           currency:
                             data:
                               platform_id: null
@@ -1669,19 +1696,14 @@ paths:
                               is_base_currency: null
                               exchange_rate: null
                               updated_at: null
-                          currency_rate: 1
-                          memo: Hello acount
-                          account_id: "3770712000000076064"
-                          contact_id: "3770712000000418001"
-                          updated_at: "2023-11-01T00:00:00.000Z"
                           line_items:
                             data:
-                              - platform_id: "123456"
+                              - platform_id: "1234567890123456789"
                                 line_item_type: BILLS
-                                line_item_type_id: "123456"
+                                line_item_type_id: "1234567890123456789"
                                 tracking_category_ids: []
-                                item_id: "123456"
-                                tax_id: "123456"
+                                item_id: "1234567890123456789"
+                                tax_id: "1234567890123456789"
                                 account_id: null
                                 description: Test Item
                                 quantity: 1
@@ -1707,7 +1729,7 @@ paths:
                       total_count: 0
                     request_timestamp: "2021-09-28T15:00:00.000Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Retrieve expenses
       security: *ref_0
   /write/expenses:
@@ -1729,9 +1751,9 @@ paths:
                   value:
                     data:
                       status: SUCCESS
-                      upload_job_id: 00000000-0000-0000-0000-000000000000
+                      upload_job_id: aXI9pUDA5T7E2LS
                       data:
-                        - job_id: 00000000-0000-0000-0000-000000000000
+                        - job_id: xQm2K441VosP8W4
                           status: success
                           response:
                             tax_amount: 0
@@ -1757,7 +1779,7 @@ paths:
                           error: null
                     request_timestamp: "2021-09-28T15:00:00.000Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Create an expense
       security: *ref_0
       requestBody:
@@ -1894,16 +1916,22 @@ paths:
                         - rootfi_id: 1234
                           rootfi_company_id: 123456
                           rootfi_organisation_id: 1
-                          rootfi_integration_type: MEKARI_JURNAL
+                          rootfi_integration_type: ZOHO_BOOKS
                           rootfi_updated_at: "2021-09-28T15:00:00.000Z"
                           rootfi_created_at: "2021-09-28T15:00:00.000Z"
                           platform_id: "3770712000001556051"
+                          invoice_ids:
+                            - "3770712000000352003"
                           contact_id: "3770712000000080150"
-                          document_number: "6338"
+                          currency_id: null
+                          document_number: CN-00038
+                          posted_date: "2023-03-21T00:00:00.000Z"
+                          memo: null
+                          status: SUBMITTED
+                          tax_amount: null
                           total_amount: 60
                           remaining_credit: 60
-                          posted_date: "2023-03-21T00:00:00.000Z"
-                          currency_id: "3770712000000000099"
+                          updated_at: "2023-10-13T00:00:00.000Z"
                           currency:
                             data:
                               platform_id: null
@@ -1913,19 +1941,15 @@ paths:
                               is_base_currency: null
                               exchange_rate: null
                               updated_at: null
-                          memo: null
-                          status: SUBMITTED
-                          tax_amount: null
-                          invoice_ids: []
-                          updated_at: "2023-10-13T00:00:00.000Z"
                           line_items:
                             data:
-                              - platform_id: "123456"
+                              - platform_id: "1234567890123456789"
                                 line_item_type: BILLS
-                                line_item_type_id: "123456"
-                                tracking_category_ids: []
-                                item_id: "123456"
-                                tax_id: "123456"
+                                line_item_type_id: "1234567890123456789"
+                                tracking_category_ids:
+                                  - "1234567890123456789"
+                                item_id: "1234567890123456789"
+                                tax_id: "1234567890123456789"
                                 account_id: null
                                 description: Test Item
                                 quantity: 1
@@ -1935,10 +1959,10 @@ paths:
                                 tax_amount: 0
                                 total_discount: null
                                 updated_at: "2021-09-28T15:00:00.000Z"
-                      total_count: 0
+                      total_count: 1
                     request_timestamp: "2021-09-28T15:00:00.000Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Get Invoice Credit Notes
       security: *ref_0
   /write/invoice_credit_notes:
@@ -1961,9 +1985,9 @@ paths:
                   value:
                     data:
                       status: SUCCESS
-                      upload_job_id: 00000000-0000-0000-0000-000000000000
+                      upload_job_id: xQm2K441VosP8W4
                       data:
-                        - job_id: 00000000-0000-0000-0000-000000000000
+                        - job_id: aXI9pUDA5T7E2LS
                           status: success
                           response:
                             tax_amount: 8
@@ -1990,7 +2014,7 @@ paths:
                           error: null
                     request_timestamp: "2021-09-28T15:00:00.000Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Create Invoice Credit Note
       security: *ref_0
       requestBody:
@@ -2082,18 +2106,22 @@ paths:
                         - rootfi_id: 443583
                           rootfi_company_id: 1672
                           rootfi_organisation_id: 1
-                          rootfi_integration_type: NETSUITE
+                          rootfi_integration_type: ZOHO_BOOKS
                           rootfi_updated_at: "2023-10-25T13:39:41.201Z"
                           rootfi_created_at: "2023-10-25T13:39:41.216Z"
-                          platform_id: "1013"
-                          payment_id: "1013"
-                          invoice_id: "71"
-                          account_id: "35"
-                          contact_id: "1"
+                          platform_id: "1234567890123456789"
+                          payment_id: "1234567890123456789"
+                          invoice_id: "1234567890123456789"
+                          account_id: "1234567890123456789"
+                          contact_id: "1234567890123456789"
+                          currency_id: null
                           amount: 105
                           payment_date: "2022-12-27T00:00:00.000Z"
                           payment_mode: null
-                          currency_id: USD
+                          document_number: null
+                          memo: Amy claims the pest control did not occur
+                          currency_rate: 1
+                          updated_at: "2023-01-18T00:00:00.000Z"
                           currency:
                             data:
                               platform_id: null
@@ -2103,10 +2131,6 @@ paths:
                               is_base_currency: null
                               exchange_rate: null
                               updated_at: null
-                          currency_rate: 1
-                          document_number: null
-                          memo: Amy claims the pest control did not occur
-                          updated_at: "2023-01-18T00:00:00.000Z"
                           invoice:
                             data:
                               platform_id: "71"
@@ -2115,7 +2139,7 @@ paths:
                               document_number: "1025"
                               posted_date: "2022-12-02T00:00:00.000Z"
                               due_date: "2023-01-01T00:00:00.000Z"
-                              currency_id: USD
+                              currency_id: null
                               currency:
                                 data:
                                   platform_id: null
@@ -2137,7 +2161,7 @@ paths:
                       total_count: 1
                     request_timestamp: "2023-10-25T13:39:41.201Z"
                     response_timestamp: "2023-10-25T13:39:41.201Z"
-                    request_id: 12345678-1234-1234-1234-123456789012
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Get Invoice Payments
       security: *ref_0
   /write/invoice_payments:
@@ -2160,9 +2184,9 @@ paths:
                   value:
                     data:
                       status: SUCCESS
-                      upload_job_id: 00000000-0000-0000-0000-000000000000
+                      upload_job_id: xQm2K441VosP8W4
                       data:
-                        - job_id: 00000000-0000-0000-0000-000000000000
+                        - job_id: aXI9pUDA5T7E2LS
                           status: success
                           response:
                             amount: 19
@@ -2189,7 +2213,7 @@ paths:
                           error: null
                     request_timestamp: "2021-09-28T15:00:00.000Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Create Invoice Payment
       security: *ref_0
       requestBody:
@@ -2273,16 +2297,25 @@ paths:
                         - rootfi_id: 1395686
                           rootfi_company_id: 1760
                           rootfi_organisation_id: 1
-                          rootfi_integration_type: QUICKBOOKS_SANDBOX
+                          rootfi_integration_type: ZOHO_BOOKS
                           rootfi_updated_at: "2023-10-27T05:05:28.522Z"
                           rootfi_created_at: "2023-10-27T05:05:28.551Z"
-                          platform_id: "793"
-                          contact_id: "1"
-                          sales_order_ids: null
-                          document_number: INVT136qqa
+                          platform_id: "1234567890123456789"
+                          contact_id: "1234567890123456789"
+                          currency_id: null
+                          document_number: INVT136
                           posted_date: "2023-03-17T00:00:00.000Z"
                           due_date: "2024-03-19T00:00:00.000Z"
-                          currency_id: USD
+                          memo: Test Invoice
+                          currency_rate: null
+                          status: PAID
+                          tax_amount: 19
+                          total_discount: null
+                          total_amount: 219
+                          sales_order_ids: null
+                          sub_total: 200
+                          amount_due: 0
+                          updated_at: "2023-10-26T00:00:00.000Z"
                           currency:
                             data:
                               platform_id: null
@@ -2292,17 +2325,30 @@ paths:
                               is_base_currency: null
                               exchange_rate: null
                               updated_at: null
-                          currency_rate: null
-                          status: PAID
-                          total_amount: 219
-                          sub_total: 200
-                          total_discount: null
-                          tax_amount: 19
-                          amount_due: 0
-                          memo: Test Invoice
-                          updated_at: "2023-10-26T00:00:00.000Z"
                           payments:
-                            data: []
+                            data:
+                              - platform_id: "3770712000000080515"
+                                payment_id: "3770712000000080513"
+                                invoice_id: "3770712000000080288"
+                                account_id: "3770712000000000388"
+                                contact_id: "3770712000000080069"
+                                amount: 120
+                                currency_id: "3770712000000000099"
+                                currency:
+                                  data:
+                                    platform_id: "3770712000000000099"
+                                    name: Indian Rupee
+                                    code: INR
+                                    symbol: ₹
+                                    is_base_currency: true
+                                    exchange_rate: 0
+                                    updated_at: null
+                                payment_date: "2022-10-21T00:00:00.000Z"
+                                payment_mode: Cash
+                                memo: null
+                                currency_rate: 1
+                                document_number: AO-000001
+                                updated_at: null
                           line_items:
                             data:
                               - platform_id: "1_793"
@@ -2322,11 +2368,22 @@ paths:
                                 total_discount: null
                                 updated_at: null
                           documents:
-                            data: []
+                            data:
+                              - platform_id: "3770712000000203032_3770712000000080288"
+                                file_name: sample_upload.xlsx
+                                file_type: >-
+                                  application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+                                file_size: 6019.53
+                                document_type_id: "3770712000000080288"
+                                document_type: Invoices
+                                document_uploaded: false
+                                download_link: >-
+                                  https://books.zoho.com/api/v3/documents/3770712000000203032_3770712000000080288
+                                updated_at: "2022-09-28T00:00:00.000Z"
                       total_count: 1
                     request_timestamp: "2023-10-27T05:05:28.522Z"
                     response_timestamp: "2023-10-27T05:05:28.522Z"
-                    request_id: 12345678-1234-1234-1234-123456789012
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Get Invoices
       security: *ref_0
   /write/invoices:
@@ -2348,9 +2405,9 @@ paths:
                   value:
                     data:
                       status: SUCCESS
-                      upload_job_id: 00000000-0000-0000-0000-000000000000
+                      upload_job_id: aXI9pUDA5T7E2LS
                       data:
-                        - job_id: 00000000-0000-0000-0000-000000000000
+                        - job_id: xQm2K441VosP8W4
                           status: success
                           response:
                             tax_amount: 34.2
@@ -2380,7 +2437,7 @@ paths:
                           error: null
                     request_timestamp: "2021-09-28T15:00:00.000Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Create Invoice
       security: *ref_0
       requestBody:
@@ -2435,9 +2492,9 @@ paths:
                   value:
                     data:
                       status: SUCCESS
-                      upload_job_id: 12345678-1234-1234-1234-123456789012
+                      upload_job_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
                       data:
-                        - job_id: 12345678-1234-1234-1234-123456789012
+                        - job_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
                           status: success
                           response:
                             tax_amount: 96
@@ -2466,7 +2523,7 @@ paths:
                           error: null
                     request_timestamp: "2023-10-25T13:39:41.201Z"
                     response_timestamp: "2023-10-25T13:39:41.201Z"
-                    request_id: 12345678-1234-1234-1234-123456789012
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Update Invoices
       security: *ref_0
       requestBody:
@@ -2555,13 +2612,12 @@ paths:
                         - rootfi_id: 308443
                           rootfi_company_id: 1760
                           rootfi_organisation_id: 1
-                          rootfi_integration_type: QUICKBOOKS_SANDBOX
+                          rootfi_integration_type: ZOHO_BOOKS
                           rootfi_updated_at: "2023-10-26T16:14:56.257Z"
                           rootfi_created_at: "2023-10-26T16:14:56.261Z"
-                          platform_id: "45"
-                          name: Test item 99
+                          platform_id: "1234567890123456789"
+                          name: Toy Car
                           description: Test Item description
-                          status: ACTIVE
                           type: INVENTORY
                           code: null
                           quantity_on_hand: 3
@@ -2573,6 +2629,7 @@ paths:
                             unit_price: 10
                           is_bill_item: true
                           is_invoice_item: true
+                          status: ACTIVE
                           updated_at: "2023-05-03T00:00:00.000Z"
                       total_count: 1
                     request_timestamp: "2023-10-26T16:14:56.261Z"
@@ -2599,9 +2656,9 @@ paths:
                   value:
                     data:
                       status: SUCCESS
-                      upload_job_id: 00000000-0000-0000-0000-000000000000
+                      upload_job_id: xQm2K441VosP8W4
                       data:
-                        - job_id: 00000000-0000-0000-0000-000000000000
+                        - job_id: aXI9pUDA5T7E2LS
                           status: success
                           response:
                             code: I02
@@ -2632,7 +2689,7 @@ paths:
                           error: null
                     request_timestamp: "2021-09-28T15:00:00.000Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Create Items
       security: *ref_0
       requestBody:
@@ -2685,9 +2742,9 @@ paths:
                   value:
                     data:
                       status: SUCCESS
-                      upload_job_id: 00000000-0000-0000-0000-000000000000
+                      upload_job_id: xQm2K441VosP8W4
                       data:
-                        - job_id: 00000000-0000-0000-0000-000000000000
+                        - job_id: aXI9pUDA5T7E2LS
                           status: success
                           response:
                             code: I02
@@ -2718,7 +2775,7 @@ paths:
                           error: null
                     request_timestamp: "2021-09-28T15:00:00.000Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Update Items
       security: *ref_0
       requestBody:
@@ -2806,14 +2863,19 @@ paths:
                         - rootfi_id: 4040342
                           rootfi_company_id: 1760
                           rootfi_organisation_id: 1
-                          rootfi_integration_type: QUICKBOOKS_SANDBOX
+                          rootfi_integration_type: ZOHO_BOOKS
                           rootfi_updated_at: "2023-10-26T16:15:02.517Z"
                           rootfi_created_at: "2023-10-26T16:15:02.530Z"
-                          platform_id: "6"
-                          account_id: null
-                          amount: 13495
+                          platform_id: "1234567890123456789"
+                          account_id: "1234567890123456789"
+                          currency_id: null
                           document_number: null
-                          currency_id: USD
+                          description: Opening Balance
+                          posted_date: "2023-01-03T00:00:00.000Z"
+                          amount: 13495
+                          currency_rate: 1
+                          journal_entry_type: both
+                          updated_at: "2023-01-15T00:00:00.000Z"
                           currency:
                             data:
                               platform_id: null
@@ -2823,33 +2885,18 @@ paths:
                               is_base_currency: null
                               exchange_rate: null
                               updated_at: null
-                          currency_rate: 1
-                          journal_entry_type: both
-                          description: Opening Balance
-                          posted_date: "2023-01-03T00:00:00.000Z"
-                          updated_at: "2023-01-15T00:00:00.000Z"
                           journal_lines:
                             data:
-                              - platform_id: "1_6"
-                                journal_entry_id: "6"
-                                account_id: "34"
-                                contact_id: null
+                              - platform_id: "3770712000001725038"
+                                journal_entry_id: "3770712000001725026"
+                                account_id: "3770712000000035001"
+                                contact_id: "3770712000000080780"
                                 tax_id: null
-                                tracking_category_ids: []
-                                type: CREDIT
-                                description: Opening Balance
-                                net_amount: 13495
-                                tax_amount: null
-                                updated_at: null
-                              - platform_id: "0_6"
-                                journal_entry_id: "6"
-                                account_id: "38"
-                                contact_id: null
-                                tax_id: null
-                                tracking_category_ids: []
+                                tracking_category_ids:
+                                  - "3770712000000000335_3770712000001122010"
                                 type: DEBIT
-                                description: Opening Balance
-                                net_amount: 13495
+                                description: Test Description for Journal
+                                net_amount: 5
                                 tax_amount: null
                                 updated_at: null
                       total_count: 1
@@ -2878,9 +2925,9 @@ paths:
                   value:
                     data:
                       status: SUCCESS
-                      upload_job_id: 12345678-1234-1234-1234-123456789012
+                      upload_job_id: aXI9pUDA5T7E2LS
                       data:
-                        - job_id: 12345678-1234-1234-1234-123456789012
+                        - job_id: xQm2K441VosP8W4
                           status: success
                           response:
                             amount: 5
@@ -2901,7 +2948,7 @@ paths:
                           error: null
                     request_timestamp: "2023-10-25T13:39:41.201Z"
                     response_timestamp: "2023-10-25T13:39:41.201Z"
-                    request_id: 12345678-1234-1234-1234-123456789012
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Create a journal entry
       security: *ref_0
       requestBody:
@@ -3001,15 +3048,23 @@ paths:
                           rootfi_integration_type: QUICKBOOKS_SANDBOX
                           rootfi_updated_at: "2023-10-26T16:14:59.673Z"
                           rootfi_created_at: "2023-10-26T16:14:59.685Z"
-                          platform_id: "45"
-                          contact_id: "51"
-                          bill_ids: []
-                          document_number: "1002"
+                          platform_id: "1234567890123456789"
+                          bill_ids:
+                            - "1234567890123456789"
+                          contact_id: "1234567890123456789"
+                          currency_id: null
+                          document_number: A-1002
                           delivery_date: "2023-01-17T00:00:00.000Z"
                           posted_date: "2023-01-17T00:00:00.000Z"
                           description: Test description
+                          currency_rate: null
+                          status: SUBMITTED
+                          total_amount: 125
+                          sub_total: null
+                          tax_amount: null
+                          total_discount: null
+                          updated_at: "2023-01-17T00:00:00.000Z"
                           payment_mode: null
-                          currency_id: USD
                           currency:
                             data:
                               platform_id: null
@@ -3019,58 +3074,41 @@ paths:
                               is_base_currency: null
                               exchange_rate: null
                               updated_at: null
-                          currency_rate: null
-                          status: SUBMITTED
-                          total_amount: 125
-                          sub_total: null
-                          tax_amount: null
-                          total_discount: null
-                          updated_at: "2023-01-17T00:00:00.000Z"
                           addresses:
                             data:
-                              - platform_id: 64_PURCHASE_ORDERS_45_SHIPPING
-                                type: SHIPPING
-                                data_model: PURCHASE_ORDERS
-                                data_model_id: "45"
-                                street: Craig's Design and Landscaping Services
-                                locality: 123 Sierra Way
-                                city: null
-                                state: null
-                                country: null
-                                pincode: null
-                                updated_at: null
-                              - platform_id: 63_PURCHASE_ORDERS_45_BILLING
+                              - platform_id: _CONTACTS_1013_BILLING
                                 type: BILLING
-                                data_model: PURCHASE_ORDERS
-                                data_model_id: "45"
-                                street: Tim Philip
-                                locality: Tim Philip Masonry
-                                city: null
-                                state: null
-                                country: null
-                                pincode: null
-                                updated_at: null
+                                data_model: CONTACTS
+                                data_model_id: "1013"
+                                street: 123 Main Street
+                                locality: Downtown
+                                city: Metropolis
+                                state: Stateville
+                                country: Countryland
+                                pincode: "12345"
+                                updated_at: "2023-11-06T10:00:00.000Z"
                           line_items:
                             data:
-                              - platform_id: "1_45"
-                                line_item_type: PURCHASE_ORDERS
-                                line_item_type_id: "45"
-                                tracking_category_ids: []
-                                item_id: "5"
-                                tax_id: "1"
+                              - platform_id: "1234567890123456789"
+                                line_item_type: BILLS
+                                line_item_type_id: "1234567890123456789"
+                                tracking_category_ids:
+                                  - "1234567890123456789"
+                                item_id: "1234567890123456789"
+                                tax_id: "1234567890123456789"
                                 account_id: null
-                                description: Rock Fountain
+                                description: Test Item
                                 quantity: 1
-                                unit_amount: 125
-                                total_amount: 125
+                                unit_amount: 100
+                                total_amount: 100
                                 sub_total: null
-                                tax_amount: null
+                                tax_amount: 0
                                 total_discount: null
-                                updated_at: null
+                                updated_at: "2021-09-28T15:00:00.000Z"
                       total_count: 1
                     request_timestamp: "2023-10-27T05:05:28.522Z"
                     response_timestamp: "2023-01-17T00:00:00.000Z"
-                    request_id: 12345678-1234-1234-1234-123456789012
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Retrieve purchase orders
       security: *ref_0
   /write/purchase_orders:
@@ -3093,9 +3131,9 @@ paths:
                   value:
                     data:
                       status: SUCCESS
-                      upload_job_id: 12345678-1234-1234-1234-123456789012
+                      upload_job_id: xQm2K441VosP8W4
                       data:
-                        - job_id: 12345678-1234-1234-1234-123456789012
+                        - job_id: aXI9pUDA5T7E2LS
                           status: success
                           response:
                             tax_amount: 2.28
@@ -3123,7 +3161,7 @@ paths:
                           error: null
                     request_timestamp: "2023-10-27T05:05:28.522Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
-                    request_id: 12345678-1234-1234-1234-123456789012
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Create a purchase order
       security: *ref_0
       requestBody:
@@ -3218,14 +3256,22 @@ paths:
                           rootfi_integration_type: QUICKBOOKS_SANDBOX
                           rootfi_updated_at: "2023-10-26T16:14:59.673Z"
                           rootfi_created_at: "2023-10-26T16:14:59.685Z"
-                          platform_id: "38"
-                          contact_id: "15"
-                          invoice_ids: []
-                          document_number: "1011"
+                          platform_id: "1234567890123456789"
+                          contact_id: "1234567890123456789"
+                          invoice_ids:
+                            - "3770712000000000099"
+                          currency_id: null
+                          document_number: A-1011
                           posted_date: "2023-01-17T00:00:00.000Z"
                           delivery_date: null
                           description: null
-                          currency_id: USD
+                          currency_rate: 1
+                          status: SUBMITTED
+                          total_amount: 78.75
+                          sub_total: 87.5
+                          tax_amount: 0
+                          total_discount: 8.75
+                          updated_at: "2023-01-17T00:00:00.000Z"
                           currency:
                             data:
                               platform_id: null
@@ -3235,58 +3281,41 @@ paths:
                               is_base_currency: null
                               exchange_rate: null
                               updated_at: null
-                          currency_rate: 1
-                          status: SUBMITTED
-                          total_amount: 78.75
-                          sub_total: 87.5
-                          tax_amount: 0
-                          total_discount: 8.75
-                          updated_at: "2023-01-17T00:00:00.000Z"
                           addresses:
                             data:
-                              - platform_id: 15_SALES_ORDERS_38_SHIPPING
-                                type: SHIPPING
-                                data_model: SALES_ORDERS
-                                data_model_id: "38"
-                                street: 350 Mountain View Dr.
-                                locality: null
-                                city: South Orange
-                                state: NJ
-                                country: null
-                                pincode: "07079"
-                                updated_at: null
-                              - platform_id: 57_SALES_ORDERS_38_BILLING
+                              - platform_id: _CONTACTS_1013_BILLING
                                 type: BILLING
-                                data_model: SALES_ORDERS
-                                data_model_id: "38"
-                                street: Karen Pye
-                                locality: Pye's Cakes
-                                city: null
-                                state: null
-                                country: null
-                                pincode: null
-                                updated_at: null
+                                data_model: CONTACTS
+                                data_model_id: "1013"
+                                street: 123 Main Street
+                                locality: Downtown
+                                city: Metropolis
+                                state: Stateville
+                                country: Countryland
+                                pincode: "12345"
+                                updated_at: "2023-11-06T10:00:00.000Z"
                           line_items:
                             data:
-                              - platform_id: "1_38"
-                                line_item_type: SALES_ORDERS
-                                line_item_type_id: "38"
-                                tracking_category_ids: []
-                                item_id: "10"
-                                tax_id: "7"
+                              - platform_id: "1234567890123456789"
+                                line_item_type: BILLS
+                                line_item_type_id: "1234567890123456789"
+                                tracking_category_ids:
+                                  - "1234567890123456789"
+                                item_id: "1234567890123456789"
+                                tax_id: "1234567890123456789"
                                 account_id: null
-                                description: Pest Control Services
-                                quantity: 2.5
-                                unit_amount: 35
-                                total_amount: 87.5
+                                description: Test Item
+                                quantity: 1
+                                unit_amount: 100
+                                total_amount: 100
                                 sub_total: null
-                                tax_amount: null
+                                tax_amount: 0
                                 total_discount: null
-                                updated_at: null
+                                updated_at: "2021-09-28T15:00:00.000Z"
                       total_count: 1
                     request_timestamp: "2023-10-27T05:05:28.522Z"
                     response_timestamp: "2023-10-27T05:05:28.522Z"
-                    request_id: 12345678-1234-1234-1234-123456789012
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Get Sales Orders
       security: *ref_0
   /write/sales_orders:
@@ -3309,9 +3338,9 @@ paths:
                   value:
                     data:
                       status: SUCCESS
-                      upload_job_id: 12345678-1234-1234-1234-123456789012
+                      upload_job_id: aXI9pUDA5T7E2LS
                       data:
-                        - job_id: 12345678-1234-1234-1234-123456789012
+                        - job_id: xQm2K441VosP8W4
                           status: success
                           response:
                             tax_amount: 2.28
@@ -3339,7 +3368,7 @@ paths:
                           error: null
                     request_timestamp: "2023-10-27T05:05:28.522Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
-                    request_id: 12345678-1234-1234-1234-123456789012
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Create Sales Order
       security: *ref_0
       requestBody:
@@ -3445,10 +3474,10 @@ paths:
                               tax_agency: igst
                               is_compound: false
                           updated_at: "2000-12-31T18:30:00.000Z"
-                      total_count: 123
+                      total_count: 1
                     request_timestamp: "2000-12-31T18:30:00.000Z"
                     response_timestamp: "2021-06-01T00:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Get Tax Rates
       security: *ref_0
   /write/tax_rates:
@@ -3470,9 +3499,9 @@ paths:
                   value:
                     data:
                       status: SUCCESS
-                      upload_job_id: 12345678-1234-1234-1234-123456789012
+                      upload_job_id: xQm2K441VosP8W4
                       data:
-                        - job_id: 12345678-1234-1234-1234-123456789012
+                        - job_id: aXI9pUDA5T7E2LS
                           status: success
                           response:
                             platform_id: "3770712000001298001"
@@ -3503,7 +3532,7 @@ paths:
                           error: null
                     request_timestamp: "2000-12-31T18:30:00.000Z"
                     response_timestamp: "2021-06-01T00:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Create Tax Rates
       security: *ref_0
       requestBody:
@@ -3555,9 +3584,9 @@ paths:
                   value:
                     data:
                       status: SUCCESS
-                      upload_job_id: 12345678-1234-1234-1234-123456789012
+                      upload_job_id: xQm2K441VosP8W4
                       data:
-                        - job_id: 12345678-1234-1234-1234-123456789012
+                        - job_id: aXI9pUDA5T7E2LS
                           status: success
                           response:
                             platform_id: "3770712000001298001"
@@ -3588,7 +3617,7 @@ paths:
                           error: null
                     request_timestamp: "2000-12-31T18:30:00.000Z"
                     response_timestamp: "2021-06-01T00:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Update Tax Rates
       security: *ref_0
       requestBody:
@@ -3701,7 +3730,7 @@ paths:
                       total_count: 1
                     request_timestamp: "2023-10-27T05:05:28.522Z"
                     response_timestamp: "2023-10-27T05:05:28.522Z"
-                    request_id: 12345678-1234-1234-1234-123456789012
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Get Tracking Categories
       security: *ref_0
   /company/all:
@@ -3760,13 +3789,13 @@ paths:
                               client_secret: dea547affadeff1e59c2bf626be464c74b989ad6a9
                               refresh_token: >-
                                 fb36058e58158c26b1be1ef2c6e8b09795e29ccfa9cc9b800f486c60066dab037927c905896d
-                            access_token: 00000000-0000-0000-0000-000000000000
+                            access_token: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
                             access_token_expiry_time: "2021-06-01T00:00:00.000Z"
                           last_synced: "2021-06-01T00:00:00.000Z"
                           rate_limit_sleep_time: null
                           rootfi_organisation_id: 12
                           variables:
-                            tenant_id: 00000000-0000-0000-0000-000000000000
+                            tenant_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
                           rate_limits:
                             max_rate_limit: 5000
                             resets_in_date: "2021-06-01T00:00:00.000Z"
@@ -3776,14 +3805,14 @@ paths:
                           name: RootFi Test Company
                           sync_enabled: true
                           metadata: null
-                          invite_link_id: 00000000-0000-0000-0000-000000000000
+                          invite_link_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
                           integrations:
                             - ZOHO_BOOKS
                           last_synced_at: "2021-06-01T00:00:00.000Z"
                           jobs: []
                     request_timestamp: "2021-06-01T00:00:00.000Z"
                     response_timestamp: "2021-06-01T00:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Get All Companies
       security: *ref_0
   /company/{company_id}:
@@ -3821,7 +3850,7 @@ paths:
                       name: RootFi Test Company
                       sync_enabled: true
                       InviteLinks:
-                        invite_link_id: 00000000-0000-0000-0000-000000000000
+                        invite_link_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
                       Connections:
                         - status: HEALTHY
                           integration_type: ZOHO_BOOKS
@@ -3834,7 +3863,7 @@ paths:
                           sync_status: IDLE
                     request_timestamp: "2021-06-01T00:00:00.000Z"
                     response_timestamp: "2021-06-01T00:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Get One Company
       security: *ref_0
     put:
@@ -3871,7 +3900,7 @@ paths:
                       name: RootFi Test Company
                       sync_enabled: true
                       InviteLinks:
-                        invite_link_id: 00000000-0000-0000-0000-000000000000
+                        invite_link_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
                       Connections:
                         - status: HEALTHY
                           integration_type: ZOHO_BOOKS
@@ -3884,7 +3913,7 @@ paths:
                           sync_status: IDLE
                     request_timestamp: "2021-06-01T00:00:00.000Z"
                     response_timestamp: "2021-06-01T00:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Update a company
       security: *ref_0
       requestBody:
@@ -3927,7 +3956,7 @@ paths:
                       status: success
                     request_timestamp: "2021-01-01T00:00:00Z"
                     response_timestamp: "2021-01-01T00:00:00Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Delete a company
       security: *ref_0
   /integrations:
@@ -3981,7 +4010,7 @@ paths:
                       disabled_integrations: 12
                     request_timestamp: "2021-08-10T15:00:00.000Z"
                     response_timestamp: "2021-08-10T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Get All Integrations
       security: *ref_0
     post:
@@ -4014,7 +4043,7 @@ paths:
                       is_rootfi_identity: true
                     request_timestamp: "2021-08-10T15:00:00.000Z"
                     response_timestamp: "2021-08-10T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Create a integration
       security: *ref_0
       requestBody:
@@ -4073,7 +4102,7 @@ paths:
                       is_rootfi_identity: true
                     request_timestamp: "2021-08-10T15:00:00.000Z"
                     response_timestamp: "2021-08-10T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Get One Integration
       security: *ref_0
     put:
@@ -4116,7 +4145,7 @@ paths:
                       is_rootfi_identity: true
                     request_timestamp: "2021-08-10T15:00:00.000Z"
                     response_timestamp: "2021-08-10T15:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Update a integration
       security: *ref_0
       requestBody:
@@ -4180,7 +4209,7 @@ paths:
                         rootfi_company_id: 1234
                         rootfi_organisation_id: 12
                         metadata: null
-                        invite_link_id: 00000000-0000-0000-0000-000000000000
+                        invite_link_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
                         integrations:
                           - ZOHO_BOOKS
                         Companies:
@@ -4194,7 +4223,7 @@ paths:
                           Connections: []
                     request_timestamp: "2021-01-01T00:00:00Z"
                     response_timestamp: "2021-01-01T00:00:00Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Get All Invite Links
       security: *ref_0
     post:
@@ -4214,7 +4243,7 @@ paths:
                 Example1:
                   value:
                     data:
-                      invite_link: 00000000-0000-0000-0000-000000000000
+                      invite_link: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
                       invite_link_data:
                         rootfi_id: 1234
                         rootfi_created_at: "2021-01-01T00:00:00Z"
@@ -4222,13 +4251,13 @@ paths:
                         rootfi_company_id: 1234
                         rootfi_organisation_id: 12
                         metadata: null
-                        invite_link_id: 00000000-0000-0000-0000-000000000000
+                        invite_link_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
                         integrations:
                           - ZOHO_BOOKS
                       company_id: 1234
                     request_timestamp: "2021-01-01T00:00:00Z"
                     response_timestamp: "2021-01-01T00:00:00Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Create an invite link
       security: *ref_0
       requestBody:
@@ -4258,7 +4287,7 @@ paths:
             type: string
           examples:
             Example1:
-              value: 00000000-0000-0000-0000-000000000000
+              value: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       responses:
         "200":
           description: ""
@@ -4276,7 +4305,7 @@ paths:
                       rootfi_company_id: 1234
                       rootfi_organisation_id: 12
                       metadata: null
-                      invite_link_id: 00000000-0000-0000-0000-000000000000
+                      invite_link_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
                       integrations:
                         - ZOHO_BOOKS
                       Companies:
@@ -4307,7 +4336,7 @@ paths:
                               initial_fetch: true
                     request_timestamp: "2021-01-01T00:00:00Z"
                     response_timestamp: "2021-01-01T00:00:00Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Get One Invite Link
       security: *ref_0
     delete:
@@ -4324,7 +4353,7 @@ paths:
             type: string
           examples:
             Example1:
-              value: 00000000-0000-0000-0000-000000000000
+              value: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       responses:
         "200":
           description: ""
@@ -4339,7 +4368,7 @@ paths:
                       status: success
                     request_timestamp: "2021-01-01T00:00:00Z"
                     response_timestamp: "2021-01-01T00:00:00Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Delete an invite link
       security: *ref_0
   /passthrough:
@@ -4360,12 +4389,12 @@ paths:
                 Example1:
                   value:
                     data:
-                      Id: 00000000-0000-0000-0000-000000000000
+                      Id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
                       Status: OK
                       ProviderName: Example
                       DateTimeUTC: "2021-01-01T00:00:00Z"
                       Accounts:
-                        - AccountID: 00000000-0000-0000-0000-000000000000
+                        - AccountID: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
                           Name: Test Name
                           Status: ACTIVE
                           Type: BANK
@@ -4383,7 +4412,7 @@ paths:
                           AddToWatchlist: false
                     request_timestamp: "2021-01-01T00:00:00Z"
                     response_timestamp: "2021-01-01T00:00:00Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Create Passthrough Data
       security: *ref_0
       requestBody:
@@ -4423,7 +4452,7 @@ paths:
                       status: success
                     request_timestamp: "2021-01-01T00:00:00Z"
                     response_timestamp: "2021-01-01T00:00:00Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Create an Sync
       security: *ref_0
       requestBody:
@@ -4473,7 +4502,7 @@ paths:
                           https://webhook.site/eec24873-a381-4694-b684-a1d77d9e0697
                     request_timestamp: "2021-08-10T18:00:00.000Z"
                     response_timestamp: "2021-08-10T18:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Get All Webhooks
       security: *ref_0
     post:
@@ -4508,7 +4537,7 @@ paths:
                         https://webhook.site/eec24873-a381-4694-b684-a1d77d9e0697
                     request_timestamp: "2021-08-10T18:00:00.000Z"
                     response_timestamp: "2021-08-10T18:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Create a webhook
       security: *ref_0
       requestBody:
@@ -4572,7 +4601,7 @@ paths:
                         https://webhook.site/eec24873-a381-4694-b684-a1d77d9e0697
                     request_timestamp: "2021-08-10T18:00:00.000Z"
                     response_timestamp: "2021-08-10T18:00:00.000Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Update a webhook
       security: *ref_0
       requestBody:
@@ -4616,7 +4645,7 @@ paths:
                       status: success
                     request_timestamp: "2021-01-01T00:00:00Z"
                     response_timestamp: "2021-01-01T00:00:00Z"
-                    request_id: 00000000-0000-0000-0000-000000000000
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Delete a webhook.
       security: *ref_0
 components:
