@@ -54,19 +54,31 @@ icon: "hand-wave"
 
 <ResponseField name="invoice" type="Invoice" required>
   <Expandable title="properties">
-    <Snippet file="invoice_snippet.mdx" />
+    <ResponseField name="data" type="Object" required>
+      <Expandable title="properties">
+        <Snippet file="invoice_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
   </Expandable>
 </ResponseField>
 
 <ResponseField name="contact" type="Contact" required>
   <Expandable title="properties">
-    <Snippet file="contact_snippet.mdx" />
+    <ResponseField name="data" type="Object" required>
+      <Expandable title="properties">
+        <Snippet file="contact_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
   </Expandable>
 </ResponseField>
 
 <ResponseField name="account" type="Account" required>
   <Expandable title="properties">
-    <Snippet file="accounts_snippets.mdx" />
+    <ResponseField name="data" type="Object" required>
+      <Expandable title="properties">
+        <Snippet file="accounts_snippets.mdx" />
+      </Expandable>
+    </ResponseField>
   </Expandable>
 </ResponseField>
 
@@ -92,3 +104,69 @@ icon: "hand-wave"
 | contact       | [Contact](/docs/contacts) | The contact that makes the payment                                       |
 | account       | [Account](/docs/accounts) | The account to which this payment belongs                                |
 | updated_at    | date                      | The date at which the information was updated on the accounting platform |
+
+<ResponseExample name="The Bank Transaction Object" >
+
+```json The Invoice Payments Response Object
+{
+  "platform_id": "3770712000001726003",
+  "contact_id": "3770712000000226001",
+  "account_id": "3770712000000000361",
+  "invoice_id": "3770712000000707001",
+  "amount": 19,
+  "currency_id": "3770712000000000099",
+  "currency": {
+    "data": {
+      "platform_id": "3770712000000000099",
+      "name": "Indian Rupee",
+      "code": "INR",
+      "symbol": "₹",
+      "is_base_currency": true,
+      "exchange_rate": 0,
+      "updated_at": null
+    }
+  },
+  "currency_rate": 1,
+  "payment_date": "2023-03-01T00:00:00.000Z",
+  "payment_mode": "Cash",
+  "memo": "Test Description",
+  "invoice": {
+    "data": {
+      "platform_id": "3770712000000707001",
+      "contact_id": "3770712000000226001",
+      "sales_order_ids": [],
+      "document_number": "123456",
+      "posted_date": "2023-06-08T00:00:00.000Z",
+      "due_date": "2023-06-08T00:00:00.000Z",
+      "currency_id": "3770712000000000099",
+      "currency": {
+        "data": {
+          "platform_id": "3770712000000000099",
+          "name": "Indian Rupee",
+          "code": "INR",
+          "symbol": "₹",
+          "is_base_currency": true,
+          "exchange_rate": 0,
+          "updated_at": null
+        }
+      },
+      "currency_rate": 1,
+      "status": "Overdue",
+      "total_amount": 1179988.2,
+      "sub_total": 1000000,
+      "total_discount": 10,
+      "tax_amount": 179998.2,
+      "amount_due": 1158627.2,
+      "memo": "Thanks for your business.",
+      "updated_at": "2023-09-27T00:00:00.000Z"
+    }
+  }
+}
+  "payment_id": "3770712000001726001",
+  "document_number": "S78",
+  "contact": {},
+  "account": {},
+  "updated_at": null,
+```
+
+</ResponseExample>

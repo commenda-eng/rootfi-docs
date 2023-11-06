@@ -37,3 +37,78 @@ icon: "hand-wave"
 | addresses       | [Address](/docs/address)      | Array of addresses associated with this purchase order                                                       |
 | contact         | [Contact](/docs/contacts)     | The contact associated with this purchase order                                                              |
 | updated_at      | string                        | The date at which the information was updated on the accounting platform                                     |
+
+<ResponseExample name="The Bank Transaction Object" >
+
+```json The Purchase Order Response Object
+{
+  "platform_id": "3770712000001722009",
+  "contact_id": "3770712000000080863",
+  "document_number": "PO-00075",
+  "posted_date": "2023-04-01T00:00:00.000Z",
+  "delivery_date": "2023-05-01T00:00:00.000Z",
+  "description": "Purchase Order for Products",
+  "payment_mode": "Cash",
+  "currency_id": "3770712000000000099",
+  "currency": {
+    "data": {
+      "platform_id": "3770712000000000099",
+      "name": "Indian Rupee",
+      "code": "INR",
+      "symbol": "₹",
+      "is_base_currency": true,
+      "exchange_rate": 1.0,
+      "updated_at": "2023-11-05T00:00:00.000Z"
+    }
+  },
+  "currency_rate": 1.0,
+  "status": "DRAFT",
+  "total_discount": 1.0,
+  "tax_amount": 2.28,
+  "sub_total": 19.0,
+  "total_amount": 21.28,
+  "line_items": {
+    "data": [
+      {
+        "platform_id": "3770712000001722011",
+        "line_item_type": "PURCHASE_ORDERS",
+        "line_item_type_id": "3770712000001722009",
+        "tracking_category_ids": [],
+        "item_id": "3770712000000085075",
+        "tax_id": "3770712000000106071",
+        "account_id": "3770712000000034003",
+        "description": "Ted's Products (2 units)",
+        "quantity": 2,
+        "unit_amount": 10.0,
+        "total_amount": 21.28,
+        "sub_total": 19.0,
+        "tax_amount": 2.28,
+        "total_discount": 1.0,
+        "updated_at": "2023-11-05T00:00:00.000Z"
+      }
+    ]
+  },
+  "bill_ids": ["3770712000001722013"],
+  "addresses": {
+    "data": [
+      {
+        "platform_id": "_PURCHASE_ORDERS_3770712000001722009_BILLING",
+        "type": "BILLING",
+        "data_model": "PURCHASE_ORDERS",
+        "data_model_id": "3770712000001722009",
+        "street": "123 Main Street",
+        "locality": "Downtown",
+        "city": "Metropolis",
+        "state": "Stateville",
+        "country": "Countryland",
+        "pincode": "12345",
+        "updated_at": "2023-11-05T00:00:00.000Z"
+      }
+    ]
+  },
+  "contact": null,
+  "updated_at": "2023-11-05T00:00:00.000Z"
+}
+```
+
+</ResponseExample>

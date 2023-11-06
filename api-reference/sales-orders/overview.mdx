@@ -36,3 +36,89 @@ icon: "hand-wave"
 | invoices        | [Invoice](/docs/invoices)     | Array of invoices associated with the sales order                                                         |
 | addresses       | [Address](/docs/address)      | Array of addresses associated with this sales order                                                       |
 | contact         | [Contact](/docs/contacts)     | The contact associated with this sales order                                                              |
+
+<ResponseExample name="The Bank Transaction Object" >
+
+```json The Sales Order Response Object
+{
+  "platform_id": "3770712000001720008",
+  "contact_id": "3770712000000417001",
+  "document_number": "SO-00035",
+  "posted_date": "2023-04-01T00:00:00.000Z",
+  "delivery_date": "2023-05-01T00:00:00.000Z",
+  "description": "Sales Order for Yoyo Products",
+  "payment_mode": null,
+  "currency": {
+    "data": {
+      "platform_id": "3770712000000000099",
+      "name": "Indian Rupee",
+      "code": "INR",
+      "symbol": "₹",
+      "is_base_currency": true,
+      "exchange_rate": 1.0,
+      "updated_at": "2023-11-05T00:00:00.000Z"
+    }
+  },
+  "currency_rate": 1.0,
+  "status": "DRAFT",
+  "total_discount": 1.0,
+  "tax_amount": 0.0,
+  "sub_total": 19.0,
+  "total_amount": 19.0,
+  "line_items": {
+    "data": [
+      {
+        "platform_id": "3770712000001720012",
+        "line_item_type": "SALES_ORDERS",
+        "line_item_type_id": "3770712000001720008",
+        "tracking_category_ids": [],
+        "item_id": "3770712000000085075",
+        "tax_id": "3770712000000106067",
+        "account_id": null,
+        "description": "Yoyo Products (2 units)",
+        "quantity": 2,
+        "unit_amount": 10.0,
+        "total_amount": 19.0,
+        "sub_total": 19.0,
+        "tax_amount": 0.0,
+        "total_discount": 1.0,
+        "updated_at": "2023-11-05T00:00:00.000Z"
+      }
+    ]
+  },
+  "invoice_ids": ["3770712000001720009"],
+  "addresses": {
+    "data": [
+      {
+        "platform_id": "_SALES_ORDERS_3770712000001720008_SHIPPING",
+        "type": "SHIPPING",
+        "data_model": "SALES_ORDERS",
+        "data_model_id": "3770712000001720008",
+        "street": "L House",
+        "locality": "Kadubesanhalli",
+        "city": "Hyderabad",
+        "state": "KL",
+        "country": "India",
+        "pincode": "500098",
+        "updated_at": "2023-11-05T00:00:00.000Z"
+      },
+      {
+        "platform_id": "_SALES_ORDERS_3770712000001720008_BILLING",
+        "type": "BILLING",
+        "data_model": "SALES_ORDERS",
+        "data_model_id": "3770712000001720008",
+        "street": "D Zone",
+        "locality": "Bellandur",
+        "city": "Visakhapatnam",
+        "state": "AP",
+        "country": "India",
+        "pincode": "500003",
+        "updated_at": "2023-11-05T00:00:00.000Z"
+      }
+    ]
+  },
+  "contact": null
+}
+```
+
+</ResponseExample>
