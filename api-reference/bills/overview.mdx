@@ -29,6 +29,10 @@ icon: "hand-wave"
   The ISO-4217 currency code
 </ResponseField>
 
+<ResponseField name="purchase_order_ids" type="Array">
+  Array of Purchase Orders Id associated with the bill
+</ResponseField>
+
 <ResponseField name="document_number" type="string">
   Reference number for the bill
 </ResponseField>
@@ -97,10 +101,6 @@ icon: "hand-wave"
   The contact who receives this bill
 </ResponseField>
 
-<ResponseField name="purchase_order_ids" type="Array">
-  Array of Purchase Orders Id associated with the bill
-</ResponseField>
-
 <ResponseField name="documents" type="Document">
   <Expandable title="properties">
     <Snippet file="documents_snippet.mdx" />
@@ -141,8 +141,10 @@ icon: "hand-wave"
 ```json The Bills Response Object
 {
   "platform_id": "1234567890123456789",
+  "account_id": "1234567890123456789",
   "contact_id": "1234567890123456789",
   "currency_id": "3770712000000000099",
+  "purchase_order_ids": ["3770712000000085084", "3770712000000085084"],
   "document_number": "AO-0001",
   "posted_date": "2023-01-24T00:00:00.000Z",
   "due_date": "2023-01-24T00:00:00.000Z",
@@ -216,7 +218,6 @@ icon: "hand-wave"
       }
     ]
   },
-  "purchase_order_ids": ["3770712000000085084", "3770712000000085084"],
   "documents": {
     "data": [
       {
