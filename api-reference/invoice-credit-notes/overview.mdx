@@ -16,6 +16,10 @@ icon: "hand-wave"
   The accounting Platform’s ID for the credit note
 </ResponseField>
 
+<ResponseField name="invoice_id" type="string[]" required>
+  An Array of [Invoices](https://docs.rootfi.dev/api-reference/invoices/overview) Id's associated with the credit note
+</ResponseField>
+
 <ResponseField name="contact_id" type="string" required>
   The accounting platform’s unique identifier for the [contact](https://docs.rootfi.dev/api-reference/contacts/overview) associated with this credit note
 </ResponseField>
@@ -70,28 +74,6 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="invoices" type="Invoices" required>
-  An Array of [Invoices](https://docs.rootfi.dev/api-reference/invoices/overview) associated with the credit note
-  <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
-      <Expandable title="properties">
-        <Snippet file="invoice_snippet.mdx" />
-      </Expandable>
-    </ResponseField>
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="contact" type="Contact" required>
-  The [contact](https://docs.rootfi.dev/api-reference/contacts/overview) associated with this credit note
-  <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
-      <Expandable title="properties">
-        <Snippet file="contact_snippet.mdx" />
-      </Expandable>
-    </ResponseField>
-  </Expandable>
-</ResponseField>
-
 <ResponseField name="updated_at" type="date" required>
   The last ISO 8601 timestamp that the data was updated at
 </ResponseField>
@@ -119,6 +101,7 @@ icon: "hand-wave"
 ```json The Invoice Credit Notes Response Object
 {
   "platform_id": "3770712000001365001",
+  "invoice_ids": ["3770712000001365001"],
   "contact_id": "3770712000000225001",
   "currency_id": "3770712000000000099",
   "document_number": "CN-00029",
@@ -158,11 +141,8 @@ icon: "hand-wave"
         "updated_at": "2023-02-17T00:00:00.000Z"
       }
     ]
-  }
-  "invoice_ids": [
-    "3770712000001365001"
-  ],
-  "updated_at": "2023-09-22T00:00:00.000Z",
+  },
+  "updated_at": "2023-09-22T00:00:00.000Z"
 }
 ```
 

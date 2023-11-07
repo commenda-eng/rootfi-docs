@@ -11,20 +11,51 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="assets" type="Line Item">
+  line_items for assets of balance sheet report
   <Expandable title="properties">
-    <Snippet file="line_items_snippeet.mdx" />
+    <ResponseField name="name" type="string" required>
+      Asset Name
+    </ResponseField>
+    <ResponseField name="value" type="float" required>
+      Asset Value
+    </ResponseField>
+    <ResponseField name="line_items" type="string[]" required>
+      Line items of the assets
+    </ResponseField>
   </Expandable>
 </ResponseField>
 
 <ResponseField name="liabilities" type="Line Item">
+  line_items for liabilities of balance sheet report
   <Expandable title="properties">
-    <Snippet file="line_items_snippeet.mdx" />
+    <Expandable title="properties">
+      <ResponseField name="name" type="string" required>
+        Liability Name
+      </ResponseField>
+      <ResponseField name="value" type="float" required>
+        Liability Value
+      </ResponseField>
+      <ResponseField name="line_items" type="string[]" required>
+        Line items of liabilities
+      </ResponseField>
+    </Expandable>
   </Expandable>
 </ResponseField>
 
 <ResponseField name="equity" type="Line Item">
+  line_items for equity of balance sheet report
   <Expandable title="properties">
-    <Snippet file="line_items_snippeet.mdx" />
+    <Expandable title="properties">
+      <ResponseField name="name" type="string" required>
+        Equity Name
+      </ResponseField>
+      <ResponseField name="value" type="float" required>
+        Equity Value
+      </ResponseField>
+      <ResponseField name="line_items" type="string[]" required>
+        Line items of equities
+      </ResponseField>
+    </Expandable>
   </Expandable>
 </ResponseField>
 

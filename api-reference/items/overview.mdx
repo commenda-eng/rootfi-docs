@@ -60,34 +60,6 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="purchase_account" type="Account">
-  The [account](https://docs.rootfi.dev/api-reference/bank-accounts/overview) which is associated with the (bill) item that are being purchased
-  <Expandable title="properties">
-    <Snippet file="accounts_snippets.mdx" />
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="sales_account" type="Account">
-  The [account](https://docs.rootfi.dev/api-reference/bank-accounts/overview) which is associated with the (invoice) item that are being sold
-  <Expandable title="properties">
-    <Snippet file="accounts_snippets.mdx" />
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="sales_tax" type="Tax Rate">
-  The [tax](https://docs.rootfi.dev/api-reference/tax-rates/overview) which is associated with the (invoice) item that are being sold
-  <Expandable title="properties">
-    <Snippet file="tax_rates_snippet.mdx" />
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="purchase_tax" type="Tax Rate">
-  The [tax](https://docs.rootfi.dev/api-reference/tax-rates/overview) which is associated with the (bill) item that are being purchased
-  <Expandable title="properties">
-    <Snippet file="tax_rates_snippet.mdx" />
-  </Expandable>
-</ResponseField>
-
 <ResponseField name="updated_at" type="date">
   The date on which the information was updated on the accounting platform
 </ResponseField>
@@ -141,20 +113,20 @@ icon: "hand-wave"
   "type": "INVENTORY",
   "code": "T-40",
   "quantity_on_hand": 44,
+  "is_bill_item": true,
   "bill_item": {
     "account_id": "3770712000001313073",
     "tax_id": "3770712000001313073",
     "description": "Bill Item Description",
     "unit_price": 1320
   },
+  "is_invoice_item": true,
   "invoice_item": {
     "account_id": "3770712000000000394",
     "tax_id": "3770712000000000394",
     "description": "Invoice Item Description",
     "unit_price": 1500
   },
-  "is_bill_item": true,
-  "is_invoice_item": true,
   "updated_at": "2023-09-22T00:00:00.000Z"
 }
 ```
