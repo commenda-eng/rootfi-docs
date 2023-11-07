@@ -121,13 +121,13 @@ paths:
                           status: success
                           response:
                             updated_at: "2021-09-28T15:00:00.000Z"
-                            sub_category: long_term_liability
-                            nominal_code: Test Account
                             platform_id: "1234567890123456789"
-                            name: Test Account
                             currency_id: null
                             parent_account_id: null
+                            nominal_code: Test Account
+                            name: Test Account
                             description: Test Description
+                            sub_category: long_term_liability
                             category: LIABILITY
                             status: ACTIVE
                             raw_data:
@@ -4745,15 +4745,11 @@ components:
         currency:
           $ref: "#/components/schemas/currencyObject"
           nullable: true
-          description: >-
-            Detailed information about the currency, represented as a map with
-            string keys.
+          description: Detailed information about the currency,
         parent_account:
           $ref: "#/components/schemas/accountingaccountsParentAccountType"
           nullable: true
-          description: >-
-            Detailed information about the parent account, represented as a map
-            with string keys.
+          description: Detailed information about the parent account,
       allOf:
         - $ref: "#/components/schemas/RootfiFields"
         - $ref: "#/components/schemas/accountingaccountsAccountsResponseFields"
@@ -5245,21 +5241,15 @@ components:
         currency:
           $ref: "#/components/schemas/currencyObject"
           nullable: true
-          description: >-
-            The ISO-4217 currency code of the transaction, represented as a map
-            with string keys.
+          description: The ISO-4217 currency code of the transaction.
         contact:
           $ref: "#/components/schemas/accountingbank_transactionsContactResponse"
           nullable: true
-          description: >-
-            The contact to that made the transaction, represented as a map with
-            string keys.
+          description: The contact to that made the transaction.
         account:
           $ref: "#/components/schemas/accountingbank_transactionsBankAccountsResponse"
           nullable: true
-          description: >-
-            The account to which this transaction belongs, represented as a map
-            with string keys.
+          description: The account to which this transaction belongs.
       allOf:
         - $ref: "#/components/schemas/RootfiFields"
         - $ref: >-
