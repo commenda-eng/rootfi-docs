@@ -120,7 +120,6 @@ paths:
                         - job_id: aXI9pUDA5T7E2LS
                           status: success
                           response:
-                            updated_at: "2021-09-28T15:00:00.000Z"
                             platform_id: "1234567890123456789"
                             currency_id: null
                             parent_account_id: null
@@ -130,6 +129,7 @@ paths:
                             sub_category: long_term_liability
                             category: LIABILITY
                             status: ACTIVE
+                            updated_at: "2021-09-28T15:00:00.000Z"
                             raw_data:
                               platform_id: "1234567890123456789"
                               nominal_code: Test Account
@@ -321,13 +321,13 @@ paths:
                         - job_id: xQm2K441VosP8W4
                           status: success
                           response:
-                            balance: 0
-                            account_name: test 22300
-                            category: credit_card
-                            institution_name: rootfi 63503
-                            updated_at: "2021-09-28T15:00:00.000Z"
                             platform_id: "4009750000000000099"
                             currency_id: "4009750000000000099"
+                            institution_name: rootfi 63503
+                            account_name: test 22300
+                            category: credit_card
+                            balance: 123456
+                            updated_at: "2021-09-28T15:00:00.000Z"
                             raw_data:
                               nominal_code: Rootfi 01
                               name: Test Account
@@ -514,14 +514,22 @@ paths:
                         - job_id: aXI9pUDA5T7E2LS
                           status: success
                           response:
-                            transaction_date: "2022-02-17T00:00:00.000Z"
-                            amount: 1
-                            account_id: "3770712000000493001"
-                            updated_at: "2022-02-17T00:00:00.000Z"
                             platform_id: "3770712000000893001"
+                            account_id: "3770712000000493001"
                             contact_id: "3770712000000225001"
+                            transaction_date: "2022-02-17T00:00:00.000Z"
+                            amount: 112345
                             type: deposit
-                            raw_data: {}
+                            status: manually_added
+                            updated_at: "2022-02-17T00:00:00.000Z"
+                            raw_data:
+                              id: "3770712000000893001"
+                              account_id: "3770712000000493001"
+                              contact_id: "3770712000000225001"
+                              transaction_date: "2022-02-17"
+                              amount: "112345.00"
+                              type: deposit
+                              updated_at: "2022-02-17T00:00:00.000Z"
                           error: null
                     request_timestamp: "2021-09-28T15:00:00.000Z"
                     response_timestamp: "2021-09-28T15:00:00.000Z"
@@ -682,18 +690,18 @@ paths:
                         - job_id: xQm2K441VosP8W4
                           status: success
                           response:
-                            document_number: Bd5200
-                            memo: psssss
+                            platform_id: "3770712000001684001"
                             bill_ids:
                               - "3770712000000213001"
                             contact_id: "3770712000000209007"
-                            remaining_credit: 140
-                            updated_at: "2023-10-31T00:00:00.000Z"
-                            total_amount: 140
-                            platform_id: "3770712000001684001"
-                            posted_date: "2023-04-17T00:00:00.000Z"
                             currency_id: "3770712000000000099"
+                            document_number: Bd5200
+                            posted_date: "2023-04-17T00:00:00.000Z"
+                            memo: psssss
+                            remaining_credit: 140
+                            total_amount: 140
                             status: SUBMITTED
+                            updated_at: "2023-10-31T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
                               nominal_code: Rootfi 01
@@ -880,19 +888,19 @@ paths:
                         - job_id: aXI9pUDA5T7E2LS
                           status: success
                           response:
-                            bill_id: "3770712000000319001"
-                            amount: 1
-                            payment_mode: dd
-                            document_number: S69
-                            memo: Hello
-                            contact_id: "3770712000000209007"
-                            currency_rate: 1
-                            account_id: "3770712000000000361"
-                            updated_at: "2023-11-01T00:00:00.000Z"
-                            payment_id: "3770712000001669016"
                             platform_id: "3770712000001669018"
-                            payment_date: "2023-03-01T00:00:00.000Z"
+                            payment_id: "3770712000001669016"
+                            bill_id: "3770712000000319001"
+                            contact_id: "3770712000000209007"
+                            account_id: "3770712000000000361"
                             currency_id: "3770712000000000099"
+                            amount: 1234
+                            payment_date: "2023-03-01T00:00:00.000Z"
+                            payment_mode: Cash
+                            currency_rate: 12
+                            document_number: S69
+                            memo: Payment for the Bill
+                            updated_at: "2023-11-01T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
                               nominal_code: Rootfi 01
@@ -1100,21 +1108,23 @@ paths:
                         - job_id: xQm2K441VosP8W4
                           status: success
                           response:
-                            tax_amount: 22.8
+                            platform_id: "3770712000001685001"
+                            contact_id: "3770712000000418001"
+                            currency_id: "3770712000000000099"
                             document_number: BIL84705
+                            posted_date: "2023-03-17T00:00:00.000Z"
                             due_date: "2024-03-19T00:00:00.000Z"
                             memo: Test Invoice
-                            contact_id: "3770712000000418001"
-                            currency_rate: 1
-                            purchase_order_ids: []
-                            updated_at: "2023-11-01T00:00:00.000Z"
-                            total_amount: 212.8
-                            platform_id: "3770712000001685001"
-                            sub_total: 190
-                            amount_due: 212.8
-                            posted_date: "2023-03-17T00:00:00.000Z"
-                            currency_id: "3770712000000000099"
+                            currency_rate: 12
                             status: SUBMITTED
+                            total_amount: 212.8
+                            sub_total: 190
+                            total_discount: 0
+                            tax_amount: 22.8
+                            amount_due: 212.8
+                            purchase_order_ids:
+                              - "3770712000000000099"
+                            updated_at: "2023-11-01T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
                               nominal_code: Rootfi 01
@@ -1365,9 +1375,9 @@ paths:
                           addresses:
                             data:
                               - platform_id: _CONTACTS_1013_BILLING
+                                data_model_id: "1013"
                                 type: BILLING
                                 data_model: CONTACTS
-                                data_model_id: "1013"
                                 street: 123 Main Street
                                 locality: Downtown
                                 city: Metropolis
@@ -1378,16 +1388,16 @@ paths:
                           phone_numbers:
                             data:
                               - platform_id: CONTACTS_3770712000001721005_MOBILE
-                                data_model: CONTACTS
                                 data_model_id: "3770712000001721005"
+                                data_model: CONTACTS
                                 number: +919*********
                                 type: MOBILE
                                 updated_at: "2023-11-05T00:00:00.000Z"
                           external_links:
                             data:
                               - platform_id: CONTACTS_3770712000001721005_WEBSITE
-                                data_model: CONTACTS
                                 data_model_id: "3770712000001721005"
+                                data_model: CONTACTS
                                 link: https://www.rootfi.dev
                                 type: WEBSITE
                                 updated_at: "2023-11-05T00:00:00.000Z"
@@ -1421,15 +1431,15 @@ paths:
                         - job_id: aXI9pUDA5T7E2LS
                           status: success
                           response:
-                            contact_name: "Dart8736 "
-                            registration_number: 07CEUPK5322M1ZX
-                            contact_type: CUSTOMER
-                            updated_at: "2023-11-01T00:00:00.000Z"
-                            tax_number: ODSPS1279G
                             platform_id: "3770712000001686001"
-                            name: Mr. John Doe
                             currency_id: "3770712000000000099"
+                            name: Mr. John Doe
+                            contact_name: John Doe
+                            contact_type: CUSTOMER
+                            tax_number: ODSPS1279G
+                            registration_number: 07CEUPK5322M1ZX
                             status: ACTIVE
+                            updated_at: "2023-11-01T00:00:00.000Z"
                             raw_data:
                               platform_id: "1013"
                               name: Mr. John Doe
@@ -1595,10 +1605,10 @@ paths:
                     data:
                       data:
                         - platform_id: "3770712000000085065_3770712000000080327"
+                          document_type_id: "3770712000000080327"
                           file_name: test.pdf
                           file_type: application/pdf
                           file_size: 254.8828125
-                          document_type_id: "3770712000000080327"
                           document_type: INVOICES
                           document_uploaded: false
                           download_link: https://Example.com/upload?file=test.pdf
@@ -1756,18 +1766,18 @@ paths:
                         - job_id: xQm2K441VosP8W4
                           status: success
                           response:
-                            tax_amount: 0
-                            document_number: "123"
-                            memo: Hello acount
-                            contact_id: "3770712000000418001"
-                            currency_rate: 1
-                            account_id: "3770712000000076064"
-                            updated_at: "2023-11-01T00:00:00.000Z"
-                            total_amount: 40
                             platform_id: "3770712000001676061"
-                            sub_total: 40
-                            posted_date: "2023-06-03T00:00:00.000Z"
+                            account_id: "3770712000000076064"
+                            contact_id: "3770712000000418001"
                             currency_id: "3770712000000000099"
+                            document_number: A-123
+                            tax_amount: 0
+                            posted_date: "2023-06-03T00:00:00.000Z"
+                            memo: Test Invoice
+                            currency_rate: 12
+                            total_amount: 4032
+                            sub_total: 40
+                            updated_at: "2023-11-01T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
                               nominal_code: Rootfi 01
@@ -1990,19 +2000,19 @@ paths:
                         - job_id: aXI9pUDA5T7E2LS
                           status: success
                           response:
-                            tax_amount: 8
-                            document_number: CN-00038
+                            platform_id: "3770712000001686032"
                             invoice_ids:
                               - "3770712000000352003"
-                            memo: credit note memo
                             contact_id: "3770712000000225001"
+                            currency_id: "3770712000000000099"
+                            document_number: CN-00038
+                            posted_date: "2023-05-05T00:00:00.000Z"
+                            memo: credit note memo
+                            status: SUBMITTED
+                            tax_amount: 18
+                            total_amount: 57
                             remaining_credit: 57
                             updated_at: "2023-11-01T00:00:00.000Z"
-                            total_amount: 57
-                            platform_id: "3770712000001686032"
-                            posted_date: "2023-05-05T00:00:00.000Z"
-                            currency_id: "3770712000000000099"
-                            status: SUBMITTED
                             raw_data:
                               platform_id: "123456"
                               nominal_code: Rootfi 01
@@ -2189,19 +2199,19 @@ paths:
                         - job_id: aXI9pUDA5T7E2LS
                           status: success
                           response:
+                            platform_id: "3770712000001688003"
+                            payment_id: "3770712000001688001"
+                            invoice_id: "3770712000000707001"
+                            account_id: "3770712000000000361"
+                            contact_id: "3770712000000226001"
+                            currency_id: "3770712000000000099"
                             amount: 19
+                            payment_date: "2023-03-01T00:00:00.000Z"
                             payment_mode: Cash
                             document_number: S77
-                            memo: description
-                            contact_id: "3770712000000226001"
-                            currency_rate: 1
-                            account_id: "3770712000000000361"
-                            payment_id: "3770712000001688001"
-                            platform_id: "3770712000001688003"
+                            memo: Invoice payment
+                            currency_rate: 12
                             updated_at: "2023-10-27T00:00:00.000Z"
-                            invoice_id: "3770712000000707001"
-                            currency_id: "3770712000000000099"
-                            payment_date: "2023-03-01T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
                               nominal_code: Rootfi 01
@@ -2661,23 +2671,24 @@ paths:
                         - job_id: aXI9pUDA5T7E2LS
                           status: success
                           response:
+                            platform_id: "3770712000001690001"
+                            name: Toy Car
+                            description: Test Item description
+                            type: INVENTORY
                             code: I02
-                            updated_at: "2023-11-01T00:00:00.000Z"
+                            quantity_on_hand: 12
+                            bill_item:
+                              account_id: "3770712000000076060"
+                              description: Bill Item Description
+                              unit_price: 10
                             invoice_item:
                               account_id: "3770712000000000388"
                               description: Invoice Item Description
                               unit_price: 11
                             is_bill_item: true
-                            platform_id: "3770712000001690001"
-                            name: I 9618
                             is_invoice_item: true
-                            quantity_on_hand: 12
-                            type: INVENTORY
-                            bill_item:
-                              account_id: "3770712000000076060"
-                              description: Bill Item Description
-                              unit_price: 10
                             status: ACTIVE
+                            updated_at: "2023-11-01T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
                               nominal_code: Rootfi 01
@@ -2747,23 +2758,24 @@ paths:
                         - job_id: aXI9pUDA5T7E2LS
                           status: success
                           response:
+                            platform_id: "3770712000001690001"
+                            name: Toy Car
+                            description: Test Item description
+                            type: INVENTORY
                             code: I02
-                            updated_at: "2023-11-01T00:00:00.000Z"
+                            quantity_on_hand: 12
+                            bill_item:
+                              account_id: "3770712000000076060"
+                              description: Bill Item Description
+                              unit_price: 10
                             invoice_item:
                               account_id: "3770712000000000388"
                               description: Invoice Item Description
                               unit_price: 11
                             is_bill_item: true
-                            platform_id: "3770712000001690001"
-                            name: I 9618
                             is_invoice_item: true
-                            quantity_on_hand: 12
-                            type: INVENTORY
-                            bill_item:
-                              account_id: "3770712000000076060"
-                              description: Bill Item Description
-                              unit_price: 10
                             status: ACTIVE
+                            updated_at: "2023-11-01T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
                               nominal_code: Rootfi 01
@@ -2930,14 +2942,16 @@ paths:
                         - job_id: xQm2K441VosP8W4
                           status: success
                           response:
-                            amount: 5
-                            currency_rate: 1
+                            platform_id: "3770712000001649001"
+                            account_id: "3770712000000000361"
+                            currency_id: "3770712000000000099"
+                            document_number: ROOTFI01
+                            description: journal_desc
+                            posted_date: "2023-06-12T00:00:00.000Z"
+                            amount: 568
+                            currency_rate: 12
                             journal_entry_type: both
                             updated_at: "2023-10-27T00:00:00.000Z"
-                            platform_id: "3770712000001649001"
-                            description: journal_desc
-                            currency_id: "3770712000000000099"
-                            posted_date: "2023-06-12T00:00:00.000Z"
                             raw_data:
                               platform_id: "1013"
                               name: Test
@@ -3136,21 +3150,22 @@ paths:
                         - job_id: aXI9pUDA5T7E2LS
                           status: success
                           response:
-                            tax_amount: 2.28
-                            document_number: PO-00073
-                            total_discount: 0
-                            description: yoyo
-                            bill_ids: []
-                            contact_id: "3770712000000080863"
-                            delivery_date: "2023-05-01T00:00:00.000Z"
-                            currency_rate: 1
-                            updated_at: "2023-10-28T00:00:00.000Z"
-                            total_amount: 21.28
                             platform_id: "3770712000001652001"
-                            sub_total: 19
-                            posted_date: "2023-04-01T00:00:00.000Z"
+                            contact_id: "3770712000000080863"
+                            bill_ids:
+                              - "3770712000000000099"
                             currency_id: "3770712000000000099"
+                            document_number: PO-00073
+                            delivery_date: "2023-05-01T00:00:00.000Z"
+                            posted_date: "2023-04-01T00:00:00.000Z"
+                            description: Test description
+                            currency_rate: 12
                             status: SUBMITTED
+                            total_amount: 21.28
+                            sub_total: 19
+                            tax_amount: 2.28
+                            total_discount: 0
+                            updated_at: "2023-10-28T00:00:00.000Z"
                             raw_data:
                               platform_id: "1013"
                               name: Test
@@ -3343,21 +3358,22 @@ paths:
                         - job_id: xQm2K441VosP8W4
                           status: success
                           response:
-                            tax_amount: 2.28
-                            document_number: PO-00073
-                            total_discount: 0
-                            description: yoyo
-                            invoice_ids: []
-                            contact_id: "3770712000000080863"
-                            delivery_date: "2023-05-01T00:00:00.000Z"
-                            currency_rate: 1
-                            updated_at: "2023-10-28T00:00:00.000Z"
-                            total_amount: 21.28
                             platform_id: "3770712000001652001"
-                            sub_total: 19
-                            posted_date: "2023-04-01T00:00:00.000Z"
+                            contact_id: "3770712000000080863"
+                            invoice_ids:
+                              - "3770712000000000099"
                             currency_id: "3770712000000000099"
+                            document_number: PO-00073
+                            posted_date: "2023-04-01T00:00:00.000Z"
+                            delivery_date: "2023-05-01T00:00:00.000Z"
+                            description: Test Invoice
+                            currency_rate: 12
                             status: SUBMITTED
+                            total_amount: 21.28
+                            sub_total: 19
+                            tax_amount: 2.28
+                            total_discount: 0
+                            updated_at: "2023-10-28T00:00:00.000Z"
                             raw_data:
                               platform_id: "1013"
                               name: Test
@@ -3708,9 +3724,9 @@ paths:
                           rootfi_updated_at: "2023-10-26T16:14:59.673Z"
                           rootfi_created_at: "2023-10-26T16:14:59.685Z"
                           platform_id: "5000000000000279513"
-                          name: Test
-                          status: ACTIVE
                           parent_id: "5000000000000279512"
+                          name: Test Name
+                          status: ACTIVE
                           has_children: false
                           updated_at: "2023-01-17T00:00:00.000Z"
                           raw_data:
@@ -8795,22 +8811,22 @@ components:
         has_children:
           type: boolean
           description: this boolean indicates if it has sub categories
-        raw_data:
-          type: object
-          additionalProperties: true
-          description: The raw data of the tracking category
         updated_at:
           type: string
           format: date-time
           description: The last ISO 8601 timestamp that the data was updated at
+        raw_data:
+          type: object
+          additionalProperties: true
+          description: The raw data of the tracking category
       required:
         - platform_id
         - parent_id
         - name
         - status
         - has_children
-        - raw_data
         - updated_at
+        - raw_data
       allOf:
         - $ref: "#/components/schemas/RootfiFields"
     accountingtracking_categoriesgetTrackingCategoriesResponseData:
