@@ -17,15 +17,19 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="account_id" type="string">
-  The platform’s ID for the account to which this invoice belongs
+  The platform’s ID for the [account](https://docs.rootfi.dev/api-reference/accounts/overview) to which this invoice belongs
 </ResponseField>
 
 <ResponseField name="contact_id" type="string">
-  The Accounting Platform’s unique ID for the contact who receives this invoice
+  The Accounting Platform’s unique ID for the [contact](https://docs.rootfi.dev/api-reference/contacts/overview) who receives this invoice
 </ResponseField>
 
 <ResponseField name="currency_id" type="string">
-  The ISO-4217 currency code
+  The Accounting Platform’s unique ID for the currency
+</ResponseField>
+
+<ResponseField name="sales_order_ids" type="string">
+  Array of linked Sales Orders Id associated with this Invoice
 </ResponseField>
 
 <ResponseField name="document_number" type="string">
@@ -41,6 +45,7 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="currency" type="Object">
+  The ISO-4217 currency
   <Expandable title="properties">
     <ResponseField name="data" type="Object">
       <Expandable title="properties">
@@ -83,6 +88,7 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="line_items" type="Line Item">
+  Array of Invoice Line items associated with the invoice.
   <Expandable title="properties">
     <ResponseField name="data" type="Object">
       <Expandable title="properties">
@@ -93,6 +99,7 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="payments" type="Invoice Payment">
+  Array of [Invoice Payments](https://docs.rootfi.dev/api-reference/invoice-payments/overview) associated with the Invoice.
   <Expandable title="properties">
     <ResponseField name="data" type="Object">
       <Expandable title="properties">
@@ -102,37 +109,12 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="sales_orders" type="Sales Order">
-  <Expandable title="properties">
-    <Snippet file="sales_order_snippet.mdx" />
-  </Expandable>
-</ResponseField>
-
 <ResponseField name="documents" type="Document">
+  Array of Invoice [Documents](https://docs.rootfi.dev/api-reference/documents/overview) associated with the Invoice.
   <Expandable title="properties">
     <ResponseField name="data" type="Object">
       <Expandable title="properties">
         <Snippet file="documents_snippet.mdx" />
-      </Expandable>
-    </ResponseField>
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="account" type="Account">
-  <Expandable title="properties">
-    <ResponseField name="data" type="Object">
-      <Expandable title="properties">
-        <Snippet file="accounts_snippets.mdx" />
-      </Expandable>
-    </ResponseField>
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="contact" type="Contact">
-  <Expandable title="properties">
-    <ResponseField name="data" type="Object">
-      <Expandable title="properties">
-        <Snippet file="contact_snippet.mdx" />
       </Expandable>
     </ResponseField>
   </Expandable>
@@ -174,9 +156,10 @@ icon: "hand-wave"
 ```json The Invoice Response Object
 {
   "platform_id": "1234567890123456789",
-  "account_id": "1234567890123456789"
+  "account_id": "1234567890123456789",
   "contact_id": "3770712000000080069",
   "currency_id": "3770712000000000099",
+  "sales_order_ids": ["3770712000000080288"],
   "document_number": "INV-000001",
   "posted_date": "2022-09-28T00:00:00.000Z",
   "due_date": "2022-09-28T00:00:00.000Z",
@@ -243,16 +226,15 @@ icon: "hand-wave"
             "updated_at": null
           }
         },
-        "payment_date": "2022-10-21T00:00:00.000Z",
+        "payment_date": "2023-10-21T00:00:00.000Z",
         "payment_mode": "Cash",
-        "memo": null,
+        "memo": "Invoice Payment",
         "currency_rate": 1,
         "document_number": "AO-000001",
-        "updated_at": null
+        "updated_at": "2023-10-21T00:00:00.000Z"
       }
     ]
   },
-  "sales_order_ids": ["3770712000000080288"],
   "documents": {
     "data": [
       {
@@ -268,8 +250,6 @@ icon: "hand-wave"
       }
     ]
   },
-  "account":{},
-  "contact":{},
   "updated_at": "2022-09-28T00:00:00.000Z"
 }
 ```

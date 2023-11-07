@@ -18,11 +18,11 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="contact_id" type="string">
-  Platform ID of the contact to which this expense belongs
+  Platform ID of the [contact](https://docs.rootfi.dev/api-reference/contacts/overview) to which this expense belongs
 </ResponseField>
 
 <ResponseField name="account_id" type="string">
-  Platform ID of the account to which this expense belongs
+  Platform ID of the [account](https://docs.rootfi.dev/api-reference/bank-accounts/overview) to which this expense belongs
 </ResponseField>
 
 <ResponseField name="currency_id" type="string">
@@ -42,6 +42,7 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="currency" type="object">
+  The currency data associated with the Expenses.
   <Expandable title="properties">
     <ResponseField name="data" type="Object">
       <Expandable title="properties">
@@ -76,6 +77,7 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="line_items" type="Line Item">
+  List of line items contained in the expense
   <Expandable title="properties">
     <ResponseField name="data" type="Object">
       <Expandable title="properties">
@@ -86,6 +88,7 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="contact" type="Contact">
+  The [contact](https://docs.rootfi.dev/api-reference/contacts/overview) to which this expense belongs
   <Expandable title="properties">
     <ResponseField name="data" type="Object">
       <Expandable title="properties">
@@ -96,6 +99,7 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="account" type="Account">
+  The [account](https://docs.rootfi.dev/api-reference/bank-accounts/overview) to which this expense belongs
   <Expandable title="properties">
     <ResponseField name="data" type="Object">
       <Expandable title="properties">

@@ -43,6 +43,7 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="bill_item" type="Item Detail">
+  Item details of this item getting purchased
   <Expandable title="properties">
     <Snippet file="item_details_snippet.mdx" />
   </Expandable>
@@ -53,30 +54,35 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="invoice_item" type="Item Detail">
+  Item details of this item getting sold
   <Expandable title="properties">
     <Snippet file="item_details_snippet.mdx" />
   </Expandable>
 </ResponseField>
 
 <ResponseField name="purchase_account" type="Account">
+  The [account](https://docs.rootfi.dev/api-reference/bank-accounts/overview) which is associated with the (bill) item that are being purchased
   <Expandable title="properties">
     <Snippet file="accounts_snippets.mdx" />
   </Expandable>
 </ResponseField>
 
 <ResponseField name="sales_account" type="Account">
+  The [account](https://docs.rootfi.dev/api-reference/bank-accounts/overview) which is associated with the (invoice) item that are being sold
   <Expandable title="properties">
     <Snippet file="accounts_snippets.mdx" />
   </Expandable>
 </ResponseField>
 
 <ResponseField name="sales_tax" type="Tax Rate">
+  The [tax](https://docs.rootfi.dev/api-reference/tax-rates/overview) which is associated with the (invoice) item that are being sold
   <Expandable title="properties">
     <Snippet file="tax_rates_snippet.mdx" />
   </Expandable>
 </ResponseField>
 
 <ResponseField name="purchase_tax" type="Tax Rate">
+  The [tax](https://docs.rootfi.dev/api-reference/tax-rates/overview) which is associated with the (bill) item that are being purchased
   <Expandable title="properties">
     <Snippet file="tax_rates_snippet.mdx" />
   </Expandable>

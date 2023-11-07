@@ -17,26 +17,35 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="contact_id" type="string">
-  The platform’s ID for the contact that makes the payment
+  The platform’s ID for the [contact](https://docs.rootfi.dev/api-reference/contacts/overview) that makes the payment
 </ResponseField>
 
 <ResponseField name="account_id" type="string">
-  The platform’s ID for the account to which this payment belongs
+  The platform’s ID for the [account](https://docs.rootfi.dev/api-reference/bank-accounts/overview) to which this payment belongs
+</ResponseField>
+
+<ResponseField name="payment_id" type="string">
+  The Accounting Platform’s unique ID for the payment
 </ResponseField>
 
 <ResponseField name="invoice_id" type="string">
-  The platform’s ID for the invoice which this payment is associated with
+  The platform’s ID for the [invoice](https://docs.rootfi.dev/api-reference/invoices/overview) which this payment is associated with
 </ResponseField>
 
 <ResponseField name="currency_id" type="string">
-  The ISO-4217 currency code
+  The Accounting Platform’s unique ID for the currency
 </ResponseField>
 
 <ResponseField name="amount" type="float">
   The total value of this payment
 </ResponseField>
 
+<ResponseField name="document_number" type="string">
+  A reference number or document number associated with the payment
+</ResponseField>
+
 <ResponseField name="currency" type="Object">
+  The currency data associated with the Invoice Payment.
   <Expandable title="properties">
     <ResponseField name="data" type="Object">
       <Expandable title="properties">
@@ -63,30 +72,11 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="invoice" type="Invoice">
+  The [invoice](https://docs.rootfi.dev/api-reference/invoices/overview) which this payment is associated with
   <Expandable title="properties">
     <ResponseField name="data" type="Object">
       <Expandable title="properties">
         <Snippet file="invoice_snippet.mdx" />
-      </Expandable>
-    </ResponseField>
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="contact" type="Contact">
-  <Expandable title="properties">
-    <ResponseField name="data" type="Object">
-      <Expandable title="properties">
-        <Snippet file="contact_snippet.mdx" />
-      </Expandable>
-    </ResponseField>
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="account" type="Account">
-  <Expandable title="properties">
-    <ResponseField name="data" type="Object">
-      <Expandable title="properties">
-        <Snippet file="accounts_snippets.mdx" />
       </Expandable>
     </ResponseField>
   </Expandable>
@@ -122,9 +112,11 @@ icon: "hand-wave"
   "platform_id": "3770712000001726003",
   "contact_id": "3770712000000226001",
   "account_id": "3770712000000000361",
+  "payment_id": "3770712000001726001",
   "invoice_id": "3770712000000707001",
   "currency_id": "3770712000000000099",
   "amount": 19,
+  "document_number": "S78",
   "currency": {
     "data": {
       "platform_id": "3770712000000000099",
@@ -170,13 +162,9 @@ icon: "hand-wave"
       "memo": "Thanks for your business.",
       "updated_at": "2023-09-27T00:00:00.000Z"
     }
-  }
+  },
+  "updated_at": "2023-09-27T00:00:00.000Z"
 }
-  "payment_id": "3770712000001726001",
-  "document_number": "S78",
-  "contact": {},
-  "account": {},
-  "updated_at": null,
 ```
 
 </ResponseExample>

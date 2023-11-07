@@ -16,11 +16,11 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="account_id" type="string" required>
-  The accounting platform’s unique ID for the account associated with the journal entry
+  The accounting platform’s unique ID for the [account](https://docs.rootfi.dev/api-reference/bank-accounts/overview) associated with the journal entry
 </ResponseField>
 
 <ResponseField name="currency_id" type="string">
-  The ISO-4217 currency code
+  The Accounting Platform’s unique ID for the currency
 </ResponseField>
 
 <ResponseField name="amount" type="float" required>
@@ -28,6 +28,7 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="currency" type="string" required>
+  The currency data associated with the Journal Entries.
   <Expandable title="properties">
     <ResponseField name="data" type="Object">
       <Expandable title="properties">
@@ -58,6 +59,7 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="journal_lines" type="Journal Lines" optional>
+  An array of [Journal Lines](https://docs.rootfi.dev/api-reference/journal-entries/overview#journal-lines)
   <Expandable title="properties">
     <ResponseField name="data" type="Object" required>
       <Expandable title="properties">
@@ -68,6 +70,7 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="account" type="Account" optional>
+  The [account](https://docs.rootfi.dev/api-reference/bank-accounts/overview) associated with the journal entry
   <Expandable title="properties">
     <ResponseField name="data" type="Object" required>
       <Expandable title="properties">

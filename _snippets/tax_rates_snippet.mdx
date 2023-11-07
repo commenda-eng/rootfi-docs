@@ -23,7 +23,12 @@
 </ResponseField>
 
 <ResponseField name="components" type="Tax Component">
+  An array of all the tax components
   <Expandable title="properties">
-    <Snippet file="tax_component_snippet.mdx" />
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="tax_component_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
   </Expandable>
 </ResponseField>

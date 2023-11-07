@@ -17,11 +17,11 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="account_id" type="string">
-  Platform ID for the account to which this transaction belongs
+  Platform ID for the [account](https://docs.rootfi.dev/api-reference/accounts/overview) to which this transaction belongs
 </ResponseField>
 
 <ResponseField name="contact_id" type="string">
-  The platform’s ID for the contact to that made the transaction
+  The platform’s ID for the [contact](https://docs.rootfi.dev/api-reference/contacts/overview) to that made the transaction
 </ResponseField>
 
 <ResponseField name="currency_id" type="string">
@@ -45,6 +45,7 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="currency" type="Object">
+  The currency data associated with the bank transaction.
   <Expandable title="properties">
     <ResponseField name="data" type="Object">
       <Expandable title="properties">
@@ -59,12 +60,18 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="line_items" type="Line Item">
+  Array of Transaction Line items associated with this transaction
   <Expandable title="properties">
-    <Snippet file="line_items_snippeet.mdx" />
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="line_items_snippeet.mdx" />
+      </Expandable>
+    </ResponseField>
   </Expandable>
 </ResponseField>
 
 <ResponseField name="account" type="Account">
+  The [account](https://docs.rootfi.dev/api-reference/bank-accounts/overview) to which this transaction belongs
   <Expandable title="properties">
     <ResponseField name="data" type="Object">
       <Expandable title="properties">
@@ -75,58 +82,49 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="contact" type="Contact" >
+  The [contact](https://docs.rootfi.dev/api-reference/contacts/overview) to that made the transaction
   <Expandable title="properties">
     <ResponseField name="data" type="Object" >
       <Expandable title="properties">
     <ResponseField name="platform_id" type="string" >
       The accounting platform’s ID for the contact
     </ResponseField>
-
     <ResponseField name="name" type="string" >
       Name of the customer on the accounting platform
     </ResponseField>
-
     <ResponseField name="contact_name" type="string" >
       Name of the contact person for the contact
     </ResponseField>
-
     <ResponseField name="contact_type" type="enum" >
       The type of customer. Values are either `CUSTOMER` or `VENDOR`
     </ResponseField>
-
-
     <ResponseField name="currency" type="string" >
+      The currency data associated with the contact.
       <Expandable title="properties">
     <ResponseField name="data" type="Object" >
-      <Expandable title="properties">
-        <Snippet file="currency_snippet.mdx" />
-      </Expandable>
-    </ResponseField>
-
-  </Expandable>
-    </ResponseField>
-
-    <ResponseField name="tax_number" type="string" >
-      Contact’s tax number
-    </ResponseField>
-
-    <ResponseField name="registration_number" type="string" >
-      Contact’s identifying number
-    </ResponseField>
-
-    <ResponseField name="status" type="enum" >
-      The status of the customer. Values are: `ACTIVE`, `ARCHIVED`, `UNKNOWN`.
-    </ResponseField>
-
-    <ResponseField name="updated_at" type="date" >
-      The last ISO 8601 timestamp at which the data was updated
-    </ResponseField>
-        </Expandable>
-    </ResponseField>
-
+    <Expandable title="properties">
+      <Snippet file="currency_snippet.mdx" />
   </Expandable>
 </ResponseField>
 
+  </Expandable>
+    </ResponseField>
+  <ResponseField name="tax_number" type="string" >
+    Contact’s tax number
+  </ResponseField>
+  <ResponseField name="registration_number" type="string" >
+    Contact’s identifying number
+  </ResponseField>
+  <ResponseField name="status" type="enum" >
+    The status of the customer. Values are: `ACTIVE`, `ARCHIVED`, `UNKNOWN`.
+  </ResponseField>
+  <ResponseField name="updated_at" type="date" >
+    The last ISO 8601 timestamp at which the data was updated
+  </ResponseField>
+      </Expandable>
+  </ResponseField>
+  </Expandable>
+</ResponseField>
 <ResponseField name="updated_at" type="date">
   The date at which the transaction was updated on the accounting platform
 </ResponseField>

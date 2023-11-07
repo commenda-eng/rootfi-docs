@@ -18,19 +18,19 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="account_id" type="string">
-  The accounting platform’s unique ID of the account associated with the bill
+  The accounting platform’s unique ID of the [account](https://docs.rootfi.dev/api-reference/accounts/overview) associated with the bill
 </ResponseField>
 
 <ResponseField name="contact_id" type="string">
-  The accounting platform’s unique ID of the contact associated with this bill
+  The accounting platform’s unique ID of the [contact](https://docs.rootfi.dev/api-reference/contacts/overview) associated with this bill
 </ResponseField>
 
 <ResponseField name="currency_id" type="string">
-  The ISO-4217 currency code
+  The currency data associated with the bill.
 </ResponseField>
 
 <ResponseField name="purchase_order_ids" type="Array">
-  Array of Purchase Orders Id associated with the bill
+  Array of [Purchase Orders](https://docs.rootfi.dev/api-reference/purchase-orders/overview) Id associated with the bill
 </ResponseField>
 
 <ResponseField name="document_number" type="string">
@@ -46,7 +46,14 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="currency" type="string">
-  The ISO-4217 currency code
+  The currency data associated with the bank transaction.
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="currency_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseField name="currency_rate" type="float">
@@ -78,6 +85,7 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="line_items" type="Line Item">
+  Line Items associated with the bill
   <Expandable title="properties">
     <ResponseField name="data" type="Object">
       <Expandable title="properties">
@@ -88,6 +96,7 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="payments" type="Bill Payment">
+  Array of [Bill Payments](https://docs.rootfi.dev/api-reference/bill-payments/overview) associated with the bill
   <Expandable title="properties">
     <ResponseField name="data" type="Object">
       <Expandable title="properties">
@@ -98,12 +107,17 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="contact" type="Contact">
-  The contact who receives this bill
+  The [contact](https://docs.rootfi.dev/api-reference/contacts/overview) who receives this bill
 </ResponseField>
 
 <ResponseField name="documents" type="Document">
+  Array of [Documents](https://docs.rootfi.dev/api-reference/documents/overview) associated with the bill
   <Expandable title="properties">
-    <Snippet file="documents_snippet.mdx" />
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="documents_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
   </Expandable>
 </ResponseField>
 

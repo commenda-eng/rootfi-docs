@@ -10520,9 +10520,7 @@ components:
         - EQUITY
         - INCOME
         - BANK
-        - REVENUE
         - UNKNOWN
-        - PRIMARY
     ArtifactStatus:
       title: ArtifactStatus
       type: string

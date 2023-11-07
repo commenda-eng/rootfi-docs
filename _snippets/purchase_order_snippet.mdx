@@ -3,15 +3,15 @@
 </ResponseField>
 
 <ResponseField name="contact_id" type="string">
-  The accounting platform’s unique ID of the contact associated with this purchase order
+  The accounting platform’s unique ID of the [contact](https://docs.rootfi.dev/api-reference/contacts/overview) associated with this purchase order
 </ResponseField>
 
 <ResponseField name="currency_id" type="string">
-  The ISO-4217 currency code
+  The Accounting Platform’s unique ID for the currency
 </ResponseField>
 
 <ResponseField name="bill_ids" type="string[]">
-  Array of Bills associated with the purchase order
+  Array of [Bills](https://docs.rootfi.dev/api-reference/bills/overview) associated with the purchase order
 </ResponseField>
 
 <ResponseField name="document_number" type="string">
@@ -35,6 +35,7 @@
 </ResponseField>
 
 <ResponseField name="currency" type="string">
+  The currency data associated with the Purchase Order.
   <Expandable title="properties">
     <ResponseField name="data" type="Object">
       <Expandable title="properties">
@@ -69,18 +70,24 @@
 </ResponseField>
 
 <ResponseField name="line_items" type="Line Item">
+  Array of Purchase Order Line items associated with the purchase order
   <Expandable title="properties">
-    <Snippet file="line_items_snippeet.mdx" />
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="line_items_snippeet.mdx" />
+      </Expandable>
+    </ResponseField>
   </Expandable>
 </ResponseField>
 
 <ResponseField name="addresses" type="Address">
   Array of addresses associated with this purchase order
-</ResponseField>
-
-<ResponseField name="contact" type="Contact">
   <Expandable title="properties">
-    <Snippet file="contact_snippet.mdx" />
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="addresses.mdx" />
+      </Expandable>
+    </ResponseField>
   </Expandable>
 </ResponseField>
 

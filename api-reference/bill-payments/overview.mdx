@@ -19,19 +19,19 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="bill_id" type="string">
-  The platform’s ID of the bill which this payment is associated with
+  The platform’s ID of the [bill](https://docs.rootfi.dev/api-reference/bills/overview) which this payment is associated with
 </ResponseField>
 
 <ResponseField name="contact_id" type="string">
-  The platform’s ID of the contact that makes the payment
+  The platform’s ID of the [contact](https://docs.rootfi.dev/api-reference/contacts/overview) that makes the payment
 </ResponseField>
 
 <ResponseField name="account_id" type="string">
-  The platform’s ID of the account to which this payment belongs
+  The platform’s ID of the [account](https://docs.rootfi.dev/api-reference/bank-accounts/overview) to which this payment belongs
 </ResponseField>
 
 <ResponseField name="currency_id" type="string">
-  The ISO-4217 currency code
+  The Accounting Platform’s unique ID for the currency
 </ResponseField>
 
 <ResponseField name="amount" type="float">
@@ -47,6 +47,7 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="currency" type="string">
+  The currency data associated with the bill payment.
   <Expandable title="properties">
     <ResponseField name="data" type="Object">
       <Expandable title="properties">
@@ -65,6 +66,7 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="bill" type="Bill">
+  The [bill](https://docs.rootfi.dev/api-reference/bills/overview) which this payment is associated with
   <Expandable title="properties">
     <ResponseField name="data" type="Object">
       <Expandable title="properties">
@@ -75,6 +77,7 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="contact" type="Contact">
+  The [contact](https://docs.rootfi.dev/api-reference/contacts/overview) that makes the payment
   <Expandable title="properties">
     <ResponseField name="data" type="Object">
       <Expandable title="properties">
@@ -82,10 +85,6 @@ icon: "hand-wave"
       </Expandable>
     </ResponseField>
   </Expandable>
-</ResponseField>
-
-<ResponseField name="account" type="Account">
-  The [account](/docs/accounts) to which this payment belongs
 </ResponseField>
 
 <ResponseField name="updated_at" type="date">
