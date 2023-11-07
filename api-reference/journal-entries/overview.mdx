@@ -19,12 +19,22 @@ icon: "hand-wave"
   The accounting platform’s unique ID for the account associated with the journal entry
 </ResponseField>
 
+<ResponseField name="currency_id" type="string">
+  The ISO-4217 currency code
+</ResponseField>
+
 <ResponseField name="amount" type="float" required>
   The total amount of the journal entry
 </ResponseField>
 
 <ResponseField name="currency" type="string" required>
-  The ISO-4217 currency code
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="currency_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseField name="currency_rate" type="float" required>
@@ -116,8 +126,8 @@ icon: "hand-wave"
 {
   "platform_id": "1234567890123456789",
   "account_id": "1234567890123456789",
-  "amount": 1234,
   "currency_id": "3770712000000000099",
+  "amount": 1234,
   "currency": {
     "data": {
       "platform_id": "3770712000000000099",

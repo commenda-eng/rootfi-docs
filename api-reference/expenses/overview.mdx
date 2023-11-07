@@ -25,6 +25,10 @@ icon: "hand-wave"
   Platform ID of the account to which this expense belongs
 </ResponseField>
 
+<ResponseField name="currency_id" type="string">
+  The payment mode from which the payment was made
+</ResponseField>
+
 <ResponseField name="document_number" type="string">
   Reference/Document number of the expense
 </ResponseField>
@@ -34,10 +38,6 @@ icon: "hand-wave"
 </ResponseField>
 
 <ResponseField name="payment_mode" type="string">
-  The payment mode from which the payment was made
-</ResponseField>
-
-<ResponseField name="currency_id" type="string">
   The payment mode from which the payment was made
 </ResponseField>
 
@@ -138,10 +138,10 @@ icon: "hand-wave"
   "platform_id": "1234567890123456789",
   "contact_id": "3770712000000000099",
   "account_id": "3770712000000000099",
+  "currency_id": "3770712000000000099",
   "document_number": "AO-123",
   "posted_date": "2023-09-21T00:00:00.000Z",
   "payment_mode": "Cash",
-  "currency_id": "3770712000000000099",
   "currency": {
     "data": {
       "platform_id": "3770712000000000099",

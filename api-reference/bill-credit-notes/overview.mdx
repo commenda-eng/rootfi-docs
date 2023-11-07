@@ -20,6 +20,10 @@ icon: "hand-wave"
   The accounting platform’s unique identifier for the contact associated with this credit note
 </ResponseField>
 
+<ResponseField name="bill_id" type="string[]">
+  An Array of bills associated with the credit note
+</ResponseField>
+
 <ResponseField name="document_number" type="string">
   Reference number for the credit note
 </ResponseField>
@@ -58,10 +62,6 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="bill_id" type="string[]">
-  An Array of bills associated with the credit note
-</ResponseField>
-
 <ResponseField name="contact" type="Contact">
   The [contact](/docs/contacts) associated with this credit note
 </ResponseField>
@@ -94,6 +94,7 @@ icon: "hand-wave"
 {
   "platform_id": "3770712000001725001",
   "contact_id": "3770712000000209007",
+  "bill_id": ["3770712000001725001"],
   "document_number": "BCN2023-001",
   "total_amount": 140.0,
   "remaining_credit": 140.0,
@@ -132,7 +133,6 @@ icon: "hand-wave"
       }
     ]
   },
-  "bill_id": ["3770712000001725001"],
   "contact": null,
   "updated_at": "2023-11-05T16:30:00.000Z"
 }

@@ -25,6 +25,10 @@ icon: "hand-wave"
   The accounting platform’s unique ID of the contact associated with this bill
 </ResponseField>
 
+<ResponseField name="currency_id" type="string">
+  The ISO-4217 currency code
+</ResponseField>
+
 <ResponseField name="document_number" type="string">
   Reference number for the bill
 </ResponseField>
@@ -138,10 +142,10 @@ icon: "hand-wave"
 {
   "platform_id": "1234567890123456789",
   "contact_id": "1234567890123456789",
+  "currency_id": "3770712000000000099",
   "document_number": "AO-0001",
   "posted_date": "2023-01-24T00:00:00.000Z",
   "due_date": "2023-01-24T00:00:00.000Z",
-  "currency_id": "3770712000000000099",
   "currency": {
     "data": {
       "platform_id": "3770712000000000099",
@@ -165,12 +169,12 @@ icon: "hand-wave"
     "data": [
       {
         "platform_id": "1234567890123456789",
-        "line_item_type": "BILLS",
-        "line_item_type_id": "1234567890123456789",
-        "tracking_category_ids": [],
-        "item_id": "1234567890123456789",
-        "tax_id": null,
         "account_id": "1234567890123456789",
+        "line_item_type_id": "1234567890123456789",
+        "item_id": "1234567890123456789",
+        "line_item_type": "BILLS",
+        "tracking_category_ids": [],
+        "tax_id": null,
         "description": "Line Items Description",
         "quantity": 123,
         "unit_amount": 150,
@@ -188,12 +192,12 @@ icon: "hand-wave"
         "platform_id": "1234567890123456789",
         "payment_id": "7890123456789012345",
         "bill_id": "1234567890123456789",
-        "contact_id": null,
+        "currency_id": "3770712000000000099",
+        "contact_id": "1234567890123456789",
         "account_id": "1234567890123456789",
         "amount": 150,
         "payment_date": "2023-02-03T00:00:00.000Z",
         "payment_mode": "Cash",
-        "currency_id": "3770712000000000099",
         "currency": {
           "data": {
             "platform_id": "3770712000000000099",
@@ -212,7 +216,6 @@ icon: "hand-wave"
       }
     ]
   },
-  "contact": {},
   "purchase_order_ids": ["3770712000000085084", "3770712000000085084"],
   "documents": {
     "data": [

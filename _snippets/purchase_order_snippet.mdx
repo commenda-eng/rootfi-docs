@@ -6,6 +6,14 @@
   The accounting platform’s unique ID of the contact associated with this purchase order
 </ResponseField>
 
+<ResponseField name="currency_id" type="string">
+  The ISO-4217 currency code
+</ResponseField>
+
+<ResponseField name="bill_ids" type="string[]">
+  Array of Bills associated with the purchase order
+</ResponseField>
+
 <ResponseField name="document_number" type="string">
   Reference number for the purchase order
 </ResponseField>
@@ -27,7 +35,13 @@
 </ResponseField>
 
 <ResponseField name="currency" type="string">
-  The ISO-4217 currency code
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="currency_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseField name="currency_rate" type="float">
@@ -58,10 +72,6 @@
   <Expandable title="properties">
     <Snippet file="line_items_snippeet.mdx" />
   </Expandable>
-</ResponseField>
-
-<ResponseField name="bills" type="Bill">
-  Array of Bills associated with the purchase order
 </ResponseField>
 
 <ResponseField name="addresses" type="Address">

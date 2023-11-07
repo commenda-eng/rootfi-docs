@@ -28,12 +28,22 @@ icon: "hand-wave"
   The platform’s ID for the invoice which this payment is associated with
 </ResponseField>
 
+<ResponseField name="currency_id" type="string">
+  The ISO-4217 currency code
+</ResponseField>
+
 <ResponseField name="amount" type="float">
   The total value of this payment
 </ResponseField>
 
-<ResponseField name="currency" type="string">
-  The ISO-4217 currency code of the account
+<ResponseField name="currency" type="Object">
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="currency_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseField name="currency_rate" type="float">
@@ -113,8 +123,8 @@ icon: "hand-wave"
   "contact_id": "3770712000000226001",
   "account_id": "3770712000000000361",
   "invoice_id": "3770712000000707001",
-  "amount": 19,
   "currency_id": "3770712000000000099",
+  "amount": 19,
   "currency": {
     "data": {
       "platform_id": "3770712000000000099",

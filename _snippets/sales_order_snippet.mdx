@@ -6,6 +6,14 @@
   The accounting platform’s unique ID of the contact associated with this sales order
 </ResponseField>
 
+<ResponseField name="currency_id" type="string">
+  The ISO-4217 currency code
+</ResponseField>
+
+<ResponseField name="invoice_ids" type="string[]">
+  Array of invoices associated with the sales order
+</ResponseField>
+
 <ResponseField name="document_number" type="string">
   Reference number for the sales order
 </ResponseField>
@@ -26,8 +34,14 @@
   The payment mode from which the payment was made
 </ResponseField>
 
-<ResponseField name="currency" type="string">
-  The ISO-4217 currency code
+<ResponseField name="currency" type="Object">
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="currency_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseField name="currency_rate" type="float">
@@ -58,10 +72,6 @@
   <Expandable title="properties">
     <Snippet file="line_items_snippeet.mdx" />
   </Expandable>
-</ResponseField>
-
-<ResponseField name="invoices" type="Invoice">
-  Array of invoices associated with the sales order
 </ResponseField>
 
 <ResponseField name="addresses" type="Address">

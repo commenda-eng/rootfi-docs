@@ -20,6 +20,10 @@ icon: "hand-wave"
   The accounting platform’s unique identifier for the contact associated with this credit note
 </ResponseField>
 
+<ResponseField name="currency_id" type="string">
+  The ISO-4217 currency code
+</ResponseField>
+
 <ResponseField name="document_number" type="string" required>
   Reference number for the credit note
 </ResponseField>
@@ -106,13 +110,13 @@ icon: "hand-wave"
 {
   "platform_id": "3770712000001365001",
   "contact_id": "3770712000000225001",
+  "currency_id": "3770712000000000099",
   "document_number": "CN-00029",
   "total_amount": 49,
   "remaining_credit": 49,
   "posted_date": "2023-04-16T00:00:00.000Z",
   "status": "SUBMITTED",
   "memo": null,
-  "currency_id": "3770712000000000099",
   "currency": {
     "data": {
       "platform_id": "3770712000000000099",

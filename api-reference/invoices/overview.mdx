@@ -24,6 +24,10 @@ icon: "hand-wave"
   The Accounting Platform’s unique ID for the contact who receives this invoice
 </ResponseField>
 
+<ResponseField name="currency_id" type="string">
+  The ISO-4217 currency code
+</ResponseField>
+
 <ResponseField name="document_number" type="string">
   Reference document number for the invoice
 </ResponseField>
@@ -36,12 +40,14 @@ icon: "hand-wave"
   The due date for the invoice as an ISO 8601 timestamp
 </ResponseField>
 
-<ResponseField name="currency_id" type="string">
-  The ISO-4217 currency code
-</ResponseField>
-
-<ResponseField name="currency" type="string">
-  The ISO-4217 currency code
+<ResponseField name="currency" type="Object">
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="currency_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseField name="currency_rate" type="float">
@@ -170,10 +176,10 @@ icon: "hand-wave"
   "platform_id": "1234567890123456789",
   "account_id": "1234567890123456789"
   "contact_id": "3770712000000080069",
+  "currency_id": "3770712000000000099",
   "document_number": "INV-000001",
   "posted_date": "2022-09-28T00:00:00.000Z",
   "due_date": "2022-09-28T00:00:00.000Z",
-  "currency_id": "3770712000000000099",
   "currency": {
     "data": {
       "platform_id": "3770712000000000099",
