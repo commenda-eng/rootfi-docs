@@ -10446,34 +10446,27 @@ components:
       type: string
       enum:
         - ACCOUNTS
+        - BALANCE_SHEET
         - BANK_ACCOUNTS
-        - BILLS
+        - BANK_TRANSACTIONS
+        - BILL_CREDIT_NOTES
         - BILL_PAYMENTS
+        - BILLS
+        - CASH_FLOW_STATEMENT
         - COMPANY_INFO
         - CONTACTS
-        - BILL_CREDIT_NOTES
-        - INVOICE_CREDIT_NOTES
-        - DOCUMENTS
+        - CURRENCIES
         - EXPENSES
-        - INVOICES
+        - INCOME_STATEMENT
+        - INVOICE_CREDIT_NOTES
         - INVOICE_PAYMENTS
+        - INVOICES
         - ITEMS
-        - LINE_ITEMS
-        - TAX_RATES
         - JOURNAL_ENTRIES
-        - BANK_TRANSACTIONS
-        - JOURNAL_LINES
         - PURCHASE_ORDERS
         - SALES_ORDERS
-        - PHONE_NUMBERS
-        - ADDRESSES
-        - EXTERNAL_LINKS
-        - CONTACT_PERSONS
-        - INCOME_STATEMENT
-        - BALANCE_SHEET
+        - TAX_RATES
         - TRACKING_CATEGORIES
-        - CASH_FLOW_STATEMENT
-        - CURRENCIES
     Status:
       title: Status
       type: string
