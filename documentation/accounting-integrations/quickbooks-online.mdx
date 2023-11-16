@@ -23,11 +23,11 @@ In order to set up the integration there are a few steps that must first be comp
 
 We will do a detailed breakdown of these steps in the sections below:
 
-### Step 1 - Create your Quickbooks Application
+### Part 1 - Create your Quickbooks Application
 
 When you create a QuickBooks Online app in the Intuit Developer Portal, you can choose to configure it for the sandbox environment or production environment. The app will have two sets of keys: development and production.
 
-We recommend first configuring your app for the sandbox integration so you can test thoroughly before going live. You can access your dev keys in the **Development Settings** section of your Quickbooks dashboard.
+We recommend first configuring your app for the sandbox integration so you can test thoroughly before going live. You can access your dev keys in the Development Settings section of your Quickbooks dashboard.
 
 Perform these actions in the [Intuit Developer Portal](https://developer.intuit.com/app/developer/homepage).
 
@@ -39,12 +39,12 @@ Perform these actions in the [Intuit Developer Portal](https://developer.intuit.
 6. Configure the app to connect to the sandbox environment:
    1. In the left menu, click on Development Settings > Keys & credentials.
    2. In the Redirect URIs section, select 'Add URI'.
-   3. In the 'Link' box on top, enter the RootFi URI: [https://integrate.rootfi.dev/oauth/callback](https://integrate.rootfi.dev/oauth/callback)
+   3. In the 'Link' box on top, enter the RootFi URI: `https://integrate.rootfi.dev/oauth/callback`
 7. Then click Save.
 8. Your development keys (client ID and client secret) will be displayed in the 'Keys' section at the top of the page.
 9. Copy these keys and simply paste them into the Quickbooks Sandbox integration on the RootFi Platform.
 
-### Step 2 - Completing the App Assessment Questionnaire
+### Part 2 - Completing the App Assessment Questionnaire
 
 1. Select Production Settings > Keys & Credentials, from the nav bar on the left.
 2. Then theGet your app's production keys page will come up.
@@ -57,7 +57,7 @@ Perform these actions in the [Intuit Developer Portal](https://developer.intuit.
    2. In the top Link box, enter the RootFi Production URI: Need to add
 7. Then click 'Save'.
 
-### Step 3 - Enter your Client ID and Client Secret on the RootFi Dashboard
+### Part 3 - Enter your Client ID and Client Secret on the RootFi Dashboard
 
 To activate your Quickbooks integration, follow these steps on the RootFi platform:
 
