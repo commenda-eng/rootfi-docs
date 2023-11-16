@@ -2,54 +2,58 @@
   The accounting platform's unique identifier for the payment
 </ResponseField>
 
-<ResponseField name="payment_id" type="string" required>
+<ResponseField name="payment_id" type="string">
   The unique identifier for the payment transaction
 </ResponseField>
 
-<ResponseField name="invoice_id" type="string" required>
+<ResponseField name="invoice_id" type="string">
   The unique identifier for the invoice associated with the payment
 </ResponseField>
 
-<ResponseField name="account_id" type="string" required>
+<ResponseField name="account_id" type="string">
   The unique identifier for the account from which the payment was made
 </ResponseField>
 
-<ResponseField name="contact_id" type="string" required>
+<ResponseField name="contact_id" type="string">
   The unique identifier for the contact associated with the payment
 </ResponseField>
 
-<ResponseField name="amount" type="float" required>
+<ResponseField name="amount" type="float">
   The total amount of the payment
 </ResponseField>
 
-<ResponseField name="payment_date" type="date" required>
+<ResponseField name="payment_date" type="date">
   The date the payment was made
 </ResponseField>
 
-<ResponseField name="payment_mode" type="string" required>
+<ResponseField name="payment_mode" type="string">
   The mode of payment used. Example values can be: CASH, CREDIT_CARD, BANK_TRANSFER, etc.
 </ResponseField>
 
-<ResponseField name="currency_id" type="string" required>
+<ResponseField name="currency_id" type="string">
   The accounting platform's unique identifier for the currency used in the payment
 </ResponseField>
 
-<ResponseField name="currency" type="string" required>
+<ResponseField name="currency" type="string">
   The ISO-4217 currency code for the currency used in the payment
 </ResponseField>
 
-<ResponseField name="currency_rate" type="float" required>
+<ResponseField name="currency_rate" type="float">
   The exchange rate between the payment currency and the base currency
 </ResponseField>
 
-<ResponseField name="document_number" type="string" optional>
+<ResponseField name="document_number" type="string">
   A reference number or document number associated with the payment. This field is optional and may not be relevant in all contexts.
 </ResponseField>
 
-<ResponseField name="memo" type="string" optional>
+<ResponseField name="memo" type="string">
   Additional notes or a memo regarding the payment. This field is optional.
 </ResponseField>
 
 <ResponseField name="updated_at" type="date" required>
   The date and time at which the payment information was last updated in the accounting platform
+</ResponseField>
+
+<ResponseField name="raw_data" type="Object">
+  The raw JSON response we get from the accounting platform for that data.
 </ResponseField>

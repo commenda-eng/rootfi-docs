@@ -38,6 +38,10 @@
   The platform ID of the parent account
 </ResponseField>
 
-<ResponseField name="updated_at" type="date">
+<ResponseField name="updated_at" type="date" required>
   Date the record was last updated in the accounting platform.
+</ResponseField>
+
+<ResponseField name="raw_data" type="Object">
+  The raw JSON response we get from the accounting platform for that data.
 </ResponseField>

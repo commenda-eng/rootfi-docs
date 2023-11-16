@@ -2,29 +2,29 @@
   The accounting platform's unique identifier for the invoice
 </ResponseField>
 
-<ResponseField name="contact_id" type="string" required>
+<ResponseField name="contact_id" type="string">
   The unique identifier of the contact associated with this invoice
 </ResponseField>
 
-<ResponseField name="document_number" type="string" required>
+<ResponseField name="document_number" type="string">
   The unique document number for the invoice
 </ResponseField>
 
-<ResponseField name="posted_date" type="date" required>
+<ResponseField name="posted_date" type="date">
   The date on which the invoice was posted or created
 </ResponseField>
 
-<ResponseField name="due_date" type="date" required>
+<ResponseField name="due_date" type="date">
   The due date for payment of the invoice
 </ResponseField>
 
-<ResponseField name="currency_id" type="string" required>
+<ResponseField name="currency_id" type="string">
   The accounting platform's unique identifier for the currency used in the invoice
 </ResponseField>
 
-<ResponseField name="currency" type="object" required>
+<ResponseField name="currency" type="object">
   <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
+    <ResponseField name="data" type="Object">
       <Expandable title="properties">
         <Snippet file="currency_snippet.mdx" />
       </Expandable>
@@ -32,19 +32,19 @@
   </Expandable>
 </ResponseField>
 
-<ResponseField name="currency_rate" type="float" required>
+<ResponseField name="currency_rate" type="float">
   The exchange rate between the currency of the invoice and the base currency
 </ResponseField>
 
-<ResponseField name="status" type="enum" required>
+<ResponseField name="status" type="enum">
   The current status of the invoice. Values can be: DRAFT, ISSUED, PAID, OVERDUE, VOID, etc.
 </ResponseField>
 
-<ResponseField name="total_amount" type="float" required>
+<ResponseField name="total_amount" type="float">
   The total amount of the invoice including taxes and discounts
 </ResponseField>
 
-<ResponseField name="sub_total" type="float" required>
+<ResponseField name="sub_total" type="float">
   The total amount of the invoice before taxes and discounts
 </ResponseField>
 
@@ -52,18 +52,22 @@
   The total amount of discounts applied to the invoice
 </ResponseField>
 
-<ResponseField name="tax_amount" type="float" required>
+<ResponseField name="tax_amount" type="float">
   The total tax amount levied on the invoice
 </ResponseField>
 
-<ResponseField name="amount_due" type="float" required>
+<ResponseField name="amount_due" type="float">
   The total outstanding amount due for the invoice
 </ResponseField>
 
-<ResponseField name="purchase_order_ids" type="string[]" optional>
+<ResponseField name="purchase_order_ids" type="string[]">
   An array of identifiers for purchase orders associated with the invoice
 </ResponseField>
 
 <ResponseField name="updated_at" type="date" required>
   The date and time at which the invoice information was last updated in the accounting platform
+</ResponseField>
+
+<ResponseField name="raw_data" type="Object">
+  The raw JSON response we get from the accounting platform for that data.
 </ResponseField>

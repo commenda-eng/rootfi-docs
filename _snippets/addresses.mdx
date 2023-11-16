@@ -14,11 +14,11 @@
   The unique identifier for the data model associated with this address
 </ResponseField>
 
-<ResponseField name="street" type="string" optional>
+<ResponseField name="street" type="string">
   The street information of the address
 </ResponseField>
 
-<ResponseField name="locality" type="string" optional>
+<ResponseField name="locality" type="string">
   The locality or neighborhood information of the address
 </ResponseField>
 
@@ -34,10 +34,14 @@
   The country information of the address
 </ResponseField>
 
-<ResponseField name="pincode" type="string" optional>
+<ResponseField name="pincode" type="string">
   The postal or zip code of the address
 </ResponseField>
 
 <ResponseField name="updated_at" type="date">
   The date and time at which the address information was last updated in the accounting platform
+</ResponseField>
+
+<ResponseField name="raw_data" type="object">
+  The raw JSON response we get from the accounting platform for that data.
 </ResponseField>
