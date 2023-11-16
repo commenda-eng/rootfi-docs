@@ -1,6 +1,6 @@
 ---
 title: "Overview"
-description: "An Bill Credit Note is a financial transaction representing a reduction that can be applied against one or multiple bills issued to Vendors."
+description: "A Bill Credit Note is a financial transaction representing a reduction that can be applied against one or multiple bills issued to Vendors."
 icon: "hand-wave"
 ---
 
@@ -69,6 +69,10 @@ icon: "hand-wave"
 
 <ResponseField name="updated_at" type="date">
   The last ISO 8601 timestamp that the data was updated at
+</ResponseField>
+
+<ResponseField name="raw_data" type="object">
+  The raw JSON response we get from the accounting platform for that data.
 </ResponseField>
 
 ## Properties Supported

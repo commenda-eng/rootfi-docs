@@ -1,6 +1,6 @@
 ---
 title: "Overview"
-description: "A balance sheet is a financial report that shows a business's assets, liabilities, and equity at a specific point in time. In an accounting platform, a balance sheet is typically generated automatically based on the financial transactions that have been recorded in the system."
+description: "A [Balance Sheet](https://www.investopedia.com/terms/b/balancesheet.asp) is a financial report that shows a business's assets, liabilities, and equity at a specific point in time. In an accounting platform, a balance sheet is typically generated automatically based on the financial transactions that have been recorded in the system."
 icon: "hand-wave"
 ---
 
@@ -73,6 +73,9 @@ icon: "hand-wave"
 
 <ResponseField name="currency_id" type="string">
   The Accounting Platform’s unique ID for the currency
+</ResponseField>
+<ResponseField name="raw_data" type="object">
+  The raw JSON response we get from the accounting platform for that data.
 </ResponseField>
 
 | Property     | Type                          | Description                                          |

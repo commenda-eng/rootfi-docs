@@ -71,6 +71,10 @@ icon: "hand-wave"
   Optional description for the payment
 </ResponseField>
 
+<ResponseField name="raw_data" type="object">
+  The raw JSON response we get from the accounting platform for that data.
+</ResponseField>
+
 <ResponseField name="invoice" type="Invoice">
   The [invoice](https://docs.rootfi.dev/api-reference/invoices/overview) which this payment is associated with
   <Expandable title="properties">

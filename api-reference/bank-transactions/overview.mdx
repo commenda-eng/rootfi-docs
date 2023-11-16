@@ -125,8 +125,12 @@ icon: "hand-wave"
   </ResponseField>
   </Expandable>
 </ResponseField>
-<ResponseField name="updated_at" type="date">
+<ResponseField name="updated_at" type="date" required>
   The date at which the transaction was updated on the accounting platform
+</ResponseField>
+
+<ResponseField name="raw_data" type="object">
+  The raw JSON response we get from the accounting platform for that data.
 </ResponseField>
 
 ## Properties Supported

@@ -4716,8 +4716,8 @@ components:
         raw_data:
           nullable: true
           description: >-
-            The raw JSON response we get from the accounting platform for that
-            data
+            A JSON containing fields that you can directly pass to the
+            accounting platform.
       allOf:
         - $ref: >-
             #/components/schemas/accountingaccountsAccountsAllResponsesCommonFields
@@ -5013,8 +5013,8 @@ components:
           additionalProperties: true
           nullable: true
           description: >-
-            The raw JSON response we get from the accounting platform for that
-            data
+            A JSON containing fields that you can directly pass to the
+            accounting platform.
       allOf:
         - $ref: >-
             #/components/schemas/accountingbank_accountsBankAccountsAllResponsesCommonFields
@@ -5211,8 +5211,8 @@ components:
           additionalProperties: true
           nullable: true
           description: >-
-            The raw JSON response we get from the accounting platform for that
-            data
+            A JSON containing fields that you can directly pass to the
+            accounting platform.
       allOf:
         - $ref: >-
             #/components/schemas/accountingbank_transactionsBankTransactionAllResponsesCommonFields
@@ -5437,8 +5437,8 @@ components:
           additionalProperties: true
           nullable: true
           description: >-
-            The raw JSON response we get from the accounting platform for that
-            data
+            A JSON containing fields that you can directly pass to the
+            accounting platform.
       allOf:
         - $ref: >-
             #/components/schemas/accountingbill_credit_notesBillCreditNotesAllResponseCommonFields
@@ -5481,7 +5481,7 @@ components:
           nullable: true
           description: >-
             The raw JSON response we get from the accounting platform for that
-            data
+            data.
       allOf:
         - $ref: >-
             #/components/schemas/accountingbill_credit_notesBillCreditNotesPlatformId
@@ -5676,7 +5676,9 @@ components:
           type: object
           additionalProperties: true
           nullable: true
-          description: Raw data of the bill payment
+          description: >-
+            A JSON containing fields that you can directly pass to the
+            accounting platform.
       allOf:
         - $ref: >-
             #/components/schemas/accountingbill_paymentsBillPaymentsAllResponseCommonFields
@@ -5712,7 +5714,9 @@ components:
           type: object
           additionalProperties: true
           nullable: true
-          description: Raw data of the bill payment
+          description: >-
+            The raw JSON response we get from the accounting platform for that
+            data
       allOf:
         - $ref: >-
             #/components/schemas/accountingbill_paymentsBillPaymentsResponseFields
@@ -5884,8 +5888,8 @@ components:
           additionalProperties: true
           nullable: true
           description: >-
-            The raw JSON response we receive from the accounting platform for
-            this bill
+            A JSON containing fields that you can directly pass to the
+            accounting platform.
       allOf:
         - $ref: "#/components/schemas/accountingbillsBillsAllResponsesCommonFields"
     accountingbillsBillsResponseField:
@@ -6343,7 +6347,9 @@ components:
           type: object
           additionalProperties: true
           nullable: true
-          description: Raw data of the contact
+          description: >-
+            A JSON containing fields that you can directly pass to the
+            accounting platform.
       allOf:
         - $ref: >-
             #/components/schemas/accountingcontactsContactsAllResponsesCommonFields
@@ -6381,7 +6387,9 @@ components:
           type: object
           additionalProperties: true
           nullable: true
-          description: Raw data of the contact
+          description: >-
+            The raw JSON response we get from the accounting platform for that
+            data
       allOf:
         - $ref: "#/components/schemas/accountingcontactsContactResponseFields"
     accountingcontactsContactsGetAllResponseField:
@@ -6668,7 +6676,9 @@ components:
           type: object
           additionalProperties: true
           nullable: true
-          description: Raw data of the expense
+          description: >-
+            A JSON containing fields that you can directly pass to the
+            accounting platform.
       allOf:
         - $ref: >-
             #/components/schemas/accountingexpensesExpensesAllresponsesCommonFields
@@ -6712,7 +6722,9 @@ components:
           type: object
           additionalProperties: true
           nullable: true
-          description: Raw data of the expense
+          description: >-
+            The raw JSON response we get from the accounting platform for that
+            data
       allOf:
         - $ref: "#/components/schemas/accountingexpensesExpensesResponseField"
     accountingexpensesExpensesGetAllResponseFields:
@@ -7027,7 +7039,9 @@ components:
           type: object
           additionalProperties: true
           nullable: true
-          description: Raw data of the invoice credit note
+          description: >-
+            A JSON containing fields that you can directly pass to the
+            accounting platform.
         line_items:
           type: array
           items:
@@ -7076,8 +7090,8 @@ components:
           additionalProperties: true
           nullable: true
           description: >-
-            The raw JSON response we receive from the accounting platform for
-            this credit note
+            The raw JSON response we get from the accounting platform for that
+            data.
       allOf:
         - $ref: >-
             #/components/schemas/accountinginvoice_credit_notesInvoiceCreditNotesResponseFields
@@ -7265,7 +7279,9 @@ components:
           type: object
           additionalProperties: true
           nullable: true
-          description: Raw data of the invoice payment
+          description: >-
+            A JSON containing fields that you can directly pass to the
+            accounting platform.
       allOf:
         - $ref: >-
             #/components/schemas/accountinginvoice_paymentsInvoicePaymentsAllResponsesCommonFields
@@ -7482,7 +7498,9 @@ components:
           type: object
           additionalProperties: true
           nullable: true
-          description: Raw data of the invoice
+          description: >-
+            A JSON containing fields that you can directly pass to the
+            accounting platform.
       allOf:
         - $ref: >-
             #/components/schemas/accountinginvoicesInvoicesAllResponsesCommonFields
@@ -7556,7 +7574,9 @@ components:
           type: object
           additionalProperties: true
           nullable: true
-          description: Raw data of the invoice
+          description: >-
+            The raw JSON response we get from the accounting platform for that
+            data
       allOf:
         - $ref: "#/components/schemas/accountinginvoicesInvoicesResponseField"
     accountinginvoicesInvoicesGetAllResponseFields:
@@ -7781,7 +7801,9 @@ components:
           type: object
           additionalProperties: true
           nullable: true
-          description: Raw data of the item
+          description: >-
+            A JSON containing fields that you can directly pass to the
+            accounting platform.
       allOf:
         - $ref: "#/components/schemas/accountingitemsItemsAllResponsesCommonFields"
     accountingitemsItemsResponseFields:
@@ -7820,7 +7842,9 @@ components:
           type: object
           additionalProperties: true
           nullable: true
-          description: Raw data of the item
+          description: >-
+            The raw JSON response we get from the accounting platform for that
+            data
       allOf:
         - $ref: "#/components/schemas/accountingitemsItemsResponseFields"
     accountingitemsItemsGetAllResponseFields:
@@ -7966,7 +7990,9 @@ components:
           type: object
           additionalProperties: true
           nullable: true
-          description: Raw data of the journal entry
+          description: >-
+            A JSON containing fields that you can directly pass to the
+            accounting platform.
       allOf:
         - $ref: >-
             #/components/schemas/accountingjournal_entriesJournalEntriesAllResponsesCommonFields
@@ -8180,8 +8206,8 @@ components:
           additionalProperties: true
           nullable: true
           description: >-
-            Raw, unprocessed data of the purchase order, potentially containing
-            additional details not captured by structured fields
+            A JSON containing fields that you can directly pass to the
+            accounting platform.
         line_items:
           type: array
           items:
@@ -8245,8 +8271,8 @@ components:
           additionalProperties: true
           nullable: true
           description: >-
-            Raw, unprocessed data of the purchase order, potentially containing
-            additional details not captured by structured fields
+            The raw JSON response we get from the accounting platform for that
+            data
       allOf:
         - $ref: >-
             #/components/schemas/accountingpurchase_orderPurchaseOrderResponseFields
@@ -8424,7 +8450,9 @@ components:
           type: object
           additionalProperties: true
           nullable: true
-          description: Raw data of the sales order
+          description: >-
+            A JSON containing fields that you can directly pass to the
+            accounting platform.
         line_items:
           type: array
           items:
@@ -8670,7 +8698,9 @@ components:
           type: object
           additionalProperties: true
           nullable: true
-          description: Raw data of the tax rate
+          description: >-
+            A JSON containing fields that you can directly pass to the
+            accounting platform.
       allOf:
         - $ref: >-
             #/components/schemas/accountingtax_ratesTaxRatesAllResponsesCommonFields

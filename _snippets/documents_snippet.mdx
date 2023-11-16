@@ -30,6 +30,10 @@
   A `temporary` download link through which you can download the attachment. Will only be present if document_uploaded is true
 </ResponseField>
 
-<ResponseField name="updated_at" type="date">
+<ResponseField name="updated_at" type="date" required>
   The last ISO 8601 timestamp that the data was updated at
+</ResponseField>
+
+<ResponseField name="raw_data" type="object">
+  The raw JSON response we get from the accounting platform for that data.
 </ResponseField>
