@@ -49,7 +49,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "Rootfi Test " } }'
+              value: '{ "name": { "eq": "RootFi Test " } }'
       responses:
         "200":
           description: ""
@@ -71,7 +71,7 @@ paths:
                           platform_id: "1234567890123456789"
                           currency_id: "3770712000000000099"
                           parent_account_id: null
-                          nominal_code: Rootfi 01
+                          nominal_code: RootFi 01
                           name: Test Account
                           description: Test Description
                           sub_category: long_term_liability
@@ -155,8 +155,8 @@ paths:
                 value:
                   company_id: 1
                   data:
-                    - name: Rootfi Test Account
-                      description: Rootfi Test Account
+                    - name: RootFi Test Account
+                      description: RootFi Test Account
                       nominal_code: "123456"
                       sub_category: Test
                       currency_id: "123456"
@@ -253,7 +253,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "Rootfi Test " } }'
+              value: '{ "name": { "eq": "RootFi Test " } }'
       responses:
         "200":
           description: ""
@@ -276,7 +276,7 @@ paths:
                           platform_id: "123456"
                           currency_id: "3770712000000000099"
                           institution_name: Bank Central Asia
-                          account_name: Rootfi Test
+                          account_name: RootFi Test
                           account_number: "1234567890"
                           category: DEPOSIT
                           balance: 55000
@@ -329,7 +329,7 @@ paths:
                             balance: 123456
                             updated_at: "2021-09-28T15:00:00.000Z"
                             raw_data:
-                              nominal_code: Rootfi 01
+                              nominal_code: RootFi 01
                               name: Test Account
                               description: Test Description
                               category: LIABILITY
@@ -354,7 +354,7 @@ paths:
                   company_id: 1
                   data:
                     - institution_name: Bank Central Asia
-                      account_name: Rootfi Test
+                      account_name: RootFi Test
                       category: DEPOSIT
                       account_number: "1234567890"
                       balance: 1000000
@@ -405,7 +405,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "Rootfi Test " } }'
+              value: '{ "name": { "eq": "RootFi Test " } }'
       responses:
         "200":
           description: ""
@@ -600,7 +600,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "Rootfi Test " } }'
+              value: '{ "name": { "eq": "RootFi Test " } }'
       responses:
         "200":
           description: ""
@@ -704,7 +704,7 @@ paths:
                             updated_at: "2023-10-31T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
-                              nominal_code: Rootfi 01
+                              nominal_code: RootFi 01
                               name: Test Account
                               description: Test Description
                               category: LIABILITY
@@ -788,7 +788,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "Rootfi Test " } }'
+              value: '{ "name": { "eq": "RootFi Test " } }'
       responses:
         "200":
           description: ""
@@ -903,7 +903,7 @@ paths:
                             updated_at: "2023-11-01T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
-                              nominal_code: Rootfi 01
+                              nominal_code: RootFi 01
                               name: Test Account
                               description: Test Description
                               category: LIABILITY
@@ -980,7 +980,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "Rootfi Test " } }'
+              value: '{ "name": { "eq": "RootFi Test " } }'
       responses:
         "200":
           description: ""
@@ -1127,7 +1127,7 @@ paths:
                             updated_at: "2023-11-01T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
-                              nominal_code: Rootfi 01
+                              nominal_code: RootFi 01
                               name: Test Account
                               description: Test Description
                               category: LIABILITY
@@ -1255,7 +1255,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "Rootfi Test " } }'
+              value: '{ "name": { "eq": "RootFi Test " } }'
       responses:
         "200":
           description: ""
@@ -1276,8 +1276,8 @@ paths:
                           rootfi_integration_type: ZOHO_BOOKS
                           rootfi_created_at: "2023-10-25T13:39:29.650Z"
                           platform_id: 8635772_SB1
-                          name: Rootfi Technologies Pvt Ltd
-                          legal_name: Rootfi Technologies Pvt Ltd
+                          name: RootFi Technologies Pvt Ltd
+                          legal_name: RootFi Technologies Pvt Ltd
                           tax_number: null
                           registration_number: null
                           base_currency: GBP
@@ -1335,7 +1335,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "Rootfi Test " } }'
+              value: '{ "name": { "eq": "RootFi Test " } }'
       responses:
         "200":
           description: ""
@@ -1464,8 +1464,8 @@ paths:
                 value:
                   company_id: 1
                   data:
-                    - name: Rootfi Test
-                      contact_name: Rootfi Test
+                    - name: RootFi Test
+                      contact_name: RootFi Test
                       contact_type: CUSTOMER
                       currency_id: GBP
                       tax_number: "1234567890"
@@ -1538,8 +1538,8 @@ paths:
                 value:
                   company_id: 1
                   data:
-                    - name: Rootfi Test
-                      contact_name: Rootfi Test
+                    - name: RootFi Test
+                      contact_name: RootFi Test
                       contact_type: CUSTOMER
                       currency_id: GBP
                       tax_number: "1234567890"
@@ -1591,7 +1591,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "Rootfi Test " } }'
+              value: '{ "name": { "eq": "RootFi Test " } }'
       responses:
         "200":
           description: ""
@@ -1665,7 +1665,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "Rootfi Test " } }'
+              value: '{ "name": { "eq": "RootFi Test " } }'
       responses:
         "200":
           description: ""
@@ -1780,7 +1780,7 @@ paths:
                             updated_at: "2023-11-01T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
-                              nominal_code: Rootfi 01
+                              nominal_code: RootFi 01
                               name: Test Account
                               description: Test Description
                               category: LIABILITY
@@ -1909,7 +1909,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "Rootfi Test " } }'
+              value: '{ "name": { "eq": "RootFi Test " } }'
       responses:
         "200":
           description: ""
@@ -2015,7 +2015,7 @@ paths:
                             updated_at: "2023-11-01T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
-                              nominal_code: Rootfi 01
+                              nominal_code: RootFi 01
                               name: Test Account
                               description: Test Description
                               category: LIABILITY
@@ -2099,7 +2099,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "Rootfi Test " } }'
+              value: '{ "name": { "eq": "RootFi Test " } }'
       responses:
         "200":
           description: ""
@@ -2214,7 +2214,7 @@ paths:
                             updated_at: "2023-10-27T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
-                              nominal_code: Rootfi 01
+                              nominal_code: RootFi 01
                               name: Test Account
                               description: Test Description
                               category: LIABILITY
@@ -2291,7 +2291,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "Rootfi Test " } }'
+              value: '{ "name": { "eq": "RootFi Test " } }'
       responses:
         "200":
           description: ""
@@ -2438,7 +2438,7 @@ paths:
                             status: DRAFT
                             raw_data:
                               platform_id: "123456"
-                              nominal_code: Rootfi 01
+                              nominal_code: RootFi 01
                               name: Test Account
                               description: Test Description
                               category: LIABILITY
@@ -2606,7 +2606,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "Rootfi Test " } }'
+              value: '{ "name": { "eq": "RootFi Test " } }'
       responses:
         "200":
           description: ""
@@ -2691,7 +2691,7 @@ paths:
                             updated_at: "2023-11-01T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
-                              nominal_code: Rootfi 01
+                              nominal_code: RootFi 01
                               name: Test Account
                               description: Test Description
                               category: LIABILITY
@@ -2714,8 +2714,8 @@ paths:
                 value:
                   company_id: 1
                   data:
-                    - name: Rootfi Test Item
-                      description: Rootfi Test Item
+                    - name: RootFi Test Item
+                      description: RootFi Test Item
                       type: INVENTORY
                       code: "1234567890"
                       quantity_on_hand: 0
@@ -2778,7 +2778,7 @@ paths:
                             updated_at: "2023-11-01T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
-                              nominal_code: Rootfi 01
+                              nominal_code: RootFi 01
                               name: Test Account
                               description: Test Description
                               category: LIABILITY
@@ -2801,8 +2801,8 @@ paths:
                 value:
                   company_id: 1
                   data:
-                    - name: Rootfi Test Item
-                      description: Rootfi Test Item
+                    - name: RootFi Test Item
+                      description: RootFi Test Item
                       type: INVENTORY
                       code: "1234567890"
                       quantity_on_hand: 0
@@ -2858,7 +2858,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "Rootfi Test " } }'
+              value: '{ "name": { "eq": "RootFi Test " } }'
       responses:
         "200":
           description: ""
@@ -3042,7 +3042,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "Rootfi Test " } }'
+              value: '{ "name": { "eq": "RootFi Test " } }'
       responses:
         "200":
           description: ""
@@ -3251,7 +3251,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "Rootfi Test " } }'
+              value: '{ "name": { "eq": "RootFi Test " } }'
       responses:
         "200":
           description: ""
@@ -3459,7 +3459,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "Rootfi Test " } }'
+              value: '{ "name": { "eq": "RootFi Test " } }'
       responses:
         "200":
           description: ""
@@ -3562,13 +3562,13 @@ paths:
                 value:
                   company_id: 1
                   data:
-                    - name: Rootfi Test Tax Rate
+                    - name: RootFi Test Tax Rate
                       code: "1234567890"
                       effective_tax_rate: 10
                       total_tax_rate: 10
                       tax_type: VAT
                       components:
-                        - name: Rootfi Test Tax Rate Component
+                        - name: RootFi Test Tax Rate Component
                           is_compound: false
                           rate: 10
                           tax_agency: igst
@@ -3647,13 +3647,13 @@ paths:
                 value:
                   company_id: 1
                   data:
-                    - name: Rootfi Test Tax Rate
+                    - name: RootFi Test Tax Rate
                       code: "1234567890"
                       effective_tax_rate: 10
                       total_tax_rate: 10
                       tax_type: VAT
                       components:
-                        - name: Rootfi Test Tax Rate Component
+                        - name: RootFi Test Tax Rate Component
                           is_compound: false
                           rate: 10
                           tax_agency: igst
@@ -3703,7 +3703,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "Rootfi Test " } }'
+              value: '{ "name": { "eq": "RootFi Test " } }'
       responses:
         "200":
           description: ""
@@ -4234,7 +4234,7 @@ paths:
                           rootfi_updated_at: "2021-01-01T00:00:00Z"
                           rootfi_company_id: 1234
                           rootfi_organisation_id: 12
-                          name: Rootfi Test Company
+                          name: RootFi Test Company
                           sync_enabled: true
                           Connections: []
                     request_timestamp: "2021-01-01T00:00:00Z"
@@ -4330,7 +4330,7 @@ paths:
                         rootfi_updated_at: "2021-01-01T00:00:00Z"
                         rootfi_company_id: 1234
                         rootfi_organisation_id: 12
-                        name: Rootfi Test Company
+                        name: RootFi Test Company
                         sync_enabled: true
                         Connections:
                           - rootfi_id: 1234_ZOHO_BOOKS
@@ -4505,7 +4505,7 @@ paths:
                     data:
                       - id: abcdefghijklmnopq
                         headers:
-                          api_key: Rootfi API Key
+                          api_key: RootFi API Key
                         operations:
                           - CREATE
                         data_models:
@@ -4540,7 +4540,7 @@ paths:
                     data:
                       id: abcdefghijklmnopq
                       headers:
-                        api_key: Rootfi API Key
+                        api_key: RootFi API Key
                       operations:
                         - CREATE
                       data_models:
@@ -4604,7 +4604,7 @@ paths:
                     data:
                       id: abcdefghijklmnopq
                       headers:
-                        api_key: Rootfi API Key
+                        api_key: RootFi API Key
                       operations:
                         - CREATE
                       data_models:

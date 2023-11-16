@@ -1,15 +1,59 @@
 ---
 title: "GraphQL APIs"
-description: "Use our GraphQL apis to pull the data you need"
+description: "Use our GraphQL APIs to pull the data you need"
 icon: "connectdevelop"
 ---
 
+## What is GraphQL?
+
 GraphQL is a query language for APIs that makes is very easy to get the data you want suing a fully typed system.
+To learn more about GraphQL and why we have chosen to use it, visit our [Why we Use GraphQL
+Blog](https://www.rootfi.dev/post/why-we-use-graphql).
 
-To get started visit our [GraphQL playground](/docs/graphql-playground).
+## Using our GraphQL APIs
 
-Once you have entered your api key, you should see our entire schema of all our data models on the left side bar. Using the left side bar, you can interactively explore our schema and structurally design the query you need. We support **filtering of any field** across all data models. We also have an **aggregate field** that makes it very easy to retrieve aggregate fields like `total_count`. When retrieving vast amounts of data, we support **paginating** with take and skip fields as well as **ordering by and filtering by distinct values**
+### Open the playground
 
-Furthermore, **all foreign keys have their associated data models as fields.**
+To get started visit our [GraphQL playground](https://integrate.rootfi.dev/graphql).
+
+### Enter your api key
+
+Click on the 'Setting' icon on the top left bar to open up the 'Connection Settings'
+![](/images/graphql_settings.png)
+Enter your api key in the 'Shared headers' section. You can find your api key in the [RootFi Dashboard Settings](https://integrate.rootfi.dev/settings).
+
+You can also access from the RootFi Dashboard by clicking the 'Playground' button on the navigation.
+
+<Note>Navigating from the RootFi Dashboard will automatically add your API key to the playground.</Note>
+
+### Making Queries
+
+Once you have entered your api key, you should see the entire schema of all our data models on the left side bar. Using the left side bar, you can interactively explore our schema and structurally design the query you need. We support **filtering of any field** and **sorting of all numeric and date field** across all data models.
+
+Our responses always contain a `data` field and an `aggregate` field. The `data` contains the list of all the returned data objects. The `aggregate` field makes it very easy to retrieve aggregate fields like `total_count`, which helps facilitate **pagination**.
+
+### Arguments
+
+We have a number of arguments that can be used to design the query you need.
+The **filter** argument is on a data model level and affects the data and aggregate outputs.
+The following arguments affect the data field:
+
+- **orderBy** - Sorts the data field by the given field.
+- **take** - Limits the number of data objects returned.
+- **skip** - Skips the first n data objects.
+- **distinct** - Returns the distinct values of the given field.
+
+<Note>We support a maximum take of 500 records. The default take is 100.</Note>
+
+### Nested Data Models
+
+You can retrieve nested data models by including the data model name as a field in the query and then specifying the fields you want to retrieve from that data model. You can nest as many data models as you want.
+
+<Note>All id's have their associated data models as fields.</Note>
 
 Example: In the Accounts data models, the field `parent_account_id` is supposed to be the `platform_id` of another Account (the parent account). Therefore, in our graphql schema, you can find a field called `parent_account`. You can get any data relating to that `parent_account` including the next `parent_account`.
+
+Querying nested data models is also very useful when you want to retrieve data from a data model that is related to another data model.
+
+<Note>Any data model that linked to another data model via a foreign key will have a field to retrieve the other data model</Note>
+For example, you can retrieve an invoice and all the associated payments by querying the `invoice` data model and including the `payments` field.

@@ -7,7 +7,7 @@ icon: "hand-wave"
 - Unified document properties: The model unifies essential document details, such as file name, file type, file size, and platform ID, making it easier to work with documents from different platforms.
 - Document type association: Documents can be linked to specific document types (e.g., bills, invoices, expenses) using the `document_type_id` and `document_type` properties, facilitating easy retrieval and organisation of documents.
 - File metadata: The model includes file type (MIME Type) and file size properties, enabling developers to handle documents appropriately and ensure compatibility with their applications.
-- Document upload status: When you request for a document to be downloaded, Rootfi will download the document then cache the document on to its servers so future calls to download the document will be faster. The `document_uploaded` property indicates whether Rootfi has uploaded the document to its servers.
+- Document upload status: When you request for a document to be downloaded, RootFi will download the document then cache the document on to its servers so future calls to download the document will be faster. The `document_uploaded` property indicates whether RootFi has uploaded the document to its servers.
 
 <Note>
     **Downloading the Document**
@@ -31,7 +31,7 @@ icon: "hand-wave"
 | document_type_id  | string                                | The platform ID of the document type with which this document is linked to                                                                                                       |
 | document_type     | [Data Model](/docs/enums#data-models) | The name of the data model with which this document is linked. Currently only these data models are supported: BILLS,INVOICES,EXPENSES                                           |
 | download_link     | string                                | A **temporary** download link through which you can download the attachment. Will only be present if document_uploaded is true                                                   |
-| document_uploaded | boolean                               | A value to verify that Rootfi that uploaded the document to it's servers                                                                                                         |
+| document_uploaded | boolean                               | A value to verify that RootFi that uploaded the document to it's servers                                                                                                         |
 | updated_at        | date                                  | The last ISO 8601 timestamp that the data was updated at                                                                                                                         |
 
 <ResponseExample name="The Bank Transaction Object" >

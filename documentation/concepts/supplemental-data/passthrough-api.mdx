@@ -4,6 +4,16 @@ description: ""
 icon: "right-left"
 ---
 
-You just need to pass in the correct API config (URL path and method), and we will handle the authentication to call the API for that accounting platform and return the response data.
+You can use the [Passthrough API](/api-reference/passthrough/passthrough) to call any API from the underlying platform. This is useful if you need to read or write data that is not currently supported by RootFi's APIs.
 
-If you need this passthrough API, would like to learn more about how this works, or need to read or write certain data points, please reach out to us by opening the chat box on the bottom right of our [website](https://www.rootfi.dev/)
+You just need to pass in the correct API config data:
+
+- Method: `GET`, `POST`, `PUT`, `PATCH`, `DELETE`
+- URL Path: The URL path of the API you want to call
+- Headers: Any headers that are required for the API call
+- Parameters: Any parameters that are required for the API call
+- Data: Any data that is required in the body of the API call
+
+We will handle the authentication to call the API for that platform and return the response data.
+
+If you need this passthrough API, would like to learn more about how this works, or need to find certain api configurations, please reach out to us by opening the chat box on the bottom right of our [website](https://www.rootfi.dev/)
