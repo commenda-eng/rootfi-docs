@@ -4,10 +4,15 @@ description: "Learn how RootFi keeps your customers data up-to date"
 icon: ""
 ---
 
-We offer two modes of syncing
+Depending on your needs, data can synced be in two modes:
 
-- **Incremental Sync (default)** \- Only syncs data that has been changed since the last sync.
-- **Full Sync** \- Syncs the full data from the underlying platform. You should trigger a full sync only when you want to remove all the data that has been deleted from the platform.
+1. **Incremental Sync (default)** \- Only syncs the data that has been changed since the last sync.
+2. **Full Sync** \- Syncs the full data from the underlying platform. You should trigger a full sync only when you want to remove all the data that has been deleted from the platform.
+
+We offer two ways to sync data:
+
+1. **Auto Sync**: Sync data based on specific frequencies decided by you. Can be incremental or full syncs, based on your needs.
+2. **Manual Sync**: Manually trigger a data sync. Can be incremental or full syncs, based on your needs.
 
 ## Auto Sync
 
@@ -22,7 +27,7 @@ The Auto Sync frequency is determined based on the specific type of data your ap
 
 Setting an appropriate frequency for each data model matters because of the underlying rate limits of the platform.
 
-If your customers have a lot of data, even if you set all the data models to sync hourly the syncing will be automatically paused and restarted based on the the platforms rate limits so you may not get real time data of the data models you care about. Have a high sync frequency may also disrupt writing data to the platform since those apis also consume the api quota of the underlying platform.
+If your customers have a lot of data, even if you set all the data models to sync hourly the syncing will be automatically paused and restarted based on the the platforms rate limits so you may not get real time data of the data models you care about. Have a high sync frequency may also disrupt writing data to the platform since those APIs also consume the API quota of the underlying platform.
 
 </Note>
 
@@ -47,19 +52,19 @@ Here are some important terms:
    2. **Weekly**: Based on the interval, the data model will be synced in Weekly Intervals.
    3. **Monthly**: Based on the interval, the data model will be synced in Monthly Intervals.
 
-<Note>If you need to sync data more frequently than daily, please contact us</Note>
+<Note>If you need to sync data more frequently than daily, please reach out to us via chat or email us at contactus@rootfi.in</Note>
 
 For example: when the **Accounts Data Model**, has been set with an **Interval of 2** and **Sync Frequency of Daily**, the data will be automatically synced every two days.
 
 ## Manual Sync
 
-### Dashboard
+### Via the Dashboard
 
-You can trigger an **auto sync** of the data for your customer from the dashboard by clicking the Refresh Button on the top right of the company page. All the data models that are enabled will be synced.
+You can trigger an **manual sync** of the data for your customer from the dashboard by clicking the Refresh Button on the top right of the company page. All the data models that are enabled will be synced.
 
 ![](/images/81af569-image.png)
 
-### API
+### Via API
 
 You can manually trigger a sync from your application through our [Sync API](/api-reference/sync/sync-data). Our sync API offers more control over when and how you want to sync the data for each company.
 
