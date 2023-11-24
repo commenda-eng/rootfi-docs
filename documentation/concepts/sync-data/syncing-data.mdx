@@ -4,10 +4,19 @@ description: "Learn how RootFi keeps your customers data up-to date"
 icon: ""
 ---
 
-Depending on your needs, data can synced be in two modes:
+Depending on your needs, data can synced be in three modes:
 
 1. **Incremental Sync (default)** \- Only syncs the data that has been changed since the last sync.
-2. **Full Sync** \- Syncs the full data from the underlying platform. You should trigger a full sync only when you want to remove all the data that has been deleted from the platform.
+2. **Full Sync (via API)** \- Syncs the full data from the underlying platform. You should trigger a full sync only when you want to remove all the data that has been deleted from the platform.
+3. **Sync from a specific date (via API)** \- Syncs the data from a specific date. This is useful when your customers have vast amounts of data and you only want to sync particular data models from a specific date.
+
+<Warning>
+
+**Sync only the data you need**
+
+We suggest performing a sync only for Data Models you need, to not exhaust the underlying platform's rate limits, save sync time, and limit exposure of sensitive data .
+
+</Warning>
 
 We offer two ways to sync data:
 
@@ -60,7 +69,7 @@ For example: when the **Accounts Data Model**, has been set with an **Interval o
 
 ### Via the Dashboard
 
-You can trigger an **manual sync** of the data for your customer from the dashboard by clicking the Refresh Button on the top right of the company page. All the data models that are enabled will be synced.
+You can trigger an **manual incremental sync** of the data for your customer from the dashboard by clicking the Refresh Button on the top right of the company page. All the data models that are enabled will be synced.
 
 ![](/images/81af569-image.png)
 
@@ -68,13 +77,18 @@ You can trigger an **manual sync** of the data for your customer from the dashbo
 
 You can manually trigger a sync from your application through our [Sync API](/api-reference/sync/sync-data). Our sync API offers more control over when and how you want to sync the data for each company.
 
-You can pass `full_sync: true` to toggle a full sync
+By default, the sync is an incremental sync. You can pass `full_sync: true` to toggle a full sync. This will sync all the data from the underlying platform.
 You can also choose what Data Models you want to sync by passing a list of Data Models in the `data_models_to_sync` parameter.
+
+Furthermore, if you only want to sync data from a specific date, you can pass the `sync_from` parameter with the date from which you want to sync from for each Data Model in the `data_models_to_sync` parameter.
+Eg: `data_models_to_sync: [{data_model: "INVOICES", sync_from: "2023-01-01"}]`
 
 <Warning>
 
-**Sync only the data you need**
+**Syncing from a specific date**
 
-We suggest performing a sync only for Data Models you need, to not exhaust the underlying platform's rate limits, save sync time, and limit exposure of sensitive data .
+Certain base data models like [Accounts](/api-reference/accounts/overview) and [Contacts](/api-reference/contacts/overview) should always be synced in their entirety. This is
+because the data in these data models are often linked to other data models like [Invoices](/api-reference/invoices/overview) and [Bills](/api-reference/bills/overview) and
+syncing from a specific date may cause data inconsistencies.
 
 </Warning>
