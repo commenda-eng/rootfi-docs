@@ -223,6 +223,10 @@
               "pages": ["api-reference/company-info/overview", "api-reference/company-info/get-all-company-info"]
             },
             {
+              "group": "Currencies",
+              "pages": ["api-reference/currencies/overview", "api-reference/currencies/get-all-currencies"]
+            },
+            {
               "group": "Documents",
               "pages": ["api-reference/documents/overview", "api-reference/documents/get-all-documents", "api-reference/documents/create-documents"]
             },
