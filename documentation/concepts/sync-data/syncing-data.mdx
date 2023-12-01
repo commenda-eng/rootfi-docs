@@ -4,7 +4,19 @@ description: "Learn how RootFi keeps your customers data up-to date"
 icon: ""
 ---
 
-Depending on your needs, data can synced be in three modes:
+We offer two ways to sync data:
+
+1. **Auto Sync**: Sync data based on specific frequencies decided by you and will always be incremental.
+2. **Manual Sync**: Manually trigger a data sync. Can be incremental, full, or synced from a specific date, based on your needs.
+
+|            | **Auto**  | **Manual** |
+|------------|:---------:|:----------:|
+| **Incremental** |    ✅    |     ✅       |
+| **Full**        |           |    ✅    |
+| **Sync from X Date** |           |    ✅    |
+
+
+Depending on your needs, data can manually synced in three modes:
 
 1. **Incremental Sync (default)** \- Only syncs the data that has been changed since the last sync.
 2. **Full Sync (via API)** \- Syncs the full data from the underlying platform. You should trigger a full sync only when you want to remove all the data that has been deleted from the platform.
@@ -17,11 +29,6 @@ Depending on your needs, data can synced be in three modes:
 We suggest performing a sync only for Data Models you need, to not exhaust the underlying platform's rate limits, save sync time, and limit exposure of sensitive data .
 
 </Warning>
-
-We offer two ways to sync data:
-
-1. **Auto Sync**: Sync data based on specific frequencies decided by you and will be incremental.
-2. **Manual Sync**: Manually trigger a data sync. Can be incremental or full syncs, based on your needs.
 
 ## Auto Sync
 
