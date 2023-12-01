@@ -163,7 +163,11 @@
         },
         {
           "group": "Sync",
-          "pages": ["api-reference/sync/sync-data"]
+          "pages": ["api-reference/sync/sync-data", "api-reference/sync/get-all-sync", "api-reference/sync/get-all-sync-by-id"]
+        },
+        {
+          "group": "Jobs",
+          "pages": ["api-reference/jobs/get-job"]
         },
         {
           "group": "Webhooks",

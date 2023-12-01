@@ -49,7 +49,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "RootFi Test " } }'
+              value: '{ "name": { "eq": "Rootfi Test " } }'
       responses:
         "200":
           description: ""
@@ -71,7 +71,7 @@ paths:
                           platform_id: "1234567890123456789"
                           currency_id: "3770712000000000099"
                           parent_account_id: null
-                          nominal_code: RootFi 01
+                          nominal_code: Rootfi 01
                           name: Test Account
                           description: Test Description
                           sub_category: long_term_liability
@@ -155,8 +155,8 @@ paths:
                 value:
                   company_id: 1
                   data:
-                    - name: RootFi Test Account
-                      description: RootFi Test Account
+                    - name: Rootfi Test Account
+                      description: Rootfi Test Account
                       nominal_code: "123456"
                       sub_category: Test
                       currency_id: "123456"
@@ -253,7 +253,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "RootFi Test " } }'
+              value: '{ "name": { "eq": "Rootfi Test " } }'
       responses:
         "200":
           description: ""
@@ -276,7 +276,7 @@ paths:
                           platform_id: "123456"
                           currency_id: "3770712000000000099"
                           institution_name: Bank Central Asia
-                          account_name: RootFi Test
+                          account_name: Rootfi Test
                           account_number: "1234567890"
                           category: DEPOSIT
                           balance: 55000
@@ -329,7 +329,7 @@ paths:
                             balance: 123456
                             updated_at: "2021-09-28T15:00:00.000Z"
                             raw_data:
-                              nominal_code: RootFi 01
+                              nominal_code: Rootfi 01
                               name: Test Account
                               description: Test Description
                               category: LIABILITY
@@ -354,7 +354,7 @@ paths:
                   company_id: 1
                   data:
                     - institution_name: Bank Central Asia
-                      account_name: RootFi Test
+                      account_name: Rootfi Test
                       category: DEPOSIT
                       account_number: "1234567890"
                       balance: 1000000
@@ -405,7 +405,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "RootFi Test " } }'
+              value: '{ "name": { "eq": "Rootfi Test " } }'
       responses:
         "200":
           description: ""
@@ -600,7 +600,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "RootFi Test " } }'
+              value: '{ "name": { "eq": "Rootfi Test " } }'
       responses:
         "200":
           description: ""
@@ -704,7 +704,7 @@ paths:
                             updated_at: "2023-10-31T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
-                              nominal_code: RootFi 01
+                              nominal_code: Rootfi 01
                               name: Test Account
                               description: Test Description
                               category: LIABILITY
@@ -788,7 +788,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "RootFi Test " } }'
+              value: '{ "name": { "eq": "Rootfi Test " } }'
       responses:
         "200":
           description: ""
@@ -903,7 +903,7 @@ paths:
                             updated_at: "2023-11-01T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
-                              nominal_code: RootFi 01
+                              nominal_code: Rootfi 01
                               name: Test Account
                               description: Test Description
                               category: LIABILITY
@@ -980,7 +980,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "RootFi Test " } }'
+              value: '{ "name": { "eq": "Rootfi Test " } }'
       responses:
         "200":
           description: ""
@@ -1127,7 +1127,7 @@ paths:
                             updated_at: "2023-11-01T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
-                              nominal_code: RootFi 01
+                              nominal_code: Rootfi 01
                               name: Test Account
                               description: Test Description
                               category: LIABILITY
@@ -1255,7 +1255,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "RootFi Test " } }'
+              value: '{ "name": { "eq": "Rootfi Test " } }'
       responses:
         "200":
           description: ""
@@ -1276,8 +1276,8 @@ paths:
                           rootfi_integration_type: ZOHO_BOOKS
                           rootfi_created_at: "2023-10-25T13:39:29.650Z"
                           platform_id: 8635772_SB1
-                          name: RootFi Technologies Pvt Ltd
-                          legal_name: RootFi Technologies Pvt Ltd
+                          name: Rootfi Technologies Pvt Ltd
+                          legal_name: Rootfi Technologies Pvt Ltd
                           tax_number: null
                           registration_number: null
                           base_currency: GBP
@@ -1335,7 +1335,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "RootFi Test " } }'
+              value: '{ "name": { "eq": "Rootfi Test " } }'
       responses:
         "200":
           description: ""
@@ -1464,8 +1464,8 @@ paths:
                 value:
                   company_id: 1
                   data:
-                    - name: RootFi Test
-                      contact_name: RootFi Test
+                    - name: Rootfi Test
+                      contact_name: Rootfi Test
                       contact_type: CUSTOMER
                       currency_id: GBP
                       tax_number: "1234567890"
@@ -1538,13 +1538,92 @@ paths:
                 value:
                   company_id: 1
                   data:
-                    - name: RootFi Test
-                      contact_name: RootFi Test
+                    - name: Rootfi Test
+                      contact_name: Rootfi Test
                       contact_type: CUSTOMER
                       currency_id: GBP
                       tax_number: "1234567890"
                       registration_number: "1234567890"
                       email: ""
+  /read/currencies:
+    get:
+      description: Retrieve currencies from the database based on the ID
+      operationId: accounting_currencies_currencies_list
+      tags:
+        - AccountingCurrenciesCurrencies
+      parameters:
+        - name: take
+          in: query
+          description: The number of records to return.
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 10
+        - name: skip
+          in: query
+          description: The number of records to skip.
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 0
+        - name: orderBy
+          in: query
+          description: The field to order by.
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: '{ "rootfi_created_at": "asc" }'
+        - name: filter
+          in: query
+          description: The filter to apply.
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: '{ "rootfi_company_id": { "eq": "700" } }'
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/accountingcurrenciesgetCurrenciesResponse"
+              examples:
+                Example1:
+                  value:
+                    data:
+                      data:
+                        - rootfi_id: 15734
+                          rootfi_company_id: 1217
+                          rootfi_organisation_id: 514
+                          rootfi_integration_type: ZOHO_BOOKS
+                          rootfi_updated_at: "2023-10-21T13:10:20.170Z"
+                          rootfi_created_at: "2023-09-21T06:02:09.108Z"
+                          platform_id: "1310326000000000076"
+                          name: South African Rand
+                          code: ZAR
+                          symbol: R
+                          is_base_currency: false
+                          exchange_rate: 0
+                          updated_at: "2023-01-17T00:00:00.000Z"
+                          raw_data: {}
+                      total_count: 1
+                    request_timestamp: "2023-10-27T05:05:28.522Z"
+                    response_timestamp: "2023-10-27T05:05:28.522Z"
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b"
+      summary: Get Currencies
+      security: *ref_0
   /read/documents:
     get:
       description: Retrieve Documents from the database based on the ID
@@ -1591,7 +1670,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "RootFi Test " } }'
+              value: '{ "name": { "eq": "Rootfi Test " } }'
       responses:
         "200":
           description: ""
@@ -1665,7 +1744,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "RootFi Test " } }'
+              value: '{ "name": { "eq": "Rootfi Test " } }'
       responses:
         "200":
           description: ""
@@ -1780,7 +1859,7 @@ paths:
                             updated_at: "2023-11-01T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
-                              nominal_code: RootFi 01
+                              nominal_code: Rootfi 01
                               name: Test Account
                               description: Test Description
                               category: LIABILITY
@@ -1909,7 +1988,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "RootFi Test " } }'
+              value: '{ "name": { "eq": "Rootfi Test " } }'
       responses:
         "200":
           description: ""
@@ -2015,7 +2094,7 @@ paths:
                             updated_at: "2023-11-01T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
-                              nominal_code: RootFi 01
+                              nominal_code: Rootfi 01
                               name: Test Account
                               description: Test Description
                               category: LIABILITY
@@ -2099,7 +2178,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "RootFi Test " } }'
+              value: '{ "name": { "eq": "Rootfi Test " } }'
       responses:
         "200":
           description: ""
@@ -2214,7 +2293,7 @@ paths:
                             updated_at: "2023-10-27T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
-                              nominal_code: RootFi 01
+                              nominal_code: Rootfi 01
                               name: Test Account
                               description: Test Description
                               category: LIABILITY
@@ -2291,7 +2370,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "RootFi Test " } }'
+              value: '{ "name": { "eq": "Rootfi Test " } }'
       responses:
         "200":
           description: ""
@@ -2438,7 +2517,7 @@ paths:
                             status: DRAFT
                             raw_data:
                               platform_id: "123456"
-                              nominal_code: RootFi 01
+                              nominal_code: Rootfi 01
                               name: Test Account
                               description: Test Description
                               category: LIABILITY
@@ -2606,7 +2685,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "RootFi Test " } }'
+              value: '{ "name": { "eq": "Rootfi Test " } }'
       responses:
         "200":
           description: ""
@@ -2691,7 +2770,7 @@ paths:
                             updated_at: "2023-11-01T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
-                              nominal_code: RootFi 01
+                              nominal_code: Rootfi 01
                               name: Test Account
                               description: Test Description
                               category: LIABILITY
@@ -2714,8 +2793,8 @@ paths:
                 value:
                   company_id: 1
                   data:
-                    - name: RootFi Test Item
-                      description: RootFi Test Item
+                    - name: Rootfi Test Item
+                      description: Rootfi Test Item
                       type: INVENTORY
                       code: "1234567890"
                       quantity_on_hand: 0
@@ -2778,7 +2857,7 @@ paths:
                             updated_at: "2023-11-01T00:00:00.000Z"
                             raw_data:
                               platform_id: "123456"
-                              nominal_code: RootFi 01
+                              nominal_code: Rootfi 01
                               name: Test Account
                               description: Test Description
                               category: LIABILITY
@@ -2801,8 +2880,8 @@ paths:
                 value:
                   company_id: 1
                   data:
-                    - name: RootFi Test Item
-                      description: RootFi Test Item
+                    - name: Rootfi Test Item
+                      description: Rootfi Test Item
                       type: INVENTORY
                       code: "1234567890"
                       quantity_on_hand: 0
@@ -2858,7 +2937,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "RootFi Test " } }'
+              value: '{ "name": { "eq": "Rootfi Test " } }'
       responses:
         "200":
           description: ""
@@ -3042,7 +3121,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "RootFi Test " } }'
+              value: '{ "name": { "eq": "Rootfi Test " } }'
       responses:
         "200":
           description: ""
@@ -3251,7 +3330,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "RootFi Test " } }'
+              value: '{ "name": { "eq": "Rootfi Test " } }'
       responses:
         "200":
           description: ""
@@ -3459,7 +3538,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "RootFi Test " } }'
+              value: '{ "name": { "eq": "Rootfi Test " } }'
       responses:
         "200":
           description: ""
@@ -3562,13 +3641,13 @@ paths:
                 value:
                   company_id: 1
                   data:
-                    - name: RootFi Test Tax Rate
+                    - name: Rootfi Test Tax Rate
                       code: "1234567890"
                       effective_tax_rate: 10
                       total_tax_rate: 10
                       tax_type: VAT
                       components:
-                        - name: RootFi Test Tax Rate Component
+                        - name: Rootfi Test Tax Rate Component
                           is_compound: false
                           rate: 10
                           tax_agency: igst
@@ -3647,13 +3726,13 @@ paths:
                 value:
                   company_id: 1
                   data:
-                    - name: RootFi Test Tax Rate
+                    - name: Rootfi Test Tax Rate
                       code: "1234567890"
                       effective_tax_rate: 10
                       total_tax_rate: 10
                       tax_type: VAT
                       components:
-                        - name: RootFi Test Tax Rate Component
+                        - name: Rootfi Test Tax Rate Component
                           is_compound: false
                           rate: 10
                           tax_agency: igst
@@ -3703,7 +3782,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: '{ "name": { "eq": "RootFi Test " } }'
+              value: '{ "name": { "eq": "Rootfi Test " } }'
       responses:
         "200":
           description: ""
@@ -4234,7 +4313,7 @@ paths:
                           rootfi_updated_at: "2021-01-01T00:00:00Z"
                           rootfi_company_id: 1234
                           rootfi_organisation_id: 12
-                          name: RootFi Test Company
+                          name: Rootfi Test Company
                           sync_enabled: true
                           Connections: []
                     request_timestamp: "2021-01-01T00:00:00Z"
@@ -4330,7 +4409,7 @@ paths:
                         rootfi_updated_at: "2021-01-01T00:00:00Z"
                         rootfi_company_id: 1234
                         rootfi_organisation_id: 12
-                        name: RootFi Test Company
+                        name: Rootfi Test Company
                         sync_enabled: true
                         Connections:
                           - rootfi_id: 1234_ZOHO_BOOKS
@@ -4386,6 +4465,94 @@ paths:
                     response_timestamp: "2021-01-01T00:00:00Z"
                     request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Delete an invite link
+      security: *ref_0
+  /jobs/{job_id}:
+    get:
+      description: Retrieve one Job from the database based on the ID.
+      operationId: core_job_retrieveByID
+      tags:
+        - CoreJob
+      parameters:
+        - name: job_id
+          in: path
+          description: The ID of the Job to retrieve.
+          required: true
+          schema:
+            type: string
+          examples:
+            Example1:
+              value: MZl2KWQ0mwolWl6
+        - name: limit
+          in: query
+          description: The number of objects you want to retrieve
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 10
+        - name: offset
+          in: query
+          description: The index from where you want to start retrieving objects
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 0
+        - name: job_type
+          in: query
+          description: The type of job to retrieve.
+          required: false
+          schema:
+            $ref: "#/components/schemas/JobType"
+            nullable: true
+          examples:
+            Example1:
+              value: PULL
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/coreGetOneJobResponse"
+              examples:
+                Example1:
+                  value:
+                    data:
+                      rootfi_id: 123456
+                      rootfi_company_id: 123456
+                      rootfi_organisation_id: 1
+                      rootfi_integration_type: ZOHO_BOOKS
+                      rootfi_updated_at: "2021-09-28T15:00:00.000Z"
+                      rootfi_created_at: "2021-09-28T15:00:00.000Z"
+                      start_time: "2021-09-28T15:00:00.000Z"
+                      end_time: "2021-09-28T15:00:00.000Z"
+                      error_code: null
+                      integration_type: ZOHO_BOOKS
+                      status: SUCCESS
+                      error: null
+                      priority: null
+                      rate_limit_sleep_time: null
+                      variables:
+                        page: 2
+                        skip: 100
+                        per_page: 100
+                      data_model: SALES_ORDERS
+                      config_id: XERO_SALES_ORDERS_READ_0
+                      response_length: 100
+                      response_size: 100
+                      job_type: PULL
+                      config_mode: READ
+                      sync_id: H1HJT1UYdj0qncJ
+                      parent_job_id: null
+                    request_timestamp: "2021-09-28T15:00:00.000Z"
+                    response_timestamp: "2021-09-28T15:00:00.000Z"
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
+      summary: Get One Job
       security: *ref_0
   /passthrough:
     post:
@@ -4448,6 +4615,102 @@ paths:
                     data: {}
                     params: {}
   /sync:
+    get:
+      description: >-
+        Retrieve all Syncs from the database based on the query parameters
+        provided (limit, offset,Job type, company ID).
+      operationId: core_sync_list
+      tags:
+        - CoreSync
+      parameters:
+        - name: limit
+          in: query
+          description: The number of objects you want to retrieve
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 10
+        - name: offset
+          in: query
+          description: The index from where you want to start retrieving objects
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 0
+        - name: company_id
+          in: query
+          description: The ID of the company to retrieve.
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 1234
+        - name: job_type
+          in: query
+          description: The type of job to retrieve.
+          required: false
+          schema:
+            $ref: "#/components/schemas/JobType"
+            nullable: true
+          examples:
+            Example1:
+              value: PULL
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/coreGetAllSyncResponse"
+              examples:
+                Example1:
+                  value:
+                    data:
+                      data:
+                        - rootfi_id: 123456
+                          rootfi_company_id: 123456
+                          rootfi_organisation_id: 1
+                          rootfi_integration_type: ZOHO_BOOKS
+                          rootfi_updated_at: "2021-09-28T15:00:00.000Z"
+                          rootfi_created_at: "2021-09-28T15:00:00.000Z"
+                          start_time: "2021-09-28T15:00:00.000Z"
+                          end_time: "2021-09-28T15:00:00.000Z"
+                          sync_from: null
+                          integration_type: ZOHO_BOOKS
+                          full_sync: true
+                          sync_type: AUTO_SYNC
+                          config_mode: READ
+                          success_count: 20
+                          failed_count: 0
+                          running_count: 0
+                          created_count: 0
+                          data_models:
+                            - sync_id: H1HJT1UYdj0qncJ
+                              data_model: ACCOUNTS
+                              total_count: 1
+                              success_count: 1
+                              failed_count: 0
+                              running_count: 0
+                              pending_count: 0
+                              start_time: "2023-12-01T08:17:29+00:00"
+                              end_time: "2023-12-01T08:17:43.047+00:00"
+                              status: SUCCESS
+                      total_count: 1
+                      sync_status: IDLE
+                      connection_status: HEALTHY
+                    request_timestamp: "2021-09-28T15:00:00.000Z"
+                    response_timestamp: "2021-09-28T15:00:00.000Z"
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
+      summary: Get All Syncs
+      security: *ref_0
     post:
       description: Sync a company to the platform.
       operationId: core_sync_create
@@ -4485,6 +4748,91 @@ paths:
                   full_sync: false
                   data_models_to_sync:
                     - ACCOUNTS
+  /sync/{sync_id}:
+    get:
+      description: Retrieve one Sync from the database based on the ID.
+      operationId: core_sync_retrieveByID
+      tags:
+        - CoreSync
+      parameters:
+        - name: sync_id
+          in: path
+          description: The ID of the Sync to retrieve.
+          required: true
+          schema:
+            type: string
+          examples:
+            Example1:
+              value: H1HJT1UYdj0qncJ
+        - name: limit
+          in: query
+          description: The number of objects you want to retrieve
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 10
+        - name: offset
+          in: query
+          description: The index from where you want to start retrieving objects
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 0
+        - name: job_type
+          in: query
+          description: The type of job to retrieve.
+          required: false
+          schema:
+            $ref: "#/components/schemas/JobType"
+            nullable: true
+          examples:
+            Example1:
+              value: PULL
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/coreGetOneSyncResponse"
+              examples:
+                Example1:
+                  value:
+                    data:
+                      rootfi_id: 123456
+                      rootfi_company_id: 123456
+                      rootfi_organisation_id: 1
+                      rootfi_integration_type: ZOHO_BOOKS
+                      rootfi_updated_at: "2021-09-28T15:00:00.000Z"
+                      rootfi_created_at: "2021-09-28T15:00:00.000Z"
+                      start_time: "2021-09-28T15:00:00.000Z"
+                      end_time: "2021-09-28T15:00:00.000Z"
+                      sync_from: null
+                      integration_type: ZOHO_BOOKS
+                      full_sync: true
+                      sync_type: AUTO_SYNC
+                      config_mode: READ
+                      jobs:
+                        - rootfi_id: 9c3GuWp0KVomqrS
+                          rootfi_created_at: "2023-12-01T08:17:53+00:00"
+                          start_time: "2023-12-01T08:17:53+00:00"
+                          end_time: "2023-12-01T08:17:55.36+00:00"
+                          error_code: null
+                          status: SUCCESS
+                          data_model: PURCHASE_ORDERS
+                          response_length: 0
+                          response_size: 0
+                    request_timestamp: "2021-09-28T15:00:00.000Z"
+                    response_timestamp: "2021-09-28T15:00:00.000Z"
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
+      summary: Get One Sync
+      security: *ref_0
   /webhooks:
     get:
       description: Retrieve all webhooks from the database.
@@ -4505,7 +4853,7 @@ paths:
                     data:
                       - id: abcdefghijklmnopq
                         headers:
-                          api_key: RootFi API Key
+                          api_key: Rootfi API Key
                         operations:
                           - CREATE
                         data_models:
@@ -4540,7 +4888,7 @@ paths:
                     data:
                       id: abcdefghijklmnopq
                       headers:
-                        api_key: RootFi API Key
+                        api_key: Rootfi API Key
                       operations:
                         - CREATE
                       data_models:
@@ -4604,7 +4952,7 @@ paths:
                     data:
                       id: abcdefghijklmnopq
                       headers:
-                        api_key: RootFi API Key
+                        api_key: Rootfi API Key
                       operations:
                         - CREATE
                       data_models:
@@ -6545,6 +6893,79 @@ components:
       properties: {}
       allOf:
         - $ref: "#/components/schemas/accountingcontactsFinalUpdateContactsResponse"
+        - $ref: "#/components/schemas/timestamp"
+    accountingcurrenciesCurrencyFields:
+      title: accountingcurrenciesCurrencyFields
+      type: object
+      properties:
+        platform_id:
+          type: string
+          description: The accounting platforms ID for the currency
+        name:
+          type: string
+          description: The name of the currency
+        code:
+          type: string
+          description: The currency code
+        symbol:
+          type: string
+          description: >-
+            The symbol that represents the currency. Not applicable for many
+            currencies
+        is_base_currency:
+          type: boolean
+          description: Whether the currency is the base currency for the company
+        exchange_rate:
+          type: number
+          format: double
+          description: The exchange rate for the currency
+        updated_at:
+          type: string
+          format: date-time
+          description: The last ISO 8601 timestamp that the data was updated at
+        raw_data:
+          type: object
+          additionalProperties: true
+          description: The raw data of the currency
+      required:
+        - platform_id
+        - name
+        - code
+        - symbol
+        - is_base_currency
+        - exchange_rate
+        - updated_at
+        - raw_data
+      allOf:
+        - $ref: "#/components/schemas/RootfiFields"
+    accountingcurrenciesgetCurrenciesResponseData:
+      title: accountingcurrenciesgetCurrenciesResponseData
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/accountingcurrenciesCurrencyFields"
+        total_count:
+          type: integer
+          description: Total Count of response object
+      required:
+        - data
+        - total_count
+    accountingcurrenciesFinalCurrencies:
+      title: accountingcurrenciesFinalCurrencies
+      type: object
+      properties:
+        data:
+          $ref: "#/components/schemas/accountingcurrenciesgetCurrenciesResponseData"
+      required:
+        - data
+    accountingcurrenciesgetCurrenciesResponse:
+      title: accountingcurrenciesgetCurrenciesResponse
+      type: object
+      properties: {}
+      allOf:
+        - $ref: "#/components/schemas/accountingcurrenciesFinalCurrencies"
         - $ref: "#/components/schemas/timestamp"
     accountingdocumentsDocumentAllresponseCommonFields:
       title: accountingdocumentsDocumentAllresponseCommonFields
@@ -8828,7 +9249,7 @@ components:
       properties:
         platform_id:
           type: string
-          description: The accounting platforms ID for the tax rate
+          description: The accounting platforms ID for the tracking category
         parent_id:
           type: string
           description: The identifier for this item’s parent
@@ -8890,6 +9311,318 @@ components:
       allOf:
         - $ref: >-
             #/components/schemas/accountingtracking_categoriesFinalTrackingCategories
+        - $ref: "#/components/schemas/timestamp"
+    corejobResponse:
+      title: corejobResponse
+      type: object
+      properties:
+        start_time:
+          type: string
+          format: date-time
+          nullable: true
+          description: The time the job started
+        end_time:
+          type: string
+          format: date-time
+          nullable: true
+          description: The time the job ended
+        error_code:
+          type: string
+          nullable: true
+          description: The error code of the job
+        integration_type:
+          $ref: "#/components/schemas/IntegrationType"
+          nullable: true
+          description: The integration type of the job
+        status:
+          $ref: "#/components/schemas/Status"
+          nullable: true
+          description: The status of the job
+        error:
+          type: string
+          nullable: true
+          description: The error of the job
+        priority:
+          type: string
+          nullable: true
+          description: The priority of the job
+        rate_limit_sleep_time:
+          type: string
+          nullable: true
+          description: The rate limit sleep time of the job
+        variables:
+          type: object
+          additionalProperties: true
+          nullable: true
+          description: The variables of the job
+        data_model:
+          $ref: "#/components/schemas/DataModels"
+          nullable: true
+          description: The data model of the job
+        config_id:
+          type: string
+          nullable: true
+          description: The config ID of the job
+        response_length:
+          type: integer
+          nullable: true
+          description: The response length of the job
+        response_size:
+          type: integer
+          nullable: true
+          description: The response size of the job
+        job_type:
+          $ref: "#/components/schemas/JobType"
+          nullable: true
+          description: The job type of the job
+        config_mode:
+          type: string
+          nullable: true
+          description: The config mode of the job
+        sync_id:
+          type: string
+          nullable: true
+          description: The sync ID of the job
+        parent_job_id:
+          type: string
+          nullable: true
+          description: The parent job ID of the job
+      allOf:
+        - $ref: "#/components/schemas/RootfiFields"
+    coreOneJobResponse:
+      title: coreOneJobResponse
+      type: object
+      properties:
+        data:
+          $ref: "#/components/schemas/corejobResponse"
+          description: The data returned from the request
+      required:
+        - data
+    coreGetOneJobResponse:
+      title: coreGetOneJobResponse
+      type: object
+      properties: {}
+      allOf:
+        - $ref: "#/components/schemas/coreOneJobResponse"
+        - $ref: "#/components/schemas/timestamp"
+    coreSyncALlResponsesCommonFieldsHelper:
+      title: coreSyncALlResponsesCommonFieldsHelper
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/coreSyncALlResponsesCommonFields"
+        total_count:
+          type: integer
+          nullable: true
+          description: The total number of records
+        sync_status:
+          type: string
+          nullable: true
+          description: The status of the sync
+        connection_status:
+          type: string
+          nullable: true
+          description: The status of the connection
+      required:
+        - data
+    coreFinalGetSyncResponse:
+      title: coreFinalGetSyncResponse
+      type: object
+      properties:
+        data:
+          $ref: "#/components/schemas/coreSyncALlResponsesCommonFieldsHelper"
+          description: The data returned from the request
+      required:
+        - data
+    coreSyncActualCommonTypes:
+      title: coreSyncActualCommonTypes
+      type: object
+      properties:
+        start_time:
+          type: string
+          format: date-time
+          nullable: true
+          description: The time the sync started
+        end_time:
+          type: string
+          format: date-time
+          nullable: true
+          description: The time the sync ended
+        sync_from:
+          type: string
+          nullable: true
+          description: The time the sync started
+        integration_type:
+          $ref: "#/components/schemas/IntegrationType"
+          nullable: true
+          description: The time the sync ended
+        full_sync:
+          type: boolean
+          nullable: true
+          description: The time the sync started
+        sync_type:
+          type: string
+          nullable: true
+          description: The time the sync ended
+        config_mode:
+          type: string
+          nullable: true
+          description: The time the sync started
+    coreSyncALlResponsesCommonFields:
+      title: coreSyncALlResponsesCommonFields
+      type: object
+      properties:
+        success_count:
+          type: integer
+          nullable: true
+          description: The time the sync ended
+        failed_count:
+          type: integer
+          nullable: true
+          description: The time the sync started
+        running_count:
+          type: integer
+          nullable: true
+          description: The time the sync ended
+        created_count:
+          type: integer
+          nullable: true
+          description: The time the sync started
+        data_models:
+          type: array
+          items:
+            $ref: "#/components/schemas/coreSyncDataModel"
+          nullable: true
+          description: The time the sync ended
+      allOf:
+        - $ref: "#/components/schemas/RootfiFields"
+        - $ref: "#/components/schemas/coreSyncActualCommonTypes"
+    coreSyncDataModel:
+      title: coreSyncDataModel
+      type: object
+      properties:
+        sync_id:
+          type: string
+          nullable: true
+          description: The ID of the sync
+        data_model:
+          $ref: "#/components/schemas/DataModels"
+          nullable: true
+          description: The data model
+        total_count:
+          type: integer
+          nullable: true
+          description: The total number of records
+        success_count:
+          type: integer
+          nullable: true
+          description: The number of successful records
+        failed_count:
+          type: integer
+          nullable: true
+          description: The number of failed records
+        running_count:
+          type: integer
+          nullable: true
+          description: The number of running records
+        pending_count:
+          type: integer
+          nullable: true
+          description: The number of pending records
+        start_time:
+          type: string
+          format: date-time
+          nullable: true
+          description: The time the sync started
+        end_time:
+          type: string
+          format: date-time
+          nullable: true
+          description: The time the sync ended
+        status:
+          $ref: "#/components/schemas/Status"
+          nullable: true
+          description: The status of the sync
+    coreGetAllSyncResponse:
+      title: coreGetAllSyncResponse
+      type: object
+      properties: {}
+      allOf:
+        - $ref: "#/components/schemas/coreFinalGetSyncResponse"
+        - $ref: "#/components/schemas/timestamp"
+    coreSyncOneALlResponsesCommonFields:
+      title: coreSyncOneALlResponsesCommonFields
+      type: object
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: "#/components/schemas/coreSyncOneJobObject"
+          nullable: true
+          description: The jobs
+      allOf:
+        - $ref: "#/components/schemas/RootfiFields"
+        - $ref: "#/components/schemas/coreSyncActualCommonTypes"
+    coreSyncOneJobObject:
+      title: coreSyncOneJobObject
+      type: object
+      properties:
+        rootfi_id:
+          type: string
+          nullable: true
+          description: The ID of the sync
+        rootfi_created_at:
+          type: string
+          format: date-time
+          nullable: true
+          description: The time the sync started
+        start_time:
+          type: string
+          format: date-time
+          nullable: true
+          description: The time the sync started
+        end_time:
+          type: string
+          format: date-time
+          nullable: true
+          description: The time the sync ended
+        error_code:
+          type: string
+          nullable: true
+          description: The error code
+        status:
+          type: string
+          nullable: true
+          description: The status of the sync
+        data_model:
+          type: string
+          nullable: true
+          description: The data model
+        response_length:
+          type: integer
+          nullable: true
+          description: The response length
+        response_size:
+          type: integer
+          nullable: true
+          description: The response size
+    coreFinalGetOneSyncResponse:
+      title: coreFinalGetOneSyncResponse
+      type: object
+      properties:
+        data:
+          $ref: "#/components/schemas/coreSyncOneALlResponsesCommonFields"
+          description: The data returned from the request
+      required:
+        - data
+    coreGetOneSyncResponse:
+      title: coreGetOneSyncResponse
+      type: object
+      properties: {}
+      allOf:
+        - $ref: "#/components/schemas/coreFinalGetOneSyncResponse"
         - $ref: "#/components/schemas/timestamp"
     CreateInviteLinkRequest:
       title: CreateInviteLinkRequest
@@ -9786,6 +10519,123 @@ components:
         - data
       allOf:
         - $ref: "#/components/schemas/timestamp"
+    FinalSyncResponse:
+      title: FinalSyncResponse
+      type: object
+      properties:
+        start_time:
+          type: string
+          format: date-time
+          description: The start time of the sync
+        end_time:
+          type: string
+          format: date-time
+          description: The end time of the sync
+        sync_from:
+          type: string
+          format: date-time
+          description: The sync from of the sync
+        integration_type:
+          $ref: "#/components/schemas/IntegrationType"
+          description: The integration type of the sync
+        full_sync:
+          type: boolean
+          description: Whether the sync is full sync or not
+        sync_type:
+          type: string
+          nullable: true
+          description: The sync type of the sync
+        config_mode:
+          type: string
+          nullable: true
+          description: The config mode of the sync
+        success_count:
+          type: number
+          format: double
+          description: The success count of the sync
+        failed_count:
+          type: number
+          format: double
+          description: The failed count of the sync
+        running_count:
+          type: number
+          format: double
+          description: The running count of the sync
+        created_count:
+          type: number
+          format: double
+          description: The created count of the sync
+        data_models:
+          type: array
+          items:
+            $ref: "#/components/schemas/DataModelObject"
+          description: The data models of the sync
+      required:
+        - start_time
+        - end_time
+        - sync_from
+        - integration_type
+        - full_sync
+        - success_count
+        - failed_count
+        - running_count
+        - created_count
+        - data_models
+      allOf:
+        - $ref: "#/components/schemas/rootfi_fields"
+    DataModelObject:
+      title: DataModelObject
+      type: object
+      properties:
+        sync_id:
+          type: number
+          format: double
+          description: The sync id of the data model
+        data_model:
+          $ref: "#/components/schemas/DataModels"
+          description: The data model of the data model
+        total_count:
+          type: number
+          format: double
+          description: The total count of the data model
+        success_count:
+          type: number
+          format: double
+          description: The success count of the data model
+        failed_count:
+          type: number
+          format: double
+          description: The failed count of the data model
+        running_count:
+          type: number
+          format: double
+          description: The running count of the data model
+        pending_count:
+          type: number
+          format: double
+          description: The pending count of the data model
+        start_time:
+          type: string
+          format: date-time
+          description: The start time of the data model
+        end_time:
+          type: string
+          format: date-time
+          description: The end time of the data model
+        status:
+          $ref: "#/components/schemas/Status"
+          description: The status of the data model
+      required:
+        - sync_id
+        - data_model
+        - total_count
+        - success_count
+        - failed_count
+        - running_count
+        - pending_count
+        - start_time
+        - end_time
+        - status
     RootfiFields:
       title: RootfiFields
       type: object
@@ -10574,6 +11424,12 @@ components:
         - NON_INVENTORY
         - SERVICE
         - UNKNOWN
+    JobType:
+      title: JobType
+      type: string
+      enum:
+        - PULL
+        - PUSH
   securitySchemes:
     MyAuthSchemeAuth:
       type: apiKey
