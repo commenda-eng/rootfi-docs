@@ -9,12 +9,11 @@ We offer two ways to sync data:
 1. **Auto Sync**: Sync data based on specific frequencies decided by you and will be incremental.
 2. **Manual Sync**: Manually trigger a data sync. Can be incremental or full syncs, based on your needs.
 
-|            | **Auto**  | **Manual** |
-|------------|:---------:|:----------:|
-| **Incremental** |    ✅    |     ✅       |
-| **Full**        |           |    ✅    |
-| **Sync from X Date** |           |    ✅    |
-
+|                      | **Auto** | **Manual** |
+| -------------------- | :------: | :--------: |
+| **Incremental**      |    ✅    |     ✅     |
+| **Full**             |          |     ✅     |
+| **Sync from X Date** |          |     ✅     |
 
 Depending on your needs, data can synced be in three modes:
 
@@ -32,11 +31,9 @@ We suggest performing a sync only for Data Models you need, to not exhaust the u
 
 ## Auto Sync
 
-### What is Auto-Sync?
-
 The Auto Sync feature is an automation where RootFi checks for updates and incrementally syncs data for all your active connections, at a regular frequency. This ensures that the data for all your customers always up-to-date and accurate.
 
-The Auto Sync frequency is determined based on the specific type of data your application requires. Choosing an appropriate Auto Sync frequency for each data model in terms of priority is vital to ensure a smooth syncing process.
+[RootFi's Sync Config](/documentation/concepts/sync-data/sync-config) allows you to configure Sync frequency based on the specific type of data your application requires. Choosing an appropriate Auto Sync frequency for each data model in terms of priority is vital to ensure a smooth syncing process.
 
 <Note>
    **Why is setting an appropriate frequency for each data model important?**
@@ -46,24 +43,6 @@ Setting an appropriate frequency for each data model matters because of the unde
 If your customers have a lot of data, even if you set all the data models to sync hourly the syncing will be automatically paused and restarted based on the the platforms rate limits so you may not get real time data of the data models you care about. Have a high sync frequency may also disrupt writing data to the platform since those APIs also consume the API quota of the underlying platform.
 
 </Note>
-
-### How to Use Auto-Sync?
-
-Navigate to the **Sync page** on the RootFi Dashboard.
-
-![](/images/sync_page.png)
-
-Here are some important terms:
-
-1. **Data Model:** The Data Model to which auto sync configuration applies.
-2. **Frequency:** The rate at which the API checks for updates and syncs data with other systems. Options are **Daily**, **Weekly**, **Monthly**.
-   1. **Daily**: Based on the interval, the data model will be synced in Daily Intervals.
-   2. **Weekly**: Based on the interval, the data model will be synced in Weekly Intervals.
-   3. **Monthly**: Based on the interval, the data model will be synced in Monthly Intervals.
-
-<Note>If you need to sync data more frequently than daily, please reach out to us via chat or email us at contactus@rootfi.in</Note>
-
-For example: when the **Accounts Data Model**, has been set with an **Interval of 2** and **Sync Frequency of Daily**, the data will be automatically synced every two days.
 
 ## Manual Sync
 

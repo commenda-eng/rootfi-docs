@@ -1,0 +1,37 @@
+---
+title: "Sync Config"
+description: "Configure your sync settings by selecting the data, frequency and level of access from the integration you want to sync with RootFi."
+icon: ""
+---
+
+Navigate to the **Sync page** on the RootFi Dashboard.
+
+![](/images/sync_page.png)
+
+Here are some important terms:
+
+1.  **Data Model:** The Data Model to which auto sync configuration applies.
+2.  **Frequency:** The rate at which the API checks for updates and syncs data with other systems. Options are **Daily**, **Weekly**, **Monthly**.
+    1. **Daily**: Based on the interval, the data model will be synced in Daily Intervals.
+    2. **Weekly**: Based on the interval, the data model will be synced in Weekly Intervals.
+    3. **Monthly**: Based on the interval, the data model will be synced in Monthly Intervals.
+
+<Note>If you need to sync data more frequently than daily, please reach out to us via chat or email us at contactus@rootfi.in</Note>
+
+3.  **Access**: The level of access to the data model. Options are **Read Only** and **Read & Write**.
+
+    1.  **Disabled**: The data model will not be synced.
+    2.  **Read**: The data model will only be allowed to be synced in Read Only mode.
+    3.  **Write**: The data model will only be allowed to be synced in Write Only mode.
+    4.  **Read & Write**: The data model will be allowed to be synced in Read & Write mode.
+
+<Info>
+Choosing the Appropriate Access level
+
+Based on your Sync Configuration, RootFi will only take the required access level from the integration. If you require a **higher level** of access after a customer has connected their integration, in **most integrations** you can ask the customer to re-authenticate their integration with RootFi. This will grant RootFi the required access level.
+
+</Info>
+
+To learn more about how configuring access levels works for each integration, please refer to the respective integration documentation.
+
+To understand the importance of access levels, please refer to the [Scopes](/documentation/concepts/scopes) section.

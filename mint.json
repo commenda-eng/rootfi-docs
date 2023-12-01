@@ -74,7 +74,11 @@
           "group": "RootFi Connect",
           "pages": ["documentation/concepts/rootfi-connect/overview", "documentation/concepts/rootfi-connect/invite-link", "documentation/concepts/rootfi-connect/connect-sdk"]
         },
-        "documentation/concepts/sync-data/syncing-data",
+        {
+          "group": "Syncing Data",
+          "pages": ["documentation/concepts/sync-data/ways-to-sync", "documentation/concepts/sync-data/sync-config"]
+        },
+
         {
           "group": "Reading Data",
           "pages": ["documentation/concepts/read-data/rest-apis", "documentation/concepts/read-data/graphql-apis"]
@@ -93,6 +97,7 @@
         },
         "documentation/concepts/webhooks",
         "documentation/concepts/error-handling",
+        "documentation/concepts/rate-limits",
         "documentation/concepts/data-cache",
         "documentation/concepts/partner-credentials",
         "documentation/concepts/scopes"
