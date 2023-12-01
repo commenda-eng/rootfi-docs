@@ -1,10 +1,10 @@
 {
   "name": "RootFi",
   "logo": {
-    "light": "/logo/light.png",
-    "dark": "/logo/dark.png"
+    "light": "/images/logo/light.png",
+    "dark": "/images/logo/dark.png"
   },
-  "favicon": "logo/logomark_favicon_rounded.png",
+  "favicon": "/images/logo/logomark_favicon_rounded.png",
   "colors": {
     "primary": "#0E0E0E",
     "light": "#FAFAFA",
@@ -92,6 +92,7 @@
           ]
         },
         "documentation/concepts/webhooks",
+        "documentation/concepts/error-handling",
         "documentation/concepts/data-cache",
         "documentation/concepts/partner-credentials",
         "documentation/concepts/scopes"

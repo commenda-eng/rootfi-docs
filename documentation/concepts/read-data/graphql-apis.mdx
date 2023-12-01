@@ -3,7 +3,9 @@ title: "GraphQL APIs"
 description: "Use our GraphQL APIs to pull the data you need"
 icon: "connectdevelop"
 ---
+
 With RootFi you can read data using:
+
 1. [REST APIs](/documentation/concepts/read-data/rest-apis) or
 2. [GraphQL APIs](/documentation/concepts/read-data/graphql-apis)
 
@@ -60,3 +62,18 @@ Querying nested data models is also very useful when you want to retrieve data f
 
 <Note>Any data model that linked to another data model via a foreign key will have a field to retrieve the other data model</Note>
 For example, you can retrieve an invoice and all the associated payments by querying the `invoice` data model and including the `payments` field.
+
+## Example Request
+
+You can use the following curl request to make a GraphQL request to our API.
+
+Replace **\{QUERY}**, **\{VARIABLES}**, with the query and variables you make in the [GraphQL Playground](https://integrate.rootfi.dev/graphql).
+Replace **\{API_KEY}** with your API key.
+
+```bash Request
+    curl --request POST \
+    --header 'content-type: application/json' \
+    --header 'api_key: {API_KEY}' \
+    --url 'https://integrate.rootfi.dev/graphql' \
+    --data '{"query": {QUERY}, "variables": {VARIABLES}}'
+```

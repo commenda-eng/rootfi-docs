@@ -1,0 +1,53 @@
+---
+title: "Error Handling"
+description: "Learn how RootFi handles errors when syncing data and the types of errors that can occur."
+---
+
+RootFi uses a combination of error handling strategies to ensure that data is synced correctly and that the user is notified of any errors that occur.
+
+## Reading Data
+
+When reading data from an integration, RootFi will attempt to read all data from the platform. If an unexpected error occurs, RootFi will mark that datamodel as **FAILED**. You can use the [Sync Completed Webhook](webhooks#sync-completed-webhook) to be notified when a sync has completed and check the status of the datamodels.
+
+## Writing Data
+
+When writing data to an integration, RootFi will attempt to write all data to the platform. If an unexpected error occurs, RootFi will return an error response with the following format:
+
+```json
+{
+  "error": {
+    "code": "A RootFi Error Code (see error codes below)",
+    "message": "A helpful message from RootFi describing the error after trying to parse the platform_error",
+    "platform_error": "The full error message returned by the integration platform"
+  }
+}
+```
+
+<Note>
+Accuracy of Error Codes
+
+RootFi uses an LLM to attempt to map the error returned by the integration platform to a RootFi error code and a helpful error message. Error codes returned by RootFi may not be accurate.
+
+We are continuously improving our LLM to ensure that the error codes returned by RootFi are accurate.
+
+</Note>
+
+## Error Codes
+
+All RootFi Write APIs will return a 400 status code with one of the following error codes when an error occurs.
+
+| Error Code            | Error Message Format                                                     | Description                                                                          |
+| --------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| missing-params        | Missing required field: \{field_name}. A helpful error message           | Thrown when a required field is missing by the integration platform                  |
+| invalid-params        | Invalid field: \{field_name}. A helpful error message                    | Thrown when a field is invalid by the integration platform                           |
+| record-already-exists | Record already exists with given: \{field_name}. A helpful error message | Thrown when a record already exists with the given field by the integration platform |
+| operation-denied      | Operation Denied: A helpful error message                                | Thrown when the integration platform denies the operation                            |
+| unknown-error         | Unknown error: : A helpful error message                                 | Thrown when RootFi cannot map the error to a known error code                        |
+
+<Warning>
+**Internal errors**
+
+If an internal error occurs, RootFi will return a 500 status code with the an **internal-error** error code.
+If you receive this error code, please contact us at. We are monitoring our internal errors and will fix them as soon as possible.
+
+</Warning>
