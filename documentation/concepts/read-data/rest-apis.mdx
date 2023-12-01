@@ -1,21 +1,41 @@
 ---
-title: "Rest APIs"
-description: "Use our Rest APIs for quick easy access to your customers data"
+title: "Read data using REST APIs"
+description: "Use our REST APIs for quick easy access to your customers data"
 icon: "globe"
 ---
-
-We support easy to use rest apis for all our data models with the following query parameters:
-
-1. take - the number of objects you want to retrieve
-2. skip - the index from where you want to start retrieving objects
-3. orderBy - a json string you can pass to sort the data
-4. filter - a json string you can pass to filter the data
-
-Our [postman collection](/docs/rootfi-postman-collection) shows you how to use these params. Please contact us if you have any questions.
+With RootFi you can read data using:
+1. [REST APIs](/documentation/concepts/read-data/rest-apis) or
+2. [GraphQL APIs](/documentation/concepts/read-data/graphql-apis)
 
 <Note>
     **Highly recommend GraphQL**
 
-    We highly recommend you [use our GraphQL apis](/docs/graphql-apis) to read data. You have a lot more flexibility and customisability to easily make complex queries to suit your needs.
+    We highly recommend you [use our GraphQL APIs](/documentation/concepts/read-data/graphql-apis) to read data. Using GrpahQL give you a GUI to easily make complex queries to suit your needs. The GraphQL playground also makes it very easy to test your queries and see the results.
 
 </Note>
+
+We support easy to use REST APIs for all our data models with the following query parameters:
+
+1. **take** - the number of objects you want to retrieve.
+
+   <Note>We support a maximum take of 500 records. The default take is 100.</Note>
+
+2. **skip** - the index from where you want to start retrieving objects
+3. **orderBy** - a json string you can pass to sort the data. The orderBy format is the same as the orderBy variable you make when calling the [GraphQL APIs](/documentation/concepts/read-data/graphql-apis). The format is as follows:
+
+   1. **field name** - the name of the field you want to order on. Example: `current_balance`
+   2. **sort direction** - the sort direction you want to use to order the data. Values are either `asc` or `desc`. Example: `asc`
+
+   An example of a orderBy json using the Examples above would be: `{"current_balance": "asc"}`
+
+4. **filter** - a json string you can pass to filter the data. The filter format is the same as the filter variable you make when calling the [GraphQL APIs](/documentation/concepts/read-data/graphql-apis). The format is as follows:
+
+   1. **field name** - the name of the field you want to filter on. Example: `rootfi_company_id`
+   2. **operator** - the operator you want to use to filter the data Example: `eq`
+   3. **value** - the value you want to filter on. Example: `694`
+
+   An example of a filter json using the Examples above would be: `{"rootfi_company_id": {"eq": 694}}`
+
+Our [API Reference](/api-reference/accounts/get-all-accounts) shows you how to use these parameters. Please contact us if you have any questions.
+
+

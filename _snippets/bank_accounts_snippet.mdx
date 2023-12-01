@@ -1,0 +1,46 @@
+<ResponseField name="platform_id" type="string" required>
+  The accounting Platform’s id for the bank account
+</ResponseField>
+
+<ResponseField name="currency_id" type="string">
+  The Accounting Platform's unique ID for the currency
+</ResponseField>
+
+<ResponseField name="institution_name" type="string">
+  The name of the bank account
+</ResponseField>
+
+<ResponseField name="account_name" type="string">
+  Name of the bank account
+</ResponseField>
+
+<ResponseField name="account_number" type="string">
+  The bank account number
+</ResponseField>
+
+<ResponseField name="category" type="string">
+  The category of the bank account
+</ResponseField>
+
+<ResponseField name="balance" type="float">
+  Balance of the bank account
+</ResponseField>
+
+<ResponseField name="currency" type="Object">
+  The currency data associated with the bank account.
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="currency_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="updated_at" type="date" required>
+  The last ISO 8601 timestamp that the data was updated at.
+</ResponseField>
+
+<ResponseField name="raw_data" type="object">
+  The raw JSON response we get from the accounting platform for that data.
+</ResponseField>

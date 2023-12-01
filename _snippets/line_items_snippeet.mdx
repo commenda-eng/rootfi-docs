@@ -1,0 +1,57 @@
+<ResponseField name="platform_id" type="string" required>
+  Platform ID associated with this line item
+</ResponseField>
+<ResponseField name="item_id" type="string">
+  The platform ID of the item associated with this line item
+</ResponseField>
+<ResponseField name="tax_id" type="string">
+  The platform ID of the tax associated with this line item
+</ResponseField>
+<ResponseField name="account_id" type="string">
+  The platform ID of the account associated with this line item
+</ResponseField>
+<ResponseField name="line_item_type" type="enum">
+  The data model linked to the line item. Values are: `BILLS`, `INVOICES`, `INVOICE_CREDIT_NOTES`, `BILL_CREDIT_NOTES`, `EXPENSES`, `PURCHASE_ORDERS`,`SALES_ORDERS`,
+  `BANK_TRANSACTIONS`.
+</ResponseField>
+<ResponseField name="line_item_type_id" type="string">
+  The platform ID of the associated data model
+</ResponseField>
+<ResponseField name="description" type="string">
+  The description for this line item
+</ResponseField>
+<ResponseField name="quantity" type="float">
+  The quantity of the product/service for this line item
+</ResponseField>
+<ResponseField name="unit_amount" type="float">
+  Price per unit for this line item
+</ResponseField>
+<ResponseField name="sub_total" type="float">
+  The pre tax total value for this line item
+</ResponseField>
+<ResponseField name="tax_amount" type="float">
+  The tax amount for this line item
+</ResponseField>
+<ResponseField name="total_amount" type="float">
+  The total value of this line item
+</ResponseField>
+<ResponseField name="tracking_category_ids" type="string[]">
+  Description needed
+</ResponseField>
+<ResponseField name="item" type="object">
+  The item associated with this line item
+</ResponseField>
+<ResponseField name="tax_rate" type="object">
+  The tax associated with this line item
+</ResponseField>
+<ResponseField name="account" type="object">
+  The account associated with this line item
+</ResponseField>
+
+<ResponseField name="updated_at" type="date" required>
+  Date the record was last updated in the accounting platform.
+</ResponseField>
+
+<ResponseField name="raw_data" type="object">
+  The raw JSON response we get from the accounting platform for that data.
+</ResponseField>

@@ -1,0 +1,47 @@
+<ResponseField name="platform_id" type="string" required>
+  The accounting platform's unique identifier for the address
+</ResponseField>
+
+<ResponseField name="type" type="enum">
+  The type of address. Values can be: `BILLING`, `SHIPPING`, etc.
+</ResponseField>
+
+<ResponseField name="data_model" type="string">
+  The data model to which this address is linked.
+</ResponseField>
+
+<ResponseField name="data_model_id" type="string">
+  The unique identifier for the data model associated with this address
+</ResponseField>
+
+<ResponseField name="street" type="string">
+  The street information of the address
+</ResponseField>
+
+<ResponseField name="locality" type="string">
+  The locality or neighborhood information of the address
+</ResponseField>
+
+<ResponseField name="city" type="string">
+  The city information of the address
+</ResponseField>
+
+<ResponseField name="state" type="string">
+  The state or region information of the address
+</ResponseField>
+
+<ResponseField name="country" type="string">
+  The country information of the address
+</ResponseField>
+
+<ResponseField name="pincode" type="string">
+  The postal or zip code of the address
+</ResponseField>
+
+<ResponseField name="updated_at" type="date">
+  The date and time at which the address information was last updated in the accounting platform
+</ResponseField>
+
+<ResponseField name="raw_data" type="object">
+  The raw JSON response we get from the accounting platform for that data.
+</ResponseField>

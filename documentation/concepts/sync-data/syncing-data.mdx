@@ -1,0 +1,94 @@
+---
+title: "Syncing Data"
+description: "Learn how RootFi keeps your customers data up-to date"
+icon: ""
+---
+
+Depending on your needs, data can synced be in three modes:
+
+1. **Incremental Sync (default)** \- Only syncs the data that has been changed since the last sync.
+2. **Full Sync (via API)** \- Syncs the full data from the underlying platform. You should trigger a full sync only when you want to remove all the data that has been deleted from the platform.
+3. **Sync from a specific date (via API)** \- Syncs the data from a specific date. This is useful when your customers have vast amounts of data and you only want to sync particular data models from a specific date.
+
+<Warning>
+
+**Sync only the data you need**
+
+We suggest performing a sync only for Data Models you need, to not exhaust the underlying platform's rate limits, save sync time, and limit exposure of sensitive data .
+
+</Warning>
+
+We offer two ways to sync data:
+
+1. **Auto Sync**: Sync data based on specific frequencies decided by you and will be incremental.
+2. **Manual Sync**: Manually trigger a data sync. Can be incremental or full syncs, based on your needs.
+
+## Auto Sync
+
+### What is Auto-Sync?
+
+The Auto Sync feature is an automation where RootFi checks for updates and incrementally syncs data for all your active connections, at a regular frequency. This ensures that the data for all your customers always up-to-date and accurate.
+
+The Auto Sync frequency is determined based on the specific type of data your application requires. Choosing an appropriate Auto Sync frequency for each data model in terms of priority is vital to ensure a smooth syncing process.
+
+<Note>
+   **Why is setting an appropriate frequency for each data model important?**
+
+Setting an appropriate frequency for each data model matters because of the underlying rate limits of the platform.
+
+If your customers have a lot of data, even if you set all the data models to sync hourly the syncing will be automatically paused and restarted based on the the platforms rate limits so you may not get real time data of the data models you care about. Have a high sync frequency may also disrupt writing data to the platform since those APIs also consume the API quota of the underlying platform.
+
+</Note>
+
+### How to Use Auto-Sync?
+
+Navigate to the **Sync page** on the RootFi Dashboard.
+
+![](/images/sync_page.png)
+
+Here are some important terms:
+
+1. **Data Model:** The Data Model to which auto sync configuration applies.
+2. **Initial Fetch:** This is a toggle option:
+   1. when **enabled,** the data model will be synced when a company is created and data will be stored.
+   2. when **disabled**, the data model will not be called for the sync data API.
+3. **Status:** This is a toggle option:
+   1. when **enabled,** the enabled data model will be auto synced.
+   2. when **disabled,** the enabled data model will not be auto-synced.
+4. **Interval:** the rate at which the API checks for updates and syncs data with other systems.
+5. **Sync Frequency:** Options are **Daily**, **Weekly**, **Monthly**.
+   1. **Daily**: Based on the interval, the data model will be synced in Daily Intervals.
+   2. **Weekly**: Based on the interval, the data model will be synced in Weekly Intervals.
+   3. **Monthly**: Based on the interval, the data model will be synced in Monthly Intervals.
+
+<Note>If you need to sync data more frequently than daily, please reach out to us via chat or email us at contactus@rootfi.in</Note>
+
+For example: when the **Accounts Data Model**, has been set with an **Interval of 2** and **Sync Frequency of Daily**, the data will be automatically synced every two days.
+
+## Manual Sync
+
+### Via the Dashboard
+
+You can trigger an **manual incremental sync** of the data for your customer from the dashboard by clicking the Refresh Button on the top right of the company page. All the data models that are enabled will be synced.
+
+![](/images/81af569-image.png)
+
+### Via API
+
+You can manually trigger a sync from your application through our [Sync API](/api-reference/sync/sync-data). Our sync API offers more control over when and how you want to sync the data for each company.
+
+By default, the sync is an incremental sync. You can pass `full_sync: true` to toggle a full sync. This will sync all the data from the underlying platform.
+You can also choose what Data Models you want to sync by passing a list of Data Models in the `data_models_to_sync` parameter.
+
+Furthermore, if you only want to sync data from a specific date, you can pass the `sync_from` parameter with the date from which you want to sync from for each Data Model in the `data_models_to_sync` parameter.
+Eg: `data_models_to_sync: [{data_model: "INVOICES", sync_from: "2023-01-01"}]`
+
+<Warning>
+
+**Syncing from a specific date**
+
+Certain base data models like [Accounts](/api-reference/accounts/overview) and [Contacts](/api-reference/contacts/overview) should always be synced in their entirety. This is
+because the data in these data models are often linked to other data models like [Invoices](/api-reference/invoices/overview) and [Bills](/api-reference/bills/overview) and
+syncing from a specific date may cause data inconsistencies.
+
+</Warning>

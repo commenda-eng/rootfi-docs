@@ -1,35 +1,202 @@
 ---
 title: "Overview"
-description: "An income statement is a financial report that shows a business's revenue, expenses, and net income or loss over a specific period of time. In an accounting platform, an income statement is typically generated automatically based on the financial transactions that have been recorded in the system."
+description: "An [Income Statement](https://www.investopedia.com/terms/i/incomestatement.asp) is a financial report that shows a business's revenue, expenses, and net income or loss over a specific period of time. In an accounting platform, an income statement is typically generated automatically based on the financial transactions that have been recorded in the system."
 icon: "hand-wave"
 ---
 
-| Property                 | Type                                          | Description                                                    |
-| ------------------------ | --------------------------------------------- | -------------------------------------------------------------- |
-| platform\_id             | string                                        | The accounting Platform's id for the income statement          |
-| period\_start\_date      | date                                          | start date of the income statement report                      |
-| period\_end\_date        | date                                          | end date of the income statement report                        |
-| currency                 | string                                        | currency of the income statement                               |
-| revenue                  | [LineItem](/docs/income-statements#line-item) | line\_items for revenue of income statement report             |
-| cost\_of\_goods\_sold    | [LineItem](/docs/income-statements#line-item) | line\_items for revenue of income statement report             |
-| gross\_profit            | float                                         | gross profit of the income statement report                    |
-| operating\_expenses      | [LineItem](/docs/income-statements#line-item) | line\_items for operating\_expenses of income statement report |
-| operating\_profit        | float                                         | operating profit of the income statement report                |
-| non\_operating\_revenue  | float                                         | non operating revenue of the income statement report           |
-| non\_operating\_expenses | float                                         | non operating expense of the income statement report           |
-| earnings\_before\_taxes  | float                                         | earnings before taxes of the income statement report           |
-| taxes                    | [LineItem](/docs/income-statements#line-item) | line\_items for taxes of income statement report               |
-| net\_profit              | float                                         | net profit of the income statement report                      |
+## Attributes
+
+<ResponseField name="platform_id" type="string" required>
+  The accounting Platform’s id for the income statement
+</ResponseField>
+
+<ResponseField name="period_start_date" type="date">
+  Start date of the income statement report
+</ResponseField>
+
+<ResponseField name="period_end_date" type="date">
+  End date of the income statement report
+</ResponseField>
+
+<ResponseField name="currency" type="string">
+  Currency of the income statement
+</ResponseField>
+
+<ResponseField name="revenue" type="LineItem">
+  line_items for revenue of income statement report
+  <Expandable title="properties">
+    <Snippet file="line_items_snippeet.mdx" />
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="cost_of_goods_sold" type="LineItem">
+  line_items for revenue of income statement report
+  <Expandable title="properties">
+    <Snippet file="line_items_snippeet.mdx" />
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="gross_profit" type="float">
+  Gross profit of the income statement report
+</ResponseField>
+
+<ResponseField name="operating_expenses" type="LineItem">
+  line_items for operating_expenses of income statement report
+  <Expandable title="properties">
+    <Snippet file="line_items_snippeet.mdx" />
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="operating_profit" type="float">
+  Operating profit of the income statement report
+</ResponseField>
+
+<ResponseField name="non_operating_revenue" type="float">
+  Non operating revenue of the income statement report
+</ResponseField>
+
+<ResponseField name="non_operating_expenses" type="float">
+  Non operating expense of the income statement report
+</ResponseField>
+
+<ResponseField name="earnings_before_taxes" type="float">
+  Earnings before taxes of the income statement report
+</ResponseField>
+
+<ResponseField name="taxes" type="LineItem">
+  line_items for taxes of income statement report
+  <Expandable title="properties">
+    <Snippet file="line_items_snippeet.mdx" />
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="raw_data" type="object">
+  The raw JSON response we get from the accounting platform for that data.
+</ResponseField>
+
+<ResponseField name="net_profit" type="float">
+  Net profit of the income statement report
+</ResponseField>
+
+| Property               | Type                                          | Description                                                  |
+| ---------------------- | --------------------------------------------- | ------------------------------------------------------------ |
+| platform_id            | string                                        | The accounting Platform's id for the income statement        |
+| period_start_date      | date                                          | start date of the income statement report                    |
+| period_end_date        | date                                          | end date of the income statement report                      |
+| currency               | string                                        | currency of the income statement                             |
+| revenue                | [LineItem](/docs/income-statements#line-item) | line_items for revenue of income statement report            |
+| cost_of_goods_sold     | [LineItem](/docs/income-statements#line-item) | line_items for revenue of income statement report            |
+| gross_profit           | float                                         | gross profit of the income statement report                  |
+| operating_expenses     | [LineItem](/docs/income-statements#line-item) | line_items for operating_expenses of income statement report |
+| operating_profit       | float                                         | operating profit of the income statement report              |
+| non_operating_revenue  | float                                         | non operating revenue of the income statement report         |
+| non_operating_expenses | float                                         | non operating expense of the income statement report         |
+| earnings_before_taxes  | float                                         | earnings before taxes of the income statement report         |
+| taxes                  | [LineItem](/docs/income-statements#line-item) | line_items for taxes of income statement report              |
+| net_profit             | float                                         | net profit of the income statement report                    |
 
 ## Line Item
 
-**The Line Item**  is a complementary model providing additional information about Income Statement.
+**The Line Item** is a complementary model providing additional information about Income Statement.
 
-* fields of line item are:
+- fields of line item are:
 
-| Property    | Type                                          | Description                                  |
-| ----------- | --------------------------------------------- | -------------------------------------------- |
-| account\_id | string                                        | the accounting Platform's id for the account |
-| value       | float                                         | value for the account                        |
-| name        | string                                        | the name of the account                      |
-| line\_items | [LineItem](/docs/income-statements#line-item) | line\_items for the account                  |
+| Property   | Type                                          | Description                                  |
+| ---------- | --------------------------------------------- | -------------------------------------------- |
+| account_id | string                                        | the accounting Platform's id for the account |
+| value      | float                                         | value for the account                        |
+| name       | string                                        | the name of the account                      |
+| line_items | [LineItem](/docs/income-statements#line-item) | line_items for the account                   |
+
+<ResponseExample name="The Bank Transaction Object" >
+
+```json The Income Statement Response Object
+{
+  "platform_id": "IS2023-123",
+  "period_start_date": "2023-09-28T00:00:00.000Z",
+  "period_end_date": "2023-09-28T00:00:00.000Z",
+  "currency_id": "3770712000000000099",
+  "revenue": [
+    {
+      "name": "Operating Revenue",
+      "value": 0,
+      "line_items": [
+        {
+          "name": "Discount",
+          "value": 0,
+          "account_id": "3770712000000000406"
+        },
+        {
+          "name": "General Income",
+          "value": 0,
+          "account_id": "3770712000000000391"
+        }
+      ]
+    }
+  ],
+  "cost_of_goods_sold": [
+    {
+      "name": "Cost of Goods Sold",
+      "value": 0,
+      "line_items": [
+        {
+          "name": "Cost of Goods Sold",
+          "value": 0,
+          "account_id": "3770712000000034003"
+        },
+        {
+          "name": "Job Costing",
+          "value": 0,
+          "account_id": "3770712000000076066"
+        }
+      ]
+    }
+  ],
+  "gross_profit": 58000.0,
+  "operating_expenses": [
+    {
+      "name": "Operating Expenses",
+      "value": -8.5,
+      "line_items": [
+        {
+          "name": "Automobile Expense",
+          "value": 0,
+          "account_id": "3770712000000000424"
+        },
+        {
+          "name": "Consultant Expense",
+          "value": -8.5,
+          "account_id": "3770712000000000454"
+        }
+      ]
+    }
+  ],
+  "operating_profit": 30000.0,
+  "non_operating_revenue": [
+    {
+      "name": "Non Operating Revenue",
+      "value": 0,
+      "line_items": []
+    }
+  ],
+  "non_operating_expenses": [
+    {
+      "name": "Non Operating Expenses",
+      "value": 0,
+      "line_items": []
+    }
+  ],
+  "earnings_before_taxes": 31800.0,
+  "taxes": [
+    {
+      "account_id": "TAX-4001",
+      "value": 8200.0,
+      "name": "Income Tax"
+    }
+  ],
+  "net_profit": 23500.0
+  "updated_at": "2021-09-28T00:00:00.000Z",
+}
+```
+
+</ResponseExample>

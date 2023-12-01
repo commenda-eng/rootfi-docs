@@ -1,0 +1,23 @@
+<ResponseField name="platform_id" type="string" required>
+  The accounting platform's unique identifier for the entity
+</ResponseField>
+
+<ResponseField name="data_model" type="string">
+  The data model to which this number is linked.
+</ResponseField>
+
+<ResponseField name="data_model_id" type="string">
+  The unique identifier for the data model associated with this number
+</ResponseField>
+
+<ResponseField name="number" type="string">
+  The number of the contact person.
+</ResponseField>
+
+<ResponseField name="type" type="enum">
+  The type of the number `MOBILE`, `TELEPHONE`.
+</ResponseField>
+
+<ResponseField name="updated_at" type="date" required>
+  The date and time at which the number information was last updated in the accounting platform
+</ResponseField>

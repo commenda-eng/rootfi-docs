@@ -4,27 +4,101 @@ description: "A contact is an individual or company that buys or sells goods or 
 icon: "hand-wave"
 ---
 
-**The Contacts Data Model** simplifies the handling and retrieval of contact-related information across various accounting platforms. 
+**The Contacts Data Model** simplifies the handling and retrieval of contact-related information across various accounting platforms.
 
-* Unified contact properties: The model unifies essential contact details, such as name, contact person, currency, and tax number, enabling easier access and management of contact data from different platforms.
-* Comprehensive contact information: Contacts can include associated data like [contact persons](/docs/contact-person), [phone numbers](/docs/phone-number), [addresses](/docs/address), and [external links](/docs/external-link) for a more detailed representation of each contact.
-* Status tracking: The model supports tracking the status of each contact, with values like `ACTIVE`, `ARCHIVED`, and `UNKNOWN`, facilitating better organisation and reporting.
+- Unified contact properties: The model unifies essential contact details, such as name, contact person, currency, and tax number, enabling easier access and management of contact data from different platforms.
+- Comprehensive contact information: Contacts can include associated data like [contact persons](/docs/contact-person), [phone numbers](/docs/phone-number), [addresses](/docs/address), and [external links](/docs/external-link) for a more detailed representation of each contact.
+- Status tracking: The model supports tracking the status of each contact, with values like `ACTIVE`, `ARCHIVED`, and `UNKNOWN`, facilitating better organisation and reporting.
 
-  
+## Attributes
+
+<Snippet file="contact_snippet.mdx" />
+
 ## Properties Supported
 
-| Property             | Type                                   | Description                                                       |
-| -------------------- | -------------------------------------- | ----------------------------------------------------------------- |
-| platform\_id         | string                                 | The accounting platform's ID for the contact                      |
-| name                 | string                                 | Name of the customer on the accounting platform                   |
-| contact\_name        | string                                 | Name of the contact person for the contact                        |
-| contact\_type        | enum                                   | The type of customer. Values are either CUSTOMER or VENDOR        |
-| currency             | string                                 | The ISO-4217 currency code                                        |
-| tax\_number          | string                                 | Contact's tax number                                              |
-| registration\_number | string                                 | Contact's identifying number                                      |
-| status               | enum                                   | The status of the customer. Values are: ACTIVE, ARCHIVED, UNKNOWN |
-| contact\_persons     | [Contact Person](/docs/contact-person) | List of contacts stored for the contact.                          |
-| external\_links      | [External Link](/docs/external-link)   | The external links associated with the contact                    |
-| phone\_numbers       | [Phone Number](/docs/phone-number)     | The phone numbers associated with the contact                     |
-| addresses            | [Address](/docs/address)               | The addresses associated with the contact                         |
-| updated\_at          | date                                   | The last ISO 8601 timestamp at which the data was updated         |
+| Property            | Type                                   | Description                                                       |
+| ------------------- | -------------------------------------- | ----------------------------------------------------------------- |
+| platform_id         | string                                 | The accounting platform's ID for the contact                      |
+| name                | string                                 | Name of the customer on the accounting platform                   |
+| contact_name        | string                                 | Name of the contact person for the contact                        |
+| contact_type        | enum                                   | The type of customer. Values are either CUSTOMER or VENDOR        |
+| currency            | string                                 | The ISO-4217 currency code                                        |
+| tax_number          | string                                 | Contact's tax number                                              |
+| registration_number | string                                 | Contact's identifying number                                      |
+| status              | enum                                   | The status of the customer. Values are: ACTIVE, ARCHIVED, UNKNOWN |
+| contact_persons     | [Contact Person](/docs/contact-person) | List of contacts stored for the contact.                          |
+| external_links      | [External Link](/docs/external-link)   | The external links associated with the contact                    |
+| phone_numbers       | [Phone Number](/docs/phone-number)     | The phone numbers associated with the contact                     |
+| addresses           | [Address](/docs/address)               | The addresses associated with the contact                         |
+| updated_at          | date                                   | The last ISO 8601 timestamp at which the data was updated         |
+
+<ResponseExample name="The Bank Transaction Object" >
+
+```json The Contact Response Object
+{
+  "platform_id": "1234567890123456789",
+  "currency_id": "3770712000000000099",
+  "name": "Darth Vader",
+  "contact_name": "Darth Vader",
+  "contact_type": "CUSTOMER",
+  "currency": {
+    "data": {
+      "platform_id": "3770712000000000099",
+      "name": "Indian Rupee",
+      "code": "INR",
+      "symbol": "₹",
+      "is_base_currency": true,
+      "exchange_rate": 0,
+      "updated_at": null
+    }
+  },
+  "tax_number": "ODSPS1279G",
+  "registration_number": "07CEUPK5322M1ZX",
+  "status": "ACTIVE",
+  "contact_persons": {},
+  "external_links": {
+    "data": [
+      {
+        "platform_id": "CONTACTS_3770712000001721005_WEBSITE",
+        "data_model": "CONTACTS",
+        "data_model_id": "3770712000001721005",
+        "link": "https://www.rootfi.dev",
+        "type": "WEBSITE",
+        "updated_at": "2023-11-05T00:00:00.000Z"
+      }
+    ]
+  },
+  "phone_numbers": {
+    "data": [
+      {
+        "platform_id": "CONTACTS_3770712000001721005_MOBILE",
+        "data_model": "CONTACTS",
+        "data_model_id": "3770712000001721005",
+        "number": "+919*********",
+        "type": "MOBILE",
+        "updated_at": "2023-11-05T00:00:00.000Z"
+      }
+    ]
+  },
+  "addresses": {
+    "data": [
+      {
+        "platform_id": "3770712000001721013_CONTACTS_3770712000001721005_SHIPPING",
+        "type": "SHIPPING",
+        "data_model": "CONTACTS",
+        "data_model_id": "3770712000001721005",
+        "street": "21 street house",
+        "locality": "Koramanager",
+        "city": "Hyderabad",
+        "state": "Bengalore",
+        "country": "India",
+        "pincode": "500045",
+        "updated_at": "2023-11-05T00:00:00.000Z"
+      }
+    ]
+  },
+  "updated_at": "2023-11-05T00:00:00.000Z"
+}
+```
+
+</ResponseExample>

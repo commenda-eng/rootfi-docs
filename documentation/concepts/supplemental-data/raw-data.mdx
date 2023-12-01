@@ -1,9 +1,34 @@
 ---
 title: "Raw Data"
-description: "If you need to read or write data for a data model we do not currently support, you can use our [passthrough api](https://postman.rootfi.dev/#d9d6366c-6cf3-480f-a129-1da965e0dc79) to call the API of the underlying platform directly."
+description: "Learn how to interact with the platforms data in the original format."
 icon: "database"
 ---
 
-You just need to pass in the correct API config (URL path and method), and we will handle the authentication to call the API for that accounting platform and return the response data.
+Sometimes you may need to interact with data from the underlying platform that is not Unified by RootFi. In these cases, you can use the raw data field
+We support the use of `raw_data` for all our data models.
 
-If you need this passthrough API, would like to learn more about how this works, or need to read or write certain data points, please reach out to us by opening the chat box on the bottom right of our [website](https://www.rootfi.dev/)
+## Reading data
+
+The `raw_data` field contains the entire response from the underlying platform for that data object. You can use this to access any field that is not unified by RootFi.
+
+<Warning>
+
+**Raw Data may contain a lot of data**
+
+Please note, that since the raw data contains the entire output of the underlying platform's api, querying `raw_data` for a lot of objects may increase the latency of the read APIs.
+
+</Warning>
+
+## Writing data
+
+You can pass in a JSON object in the `raw_data` field when writing data. We will pass all the fields inside `raw_data` directly to the underlying platform.
+
+Please read the documentation of the accounting platform to find the field name and field type of the data you wish to push to your customer's accounting platform. If you face any problems, please contact us and we are happy to help.
+
+<Check>
+
+**Adding to our Unified API**
+
+If you find any field that you keep having to reference using the `raw_data` and you think it should be unified, please contact us and we are happy to discuss!
+
+</Check>
