@@ -221,12 +221,7 @@
             },
             {
               "group": "Contacts",
-              "pages": [
-                "api-reference/contacts/overview",
-                "api-reference/contacts/get-all-contacts",
-                "api-reference/contacts/create-contacts",
-                "api-reference/contacts/update-contacts"
-              ]
+              "pages": ["api-reference/contacts/overview", "api-reference/contacts/get-all-contacts", "api-reference/contacts/create-contacts"]
             },
             {
               "group": "Company Info",
@@ -254,12 +249,7 @@
             },
             {
               "group": "Invoices",
-              "pages": [
-                "api-reference/invoices/overview",
-                "api-reference/invoices/get-all-invoices",
-                "api-reference/invoices/create-invoices",
-                "api-reference/invoices/update-invoices"
-              ]
+              "pages": ["api-reference/invoices/overview", "api-reference/invoices/get-all-invoices", "api-reference/invoices/create-invoices"]
             },
             {
               "group": "Invoice Payments",
@@ -271,7 +261,7 @@
             },
             {
               "group": "Items",
-              "pages": ["api-reference/items/overview", "api-reference/items/get-all-items", "api-reference/items/create-items", "api-reference/items/update-items"]
+              "pages": ["api-reference/items/overview", "api-reference/items/get-all-items", "api-reference/items/create-items"]
             },
             {
               "group": "Journal Entries",
@@ -287,12 +277,7 @@
             },
             {
               "group": "Tax Rates",
-              "pages": [
-                "api-reference/tax-rates/overview",
-                "api-reference/tax-rates/get-all-tax-rates",
-                "api-reference/tax-rates/create-tax-rates",
-                "api-reference/tax-rates/update-tax-rates"
-              ]
+              "pages": ["api-reference/tax-rates/overview", "api-reference/tax-rates/get-all-tax-rates", "api-reference/tax-rates/create-tax-rates"]
             },
             {
               "group": "Tracking Categories",
