@@ -11237,5 +11237,5 @@ components:
       in: header
       name: api_key
 servers:
-  - url: https://api.rootfi.dev/
-    description: Production (https://docs.rootfi.dev)
+  - url: https://integrate.rootfi.dev/api/v2
+    description: Production server
