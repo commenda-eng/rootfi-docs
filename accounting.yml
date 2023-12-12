@@ -114,12 +114,8 @@ paths:
                 Example1:
                   value:
                     data:
-                      status: SUCCESS
-                      upload_job_id: xQm2K441VosP8W4
                       data:
-                        - job_id: aXI9pUDA5T7E2LS
-                          status: success
-                          response:
+                        - response:
                             platform_id: "1234567890123456789"
                             currency_id: null
                             parent_account_id: null
@@ -315,12 +311,8 @@ paths:
                 Example1:
                   value:
                     data:
-                      status: SUCCESS
-                      upload_job_id: aXI9pUDA5T7E2LS
                       data:
-                        - job_id: xQm2K441VosP8W4
-                          status: success
-                          response:
+                        - response:
                             platform_id: "4009750000000000099"
                             currency_id: "4009750000000000099"
                             institution_name: rootfi 63503
@@ -508,12 +500,8 @@ paths:
                 Example1:
                   value:
                     data:
-                      status: SUCCESS
-                      upload_job_id: xQm2K441VosP8W4
                       data:
-                        - job_id: aXI9pUDA5T7E2LS
-                          status: success
-                          response:
+                        - response:
                             platform_id: "3770712000000893001"
                             account_id: "3770712000000493001"
                             contact_id: "3770712000000225001"
@@ -684,12 +672,8 @@ paths:
                 Example1:
                   value:
                     data:
-                      status: SUCCESS
-                      upload_job_id: aXI9pUDA5T7E2LS
                       data:
-                        - job_id: xQm2K441VosP8W4
-                          status: success
-                          response:
+                        - response:
                             platform_id: "3770712000001684001"
                             bill_ids:
                               - "3770712000000213001"
@@ -882,12 +866,8 @@ paths:
                 Example1:
                   value:
                     data:
-                      status: SUCCESS
-                      upload_job_id: xQm2K441VosP8W4
                       data:
-                        - job_id: aXI9pUDA5T7E2LS
-                          status: success
-                          response:
+                        - response:
                             platform_id: "3770712000001669018"
                             payment_id: "3770712000001669016"
                             bill_id: "3770712000000319001"
@@ -1102,12 +1082,8 @@ paths:
                 Example1:
                   value:
                     data:
-                      status: SUCCESS
-                      upload_job_id: aXI9pUDA5T7E2LS
                       data:
-                        - job_id: xQm2K441VosP8W4
-                          status: success
-                          response:
+                        - response:
                             platform_id: "3770712000001685001"
                             contact_id: "3770712000000418001"
                             currency_id: "3770712000000000099"
@@ -1425,12 +1401,8 @@ paths:
                 Example1:
                   value:
                     data:
-                      status: SUCCESS
-                      upload_job_id: xQm2K441VosP8W4
                       data:
-                        - job_id: aXI9pUDA5T7E2LS
-                          status: success
-                          response:
+                        - response:
                             platform_id: "3770712000001686001"
                             currency_id: "3770712000000000099"
                             name: Mr. John Doe
@@ -1499,12 +1471,8 @@ paths:
                 Example1:
                   value:
                     data:
-                      status: SUCCESS
-                      upload_job_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
                       data:
-                        - job_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
-                          status: success
-                          response:
+                        - response:
                             contact_name: "Dart8736 "
                             registration_number: 07CEUPK5322M1ZX
                             contact_type: CUSTOMER
@@ -1839,12 +1807,8 @@ paths:
                 Example1:
                   value:
                     data:
-                      status: SUCCESS
-                      upload_job_id: aXI9pUDA5T7E2LS
                       data:
-                        - job_id: xQm2K441VosP8W4
-                          status: success
-                          response:
+                        - response:
                             platform_id: "3770712000001676061"
                             account_id: "3770712000000076064"
                             contact_id: "3770712000000418001"
@@ -2073,12 +2037,8 @@ paths:
                 Example1:
                   value:
                     data:
-                      status: SUCCESS
-                      upload_job_id: xQm2K441VosP8W4
                       data:
-                        - job_id: aXI9pUDA5T7E2LS
-                          status: success
-                          response:
+                        - response:
                             platform_id: "3770712000001686032"
                             invoice_ids:
                               - "3770712000000352003"
@@ -2272,12 +2232,8 @@ paths:
                 Example1:
                   value:
                     data:
-                      status: SUCCESS
-                      upload_job_id: xQm2K441VosP8W4
                       data:
-                        - job_id: aXI9pUDA5T7E2LS
-                          status: success
-                          response:
+                        - response:
                             platform_id: "3770712000001688003"
                             payment_id: "3770712000001688001"
                             invoice_id: "3770712000000707001"
@@ -2493,12 +2449,8 @@ paths:
                 Example1:
                   value:
                     data:
-                      status: SUCCESS
-                      upload_job_id: aXI9pUDA5T7E2LS
                       data:
-                        - job_id: xQm2K441VosP8W4
-                          status: success
-                          response:
+                        - response:
                             tax_amount: 34.2
                             document_number: INV82897
                             total_discount: 10
@@ -2580,12 +2532,8 @@ paths:
                 Example1:
                   value:
                     data:
-                      status: SUCCESS
-                      upload_job_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
                       data:
-                        - job_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
-                          status: success
-                          response:
+                        - response:
                             tax_amount: 96
                             document_number: INED628738
                             total_discount: 0
@@ -2744,12 +2692,8 @@ paths:
                 Example1:
                   value:
                     data:
-                      status: SUCCESS
-                      upload_job_id: xQm2K441VosP8W4
                       data:
-                        - job_id: aXI9pUDA5T7E2LS
-                          status: success
-                          response:
+                        - response:
                             platform_id: "3770712000001690001"
                             name: Toy Car
                             description: Test Item description
@@ -2831,12 +2775,8 @@ paths:
                 Example1:
                   value:
                     data:
-                      status: SUCCESS
-                      upload_job_id: xQm2K441VosP8W4
                       data:
-                        - job_id: aXI9pUDA5T7E2LS
-                          status: success
-                          response:
+                        - response:
                             platform_id: "3770712000001690001"
                             name: Toy Car
                             description: Test Item description
@@ -3015,12 +2955,8 @@ paths:
                 Example1:
                   value:
                     data:
-                      status: SUCCESS
-                      upload_job_id: aXI9pUDA5T7E2LS
                       data:
-                        - job_id: xQm2K441VosP8W4
-                          status: success
-                          response:
+                        - response:
                             platform_id: "3770712000001649001"
                             account_id: "3770712000000000361"
                             currency_id: "3770712000000000099"
@@ -3031,6 +2967,19 @@ paths:
                             currency_rate: 12
                             journal_entry_type: both
                             updated_at: "2023-10-27T00:00:00.000Z"
+                            journal_lines:
+                              - platform_id: "3770712000001725038"
+                                journal_entry_id: "3770712000001725026"
+                                account_id: "3770712000000035001"
+                                contact_id: "3770712000000080780"
+                                tax_id: null
+                                tracking_category_ids:
+                                  - "3770712000000000335_3770712000001122010"
+                                type: DEBIT
+                                description: Test Description for Journal
+                                net_amount: 5
+                                tax_amount: null
+                                updated_at: null
                             raw_data:
                               platform_id: "1013"
                               name: Test
@@ -3223,12 +3172,8 @@ paths:
                 Example1:
                   value:
                     data:
-                      status: SUCCESS
-                      upload_job_id: xQm2K441VosP8W4
                       data:
-                        - job_id: aXI9pUDA5T7E2LS
-                          status: success
-                          response:
+                        - response:
                             platform_id: "3770712000001652001"
                             contact_id: "3770712000000080863"
                             bill_ids:
@@ -3431,12 +3376,8 @@ paths:
                 Example1:
                   value:
                     data:
-                      status: SUCCESS
-                      upload_job_id: aXI9pUDA5T7E2LS
                       data:
-                        - job_id: xQm2K441VosP8W4
-                          status: success
-                          response:
+                        - response:
                             platform_id: "3770712000001652001"
                             contact_id: "3770712000000080863"
                             invoice_ids:
@@ -3593,12 +3534,8 @@ paths:
                 Example1:
                   value:
                     data:
-                      status: SUCCESS
-                      upload_job_id: xQm2K441VosP8W4
                       data:
-                        - job_id: aXI9pUDA5T7E2LS
-                          status: success
-                          response:
+                        - response:
                             platform_id: "3770712000001298001"
                             name: Track Categories
                             code: GST
@@ -3678,12 +3615,8 @@ paths:
                 Example1:
                   value:
                     data:
-                      status: SUCCESS
-                      upload_job_id: xQm2K441VosP8W4
                       data:
-                        - job_id: aXI9pUDA5T7E2LS
-                          status: success
-                          response:
+                        - response:
                             platform_id: "3770712000001298001"
                             name: Track Categories
                             code: GST
@@ -3877,20 +3810,9 @@ paths:
                           rootfi_company_id: 1234
                           integration_type: ZOHO_BOOKS
                           status: HEALTHY
-                          auth:
-                            type: oauth
-                            config:
-                              client_id: 1000.BUARUCHP35GMU5M2426Y8ABM4JSERQ
-                              client_secret: dea547affadeff1e59c2bf626be464c74b989ad6a9
-                              refresh_token: >-
-                                fb36058e58158c26b1be1ef2c6e8b09795e29ccfa9cc9b800f486c60066dab037927c905896d
-                            access_token: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
-                            access_token_expiry_time: "2021-06-01T00:00:00.000Z"
                           last_synced: "2021-06-01T00:00:00.000Z"
                           rate_limit_sleep_time: null
                           rootfi_organisation_id: 12
-                          variables:
-                            tenant_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
                           rate_limits:
                             max_rate_limit: 5000
                             resets_in_date: "2021-06-01T00:00:00.000Z"
@@ -4466,6 +4388,94 @@ paths:
                     request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
       summary: Delete an invite link
       security: *ref_0
+  /jobs/{job_id}:
+    get:
+      description: Retrieve one Job from the database based on the ID.
+      operationId: core_job_retrieveByID
+      tags:
+        - CoreJob
+      parameters:
+        - name: job_id
+          in: path
+          description: The ID of the Job to retrieve.
+          required: true
+          schema:
+            type: string
+          examples:
+            Example1:
+              value: MZl2KWQ0mwolWl6
+        - name: limit
+          in: query
+          description: The number of objects you want to retrieve
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 10
+        - name: offset
+          in: query
+          description: The index from where you want to start retrieving objects
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 0
+        - name: job_type
+          in: query
+          description: The type of job to retrieve.
+          required: false
+          schema:
+            $ref: "#/components/schemas/JobType"
+            nullable: true
+          examples:
+            Example1:
+              value: PULL
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/coreGetOneJobResponse"
+              examples:
+                Example1:
+                  value:
+                    data:
+                      rootfi_id: 123456
+                      rootfi_company_id: 123456
+                      rootfi_organisation_id: 1
+                      rootfi_integration_type: ZOHO_BOOKS
+                      rootfi_updated_at: "2021-09-28T15:00:00.000Z"
+                      rootfi_created_at: "2021-09-28T15:00:00.000Z"
+                      start_time: "2021-09-28T15:00:00.000Z"
+                      end_time: "2021-09-28T15:00:00.000Z"
+                      error_code: null
+                      integration_type: ZOHO_BOOKS
+                      status: SUCCESS
+                      error: null
+                      priority: null
+                      rate_limit_sleep_time: null
+                      variables:
+                        page: 2
+                        skip: 100
+                        per_page: 100
+                      data_model: SALES_ORDERS
+                      config_id: XERO_SALES_ORDERS_READ_0
+                      response_length: 100
+                      response_size: 100
+                      job_type: PULL
+                      config_mode: READ
+                      sync_id: H1HJT1UYdj0qncJ
+                      parent_job_id: null
+                    request_timestamp: "2021-09-28T15:00:00.000Z"
+                    response_timestamp: "2021-09-28T15:00:00.000Z"
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
+      summary: Get One Job
+      security: *ref_0
   /passthrough:
     post:
       description: Add passthrough data to integration platforms.
@@ -4527,6 +4537,102 @@ paths:
                     data: {}
                     params: {}
   /sync:
+    get:
+      description: >-
+        Retrieve all Syncs from the database based on the query parameters
+        provided (limit, offset,Job type, company ID).
+      operationId: core_sync_list
+      tags:
+        - CoreSync
+      parameters:
+        - name: limit
+          in: query
+          description: The number of objects you want to retrieve
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 10
+        - name: offset
+          in: query
+          description: The index from where you want to start retrieving objects
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 0
+        - name: company_id
+          in: query
+          description: The ID of the company to retrieve.
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 1234
+        - name: job_type
+          in: query
+          description: The type of job to retrieve.
+          required: false
+          schema:
+            $ref: "#/components/schemas/JobType"
+            nullable: true
+          examples:
+            Example1:
+              value: PULL
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/coreGetAllSyncResponse"
+              examples:
+                Example1:
+                  value:
+                    data:
+                      data:
+                        - rootfi_id: 123456
+                          rootfi_company_id: 123456
+                          rootfi_organisation_id: 1
+                          rootfi_integration_type: ZOHO_BOOKS
+                          rootfi_updated_at: "2021-09-28T15:00:00.000Z"
+                          rootfi_created_at: "2021-09-28T15:00:00.000Z"
+                          start_time: "2021-09-28T15:00:00.000Z"
+                          end_time: "2021-09-28T15:00:00.000Z"
+                          sync_from: null
+                          integration_type: ZOHO_BOOKS
+                          full_sync: true
+                          sync_type: AUTO_SYNC
+                          config_mode: READ
+                          success_count: 20
+                          failed_count: 0
+                          running_count: 0
+                          created_count: 0
+                          data_models:
+                            - sync_id: H1HJT1UYdj0qncJ
+                              data_model: ACCOUNTS
+                              total_count: 1
+                              success_count: 1
+                              failed_count: 0
+                              running_count: 0
+                              pending_count: 0
+                              start_time: "2023-12-01T08:17:29+00:00"
+                              end_time: "2023-12-01T08:17:43.047+00:00"
+                              status: SUCCESS
+                      total_count: 1
+                      sync_status: IDLE
+                      connection_status: HEALTHY
+                    request_timestamp: "2021-09-28T15:00:00.000Z"
+                    response_timestamp: "2021-09-28T15:00:00.000Z"
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
+      summary: Get All Syncs
+      security: *ref_0
     post:
       description: Sync a company to the platform.
       operationId: core_sync_create
@@ -4564,6 +4670,91 @@ paths:
                   full_sync: false
                   data_models_to_sync:
                     - ACCOUNTS
+  /sync/{sync_id}:
+    get:
+      description: Retrieve one Sync from the database based on the ID.
+      operationId: core_sync_retrieveByID
+      tags:
+        - CoreSync
+      parameters:
+        - name: sync_id
+          in: path
+          description: The ID of the Sync to retrieve.
+          required: true
+          schema:
+            type: string
+          examples:
+            Example1:
+              value: H1HJT1UYdj0qncJ
+        - name: limit
+          in: query
+          description: The number of objects you want to retrieve
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 10
+        - name: offset
+          in: query
+          description: The index from where you want to start retrieving objects
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 0
+        - name: job_type
+          in: query
+          description: The type of job to retrieve.
+          required: false
+          schema:
+            $ref: "#/components/schemas/JobType"
+            nullable: true
+          examples:
+            Example1:
+              value: PULL
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/coreGetOneSyncResponse"
+              examples:
+                Example1:
+                  value:
+                    data:
+                      rootfi_id: 123456
+                      rootfi_company_id: 123456
+                      rootfi_organisation_id: 1
+                      rootfi_integration_type: ZOHO_BOOKS
+                      rootfi_updated_at: "2021-09-28T15:00:00.000Z"
+                      rootfi_created_at: "2021-09-28T15:00:00.000Z"
+                      start_time: "2021-09-28T15:00:00.000Z"
+                      end_time: "2021-09-28T15:00:00.000Z"
+                      sync_from: null
+                      integration_type: ZOHO_BOOKS
+                      full_sync: true
+                      sync_type: AUTO_SYNC
+                      config_mode: READ
+                      jobs:
+                        - rootfi_id: 9c3GuWp0KVomqrS
+                          rootfi_created_at: "2023-12-01T08:17:53+00:00"
+                          start_time: "2023-12-01T08:17:53+00:00"
+                          end_time: "2023-12-01T08:17:55.36+00:00"
+                          error_code: null
+                          status: SUCCESS
+                          data_model: PURCHASE_ORDERS
+                          response_length: 0
+                          response_size: 0
+                    request_timestamp: "2021-09-28T15:00:00.000Z"
+                    response_timestamp: "2021-09-28T15:00:00.000Z"
+                    request_id: 7a1c0e42-9f85-4d6e-bb5d-358a72913c0b
+      summary: Get One Sync
+      security: *ref_0
   /webhooks:
     get:
       description: Retrieve all webhooks from the database.
@@ -4882,8 +5073,6 @@ components:
           description: The error message if the job failed.
       required:
         - response
-      allOf:
-        - $ref: "#/components/schemas/JobSuccessResponse"
     accountingaccountsCreateAccountsResponseHelper:
       title: accountingaccountsCreateAccountsResponseHelper
       type: object
@@ -4894,8 +5083,6 @@ components:
             $ref: "#/components/schemas/accountingaccountsAccountsResponseHelper"
       required:
         - data
-      allOf:
-        - $ref: "#/components/schemas/SuccessResponse"
     accountingaccountsFinalCreateAccount:
       title: accountingaccountsFinalCreateAccount
       type: object
@@ -5088,8 +5275,6 @@ components:
       type: object
       properties:
         raw_data:
-          type: object
-          additionalProperties: true
           nullable: true
           description: >-
             A JSON containing fields that you can directly pass to the
@@ -5174,8 +5359,6 @@ components:
               #/components/schemas/accountingbank_accountsBankAccountsResponseHelper
       required:
         - data
-      allOf:
-        - $ref: "#/components/schemas/SuccessResponse"
     accountingbank_accountsBankAccountsResponseHelper:
       title: accountingbank_accountsBankAccountsResponseHelper
       type: object
@@ -5189,8 +5372,6 @@ components:
           description: The error message if the job failed.
       required:
         - response
-      allOf:
-        - $ref: "#/components/schemas/JobSuccessResponse"
     accountingbank_accountsFinalCreateBankAccount:
       title: accountingbank_accountsFinalCreateBankAccount
       type: object
@@ -5286,8 +5467,6 @@ components:
       type: object
       properties:
         raw_data:
-          type: object
-          additionalProperties: true
           nullable: true
           description: >-
             A JSON containing fields that you can directly pass to the
@@ -5395,8 +5574,6 @@ components:
           description: The error message if the job failed.
       required:
         - response
-      allOf:
-        - $ref: "#/components/schemas/JobSuccessResponse"
     accountingbank_transactionsCreateBankTransactionResponseData:
       title: accountingbank_transactionsCreateBankTransactionResponseData
       type: object
@@ -5408,8 +5585,6 @@ components:
               #/components/schemas/accountingbank_transactionsBankTransactionResponse
       required:
         - data
-      allOf:
-        - $ref: "#/components/schemas/SuccessResponse"
     accountingbank_transactionsFinalBankTransactionResponse:
       title: accountingbank_transactionsFinalBankTransactionResponse
       type: object
@@ -5512,8 +5687,6 @@ components:
           nullable: true
           description: Array of Bill Line items associated with the bill
         raw_data:
-          type: object
-          additionalProperties: true
           nullable: true
           description: >-
             A JSON containing fields that you can directly pass to the
@@ -5609,8 +5782,6 @@ components:
               #/components/schemas/accountingbill_credit_notesBillCreditNotesResponse
       required:
         - data
-      allOf:
-        - $ref: "#/components/schemas/SuccessResponse"
     accountingbill_credit_notesBillCreditNotesResponse:
       title: accountingbill_credit_notesBillCreditNotesResponse
       type: object
@@ -5624,8 +5795,6 @@ components:
           description: The error message if the job failed.
       required:
         - response
-      allOf:
-        - $ref: "#/components/schemas/JobSuccessResponse"
     accountingbill_credit_notesFinalCreateBillCreditNotes:
       title: accountingbill_credit_notesFinalCreateBillCreditNotes
       type: object
@@ -5752,8 +5921,6 @@ components:
       type: object
       properties:
         raw_data:
-          type: object
-          additionalProperties: true
           nullable: true
           description: >-
             A JSON containing fields that you can directly pass to the
@@ -5848,8 +6015,6 @@ components:
             $ref: "#/components/schemas/accountingbill_paymentsBillPaymentsResponse"
       required:
         - data
-      allOf:
-        - $ref: "#/components/schemas/SuccessResponse"
     accountingbill_paymentsBillPaymentsResponse:
       title: accountingbill_paymentsBillPaymentsResponse
       type: object
@@ -5863,8 +6028,6 @@ components:
           description: The error message if the job failed.
       required:
         - response
-      allOf:
-        - $ref: "#/components/schemas/JobSuccessResponse"
     accountingbill_paymentsFinalCreateBillPaymentResponse:
       title: accountingbill_paymentsFinalCreateBillPaymentResponse
       type: object
@@ -5963,8 +6126,6 @@ components:
           nullable: true
           description: Array of Bill Line items associated with the bill
         raw_data:
-          type: object
-          additionalProperties: true
           nullable: true
           description: >-
             A JSON containing fields that you can directly pass to the
@@ -6107,8 +6268,6 @@ components:
             $ref: "#/components/schemas/accountingbillsBillsResponse"
       required:
         - data
-      allOf:
-        - $ref: "#/components/schemas/SuccessResponse"
     accountingbillsBillsResponse:
       title: accountingbillsBillsResponse
       type: object
@@ -6121,8 +6280,6 @@ components:
           description: The error message if the job failed.
       required:
         - response
-      allOf:
-        - $ref: "#/components/schemas/JobSuccessResponse"
     accountingbillsFinalCreateBillsResponse:
       title: accountingbillsFinalCreateBillsResponse
       type: object
@@ -6423,8 +6580,6 @@ components:
           nullable: true
           description: Array of addresses associated with the contact
         raw_data:
-          type: object
-          additionalProperties: true
           nullable: true
           description: >-
             A JSON containing fields that you can directly pass to the
@@ -6521,8 +6676,6 @@ components:
             $ref: "#/components/schemas/accountingcontactsContactssResponse"
       required:
         - data
-      allOf:
-        - $ref: "#/components/schemas/SuccessResponse"
     accountingcontactsContactssResponse:
       title: accountingcontactsContactssResponse
       type: object
@@ -6536,8 +6689,6 @@ components:
           description: The error message if the job failed.
       required:
         - response
-      allOf:
-        - $ref: "#/components/schemas/JobSuccessResponse"
     accountingcontactsFinalCreateContactsResponse:
       title: accountingcontactsFinalCreateContactsResponse
       type: object
@@ -6593,8 +6744,6 @@ components:
               #/components/schemas/accountingcontactsUpdateContactsResponseObject
       required:
         - data
-      allOf:
-        - $ref: "#/components/schemas/SuccessResponse"
     accountingcontactsUpdateContactsResponseObject:
       title: accountingcontactsUpdateContactsResponseObject
       type: object
@@ -6608,8 +6757,6 @@ components:
           description: The error message if the job failed.
       required:
         - response
-      allOf:
-        - $ref: "#/components/schemas/JobSuccessResponse"
     accountingcontactsFinalUpdateContactsResponse:
       title: accountingcontactsFinalUpdateContactsResponse
       type: object
@@ -6640,7 +6787,9 @@ components:
           description: The currency code
         symbol:
           type: string
-          description: The symbol that represents the currency
+          description: >-
+            The symbol that represents the currency. Not applicable for many
+            currencies
         is_base_currency:
           type: boolean
           description: Whether the currency is the base currency for the company
@@ -6823,8 +6972,6 @@ components:
           nullable: true
           description: Array of Expense Line items associated with the expense
         raw_data:
-          type: object
-          additionalProperties: true
           nullable: true
           description: >-
             A JSON containing fields that you can directly pass to the
@@ -6935,8 +7082,6 @@ components:
             $ref: "#/components/schemas/accountingexpensesExpensesResponse"
       required:
         - data
-      allOf:
-        - $ref: "#/components/schemas/SuccessResponse"
     accountingexpensesExpensesResponse:
       title: accountingexpensesExpensesResponse
       type: object
@@ -6949,8 +7094,6 @@ components:
           description: The error message if the job failed.
       required:
         - response
-      allOf:
-        - $ref: "#/components/schemas/JobSuccessResponse"
     accountingexpensesFinalCreateExpensesResponse:
       title: accountingexpensesFinalCreateExpensesResponse
       type: object
@@ -7186,8 +7329,6 @@ components:
       type: object
       properties:
         raw_data:
-          type: object
-          additionalProperties: true
           nullable: true
           description: >-
             A JSON containing fields that you can directly pass to the
@@ -7287,8 +7428,6 @@ components:
               #/components/schemas/accountinginvoice_credit_notesInvoiceCreditNotesResponse
       required:
         - data
-      allOf:
-        - $ref: "#/components/schemas/SuccessResponse"
     accountinginvoice_credit_notesInvoiceCreditNotesResponse:
       title: accountinginvoice_credit_notesInvoiceCreditNotesResponse
       type: object
@@ -7302,8 +7441,6 @@ components:
           description: The error message if the job failed.
       required:
         - response
-      allOf:
-        - $ref: "#/components/schemas/JobSuccessResponse"
     accountinginvoice_credit_notesFinalCreateInvoiceCreditNotesResponse:
       title: accountinginvoice_credit_notesFinalCreateInvoiceCreditNotesResponse
       type: object
@@ -7426,8 +7563,6 @@ components:
       type: object
       properties:
         raw_data:
-          type: object
-          additionalProperties: true
           nullable: true
           description: >-
             A JSON containing fields that you can directly pass to the
@@ -7529,8 +7664,6 @@ components:
               #/components/schemas/accountinginvoice_paymentsInvoicepaymentsResponse
       required:
         - data
-      allOf:
-        - $ref: "#/components/schemas/SuccessResponse"
     accountinginvoice_paymentsInvoicepaymentsResponse:
       title: accountinginvoice_paymentsInvoicepaymentsResponse
       type: object
@@ -7544,8 +7677,6 @@ components:
           description: The error message if the job failed.
       required:
         - response
-      allOf:
-        - $ref: "#/components/schemas/JobSuccessResponse"
     accountinginvoice_paymentsFinalCreateInvoicePaymentsResponse:
       title: accountinginvoice_paymentsFinalCreateInvoicePaymentsResponse
       type: object
@@ -7645,8 +7776,6 @@ components:
           nullable: true
           description: Array of Invoice Line items associated with the invoice
         raw_data:
-          type: object
-          additionalProperties: true
           nullable: true
           description: >-
             A JSON containing fields that you can directly pass to the
@@ -7802,8 +7931,6 @@ components:
             $ref: "#/components/schemas/accountinginvoicesinvoicesResponse"
       required:
         - data
-      allOf:
-        - $ref: "#/components/schemas/SuccessResponse"
     accountinginvoicesinvoicesResponse:
       title: accountinginvoicesinvoicesResponse
       type: object
@@ -7817,8 +7944,6 @@ components:
           description: The error message if the job failed.
       required:
         - response
-      allOf:
-        - $ref: "#/components/schemas/JobSuccessResponse"
     accountinginvoicesFinalCreateInvoicesResponse:
       title: accountinginvoicesFinalCreateInvoicesResponse
       type: object
@@ -7874,8 +7999,6 @@ components:
             $ref: "#/components/schemas/accountinginvoicesUpdateInvoicesResponse"
       required:
         - data
-      allOf:
-        - $ref: "#/components/schemas/SuccessResponse"
     accountinginvoicesUpdateInvoicesResponse:
       title: accountinginvoicesUpdateInvoicesResponse
       type: object
@@ -7889,8 +8012,6 @@ components:
           description: The error message if the job failed.
       required:
         - response
-      allOf:
-        - $ref: "#/components/schemas/JobSuccessResponse"
     accountinginvoicesUpdateInvoicesResponses:
       title: accountinginvoicesUpdateInvoicesResponses
       type: object
@@ -7948,8 +8069,6 @@ components:
       type: object
       properties:
         raw_data:
-          type: object
-          additionalProperties: true
           nullable: true
           description: >-
             A JSON containing fields that you can directly pass to the
@@ -8029,8 +8148,6 @@ components:
             $ref: "#/components/schemas/accountingitemsItemsResponse"
       required:
         - data
-      allOf:
-        - $ref: "#/components/schemas/SuccessResponse"
     accountingitemsItemsResponse:
       title: accountingitemsItemsResponse
       type: object
@@ -8043,8 +8160,6 @@ components:
           description: The error message if the job failed.
       required:
         - response
-      allOf:
-        - $ref: "#/components/schemas/JobSuccessResponse"
     accountingitemsFinalCreateitemsResponse:
       title: accountingitemsFinalCreateitemsResponse
       type: object
@@ -8137,8 +8252,6 @@ components:
           nullable: true
           description: Array of Journal Entry Line items associated with the journal entry
         raw_data:
-          type: object
-          additionalProperties: true
           nullable: true
           description: >-
             A JSON containing fields that you can directly pass to the
@@ -8177,6 +8290,12 @@ components:
       title: accountingjournal_entriesJournalEntriesWriteResponseFields
       type: object
       properties:
+        journal_lines:
+          type: array
+          items:
+            $ref: "#/components/schemas/JournalLinesDataa"
+          nullable: true
+          description: Array of Journal Entry Line items associated with the journal entry
         raw_data:
           type: object
           additionalProperties: true
@@ -8230,8 +8349,6 @@ components:
               #/components/schemas/accountingjournal_entriesCreateJournalEntriesResponseData
       required:
         - data
-      allOf:
-        - $ref: "#/components/schemas/SuccessResponse"
     accountingjournal_entriesCreateJournalEntriesResponseData:
       title: accountingjournal_entriesCreateJournalEntriesResponseData
       type: object
@@ -8245,8 +8362,6 @@ components:
           description: The error message if the job failed.
       required:
         - response
-      allOf:
-        - $ref: "#/components/schemas/JobSuccessResponse"
     accountingjournal_entriesFinalCreateJournalEntryResponse:
       title: accountingjournal_entriesFinalCreateJournalEntryResponse
       type: object
@@ -8352,8 +8467,6 @@ components:
       type: object
       properties:
         raw_data:
-          type: object
-          additionalProperties: true
           nullable: true
           description: >-
             A JSON containing fields that you can directly pass to the
@@ -8479,8 +8592,6 @@ components:
             $ref: "#/components/schemas/accountingpurchase_orderPurchaseOrderResponse"
       required:
         - data
-      allOf:
-        - $ref: "#/components/schemas/SuccessResponse"
     accountingpurchase_orderPurchaseOrderResponse:
       title: accountingpurchase_orderPurchaseOrderResponse
       type: object
@@ -8494,8 +8605,6 @@ components:
           description: The error message if the job failed.
       required:
         - response
-      allOf:
-        - $ref: "#/components/schemas/JobSuccessResponse"
     accountingpurchase_orderFinalCreatePurchaseOrderResponse:
       title: accountingpurchase_orderFinalCreatePurchaseOrderResponse
       type: object
@@ -8597,8 +8706,6 @@ components:
       type: object
       properties:
         raw_data:
-          type: object
-          additionalProperties: true
           nullable: true
           description: >-
             A JSON containing fields that you can directly pass to the
@@ -8711,8 +8818,6 @@ components:
             $ref: "#/components/schemas/accountingsales_orderSalesOrderResponse"
       required:
         - data
-      allOf:
-        - $ref: "#/components/schemas/SuccessResponse"
     accountingsales_orderSalesOrderResponse:
       title: accountingsales_orderSalesOrderResponse
       type: object
@@ -8726,8 +8831,6 @@ components:
           description: The error message if the job failed.
       required:
         - response
-      allOf:
-        - $ref: "#/components/schemas/JobSuccessResponse"
     accountingsales_orderFinalCreateSalesOrderResponse:
       title: accountingsales_orderFinalCreateSalesOrderResponse
       type: object
@@ -8845,8 +8948,6 @@ components:
       type: object
       properties:
         raw_data:
-          type: object
-          additionalProperties: true
           nullable: true
           description: >-
             A JSON containing fields that you can directly pass to the
@@ -8911,8 +9012,6 @@ components:
             $ref: "#/components/schemas/accountingtax_ratesTaxRateResponse"
       required:
         - data
-      allOf:
-        - $ref: "#/components/schemas/SuccessResponse"
     accountingtax_ratesTaxRateResponse:
       title: accountingtax_ratesTaxRateResponse
       type: object
@@ -8925,8 +9024,6 @@ components:
           description: The error message if the job failed.
       required:
         - response
-      allOf:
-        - $ref: "#/components/schemas/JobSuccessResponse"
     accountingtax_ratesFinalCreateTaxRatesResponse:
       title: accountingtax_ratesFinalCreateTaxRatesResponse
       type: object
@@ -9040,6 +9137,318 @@ components:
       allOf:
         - $ref: >-
             #/components/schemas/accountingtracking_categoriesFinalTrackingCategories
+        - $ref: "#/components/schemas/timestamp"
+    corejobResponse:
+      title: corejobResponse
+      type: object
+      properties:
+        start_time:
+          type: string
+          format: date-time
+          nullable: true
+          description: The time the job started
+        end_time:
+          type: string
+          format: date-time
+          nullable: true
+          description: The time the job ended
+        error_code:
+          type: string
+          nullable: true
+          description: The error code of the job
+        integration_type:
+          $ref: "#/components/schemas/IntegrationType"
+          nullable: true
+          description: The integration type of the job
+        status:
+          $ref: "#/components/schemas/Status"
+          nullable: true
+          description: The status of the job
+        error:
+          type: string
+          nullable: true
+          description: The error of the job
+        priority:
+          type: string
+          nullable: true
+          description: The priority of the job
+        rate_limit_sleep_time:
+          type: string
+          nullable: true
+          description: The rate limit sleep time of the job
+        variables:
+          type: object
+          additionalProperties: true
+          nullable: true
+          description: The variables of the job
+        data_model:
+          $ref: "#/components/schemas/DataModels"
+          nullable: true
+          description: The data model of the job
+        config_id:
+          type: string
+          nullable: true
+          description: The config ID of the job
+        response_length:
+          type: integer
+          nullable: true
+          description: The response length of the job
+        response_size:
+          type: integer
+          nullable: true
+          description: The response size of the job
+        job_type:
+          $ref: "#/components/schemas/JobType"
+          nullable: true
+          description: The job type of the job
+        config_mode:
+          type: string
+          nullable: true
+          description: The config mode of the job
+        sync_id:
+          type: string
+          nullable: true
+          description: The sync ID of the job
+        parent_job_id:
+          type: string
+          nullable: true
+          description: The parent job ID of the job
+      allOf:
+        - $ref: "#/components/schemas/RootfiFields"
+    coreOneJobResponse:
+      title: coreOneJobResponse
+      type: object
+      properties:
+        data:
+          $ref: "#/components/schemas/corejobResponse"
+          description: The data returned from the request
+      required:
+        - data
+    coreGetOneJobResponse:
+      title: coreGetOneJobResponse
+      type: object
+      properties: {}
+      allOf:
+        - $ref: "#/components/schemas/coreOneJobResponse"
+        - $ref: "#/components/schemas/timestamp"
+    coreSyncALlResponsesCommonFieldsHelper:
+      title: coreSyncALlResponsesCommonFieldsHelper
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/coreSyncALlResponsesCommonFields"
+        total_count:
+          type: integer
+          nullable: true
+          description: The total number of records
+        sync_status:
+          type: string
+          nullable: true
+          description: The status of the sync
+        connection_status:
+          type: string
+          nullable: true
+          description: The status of the connection
+      required:
+        - data
+    coreFinalGetSyncResponse:
+      title: coreFinalGetSyncResponse
+      type: object
+      properties:
+        data:
+          $ref: "#/components/schemas/coreSyncALlResponsesCommonFieldsHelper"
+          description: The data returned from the request
+      required:
+        - data
+    coreSyncActualCommonTypes:
+      title: coreSyncActualCommonTypes
+      type: object
+      properties:
+        start_time:
+          type: string
+          format: date-time
+          nullable: true
+          description: The time the sync started
+        end_time:
+          type: string
+          format: date-time
+          nullable: true
+          description: The time the sync ended
+        sync_from:
+          type: string
+          nullable: true
+          description: The time the sync started
+        integration_type:
+          $ref: "#/components/schemas/IntegrationType"
+          nullable: true
+          description: The time the sync ended
+        full_sync:
+          type: boolean
+          nullable: true
+          description: The time the sync started
+        sync_type:
+          type: string
+          nullable: true
+          description: The time the sync ended
+        config_mode:
+          type: string
+          nullable: true
+          description: The time the sync started
+    coreSyncALlResponsesCommonFields:
+      title: coreSyncALlResponsesCommonFields
+      type: object
+      properties:
+        success_count:
+          type: integer
+          nullable: true
+          description: The time the sync ended
+        failed_count:
+          type: integer
+          nullable: true
+          description: The time the sync started
+        running_count:
+          type: integer
+          nullable: true
+          description: The time the sync ended
+        created_count:
+          type: integer
+          nullable: true
+          description: The time the sync started
+        data_models:
+          type: array
+          items:
+            $ref: "#/components/schemas/coreSyncDataModel"
+          nullable: true
+          description: The time the sync ended
+      allOf:
+        - $ref: "#/components/schemas/RootfiFields"
+        - $ref: "#/components/schemas/coreSyncActualCommonTypes"
+    coreSyncDataModel:
+      title: coreSyncDataModel
+      type: object
+      properties:
+        sync_id:
+          type: string
+          nullable: true
+          description: The ID of the sync
+        data_model:
+          $ref: "#/components/schemas/DataModels"
+          nullable: true
+          description: The data model
+        total_count:
+          type: integer
+          nullable: true
+          description: The total number of records
+        success_count:
+          type: integer
+          nullable: true
+          description: The number of successful records
+        failed_count:
+          type: integer
+          nullable: true
+          description: The number of failed records
+        running_count:
+          type: integer
+          nullable: true
+          description: The number of running records
+        pending_count:
+          type: integer
+          nullable: true
+          description: The number of pending records
+        start_time:
+          type: string
+          format: date-time
+          nullable: true
+          description: The time the sync started
+        end_time:
+          type: string
+          format: date-time
+          nullable: true
+          description: The time the sync ended
+        status:
+          $ref: "#/components/schemas/Status"
+          nullable: true
+          description: The status of the sync
+    coreGetAllSyncResponse:
+      title: coreGetAllSyncResponse
+      type: object
+      properties: {}
+      allOf:
+        - $ref: "#/components/schemas/coreFinalGetSyncResponse"
+        - $ref: "#/components/schemas/timestamp"
+    coreSyncOneALlResponsesCommonFields:
+      title: coreSyncOneALlResponsesCommonFields
+      type: object
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: "#/components/schemas/coreSyncOneJobObject"
+          nullable: true
+          description: The jobs
+      allOf:
+        - $ref: "#/components/schemas/RootfiFields"
+        - $ref: "#/components/schemas/coreSyncActualCommonTypes"
+    coreSyncOneJobObject:
+      title: coreSyncOneJobObject
+      type: object
+      properties:
+        rootfi_id:
+          type: string
+          nullable: true
+          description: The ID of the sync
+        rootfi_created_at:
+          type: string
+          format: date-time
+          nullable: true
+          description: The time the sync started
+        start_time:
+          type: string
+          format: date-time
+          nullable: true
+          description: The time the sync started
+        end_time:
+          type: string
+          format: date-time
+          nullable: true
+          description: The time the sync ended
+        error_code:
+          type: string
+          nullable: true
+          description: The error code
+        status:
+          type: string
+          nullable: true
+          description: The status of the sync
+        data_model:
+          type: string
+          nullable: true
+          description: The data model
+        response_length:
+          type: integer
+          nullable: true
+          description: The response length
+        response_size:
+          type: integer
+          nullable: true
+          description: The response size
+    coreFinalGetOneSyncResponse:
+      title: coreFinalGetOneSyncResponse
+      type: object
+      properties:
+        data:
+          $ref: "#/components/schemas/coreSyncOneALlResponsesCommonFields"
+          description: The data returned from the request
+      required:
+        - data
+    coreGetOneSyncResponse:
+      title: coreGetOneSyncResponse
+      type: object
+      properties: {}
+      allOf:
+        - $ref: "#/components/schemas/coreFinalGetOneSyncResponse"
         - $ref: "#/components/schemas/timestamp"
     CreateInviteLinkRequest:
       title: CreateInviteLinkRequest
@@ -9537,9 +9946,6 @@ components:
         status:
           $ref: "#/components/schemas/ConnectionStatus"
           description: The status of the company
-        auth:
-          $ref: "#/components/schemas/CompanyAuthStatus"
-          description: The auth status of the company
         last_synced:
           type: string
           description: The last time the company was synced
@@ -9547,10 +9953,6 @@ components:
           type: string
           nullable: true
           description: The time the company will be rate limited
-        variables:
-          type: object
-          additionalProperties: true
-          description: The variables of the company
         rate_limits:
           type: object
           additionalProperties: true
@@ -9592,9 +9994,7 @@ components:
       required:
         - integration_type
         - status
-        - auth
         - last_synced
-        - variables
         - rate_limits
         - zoho_sub_calls_enabled
         - name
@@ -9605,31 +10005,6 @@ components:
         - jobs
       allOf:
         - $ref: "#/components/schemas/rootfi_fields"
-    CompanyAuthStatus:
-      title: CompanyAuthStatus
-      type: object
-      properties:
-        type:
-          type: string
-          description: The type of the auth
-        config:
-          type: object
-          additionalProperties: true
-          description: >-
-            The configs contains the `client id`, `client secret` and `refresh
-            token`.
-        access_token:
-          type: string
-          description: The access token of the company
-        access_token_expiry_time:
-          type: string
-          format: date-time
-          description: The access token expiry time
-      required:
-        - type
-        - config
-        - access_token
-        - access_token_expiry_time
     FinalOneCompanyResponse:
       title: FinalOneCompanyResponse
       type: object
@@ -9936,6 +10311,123 @@ components:
         - data
       allOf:
         - $ref: "#/components/schemas/timestamp"
+    FinalSyncResponse:
+      title: FinalSyncResponse
+      type: object
+      properties:
+        start_time:
+          type: string
+          format: date-time
+          description: The start time of the sync
+        end_time:
+          type: string
+          format: date-time
+          description: The end time of the sync
+        sync_from:
+          type: string
+          format: date-time
+          description: The sync from of the sync
+        integration_type:
+          $ref: "#/components/schemas/IntegrationType"
+          description: The integration type of the sync
+        full_sync:
+          type: boolean
+          description: Whether the sync is full sync or not
+        sync_type:
+          type: string
+          nullable: true
+          description: The sync type of the sync
+        config_mode:
+          type: string
+          nullable: true
+          description: The config mode of the sync
+        success_count:
+          type: number
+          format: double
+          description: The success count of the sync
+        failed_count:
+          type: number
+          format: double
+          description: The failed count of the sync
+        running_count:
+          type: number
+          format: double
+          description: The running count of the sync
+        created_count:
+          type: number
+          format: double
+          description: The created count of the sync
+        data_models:
+          type: array
+          items:
+            $ref: "#/components/schemas/DataModelObject"
+          description: The data models of the sync
+      required:
+        - start_time
+        - end_time
+        - sync_from
+        - integration_type
+        - full_sync
+        - success_count
+        - failed_count
+        - running_count
+        - created_count
+        - data_models
+      allOf:
+        - $ref: "#/components/schemas/rootfi_fields"
+    DataModelObject:
+      title: DataModelObject
+      type: object
+      properties:
+        sync_id:
+          type: number
+          format: double
+          description: The sync id of the data model
+        data_model:
+          $ref: "#/components/schemas/DataModels"
+          description: The data model of the data model
+        total_count:
+          type: number
+          format: double
+          description: The total count of the data model
+        success_count:
+          type: number
+          format: double
+          description: The success count of the data model
+        failed_count:
+          type: number
+          format: double
+          description: The failed count of the data model
+        running_count:
+          type: number
+          format: double
+          description: The running count of the data model
+        pending_count:
+          type: number
+          format: double
+          description: The pending count of the data model
+        start_time:
+          type: string
+          format: date-time
+          description: The start time of the data model
+        end_time:
+          type: string
+          format: date-time
+          description: The end time of the data model
+        status:
+          $ref: "#/components/schemas/Status"
+          description: The status of the data model
+      required:
+        - sync_id
+        - data_model
+        - total_count
+        - success_count
+        - failed_count
+        - running_count
+        - pending_count
+        - start_time
+        - end_time
+        - status
     RootfiFields:
       title: RootfiFields
       type: object
@@ -10125,6 +10617,11 @@ components:
           type: number
           format: double
           description: The net amount of the journal line
+        raw_data:
+          type: object
+          additionalProperties: true
+          nullable: true
+          description: The raw data of the journal line
         tax_amount:
           type: number
           format: double
@@ -10362,6 +10859,9 @@ components:
           type: string
           nullable: true
           description: The description of the journal line
+        raw_data:
+          nullable: true
+          description: The raw data of the journal line
       required:
         - account_id
         - type
@@ -10724,6 +11224,12 @@ components:
         - NON_INVENTORY
         - SERVICE
         - UNKNOWN
+    JobType:
+      title: JobType
+      type: string
+      enum:
+        - PULL
+        - PUSH
   securitySchemes:
     MyAuthSchemeAuth:
       type: apiKey
