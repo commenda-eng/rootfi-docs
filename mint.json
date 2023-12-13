@@ -157,8 +157,7 @@
             "api-reference/integrations/get-all-integrations",
             "api-reference/integrations/upsert-integrations",
             "api-reference/integrations/get-integration",
-            "api-reference/integrations/edit-integration",
-            "api-reference/integrations/delete-integration"
+            "api-reference/integrations/edit-integration"
           ]
         },
         {
@@ -174,7 +173,6 @@
           "pages": [
             "api-reference/webhooks/get-all-webhooks",
             "api-reference/webhooks/create-webook",
-            "api-reference/webhooks/get-webhook",
             "api-reference/webhooks/edit-webhook",
             "api-reference/webhooks/delete-webhook"
           ]
@@ -233,7 +231,7 @@
             },
             {
               "group": "Documents",
-              "pages": ["api-reference/documents/overview", "api-reference/documents/get-all-documents", "api-reference/documents/create-documents"]
+              "pages": ["api-reference/documents/overview", "api-reference/documents/get-all-documents"]
             },
             {
               "group": "Expenses",
