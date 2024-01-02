@@ -3,3 +3,34 @@ openapi: accounting post /accounting/accounts/all
 ---
 
 [The Accounts Data Model](https://docs.rootfi.dev/api-reference/accounts/overview) is designed to streamline the management and retrieval of account-related information across various accounting platforms.
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/accounting/accounts/all \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api_key>' \
+  --data '{
+  "take": 10,
+  "skip": 0,
+  "orderBy": {
+    "nominal_code": "asc"
+  },
+  "filter": {
+    "name": {
+      "eq": "Rootfi Test"
+    }
+  }
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+
+const rootfi = new RootFiClient({
+  apiKey: "<api_key>",
+});
+```
+
+</RequestExample>
