@@ -81,7 +81,7 @@
 
         {
           "group": "Reading Data",
-          "pages": ["documentation/concepts/read-data/rest-apis", "documentation/concepts/read-data/graphql-apis"]
+          "pages": ["documentation/concepts/read-data/rest-apis", "documentation/concepts/read-data/graphql-apis", "documentation/concepts/read-data/typescript-sdk"]
         },
         {
           "group": "Writing Data",
