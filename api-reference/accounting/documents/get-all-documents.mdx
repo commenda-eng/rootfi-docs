@@ -1,0 +1,47 @@
+---
+openapi: openapi post /accounting/documents/all
+---
+
+**The Documents Data Model** simplifies the handling of document documents across various accounting platforms, providing a standardised approach to accessing and managing document-related information.
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/accounting/documents/all \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api-key>' \
+  --data '{
+  "take": 10,
+  "skip": 0,
+  "orderBy": {
+    "file_name": "test.pdf"
+  },
+  "filter": {
+    "file_type": {
+      "eq": "application/pdf"
+    }
+  }
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+
+const rootfi = new RootFiClient({
+  apiKey: "<api_key>",
+});
+
+await rootfi.accounting.documents.list({
+  take: 10,
+  skip: 0,
+  orderBy: {
+    file_name: "test.pdf",
+  },
+  filter: {
+    file_type: { eq: "application/pdf" },
+  },
+});
+```
+
+</RequestExample>

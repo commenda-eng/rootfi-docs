@@ -1,0 +1,35 @@
+---
+openapi: openapi put /webhooks/{webhook_id}
+---
+
+<RequestExample>
+
+```bash cURL
+curl --request PUT \
+  --url https://api.rootfi.dev/webhooks/{webhook_id} \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api-key>' \
+  --data '{
+  "webhook": {
+    "operations": [
+      "CREATE"
+    ]
+  }
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+
+const rootfi = new RootFiClient({
+  apiKey: "<api_key>",
+});
+
+await rootfi.core.webhooks.update("123456", {
+  webhook: {
+    operations: ["CREATE"],
+  },
+});
+```
+
+</RequestExample>

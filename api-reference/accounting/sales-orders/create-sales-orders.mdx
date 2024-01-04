@@ -1,0 +1,73 @@
+---
+openapi: openapi post /accounting/sales_orders
+---
+
+A **Sales order** is a record of goods or services sold to a customer
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/accounting/sales_orders \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api-key>' \
+  --data '{
+  "company_id": 1,
+  "data": [
+    {
+      "contact_id": "123456",
+      "document_number": "ROOTFI01",
+      "posted_date": "2021-09-28T15:00:00.000Z",
+      "delivery_date": "2021-09-28T15:00:00.000Z",
+      "currency_id": "GBP",
+      "invoice_ids": [],
+      "line_items": [
+        {
+          "account_id": "123456",
+          "quantity": 1,
+          "item_id": "123456",
+          "tax_id": "123456",
+          "unit_amount": 100,
+          "total_discount": 0,
+          "description": "Test Item"
+        }
+      ]
+    }
+  ]
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+
+const rootfi = new RootFiClient({
+  apiKey: "<api_key>",
+});
+
+await rootfi.accounting.salesOrder.create({
+  company_id: 1,
+  data: [
+    {
+      contact_id: "123456",
+      document_number: "ROOTFI01",
+      posted_date: "2021-09-28T15:00:00.000Z",
+      delivery_date: "2021-09-28T15:00:00.000Z",
+      currency_id: "GBP",
+      invoice_ids: [],
+      line_items: [
+        {
+          account_id: "123456",
+          quantity: 1,
+          item_id: "123456",
+          tax_id: "123456",
+          unit_amount: 100,
+          total_discount: 0,
+          description: "Test Item",
+        },
+      ],
+    },
+  ],
+});
+```
+
+</RequestExample>

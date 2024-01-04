@@ -1,0 +1,47 @@
+---
+openapi: openapi post /accounting/items/all
+---
+
+**The Items Data Model** is designed to simplify the management and retrieval of item-related information across various accounting platforms.
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/accounting/items/all \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api-key>' \
+  --data '{
+  "take": 10,
+  "skip": 0,
+  "orderBy": {
+    "quantity_on_hand": "asc"
+  },
+  "filter": {
+    "name": {
+      "eq": "Toy Car"
+    }
+  }
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+
+const rootfi = new RootFiClient({
+  apiKey: "<api_key>",
+});
+
+await rootfi.accounting.items.list({
+  take: 10,
+  skip: 0,
+  orderBy: {
+    quantity_on_hand: "asc",
+  },
+  filter: {
+    name: { eq: "Toy Car" },
+  },
+});
+```
+
+</RequestExample>

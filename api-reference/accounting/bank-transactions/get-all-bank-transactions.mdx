@@ -1,0 +1,47 @@
+---
+openapi: openapi post /accounting/bank_transactions/all
+---
+
+**Bank Transactions** include the Transactional banking data for a specific company and account.
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/accounting/bank_transactions/all \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api-key>' \
+  --data '{
+  "take": 10,
+  "skip": 0,
+  "orderBy": {
+    "amount": "asc"
+  },
+  "filter": {
+    "type": {
+      "eq": "Rootfi Test"
+    }
+  }
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+
+const rootfi = new RootFiClient({
+  apiKey: "<api_key>",
+});
+
+await rootfi.accounting.bankTransactions.list({
+  take: 10,
+  skip: 0,
+  filter: {
+    type: { eq: "Rootfi Test" },
+  },
+  orderBy: {
+    amount: "asc",
+  },
+});
+```
+
+</RequestExample>

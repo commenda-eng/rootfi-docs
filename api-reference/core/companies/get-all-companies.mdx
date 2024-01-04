@@ -1,0 +1,24 @@
+---
+openapi: openapi get /company/all
+---
+
+<RequestExample>
+
+```bash cURL
+curl --request GET \
+  --url https://api.rootfi.dev/company/all \
+  --header 'api_key: <api-key>'
+
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+
+const rootfi = new RootFiClient({
+  apiKey: "<api_key>",
+});
+
+const companies = await rootfi.core.companies.list({});
+```
+
+</RequestExample>
