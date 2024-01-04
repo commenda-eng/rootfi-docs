@@ -3,3 +3,45 @@ openapi: accounting post /accounting/bill_payments/all
 ---
 
 The **Bill Payments** Data Model is designed to standardise and simplify the management of bill payment information across various accounting platforms.
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/accounting/bill_payments/all \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api-key>' \
+  --data '{
+  "take": 10,
+  "skip": 0,
+  "orderBy": {
+    "amount": "asc"
+  },
+  "filter": {
+    "account_id": {
+      "eq": "1234567890123456789"
+    }
+  }
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+
+const rootfi = new RootFiClient({
+  apiKey: "<api_key>",
+});
+
+await rootfi.accounting.billPayment.list({
+  take: 10,
+  skip: 0,
+  filter: {
+    account_id: { eq: "1234567890123456789" },
+  },
+  orderBy: {
+    amount: "asc",
+  },
+});
+```
+
+</RequestExample>

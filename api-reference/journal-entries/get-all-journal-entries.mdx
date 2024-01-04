@@ -3,3 +3,45 @@ openapi: accounting  post /accounting/journal_entries/all
 ---
 
 The [Journal Entries](https://docs.rootfi.dev/api-reference/journal-entries/overview) are basic records of a company's financial transactions used to record the debits and credits of each transaction.
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/accounting/journal_entries/all \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api-key>' \
+  --data '{
+  "take": 10,
+  "skip": 0,
+  "orderBy": {
+    "amount": "asc"
+  },
+  "filter": {
+    "account_id": {
+      "eq": "1234567890123456789"
+    }
+  }
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+
+const rootfi = new RootFiClient({
+  apiKey: "<api_key>",
+});
+
+await rootfi.accounting.journalEntries.list({
+  take: 10,
+  skip: 0,
+  filter: {
+    account_id: { eq: "1234567890123456789" },
+  },
+  orderBy: {
+    amount: "asc",
+  },
+});
+```
+
+</RequestExample>

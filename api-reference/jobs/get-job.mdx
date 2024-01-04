@@ -1,3 +1,27 @@
 ---
 openapi: unified-api get /jobs/{job_id}
 ---
+
+<RequestExample>
+
+```bash cURL
+curl --request GET \
+  --url https://api.rootfi.dev/jobs/{job_id} \
+  --header 'api_key: <api-key>'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+
+const rootfi = new RootFiClient({
+  apiKey: "<api_key>",
+});
+
+await rootfi.core.job.retrieveById("1234567", {
+  jobType: "PULL",
+  limit: 10,
+  offset: 0,
+});
+```
+
+</RequestExample>

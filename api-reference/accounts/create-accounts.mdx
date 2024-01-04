@@ -35,13 +35,14 @@ const rootfi = new RootFiClient({
 });
 
 await rootfi.accounting.accounts.create({
-  name: "Rootfi Test Account",
-  description: "Rootfi Test Account",
-  nominal_code: "123456",
-  sub_category: "Test",
-  currency_id: "123456",
-  parent_account_id: "1234567",
-  raw_data: {},
+  company_id: 56789,
+  data: [
+    {
+      name: "Test Account",
+      sub_category: "Current Assets",
+      nominal_code: "1200",
+    },
+  ],
 });
 ```
 

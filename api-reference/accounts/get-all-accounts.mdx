@@ -31,6 +31,17 @@ import { RootFiClient } from "rootfi-api";
 const rootfi = new RootFiClient({
   apiKey: "<api_key>",
 });
+
+await rootfi.accounting.accounts.list({
+  take: 10,
+  skip: 0,
+  filter: {
+    category: { eq: "LIABILITY" },
+  },
+  orderBy: {
+    current_balance: "asc",
+  },
+});
 ```
 
 </RequestExample>

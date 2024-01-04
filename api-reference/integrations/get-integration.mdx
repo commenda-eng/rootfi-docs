@@ -1,3 +1,23 @@
 ---
 openapi: unified-api get /integrations/{integration_id}
 ---
+
+<RequestExample>
+
+```bash cURL
+curl --request GET \
+  --url https://api.rootfi.dev/integrations/{integration_id} \
+  --header 'api_key: <api-key>'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+
+const rootfi = new RootFiClient({
+  apiKey: "<api_key>",
+});
+
+await rootfi.core.integrations.retrieveById(1234567);
+```
+
+</RequestExample>

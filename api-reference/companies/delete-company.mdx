@@ -1,3 +1,22 @@
 ---
 openapi: unified-api delete /company/{id}
 ---
+
+<RequestExample>
+
+```bash cURL
+curl --request DELETE \
+  --url https://api.rootfi.dev/company/{id} \
+  --header 'api_key: <api-key>'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+
+const rootfi = new RootFiClient({
+  apiKey: "<api_key>",
+});
+await rootfi.core.companies.delete("123456");
+```
+
+</RequestExample>

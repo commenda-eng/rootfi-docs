@@ -3,3 +3,51 @@ openapi: accounting post /accounting/contacts
 ---
 
 A **contact** is an individual or company that buys or sells goods or services from a business. Commonly referred to a customer on a corresponding invoice or a vendor for a bill
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/accounting/contacts \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api-key>' \
+  --data '{
+  "company_id": 1,
+  "data": [
+    {
+      "name": "Rootfi Test",
+      "contact_name": "Rootfi Test",
+      "contact_type": "CUSTOMER",
+      "currency_id": "GBP",
+      "tax_number": "1234567890",
+      "registration_number": "1234567890",
+      "email": ""
+    }
+  ]
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+
+const rootfi = new RootFiClient({
+  apiKey: "<api_key>",
+});
+
+await rootfi.accounting.contacts.create({
+  company_id: 1,
+  data: [
+    {
+      name: "Rootfi Test",
+      contact_name: "Rootfi Test",
+      contact_type: "CUSTOMER",
+      currency_id: "GBP",
+      tax_number: "1234567890",
+      registration_number: "1234567890",
+      email: "",
+    },
+  ],
+});
+```
+
+</RequestExample>

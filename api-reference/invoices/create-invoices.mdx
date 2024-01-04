@@ -3,3 +3,69 @@ openapi: accounting post /accounting/invoices
 ---
 
 [The Invoices Data Model](https://docs.rootfi.dev/api-reference/invoices/overview) is designed to standardise and `simplify` the handling of invoice-related information across different accounting platforms.
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/accounting/invoices \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api-key>' \
+  --data '{
+  "company_id": 1,
+  "data": [
+    {
+      "contact_id": "123456",
+      "document_number": "ROOTFI01",
+      "posted_date": "2021-09-28T15:00:00.000Z",
+      "due_date": "2021-09-28T15:00:00.000Z",
+      "memo": "Test Invoice",
+      "line_items": [
+        {
+          "account_id": "123456",
+          "quantity": 1,
+          "item_id": "123456",
+          "tax_id": "123456",
+          "unit_amount": 100,
+          "total_discount": 0,
+          "description": "Test Item"
+        }
+      ]
+    }
+  ]
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+
+const rootfi = new RootFiClient({
+  apiKey: "<api_key>",
+});
+
+await rootfi.accounting.invoice.create({
+  company_id: 1,
+  data: [
+    {
+      contact_id: "123456",
+      document_number: "ROOTFI01",
+      posted_date: "2021-09-28T15:00:00.000Z",
+      due_date: "2021-09-28T15:00:00.000Z",
+      memo: "Test Invoice",
+      line_items: [
+        {
+          account_id: "123456",
+          quantity: 1,
+          item_id: "123456",
+          tax_id: "123456",
+          unit_amount: 100,
+          total_discount: 0,
+          description: "Test Item",
+        },
+      ],
+    },
+  ],
+});
+```
+
+</RequestExample>
