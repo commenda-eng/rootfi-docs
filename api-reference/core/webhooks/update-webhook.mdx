@@ -20,12 +20,9 @@ curl --request PUT \
 
 ```javascript NodeJS
 import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
 
-const rootfi = new RootFiClient({
-  apiKey: "<api_key>",
-});
-
-await rootfi.core.webhooks.update("123456", {
+await rootfi.core.webhooks.update("abcdefghijklmnopq", {
   webhook: {
     operations: ["CREATE"],
   },

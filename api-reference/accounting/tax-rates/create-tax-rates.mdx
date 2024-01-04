@@ -37,10 +37,7 @@ curl --request POST \
 
 ```javascript NodeJS
 import { RootFiClient } from "rootfi-api";
-
-const rootfi = new RootFiClient({
-  apiKey: "<api_key>",
-});
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
 
 await rootfi.accounting.accounts.create({
   company_id: 56789,

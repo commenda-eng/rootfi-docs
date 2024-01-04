@@ -12,12 +12,9 @@ curl --request GET \
 
 ```javascript NodeJS
 import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
 
-const rootfi = new RootFiClient({
-  apiKey: "<api_key>",
-});
-
-await rootfi.core.job.retrieveById("1234567", {
+await rootfi.core.job.retrieveById("123456", {
   jobType: "PULL",
   limit: 10,
   offset: 0,

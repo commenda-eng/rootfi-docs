@@ -12,16 +12,9 @@ curl --request GET \
 
 ```javascript NodeJS
 import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
 
-const rootfi = new RootFiClient({
-  apiKey: "<api_key>",
-});
-
-await rootfi.core.sync.retrieveById("12345", {
-  jobType: "PULL",
-  limit: 10,
-  offset: 0,
-});
+await rootfi.core.sync.retrieveById("123456");
 ```
 
 </RequestExample>

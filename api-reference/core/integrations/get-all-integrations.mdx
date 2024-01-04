@@ -8,17 +8,12 @@ openapi: openapi get /integrations
 curl --request GET \
   --url https://api.rootfi.dev/integrations \
   --header 'api_key: <api-key>'
-  --data '{
-  "type": "ALL"
-}'
+  --data '{"type": "ALL"}'
 ```
 
 ```javascript NodeJS
 import { RootFiClient } from "rootfi-api";
-
-const rootfi = new RootFiClient({
-  apiKey: "<api_key>",
-});
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
 
 await rootfi.core.integrations.list({ type: "ALL" });
 ```

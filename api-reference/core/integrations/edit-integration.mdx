@@ -19,16 +19,13 @@ curl --request PUT \
 
 ```javascript NodeJS
 import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
 
-const rootfi = new RootFiClient({
-  apiKey: "<api_key>",
-});
-
-await rootfi.core.integrations.update(231231, {
+await rootfi.core.integrations.update(1234, {
   is_disabled: false,
   is_rootfi_identity: false,
-  client_id: "gfdsxcvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu",
-  client_secret: "jnokmwvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu",
+  client_id: "gfdsxcvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm",
+  client_secret: jnokmwvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm
 });
 ```
 

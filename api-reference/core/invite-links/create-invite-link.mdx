@@ -16,19 +16,14 @@ curl --request POST \
   --header 'Content-Type: application/json' \
   --header 'api_key: <api-key>' \
   --data '{
-  "company_name": "RootFi Test Company",
-  "integrations": [
-    "ZOHO_BOOKS"
-  ]
+  "company_name": "Test Company",
+  "integrations": ["ZOHO_BOOKS"]
 }'
 ```
 
 ```javascript NodeJS
 import { RootFiClient } from "rootfi-api";
-
-const rootfi = new RootFiClient({
-  apiKey: "<api_key>",
-});
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
 
 await rootfi.core.inviteLinks.create({
   company_name: "Test Company",

@@ -14,12 +14,9 @@ curl --request GET \
 
 ```javascript NodeJS
 import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
 
-const rootfi = new RootFiClient({
-  apiKey: "<api_key>",
-});
-
-await rootfi.core.inviteLinks.retrieveById("1234567");
+await rootfi.core.inviteLinks.retrieveById("7a1c0e42-9f85-4d6e-bb5d-358a72913c0b");
 ```
 
 </RequestExample>

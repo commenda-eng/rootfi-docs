@@ -28,10 +28,7 @@ curl --request POST \
 
 ```javascript NodeJS
 import { RootFiClient } from "rootfi-api";
-
-const rootfi = new RootFiClient({
-  apiKey: "<api_key>",
-});
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
 
 await rootfi.core.webhooks.create({
   webhook: {
@@ -39,7 +36,6 @@ await rootfi.core.webhooks.create({
     operations: ["CREATE"],
     data_models: ["ACCOUNTS"],
     url: "https://webhook.site/eec24873-a381-4694-b684-a1d77d9e0697",
-    type: ["CONNECTION_CHANGED"],
     headers: {
       api_key: "BC3pyMVNbsbIU1phfhwe.0gfdsxbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm",
     },

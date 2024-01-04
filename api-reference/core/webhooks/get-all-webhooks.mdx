@@ -12,10 +12,7 @@ curl --request GET \
 
 ```javascript NodeJS
 import { RootFiClient } from "rootfi-api";
-
-const rootfi = new RootFiClient({
-  apiKey: "<api_key>",
-});
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
 await rootfi.core.webhooks.list({});
 ```
 

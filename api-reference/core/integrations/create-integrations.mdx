@@ -13,22 +13,19 @@ curl --request POST \
   "integration_type": "ZOHO_BOOKS",
   "is_rootfi_identity": true,
   "client_id": "gfdsxcvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm",
-  "client_secret": "wsxedcfvtgbyhnujmcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm"
+  "client_secret": "jnokmwvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm"
 }'
 ```
 
 ```javascript NodeJS
 import { RootFiClient } from "rootfi-api";
-
-const rootfi = new RootFiClient({
-  apiKey: "<api_key>",
-});
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
 
 await rootfi.core.integrations.create({
-  integration_type: "BUSY",
-  client_id: "gfdsxcvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu",
-  client_secret: "wsxedcfvtgbyhnujmcasdfghjertyuyhbdcvjnokmwertyu",
+  integration_type: "ZOHO_BOOKS",
   is_rootfi_identity: true,
+  client_id: "gfdsxcvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm",
+  client_secret: "jnokmwvghfredcvbhgtfdcasdfghjertyuyhbdcvjnokmwertyu.0ikjuyhgfdsxcvbnm",
 });
 ```
 

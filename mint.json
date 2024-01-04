@@ -146,8 +146,8 @@
           "group": "Invite Links",
           "pages": [
             "api-reference/core/invite-links/get-all-invite-links",
-            "api-reference/core/invite-links/create-invite-link",
             "api-reference/core/invite-links/get-invite-link",
+            "api-reference/core/invite-links/create-invite-link",
             "api-reference/core/invite-links/delete-invite-link"
           ]
         },
@@ -155,8 +155,8 @@
           "group": "Integrations",
           "pages": [
             "api-reference/core/integrations/get-all-integrations",
-            "api-reference/core/integrations/upsert-integrations",
             "api-reference/core/integrations/get-integration",
+            "api-reference/core/integrations/create-integrations",
             "api-reference/core/integrations/edit-integration"
           ]
         },
@@ -173,7 +173,7 @@
           "pages": [
             "api-reference/core/webhooks/get-all-webhooks",
             "api-reference/core/webhooks/create-webook",
-            "api-reference/core/webhooks/edit-webhook",
+            "api-reference/core/webhooks/update-webhook",
             "api-reference/core/webhooks/delete-webhook"
           ]
         },

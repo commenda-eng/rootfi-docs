@@ -17,10 +17,7 @@ curl --request PUT \
 
 ```javascript NodeJS
 import { RootFiClient } from "rootfi-api";
-
-const rootfi = new RootFiClient({
-  apiKey: "<api_key>",
-});
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
 
 await rootfi.core.companies.update(1234, {
   name: "RootFi Test Company",
