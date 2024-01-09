@@ -60,7 +60,8 @@
   ],
   "footerSocials": {
     "twitter": "https://twitter.com/RootFiAPI",
-    "linkedin": "https://www.linkedin.com/company/rootfi/"
+    "linkedin": "https://www.linkedin.com/company/rootfi/",
+    "website": "https://rootfi.dev"
   },
   "navigation": [
     {
