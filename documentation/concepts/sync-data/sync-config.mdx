@@ -4,9 +4,13 @@ description: "Configure your sync settings by selecting the data, frequency and 
 icon: ""
 ---
 
-Navigate to the **Sync page** on the RootFi Dashboard.
+### Accessing Sync Config
+
+Navigate to the **Sync page** on the RootFi Dashboard by clicking the Sync Tab on the navbar.
 
 ![](/images/sync_page.png)
+
+### Configuring Sync Config
 
 Here are some important terms:
 
@@ -32,6 +36,12 @@ Based on your Sync Configuration, RootFi will only take the required access leve
 
 </Info>
 
-To learn more about how configuring access levels works for each integration, please refer to the respective integration documentation.
+To learn more about how configuring access levels works for each integration, please refer to the [setup guide for the each integration](/documentation/accounting-integrations/accounting-integrations-overview).
 
-To understand the importance of access levels, please refer to the [Scopes](/documentation/concepts/scopes) section.
+## OAuth Scopes
+
+Scopes are the permissions selected by your end customer to access specific data from their integration platform.
+
+In order to maintain your customers’ data privacy, we use Scopes that allow you to preconfigure access levels for the exact data you need. **The access levels you select will be the scopes we request from the integration platforms.**
+
+When your customers [connect their integration platform to RootFi](/documentation/concepts/rootfi-connect/overview), they will see data models along with the access levels you have chosen above. Upon reviewing the permissions, we will request OAuth scopes of these same permissions from the integration platform. In most cases, the integration platforms clearly outline the scopes that are being given, allowing your customer to once again acknowledge the access level of data sharing consent being given to RootFi.

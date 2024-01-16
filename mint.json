@@ -91,6 +91,7 @@
         {
           "group": "Supplemental Data",
           "pages": [
+            "documentation/concepts/supplemental-data/overview",
             "documentation/concepts/supplemental-data/raw-data",
             "documentation/concepts/supplemental-data/passthrough-api",
             "documentation/concepts/supplemental-data/realtime-api"
@@ -99,9 +100,8 @@
         "documentation/concepts/webhooks",
         "documentation/concepts/error-handling",
         "documentation/concepts/rate-limits",
-        "documentation/concepts/data-cache",
-        "documentation/concepts/partner-credentials",
-        "documentation/concepts/scopes"
+        "documentation/concepts/data-security",
+        "documentation/concepts/partner-credentials"
       ]
     },
     {
