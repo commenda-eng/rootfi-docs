@@ -1,12 +1,12 @@
 ---
-openapi: openapi get /sync/{sync_id}
+openapi: openapi get /core/syncs/{sync_id}
 ---
 
 <RequestExample>
 
 ```bash cURL
 curl --request GET \
-  --url https://api.rootfi.dev/sync/{sync_id} \
+  --url https://api.rootfi.dev/v3/core/syncs/{sync_id} \
   --header 'api_key: <api-key>'
 ```
 

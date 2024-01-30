@@ -152,29 +152,13 @@
           ]
         },
         {
-          "group": "Integrations",
-          "pages": [
-            "api-reference/core/integrations/get-all-integrations",
-            "api-reference/core/integrations/get-integration",
-            "api-reference/core/integrations/create-integrations",
-            "api-reference/core/integrations/edit-integration"
-          ]
-        },
-        {
           "group": "Sync",
-          "pages": ["api-reference/core/sync/sync-data", "api-reference/core/sync/get-all-sync", "api-reference/core/sync/get-all-sync-by-id"]
-        },
-        {
-          "group": "Jobs",
-          "pages": ["api-reference/core/jobs/get-job"]
-        },
-        {
-          "group": "Webhooks",
           "pages": [
-            "api-reference/core/webhooks/get-all-webhooks",
-            "api-reference/core/webhooks/create-webook",
-            "api-reference/core/webhooks/update-webhook",
-            "api-reference/core/webhooks/delete-webhook"
+            "api-reference/core/sync/sync-data",
+            "api-reference/core/sync/get-all-sync",
+            "api-reference/core/sync/get-all-sync-by-id",
+            "api-reference/core/sync/get-sync-jobs",
+            "api-reference/core/sync/get-job"
           ]
         },
         {
@@ -316,6 +300,68 @@
             {
               "group": "Income Statements",
               "pages": ["api-reference/accounting/income-statements/overview", "api-reference/accounting/income-statements/get-income-statements"]
+            }
+          ]
+        },
+        {
+          "group": "Payments",
+          "pages": [
+            {
+              "group": "Customers",
+              "pages": ["api-reference/payments/customers/overview", "api-reference/payments/customers/get-all-customers"]
+            },
+            {
+              "group": "Disputes",
+              "pages": ["api-reference/payments/disputes/overview", "api-reference/payments/disputes/get-all-disputes"]
+            },
+            {
+              "group": "Invoices",
+              "pages": ["api-reference/payments/invoices/overview", "api-reference/payments/invoices/get-all-invoices"]
+            },
+            {
+              "group": "Items",
+              "pages": ["api-reference/payments/items/overview", "api-reference/payments/items/get-all-items"]
+            },
+            {
+              "group": "Orders",
+              "pages": ["api-reference/payments/orders/overview", "api-reference/payments/orders/get-all-orders"]
+            },
+            {
+              "group": "Payment Links",
+              "pages": ["api-reference/payments/payment_links/overview", "api-reference/payments/payment_links/get-all-payment-links"]
+            },
+            {
+              "group": "Payments",
+              "pages": ["api-reference/payments/payments/overview", "api-reference/payments/payments/get-all-payments"]
+            },
+            {
+              "group": "Payouts",
+              "pages": ["api-reference/payments/payouts/overview", "api-reference/payments/payouts/get-all-payouts"]
+            },
+            {
+              "group": "Refunds",
+              "pages": ["api-reference/payments/refunds/overview", "api-reference/payments/refunds/get-all-refunds"]
+            },
+            {
+              "group": "Tax Rates",
+              "pages": ["api-reference/payments/tax_rates/overview", "api-reference/payments/tax_rates/get-all-tax-rates"]
+            }
+          ]
+        },
+        {
+          "group": "Ecommerce",
+          "pages": [
+            {
+              "group": "Customers",
+              "pages": ["api-reference/ecommerce/customers/overview", "api-reference/ecommerce/customers/get-all-customers"]
+            },
+            {
+              "group": "Orders",
+              "pages": ["api-reference/ecommerce/orders/overview", "api-reference/ecommerce/orders/get-all-orders"]
+            },
+            {
+              "group": "Products",
+              "pages": ["api-reference/ecommerce/products/overview", "api-reference/ecommerce/products/get-all-products"]
             }
           ]
         }

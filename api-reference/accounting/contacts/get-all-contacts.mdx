@@ -1,5 +1,5 @@
 ---
-openapi: openapi post /accounting/contacts/all
+openapi: openapi get /accounting/contacts
 ---
 
 A **contact** is an individual or company that buys or sells goods or services from a business. Commonly referred to a customer on a corresponding invoice or a vendor for a bill
@@ -8,7 +8,7 @@ A **contact** is an individual or company that buys or sells goods or services f
 
 ```bash cURL
 curl --request POST \
-  --url https://api.rootfi.dev/accounting/contacts/all \
+  --url https://api.rootfi.dev/v3/accounting/contacts  \
   --header 'Content-Type: application/json' \
   --header 'api_key: <api-key>' \
   --data '{

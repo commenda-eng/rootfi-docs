@@ -1,5 +1,5 @@
 ---
-openapi: openapi post /accounting/bills/all
+openapi: openapi get /accounting/bills
 ---
 
 A **Bills record** of goods or services purchased from a vendor.
@@ -8,7 +8,7 @@ A **Bills record** of goods or services purchased from a vendor.
 
 ```bash cURL
 curl --request POST \
-  --url https://api.rootfi.dev/accounting/bills/all \
+  --url https://api.rootfi.dev/v3/accounting/bills  \
   --header 'Content-Type: application/json' \
   --header 'api_key: <api-key>' \
   --data '{

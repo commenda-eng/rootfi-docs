@@ -1,0 +1,44 @@
+---
+openapi: openapi get /payments/customers
+---
+
+[The Customers Data Model](https://docs.rootfi.dev/api-reference/customers/overview) is designed to streamline the management and retrieval of account-related information across various payments platforms.
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/v3/payments/customers  \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api_key>' \
+  --data '{
+  "take": 10,
+  "skip": 0,
+  "orderBy": {
+    "rootfi_created_at": "asc"
+  },
+  "filter": {
+    "name": {
+      "eq": "Rootfi Test"
+    }
+  }
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
+
+await rootfi.payments.customers.list({
+  take: 10,
+  skip: 0,
+  filter: {
+    name: { eq: "Neeraj" },
+  },
+  orderBy: {
+    rootfi_id: "asc",
+  },
+});
+```
+
+</RequestExample>

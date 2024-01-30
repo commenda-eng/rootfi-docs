@@ -1,5 +1,5 @@
 ---
-openapi: openapi post /accounting/invoices/all
+openapi: openapi get /accounting/invoices
 ---
 
 An [invoice](https://docs.rootfi.dev/api-reference/invoices/overview) is an itemized record of goods sold or services provided to a customer.
@@ -8,7 +8,7 @@ An [invoice](https://docs.rootfi.dev/api-reference/invoices/overview) is an item
 
 ```bash cURL
 curl --request POST \
-  --url https://api.rootfi.dev/accounting/invoices/all \
+  --url https://api.rootfi.dev/v3/accounting/invoices  \
   --header 'Content-Type: application/json' \
   --header 'api_key: <api-key>' \
   --data '{

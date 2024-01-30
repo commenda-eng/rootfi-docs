@@ -1,5 +1,5 @@
 ---
-openapi: openapi post /accounting/items/all
+openapi: openapi get /accounting/items
 ---
 
 **The Items Data Model** is designed to simplify the management and retrieval of item-related information across various accounting platforms.
@@ -8,7 +8,7 @@ openapi: openapi post /accounting/items/all
 
 ```bash cURL
 curl --request POST \
-  --url https://api.rootfi.dev/accounting/items/all \
+  --url https://api.rootfi.dev/v3/accounting/items  \
   --header 'Content-Type: application/json' \
   --header 'api_key: <api-key>' \
   --data '{

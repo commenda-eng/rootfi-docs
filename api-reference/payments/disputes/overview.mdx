@@ -1,0 +1,46 @@
+---
+title: "Overview"
+description: "A dispute is a resolved integration issue with payment gateway causing transaction discrepancies"
+icon: "hand-wave"
+---
+
+**The Dispute Data Model** simplifies the handling and retrieval of disputes from different payment gateways. The model provides a unified representation of disputes, enabling you to easily access and manage dispute data from different platforms.
+
+- Unified disputes properties: The model provides a unified representation of disputes from different payment gateways, enabling you to easily access and manage dispute data from different platforms.
+- Comprehensive disputes information: The model provides a comprehensive representation of disputes, including information like the dispute `amount`, `currency`, `reason_code`, `reason_description`, `status`, `payment_id`, `platform_id`, `created_at`, and more.
+
+## Attributes
+
+## Properties Supported
+
+| Property           | Type   | Description                                                                    |
+| ------------------ | ------ | ------------------------------------------------------------------------------ |
+| platform_id        | string | The accounting platform's ID for the dispute                                   |
+| created_at         | string | The date and time the dispute was created                                      |
+| amount             | string | The amount of the dispute                                                      |
+| currency_id        | string | The currency id of the dispute                                                 |
+| status             | enum   | The status of the dispute. Allowed values are WON, LOST, PENDING, OPEN, CLOSED |
+| reason_code        | string | The reason code of the dispute                                                 |
+| reason_description | string | The reason description of the dispute                                          |
+| payment_id         | string | The payment id of the dispute                                                  |
+
+<ResponseExample name="The Dispute Object" >
+
+```json The Dispute Response Object
+{
+  "rootfi_id": 157,
+  "rootfi_created_at": "2024-01-22T05:07:31.465Z",
+  "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
+  "rootfi_company_id": 1089,
+  "platform_id": "123456",
+  "created_at": "2024-01-22T05:07:31.000Z",
+  "amount": "100.00",
+  "currency_id": "USD",
+  "status": "PENDING",
+  "reason_code": "123456",
+  "reason_description": "Reason Description",
+  "payment_id": "123456"
+}
+```
+
+</ResponseExample>

@@ -1,5 +1,5 @@
 ---
-openapi: openapi post /accounting/tax_rates/all
+openapi: openapi get /accounting/tax_rates
 ---
 
 **The Tax Rates Data Model** is designed to provide a unified representation of tax rates across various accounting platforms.
@@ -8,7 +8,7 @@ openapi: openapi post /accounting/tax_rates/all
 
 ```bash cURL
 curl --request POST \
-  --url https://api.rootfi.dev/accounting/tax_rates/all \
+  --url https://api.rootfi.dev/v3/accounting/tax_rates  \
   --header 'Content-Type: application/json' \
   --header 'api_key: <api-key>' \
   --data '{

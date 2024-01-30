@@ -1,12 +1,12 @@
 ---
-openapi: openapi post /passthrough
+openapi: openapi post /core/passthrough
 ---
 
 <RequestExample>
 
 ```bash cURL
 curl --request POST \
-  --url https://api.rootfi.dev/passthrough \
+  --url https://api.rootfi.dev/v3/core/passthrough \
   --header 'Content-Type: application/json' \
   --header 'api_key: <api-key>' \
   --data '{

@@ -1,0 +1,40 @@
+---
+title: "Overview"
+description: "Tax Rates are transactions that return funds to a customer from a previous order."
+icon: "hand-wave"
+---
+
+**The Tax Rates Data Model** simplifies the handling and retrieval of Tax Rates data for your application. The model provides a unified representation of tax rates data across different platforms, enabling you to easily access and manage tax rates data from different platforms.
+
+- Unified Tax Rates properties: The model provides a unified representation of tax rates properties across different platforms, enabling you to easily access and manage tax rates data from different platforms.
+- Comprehensive tax rates information: The model provides a comprehensive representation of tax rates data, including all the properties and relationships that you can retrieve for an order.
+
+## Properties Supported
+
+| Property    | Type   | Description                                     |
+| ----------- | ------ | ----------------------------------------------- |
+| platform_id | string | The accounting platform's ID for the Tax Rates  |
+| updated_at  | string | The date and time the tax rate was last updated |
+| created_at  | string | The date and time the tax rate was created      |
+| name        | string | The name of the tax rate                        |
+| description | string | The description of the tax rate                 |
+| rate        | string | The rate of the tax rate                        |
+
+<ResponseExample name="The Tax Rates Object" >
+
+```json The Tax Rates Response Object
+{
+  "rootfi_id": 157,
+  "rootfi_created_at": "2024-01-22T05:07:31.465Z",
+  "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
+  "rootfi_company_id": 1089,
+  "platform_id": "123456",
+  "updated_at": "2024-01-22T05:07:31.000Z",
+  "created_at": "2024-01-22T05:07:31.000Z",
+  "name": "Tax Rate",
+  "description": "Tax Rate Description",
+  "rate": 0.1
+}
+```
+
+</ResponseExample>

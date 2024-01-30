@@ -1,5 +1,5 @@
 ---
-openapi: openapi post /invite_link
+openapi: openapi post /core/invite_links
 ---
 
 An **invite link** contains API requests for generating and managing invite links, which can be used to connect end users to their preferred accounting platforms.
@@ -12,7 +12,7 @@ An **invite link** contains API requests for generating and managing invite link
 
 ```bash cURL
 curl --request POST \
-  --url https://api.rootfi.dev/invite_link \
+  --url https://api.rootfi.dev/v3/core/invite_links \
   --header 'Content-Type: application/json' \
   --header 'api_key: <api-key>' \
   --data '{

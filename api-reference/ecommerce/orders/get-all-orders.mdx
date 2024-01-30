@@ -1,0 +1,44 @@
+---
+openapi: openapi get /ecommerce/orders
+---
+
+[The Orders Data Model](https://docs.rootfi.dev/api-reference/orders/overview) is designed to streamline the management and retrieval of orders information across various ecommerce platforms.
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/v3/ecommerce/orders  \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api_key>' \
+  --data '{
+  "take": 10,
+  "skip": 0,
+  "orderBy": {
+    "rootfi_created_at": "asc"
+  },
+  "filter": {
+    "payment_status": {
+      "eq": "ACTIVE"
+    }
+  }
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
+
+await rootfi.ecommerce.orders.list({
+  take: 10,
+  skip: 0,
+  filter: {
+    payment_status: { eq: "ACTIVE" },
+  },
+  orderBy: {
+    rootfi_id: "asc",
+  },
+});
+```
+
+</RequestExample>

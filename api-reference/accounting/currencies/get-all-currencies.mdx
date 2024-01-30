@@ -1,12 +1,12 @@
 ---
-openapi: openapi post /accounting/currencies/all
+openapi: openapi get /accounting/currencies
 ---
 
 <RequestExample>
 
 ```bash cURL
 curl --request POST \
-  --url https://api.rootfi.dev/accounting/currencies/all \
+  --url https://api.rootfi.dev/v3/accounting/currencies  \
   --header 'Content-Type: application/json' \
   --header 'api_key: <api-key>' \
   --data '{

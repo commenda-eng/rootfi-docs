@@ -1,12 +1,12 @@
 ---
-openapi: openapi post /sync
+openapi: openapi post /core/syncs
 ---
 
 <RequestExample>
 
 ```bash cURL
 curl --request POST \
-  --url https://api.rootfi.dev/sync \
+  --url https://api.rootfi.dev/v3/core/syncs \
   --header 'Content-Type: application/json' \
   --header 'api_key: <api-key>' \
   --data '{

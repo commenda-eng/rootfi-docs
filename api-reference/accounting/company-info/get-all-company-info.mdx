@@ -1,5 +1,5 @@
 ---
-openapi: openapi post /accounting/company_info/all
+openapi: openapi get /accounting/company_info
 ---
 
 **The Company Info Data Model** is designed to simplify the management and retrieval of company-related information across various accounting platforms.
@@ -8,7 +8,7 @@ openapi: openapi post /accounting/company_info/all
 
 ```bash cURL
 curl --request POST \
-  --url https://api.rootfi.dev/accounting/company_info/all \
+  --url https://api.rootfi.dev/v3/accounting/company_info  \
   --header 'Content-Type: application/json' \
   --header 'api_key: <api-key>' \
   --data '{

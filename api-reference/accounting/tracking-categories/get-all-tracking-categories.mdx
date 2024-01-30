@@ -1,12 +1,12 @@
 ---
-openapi: openapi post /accounting/tracking_categories/all
+openapi: openapi get /accounting/tracking_categories
 ---
 
 <RequestExample>
 
 ```bash cURL
 curl --request POST \
-  --url https://api.rootfi.dev/accounting/tracking_categories/all \
+  --url https://api.rootfi.dev/v3/accounting/tracking_categories  \
   --header 'Content-Type: application/json' \
   --header 'api_key: <api-key>' \
   --data '{

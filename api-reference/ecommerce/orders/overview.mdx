@@ -1,0 +1,74 @@
+---
+title: "Overview"
+description: "An orders is a request to buy a product or service. The orders data model simplifies the handling and retrieval of orders from different ecommerce gateways. The model provides a unified representation of orders, enabling you to easily access and manage orders data from different platforms."
+icon: "hand-wave"
+---
+
+**The Orders Data Model** simplifies the handling and retrieval of orders from different ecommerce platforms. The model provides a unified representation of orders, enabling you to easily access and manage orders data from different platforms.
+
+- Unified orders properties: The model provides a unified representation of orders from different ecommerce gateways, enabling you to easily access and manage orders data from different platforms.
+- Comprehensive orders information: The model provides a comprehensive representation of orders.
+
+## Properties Supported
+
+| Property       | Type     | Description                                 |
+| -------------- | -------- | ------------------------------------------- |
+| platform_id    | string   | The accounting platform's ID for the orders |
+| currency_id    | string   | The currency ID of the orders               |
+| reference      | string   | The reference of the orders                 |
+| created_at     | string   | The created at of the orders                |
+| updated_at     | string   | The updated at of the orders                |
+| order_name     | string   | The order name of the orders                |
+| order_number   | string   | The order number of the orders              |
+| description    | string   | The description of the orders               |
+| total_discount | double   | The total discount of the orders            |
+| sub_total      | double   | The sub total of the orders                 |
+| tax_amount     | double   | The tax amount of the orders                |
+| total_amount   | double   | The total amount of the orders              |
+| amount_due     | double   | The amount due of the orders                |
+| order_status   | string   | The order status of the orders              |
+| payment_status | string   | The ecommerce status of the orders          |
+| line_items     | object[] | The line items of the orders                |
+
+<ResponseExample name="The Dispute Object" >
+
+```json The Dispute Response Object
+{
+  "rootfi_id": 157,
+  "rootfi_created_at": "2024-01-22T05:07:31.465Z",
+  "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
+  "rootfi_company_id": 1089,
+  "platform_id": "123456",
+  "currency_id": "1234567890",
+  "reference": "123456",
+  "created_at": "2024-01-22T05:07:31.465Z",
+  "updated_at": "2024-01-22T05:07:31.000Z",
+  "order_name": "John Doe",
+  "order_number": "123456",
+  "description": "John Doe",
+  "total_discount": 100,
+  "sub_total": 100,
+  "tax_amount": 100,
+  "total_amount": 100,
+  "amount_due": 100,
+  "order_status": "ACTIVE",
+  "payment_status": "ACTIVE",
+  "line_items": [
+    {
+      "item_id": "123456",
+      "tax_id": "123456",
+      "line_item_type_id": "123456",
+      "line_item_type": "ECOMMERCE_ORDERS",
+      "description": "This is a description",
+      "unit_amount": 100,
+      "quantity": 1,
+      "total_discount": 100,
+      "tax_amount": 100,
+      "sub_total": 100,
+      "total_amount": 100
+    }
+  ]
+}
+```
+
+</ResponseExample>

@@ -1,5 +1,5 @@
 ---
-openapi: openapi post /accounting/income_statement/all
+openapi: openapi get /accounting/income_statement
 ---
 
 An [income statement](https://docs.rootfi.dev/api-reference/income-statements/overview) is a financial report that shows a business's revenue, expenses, and net income or loss over a specific period of time. In an accounting platform, an income statement is typically generated automatically based on the financial transactions that have been recorded in the system.
@@ -8,7 +8,7 @@ An [income statement](https://docs.rootfi.dev/api-reference/income-statements/ov
 
 ```bash cURL
 curl --request POST \
-  --url https://api.rootfi.dev/accounting/income_statement/all \
+  --url https://api.rootfi.dev/v3/accounting/income_statement  \
   --header 'Content-Type: application/json' \
   --header 'api_key: <api-key>' \
   --data '{

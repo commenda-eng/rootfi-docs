@@ -1,5 +1,5 @@
 ---
-openapi: openapi delete /invite_link/{invite_link_id}
+openapi: openapi delete  /core/invite_links/{invite_link_id}
 ---
 
 **Note:** You can only delete those invite links which is not connected to any company.
@@ -8,7 +8,7 @@ openapi: openapi delete /invite_link/{invite_link_id}
 
 ```bash cURL
 curl --request DELETE \
- --url https://api.rootfi.dev/invite_link/{invite_link_id} \
+ --url https://api.rootfi.dev/v3/core/invite_links/{invite_link_id} \
  --header 'api_key: <api-key>'
 
 ```

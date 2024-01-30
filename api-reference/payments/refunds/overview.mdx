@@ -1,0 +1,42 @@
+---
+title: "Overview"
+description: "Refunds are transactions that return funds to a customer from a previous order."
+icon: "hand-wave"
+---
+
+**The Refunds Data Model** simplifies the handling and retrieval of Refunds data for your application. The model provides a unified representation of refunds data across different platforms, enabling you to easily access and manage refunds data from different platforms.
+
+- Unified Refunds properties: The model provides a unified representation of refunds properties across different platforms, enabling you to easily access and manage refunds data from different platforms.
+- Comprehensive refunds information: The model provides a comprehensive representation of refunds data, including all the properties and relationships that you can retrieve for an order.
+
+## Properties Supported
+
+| Property    | Type   | Description                                                            |
+| ----------- | ------ | ---------------------------------------------------------------------- |
+| platform_id | string | The accounting platform's ID for the Refunds                           |
+| created_at  | string | The date and time the payment was created.                             |
+| amount      | string | The amount of the payment.                                             |
+| currency_id | string | The currency of the payment.                                           |
+| payment_id  | string | The payment id of the payment.                                         |
+| description | string | The description of the payment.                                        |
+| status      | enum   | The status of the payment. Allowed values are PENDING, SUCCESS, FAILED |
+
+<ResponseExample name="The Refunds Object" >
+
+```json The Refunds Response Object
+{
+  "rootfi_id": 157,
+  "rootfi_created_at": "2024-01-22T05:07:31.465Z",
+  "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
+  "rootfi_company_id": 1089,
+  "platform_id": "123456",
+  "created_at": "2024-01-22T05:07:31.000Z",
+  "amount": 100.0,
+  "currency_id": "USD",
+  "payment_id": "123456",
+  "description": "Payment Description",
+  "status": "PENDING"
+}
+```
+
+</ResponseExample>

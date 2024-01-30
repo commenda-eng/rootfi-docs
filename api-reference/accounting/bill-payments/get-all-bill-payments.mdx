@@ -1,5 +1,5 @@
 ---
-openapi: openapi post /accounting/bill_payments/all
+openapi: openapi get /accounting/bill_payments
 ---
 
 The **Bill Payments** Data Model is designed to standardise and simplify the management of bill payment information across various accounting platforms.
@@ -8,7 +8,7 @@ The **Bill Payments** Data Model is designed to standardise and simplify the man
 
 ```bash cURL
 curl --request POST \
-  --url https://api.rootfi.dev/accounting/bill_payments/all \
+  --url https://api.rootfi.dev/v3/accounting/bill_payments  \
   --header 'Content-Type: application/json' \
   --header 'api_key: <api-key>' \
   --data '{

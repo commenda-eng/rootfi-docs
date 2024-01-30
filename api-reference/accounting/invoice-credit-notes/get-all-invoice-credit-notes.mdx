@@ -1,5 +1,5 @@
 ---
-openapi: openapi post /accounting/invoice_credit_notes/all
+openapi: openapi get /accounting/invoice_credit_notes
 ---
 
 An **Invoice Credit Note** is a financial transaction representing a reduction that can be applied against one or multiple invoices issued to Customers.
@@ -8,7 +8,7 @@ An **Invoice Credit Note** is a financial transaction representing a reduction t
 
 ```bash cURL
 curl --request POST \
-  --url https://api.rootfi.dev/accounting/invoice_credit_notes/all \
+  --url https://api.rootfi.dev/v3/accounting/invoice_credit_notes  \
   --header 'Content-Type: application/json' \
   --header 'api_key: <api-key>' \
   --data '{
