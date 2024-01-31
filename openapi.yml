@@ -226,6 +226,7 @@ paths:
                               - name: Otis Falls
                                 value: 123456.12
                                 account_id: '123456'
+                                line_items: []
                         liabilities:
                           - name: Liabilities
                             value: 123456.12
@@ -233,6 +234,7 @@ paths:
                               - name: Otis Falls
                                 value: 123456.12
                                 account_id: '123456'
+                                line_items: []
                         equity:
                           - name: Equity
                             value: 123456.12
@@ -240,7 +242,9 @@ paths:
                               - name: Otis Falls
                                 value: 123456.12
                                 account_id: '123456'
+                                line_items: []
                         net_assets: 123456
+                    next: '123456'
       summary: Get Balance Sheet
       security: *ref_0
   /accounting/bank_accounts:
@@ -1075,7 +1079,6 @@ paths:
                         platform_id: '123456'
                         period_start: '2023-10-01'
                         period_end: '2024-01-31'
-                        currency_id: 00000000-0000-0000-0000-000000000000
                         operating_activities:
                           - name: Operating Activities
                             value: 123456.12
@@ -1083,6 +1086,7 @@ paths:
                               - name: Otis Falls
                                 value: 123456.12
                                 account_id: '123456'
+                                line_items: []
                         investing_activities:
                           - name: Investing Activities
                             value: 123456.12
@@ -1090,6 +1094,7 @@ paths:
                               - name: Otis Falls
                                 value: 123456.12
                                 account_id: '123456'
+                                line_items: []
                         financing_activities:
                           - name: Financing Activities
                             value: 123456.12
@@ -1097,8 +1102,11 @@ paths:
                               - name: Otis Falls
                                 value: 123456.12
                                 account_id: '123456'
+                                line_items: []
                         cash_at_beginning_of_period: 123456
                         cash_at_end_of_period: 123456
+                        updated_at: '2024-01-22T05:07:31.000Z'
+                    next: '123456'
       summary: Get Cash Flow Statement
       security: *ref_0
   /accounting/company_info:
@@ -1704,7 +1712,10 @@ paths:
               value: '2024-01-31'
         - name: period
           in: query
-          description: The period of the income statement
+          description: >-
+            The period of the income statement. This is the monthly grouping of
+            the income statement. For example - If period is 3, then the income
+            statement will be grouped by quarter.
           required: false
           schema:
             type: integer
@@ -1738,6 +1749,7 @@ paths:
                               - name: Otis Falls
                                 value: 123456.12
                                 account_id: '123456'
+                                line_items: []
                         cost_of_goods_sold:
                           - name: Cost of Goods Sold
                             value: 123456.12
@@ -1745,6 +1757,7 @@ paths:
                               - name: Otis Falls
                                 value: 123456.12
                                 account_id: '123456'
+                                line_items: []
                         gross_profit: 123456
                         operating_expenses:
                           - name: Operating Expenses
@@ -1753,6 +1766,7 @@ paths:
                               - name: Otis Falls
                                 value: 123456.12
                                 account_id: '123456'
+                                line_items: []
                         operating_profit: 123456
                         non_operating_revenue:
                           - name: Non Operating Revenue
@@ -1761,6 +1775,7 @@ paths:
                               - name: Otis Falls
                                 value: 123456.12
                                 account_id: '123456'
+                                line_items: []
                         non_operating_expenses:
                           - name: Non Operating Expenses
                             value: 123456.12
@@ -1768,6 +1783,7 @@ paths:
                               - name: Otis Falls
                                 value: 123456.12
                                 account_id: '123456'
+                                line_items: []
                         earnings_before_taxes: 123456
                         taxes:
                           - name: Taxes
@@ -1776,7 +1792,9 @@ paths:
                               - name: Otis Falls
                                 value: 123456.12
                                 account_id: '123456'
+                                line_items: []
                         net_profit: 123456
+                    next: '123456'
       summary: Get Income Statement
       security: *ref_0
   /accounting/invoice_credit_notes:
@@ -3806,6 +3824,79 @@ paths:
                     headers: {}
                     data: {}
                     params: {}
+  /core/real_time:
+    post:
+      description: Retrieve real time data from integration platforms.
+      operationId: core_realTime_create
+      tags:
+        - CoreRealTime
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/coregetRealTimeDataObject'
+              examples:
+                Example1:
+                  value:
+                    data:
+                      platform_id: '1234567890123456789'
+                      name: RootFi
+                      legal_name: RootFi Inc.
+                      base_currency: INR
+                      fiscal_start_at: '2023-12-31T00:00:00.000Z'
+                      org_created_at: '2023-12-31T00:00:00.000Z'
+                      registration_number: 07CEUPK5322M1ZX
+                      tax_number: ODSPS1279G
+                      addresses:
+                        data:
+                          - platform_id: >-
+                              3770712000001721013_CONTACTS_3770712000001721005_SHIPPING
+                            type: SHIPPING
+                            data_model: CONTACTS
+                            data_model_id: '3770712000001721005'
+                            street: 21 street house
+                            locality: Koramanager
+                            city: Hyderabad
+                            state: Bengalore
+                            country: India
+                            pincode: '500045'
+                            updated_at: '2023-11-05T00:00:00.000Z'
+                      external_links:
+                        data:
+                          - platform_id: CONTACTS_3770712000001721005_WEBSITE
+                            data_model: CONTACTS
+                            data_model_id: '3770712000001721005'
+                            link: https://www.rootfi.dev
+                            type: WEBSITE
+                            updated_at: '2023-11-05T00:00:00.000Z'
+                      phone_numbers:
+                        data:
+                          - platform_id: CONTACTS_3770712000001721005_MOBILE
+                            data_model: CONTACTS
+                            data_model_id: '3770712000001721005'
+                            number: +919*********
+                            type: MOBILE
+                            updated_at: '2023-11-05T00:00:00.000Z'
+                      updated_at: '2023-12-31T00:00:00.000Z'
+      summary: Get Real time Data
+      security: *ref_0
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/coregetRealTimeDataRequest'
+            examples:
+              Example1:
+                value:
+                  company_id: 1111
+                  data_model: COMPANY_INFO
+                  variables:
+                    per_page: 100
+                    page: 1
   /core/syncs:
     get:
       description: Retrieve all syncs from the database.
@@ -4944,7 +5035,7 @@ paths:
                         rootfi_company_id: 1089
                         platform_id: '123456'
                         created_at: '2024-01-22T05:07:31.000Z'
-                        amount: '100.00'
+                        amount: 100
                         currency_id: USD
                         payment_id: '123456'
                         description: Payment Description
@@ -5011,7 +5102,7 @@ paths:
                         created_at: '2024-01-22T05:07:31.000Z'
                         name: Tax Rate
                         description: Tax Rate Description
-                        rate: '0.1'
+                        rate: 0.1
                     next: '123456'
       summary: Get All Tax Rates
       security: *ref_0
@@ -5123,19 +5214,19 @@ components:
         assets:
           type: array
           items:
-            $ref: '#/components/schemas/FDataObjectType'
+            $ref: '#/components/schemas/FinancialStatementFields'
           nullable: true
           description: The assets of the balance sheet.
         liabilities:
           type: array
           items:
-            $ref: '#/components/schemas/FDataObjectType'
+            $ref: '#/components/schemas/FinancialStatementFields'
           nullable: true
           description: The liabilities of the balance sheet.
         equity:
           type: array
           items:
-            $ref: '#/components/schemas/FDataObjectType'
+            $ref: '#/components/schemas/FinancialStatementFields'
           nullable: true
           description: The equity of the balance sheet.
         net_assets:
@@ -5143,6 +5234,10 @@ components:
           format: double
           nullable: true
           description: The net assets of the balance sheet.
+        updated_at:
+          type: string
+          nullable: true
+          description: The date the balance sheet was last updated
     accountingBalanceSheetObject:
       title: accountingBalanceSheetObject
       type: object
@@ -5153,6 +5248,7 @@ components:
     accountingGetBalanceSheetResponse:
       title: accountingGetBalanceSheetResponse
       type: object
+      description: The response object for the balance sheet endpoint.
       properties:
         data:
           type: array
@@ -5160,6 +5256,8 @@ components:
             $ref: '#/components/schemas/accountingBalanceSheetObject'
       required:
         - data
+      allOf:
+        - $ref: '#/components/schemas/NextTokenResponse'
     accountingBankAccountFields:
       title: accountingBankAccountFields
       type: object
@@ -5698,26 +5796,22 @@ components:
           type: string
           nullable: true
           description: The period end date of the balance sheet.
-        currency_id:
-          type: string
-          nullable: true
-          description: The currency id of the balance sheet.
         operating_activities:
           type: array
           items:
-            $ref: '#/components/schemas/FDataObjectType'
+            $ref: '#/components/schemas/FinancialStatementFields'
           nullable: true
           description: The operating activities of the balance sheet.
         investing_activities:
           type: array
           items:
-            $ref: '#/components/schemas/FDataObjectType'
+            $ref: '#/components/schemas/FinancialStatementFields'
           nullable: true
           description: The investing activities of the balance sheet.
         financing_activities:
           type: array
           items:
-            $ref: '#/components/schemas/FDataObjectType'
+            $ref: '#/components/schemas/FinancialStatementFields'
           nullable: true
           description: The financing activities of the balance sheet.
         cash_at_beginning_of_period:
@@ -5730,6 +5824,10 @@ components:
           format: double
           nullable: true
           description: The cash at end of period of the balance sheet.
+        updated_at:
+          type: string
+          nullable: true
+          description: The date and time the cash flow statement was last updated.
     accountingCashFlowStatementObject:
       title: accountingCashFlowStatementObject
       type: object
@@ -5740,6 +5838,7 @@ components:
     accountingGetCashFlowStatementResponse:
       title: accountingGetCashFlowStatementResponse
       type: object
+      description: The response object for the Cash Flow Statement endpoint.
       properties:
         data:
           type: array
@@ -5747,6 +5846,8 @@ components:
             $ref: '#/components/schemas/accountingCashFlowStatementObject'
       required:
         - data
+      allOf:
+        - $ref: '#/components/schemas/NextTokenResponse'
     accountingCompanyInfoFields:
       title: accountingCompanyInfoFields
       type: object
@@ -6265,13 +6366,13 @@ components:
         revenue:
           type: array
           items:
-            $ref: '#/components/schemas/FDataObjectType'
+            $ref: '#/components/schemas/FinancialStatementFields'
           nullable: true
           description: The revenue of the income statement
         cost_of_goods_sold:
           type: array
           items:
-            $ref: '#/components/schemas/FDataObjectType'
+            $ref: '#/components/schemas/FinancialStatementFields'
           nullable: true
           description: The cost of goods sold of the income statement
         gross_profit:
@@ -6282,7 +6383,7 @@ components:
         operating_expenses:
           type: array
           items:
-            $ref: '#/components/schemas/FDataObjectType'
+            $ref: '#/components/schemas/FinancialStatementFields'
           nullable: true
           description: The operating expenses of the income statement
         operating_profit:
@@ -6293,13 +6394,13 @@ components:
         non_operating_revenue:
           type: array
           items:
-            $ref: '#/components/schemas/FDataObjectType'
+            $ref: '#/components/schemas/FinancialStatementFields'
           nullable: true
           description: The non operating revenue of the income statement
         non_operating_expenses:
           type: array
           items:
-            $ref: '#/components/schemas/FDataObjectType'
+            $ref: '#/components/schemas/FinancialStatementFields'
           nullable: true
           description: The non operating expenses of the income statement
         earnings_before_taxes:
@@ -6310,7 +6411,7 @@ components:
         taxes:
           type: array
           items:
-            $ref: '#/components/schemas/FDataObjectType'
+            $ref: '#/components/schemas/FinancialStatementFields'
           nullable: true
           description: The taxes of the income statement
         net_profit:
@@ -6318,6 +6419,10 @@ components:
           format: double
           nullable: true
           description: The net profit of the income statement
+        updated_at:
+          type: string
+          nullable: true
+          description: The date the income statement was last updated
     accountingIncomeStatementObject:
       title: accountingIncomeStatementObject
       type: object
@@ -6328,6 +6433,7 @@ components:
     accountingGetIncomeStatementResponse:
       title: accountingGetIncomeStatementResponse
       type: object
+      description: The response object for the income statement endpoint.
       properties:
         data:
           type: array
@@ -6335,6 +6441,8 @@ components:
             $ref: '#/components/schemas/accountingIncomeStatementObject'
       required:
         - data
+      allOf:
+        - $ref: '#/components/schemas/NextTokenResponse'
     accountingInvoiceCreditNoteFields:
       title: accountingInvoiceCreditNoteFields
       type: object
@@ -7686,6 +7794,38 @@ components:
         - headers
         - data
         - params
+    coregetRealTimeDataObject:
+      title: coregetRealTimeDataObject
+      type: object
+      description: The response object for the getRealTimeData endpoint.
+      properties:
+        data:
+          type: object
+          additionalProperties: true
+          description: The data returned from the integration platform.
+      required:
+        - data
+    coregetRealTimeDataRequest:
+      title: coregetRealTimeDataRequest
+      type: object
+      description: The request object for the getRealTimeData endpoint.
+      properties:
+        company_id:
+          type: integer
+          description: The ID of the company to retrieve real_time data for.
+          example: 1111
+        data_model:
+          type: string
+          description: The data model to retrieve real_time data for.
+          example: COMPANY_INFO
+        variables:
+          type: object
+          additionalProperties: true
+          description: The variables to retrieve real_time data for.
+      required:
+        - company_id
+        - data_model
+        - variables
     coregetSyncsObject:
       title: coregetSyncsObject
       type: object
@@ -9086,9 +9226,10 @@ components:
           description: The date and time the payment was created.
           example: '2024-01-22T05:07:31.000Z'
         amount:
-          type: string
+          type: number
+          format: double
           description: The amount of the payment.
-          example: '100.00'
+          example: 100
         currency_id:
           type: string
           description: The currency of the payment.
@@ -9152,9 +9293,10 @@ components:
           description: The description of the tax rate
           example: Tax Rate Description
         rate:
-          type: string
+          type: number
+          format: double
           description: The rate of the tax rate
-          example: '0.1'
+          example: 0.1
       required:
         - updated_at
         - created_at
@@ -9528,44 +9670,6 @@ components:
           format: double
           nullable: true
           description: The total amount of the line item
-    FDataObjectType:
-      title: FDataObjectType
-      type: object
-      properties:
-        name:
-          type: string
-          description: The name of the object
-        value:
-          type: number
-          format: double
-          description: The value of the object
-        line_items:
-          type: array
-          items:
-            $ref: '#/components/schemas/FDataLineItemType'
-          nullable: true
-          description: The line items of the object
-      required:
-        - name
-        - value
-    FDataLineItemType:
-      title: FDataLineItemType
-      type: object
-      properties:
-        name:
-          type: string
-          description: The name of the line item
-        value:
-          type: number
-          format: double
-          description: The value of the line item
-        account_id:
-          type: string
-          nullable: true
-          description: The account id of the line item
-      required:
-        - name
-        - value
     RateLimitData:
       title: RateLimitData
       type: object
@@ -9586,6 +9690,55 @@ components:
         - counters
         - lastReset
         - maxLimits
+    FinancialStatementFields:
+      title: FinancialStatementFields
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the line item
+          example: Otis Falls
+        value:
+          type: number
+          format: double
+          description: The value of the line item
+          example: 123456.12
+        line_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/FinancialStatementLineItemFields'
+          nullable: true
+          description: The line items of the line item
+      required:
+        - name
+        - value
+    FinancialStatementLineItemFields:
+      title: FinancialStatementLineItemFields
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the line item
+          example: Otis Falls
+        value:
+          type: number
+          format: double
+          description: The value of the line item
+          example: 123456.12
+        account_id:
+          type: string
+          nullable: true
+          description: The account id of the line item
+        line_items:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+          nullable: true
+          description: The line items of the line item
+      required:
+        - name
+        - value
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

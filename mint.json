@@ -164,6 +164,10 @@
         {
           "group": "Passthrough",
           "pages": ["api-reference/core/passthrough/passthrough"]
+        },
+        {
+          "group": "Real Time",
+          "pages": ["api-reference/core/real_time/real_time"]
         }
       ]
     },
