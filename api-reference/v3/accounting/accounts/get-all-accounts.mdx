@@ -1,0 +1,45 @@
+---
+version: "v3"
+openapi: openapi_v3 get /accounting/accounts
+---
+
+[The Accounts Data Model](https://docs.rootfi.dev/api-reference/accounts/overview) is designed to streamline the management and retrieval of account-related information across various accounting platforms.
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/v3/accounting/accounts  \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api_key>' \
+  --data '{
+  "take": 10,
+  "skip": 0,
+  "orderBy": {
+    "nominal_code": "asc"
+  },
+  "filter": {
+    "name": {
+      "eq": "Rootfi Test"
+    }
+  }
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
+
+await rootfi.accounting.accounts.list({
+  take: 10,
+  skip: 0,
+  filter: {
+    category: { eq: "LIABILITY" },
+  },
+  orderBy: {
+    current_balance: "asc",
+  },
+});
+```
+
+</RequestExample>

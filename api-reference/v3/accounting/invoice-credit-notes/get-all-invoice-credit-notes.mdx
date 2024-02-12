@@ -1,0 +1,45 @@
+---
+version: "v3"
+openapi: openapi_v3 get /accounting/invoice_credit_notes
+---
+
+An **Invoice Credit Note** is a financial transaction representing a reduction that can be applied against one or multiple invoices issued to Customers.
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/v3/accounting/invoice_credit_notes  \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api-key>' \
+  --data '{
+  "take": 10,
+  "skip": 0,
+  "orderBy": {
+    "document_number": "asc"
+  },
+  "filter": {
+    "contact_id": {
+      "eq": "3770712000000080150"
+    }
+  }
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
+
+await rootfi.accounting.invoiceCreditNote.list({
+  take: 10,
+  skip: 0,
+  orderBy: {
+    document_number: "asc",
+  },
+  filter: {
+    contact_id: { eq: "3770712000000080150" },
+  },
+});
+```
+
+</RequestExample>

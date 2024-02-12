@@ -1,0 +1,45 @@
+---
+version: "v3"
+openapi: openapi_v3 get /payments/refunds
+---
+
+[The Refunds Data Model](https://docs.rootfi.dev/api-reference/payments/overview) is designed to streamline the management and retrieval of refunds information across various payment platforms.
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/v3/payments/refunds  \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api_key>' \
+  --data '{
+  "take": 10,
+  "skip": 0,
+  "orderBy": {
+    "rootfi_created_at": "asc"
+  },
+  "filter": {
+    "status": {
+      "eq": "PENDING"
+    }
+  }
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
+
+await rootfi.payments.refunds.list({
+  take: 10,
+  skip: 0,
+  filter: {
+    status: { eq: "PENDING" },
+  },
+  orderBy: {
+    rootfi_id: "asc",
+  },
+});
+```
+
+</RequestExample>

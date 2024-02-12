@@ -1,0 +1,51 @@
+---
+title: "Overview"
+description: ""
+icon: "hand-wave"
+---
+
+An **Account** is a record in an accounting system that tracks the financial activities of a specific asset, liability, equity, revenue, or expense. These records increase and decrease as transactions occur throughout the accounting period. The aggregation of each Account object is often referred to as the Chart of Accounts.
+
+- Unified account properties: The model unifies essential account details, such as name, description, currency, and current balance, making it easier to work with account data from different platforms.
+- Hierarchical structure: Accounts can be linked to parent accounts using the `parent_account_id`, enabling the representation of complex account structures and relationships.
+- Categorisation and status: The model supports account categorisation with main categories(asset, liability, equity, revenue, or expense) and subcategories, as well as tracking account status for better organisation and reporting.
+
+## Attributes
+
+<Snippet file="accounts_snippets.mdx" />
+
+## Properties Supported
+
+| Property          | Type   | Description                                                                                                         |
+| ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------- |
+| platform_id       | string | The ID that the accounting platform uses to identify this account                                                   |
+| name              | string | The name of the account                                                                                             |
+| description       | string | Description of the account                                                                                          |
+| nominal_code      | string | Reference given to each account for a business. It ensures money is allocated to the correct account.               |
+| currency_id       | string | The Accounting Platform's unique ID for the currency                                                                |
+| current_balance   | float  | Current balance of the account                                                                                      |
+| status            | enum   | The status of the account. Values are: ACTIVE, ARCHIVED, UNKNOWN                                                    |
+| category          | enum   | The category of the account. Values are: ASSET, EXPENSE, LIABILITY, EQUITY,INCOME, PRIMARY, BANK, REVENUE , UNKNOWN |
+| sub_category      | string | The sub category of the account                                                                                     |
+| parent_account_id | string | The platform ID of the parent account                                                                               |
+| updated_at        | date   | Date the record was last updated in the accounting platform.                                                        |
+
+<ResponseExample name="The Account Object" >
+
+```json The Account Response Object
+{
+  "platform_id": "1234567890123456789",
+  "currency_id": null,
+  "name": "Professional Services Account",
+  "description": "Account for professional consulting services",
+  "nominal_code": "A0123",
+  "current_balance": 5000.0,
+  "status": "ACTIVE",
+  "category": "EXPENSE",
+  "sub_category": "other_expense",
+  "parent_account_id": null,
+  "updated_at": "2023-11-05T14:30:00.000Z"
+}
+```
+
+</ResponseExample>

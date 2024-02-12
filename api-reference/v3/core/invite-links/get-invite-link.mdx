@@ -1,0 +1,23 @@
+---
+version: "v3"
+openapi: openapi_v3 get /core/invite_links/{invite_link_id}
+---
+
+An **invite link** contains API requests for generating and managing invite links, which can be used to connect end users to their preferred accounting platforms.
+
+<RequestExample>
+
+```bash cURL
+curl --request GET \
+  --url https://api.rootfi.dev/v3/core/invite_links/{invite_link_id} \
+  --header 'api_key: <api-key>'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
+
+await rootfi.core.inviteLinks.retrieveById("7a1c0e42-9f85-4d6e-bb5d-358a72913c0b");
+```
+
+</RequestExample>

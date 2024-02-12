@@ -1,0 +1,21 @@
+---
+version: "v3"
+openapi: openapi_v3 get /core/companies/{company_id}
+---
+
+<RequestExample>
+
+```bash cURL
+curl --request GET \
+  --url https://integrate.rootfi.dev/v3/core/companies/{company_id} \
+  --header 'api_key: <api_key>'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
+
+await rootfi.core.companies.retrieveById(1234);
+```
+
+</RequestExample>

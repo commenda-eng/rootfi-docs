@@ -1,0 +1,26 @@
+---
+version: "v3"
+openapi: openapi_v3 get /core/syncs/jobs/{job_id}
+---
+
+<RequestExample>
+```bash cURL
+curl --request GET \
+  --url https://api.rootfi.dev/v3/core/syncs/jobs/{job_id} \
+  --header 'api_key: <api-key>'
+
+````
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
+
+await rootfi.core.sync.list({
+  company_id: 123456,
+  jobType: "PULL",
+  limit: 10,
+  offset: 0,
+});
+````
+
+</RequestExample>

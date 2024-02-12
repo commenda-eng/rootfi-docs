@@ -1,0 +1,258 @@
+---
+title: "Overview"
+description: "A record of goods or services purchased from a vendor"
+icon: "hand-wave"
+---
+
+**The Bills Data Model** is designed to simplify the handling and retrieval of bill-related information across various accounting platforms.
+
+- Unified bill properties: The model unifies essential bill information such as vendor, account, dates, currency, and amounts, enabling a unified view of bills from different platforms.
+- Status tracking: The model supports tracking the status of a bill, including draft, submitted, partially paid, paid, overdue, void, or unknown, for better bill management and reporting.
+- Relationship with other data models: The model allows for the inclusion of associated line items, bill payments, and purchase orders, providing a complete picture of each bill.
+- Currency conversion: The `currency_rate` property allows for easy currency conversion between the payment currency and the base currency, ensuring accurate financial reporting and analysis.
+
+## Attributes
+
+<ResponseField name="platform_id" type="string" required>
+  Accounting platform’s ID for the bill
+</ResponseField>
+
+<ResponseField name="account_id" type="string">
+  The accounting platform’s unique ID of the [account](https://docs.rootfi.dev/api-reference/accounts/overview) associated with the bill
+</ResponseField>
+
+<ResponseField name="contact_id" type="string">
+  The accounting platform’s unique ID of the [contact](https://docs.rootfi.dev/api-reference/contacts/overview) associated with this bill
+</ResponseField>
+
+<ResponseField name="currency_id" type="string">
+  The currency data associated with the bill.
+</ResponseField>
+
+<ResponseField name="purchase_order_ids" type="Array">
+  Array of [Purchase Orders](https://docs.rootfi.dev/api-reference/purchase-orders/overview) Id associated with the bill
+</ResponseField>
+
+<ResponseField name="document_number" type="string">
+  Reference number for the bill
+</ResponseField>
+
+<ResponseField name="posted_date" type="date">
+  Date of creation of the bill
+</ResponseField>
+
+<ResponseField name="due_date" type="date">
+  The due date for the bill
+</ResponseField>
+
+<ResponseField name="currency" type="string">
+  The currency data associated with the bank transaction.
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="currency_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="currency_rate" type="float">
+  Rate between the currency of the payment and the base currency
+</ResponseField>
+
+<ResponseField name="status" type="enum">
+  The status of the bill. Values are: `DRAFT`, `SUBMITTED`, `PARTIALLY_PAID`, `PAID`, `OVERDUE`, `VOID`, `UNKNOWN`.
+</ResponseField>
+
+<ResponseField name="total_amount" type="float">
+  Total amount of the Bill
+</ResponseField>
+
+<ResponseField name="sub_total" type="float">
+  Total pre tax amount of the Bill
+</ResponseField>
+
+<ResponseField name="total_discount" type="float">
+  Total discount amount levied on the Bill
+</ResponseField>
+
+<ResponseField name="tax_amount" type="float">
+  Total tax amount levied on the bill
+</ResponseField>
+
+<ResponseField name="amount_due" type="float">
+  Outstanding amount to be paid for the Bill
+</ResponseField>
+
+<ResponseField name="line_items" type="Line Item">
+  Line Items associated with the bill
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="line_items_snippeet.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="payments" type="Bill Payment">
+  Array of [Bill Payments](https://docs.rootfi.dev/api-reference/bill-payments/overview) associated with the bill
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="bill_payment.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="contact" type="Contact">
+  The [contact](https://docs.rootfi.dev/api-reference/contacts/overview) who receives this bill
+</ResponseField>
+
+<ResponseField name="documents" type="Document">
+  Array of [Documents](https://docs.rootfi.dev/api-reference/documents/overview) associated with the bill
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="documents_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="updated_at" type="date">
+  The date at which the information was updated on the accounting platform
+</ResponseField>
+
+<ResponseField name="raw_data" type="object">
+  The raw JSON response we get from the accounting platform for that data.
+</ResponseField>
+
+## Properties Supported
+
+| Property           | Type                                    | Description                                                                                        |
+| ------------------ | --------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| platform_id        | string                                  | Accounting platform's ID for the bill                                                              |
+| account_id         | string                                  | The accounting platform's unique ID of the account associated with the bill                        |
+| contact_id         | string                                  | The accounting platform's unique ID of the contact associated with this bill                       |
+| document_number    | string                                  | Reference number for the bill                                                                      |
+| posted_date        | date                                    | Date of creation of the bill                                                                       |
+| due_date           | date                                    | The due date for the bill                                                                          |
+| currency           | string                                  | The ISO-4217 currency code                                                                         |
+| currency_rate      | float                                   | Rate between the currency of the payment and the base currency                                     |
+| status             | enum                                    | The status of the bill. Values are: DRAFT, SUBMITTED, PARTIALLY_PAID, PAID, OVERDUE, VOID, UNKNOWN |
+| total_amount       | float                                   | Total amount of the Bill                                                                           |
+| sub_total          | float                                   | Total pre tax amount of the Bill                                                                   |
+| total_discount     | float                                   | Total discount amount levied on the Bill                                                           |
+| tax_amount         | float                                   | Total tax amount levied on the bill                                                                |
+| amount_due         | float                                   | Outstanding amount to be paid for the Bill                                                         |
+| line_items         | [Line Item](/docs/line-items)           | Array of Bill Line items associated with the bill                                                  |
+| payments           | [Bill Payment](/docs/bill-payments)     | Array of Bill Payments associated with the bill                                                    |
+| contact            | [Contact](/docs/contacts)               | The contact who receives this bill                                                                 |
+| purchase_order_ids | [Purchase Order](/docs/purchase-orders) | Array of Purchase Orders Id associated with the bill                                               |
+| documents          | [Document](/docs/documents)             | Array of Documents associated with the bill                                                        |
+| updated_at         | date                                    | The date at which the information was updated on the accounting platform                           |
+
+<ResponseExample name="The Account Object" >
+
+```json The Bills Response Object
+{
+  "platform_id": "1234567890123456789",
+  "account_id": "1234567890123456789",
+  "contact_id": "1234567890123456789",
+  "currency_id": "3770712000000000099",
+  "purchase_order_ids": ["3770712000000085084", "3770712000000085084"],
+  "document_number": "AO-0001",
+  "posted_date": "2023-01-24T00:00:00.000Z",
+  "due_date": "2023-01-24T00:00:00.000Z",
+  "currency": {
+    "data": {
+      "platform_id": "3770712000000000099",
+      "name": "Indian Rupee",
+      "code": "INR",
+      "symbol": "₹",
+      "is_base_currency": true,
+      "exchange_rate": 0,
+      "updated_at":
+    }
+  },
+  "currency_rate": 1,
+  "memo": null,
+  "status": "PAID",
+  "total_amount": 150,
+  "sub_total": 150,
+  "total_discount": 0,
+  "tax_amount": 0,
+  "amount_due": 0,
+  "line_items": {
+    "data": [
+      {
+        "platform_id": "1234567890123456789",
+        "account_id": "1234567890123456789",
+        "line_item_type_id": "1234567890123456789",
+        "item_id": "1234567890123456789",
+        "line_item_type": "BILLS",
+        "tracking_category_ids": [],
+        "tax_id": null,
+        "description": "Line Items Description",
+        "quantity": 123,
+        "unit_amount": 150,
+        "total_amount": 150,
+        "sub_total": 150,
+        "tax_amount": 0,
+        "total_discount": 0,
+        "updated_at": "2023-02-17T00:00:00.000Z"
+      }
+    ]
+  },
+  "payments": {
+    "data": [
+      {
+        "platform_id": "1234567890123456789",
+        "payment_id": "7890123456789012345",
+        "bill_id": "1234567890123456789",
+        "currency_id": "3770712000000000099",
+        "contact_id": "1234567890123456789",
+        "account_id": "1234567890123456789",
+        "amount": 150,
+        "payment_date": "2023-02-03T00:00:00.000Z",
+        "payment_mode": "Cash",
+        "currency": {
+          "data": {
+            "platform_id": "3770712000000000099",
+            "name": "Indian Rupee",
+            "code": "INR",
+            "symbol": "₹",
+            "is_base_currency": true,
+            "exchange_rate": 0,
+            "updated_at": "2023-02-17T00:00:00.000Z"
+          }
+        },
+        "currency_rate": 80,
+        "memo": "Payment For Items Purchased",
+        "document_number": "AO-0001",
+        "updated_at": "2023-02-17T00:00:00.000Z"
+      }
+    ]
+  },
+  "documents": {
+    "data": [
+      {
+        "platform_id": "3770712000000106157_3770712000000085084",
+        "file_name": "sample_upload.xlsx",
+        "file_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "file_size": 6019.53125,
+        "document_type_id": "3770712000000085084",
+        "document_type": "BILLS",
+        "document_uploaded": false,
+        "download_link": "https://www.testdownload.com/download/3770712000000106157_3770712000000085084",
+        "updated_at": null
+      }
+    ]
+  },
+  "updated_at": "2023-07-05T00:00:00.000Z"
+}
+```
+
+</ResponseExample>

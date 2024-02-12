@@ -1,0 +1,45 @@
+---
+version: "v3"
+openapi: openapi_v3 get /payments/orders
+---
+
+[The Orders Data Model](https://docs.rootfi.dev/api-reference/orders/overview) is designed to streamline the management and retrieval of orders information across various payments platforms.
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/v3/payments/orders  \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api_key>' \
+  --data '{
+  "take": 10,
+  "skip": 0,
+  "orderBy": {
+    "rootfi_created_at": "asc"
+  },
+  "filter": {
+    "status": {
+      "eq": "CREATED"
+    }
+  }
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
+
+await rootfi.payments.orders.list({
+  take: 10,
+  skip: 0,
+  filter: {
+    status: { eq: "CREATED" },
+  },
+  orderBy: {
+    rootfi_id: "asc",
+  },
+});
+```
+
+</RequestExample>

@@ -1,0 +1,45 @@
+---
+version: "v3"
+openapi: openapi_v3 get /accounting/income_statement
+---
+
+An [income statement](https://docs.rootfi.dev/api-reference/income-statements/overview) is a financial report that shows a business's revenue, expenses, and net income or loss over a specific period of time. In an accounting platform, an income statement is typically generated automatically based on the financial transactions that have been recorded in the system.
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/v3/accounting/income_statement  \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api-key>' \
+  --data '{
+  "take": 10,
+  "skip": 0,
+  "orderBy": {
+    "period_start": "asc"
+  },
+  "filter": {
+    "period_start": {
+      "eq": "2021-01-01"
+    }
+  }
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
+
+await rootfi.accounting.accounts.list({
+  take: 10,
+  skip: 0,
+  filter: {
+    period_start: { eq: "2021-01-01" },
+  },
+  orderBy: {
+    period_start: "asc",
+  },
+});
+```
+
+</RequestExample>

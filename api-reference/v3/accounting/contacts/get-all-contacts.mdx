@@ -1,0 +1,45 @@
+---
+version: "v3"
+openapi: openapi_v3 get /accounting/contacts
+---
+
+A **contact** is an individual or company that buys or sells goods or services from a business. Commonly referred to a customer on a corresponding invoice or a vendor for a bill
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/v3/accounting/contacts  \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api-key>' \
+  --data '{
+  "take": 10,
+  "skip": 0,
+  "orderBy": {
+    "contact_name": "asc"
+  },
+  "filter": {
+    "name": {
+      "eq": "Mr. John Doe"
+    }
+  }
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
+
+await rootfi.accounting.contacts.list({
+  take: 10,
+  skip: 0,
+  orderBy: {
+    contact_name: "asc",
+  },
+  filter: {
+    name: { eq: "Mr. John Doe" },
+  },
+});
+```
+
+</RequestExample>

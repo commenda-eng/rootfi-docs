@@ -1,0 +1,21 @@
+---
+version: "v2"
+openapi: openapi_v2 delete /webhooks/{webhook_id}
+---
+
+<RequestExample>
+
+```bash cURL
+curl --request DELETE \
+  --url https://api.rootfi.dev/webhooks/{webhook_id} \
+  --header 'api_key: <api-key>'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
+
+await rootfi.core.webhooks.delete("abcdefghijklmnopq");
+```
+
+</RequestExample>

@@ -1,0 +1,45 @@
+---
+version: "v3"
+openapi: openapi_v3 get /payments/payouts
+---
+
+[The Payouts Data Model](https://docs.rootfi.dev/api-reference/payments/overview) is designed to streamline the management and retrieval of payouts information across various payment platforms.
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/v3/payments/payouts  \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api_key>' \
+  --data '{
+  "take": 10,
+  "skip": 0,
+  "orderBy": {
+    "rootfi_created_at": "asc"
+  },
+  "filter": {
+    "status": {
+      "eq": "SUCCESS"
+    }
+  }
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
+
+await rootfi.payments.payouts.list({
+  take: 10,
+  skip: 0,
+  filter: {
+    status: { eq: "SUCCESS" },
+  },
+  orderBy: {
+    rootfi_id: "asc",
+  },
+});
+```
+
+</RequestExample>

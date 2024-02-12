@@ -1,0 +1,45 @@
+---
+version: "v3"
+openapi: openapi_v3 get /accounting/expenses
+---
+
+**Expenses** are Payment made by a business at the time of purchase (ex. a credit card payment)
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/v3/accounting/expenses  \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api-key>' \
+  --data '{
+  "take": 10,
+  "skip": 0,
+  "orderBy": {
+    "document_number": "asc"
+  },
+  "filter": {
+    "account_id": {
+      "eq": "3770712000000076064"
+    }
+  }
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
+
+await rootfi.accounting.expenses.list({
+  take: 10,
+  skip: 0,
+  orderBy: {
+    document_number: "asc",
+  },
+  filter: {
+    account_id: { eq: "3770712000000076064" },
+  },
+});
+```
+
+</RequestExample>

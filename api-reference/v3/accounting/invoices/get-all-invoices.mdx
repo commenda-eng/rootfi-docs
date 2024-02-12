@@ -1,0 +1,45 @@
+---
+version: "v3"
+openapi: openapi_v3 get /accounting/invoices
+---
+
+An [invoice](https://docs.rootfi.dev/api-reference/invoices/overview) is an itemized record of goods sold or services provided to a customer.
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/v3/accounting/invoices  \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api-key>' \
+  --data '{
+  "take": 10,
+  "skip": 0,
+  "orderBy": {
+    "contact_id": "asc"
+  },
+  "filter": {
+    "status": {
+      "eq": "PAID"
+    }
+  }
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
+
+await rootfi.accounting.invoice.list({
+  take: 10,
+  skip: 0,
+  orderBy: {
+    contact_id: "asc",
+  },
+  filter: {
+    status: { eq: "PAID" },
+  },
+});
+```
+
+</RequestExample>
