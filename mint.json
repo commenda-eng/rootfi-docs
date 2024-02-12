@@ -31,8 +31,8 @@
     "prompt": "Ask any question (powered by ChatGPT)"
   },
   "versions": [
-    "v2",
-    "v3"
+    "v3",
+    "v2"
   ],
   "tabs": [
     {
