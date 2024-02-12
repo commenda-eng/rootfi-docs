@@ -180,6 +180,15 @@
           ]
         },
         {
+          "group": "Integrations",
+          "pages": [
+            "api-reference/core/integrations/get-all-integrations",
+            "api-reference/core/integrations/get-integration",
+            "api-reference/core/integrations/create-integrations",
+            "api-reference/core/integrations/edit-integration"
+          ]
+        },
+        {
           "group": "Sync",
           "pages": [
             "api-reference/v3/core/sync/sync-data",
@@ -187,9 +196,16 @@
             "api-reference/v3/core/sync/get-all-sync-by-id",
             "api-reference/v3/core/sync/get-sync-jobs",
             "api-reference/v3/core/sync/get-job",
-            "api-reference/v3/core/sync/get-all-sync-by-id",
-            "api-reference/v3/core/sync/get-all-sync",
-            "api-reference/v3/core/sync/sync-data"
+            "api-reference/v2/core/sync/get-all-sync-by-id",
+            "api-reference/v2/core/sync/get-all-sync",
+            "api-reference/v2/core/sync/sync-data"
+          ]
+        },
+        {
+          "group": "Jobs",
+          "version": "v2",
+          "pages": [
+            "api-reference/v2/jobs/get-job"
           ]
         },
         {
