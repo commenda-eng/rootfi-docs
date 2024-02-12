@@ -181,11 +181,12 @@
         },
         {
           "group": "Integrations",
+          "version": "v2",
           "pages": [
-            "api-reference/core/integrations/get-all-integrations",
-            "api-reference/core/integrations/get-integration",
-            "api-reference/core/integrations/create-integrations",
-            "api-reference/core/integrations/edit-integration"
+            "api-reference/v2/core/integrations/get-all-integrations",
+            "api-reference/v2/core/integrations/get-integration",
+            "api-reference/v2/core/integrations/create-integrations",
+            "api-reference/v2/core/integrations/edit-integration"
           ]
         },
         {
