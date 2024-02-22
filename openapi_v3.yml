@@ -1703,18 +1703,11 @@ paths:
                       tax_number: null
                       registration_number: null
                       status: null
-                      updated_at: "2023-12-26T00:00:00.000Z"
-                      external_links:
-                        - rootfi_id: 278264
-                          platform_id: >-
-                            CONTACTS_1af68894-ea9f-ee11-be36-7c1e520f50bc_WEBSITE
-                          link: https://www.google.com
-                          type: WEBSITE
-                      phone_numbers:
-                        - rootfi_id: 278264
-                          platform_id: CONTACTS_1af68894-ea9f-ee11-be36-7c1e520f50bc_PHONE
-                          number: "1234567890"
-                          type: MOBILE
+                      email: abc@gmail.com
+                      website: www.abc.com
+                      telephone: "1234567890"
+                      mobile: "1234567890"
+                      fax: "1234567890"
                       addresses:
                         - rootfi_id: 278264
                           platform_id: >-
@@ -1956,7 +1949,7 @@ paths:
         "200":
           description: ""
           content:
-            application/json:
+            multipart/form-data:
               schema:
                 $ref: "#/components/schemas/accountingCreateDocumentResponse"
               examples:
@@ -1980,21 +1973,16 @@ paths:
       requestBody:
         required: true
         content:
-          application/json:
+          multipart/form-data:
             schema:
               $ref: "#/components/schemas/accountingCreateDocumentRequest"
             examples:
               Example1:
                 value:
+                  file: Example File
                   company_id: 123
-                  data:
-                    - file_name: Example File Name
-                      file_type: Example File Type
-                      file_size: Example File Size
-                      document_type_id: "123456"
-                      document_type: Example Document Type
-                      document_uploaded: true
-                      updated_at: "2024-01-25T09:00:00Z"
+                  document_type_id: "123456"
+                  document_type: INVOICES
   /accounting/expenses:
     get:
       description: Retrieve all Expenses.
@@ -7441,6 +7429,64 @@ components:
             $ref: "#/components/schemas/accountingAddresses"
           nullable: true
           description: Addresses for the contact
+    accountingWriteContactFields:
+      title: accountingWriteContactFields
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+          description: Name of the contact
+        contact_name:
+          type: string
+          nullable: true
+          description: Name of the contact person for the contact
+        contact_type:
+          $ref: "#/components/schemas/ContactType"
+          nullable: true
+          description: The type of contact. Values are either CUSTOMER or VENDOR
+        currency_id:
+          type: string
+          nullable: true
+          description: The ISO-4217 currency code
+        tax_number:
+          type: string
+          nullable: true
+          description: Contact’s tax number
+        registration_number:
+          type: string
+          nullable: true
+          description: Contact’s identifying number
+        status:
+          $ref: "#/components/schemas/BaseStatus"
+          nullable: true
+          description: The status of the contact. Values are ACTIVE, ARCHIVED, UNKNOWN
+        email:
+          type: string
+          nullable: true
+          description: The email of the contact
+        website:
+          type: string
+          nullable: true
+          description: The website of the contact
+        telephone:
+          type: string
+          nullable: true
+          description: The telephone of the contact
+        mobile:
+          type: string
+          nullable: true
+          description: The mobile of the contact
+        fax:
+          type: string
+          nullable: true
+          description: The fax of the contact
+        addresses:
+          type: array
+          items:
+            $ref: "#/components/schemas/accountingAddresses"
+          nullable: true
+          description: Addresses for the contact
     accountingContactObject:
       title: accountingContactObject
       type: object
@@ -7467,7 +7513,7 @@ components:
         data:
           type: array
           items:
-            $ref: "#/components/schemas/accountingContactFields"
+            $ref: "#/components/schemas/accountingWriteContactFields"
           description: The data of the Contacts endpoint
       required:
         - data
@@ -7640,6 +7686,29 @@ components:
           type: string
           nullable: true
           description: The updated date of the document
+    accountingCreateDocumentRequest:
+      title: accountingCreateDocumentRequest
+      type: object
+      properties:
+        file:
+          type: string
+          description: The file of the document
+          example: Example File
+        company_id:
+          type: integer
+          description: The company ID of the document
+          example: 123
+        document_type_id:
+          type: string
+          nullable: true
+          description: The document type ID of the document
+        document_type:
+          $ref: "#/components/schemas/AccountingLineItemtype"
+          description: The document type of the document
+      required:
+        - file
+        - company_id
+        - document_type
     accountingDocumentObject:
       title: accountingDocumentObject
       type: object
@@ -7660,19 +7729,6 @@ components:
         - data
       allOf:
         - $ref: "#/components/schemas/CommonReadResponse"
-    accountingCreateDocumentRequest:
-      title: accountingCreateDocumentRequest
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: "#/components/schemas/accountingDocumentFields"
-          description: The data of the document to create
-      required:
-        - data
-      allOf:
-        - $ref: "#/components/schemas/CompanyIDRequestField"
     accountingCreateDocumentResponse:
       title: accountingCreateDocumentResponse
       type: object
