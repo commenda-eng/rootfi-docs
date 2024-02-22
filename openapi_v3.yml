@@ -186,16 +186,6 @@ paths:
       tags:
         - AccountingBalanceSheet
       parameters:
-        - name: limit
-          in: query
-          description: The number of objects you want to retrieve
-          required: false
-          schema:
-            type: integer
-            nullable: true
-          examples:
-            Example1:
-              value: 10
         - name: rootfi_company_id[eq]
           in: query
           description: The company id of the rootfi
@@ -1279,16 +1269,6 @@ paths:
       tags:
         - AccountingCashFlowStatement
       parameters:
-        - name: limit
-          in: query
-          description: The number of objects you want to retrieve
-          required: false
-          schema:
-            type: integer
-            nullable: true
-          examples:
-            Example1:
-              value: 10
         - name: rootfi_company_id[eq]
           in: query
           description: The company id of the rootfi
@@ -1652,6 +1632,99 @@ paths:
                     total_count: 123
       summary: Get All Contacts
       security: *ref_0
+    post:
+      description: Create a contact.
+      operationId: accounting_contacts_create
+      tags:
+        - AccountingContacts
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/accountingCreateContactsResponse"
+              examples:
+                Example1:
+                  value:
+                    data:
+                      rootfi_id: 238858
+                      rootfi_created_at: "2024-01-24T11:11:59.779Z"
+                      rootfi_updated_at: "2024-01-24T11:11:59.000Z"
+                      rootfi_company_id: 1109
+                      platform_id: f940c3c4-ada3-ee11-a568-6045bd732efb
+                      currency_id: 00000000-0000-0000-0000-000000000000
+                      name: fguvkhg
+                      contact_name: null
+                      contact_type: CUSTOMER
+                      tax_number: null
+                      registration_number: null
+                      status: null
+                      updated_at: "2023-12-26T00:00:00.000Z"
+                      external_links:
+                        - rootfi_id: 278264
+                          platform_id: >-
+                            CONTACTS_1af68894-ea9f-ee11-be36-7c1e520f50bc_WEBSITE
+                          link: https://www.google.com
+                          type: WEBSITE
+                      phone_numbers:
+                        - rootfi_id: 278264
+                          platform_id: CONTACTS_1af68894-ea9f-ee11-be36-7c1e520f50bc_PHONE
+                          number: "1234567890"
+                          type: MOBILE
+                      addresses:
+                        - rootfi_id: 278264
+                          platform_id: >-
+                            CONTACTS_1af68894-ea9f-ee11-be36-7c1e520f50bc_ADDRESS
+                          street: 123 Main Street
+                          locality: Main Street
+                          city: New York
+                          state: New York
+                          pincode: "123456"
+                          country: USA
+      summary: Create Contact
+      security: *ref_0
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/accountingCreateContactsRequest"
+            examples:
+              Example1:
+                value:
+                  company_id: 123
+                  data:
+                    - name: fguvkhg
+                      contact_name: null
+                      contact_type: CUSTOMER
+                      currency_id: 00000000-0000-0000-0000-000000000000
+                      tax_number: null
+                      registration_number: null
+                      status: null
+                      updated_at: "2023-12-26T00:00:00.000Z"
+                      external_links:
+                        - rootfi_id: 278264
+                          platform_id: >-
+                            CONTACTS_1af68894-ea9f-ee11-be36-7c1e520f50bc_WEBSITE
+                          link: https://www.google.com
+                          type: WEBSITE
+                      phone_numbers:
+                        - rootfi_id: 278264
+                          platform_id: CONTACTS_1af68894-ea9f-ee11-be36-7c1e520f50bc_PHONE
+                          number: "1234567890"
+                          type: MOBILE
+                      addresses:
+                        - rootfi_id: 278264
+                          platform_id: >-
+                            CONTACTS_1af68894-ea9f-ee11-be36-7c1e520f50bc_ADDRESS
+                          street: 123 Main Street
+                          locality: Main Street
+                          city: New York
+                          state: New York
+                          pincode: "123456"
+                          country: USA
   /accounting/currencies:
     get:
       description: Retrieve all currencies from the database.
@@ -2170,16 +2243,6 @@ paths:
       tags:
         - AccountingIncomeStatement
       parameters:
-        - name: limit
-          in: query
-          description: The number of objects you want to retrieve
-          required: false
-          schema:
-            type: integer
-            nullable: true
-          examples:
-            Example1:
-              value: 10
         - name: rootfi_company_id[eq]
           in: query
           description: The company id of the rootfi
@@ -4192,16 +4255,6 @@ paths:
           examples:
             Example1:
               value: eyJyb290ZmlfaWQiOjQ0MDA2MX0=
-        - name: search
-          in: query
-          description: The search string to filter the companies
-          required: false
-          schema:
-            type: string
-            nullable: true
-          examples:
-            Example1:
-              value: Rootfi
         - name: integrations
           in: query
           description: The integration type to filter the companies
