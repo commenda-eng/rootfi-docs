@@ -287,7 +287,8 @@
                 "api-reference/v3/accounting/bills/get-all-bills",
                 "api-reference/v2/accounting/bills/get-all-bills",
                 "api-reference/v3/accounting/bills/create-bills",
-                "api-reference/v2/accounting/bills/create-bills"
+                "api-reference/v2/accounting/bills/create-bills",
+                "api-reference/v3/accounting/bills/update-bills"
               ]
             },
             {
@@ -320,7 +321,8 @@
                 "api-reference/v3/accounting/contacts/get-all-contacts",
                 "api-reference/v2/accounting/contacts/get-all-contacts",
                 "api-reference/v3/accounting/contacts/create-contacts",
-                "api-reference/v2/accounting/contacts/create-contacts"
+                "api-reference/v2/accounting/contacts/create-contacts",
+                "api-reference/v3/accounting/contacts/update-contacts"
               ]
             },
             {
@@ -381,6 +383,7 @@
                 "api-reference/v3/accounting/invoices/get-all-invoices",
                 "api-reference/v2/accounting/invoices/get-all-invoices",
                 "api-reference/v3/accounting/invoices/create-invoices",
+                "api-reference/v3/accounting/invoices/update-invoices",
                 "api-reference/v2/accounting/invoices/create-invoices"
               ]
             },
@@ -403,7 +406,8 @@
                 "api-reference/v3/accounting/items/get-all-items",
                 "api-reference/v2/accounting/items/get-all-items",
                 "api-reference/v3/accounting/items/create-items",
-                "api-reference/v2/accounting/items/create-items"
+                "api-reference/v2/accounting/items/create-items",
+                "api-reference/v3/accounting/items/update-items"
               ]
             },
             {
