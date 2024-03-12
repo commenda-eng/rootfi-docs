@@ -237,7 +237,7 @@
           "group": "Real Time",
           "version": "v3",
           "pages": [
-            "api-reference/v3/core/real_time/real_time"
+            "api-reference/v3/core/realtime/realtime"
           ]
         }
       ]
