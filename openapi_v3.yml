@@ -9971,7 +9971,7 @@ components:
           description: The ID of the company to retrieve realtime data for.
           example: 1111
         data_model:
-          type: string
+          $ref: '#/components/schemas/DataModels'
           nullable: true
           description: The data model to retrieve realtime data for.
         variables:
