@@ -53,7 +53,7 @@
     {
       "name": "Security",
       "icon": "shield-halved",
-      "url": "https://rootfi.dev/security"
+      "url": "https://security.rootfi.dev/?userToken=eyJ1c2VyTmFtZSI6IlR1c2hhciBTdWRoZWVzaCIsInVzZXJFbWFpbCI6InR1c2hhci5zdWRoZWVzaEByb290ZmkuaW4iLCJ0ZW5hbnRJZCI6IjI2MWQ0NCJ9"
     },
     {
       "name": "Status",
