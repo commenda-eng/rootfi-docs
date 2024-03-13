@@ -66,40 +66,33 @@
   "navigation": [
     {
       "group": "General",
-      "pages": ["documentation/general/introduction", "documentation/general/glossary-key-terms", "documentation/general/sdk"]
+      "pages": ["documentation/general/introduction", "documentation/general/glossary-key-terms"]
     },
     {
-      "group": "Concepts",
+      "group": "Core Features",
       "pages": [
         {
           "group": "RootFi Connect",
-          "pages": ["documentation/concepts/rootfi-connect/overview", "documentation/concepts/rootfi-connect/invite-link", "documentation/concepts/rootfi-connect/connect-sdk"]
+          "pages": ["documentation/concepts/rootfi-connect/introduction", "documentation/concepts/rootfi-connect/invite-link", "documentation/concepts/rootfi-connect/embedded-sdk"]
         },
-        {
-          "group": "Syncing Data",
-          "pages": ["documentation/concepts/sync-data/ways-to-sync", "documentation/concepts/sync-data/sync-config"]
-        },
-        {
-          "group": "Reading Data",
-          "pages": ["documentation/concepts/read-data/rest-apis", "documentation/concepts/read-data/graphql-apis"]
-        },
-        {
-          "group": "Writing Data",
-          "pages": ["documentation/concepts/write-data/synchronous-writes", "documentation/concepts/write-data/asynchronous-writes"]
-        },
-        {
-          "group": "Supplemental Data",
-          "pages": [
-            "documentation/concepts/supplemental-data/overview",
-            "documentation/concepts/supplemental-data/raw-data",
-            "documentation/concepts/supplemental-data/passthrough-api",
-            "documentation/concepts/supplemental-data/realtime-api"
-          ]
-        },
+        "documentation/concepts/syncing-data",
+
+        "documentation/concepts/reading-data",
+
+        "documentation/concepts/writing-data"
+      ]
+    },
+    {
+      "group": "Advanced Features",
+      "pages": [
+        "documentation/concepts/supplemental-data/raw-data",
+        "documentation/concepts/supplemental-data/realtime-data",
+        "documentation/concepts/supplemental-data/passthrough-api",
+        "documentation/concepts/sync-config",
+
         "documentation/concepts/webhooks",
         "documentation/concepts/error-handling",
-        "documentation/concepts/rate-limits",
-        "documentation/concepts/data-security",
+        "documentation/concepts/data-storage",
         "documentation/concepts/partner-credentials"
       ]
     },
@@ -143,6 +136,10 @@
           "pages": ["documentation/ecommerce-integrations/ecommerce-integrations-overview", "documentation/ecommerce-integrations/shopify"]
         }
       ]
+    },
+    {
+      "group": "Server Side SDKs",
+      "pages": ["api-reference/v3/sdk/nodejs"]
     },
     {
       "group": "Core API",

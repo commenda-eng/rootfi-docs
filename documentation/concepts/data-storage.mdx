@@ -1,6 +1,7 @@
 ---
-title: "Data Security"
+title: "Data Storage"
 description: "Learn how RootFi stores, manages, and deletes your customers data."
+icon: "anchor"
 ---
 
 ## How we store data
@@ -8,6 +9,8 @@ description: "Learn how RootFi stores, manages, and deletes your customers data.
 RootFi mirrors the data in the underlying platform and syncs the data into our database at regular intervals. When you call our APIs you are querying our database allowing you to fetch the required data points quickly and reliably.
 
 By default, RootFi unifies and caches all data synced for all customers. We internally link the primary keys of all related data models together using GraphQL providing you with a seamless ability to query deeply nested objects together.
+
+When you delete a company on RootFi, we delete all the associated data from our database.
 
 <Note>
     **Privacy and Security**
