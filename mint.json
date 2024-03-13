@@ -50,7 +50,7 @@
     {
       "name": "Security",
       "icon": "shield-halved",
-      "url": "https://rootfi.dev/security"
+      "url": "https://security.rootfi.dev/?userToken=eyJ1c2VyTmFtZSI6IlR1c2hhciBTdWRoZWVzaCIsInVzZXJFbWFpbCI6InR1c2hhci5zdWRoZWVzaEByb290ZmkuaW4iLCJ0ZW5hbnRJZCI6IjI2MWQ0NCJ9"
     },
     {
       "name": "Status",
@@ -205,7 +205,7 @@
         {
           "group": "Real Time",
           "version": "v3",
-          "pages": ["api-reference/v3/core/real_time/real_time"]
+          "pages": ["api-reference/v3/core/realtime/realtime"]
         }
       ]
     },
@@ -254,7 +254,8 @@
                 "api-reference/v3/accounting/bills/get-all-bills",
                 "api-reference/v2/accounting/bills/get-all-bills",
                 "api-reference/v3/accounting/bills/create-bills",
-                "api-reference/v2/accounting/bills/create-bills"
+                "api-reference/v2/accounting/bills/create-bills",
+                "api-reference/v3/accounting/bills/update-bills"
               ]
             },
             {
@@ -287,7 +288,8 @@
                 "api-reference/v3/accounting/contacts/get-all-contacts",
                 "api-reference/v2/accounting/contacts/get-all-contacts",
                 "api-reference/v3/accounting/contacts/create-contacts",
-                "api-reference/v2/accounting/contacts/create-contacts"
+                "api-reference/v2/accounting/contacts/create-contacts",
+                "api-reference/v3/accounting/contacts/update-contacts"
               ]
             },
             {
@@ -314,6 +316,7 @@
                 "api-reference/v3/accounting/documents/overview",
                 "api-reference/v2/accounting/documents/overview",
                 "api-reference/v3/accounting/documents/get-all-documents",
+                "api-reference/v3/accounting/documents/create-documents",
                 "api-reference/v2/accounting/documents/get-all-documents"
               ]
             },
@@ -347,6 +350,7 @@
                 "api-reference/v3/accounting/invoices/get-all-invoices",
                 "api-reference/v2/accounting/invoices/get-all-invoices",
                 "api-reference/v3/accounting/invoices/create-invoices",
+                "api-reference/v3/accounting/invoices/update-invoices",
                 "api-reference/v2/accounting/invoices/create-invoices"
               ]
             },
@@ -369,7 +373,8 @@
                 "api-reference/v3/accounting/items/get-all-items",
                 "api-reference/v2/accounting/items/get-all-items",
                 "api-reference/v3/accounting/items/create-items",
-                "api-reference/v2/accounting/items/create-items"
+                "api-reference/v2/accounting/items/create-items",
+                "api-reference/v3/accounting/items/update-items"
               ]
             },
             {
