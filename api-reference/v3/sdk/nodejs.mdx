@@ -49,13 +49,14 @@ Now that you have the Node.js SDK installed, you can access RootFi's APIs.
 
 ##### 2. [Unified API](/api-reference/v3/accounting/accounts/get-all-accounts)
 
-To demonstrate Core APIs, we use the following JavaScript code snippet to make a Create request for creating an invite link. In this example, we create an invite link while specifying the `company name` and `integrations`:
+To demonstrate Core APIs, we use the following JavaScript code snippet to make a Create request for creating an invite link. In this example, we create an invite link while specifying the `company name`, `integration_categories` and `integrations`:
 
 <CodeGroup>
 ```javascript NodeJS
 // Create an Invite Link
 const data = await rootfi.core.inviteLinks.create({
   company_name: "Test Company",
+  integration_categories: ["ACCOUNTING"]
   integrations: ["ZOHO_BOOKS"],
 });
 ```
