@@ -104,6 +104,8 @@
           "pages": [
             "documentation/accounting-integrations/accounting-integrations-overview",
             "documentation/accounting-integrations/busy",
+            "documentation/accounting-integrations/clear-books",
+            "documentation/accounting-integrations/fresh-books",
             "documentation/accounting-integrations/mekari-jurnal",
             "documentation/accounting-integrations/microsoft-dynamics-365-business-central",
             "documentation/accounting-integrations/myob-business",
@@ -133,7 +135,12 @@
         },
         {
           "group": "E-commerce Integrations",
-          "pages": ["documentation/ecommerce-integrations/ecommerce-integrations-overview", "documentation/ecommerce-integrations/shopify"]
+          "pages": [
+            "documentation/ecommerce-integrations/ecommerce-integrations-overview",
+            "documentation/ecommerce-integrations/shopify",
+            "documentation/ecommerce-integrations/big-commerce",
+            "documentation/ecommerce-integrations/woo-commerce"
+          ]
         }
       ]
     },
