@@ -10501,13 +10501,15 @@ components:
         - MEKARI_JURNAL
         - BUSY
         - QOYOD
-        - SHOPIFY
         - STRIPE
         - RAZORPAY
         - PAYPAL
         - HUBSPOT
         - ZOHO_CRM
         - PIPEDRIVE
+        - SHOPIFY
+        - BIG_COMMERCE
+        - WOO_COMMERCE
     IntegrationCategory:
       title: IntegrationCategory
       type: string
