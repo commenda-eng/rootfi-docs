@@ -1,12 +1,30 @@
 ---
-title: "Asynchronous Writes"
-description: "Easily push several records to your customers platform using a single api"
-icon: "circle-pause"
+title: "Writing Data"
+description: "Push data to your customers platform seamlessly using a single api"
+icon: "pen"
 ---
 
-We support the ability to push data to your customers platform in a synchronous and asynchronous manner. 
+## Synchronous Writes
+
+Push data to your customers platform seamlessly using a single api
+
+We support the ability to push data to your customers platform in a synchronous and asynchronous manner.
+
+By default our write APIs are synchronous. You can find our APIs in our [Postman Collection](https://postman.rootfi.dev) and our [API Reference](/api-reference/accounts/create-accounts).
+
+The Postman has examples for all the different integrations we support as there are several small differences in the fields we support for the various integrations.
+
+You can view these differences in our [coverage tool](https://coverage.rootfi.dev).
+
+<Info>
+
+**Batch Writes**
 
 We also support the ability to write multiple objects of the same type in one request using our Batch Writes Feature.
+
+</Info>
+
+## Asynchronous Writes
 
 By default our write APIs are synchronous. You can find our APIs in our [Postman Collection](https://postman.rootfi.dev) and our [API Reference](/api-reference/accounts/create-accounts).
 
@@ -18,7 +36,7 @@ The Postman has examples for all the different integrations we support as there 
 
 You can see these differences in our [coverage tool](https://coverage.rootfi.dev)
 
-### Asynchronous Batch Writes
+### Batch Writes
 
 To send data as a batch, simply send the `data` as an array of objects.  
 We group all the writes in a single `upload_job_id` that is returned in the response.

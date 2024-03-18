@@ -1009,67 +1009,6 @@ paths:
                     total_count: 123
       summary: Get All Bill Payments
       security: *ref_0
-    post:
-      description: Create a new bill payment in the database.
-      operationId: accounting_billPayments_create
-      tags:
-        - AccountingBillPayments
-      parameters: []
-      responses:
-        '200':
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/accountingCreateBillPaymentsResponse'
-              examples:
-                Example1:
-                  value:
-                    data:
-                      rootfi_id: 157
-                      rootfi_created_at: '2024-01-22T05:07:31.465Z'
-                      rootfi_updated_at: '2024-01-22T05:07:31.000Z'
-                      rootfi_company_id: 1089
-                      platform_id: '123456'
-                      payment_id: '123456'
-                      bill_id: '123456'
-                      account_id: '123456'
-                      credit_note_id: '123456'
-                      amount: '123456'
-                      payment_mode: '123456'
-                      currency_id: '123456'
-                      currency_rate: '123456'
-                      memo: '123456'
-                      updated_at: '2024-01-22T05:07:31.465Z'
-                      payment_date: '2024-01-22T05:07:31.465Z'
-                      contact_id: '123456'
-                      document_number: '123456'
-      summary: Create Bill Payments
-      security: *ref_0
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/accountingCreateBillPaymentsRequest'
-            examples:
-              Example1:
-                value:
-                  company_id: 123
-                  data:
-                    - payment_id: '123456'
-                      bill_id: '123456'
-                      account_id: '123456'
-                      credit_note_id: '123456'
-                      amount: '123456'
-                      payment_mode: '123456'
-                      currency_id: '123456'
-                      currency_rate: '123456'
-                      memo: '123456'
-                      updated_at: '2024-01-22T05:07:31.465Z'
-                      payment_date: '2024-01-22T05:07:31.465Z'
-                      contact_id: '123456'
-                      document_number: '123456'
   /accounting/bills:
     get:
       description: Retrieve all Bills.
@@ -1290,6 +1229,110 @@ paths:
                   company_id: 123
                   data:
                     - currency_id: '123456'
+                      contact_id: '123456'
+                      total_discount: 100
+                      sub_total: 1000
+                      tax_amount: 100
+                      total_amount: 1100
+                      amount_due: 1100
+                      document_number: '123456'
+                      posted_date: '2024-01-25T09:00:00Z'
+                      due_date: '2024-01-25T09:00:00Z'
+                      memo: Example Memo
+                      updated_at: '2024-01-25T09:00:00Z'
+                      status: Example Status
+                      currency_rate: 1
+                      purchase_order_ids:
+                        - '123456'
+                      line_items:
+                        - rootfi_id: 157
+                          platform_id: '123456'
+                          line_item_type: INVOICES
+                          line_item_type_id: '123456'
+                          tracking_category_ids:
+                            - '123456'
+                          item_id: '123456'
+                          tax_id: '123456'
+                          account_id: '123456'
+                          description: This is a description
+                          quantity: 1
+                          unit_amount: 100
+                          total_amount: 100
+                          sub_total: 100
+                          tax_amount: 100
+                          total_discount: 100
+                          updated_at: '2024-01-22T05:07:31.000Z'
+    put:
+      description: Update a new Bill.
+      operationId: accounting_bills_update
+      tags:
+        - AccountingBills
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/accountingCreateBillResponse'
+              examples:
+                Example1:
+                  value:
+                    data:
+                      rootfi_id: 123
+                      rootfi_created_at: '2024-01-25T09:00:00Z'
+                      rootfi_updated_at: '2024-01-25T09:00:00Z'
+                      rootfi_company_id: 456
+                      platform_id: '123456'
+                      currency_id: '123456'
+                      contact_id: '123456'
+                      total_discount: 100
+                      sub_total: 1000
+                      tax_amount: 100
+                      total_amount: 1100
+                      amount_due: 1100
+                      document_number: '123456'
+                      posted_date: '2024-01-25T09:00:00Z'
+                      due_date: '2024-01-25T09:00:00Z'
+                      memo: Example Memo
+                      updated_at: '2024-01-25T09:00:00Z'
+                      status: Example Status
+                      currency_rate: 1
+                      purchase_order_ids:
+                        - '123456'
+                      line_items:
+                        - rootfi_id: 157
+                          platform_id: '123456'
+                          line_item_type: INVOICES
+                          line_item_type_id: '123456'
+                          tracking_category_ids:
+                            - '123456'
+                          item_id: '123456'
+                          tax_id: '123456'
+                          account_id: '123456'
+                          description: This is a description
+                          quantity: 1
+                          unit_amount: 100
+                          total_amount: 100
+                          sub_total: 100
+                          tax_amount: 100
+                          total_discount: 100
+                          updated_at: '2024-01-22T05:07:31.000Z'
+      summary: Update Bill
+      security: *ref_0
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/accountingUpdateBillRequest'
+            examples:
+              Example1:
+                value:
+                  company_id: 123
+                  data:
+                    - platform_id: '123456'
+                      currency_id: '123456'
                       contact_id: '123456'
                       total_discount: 100
                       sub_total: 1000
@@ -1779,6 +1822,93 @@ paths:
                           state: New York
                           pincode: '123456'
                           country: USA
+    put:
+      description: Update a contact.
+      operationId: accounting_contacts_update
+      tags:
+        - AccountingContacts
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/accountingCreateContactsResponse'
+              examples:
+                Example1:
+                  value:
+                    data:
+                      rootfi_id: 238858
+                      rootfi_created_at: '2024-01-24T11:11:59.779Z'
+                      rootfi_updated_at: '2024-01-24T11:11:59.000Z'
+                      rootfi_company_id: 1109
+                      platform_id: f940c3c4-ada3-ee11-a568-6045bd732efb
+                      currency_id: 00000000-0000-0000-0000-000000000000
+                      name: fguvkhg
+                      contact_name: null
+                      contact_type: CUSTOMER
+                      tax_number: null
+                      registration_number: null
+                      status: null
+                      updated_at: '2023-12-26T00:00:00.000Z'
+                      external_links:
+                        - rootfi_id: 278264
+                          platform_id: >-
+                            CONTACTS_1af68894-ea9f-ee11-be36-7c1e520f50bc_WEBSITE
+                          link: https://www.google.com
+                          type: WEBSITE
+                      phone_numbers:
+                        - rootfi_id: 278264
+                          platform_id: CONTACTS_1af68894-ea9f-ee11-be36-7c1e520f50bc_PHONE
+                          number: '1234567890'
+                          type: MOBILE
+                      addresses:
+                        - rootfi_id: 278264
+                          platform_id: >-
+                            CONTACTS_1af68894-ea9f-ee11-be36-7c1e520f50bc_ADDRESS
+                          street: 123 Main Street
+                          locality: Main Street
+                          city: New York
+                          state: New York
+                          pincode: '123456'
+                          country: USA
+      summary: Update Contact
+      security: *ref_0
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/accountingUpdateContactsRequest'
+            examples:
+              Example1:
+                value:
+                  company_id: 123
+                  data:
+                    - platform_id: f940c3c4-ada3-ee11-a568-6045bd732efb
+                      name: fguvkhg
+                      contact_name: null
+                      contact_type: CUSTOMER
+                      currency_id: 00000000-0000-0000-0000-000000000000
+                      tax_number: null
+                      registration_number: null
+                      status: null
+                      email: abc@gmail.com
+                      website: www.abc.com
+                      telephone: '1234567890'
+                      mobile: '1234567890'
+                      fax: '1234567890'
+                      addresses:
+                        - rootfi_id: 278264
+                          platform_id: >-
+                            CONTACTS_1af68894-ea9f-ee11-be36-7c1e520f50bc_ADDRESS
+                          street: 123 Main Street
+                          locality: Main Street
+                          city: New York
+                          state: New York
+                          pincode: '123456'
+                          country: USA
   /accounting/currencies:
     get:
       description: Retrieve all currencies from the database.
@@ -2013,37 +2143,36 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/accountingCreateDocumentResponse'
-              examples:
-                Example1:
-                  value:
-                    data:
-                      rootfi_id: 123
-                      rootfi_created_at: '2024-01-25T09:00:00Z'
-                      rootfi_updated_at: '2024-01-25T09:00:00Z'
-                      rootfi_company_id: 456
-                      platform_id: '123456'
-                      file_name: Example File Name
-                      file_type: Example File Type
-                      file_size: Example File Size
-                      document_type_id: '123456'
-                      document_type: Example Document Type
-                      document_uploaded: true
-                      updated_at: '2024-01-25T09:00:00Z'
       summary: Create Document
       security: *ref_0
       requestBody:
         required: true
         content:
-          application/json:
+          multipart/form-data:
             schema:
-              $ref: '#/components/schemas/accountingCreateDocumentRequest'
-            examples:
-              Example1:
-                value:
-                  file: Example File
-                  company_id: 123
-                  document_type_id: '123456'
-                  document_type: INVOICES
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                company_id:
+                  description: The company ID of the document
+                  type: integer
+                document_type_id:
+                  description: The document type ID of the document
+                  type: string
+                  nullable: true
+                document_type:
+                  description: The document type of the document
+                  $ref: '#/components/schemas/AccountingLineItemtype'
+                base64_file:
+                  description: The base64 file of the document
+                  type: string
+                  nullable: true
+                file_name:
+                  description: The file name of the document
+                  type: string
+                  nullable: true
   /accounting/expenses:
     get:
       description: Retrieve all Expenses.
@@ -3105,6 +3234,110 @@ paths:
                           tax_amount: 100
                           total_discount: 100
                           updated_at: '2024-01-22T05:07:31.000Z'
+    put:
+      description: Update a new invoice.
+      operationId: accounting_invoices_update
+      tags:
+        - AccountingInvoices
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/accountingCreateInvoiceResponse'
+              examples:
+                Example1:
+                  value:
+                    data:
+                      rootfi_id: 123
+                      rootfi_created_at: '2024-01-25T09:00:00Z'
+                      rootfi_updated_at: '2024-01-25T09:00:00Z'
+                      rootfi_company_id: 456
+                      platform_id: '123456'
+                      currency_id: '123456'
+                      contact_id: '123456'
+                      total_discount: 100
+                      sub_total: 1000
+                      tax_amount: 100
+                      total_amount: 1100
+                      amount_due: 1100
+                      document_number: '123456'
+                      posted_date: '2024-01-25T09:00:00Z'
+                      due_date: '2024-01-25T09:00:00Z'
+                      memo: Example Memo
+                      updated_at: '2024-01-25T09:00:00Z'
+                      status: Example Status
+                      currency_rate: 1
+                      sales_order_ids:
+                        - '123456'
+                      line_items:
+                        - rootfi_id: 157
+                          platform_id: '123456'
+                          line_item_type: INVOICES
+                          line_item_type_id: '123456'
+                          tracking_category_ids:
+                            - '123456'
+                          item_id: '123456'
+                          tax_id: '123456'
+                          account_id: '123456'
+                          description: This is a description
+                          quantity: 1
+                          unit_amount: 100
+                          total_amount: 100
+                          sub_total: 100
+                          tax_amount: 100
+                          total_discount: 100
+                          updated_at: '2024-01-22T05:07:31.000Z'
+      summary: Update Invoice
+      security: *ref_0
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/accountingUpdateInvoiceRequest'
+            examples:
+              Example1:
+                value:
+                  company_id: 123
+                  data:
+                    - platform_id: 1af68894-ea9f-ee11-be36-7c1e520f50bc
+                      currency_id: '123456'
+                      contact_id: '123456'
+                      total_discount: 100
+                      sub_total: 1000
+                      tax_amount: 100
+                      total_amount: 1100
+                      amount_due: 1100
+                      document_number: '123456'
+                      posted_date: '2024-01-25T09:00:00Z'
+                      due_date: '2024-01-25T09:00:00Z'
+                      memo: Example Memo
+                      updated_at: '2024-01-25T09:00:00Z'
+                      status: Example Status
+                      currency_rate: 1
+                      sales_order_ids:
+                        - '123456'
+                      line_items:
+                        - rootfi_id: 157
+                          platform_id: '123456'
+                          line_item_type: INVOICES
+                          line_item_type_id: '123456'
+                          tracking_category_ids:
+                            - '123456'
+                          item_id: '123456'
+                          tax_id: '123456'
+                          account_id: '123456'
+                          description: This is a description
+                          quantity: 1
+                          unit_amount: 100
+                          total_amount: 100
+                          sub_total: 100
+                          tax_amount: 100
+                          total_discount: 100
+                          updated_at: '2024-01-22T05:07:31.000Z'
   /accounting/items:
     get:
       description: Retrieve all items from the database.
@@ -3282,6 +3515,80 @@ paths:
                   company_id: 123
                   data:
                     - name: Brian Vega
+                      description: null
+                      updated_at: '2023-12-08T00:00:00.000Z'
+                      status: ACTIVE
+                      bill_item:
+                        tax_id: '123456'
+                        account_id: '123456'
+                        unit_price: 123.45
+                        description: Test Item
+                      code: '9837'
+                      invoice_item:
+                        tax_id: '123456'
+                        account_id: '123456'
+                        unit_price: 123.45
+                        description: Test Item
+                      is_bill_item: true
+                      is_invoice_item: true
+                      type: INVENTORY
+                      quantity_on_hand: 10
+    put:
+      description: Update an item.
+      operationId: accounting_items_update
+      tags:
+        - AccountingItems
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/accountingCreateItemsResponse'
+              examples:
+                Example1:
+                  value:
+                    data:
+                      rootfi_id: 32302
+                      rootfi_created_at: '2024-01-24T11:12:00.315Z'
+                      rootfi_updated_at: '2024-01-24T11:12:00.000Z'
+                      rootfi_company_id: 1109
+                      platform_id: a979d4e1-9795-ee11-be36-6045bdc629b7
+                      name: Brian Vega
+                      description: null
+                      updated_at: '2023-12-08T00:00:00.000Z'
+                      status: ACTIVE
+                      bill_item:
+                        tax_id: '123456'
+                        account_id: '123456'
+                        unit_price: 123.45
+                        description: Test Item
+                      code: '9837'
+                      invoice_item:
+                        tax_id: '123456'
+                        account_id: '123456'
+                        unit_price: 123.45
+                        description: Test Item
+                      is_bill_item: true
+                      is_invoice_item: true
+                      type: INVENTORY
+                      quantity_on_hand: 10
+      summary: Update an Item
+      security: *ref_0
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/accountingUpdateItemsRequest'
+            examples:
+              Example1:
+                value:
+                  company_id: 123
+                  data:
+                    - platform_id: a979d4e1-9795-ee11-be36-6045bdc629b7
+                      name: Brian Vega
                       description: null
                       updated_at: '2023-12-08T00:00:00.000Z'
                       status: ACTIVE
@@ -4484,7 +4791,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/coregetCompaniesObject'
+                $ref: '#/components/schemas/coregetCompanyObject'
       summary: Get Company
       security: *ref_0
     put:
@@ -7313,6 +7620,91 @@ components:
           description: The line items of the bill
       required:
         - updated_at
+    accountingUpdateBillFields:
+      title: accountingUpdateBillFields
+      type: object
+      properties:
+        platform_id:
+          type: string
+          description: The platform ID of the bill
+          example: '123456'
+        currency_id:
+          type: string
+          nullable: true
+          description: The currency ID of the bill
+        contact_id:
+          type: string
+          nullable: true
+          description: The contact ID of the bill
+        total_discount:
+          type: number
+          format: double
+          nullable: true
+          description: The total discount of the bill
+        sub_total:
+          type: number
+          format: double
+          nullable: true
+          description: The sub total of the bill
+        tax_amount:
+          type: number
+          format: double
+          nullable: true
+          description: The tax amount of the bill
+        total_amount:
+          type: number
+          format: double
+          nullable: true
+          description: The total amount of the bill
+        amount_due:
+          type: number
+          format: double
+          nullable: true
+          description: The amount due of the bill
+        document_number:
+          type: string
+          nullable: true
+          description: The document number of the bill
+        posted_date:
+          type: string
+          nullable: true
+          description: The posted date of the bill
+        due_date:
+          type: string
+          nullable: true
+          description: The due date of the bill
+        memo:
+          type: string
+          nullable: true
+          description: The memo of the bill
+        updated_at:
+          type: string
+          description: The updated at of the bill
+          example: '2024-01-25T09:00:00Z'
+        status:
+          type: string
+          nullable: true
+          description: The status of the bill
+        currency_rate:
+          type: number
+          format: double
+          nullable: true
+          description: The currency rate of the bill
+        purchase_order_ids:
+          type: array
+          items:
+            type: string
+          nullable: true
+          description: The purchase order IDs of the bill
+        line_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/LineItemFields'
+          nullable: true
+          description: The line items of the bill
+      required:
+        - platform_id
+        - updated_at
     accountingBillObject:
       title: accountingBillObject
       type: object
@@ -7341,6 +7733,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/accountingBillFields'
+          description: The data of the bill to create
+      required:
+        - data
+      allOf:
+        - $ref: '#/components/schemas/CompanyIDRequestField'
+    accountingUpdateBillRequest:
+      title: accountingUpdateBillRequest
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/accountingUpdateBillFields'
           description: The data of the bill to create
       required:
         - data
@@ -7551,6 +7956,70 @@ components:
             $ref: '#/components/schemas/accountingAddresses'
           nullable: true
           description: Addresses for the contact
+    accountingUpdateContactFields:
+      title: accountingUpdateContactFields
+      type: object
+      properties:
+        platform_id:
+          type: string
+          description: The platform ID of the contact
+          example: f940c3c4-ada3-ee11-a568-6045bd732efb
+        name:
+          type: string
+          nullable: true
+          description: Name of the contact
+        contact_name:
+          type: string
+          nullable: true
+          description: Name of the contact person for the contact
+        contact_type:
+          $ref: '#/components/schemas/ContactType'
+          nullable: true
+          description: The type of contact. Values are either CUSTOMER or VENDOR
+        currency_id:
+          type: string
+          nullable: true
+          description: The ISO-4217 currency code
+        tax_number:
+          type: string
+          nullable: true
+          description: Contact’s tax number
+        registration_number:
+          type: string
+          nullable: true
+          description: Contact’s identifying number
+        status:
+          $ref: '#/components/schemas/BaseStatus'
+          nullable: true
+          description: The status of the contact. Values are ACTIVE, ARCHIVED, UNKNOWN
+        email:
+          type: string
+          nullable: true
+          description: The email of the contact
+        website:
+          type: string
+          nullable: true
+          description: The website of the contact
+        telephone:
+          type: string
+          nullable: true
+          description: The telephone of the contact
+        mobile:
+          type: string
+          nullable: true
+          description: The mobile of the contact
+        fax:
+          type: string
+          nullable: true
+          description: The fax of the contact
+        addresses:
+          type: array
+          items:
+            $ref: '#/components/schemas/accountingAddresses'
+          nullable: true
+          description: Addresses for the contact
+      required:
+        - platform_id
     accountingWriteContactFields:
       title: accountingWriteContactFields
       type: object
@@ -7636,6 +8105,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/accountingWriteContactFields'
+          description: The data of the Contacts endpoint
+      required:
+        - data
+      allOf:
+        - $ref: '#/components/schemas/CompanyIDRequestField'
+    accountingUpdateContactsRequest:
+      title: accountingUpdateContactsRequest
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/accountingUpdateContactFields'
           description: The data of the Contacts endpoint
       required:
         - data
@@ -7808,29 +8290,6 @@ components:
           type: string
           nullable: true
           description: The updated date of the document
-    accountingCreateDocumentRequest:
-      title: accountingCreateDocumentRequest
-      type: object
-      properties:
-        file:
-          type: string
-          description: The file of the document
-          example: Example File
-        company_id:
-          type: integer
-          description: The company ID of the document
-          example: 123
-        document_type_id:
-          type: string
-          nullable: true
-          description: The document type ID of the document
-        document_type:
-          $ref: '#/components/schemas/AccountingLineItemtype'
-          description: The document type of the document
-      required:
-        - file
-        - company_id
-        - document_type
     accountingDocumentObject:
       title: accountingDocumentObject
       type: object
@@ -8342,6 +8801,90 @@ components:
             $ref: '#/components/schemas/LineItemFields'
           nullable: true
           description: The line items of the invoice
+    accountingUpdateInvoiceFields:
+      title: accountingUpdateInvoiceFields
+      type: object
+      properties:
+        platform_id:
+          type: string
+          description: The platform ID of the contact
+          example: 1af68894-ea9f-ee11-be36-7c1e520f50bc
+        currency_id:
+          type: string
+          nullable: true
+          description: The currency ID of the invoice
+        contact_id:
+          type: string
+          nullable: true
+          description: The contact ID of the invoice
+        total_discount:
+          type: number
+          format: double
+          nullable: true
+          description: The total discount of the invoice
+        sub_total:
+          type: number
+          format: double
+          nullable: true
+          description: The sub total of the invoice
+        tax_amount:
+          type: number
+          format: double
+          nullable: true
+          description: The tax amount of the invoice
+        total_amount:
+          type: number
+          format: double
+          nullable: true
+          description: The total amount of the invoice
+        amount_due:
+          type: number
+          format: double
+          nullable: true
+          description: The amount due of the invoice
+        document_number:
+          type: string
+          nullable: true
+          description: The document number of the invoice
+        posted_date:
+          type: string
+          nullable: true
+          description: The posted date of the invoice
+        due_date:
+          type: string
+          nullable: true
+          description: The due date of the invoice
+        memo:
+          type: string
+          nullable: true
+          description: The memo of the invoice
+        updated_at:
+          type: string
+          nullable: true
+          description: The updated at of the invoice
+        status:
+          type: string
+          nullable: true
+          description: The status of the invoice
+        currency_rate:
+          type: number
+          format: double
+          nullable: true
+          description: The currency rate of the invoice
+        sales_order_ids:
+          type: array
+          items:
+            type: string
+          nullable: true
+          description: The sales order IDs of the invoice
+        line_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/LineItemFields'
+          nullable: true
+          description: The line items of the invoice
+      required:
+        - platform_id
     accountingInvoiceObject:
       title: accountingInvoiceObject
       type: object
@@ -8371,6 +8914,19 @@ components:
           items:
             $ref: '#/components/schemas/accountingInvoiceFields'
           description: The data of the invoice to create
+      required:
+        - data
+      allOf:
+        - $ref: '#/components/schemas/CompanyIDRequestField'
+    accountingUpdateInvoiceRequest:
+      title: accountingUpdateInvoiceRequest
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/accountingUpdateInvoiceFields'
+          description: The data of the invoice to update
       required:
         - data
       allOf:
@@ -8436,6 +8992,18 @@ components:
           type: string
           nullable: true
           description: The date the item was last updated
+    accountingUpdateItemFields:
+      title: accountingUpdateItemFields
+      type: object
+      properties:
+        platform_id:
+          type: string
+          description: The platform ID of the item
+          example: a979d4e1-9795-ee11-be36-6045bdc629b7
+      required:
+        - platform_id
+      allOf:
+        - $ref: '#/components/schemas/accountingItemFields'
     accountingItemObject:
       title: accountingItemObject
       type: object
@@ -8470,6 +9038,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/accountingItemFields'
+          description: The data of the items endpoint
+      required:
+        - data
+      allOf:
+        - $ref: '#/components/schemas/CompanyIDRequestField'
+    accountingUpdateItemsRequest:
+      title: accountingUpdateItemsRequest
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/accountingUpdateItemFields'
           description: The data of the items endpoint
       required:
         - data
@@ -9939,8 +10520,6 @@ components:
       title: DataModels
       type: string
       enum:
-        - CUSTOM_DATA_MODELS
-        - CUSTOM_ACCOUNT_TRANSACTIONS
         - ACCOUNTS
         - BANK_ACCOUNTS
         - BILLS
@@ -11245,3 +11824,7 @@ components:
 servers:
   - url: https://api.rootfi.dev/v3
     description: Production
+  - url: https://api.sa.rootfi.dev/v3
+    description: Saudi
+  - url: https://sandbox.rootfi.dev/api/v3
+    description: Sandbox

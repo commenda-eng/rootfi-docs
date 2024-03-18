@@ -1,8 +1,8 @@
 {
   "name": "RootFi",
   "logo": {
-    "light": "/images/logo/light.png",
-    "dark": "/images/logo/dark.png"
+    "dark": "/images/logo/Integration_labs_logo_dark.png",
+    "light": "/images/logo/Integration_labs_logo_light.png"
   },
   "favicon": "/images/logo/logomark_favicon_rounded.png",
   "colors": {
@@ -50,7 +50,7 @@
     {
       "name": "Security",
       "icon": "shield-halved",
-      "url": "https://rootfi.dev/security"
+      "url": "https://security.rootfi.dev/?userToken=eyJ1c2VyTmFtZSI6IlR1c2hhciBTdWRoZWVzaCIsInVzZXJFbWFpbCI6InR1c2hhci5zdWRoZWVzaEByb290ZmkuaW4iLCJ0ZW5hbnRJZCI6IjI2MWQ0NCJ9"
     },
     {
       "name": "Status",
@@ -69,7 +69,7 @@
       "pages": ["documentation/general/introduction", "documentation/general/glossary-key-terms", "documentation/general/sdk"]
     },
     {
-      "group": "Concepts",
+      "group": "Core Features",
       "pages": [
         {
           "group": "RootFi Connect",
@@ -96,10 +96,24 @@
             "documentation/concepts/supplemental-data/realtime-api"
           ]
         },
+        "documentation/concepts/syncing-data",
+
+        "documentation/concepts/reading-data",
+
+        "documentation/concepts/writing-data"
+      ]
+    },
+    {
+      "group": "Advanced Features",
+      "pages": [
+        "documentation/concepts/supplemental-data/raw-data",
+        "documentation/concepts/supplemental-data/realtime-data",
+        "documentation/concepts/supplemental-data/passthrough-api",
+        "documentation/concepts/sync-config",
+
         "documentation/concepts/webhooks",
         "documentation/concepts/error-handling",
-        "documentation/concepts/rate-limits",
-        "documentation/concepts/data-security",
+        "documentation/concepts/data-storage",
         "documentation/concepts/partner-credentials"
       ]
     },
@@ -151,6 +165,11 @@
           ]
         }
       ]
+    },
+    { "group": "Overview", "pages": ["api-reference/v3/overview/environments"] },
+    {
+      "group": "Server Side SDKs",
+      "pages": ["api-reference/v3/sdk/nodejs"]
     },
     {
       "group": "Core API",
@@ -265,7 +284,8 @@
                 "api-reference/v3/accounting/bills/get-all-bills",
                 "api-reference/v2/accounting/bills/get-all-bills",
                 "api-reference/v3/accounting/bills/create-bills",
-                "api-reference/v2/accounting/bills/create-bills"
+                "api-reference/v2/accounting/bills/create-bills",
+                "api-reference/v3/accounting/bills/update-bills"
               ]
             },
             {
@@ -298,7 +318,8 @@
                 "api-reference/v3/accounting/contacts/get-all-contacts",
                 "api-reference/v2/accounting/contacts/get-all-contacts",
                 "api-reference/v3/accounting/contacts/create-contacts",
-                "api-reference/v2/accounting/contacts/create-contacts"
+                "api-reference/v2/accounting/contacts/create-contacts",
+                "api-reference/v3/accounting/contacts/update-contacts"
               ]
             },
             {
@@ -359,6 +380,7 @@
                 "api-reference/v3/accounting/invoices/get-all-invoices",
                 "api-reference/v2/accounting/invoices/get-all-invoices",
                 "api-reference/v3/accounting/invoices/create-invoices",
+                "api-reference/v3/accounting/invoices/update-invoices",
                 "api-reference/v2/accounting/invoices/create-invoices"
               ]
             },
@@ -381,7 +403,8 @@
                 "api-reference/v3/accounting/items/get-all-items",
                 "api-reference/v2/accounting/items/get-all-items",
                 "api-reference/v3/accounting/items/create-items",
-                "api-reference/v2/accounting/items/create-items"
+                "api-reference/v2/accounting/items/create-items",
+                "api-reference/v3/accounting/items/update-items"
               ]
             },
             {
@@ -535,6 +558,7 @@
     {
       "group": "Changelog",
       "pages": [
+        "changelog/feb-29-24",
         "changelog/jan-31-24",
         "changelog/dec-31-23",
         "changelog/oct-31-23",

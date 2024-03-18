@@ -1,5 +1,5 @@
 ---
-title: "Connect SDK"
+title: "Embedded SDK"
 icon: "code"
 ---
 
@@ -7,14 +7,19 @@ RootFi supports white labelling the onboarding process through the Connect SDK. 
 
 ### Developer Reference
 
-1. Create an invite link by calling the [Create Invite Link API](/api-reference/invite-links/create-invite-link).
+1. Create an invite link by calling the [Create Invite Link API](/api-reference/v3/core/invite-links/create-invite-link).
    1. If `company_name` is not passed, company wont be created and so, your user will have to enter it in the SDK.
    2. To enable only certain integrations, you can pass a list of `integrations`. If only one integration is passed, user will be redirected to the platform login url directly.
 2. The response will contain the `invite_link`, which will need to be sent to the SDK during initialisation, and the `company_id`, which you should store to uniquely identify this customer.
 
 ### Setup SDK
 
-1. Import the source script in the head tag. `<script src="https://integrate.rootfi.dev/sdk.js"></script>`
+1. Import the source script in the head tag.
+
+   Default: `<script src="https://app.rootfi.dev/sdk.js"></script>`
+
+   KSA region: `<script src="https://app.sa.rootfi.dev/sdk.sa.js"></script>`
+
 2. Load the RootFi SDK on page load by calling `RootfiLink.initialize()`.
 
 ```java JavaScript
@@ -42,7 +47,7 @@ Below is a HTML snippet of integrating the SDK
 ```html HTML
 <html>
   <head>
-    <script src="https://integrate.rootfi.dev/sdk.js" type="text/javascript"></script>
+    <script src="https://app.rootfi.dev/sdk.js" type="text/javascript"></script>
     <script>
       const RootfiLink = window.RootfiLink;
       function loadRootFi() {
