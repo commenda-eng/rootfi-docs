@@ -10524,8 +10524,6 @@ components:
       title: DataModels
       type: string
       enum:
-        - CUSTOM_DATA_MODELS
-        - CUSTOM_ACCOUNT_TRANSACTIONS
         - ACCOUNTS
         - BANK_ACCOUNTS
         - BILLS
