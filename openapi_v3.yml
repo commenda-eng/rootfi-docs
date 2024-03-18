@@ -5208,10 +5208,10 @@ paths:
                     headers: {}
                     data: {}
                     params: {}
-  /core/realtime:
+  /core/real_time:
     post:
       description: Retrieve real time data from integration platforms.
-      operationId: core_realTime_get
+      operationId: core_realTime_create
       tags:
         - CoreRealTime
       parameters: []
@@ -5278,7 +5278,6 @@ paths:
                 value:
                   company_id: 1111
                   data_model: COMPANY_INFO
-                  config_id: ZOHO_BOOKS_INVOICES_READ_0
                   variables:
                     per_page: 100
                     page: 1
@@ -9968,22 +9967,19 @@ components:
       properties:
         company_id:
           type: integer
-          description: The ID of the company to retrieve realtime data for.
+          description: The ID of the company to retrieve real_time data for.
           example: 1111
         data_model:
-          $ref: '#/components/schemas/DataModels'
-          nullable: true
-          description: The data model to retrieve realtime data for.
+          type: string
+          description: The data model to retrieve real_time data for.
+          example: COMPANY_INFO
         variables:
           type: object
           additionalProperties: true
-          description: The variables to retrieve realtime data for.
-        config_id:
-          type: string
-          nullable: true
-          description: The ID of the configuration to retrieve realtime data for.
+          description: The variables to retrieve real_time data for.
       required:
         - company_id
+        - data_model
         - variables
     coregetSyncsObject:
       title: coregetSyncsObject
@@ -11828,3 +11824,7 @@ components:
 servers:
   - url: https://api.rootfi.dev/v3
     description: Production
+  - url: https://api.sa.rootfi.dev/v3
+    description: Saudi
+  - url: https://sandbox.rootfi.dev/api/v3
+    description: Sandbox
