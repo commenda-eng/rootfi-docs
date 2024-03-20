@@ -66,36 +66,16 @@
   "navigation": [
     {
       "group": "General",
-      "pages": ["documentation/general/introduction", "documentation/general/glossary-key-terms", "documentation/general/sdk"]
+      "pages": ["documentation/general/introduction", "documentation/general/glossary-key-terms"]
     },
     {
       "group": "Core Features",
       "pages": [
         {
           "group": "RootFi Connect",
-          "pages": ["documentation/concepts/rootfi-connect/overview", "documentation/concepts/rootfi-connect/invite-link", "documentation/concepts/rootfi-connect/connect-sdk"]
+          "pages": ["documentation/concepts/rootfi-connect/introduction", "documentation/concepts/rootfi-connect/invite-link", "documentation/concepts/rootfi-connect/embedded-sdk"]
         },
-        {
-          "group": "Syncing Data",
-          "pages": ["documentation/concepts/sync-data/ways-to-sync", "documentation/concepts/sync-data/sync-config"]
-        },
-        {
-          "group": "Reading Data",
-          "pages": ["documentation/concepts/read-data/rest-apis", "documentation/concepts/read-data/graphql-apis"]
-        },
-        {
-          "group": "Writing Data",
-          "pages": ["documentation/concepts/write-data/synchronous-writes", "documentation/concepts/write-data/asynchronous-writes"]
-        },
-        {
-          "group": "Supplemental Data",
-          "pages": [
-            "documentation/concepts/supplemental-data/overview",
-            "documentation/concepts/supplemental-data/raw-data",
-            "documentation/concepts/supplemental-data/passthrough-api",
-            "documentation/concepts/supplemental-data/realtime-api"
-          ]
-        },
+
         "documentation/concepts/syncing-data",
 
         "documentation/concepts/reading-data",
@@ -141,28 +121,26 @@
             "documentation/accounting-integrations/wafeq",
             "documentation/accounting-integrations/wave",
             "documentation/accounting-integrations/xero",
-            "documentation/accounting-integrations/zoho-books",
-            "documentation/accounting-integrations/fresh-books",
-            "documentation/accounting-integrations/clear-books"
+            "documentation/accounting-integrations/zoho-books"
           ]
         },
         {
           "group": "Payment Integrations",
           "pages": [
             "documentation/payment-integrations/payment-integrations-overview",
+            "documentation/payment-integrations/chargebee",
             "documentation/payment-integrations/paypal",
             "documentation/payment-integrations/razorpay",
             "documentation/payment-integrations/stripe",
-            "documentation/payment-integrations/square",
-            "documentation/payment-integrations/chargebee"
+            "documentation/payment-integrations/square"
           ]
         },
         {
           "group": "E-commerce Integrations",
           "pages": [
             "documentation/ecommerce-integrations/ecommerce-integrations-overview",
-            "documentation/ecommerce-integrations/shopify",
             "documentation/ecommerce-integrations/big-commerce",
+            "documentation/ecommerce-integrations/shopify",
             "documentation/ecommerce-integrations/woo-commerce"
           ]
         }
@@ -237,7 +215,7 @@
         {
           "group": "Real Time",
           "version": "v3",
-          "pages": ["api-reference/v3/core/real_time/real_time"]
+          "pages": ["api-reference/v3/core/realtime/realtime"]
         }
       ]
     },
