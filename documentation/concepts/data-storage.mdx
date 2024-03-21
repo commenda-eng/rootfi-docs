@@ -1,16 +1,16 @@
 ---
 title: "Data Storage"
-description: "Learn how RootFi stores, manages, and deletes your customers data."
+description: "Learn how Integration Labs stores, manages, and deletes your customers data."
 icon: "anchor"
 ---
 
 ## How we store data
 
-RootFi mirrors the data in the underlying platform and syncs the data into our database at regular intervals. When you call our APIs you are querying our database allowing you to fetch the required data points quickly and reliably.
+Integration Labs mirrors the data in the underlying platform and syncs the data into our database at regular intervals. When you call our APIs you are querying our database allowing you to fetch the required data points quickly and reliably.
 
-By default, RootFi unifies and caches all data synced for all customers. We internally link the primary keys of all related data models together using GraphQL providing you with a seamless ability to query deeply nested objects together.
+By default, Integration Labs unifies and caches all data synced for all customers. We internally link the primary keys of all related data models together using GraphQL providing you with a seamless ability to query deeply nested objects together.
 
-When you delete a company on RootFi, we delete all the associated data from our database.
+When you delete a company on Integration Labs, we delete all the associated data from our database.
 
 <Note>
     **Privacy and Security**
@@ -21,10 +21,10 @@ When you delete a company on RootFi, we delete all the associated data from our 
 
 ## Secure Sync (Enterprise Only)
 
-If you do not want RootFi to cache the sync data for regulatory concerns or otherwise, you have the option.
+If you do not want Integration Labs to cache the sync data for regulatory concerns or otherwise, you have the option.
 
-Using Secure Sync, you can use RootFi’s syncing infrastructure to sync data from any integration platform while maintaining full control over the data. We will not store any of the incoming data and instead directly pass it on to you via our webhooks.
+Using Secure Sync, you can use Integration Labs's syncing infrastructure to sync data from any integration platform while maintaining full control over the data. We will not store any of the incoming data and instead directly pass it on to you via our webhooks.
 
-The only data RootFi can access would be the access and refresh tokens needed to communicate with the integration platforms. We securely encrypt all authentication information for all our integrations.
+The only data Integration Lab can access would be the access and refresh tokens needed to communicate with the integration platforms. We securely encrypt all authentication information for all our integrations.
 
 **Make sure to enable a Data Model changes webhook so that you can receive all the synced data**

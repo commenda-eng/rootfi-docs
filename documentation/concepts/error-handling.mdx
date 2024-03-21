@@ -1,14 +1,14 @@
 ---
 title: "Error Handling"
-description: "Learn how RootFi handles errors when syncing data and the types of errors that can occur."
+description: "Learn how Integration Labs handles errors when syncing data and the types of errors that can occur."
 icon: "bug"
 ---
 
-RootFi uses a combination of error handling strategies to ensure that data is synced correctly and that the user is notified of any errors that occur.
+Integration Labs uses a combination of error handling strategies to ensure that data is synced correctly and that the user is notified of any errors that occur.
 
 ## Reading Data
 
-When reading data from an integration, RootFi will attempt to read all data from the platform. If an unexpected error occurs, RootFi will mark that datamodel as **FAILED**. You can use the [Sync Completed Webhook](webhooks#sync-completed-webhook) to be notified when a sync has completed and check the status of the datamodels.
+When reading data from an integration, Integration Labs will attempt to read all data from the platform. If an unexpected error occurs, Integration Labs will mark that datamodel as **FAILED**. You can use the [Sync Completed Webhook](webhooks#sync-completed-webhook) to be notified when a sync has completed and check the status of the datamodels.
 
 ## Writing Data
 
@@ -27,15 +27,15 @@ When writing data to an integration, RootFi will attempt to write all data to th
 <Note>
 Accuracy of Error Codes
 
-RootFi uses an LLM to attempt to map the error returned by the integration platform to a RootFi error code and a helpful error message. Error codes returned by RootFi may not be accurate.
+Integration Labs uses an LLM to attempt to map the error returned by the integration platform to a Integration Labs error code and a helpful error message. Error codes returned by Integration Labs may not be accurate.
 
-We are continuously improving our LLM to ensure that the error codes returned by RootFi are accurate.
+We are continuously improving our LLM to ensure that the error codes returned by Integration Labs are accurate.
 
 </Note>
 
 ## Error Codes
 
-All RootFi Write APIs will return a 400 status code with one of the following error codes when an error occurs.
+All Integration Labs Write APIs will return a 400 status code with one of the following error codes when an error occurs.
 
 | Error Code            | Error Message Format                                                     | Description                                                                          |
 | --------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
@@ -48,7 +48,7 @@ All RootFi Write APIs will return a 400 status code with one of the following er
 <Warning>
 **Internal errors**
 
-If an internal error occurs, RootFi will return a 500 status code with the an **internal-error** error code.
+If an internal error occurs, Integration Labs will return a 500 status code with the an **internal-error** error code.
 If you receive this error code, please contact us at. We are monitoring our internal errors and will fix them as soon as possible.
 
 </Warning>
