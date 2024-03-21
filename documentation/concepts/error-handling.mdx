@@ -12,13 +12,13 @@ When reading data from an integration, Integration Labs will attempt to read all
 
 ## Writing Data
 
-When writing data to an integration, RootFi will attempt to write all data to the platform. If an unexpected error occurs, RootFi will return an error response with the following format:
+When writing data to an integration, Integration Labs will attempt to write all data to the platform. If an unexpected error occurs, Integration Labs will return an error response with the following format:
 
 ```json
 {
   "error": {
-    "code": "A RootFi Error Code (see error codes below)",
-    "message": "A helpful message from RootFi describing the error after trying to parse the platform_error",
+    "code": "An Integration Labs Error Code (see error codes below)",
+    "message": "A helpful message from Integration Labs describing the error after trying to parse the platform_error",
     "platform_error": "The full error message returned by the integration platform"
   }
 }

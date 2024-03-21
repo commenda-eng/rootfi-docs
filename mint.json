@@ -72,7 +72,7 @@
       "group": "Core Features",
       "pages": [
         {
-          "group": "RootFi Connect",
+          "group": "Connect by Integration Labs",
           "pages": ["documentation/concepts/rootfi-connect/introduction", "documentation/concepts/rootfi-connect/invite-link", "documentation/concepts/rootfi-connect/embedded-sdk"]
         },
 
