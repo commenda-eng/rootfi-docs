@@ -24,13 +24,15 @@ We support easy to use REST APIs for all our data models with the following quer
 
 4. **expand** - optionally you can pass a comma separated list of fields you want to expand. This is useful when you want to retrieve data from a data model that is related to another data model. For example, you can retrieve an invoice and all the associated payments by querying the `invoice` data model and including the `invoice_payments` field.
 
-5. **return_count** - a boolean value that you can pass to return the total count of the data. This is useful when you want to know the total number of records that match your query.
+5. **include_deleted_records** - optionally you can pass a boolean value to include deleted records in the response. This is useful when you want to know what records have been deleted after a sync.
 
-6. **sort[field_name]** - value is either `ASC` or `DESC`.
+6. **return_count** - a boolean value that you can pass to return the total count of the data. This is useful when you want to know the total number of records that match your query.
+
+7. **sort[field_name]** - value is either `ASC` or `DESC`.
 
    Example: `sort[rootfi_created_at] = DESC`
 
-7. **filter fields** - You can filter on any field in the data model. Each filter field parameter is a string that contains the field name, the operator and the value you want to filter on.
+8. **filter fields** - You can filter on any field in the data model. Each filter field parameter is a string that contains the field name, the operator and the value you want to filter on.
 
    1. **field name** - the name of the field you want to filter on. Example: `rootfi_company_id`
    2. **operator** - the operator you want to use to filter the data Example: `eq`

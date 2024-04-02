@@ -72,6 +72,18 @@ paths:
           examples:
             Example1:
               value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -108,6 +120,7 @@ paths:
                   value:
                     data:
                       - rootfi_id: 157
+                        rootfi_deleted_at: null
                         rootfi_created_at: "2024-01-22T05:07:31.465Z"
                         rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                         rootfi_company_id: 1089
@@ -146,6 +159,7 @@ paths:
                   value:
                     data:
                       rootfi_id: 157
+                      rootfi_deleted_at: null
                       rootfi_created_at: "2024-01-22T05:07:31.465Z"
                       rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                       rootfi_company_id: 1089
@@ -188,14 +202,26 @@ paths:
       parameters:
         - name: rootfi_company_id[eq]
           in: query
-          description: The company id of the rootfi
+          description: Filter by rootfi_company_id
           required: false
           schema:
             type: integer
             nullable: true
           examples:
             Example1:
-              value: 123
+              value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: sort[period_end]
           in: query
           description: The period end date of the income statement
@@ -248,6 +274,7 @@ paths:
                   value:
                     data:
                       - rootfi_id: 157
+                        rootfi_deleted_at: null
                         rootfi_created_at: "2024-01-22T05:07:31.465Z"
                         rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                         rootfi_company_id: 1089
@@ -354,6 +381,18 @@ paths:
           examples:
             Example1:
               value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -523,6 +562,18 @@ paths:
           examples:
             Example1:
               value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -710,6 +761,18 @@ paths:
           examples:
             Example1:
               value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -939,6 +1002,18 @@ paths:
           examples:
             Example1:
               value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -987,6 +1062,7 @@ paths:
                   value:
                     data:
                       - rootfi_id: 157
+                        rootfi_deleted_at: null
                         rootfi_created_at: "2024-01-22T05:07:31.465Z"
                         rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                         rootfi_company_id: 1089
@@ -1027,6 +1103,7 @@ paths:
                   value:
                     data:
                       rootfi_id: 157
+                      rootfi_deleted_at: null
                       rootfi_created_at: "2024-01-22T05:07:31.465Z"
                       rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                       rootfi_company_id: 1089
@@ -1141,6 +1218,18 @@ paths:
           examples:
             Example1:
               value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -1436,14 +1525,26 @@ paths:
       parameters:
         - name: rootfi_company_id[eq]
           in: query
-          description: The company id of the rootfi
+          description: Filter by rootfi_company_id
           required: false
           schema:
             type: integer
             nullable: true
           examples:
             Example1:
-              value: 123
+              value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: sort[period_end]
           in: query
           description: The period end date of the income statement
@@ -1496,6 +1597,7 @@ paths:
                   value:
                     data:
                       - rootfi_id: 157
+                        rootfi_deleted_at: null
                         rootfi_created_at: "2024-01-22T05:07:31.465Z"
                         rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                         rootfi_company_id: 1089
@@ -1593,6 +1695,18 @@ paths:
           examples:
             Example1:
               value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -1629,6 +1743,7 @@ paths:
                   value:
                     data:
                       - rootfi_id: 157
+                        rootfi_deleted_at: null
                         rootfi_created_at: "2024-01-22T05:07:31.465Z"
                         rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                         rootfi_company_id: 1089
@@ -1722,6 +1837,18 @@ paths:
           examples:
             Example1:
               value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -2029,6 +2156,18 @@ paths:
           examples:
             Example1:
               value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -2065,6 +2204,7 @@ paths:
                   value:
                     data:
                       - rootfi_id: 157
+                        rootfi_deleted_at: null
                         rootfi_created_at: "2024-01-22T05:07:31.465Z"
                         rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                         rootfi_company_id: 1089
@@ -2139,6 +2279,18 @@ paths:
           examples:
             Example1:
               value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -2305,6 +2457,18 @@ paths:
           examples:
             Example1:
               value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -2484,14 +2648,26 @@ paths:
       parameters:
         - name: rootfi_company_id[eq]
           in: query
-          description: The company id of the rootfi
+          description: Filter by rootfi_company_id
           required: false
           schema:
             type: integer
             nullable: true
           examples:
             Example1:
-              value: 123
+              value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: sort[period_end]
           in: query
           description: The period end date of the income statement
@@ -2547,6 +2723,7 @@ paths:
                   value:
                     data:
                       - rootfi_id: 157
+                        rootfi_deleted_at: null
                         rootfi_created_at: "2024-01-22T05:07:31.465Z"
                         rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                         rootfi_company_id: 1089
@@ -2682,6 +2859,18 @@ paths:
           examples:
             Example1:
               value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -2911,6 +3100,18 @@ paths:
           examples:
             Example1:
               value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -2959,6 +3160,7 @@ paths:
                   value:
                     data:
                       - rootfi_id: 157
+                        rootfi_deleted_at: null
                         rootfi_created_at: "2024-01-22T05:07:31.465Z"
                         rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                         rootfi_company_id: 1089
@@ -2999,6 +3201,7 @@ paths:
                   value:
                     data:
                       rootfi_id: 157
+                      rootfi_deleted_at: null
                       rootfi_created_at: "2024-01-22T05:07:31.465Z"
                       rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                       rootfi_company_id: 1089
@@ -3113,6 +3316,18 @@ paths:
           examples:
             Example1:
               value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -3458,6 +3673,18 @@ paths:
           examples:
             Example1:
               value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -3739,6 +3966,18 @@ paths:
           examples:
             Example1:
               value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -3956,6 +4195,18 @@ paths:
           examples:
             Example1:
               value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -4206,6 +4457,18 @@ paths:
           examples:
             Example1:
               value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -4444,6 +4707,18 @@ paths:
           examples:
             Example1:
               value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -4614,6 +4889,18 @@ paths:
           examples:
             Example1:
               value: 111
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
+          examples:
+            Example1:
+              value: false
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -4650,6 +4937,7 @@ paths:
                   value:
                     data:
                       - rootfi_id: 157
+                        rootfi_deleted_at: null
                         rootfi_created_at: "2024-01-22T05:07:31.465Z"
                         rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                         rootfi_company_id: 1089
@@ -4681,6 +4969,7 @@ paths:
                   value:
                     data:
                       rootfi_id: 157
+                      rootfi_deleted_at: null
                       rootfi_created_at: "2024-01-22T05:07:31.465Z"
                       rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                       rootfi_company_id: 1089
@@ -5628,6 +5917,15 @@ paths:
           schema:
             type: integer
             nullable: true
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -5664,6 +5962,7 @@ paths:
                   value:
                     data:
                       - rootfi_id: 157
+                        rootfi_deleted_at: null
                         rootfi_created_at: "2024-01-22T05:07:31.465Z"
                         rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                         rootfi_company_id: 1089
@@ -5743,6 +6042,15 @@ paths:
           schema:
             type: integer
             nullable: true
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -5789,6 +6097,7 @@ paths:
                   value:
                     data:
                       - rootfi_id: 157
+                        rootfi_deleted_at: null
                         rootfi_created_at: "2024-01-22T05:07:31.465Z"
                         rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                         rootfi_company_id: 1089
@@ -5877,6 +6186,15 @@ paths:
           schema:
             type: integer
             nullable: true
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -5913,6 +6231,7 @@ paths:
                   value:
                     data:
                       - rootfi_id: 157
+                        rootfi_deleted_at: null
                         rootfi_created_at: "2024-01-22T05:07:31.465Z"
                         rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                         rootfi_company_id: 1089
@@ -5980,6 +6299,15 @@ paths:
           schema:
             type: integer
             nullable: true
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -6016,6 +6344,7 @@ paths:
                   value:
                     data:
                       - rootfi_id: 157
+                        rootfi_deleted_at: null
                         rootfi_created_at: "2024-01-22T05:07:31.465Z"
                         rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                         rootfi_company_id: 1089
@@ -6104,6 +6433,15 @@ paths:
           schema:
             type: integer
             nullable: true
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -6140,6 +6478,7 @@ paths:
                   value:
                     data:
                       - rootfi_id: 157
+                        rootfi_deleted_at: null
                         rootfi_created_at: "2024-01-22T05:07:31.465Z"
                         rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                         rootfi_company_id: 1089
@@ -6209,6 +6548,15 @@ paths:
           schema:
             type: integer
             nullable: true
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -6255,6 +6603,7 @@ paths:
                   value:
                     data:
                       - rootfi_id: 157
+                        rootfi_deleted_at: null
                         rootfi_created_at: "2024-01-22T05:07:31.465Z"
                         rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                         rootfi_company_id: 1089
@@ -6341,6 +6690,15 @@ paths:
           schema:
             type: integer
             nullable: true
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -6377,6 +6735,7 @@ paths:
                   value:
                     data:
                       - rootfi_id: 157
+                        rootfi_deleted_at: null
                         rootfi_created_at: "2024-01-22T05:07:31.465Z"
                         rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                         rootfi_company_id: 1089
@@ -6447,6 +6806,15 @@ paths:
           schema:
             type: integer
             nullable: true
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -6483,6 +6851,7 @@ paths:
                   value:
                     data:
                       - rootfi_id: 157
+                        rootfi_deleted_at: null
                         rootfi_created_at: "2024-01-22T05:07:31.465Z"
                         rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                         rootfi_company_id: 1089
@@ -6551,6 +6920,15 @@ paths:
           schema:
             type: integer
             nullable: true
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -6594,6 +6972,7 @@ paths:
                   value:
                     data:
                       - rootfi_id: 157
+                        rootfi_deleted_at: null
                         rootfi_created_at: "2024-01-22T05:07:31.465Z"
                         rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                         rootfi_company_id: 1089
@@ -6676,6 +7055,15 @@ paths:
           schema:
             type: integer
             nullable: true
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -6724,6 +7112,7 @@ paths:
                   value:
                     data:
                       - rootfi_id: 157
+                        rootfi_deleted_at: null
                         rootfi_created_at: "2024-01-22T05:07:31.465Z"
                         rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                         rootfi_company_id: 1089
@@ -6795,6 +7184,15 @@ paths:
           schema:
             type: integer
             nullable: true
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -6831,6 +7229,7 @@ paths:
                   value:
                     data:
                       - rootfi_id: 157
+                        rootfi_deleted_at: null
                         rootfi_created_at: "2024-01-22T05:07:31.465Z"
                         rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                         rootfi_company_id: 1089
@@ -6898,6 +7297,15 @@ paths:
           schema:
             type: integer
             nullable: true
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -6934,6 +7342,7 @@ paths:
                   value:
                     data:
                       - rootfi_id: 157
+                        rootfi_deleted_at: null
                         rootfi_created_at: "2024-01-22T05:07:31.465Z"
                         rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                         rootfi_company_id: 1089
@@ -7002,6 +7411,15 @@ paths:
           schema:
             type: integer
             nullable: true
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included.
+          required: false
+          schema:
+            type: boolean
+            nullable: true
         - name: return_count
           in: query
           description: Return the count of the objects
@@ -7038,6 +7456,7 @@ paths:
                   value:
                     data:
                       - rootfi_id: 157
+                        rootfi_deleted_at: null
                         rootfi_created_at: "2024-01-22T05:07:31.465Z"
                         rootfi_updated_at: "2024-01-22T05:07:31.000Z"
                         rootfi_company_id: 1089
@@ -9657,6 +10076,10 @@ components:
           type: string
           description: Name of the company
           example: Rootfi
+        partner_id:
+          type: string
+          nullable: true
+          description: Unique identifier in your system.
         invite_link:
           $ref: "#/components/schemas/coreCompanyInviteLinkData"
           nullable: true
@@ -11475,6 +11898,11 @@ components:
           format: double
           description: The unique ID we assign for that data's information
           example: 157
+        rootfi_deleted_at:
+          type: string
+          format: date-time
+          nullable: true
+          description: The date at which the data was deleted in the accounting platform
         rootfi_created_at:
           type: string
           format: date-time
