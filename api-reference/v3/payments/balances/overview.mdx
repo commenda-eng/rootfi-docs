@@ -1,0 +1,39 @@
+---
+title: "Overview"
+description: "Balances are the amount of money in an account, equal to the net of credits and debits at that point in time for that account."
+icon: "hand-wave"
+---
+
+**The Balances Data Model** simplifies the handling and retrieval of Balances data for your application. The model provides a unified representation of balances data across different platforms, enabling you to easily access and manage balances data from different platforms.
+
+- Unified Balances properties: The model provides a unified representation of balances properties across different platforms, enabling you to easily access and manage balances data from different platforms.
+- Comprehensive balances information: The model provides a comprehensive representation of balances data, including all the properties and relationships that you can retrieve for an order.
+
+## Properties Supported
+
+| Property          | Type   | Description                                   |
+| ----------------- | ------ | --------------------------------------------- |
+| platform_id       | string | The accounting platform's ID for the Balances |
+| total_balance     | string | The total balance of the account              |
+| available_balance | string | The available balance of the account          |
+| pending_balance   | string | The pending balance of the account            |
+| currency_id       | string | The currency ID of the account                |
+
+<ResponseExample name="The Balances Object" >
+
+```json The Balances Response Object
+{
+  "rootfi_id": 157,
+  "rootfi_deleted_at": null,
+  "rootfi_created_at": "2024-01-22T05:07:31.465Z",
+  "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
+  "rootfi_company_id": 1089,
+  "platform_id": "123456",
+  "total_balance": "123.45",
+  "available_balance": "123.45",
+  "pending_balance": "123.45",
+  "currency_id": "1234567890"
+}
+```
+
+</ResponseExample>

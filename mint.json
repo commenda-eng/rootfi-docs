@@ -514,6 +514,18 @@
             {
               "group": "Tax Rates",
               "pages": ["api-reference/v3/payments/tax_rates/overview", "api-reference/v3/payments/tax_rates/get-all-tax-rates"]
+            },
+            {
+              "group": "Balances",
+              "pages": ["api-reference/v3/payments/balances/overview", "api-reference/v3/payments/balances/get-all-balances"]
+            },
+            {
+              "group": "Subscriptions",
+              "pages": ["api-reference/v3/payments/subscriptions/overview", "api-reference/v3/payments/subscriptions/get-all-subscriptions"]
+            },
+            {
+              "group": "Transactions",
+              "pages": ["api-reference/v3/payments/transactions/overview", "api-reference/v3/payments/transactions/get-all-transactions"]
             }
           ]
         },
@@ -532,6 +544,26 @@
             {
               "group": "Products",
               "pages": ["api-reference/v3/ecommerce/products/overview", "api-reference/v3/ecommerce/products/get-all-products"]
+            },
+            {
+              "group": "Balances",
+              "pages": ["api-reference/v3/ecommerce/balances/overview", "api-reference/v3/ecommerce/balances/get-all-balances"]
+            },
+            {
+              "group": "Company Info",
+              "pages": ["api-reference/v3/ecommerce/company-info/overview", "api-reference/v3/ecommerce/company-info/get-all-company-info"]
+            },
+            {
+              "group": "Fulfillments",
+              "pages": ["api-reference/v3/ecommerce/fulfillments/overview", "api-reference/v3/ecommerce/fulfillments/get-all-fulfillments"]
+            },
+            {
+              "group": "Inventories",
+              "pages": ["api-reference/v3/ecommerce/inventories/overview", "api-reference/v3/ecommerce/inventories/get-all-inventories"]
+            },
+            {
+              "group": "Transactions",
+              "pages": ["api-reference/v3/ecommerce/transactions/overview", "api-reference/v3/ecommerce/transactions/get-all-transactions"]
             }
           ]
         }
