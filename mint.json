@@ -329,6 +329,7 @@
                 "api-reference/v2/accounting/documents/overview",
                 "api-reference/v3/accounting/documents/get-all-documents",
                 "api-reference/v3/accounting/documents/create-documents",
+                "api-reference/v3/accounting/documents/download-document",
                 "api-reference/v2/accounting/documents/get-all-documents"
               ]
             },
