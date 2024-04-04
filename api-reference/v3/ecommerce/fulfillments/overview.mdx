@@ -1,0 +1,45 @@
+---
+title: "Overview"
+description: "Fulfillments are the process of delivering products to customers. The Fulfillments Data Model simplifies the handling and retrieval of fulfillments-related information across various ecommerce platforms."
+icon: "hand-wave"
+---
+
+**The Fulfillments Data Model** simplifies the handling and retrieval of fulfillments-related information across various ecommerce platforms.
+
+- Unified Fulfillments properties: The model provides a unified representation of fulfillments properties across different platforms, enabling you to easily access and manage fulfillments data from different platforms.
+- Comprehensive fulfillments information: The model provides a comprehensive representation of fulfillments data, including all the properties and relationships that you can retrieve for an order.
+
+## Attributes
+
+## Properties Supported
+
+| Property         | Type   | Description                                        |
+| ---------------- | ------ | -------------------------------------------------- |
+| platform_id      | string | The accounting platform's ID for the fulfillments  |
+| carrier_name     | string | The name of the carrier used for the fulfillment   |
+| tracking_number  | string | The tracking number for the fulfillment            |
+| delivery_service | string | The delivery service used for the fulfillment      |
+| tracking_link    | string | The tracking link for the fulfillment              |
+| created_at       | string | The date and time the fulfillment was created      |
+| updated_at       | string | The date and time the fulfillment was last updated |
+
+<ResponseExample name="The Fulfillments Object" >
+
+```json The Fulfillments Response Object
+{
+  "rootfi_id": 157,
+  "rootfi_deleted_at": null,
+  "rootfi_created_at": "2024-01-22T05:07:31.465Z",
+  "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
+  "rootfi_company_id": 1089,
+  "platform_id": "123456",
+  "carrier_name": "USPS",
+  "tracking_number": "1234567890",
+  "delivery_service": "Standard",
+  "tracking_link": "https://www.usps.com",
+  "created_at": "2024-01-22T05:07:31.465Z",
+  "updated_at": "2024-01-22T05:07:31.000Z"
+}
+```
+
+</ResponseExample>

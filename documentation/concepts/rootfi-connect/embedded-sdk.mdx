@@ -3,7 +3,7 @@ title: "Embedded SDK"
 icon: "code"
 ---
 
-RootFi supports white labelling the onboarding process through the Connect SDK. Your end users can create connections to their platforms without using the RootFi dashboard to generate [Invite Links](/documentation/concepts/rootfi-connect/invite-link). We currently offer a Javascript SDK but you can request other frameworks by contacting us.
+Integration Labs supports white labelling the onboarding process through the Connect SDK. Your end users can create connections to their platforms without using the Integration Labs dashboard to generate [Invite Links](/documentation/concepts/rootfi-connect/invite-link). We currently offer a Javascript SDK but you can request other frameworks by contacting us.
 
 ### Developer Reference
 
@@ -22,19 +22,19 @@ RootFi supports white labelling the onboarding process through the Connect SDK. 
 
 2. Load the RootFi SDK on page load by calling `RootfiLink.initialize()`.
 
-```java JavaScript
+```javascript JavaScript
 RootfiLink.initialize({
-    linkToken: "", // invite_link returned from the Create Invite Link API
-    onSuccess: () => {
-       // Will be called, once connection is successful
-    },
-    onReady: () => {
-       // Will be called once the src script is loaded
-    },
-    onExit: () => {
-       // Will be called when user clicks close button on SDK.
-    },
- });
+  linkToken: "", // invite_link returned from the Create Invite Link API
+  onSuccess: () => {
+    // Will be called, once connection is successful
+  },
+  onReady: () => {
+    // Will be called once the src script is loaded
+  },
+  onExit: () => {
+    // Will be called when user clicks close button on SDK.
+  },
+});
 ```
 
 1. Call `RootfiLink.openLink();` to open the SDK. Make sure you call this function onReady is called back on initialisation.
@@ -42,7 +42,9 @@ RootfiLink.initialize({
 
 <Warning>The SDK will not close until you call `RootfiLink.closeLink();`</Warning>
 
-Below is a HTML snippet of integrating the SDK
+Below is a HTML snippet of integrating the SDK and a ReactJS implementation using our react SDK component.
+
+<CodeGroup>
 
 ```html HTML
 <html>
@@ -57,7 +59,7 @@ Below is a HTML snippet of integrating the SDK
             // connection succeeded
             RootfiLink.closeLink(); // Close the SDK
             alert("Connection Success");
-            // Make an api call to save success status to your  db
+            // Make an api call to save success status to your db
           },
           onReady: () => {
             // Open SDK when ready. You can open on a button Click.
@@ -78,3 +80,40 @@ Below is a HTML snippet of integrating the SDK
   </body>
 </html>
 ```
+
+```javascript React
+import { useEffect, useState } from "react";
+import { useRootfiLink } from "rootfi-react-sdk";
+
+const ConnectSDK = () => {
+  const [inviteLinkId, setInviteLinkId] = useState("");
+  const { isReady, closeLink, openLink } = useRootfiLink({
+    environment: "global", // "global" or "saudi"
+    inviteLinkId: inviteLinkId,
+    onSuccess: (data) => {
+      // connection succeeded
+      // Make an api call to save success status to your db
+      setTimeout(() => closeLink(), 2000);
+    },
+    onExit: () => {
+      closeLink();
+    },
+  });
+
+  useEffect(() => {
+    // Call Create Invite Link API to get a new invite link and set it to the state
+    // setInviteLinkId("INVITE_LINK_ID");
+  }, []);
+
+  if (!isReady) return <>{"Initialising SDK"}</>;
+
+  return (
+    <div>
+      <button onClick={() => openLink()}>Open RootFi SDK</button>
+    </div>
+  );
+};
+export default ConnectSDK;
+```
+
+</CodeGroup>

@@ -1,0 +1,45 @@
+---
+title: "Overview"
+description: "Transactions are the records of the financial activities of a business. The Transactions Data Model simplifies the handling and retrieval of Transactions data for your application."
+icon: "hand-wave"
+---
+
+**The Transactions Data Model** simplifies the handling and retrieval of Transactions data for your application. The model provides a unified representation of transactions data across different platforms, enabling you to easily access and manage transactions data from different platforms.
+
+- Unified Transactions properties: The model provides a unified representation of transactions properties across different platforms, enabling you to easily access and manage transactions data from different platforms.
+- Comprehensive transactions information: The model provides a comprehensive representation of transactions data, including all the properties and relationships that you can retrieve for an order.
+
+## Properties Supported
+
+| Property    | Type   | Description                                       |
+| ----------- | ------ | ------------------------------------------------- |
+| platform_id | string | The accounting platform's ID for the Transactions |
+| amount      | string | The amount of the transaction                     |
+| type        | string | The type of the transaction                       |
+| created_at  | string | The date and time the transaction was created     |
+| description | string | The description of the transaction                |
+| currency_id | string | The currency ID of the transaction                |
+| status      | string | The status of the transaction                     |
+| source      | string | The source of the transaction                     |
+
+<ResponseExample name="The Transactions Object" >
+
+```json The Transactions Response Object
+{
+  "rootfi_id": 157,
+  "rootfi_deleted_at": null,
+  "rootfi_created_at": "2024-01-22T05:07:31.465Z",
+  "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
+  "rootfi_company_id": 1089,
+  "platform_id": "123456",
+  "amount": "123.45",
+  "type": "credit",
+  "created_at": "2024-01-22T05:07:31.465Z",
+  "description": "Transaction description",
+  "currency_id": "1234567890",
+  "status": "completed",
+  "source": "source"
+}
+```
+
+</ResponseExample>

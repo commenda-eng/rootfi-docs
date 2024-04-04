@@ -1,5 +1,5 @@
 {
-  "name": "RootFi",
+  "name": "Integration Labs (formerly RootFi)",
   "logo": {
     "dark": "/images/logo/Integration_labs_logo_dark.png",
     "light": "/images/logo/Integration_labs_logo_light.png"
@@ -71,49 +71,18 @@
       "group": "General",
       "pages": [
         "documentation/general/introduction",
-        "documentation/general/glossary-key-terms",
-        "documentation/general/sdk"
+        "documentation/general/glossary-key-terms"
       ]
     },
     {
       "group": "Core Features",
       "pages": [
         {
-          "group": "RootFi Connect",
+          "group": "Connect by Integration Labs",
           "pages": [
-            "documentation/concepts/rootfi-connect/overview",
+            "documentation/concepts/rootfi-connect/introduction",
             "documentation/concepts/rootfi-connect/invite-link",
-            "documentation/concepts/rootfi-connect/connect-sdk"
-          ]
-        },
-        {
-          "group": "Syncing Data",
-          "pages": [
-            "documentation/concepts/sync-data/ways-to-sync",
-            "documentation/concepts/sync-data/sync-config"
-          ]
-        },
-        {
-          "group": "Reading Data",
-          "pages": [
-            "documentation/concepts/read-data/rest-apis",
-            "documentation/concepts/read-data/graphql-apis"
-          ]
-        },
-        {
-          "group": "Writing Data",
-          "pages": [
-            "documentation/concepts/write-data/synchronous-writes",
-            "documentation/concepts/write-data/asynchronous-writes"
-          ]
-        },
-        {
-          "group": "Supplemental Data",
-          "pages": [
-            "documentation/concepts/supplemental-data/overview",
-            "documentation/concepts/supplemental-data/raw-data",
-            "documentation/concepts/supplemental-data/passthrough-api",
-            "documentation/concepts/supplemental-data/realtime-api"
+            "documentation/concepts/rootfi-connect/embedded-sdk"
           ]
         },
         "documentation/concepts/syncing-data",
@@ -158,29 +127,29 @@
             "documentation/accounting-integrations/wafeq",
             "documentation/accounting-integrations/wave",
             "documentation/accounting-integrations/xero",
-            "documentation/accounting-integrations/zoho-books",
-            "documentation/accounting-integrations/fresh-books",
-            "documentation/accounting-integrations/clear-books"
+            "documentation/accounting-integrations/zoho-books"
           ]
         },
         {
           "group": "Payment Integrations",
           "pages": [
             "documentation/payment-integrations/payment-integrations-overview",
+            "documentation/payment-integrations/chargebee",
             "documentation/payment-integrations/paypal",
             "documentation/payment-integrations/razorpay",
             "documentation/payment-integrations/stripe",
             "documentation/payment-integrations/square",
-            "documentation/payment-integrations/chargebee"
+            "documentation/payment-integrations/zoho-invoice"
           ]
         },
         {
           "group": "E-commerce Integrations",
           "pages": [
             "documentation/ecommerce-integrations/ecommerce-integrations-overview",
-            "documentation/ecommerce-integrations/shopify",
             "documentation/ecommerce-integrations/big-commerce",
-            "documentation/ecommerce-integrations/woo-commerce"
+            "documentation/ecommerce-integrations/shopify",
+            "documentation/ecommerce-integrations/woo-commerce",
+            "documentation/ecommerce-integrations/wix"
           ]
         }
       ]
@@ -267,7 +236,7 @@
           "group": "Real Time",
           "version": "v3",
           "pages": [
-            "api-reference/v3/core/real_time/real_time"
+            "api-reference/v3/core/realtime/realtime"
           ]
         }
       ]
@@ -380,6 +349,7 @@
                 "api-reference/v2/accounting/documents/overview",
                 "api-reference/v3/accounting/documents/get-all-documents",
                 "api-reference/v3/accounting/documents/create-documents",
+                "api-reference/v3/accounting/documents/download-document",
                 "api-reference/v2/accounting/documents/get-all-documents"
               ]
             },
@@ -595,6 +565,27 @@
                 "api-reference/v3/payments/tax_rates/overview",
                 "api-reference/v3/payments/tax_rates/get-all-tax-rates"
               ]
+            },
+            {
+              "group": "Balances",
+              "pages": [
+                "api-reference/v3/payments/balances/overview",
+                "api-reference/v3/payments/balances/get-all-balances"
+              ]
+            },
+            {
+              "group": "Subscriptions",
+              "pages": [
+                "api-reference/v3/payments/subscriptions/overview",
+                "api-reference/v3/payments/subscriptions/get-all-subscriptions"
+              ]
+            },
+            {
+              "group": "Transactions",
+              "pages": [
+                "api-reference/v3/payments/transactions/overview",
+                "api-reference/v3/payments/transactions/get-all-transactions"
+              ]
             }
           ]
         },
@@ -621,6 +612,41 @@
               "pages": [
                 "api-reference/v3/ecommerce/products/overview",
                 "api-reference/v3/ecommerce/products/get-all-products"
+              ]
+            },
+            {
+              "group": "Balances",
+              "pages": [
+                "api-reference/v3/ecommerce/balances/overview",
+                "api-reference/v3/ecommerce/balances/get-all-balances"
+              ]
+            },
+            {
+              "group": "Company Info",
+              "pages": [
+                "api-reference/v3/ecommerce/company-info/overview",
+                "api-reference/v3/ecommerce/company-info/get-all-company-info"
+              ]
+            },
+            {
+              "group": "Fulfillments",
+              "pages": [
+                "api-reference/v3/ecommerce/fulfillments/overview",
+                "api-reference/v3/ecommerce/fulfillments/get-all-fulfillments"
+              ]
+            },
+            {
+              "group": "Inventories",
+              "pages": [
+                "api-reference/v3/ecommerce/inventories/overview",
+                "api-reference/v3/ecommerce/inventories/get-all-inventories"
+              ]
+            },
+            {
+              "group": "Transactions",
+              "pages": [
+                "api-reference/v3/ecommerce/transactions/overview",
+                "api-reference/v3/ecommerce/transactions/get-all-transactions"
               ]
             }
           ]
