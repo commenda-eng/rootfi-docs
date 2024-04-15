@@ -5947,6 +5947,173 @@ paths:
                       rate_limit_sleep_time: 0
       summary: Get Job
       security: *ref_0
+  /core/webhooks:
+    get:
+      description: Retrieve all webhooks from the database.
+      operationId: core_webhooks_list
+      tags:
+        - CoreWebhooks
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/coreGetWebhooksObject'
+              examples:
+                Example1:
+                  value:
+                    data:
+                      - id: THBROZzWGuL3b8qEEdBF
+                        headers:
+                          api_key: fhsjd
+                        operations:
+                          - CREATE
+                        data_models:
+                          - ACCOUNTS
+                        name: webhook 1
+                        created_at: '2024-04-15T04:52:25.309Z'
+                        type: CONNECTION_CHANGED
+                        url: >-
+                          https://webhook.site/eec24873-a381-4694-b684-a1d77d9e0697
+      summary: Get Webhooks
+      security: *ref_0
+    post:
+      description: Initialise a single webhook
+      operationId: core_webhooks_create
+      tags:
+        - CoreWebhooks
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/coreWebhookData'
+              examples:
+                Example1:
+                  value:
+                    id: THBROZzWGuL3b8qEEdBF
+                    headers:
+                      api_key: fhsjd
+                    operations:
+                      - CREATE
+                    data_models:
+                      - ACCOUNTS
+                    name: webhook 1
+                    created_at: '2024-04-15T04:52:25.309Z'
+                    type: CONNECTION_CHANGED
+                    url: https://webhook.site/eec24873-a381-4694-b684-a1d77d9e0697
+      summary: Create Webhook
+      security: *ref_0
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/coreCreateWebhookReqBody'
+            examples:
+              Example1:
+                value:
+                  webhook:
+                    operations:
+                      - CREATE
+                    name: webhook 1
+                    type: CONNECTION_CHANGED
+                    data_models:
+                      - ACCOUNTS
+                    url: https://webhook.site/eec24873-a381-4694-b684-a1d77d9e0697
+                    headers:
+                      api_key: fhsjd
+  /core/webhooks/{webhook_id}:
+    delete:
+      description: Delete a webhook.
+      operationId: core_webhooks_delete
+      tags:
+        - CoreWebhooks
+      parameters:
+        - name: webhook_id
+          in: path
+          description: The ID of the webhook to delete
+          required: true
+          schema:
+            type: string
+          examples:
+            Example1:
+              value: wkjldashglkjrhefs
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteResponse'
+              examples:
+                Example1:
+                  value:
+                    status: success
+      summary: Delete Webhook
+      security: *ref_0
+    put:
+      description: Update a single webhook from the database.
+      operationId: core_webhooks_update
+      tags:
+        - CoreWebhooks
+      parameters:
+        - name: webhook_id
+          in: path
+          description: The ID of the webhook to update
+          required: true
+          schema:
+            type: string
+          examples:
+            Example1:
+              value: wkjldashglkjrhefs
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/coreWebhookUpdateData'
+              examples:
+                Example1:
+                  value:
+                    data:
+                      id: THBROZzWGuL3b8qEEdBF
+                      headers:
+                        api_key: fhsjd
+                      operations:
+                        - CREATE
+                      data_models:
+                        - ACCOUNTS
+                      name: webhook 1
+                      created_at: '2024-04-15T04:52:25.309Z'
+                      type: CONNECTION_CHANGED
+                      url: >-
+                        https://webhook.site/eec24873-a381-4694-b684-a1d77d9e0697
+      summary: Update Webhook
+      security: *ref_0
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/coreCreateWebhookData'
+            examples:
+              Example1:
+                value:
+                  operations:
+                    - CREATE
+                  name: webhook 1
+                  type: CONNECTION_CHANGED
+                  data_models:
+                    - ACCOUNTS
+                  url: https://webhook.site/eec24873-a381-4694-b684-a1d77d9e0697
+                  headers:
+                    api_key: fhsjd
   /ecommerce/balances:
     get:
       description: Retrieve all balances from the database.
@@ -11792,6 +11959,136 @@ components:
         - job_type
       allOf:
         - $ref: '#/components/schemas/RootfiFields'
+    coreGetWebhooksObject:
+      title: coreGetWebhooksObject
+      type: object
+      description: The data of the webhooks endpoint
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/coreWebhookData'
+          description: The data of the webhooks endpoint
+      required:
+        - data
+    coreCreateWebhookReqBody:
+      title: coreCreateWebhookReqBody
+      type: object
+      description: The data of the webhooks endpoint
+      properties:
+        webhook:
+          $ref: '#/components/schemas/coreCreateWebhookData'
+          description: The data of the webhook
+      required:
+        - webhook
+    coreCreateWebhookData:
+      title: coreCreateWebhookData
+      type: object
+      description: The data of the webhooks endpoint
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/coreWebhookOperation'
+          description: The operations of the webhook
+        name:
+          type: string
+          description: The name of the webhook
+          example: webhook 1
+        type:
+          $ref: '#/components/schemas/coreWebhookType'
+          description: The type of the webhook
+        data_models:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataModels'
+          description: The data models of the webhook
+        url:
+          type: string
+          description: The URL of the webhook
+          example: https://webhook.site/eec24873-a381-4694-b684-a1d77d9e0697
+        headers:
+          type: object
+          additionalProperties: true
+          description: The headers of the webhook
+      required:
+        - operations
+        - name
+        - type
+        - data_models
+        - url
+        - headers
+    coreWebhookData:
+      title: coreWebhookData
+      type: object
+      description: The data of the invite link endpoint
+      properties:
+        id:
+          type: string
+          description: The ID of the webhook
+          example: THBROZzWGuL3b8qEEdBF
+        headers:
+          type: object
+          additionalProperties: true
+          description: The headers of the webhook
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/coreWebhookOperation'
+          description: The operations of the webhook
+        data_models:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataModels'
+          description: The data models of the webhook
+        name:
+          type: string
+          description: The name of the webhook
+          example: webhook 1
+        created_at:
+          type: string
+          description: The date the webhook was created
+          example: '2024-04-15T04:52:25.309Z'
+        type:
+          $ref: '#/components/schemas/coreWebhookType'
+          description: The type of the webhook
+        url:
+          type: string
+          description: The URL of the webhook
+          example: https://webhook.site/eec24873-a381-4694-b684-a1d77d9e0697
+      required:
+        - id
+        - headers
+        - operations
+        - data_models
+        - name
+        - created_at
+        - type
+        - url
+    coreWebhookUpdateData:
+      title: coreWebhookUpdateData
+      type: object
+      description: The data of the invite link endpoint
+      properties:
+        data:
+          $ref: '#/components/schemas/coreWebhookData'
+          description: The data of the webhook
+      required:
+        - data
+    coreWebhookType:
+      title: coreWebhookType
+      type: string
+      enum:
+        - DATA_MODEL_CHANGES
+        - CONNECTION_CHANGED
+        - SYNC_COMPLETED
+    coreWebhookOperation:
+      title: coreWebhookOperation
+      type: string
+      enum:
+        - CREATE
+        - UPDATE
+        - DELETE
     ecommerceBalancesFields:
       title: ecommerceBalancesFields
       type: object
