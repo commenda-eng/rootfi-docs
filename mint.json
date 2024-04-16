@@ -20,7 +20,7 @@
   "topbarLinks": [
     {
       "name": "Postman Collection",
-      "url": "https://elements.getpostman.com/view/fork?collection=15699131-dbc81ca6-7647-46cd-acbc-df9460301665&&referrer=https%3A%2F%2Fdocumenter.getpostman.com%2Fview%2F15699131%2F2sA2r3a6kU&versionTag=latest&source=documenter"
+      "url": "https://elements.getpostman.com/view/fork?collection=18460751-387ff14d-8137-452c-8bda-68cdfa9b5504&&referrer=https%3A%2F%2Fpostman.rootfi.dev%2F&versionTag=latest&source=documenter"
     }
   ],
   "topAnchor": {
@@ -75,11 +75,8 @@
           "group": "Connect by Integration Labs",
           "pages": ["documentation/concepts/rootfi-connect/introduction", "documentation/concepts/rootfi-connect/invite-link", "documentation/concepts/rootfi-connect/embedded-sdk"]
         },
-
         "documentation/concepts/syncing-data",
-
         "documentation/concepts/reading-data",
-
         "documentation/concepts/writing-data"
       ]
     },
@@ -90,7 +87,6 @@
         "documentation/concepts/supplemental-data/realtime-data",
         "documentation/concepts/supplemental-data/passthrough-api",
         "documentation/concepts/sync-config",
-
         "documentation/concepts/webhooks",
         "documentation/concepts/error-handling",
         "documentation/concepts/data-storage",
@@ -149,7 +145,10 @@
         }
       ]
     },
-    { "group": "Overview", "pages": ["api-reference/v3/overview/environments"] },
+    {
+      "group": "Overview",
+      "pages": ["api-reference/v3/overview/environments"]
+    },
     {
       "group": "Server Side SDKs",
       "pages": ["api-reference/v3/sdk/nodejs"]
@@ -219,6 +218,16 @@
           "group": "Real Time",
           "version": "v3",
           "pages": ["api-reference/v3/core/realtime/realtime"]
+        },
+        {
+          "group": "Webhooks",
+          "version": "v3",
+          "pages": [
+            "api-reference/v3/core/webhooks/get-all-webhooks",
+            "api-reference/v3/core/webhooks/create-webhooks",
+            "api-reference/v3/core/webhooks/update-webhook",
+            "api-reference/v3/core/webhooks/delete-webhook"
+          ]
         }
       ]
     },
