@@ -103,6 +103,8 @@
             "documentation/accounting-integrations/busy",
             "documentation/accounting-integrations/clear-books",
             "documentation/accounting-integrations/fresh-books",
+            "documentation/accounting-integrations/kashflow",
+            "documentation/accounting-integrations/free-agent",
             "documentation/accounting-integrations/mekari-jurnal",
             "documentation/accounting-integrations/microsoft-dynamics-365-business-central",
             "documentation/accounting-integrations/myob-business",
@@ -129,7 +131,8 @@
             "documentation/payment-integrations/razorpay",
             "documentation/payment-integrations/stripe",
             "documentation/payment-integrations/square",
-            "documentation/payment-integrations/zoho-invoice"
+            "documentation/payment-integrations/zoho-invoice",
+            "documentation/payment-integrations/mollie"
           ]
         },
         {
@@ -139,7 +142,8 @@
             "documentation/ecommerce-integrations/big-commerce",
             "documentation/ecommerce-integrations/shopify",
             "documentation/ecommerce-integrations/woo-commerce",
-            "documentation/ecommerce-integrations/wix"
+            "documentation/ecommerce-integrations/wix",
+            "documentation/ecommerce-integrations/squarespace"
           ]
         }
       ]
