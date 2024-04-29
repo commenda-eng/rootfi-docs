@@ -5430,25 +5430,7 @@ paths:
                       company:
                         rootfi_id: 1
                         name: RootFi
-                      connections:
-                        - rootfi_id: 1
-                          integration_type: XERO
-                          status: HEALTHY
-                          sync_status: IDLE
-                          rate_limits:
-                            counters:
-                              day: 4
-                              hour: 1
-                              minute: 1
-                              concurrent: 0
-                            lastReset:
-                              day: '2024-01-28T11:00:17.087Z'
-                              hour: '2024-01-29T05:10:40.896Z'
-                              minute: '2024-01-29T05:10:40.896Z'
-                            maxLimits:
-                              per_minute: 500
-                              concurrent_calls: 10
-                          category: ACCOUNTING
+                      connections: null
       summary: Create Invite Link
       security: *ref_0
       requestBody:
@@ -11642,13 +11624,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/coreConnectionData'
+          nullable: true
           description: The connections of the invite link
       required:
         - invite_link_id
         - integrations
         - integration_categories
         - company
-        - connections
       allOf:
         - $ref: '#/components/schemas/RootfiFields'
     coreInviteLinkCompanyData:
@@ -14201,8 +14183,6 @@ components:
       name: api_key
 servers:
   - url: https://api.rootfi.dev/v3
-    description: Production
+    description: global
   - url: https://api.sa.rootfi.dev/v3
-    description: Saudi
-  - url: https://sandbox.rootfi.dev/api/v3
-    description: Sandbox
+    description: saudi
