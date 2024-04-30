@@ -4226,9 +4226,7 @@ paths:
                       posted_date: '2024-01-25T09:00:00Z'
                       document_number: '123456'
                       journal_lines:
-                        - platform_id: '123456'
-                          journal_entry_id: '123456'
-                          account_id: '123456'
+                        - account_id: '123456'
                           contact_id: '123456'
                           tax_id: '123456'
                           tracking_category_ids:
@@ -10908,16 +10906,28 @@ components:
           type: string
           nullable: true
           description: The document number of the JournalEntry
+    accountingCreateJournalEntryObject:
+      title: accountingCreateJournalEntryObject
+      type: object
+      properties:
         journal_lines:
           type: array
           items:
             $ref: '#/components/schemas/JournalLinesFields'
           nullable: true
           description: The journal lines of the JournalEntry
+      allOf:
+        - $ref: '#/components/schemas/accountingJournalEntryFields'
     accountingJournalEntryObject:
       title: accountingJournalEntryObject
       type: object
-      properties: {}
+      properties:
+        journal_lines:
+          type: array
+          items:
+            $ref: '#/components/schemas/JournalLinesObject'
+          nullable: true
+          description: The journal lines of the JournalEntry
       allOf:
         - $ref: '#/components/schemas/AccountingRootFiBaseFields'
         - $ref: '#/components/schemas/accountingJournalEntryFields'
@@ -10941,7 +10951,7 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/accountingJournalEntryFields'
+            $ref: '#/components/schemas/accountingCreateJournalEntryObject'
           description: The data of the JournalEntry to create
       required:
         - data
@@ -13925,18 +13935,30 @@ components:
           format: date-time
           nullable: true
           description: The last ISO 8601 timestamp that the data was updated at
-    JournalLinesFields:
-      title: JournalLinesFields
+    BaseJournalLineObject:
+      title: BaseJournalLineObject
       type: object
       properties:
         platform_id:
           type: string
           description: The accounting Platform’s ID for this journal line
-          example: '123456'
         journal_entry_id:
           type: string
           description: The accounting Platform’s ID for this journal entry
-          example: '123456'
+      required:
+        - platform_id
+        - journal_entry_id
+    JournalLinesObject:
+      title: JournalLinesObject
+      type: object
+      properties: {}
+      allOf:
+        - $ref: '#/components/schemas/BaseJournalLineObject'
+        - $ref: '#/components/schemas/JournalLinesFields'
+    JournalLinesFields:
+      title: JournalLinesFields
+      type: object
+      properties:
         account_id:
           type: string
           nullable: true
@@ -13974,7 +13996,7 @@ components:
         net_amount:
           type: number
           format: double
-          description: The net amount of the journal line
+          description: The net amount of the journal line. Should be always positive value
           example: 100
         tax_amount:
           type: number
@@ -13994,8 +14016,6 @@ components:
             A JSON containing fields that you can directly pass to the
             accounting platform.
       required:
-        - platform_id
-        - journal_entry_id
         - net_amount
     PaymentLineItemsFields:
       title: PaymentLineItemsFields
