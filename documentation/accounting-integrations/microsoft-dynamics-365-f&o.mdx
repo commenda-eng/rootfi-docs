@@ -1,0 +1,74 @@
+---
+title: "Microsoft Dynamics 365 F&O"
+description: "Learn how to set up our Microsoft Dynamics 365 F&O integration."
+---
+
+If you wish to set up Microsoft Dynamics 365 F&O on the Integration Labs Portal, you will need to follow the steps outlined below.
+
+---
+
+### Part 1: Create an App
+
+Follow the link [https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade](https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade)
+
+Click on the +New Registration, you will see a form like this.
+
+![](/images/a5c5a30-Screenshot_2973.png)
+
+1. Enter the user-facing display name for this application (this can be changed later).
+2. Select Supported account types: Select Accounts in any organisational directory (Any Azure AD directory - Multi-tenant) and personal Microsoft accounts (e.g. Skype, Xbox). This allows Integration Labs to access data in Dynamics 365 F&O.
+3. In the Redirect URI, select the dropdown value as Web and in the value, paste the url, `https://integrate.rootfi.dev/oauth/callback`
+4. Now Click the Register Button, now you have created an app.
+5. Below, You can see the newly created app.
+
+### Part 2: Copy Client ID and Client Secret
+
+1. Click on the newly created app, Go to the Overview section, you can see the Application Client ID similar to 38b55dff-140c-4602-abb5-d13dc644.
+
+![Client ID MS Dynamics](/images/65ad5f0-Screenshot_2962.png)
+
+### Part 3: Generate and retrieve your client secret
+
+In the Azure Portal:
+
+1. Select Certificates & secrets in the left menu.
+2. Under Client secrets, click New client secret.
+3. In the Add a client secret dialogue, update the following information:
+4. Description: Enter a short description of your client secret to make it easier to find.  
+   Expires: Select the most appropriate option that complies with your company's security policy.  
+   Click Add.
+
+Your **client secret** is generated and displayed at the bottom of the page.
+
+<Tip>
+
+**Important**
+
+The secret value won't be displayed again in full, so you must copy the value as soon as it gets generated.
+
+</Tip>
+
+### Part 4: Enter Your Client ID and Client Secret on the Integration Labs Dashboard
+
+1. Login to the Integration Labs dashboard.
+2. Select the 'Integrations' tab on the sidebar - here you will see a list of platforms you can integrate with.
+3. Click the 'Set Up' button on the MS Dynamics 365 card.
+4. When the form opens up simply enter the 'Client ID' and 'Client Secret' that you generated and click 'Save'.
+
+### Part 5: Set up the F&O account to access the data.
+
+When your customer is connecting their MSD F&O account to Integration Labs, they will need to enter the client credentials in the F&O dashboard to allow Integration Labs to access the data.
+
+1. Login to the F&O dashboard and navigate to Microsoft Entra ID applications.
+   ![Client ID MS Dynamics](/images/msdF&O/navigateDashboard.png)
+2. Click on '+New' and enter the client id you copied from the Azure portal, enter a name and set the User ID to 'Admin'. Enter '8f09f705-3d36-4cc9-84c2-8091e362c759' as the client id if you are using Integration Labs credentials.
+   ![Client ID MS Dynamics](/images/msdF&O/dashboard.png)
+
+### Part 6: Setting up the integration Using Integration Labs Connect
+
+You will need to enter your F&O site url in the Integration Labs connect screen.
+
+1. To get the site url, navigate to the F&O dashboard and copy the url from the address bar.
+   ![Client ID MS Dynamics](/images/msdF&O/url.png)
+2. In the Integration Labs SDK screen, paste the site url of your F&O dashboard without the 'https://' and 'opearations.dynamics.com' part.
+   ![Client ID MS Dynamics](/images/msdF&O/sdk.png)
