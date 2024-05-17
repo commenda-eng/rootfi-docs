@@ -5237,6 +5237,16 @@ paths:
                               maxLimits:
                                 per_minute: 500
                                 concurrent_calls: 10
+                            sync_config:
+                              data_model: ACCOUNTS
+                              enabled: true
+                              frequency: DAILY
+                              interval: 1
+                              scope_access:
+                                READ: true
+                                CREATE: true
+                                UPDATE: true
+                                DELETE: true
                             tally_last_active_at: "2021-08-10T12:00:00Z"
                             zoho_sub_calls_enabled: true
                         activity_log:
@@ -5399,6 +5409,16 @@ paths:
                               maxLimits:
                                 per_minute: 500
                                 concurrent_calls: 10
+                            sync_config:
+                              data_model: ACCOUNTS
+                              enabled: true
+                              frequency: DAILY
+                              interval: 1
+                              scope_access:
+                                READ: true
+                                CREATE: true
+                                UPDATE: true
+                                DELETE: true
                             category: ACCOUNTING
                     next: https://api.fern.com/core/invite_links?limit=1&next=1
       summary: Get Invite Links
@@ -5509,6 +5529,16 @@ paths:
                             maxLimits:
                               per_minute: 500
                               concurrent_calls: 10
+                          sync_config:
+                            data_model: ACCOUNTS
+                            enabled: true
+                            frequency: DAILY
+                            interval: 1
+                            scope_access:
+                              READ: true
+                              CREATE: true
+                              UPDATE: true
+                              DELETE: true
                           category: ACCOUNTING
       summary: Get Invite Link
       security: *ref_0
@@ -5564,6 +5594,16 @@ paths:
                             maxLimits:
                               per_minute: 500
                               concurrent_calls: 10
+                          sync_config:
+                            data_model: ACCOUNTS
+                            enabled: true
+                            frequency: DAILY
+                            interval: 1
+                            scope_access:
+                              READ: true
+                              CREATE: true
+                              UPDATE: true
+                              DELETE: true
                           category: ACCOUNTING
       summary: Update Invite Link
       security: *ref_0
