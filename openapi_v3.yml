@@ -5446,6 +5446,16 @@ paths:
                     - XERO
                   integration_categories:
                     - ACCOUNTING
+                  sync_config:
+                    data_model: ACCOUNTS
+                    enabled: true
+                    frequency: DAILY
+                    interval: 1
+                    scope_access:
+                      READ: true
+                      CREATE: true
+                      UPDATE: true
+                      DELETE: true
   /core/invite_links/{invite_link_id}:
     get:
       description: Retrieve a single invite link from the database.
@@ -5572,6 +5582,16 @@ paths:
                     - XERO
                   integration_categories:
                     - ACCOUNTING
+                  sync_config:
+                    data_model: ACCOUNTS
+                    enabled: true
+                    frequency: DAILY
+                    interval: 1
+                    scope_access:
+                      READ: true
+                      CREATE: true
+                      UPDATE: true
+                      DELETE: true
     delete:
       description: Delete a single invite link from the database.
       operationId: core_inviteLinks_delete
@@ -13832,9 +13852,9 @@ components:
           description: The status of the sync configuration
           example: true
         interval:
-          type: string
+          type: integer
           description: The interval of the sync configuration
-          example: "2024-01-22T05:07:31.000Z"
+          example: 1
         frequency:
           $ref: "#/components/schemas/SyncFrequency"
           description: The frequency of the sync configuration
