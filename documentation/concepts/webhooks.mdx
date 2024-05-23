@@ -65,24 +65,28 @@ Use this webhook to receive notifications when data is created, updated, or dele
 
   ```json
   {
-      "company_id": 285,
-      "integration_type": "ZOHO_BOOKS",
-      "data_model": "ACCOUNTS",
-      "webhook_type": "DATA_MODEL_CHANGES",
-      "type": "CREATE", // UPDATE, DELETE
-      "created_at": "2023-01-01T00:00:00.000Z"
-      "data": [
-          {
-              "platform_id": "3124930487",
-              "name": "Cost of Good sold",
-              {.....}
-          },
-          {
-              "platform_id": "3147384833",
-              "name": "Revenue Account",
-              {.....}
-          }
-      ],
+    "rootfi_id": "3kghiU5NBgVUrkz",
+    "created_at": "2024-05-16T11:27:38.743Z",
+    "company_id": 1234,
+    "integration_type": "RAZORPAY",
+    "job_id": "amiKRBIQ1khvk6B",
+    "sync_id": "pt21IJtaATVZJ5v",
+    "data_model": "PAYMENT_CUSTOMERS",
+    "type": "CREATE",
+    "no_of_records": 1,
+    "webhook_type": "DATA_MODEL_CHANGES",
+        "data": [
+            {
+                "platform_id": "3124930487",
+                "name": "Cost of Good sold",
+                {.....}
+            },
+            {
+                "platform_id": "3147384833",
+                "name": "Revenue Account",
+                {.....}
+            }
+        ],
   }
   ```
 
@@ -90,31 +94,33 @@ Use this webhook to receive notifications when data is created, updated, or dele
 
   ```json
   {
+    "rootfi_id": "Ew54biv7WasFlIg",
+    "created_at": "2024-05-16T10:46:47.360Z",
+    "company_id": 1234,
+    "integration_type": "RAZORPAY",
     "webhook_type": "SYNC_COMPLETED",
-    "company_id": 1244,
-    "integration_type": "MS_DYNAMICS_365",
     "data": {
-      "id": "ZqpzbJNs4MvzrFz",
       "status": "SUCCESS",
-      "total_jobs_count": 1,
+      "id": "pt21IJtaATVZJ5v",
+      "start_time": "2024-05-16T11:27:22.000Z",
+      "end_time": "2024-05-16T11:27:38.743Z",
       "type": "PULL",
-      "success_jobs_count": 1,
+      "total_jobs_count": 15,
+      "success_jobs_count": 15,
       "failed_jobs_count": 0,
       "running_jobs_count": 0,
       "created_jobs_count": 0,
-      "start_time": "2023-10-18T03:01:08.576Z",
-      "end_time": "2023-10-18T03:01:16.512Z",
-      "jobs": [
-        {
-          "rootfi_id": "V6KXGlvt13sd81G",
-          "status": "SUCCESS",
-          "error": {},
-          "data_model": "INVOICES",
-          "job_type": "PULL",
-          "start_time": "2023-10-18T03:01:08.576Z",
-          "end_time": "2023-10-18T03:01:16.512Z",
-          "upload_job_id": "ZqpzbJNs4MvzrFz"
-        }
+      "data_models": [
+        "PAYMENT_DISPUTES",
+        "PAYMENT_ORDERS",
+        "PAYMENT_BALANCES",
+        "PAYMENT_REFUNDS",
+        "PAYMENT_PAYOUTS",
+        "PAYMENT_INVOICES",
+        "PAYMENT_PAYMENTS",
+        "PAYMENT_CUSTOMERS",
+        "PAYMENT_PAYMENT_LINKS",
+        "PAYMENT_ITEMS"
       ]
     }
   }
@@ -125,8 +131,8 @@ Use this webhook to receive notifications when data is created, updated, or dele
   {
     "webhook_type": "CONNECTION_CHANGED",
     "company_id": 285,
+    "created_at": "2023-01-01T00:00:00.000Z",
     "integration_type": "ZOHO_BOOKS",
-    "connection_status": "HEALTHY", // EXPIRED, DISCONNECTED
-    "created_at": "2023-01-01T00:00:00.000Z"
+    "connection_status": "HEALTHY" // EXPIRED, DISCONNECTED
   }
   ```
