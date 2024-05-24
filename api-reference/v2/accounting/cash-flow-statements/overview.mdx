@@ -1,4 +1,5 @@
 ---
+version: "v2"
 title: "Overview"
 description: "[Cash flow statements](https://www.investopedia.com/terms/c/cashflowstatement.asp) are financial statements that show the inflow and outflow of cash and cash equivalents from a company's operations, investments, and financing activities over a specific period of time."
 icon: "hand-wave"
@@ -7,7 +8,7 @@ icon: "hand-wave"
 ## Attributes
 
 <ResponseField name="platform_id" type="string" required>
-  The accounting platforms ID for this item
+  The Platform's ID for this item
 </ResponseField>
 
 <ResponseField name="period_start" type="date">
@@ -49,7 +50,7 @@ icon: "hand-wave"
 
 | Property                    | Type                          | Description                                                    |
 | --------------------------- | ----------------------------- | -------------------------------------------------------------- |
-| platform_id                 | string                        | The accounting platforms ID for this item                      |
+| platform_id                 | string                        | The Platform's ID for this item                                |
 | period_start                | date                          | start date of the cash flow statement report                   |
 | period_end                  | date                          | end date of the cash flow statement report                     |
 | operating_activities        | [Line Item](/docs/line-items) | line_items for operating activities of income statement report |

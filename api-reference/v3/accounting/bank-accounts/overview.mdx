@@ -1,16 +1,14 @@
 ---
+version: "v3"
 title: "Overview"
 description: " "
 icon: "hand-wave"
 ---
+
 **The Bank Accounts Data Model** streamlines access of bank account information across various accounting platforms, providing a consistent and unified representation of bank account data.
 
 - Unified bank account properties: The model consolidates essential bank account details such as institution name, account name, balance, and currency, simplifying interactions with bank account data from different platforms.
 - Currency support: The model includes the ISO-4217 currency code for each bank account, enabling seamless handling of international transactions and reporting.
-
-## Attributes
-
-<Snippet file="bank_accounts_snippet.mdx" />
 
 <ResponseExample name="The Bank Account Object" >
 
@@ -22,17 +20,6 @@ icon: "hand-wave"
   "account_name": "RootFi Asset Account",
   "account_number": "xxxx1234",
   "balance": 5500.75,
-  "currency": {
-    "data": {
-      "platform_id": "INR",
-      "name": "Indian Rupee",
-      "code": "INR",
-      "symbol": "₹",
-      "is_base_currency": true,
-      "exchange_rate": 1.0,
-      "updated_at": "2023-11-05T16:30:00.000Z"
-    }
-  },
   "updated_at": "2023-11-05T15:45:00.000Z"
 }
 ```
@@ -43,10 +30,17 @@ icon: "hand-wave"
 
 | Property         | Type   | Description                                              |
 | ---------------- | ------ | -------------------------------------------------------- |
-| platform_id      | string | The accounting Platform's id for the bank account        |
+| platform_id      | string | The Platform's ID for the bank account                   |
+| currency_id      | string | The Platform's ID of the currency for the bank account   |
 | institution_name | string | The name of the bank account                             |
 | account_name     | string | Name of the bank account                                 |
 | account_number   | string | The bank account number                                  |
 | balance          | float  | Balance of the bank account                              |
-| currency         | string | The ISO-4217 currency code                               |
 | updated_at       | date   | The last ISO 8601 timestamp that the data was updated at |
+
+### Expandable Attributes
+
+You can expand the following attributes to get the related data
+| Property | Data Model | Description |
+| -------- | -------------------------------------------------------------- | --------------------------- |
+| currency | [Currencies](/api-reference/v3/accounting/currencies/overview) | The currency of the bank account |

@@ -1,4 +1,5 @@
 ---
+version: "v2"
 title: "Overview"
 description: "Payment made by a business at the time of purchase (ex. a credit card payment)"
 icon: "hand-wave"
@@ -109,10 +110,6 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="raw_data" type="object">
-  The raw JSON response we get from the accounting platform for that data.
-</ResponseField>
-
 <ResponseField name="updated_at" type="date">
   The date at which the expense was updated on the accounting platform
 </ResponseField>
@@ -121,7 +118,7 @@ icon: "hand-wave"
 
 | Property        | Type                          | Description                                                          |
 | --------------- | ----------------------------- | -------------------------------------------------------------------- |
-| platform_id     | string                        | The accounting platform's ID of the expenses                         |
+| platform_id     | string                        | The Platform's ID of the expenses                                    |
 | contact_id      | string                        | Platform ID of the contact to which this expense belongs             |
 | account_id      | string                        | Platform ID of the account to which this expense belongs             |
 | document_number | string                        | Reference/Document number of the expense                             |

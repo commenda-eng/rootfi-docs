@@ -1,85 +1,34 @@
 ---
+version: "v3"
 title: "Overview"
 description: "A [Balance Sheet](https://www.investopedia.com/terms/b/balancesheet.asp) is a financial report that shows a business's assets, liabilities, and equity at a specific point in time. In an accounting platform, a balance sheet is typically generated automatically based on the financial transactions that have been recorded in the system."
 icon: "hand-wave"
 ---
 
-## Attributes
+## Properties Supported
 
-<ResponseField name="platform_id" type="string" required>
-  The accounting platforms ID for this item
-</ResponseField>
+| Property     | Type                                                                              | Description                                        |
+| ------------ | --------------------------------------------------------------------------------- | -------------------------------------------------- |
+| platform_id  | string                                                                            | The Platform's ID for this item                    |
+| period_start | date                                                                              | Start date of the cash flow statement report       |
+| period_end   | date                                                                              | End date of the cash flow statement report         |
+| net_assets   | float                                                                             | Net assets of the balance sheet report             |
+| assets       | [Line Item](/api-reference/v3/accounting/cash-flow-statements/overview#line-item) | Line Items for assets of balance sheet report      |
+| liabilities  | [Line Item](/api-reference/v3/accounting/cash-flow-statements/overview#line-item) | Line Items for liabilities of balance sheet report |
+| equity       | [Line Item](/api-reference/v3/accounting/cash-flow-statements/overview#line-item) | Line Items for equities of balance sheet report    |
 
-<ResponseField name="assets" type="Line Item">
-  line_items for assets of balance sheet report
-  <Expandable title="properties">
-    <ResponseField name="name" type="string" required>
-      Asset Name
-    </ResponseField>
-    <ResponseField name="value" type="float" required>
-      Asset Value
-    </ResponseField>
-    <ResponseField name="line_items" type="string[]" required>
-      Line items of the assets
-    </ResponseField>
-  </Expandable>
-</ResponseField>
+### Line Item
 
-<ResponseField name="liabilities" type="Line Item">
-  line_items for liabilities of balance sheet report
-  <Expandable title="properties">
-    <Expandable title="properties">
-      <ResponseField name="name" type="string" required>
-        Liability Name
-      </ResponseField>
-      <ResponseField name="value" type="float" required>
-        Liability Value
-      </ResponseField>
-      <ResponseField name="line_items" type="string[]" required>
-        Line items of liabilities
-      </ResponseField>
-    </Expandable>
-  </Expandable>
-</ResponseField>
+Each line item is an object with the following attributes:
 
-<ResponseField name="equity" type="Line Item">
-  line_items for equity of balance sheet report
-  <Expandable title="properties">
-    <Expandable title="properties">
-      <ResponseField name="name" type="string" required>
-        Equity Name
-      </ResponseField>
-      <ResponseField name="value" type="float" required>
-        Equity Value
-      </ResponseField>
-      <ResponseField name="line_items" type="string[]" required>
-        Line items of equities
-      </ResponseField>
-    </Expandable>
-  </Expandable>
-</ResponseField>
+| Property   | Type   | Description                                                         |
+| ---------- | ------ | ------------------------------------------------------------------- |
+| name       | string | Name of the line item                                               |
+| value      | float  | Value of the line item                                              |
+| line_items | array  | Line items of the line item, only if further breakdown is available |
+| account_id | string | The Platform's ID for this item, only if this is the root line item |
 
-<ResponseField name="period_start" type="date">
-  Start date of the balance sheet report
-</ResponseField>
-
-<ResponseField name="period_end" type="date">
-  End date of the balance sheet report
-</ResponseField>
-
-<ResponseField name="net_assets" type="number">
-  Total value of net assets
-</ResponseField>
-
-<ResponseField name="currency_id" type="string">
-  The Accounting Platform’s unique ID for the currency
-</ResponseField>
-<ResponseField name="raw_data" type="object">
-  The raw JSON response we get from the accounting platform for that data.
-</ResponseField>
-
-
-<ResponseExample name="The Balance Sheet Response Object" >
+<ResponseExample name="The Balance Sheet Response Object">
 
 ```json The Balance Sheet Response Object
 {
@@ -126,7 +75,6 @@ icon: "hand-wave"
   "period_start": "2023-11-01T00:00:00.000Z",
   "period_end": "2023-11-30T00:00:00.000Z",
   "net_assets": 1027588.5,
-  "currency_id": "3770712000000000001",
   "updated_at": "2020-11-30T00:00:00.000Z"
 }
 ```

@@ -182,6 +182,7 @@
             "api-reference/v3/core/invite-links/get-invite-link",
             "api-reference/v2/core/invite-links/get-invite-link",
             "api-reference/v3/core/invite-links/create-invite-link",
+            "api-reference/v3/core/invite-links/update-invite-link",
             "api-reference/v2/core/invite-links/create-invite-link",
             "api-reference/v3/core/invite-links/delete-invite-link",
             "api-reference/v2/core/invite-links/delete-invite-link"
@@ -567,7 +568,7 @@
             },
             {
               "group": "Company Info",
-              "pages": ["api-reference/v3/ecommerce/company-info/overview", "api-reference/v3/ecommerce/company-info/get-all-company-info"]
+              "pages": ["api-reference/v3/ecommerce/company_info/overview", "api-reference/v3/ecommerce/company_info/get-all-company-info"]
             },
             {
               "group": "Fulfillments",

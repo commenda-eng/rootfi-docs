@@ -1,6 +1,7 @@
 ---
+version: "v3"
 title: "Overview"
-description: "A [Journal](https://www.investopedia.com/terms/j/journal.asp) is a running record of a company's financial transactions used to record the debits and credits of each transaction."
+description: "A Journal is a running record of a company's financial transactions used to record the debits and credits of each transaction."
 icon: "hand-wave"
 ---
 
@@ -9,101 +10,29 @@ icon: "hand-wave"
 - Unified journal entry properties: The model unifies essential journal entry details, such as account ID, amount, currency, description, and posted date, making it easier to work with journal entry data from different platforms.
 - Journal entry lines: The `journal_lines` property includes an array of related journal lines, providing a comprehensive view of the journal entry's constituent transactions.
 
-## Attributes
-
-<ResponseField name="platform_id" type="string" required>
-  The accounting Platform’s ID for this journal entry
-</ResponseField>
-
-<ResponseField name="account_id" type="string" required>
-  The accounting platform’s unique ID for the [account](https://docs.rootfi.dev/api-reference/bank-accounts/overview) associated with the journal entry
-</ResponseField>
-
-<ResponseField name="currency_id" type="string">
-  The Accounting Platform’s unique ID for the currency
-</ResponseField>
-
-<ResponseField name="amount" type="float" required>
-  The total amount of the journal entry
-</ResponseField>
-
-<ResponseField name="currency" type="string" required>
-  The currency data associated with the Journal Entries.
-  <Expandable title="properties">
-    <ResponseField name="data" type="Object">
-      <Expandable title="properties">
-        <Snippet file="currency_snippet.mdx" />
-      </Expandable>
-    </ResponseField>
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="currency_rate" type="float" required>
-  Rate between the currency of the payment and the base currency
-</ResponseField>
-
-<ResponseField name="document_number" type="string" optional>
-  Reference number for the journal entry
-</ResponseField>
-
-<ResponseField name="journal_entry_type" type="string" optional>
-  Type of the journal entry
-</ResponseField>
-
-<ResponseField name="description" type="string" optional>
-  Description of the journal entry
-</ResponseField>
-
-<ResponseField name="posted_date" type="date" required>
-  Date of the journal entry
-</ResponseField>
-
-<ResponseField name="journal_lines" type="Journal Lines" optional>
-  An array of [Journal Lines](https://docs.rootfi.dev/api-reference/journal-entries/overview#journal-lines)
-  <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
-      <Expandable title="properties">
-        <Snippet file="journal_lines_snippet.mdx" />
-      </Expandable>
-    </ResponseField>
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="account" type="Account" optional>
-  The [account](https://docs.rootfi.dev/api-reference/bank-accounts/overview) associated with the journal entry
-  <Expandable title="properties">
-    <ResponseField name="data" type="Object" required>
-      <Expandable title="properties">
-        <Snippet file="accounts_snippets.mdx" />
-      </Expandable>
-    </ResponseField>
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="raw_data" type="object">
-  The raw JSON response we get from the accounting platform for that data.
-</ResponseField>
-
-<ResponseField name="updated_at" type="date" required>
-  The date at which the information was updated on the accounting platform
-</ResponseField>
-
 ### Properties Supported
 
-| Property           | Type                                                 | Description                                                                           |
-| ------------------ | ---------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| platform_id        | string                                               | The accounting Platform's ID for this journal entry                                   |
-| account_id         | string                                               | The accounting platform's unique ID for the account associated with the journal entry |
-| amount             | float                                                | The total amount of the journal entry                                                 |
-| currency           | string                                               | The ISO-4217 currency code                                                            |
-| currency_rate      | float                                                | Rate between the currency of the payment and the base currency                        |
-| document_number    | string                                               | Reference number for the journal entry                                                |
-| journal_entry_type | string                                               | Type of the journal entry                                                             |
-| description        | string                                               | Description of the journal entry                                                      |
-| posted_date        | date                                                 | Date of the journal entry                                                             |
-| journal_lines      | [Journal Lines](/docs/journal-entries#journal-lines) | An array of Journal Lines                                                             |
-| account            | [Account](/docs/accounts)                            | The account associated with the journal entry                                         |
-| updated_at         | date                                                 | The date at which the information was updated on the accounting platform              |
+| Property           | Type   | Description                                                                           |
+| ------------------ | ------ | ------------------------------------------------------------------------------------- |
+| platform_id        | string | The Platform's ID for this journal entry                                              |
+| account_id         | string | The accounting platform's unique ID for the account associated with the journal entry |
+| amount             | float  | The total amount of the journal entry                                                 |
+| currency_id        | string | The Platform's ID of the currency for the journal entry                               |
+| currency_rate      | float  | Rate between the currency of the payment and the base currency                        |
+| document_number    | string | Reference number for the journal entry                                                |
+| journal_entry_type | string | Type of the journal entry                                                             |
+| description        | string | Description of the journal entry                                                      |
+| posted_date        | date   | Date of the journal entry                                                             |
+| updated_at         | date   | The date at which the information was updated on the accounting platform              |
+
+### Expandable Attributes
+
+You can expand the following attributes to get the related data
+| Property | Data Model | Description |
+| ---------- | ---------------------------------------------------------------| --------------------------- |
+| journal_lines | [Journal Lines](/api-reference/v3/accounting/journal-entries/overview#journal-lines) | An array of Journal Lines |
+| currency | [Currencies](/api-reference/v3/accounting/currencies/overview) | The currency of the journal entry |
+| account | [Accounts](/api-reference/v3/accounting/accounts/overview) | The account associated to the journal entry |
 
 ## Journal Lines
 
@@ -115,73 +44,69 @@ icon: "hand-wave"
 
 ### Properties Supported
 
-| Property         | Type   | Description                                                             |
-| ---------------- | ------ | ----------------------------------------------------------------------- |
-| platform_id      | string | The accounting Platform's ID for this journal entry                     |
-| journal_entry_id | string | The platform ID for the journal entry associated with this journal line |
-| account_id       | string | The platform ID for the account associated with this journal line       |
-| customer_id      | string | The platform ID for the customer associated with this journal line      |
-| tax_id           | string | The platform ID for the tax associated with this journal line           |
-| type             | enum   | Type of the journal line item. Values are: DEBIT, CREDIT                |
-| description      | string | Description of the journal line                                         |
-| net_amount       | float  | The total amount of this journal line                                   |
-| tax_amount       | float  | The total tax amount of this journal line                               |
+| Property              | Type   | Description                                                             |
+| --------------------- | ------ | ----------------------------------------------------------------------- |
+| platform_id           | string | The Platform's ID for this journal entry                                |
+| journal_entry_id      | string | The platform ID for the journal entry associated with this journal line |
+| account_id            | string | The platform ID for the account associated with this journal line       |
+| contact_id            | string | The platform ID for the customer associated with this journal line      |
+| tax_id                | string | The platform ID for the tax associated with this journal line           |
+| type                  | enum   | Type of the journal line item. Values are: DEBIT, CREDIT                |
+| description           | string | Description of the journal line                                         |
+| net_amount            | float  | The total amount of this journal line                                   |
+| tax_amount            | float  | The total tax amount of this journal line                               |
+| tracking_category_ids | object | An array of tracking category IDs associated with this journal line     |
 
-<ResponseExample name="The Bank Transaction Object" >
+### Expandable Attributes
 
-```json The Bank Transaction Object
+You can expand the following attributes to get the related data
+| Property | Data Model | Description |
+| ---------- | ---------------------------------------------------------------| --------------------------- |
+| account | [Accounts](/api-reference/v3/accounting/accounts/overview) | The account associated to the journal line |
+| tax_rate | [Tax Rates](/api-reference/v3/accounting/tax-rates/overview) | The tax rate associated with the journal line |
+| contact | [Contacts](/api-reference/v3/accounting/contacts/overview) | The contact associated with the journal line |
+
+<ResponseExample name="The Journal Object">
+
+```json The Journal Object
 {
   "platform_id": "1234567890123456789",
   "account_id": "1234567890123456789",
   "currency_id": "3770712000000000099",
   "amount": 1234,
-  "currency": {
-    "data": {
-      "platform_id": "3770712000000000099",
-      "name": "Indian Rupee",
-      "code": "INR",
-      "symbol": "₹",
-      "is_base_currency": true,
-      "exchange_rate": 0,
-      "updated_at": null
-    }
-  },
   "currency_rate": 1,
   "document_number": "AO-123",
-  "journal_entry_type": "both",
+  "journal_entry_type": "big_boy",
   "description": "Journal Entries For Proper Accounting",
   "posted_date": "2023-06-12T00:00:00.000Z",
-  "journal_lines": {
-    "data": [
-      {
-        "platform_id": "3770712000001725038",
-        "journal_entry_id": "3770712000001725026",
-        "account_id": "3770712000000035001",
-        "contact_id": "3770712000000080780",
-        "tax_id": null,
-        "tracking_category_ids": ["3770712000000000335_3770712000001122010"],
-        "type": "DEBIT",
-        "description": "Test Description for Journal",
-        "net_amount": 5,
-        "tax_amount": null,
-        "updated_at": null
-      },
-      {
-        "platform_id": "3770712000001725036",
-        "journal_entry_id": "3770712000001725026",
-        "account_id": "3770712000000035001",
-        "contact_id": "3770712000000080780",
-        "tax_id": null,
-        "tracking_category_ids": ["3770712000000000335_3770712000001122010"],
-        "type": "CREDIT",
-        "description": "Test Description for Journal",
-        "net_amount": 5,
-        "tax_amount": null,
-        "updated_at": null
-      }
-    ]
-  },
-  "account": {},
+  "journal_lines": [
+    {
+      "platform_id": "3770712000001725038",
+      "journal_entry_id": "3770712000001725026",
+      "account_id": "3770712000000035001",
+      "contact_id": "3770712000000080780",
+      "tax_id": "123",
+      "tracking_category_ids": ["3770712000000000335_3770712000001122010"],
+      "type": "DEBIT",
+      "description": "Test Description for Journal",
+      "net_amount": 5,
+      "tax_amount": null,
+      "updated_at": null
+    },
+    {
+      "platform_id": "3770712000001725036",
+      "journal_entry_id": "3770712000001725026",
+      "account_id": "3770712000000035001",
+      "contact_id": "3770712000000080780",
+      "tax_id": "345",
+      "tracking_category_ids": ["3770712000000000335_3770712000001122010"],
+      "type": "CREDIT",
+      "description": "Test Description for Journal",
+      "net_amount": 5,
+      "tax_amount": null,
+      "updated_at": null
+    }
+  ],
   "updated_at": "2023-11-05T00:00:00.000Z"
 }
 ```

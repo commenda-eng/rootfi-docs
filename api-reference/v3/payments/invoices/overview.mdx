@@ -1,4 +1,5 @@
 ---
+version: "v3"
 title: "Overview"
 description: "An Invoice is a request for payment of goods or services that have been provided. The Invoice Data Model simplifies the handling and retrieval of invoices from different payment gateways. The model provides a unified representation of invoices, enabling you to easily access and manage invoice data from different platforms."
 icon: "hand-wave"
@@ -11,21 +12,21 @@ icon: "hand-wave"
 
 ## Properties Supported
 
-| Property        | Type     | Description                                  |
-| --------------- | -------- | -------------------------------------------- |
-| platform_id     | string   | The accounting platform's ID for the invoice |
-| contact_id      | string   | The contact id of the invoice                |
-| currency_id     | string   | The currency id of the invoice               |
-| document_number | string   | The document number of the invoice           |
-| posted_date     | string   | The posted date of the invoice               |
-| due_date        | string   | The due date of the invoice                  |
-| status          | string   | The status of the invoice                    |
-| total_discount  | number   | The total discount of the invoice            |
-| sub_total       | number   | The sub total of the invoice                 |
-| tax_amount      | number   | The tax amount of the invoice                |
-| total_amount    | number   | The total amount of the invoice              |
-| amount_due      | number   | The amount due of the invoice                |
-| line_items      | object[] | The line items of the invoice                |
+| Property        | Type     | Description                        |
+| --------------- | -------- | ---------------------------------- |
+| platform_id     | string   | The Platform's ID for the invoice  |
+| contact_id      | string   | The contact id of the invoice      |
+| currency_id     | string   | The currency id of the invoice     |
+| document_number | string   | The document number of the invoice |
+| posted_date     | string   | The posted date of the invoice     |
+| due_date        | string   | The due date of the invoice        |
+| status          | string   | The status of the invoice          |
+| total_discount  | number   | The total discount of the invoice  |
+| sub_total       | number   | The sub total of the invoice       |
+| tax_amount      | number   | The tax amount of the invoice      |
+| total_amount    | number   | The total amount of the invoice    |
+| amount_due      | number   | The amount due of the invoice      |
+| line_items      | object[] | The line items of the invoice      |
 
 <ResponseExample name="The Invoice Object" >
 

@@ -1,5 +1,7 @@
 ---
+version: "v3"
 title: "Overview"
+description: "**The Currencies Data Model** streamlines access to currency information across various accounting platforms, providing a consistent and unified representation of currency data."
 icon: "hand-wave"
 ---
 
@@ -7,41 +9,11 @@ icon: "hand-wave"
 - By monitoring different currencies, businesses can gain critical insights into how currency fluctuations affect their financial performance.
 - Businesses can link different currency accounts or transactions to view consolidated reports in a single base currency.
 
-## Attributes
-
-<ResponseField name="platform_id" type="string" required>
-  The accounting platforms ID for the currency
-</ResponseField>
-
-<ResponseField name="name" type="string">
-  The name of the currency
-</ResponseField>
-
-<ResponseField name="code" type="string">
-  The currency code
-</ResponseField>
-
-<ResponseField name="symbol" type="string">
-  The symbol that represents the currency
-</ResponseField>
-
-<ResponseField name="is_base_currency" type="boolean">
-  Whether the currency is the base currency for the company
-</ResponseField>
-
-<ResponseField name="exchange_rate" type="float">
-  The exchange rate for the currency
-</ResponseField>
-
-<ResponseField name="updated_at" type="date">
-  The last ISO 8601 timestamp that the data was updated at
-</ResponseField>
-
 ### Properties Supported
 
 | Property         | Type    | Description                                                                 |
 | ---------------- | ------- | --------------------------------------------------------------------------- |
-| platform_id      | string  | The accounting platforms ID for the currency                                |
+| platform_id      | string  | The Platform's ID for the currency                                          |
 | name             | string  | The name of the currency                                                    |
 | code             | string  | The currency code.                                                          |
 | symbol           | string  | The symbol that represents the currency. Not applicable for many currencies |
@@ -49,7 +21,7 @@ icon: "hand-wave"
 | exchange_rate    | float   | The exchange rate for the currency                                          |
 | updated_at       | date    | The last ISO 8601 timestamp that the data was updated at                    |
 
-<ResponseExample name="The Currency Object" >
+<ResponseExample name="The Currency Object">
 
 ```json The Currency Response Object
 {

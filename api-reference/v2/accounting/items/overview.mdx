@@ -1,4 +1,5 @@
 ---
+version: "v2"
 title: "Overview"
 description: "**The Items Data Model** is designed to simplify the management and retrieval of item-related information across various accounting platforms. "
 icon: "hand-wave"
@@ -11,7 +12,7 @@ icon: "hand-wave"
 ## Attributes
 
 <ResponseField name="platform_id" type="string" required>
-  The accounting platforms ID for this item
+  The Platform's ID for this item
 </ResponseField>
 
 <ResponseField name="name" type="string">
@@ -68,7 +69,7 @@ icon: "hand-wave"
 
 | Property         | Type                                   | Description                                                                   |
 | ---------------- | -------------------------------------- | ----------------------------------------------------------------------------- |
-| platform_id      | string                                 | The accounting platforms ID for this item                                     |
+| platform_id      | string                                 | The Platform's ID for this item                                               |
 | name             | string                                 | Name of the item                                                              |
 | description      | string                                 | Description of the item                                                       |
 | status           | enum                                   | Status of the item. Values are: ACTIVE, ARCHIVED, UNKNOWN                     |

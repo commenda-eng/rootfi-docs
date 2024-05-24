@@ -1,4 +1,5 @@
 ---
+version: "v2"
 title: "Overview"
 description: "An [Invoice](https://www.investopedia.com/terms/i/invoice.asp) is an itemized record of goods sold or services provided to a customer."
 icon: "hand-wave"
@@ -120,10 +121,6 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="raw_data" type="object">
-  The raw JSON response we get from the accounting platform for that data.
-</ResponseField>
-
 <ResponseField name="updated_at" type="date">
   Date the record was last updated in the accounting platform.
 </ResponseField>
@@ -132,7 +129,7 @@ icon: "hand-wave"
 
 | Property        | Type                                      | Description                                                                                           |
 | --------------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| platform_id     | string                                    | The accounting Platform's ID for this invoice                                                         |
+| platform_id     | string                                    | The Platform's ID for this invoice                                                                    |
 | account_id      | string                                    | The platform's ID for the account to which this invoice belongs                                       |
 | contact_id      | string                                    | The Accounting Platform's unique ID for the contact who receives this invoice                         |
 | document_number | string                                    | Reference document number for the invoice                                                             |

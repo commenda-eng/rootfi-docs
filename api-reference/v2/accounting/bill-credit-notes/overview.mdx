@@ -1,4 +1,5 @@
 ---
+version: "v2"
 title: "Overview"
 description: "A Bill Credit Note is a financial transaction representing a reduction that can be applied against one or multiple bills issued to Vendors."
 icon: "hand-wave"
@@ -71,15 +72,11 @@ icon: "hand-wave"
   The last ISO 8601 timestamp that the data was updated at
 </ResponseField>
 
-<ResponseField name="raw_data" type="object">
-  The raw JSON response we get from the accounting platform for that data.
-</ResponseField>
-
 ## Properties Supported
 
 | Property         | Type                          | Description                                                                                               |
 | ---------------- | ----------------------------- | --------------------------------------------------------------------------------------------------------- |
-| platform_id      | string                        | The accounting Platform's ID for the credit note                                                          |
+| platform_id      | string                        | The Platform's ID for the credit note                                                                     |
 | contact_id       | string                        | The accounting platform's unique identifier for the contact associated with this credit note              |
 | document_number  | string                        | Reference number for the credit note                                                                      |
 | total_amount     | float                         | Total amount of credit note                                                                               |
