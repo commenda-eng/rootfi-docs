@@ -83,9 +83,11 @@ When your customer is connecting their MSD BC account to Integration Labs, they 
 
 ### Part 7: Setting up the integration Using Integration Labs Connect
 
-You will need to enter your BC site url in the Integration Labs connect screen.
+You will need to enter your Tenant ID and Env name in the Integration Labs connect screen.
 
-1. To get the site url, navigate to the BC dashboard and copy the url from the address bar.
-   ![Client ID MS Dynamics](/images/msdBc/bcurl.png)
-2. In the Integration Labs SDK screen, paste the site url of your BC dashboard.
-   ![Client ID MS Dynamics](/images/msdBc/sdk.png)
+1. To get the Tenant ID and Env name, navigate to the BC dashboard, click on settings and then click on 'Admin Center'.
+   ![Client ID MS Dynamics](/images/msdBc/admin_center.png)
+2. Select the environment you want to connect.
+   ![Client ID MS Dynamics](/images/msdBc/envs.png)
+3. Copy the name of the environment and the tenant id from the URL. Use the following pattern to get the tenant ID of your Business Central: https://businesscentral.dynamics.com/[TENANT_ID]/[ENVIRONMENT_NAME]
+   ![Client ID MS Dynamics](/images/msdBc/env_name_tenant.png)
