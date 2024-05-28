@@ -1,4 +1,5 @@
 ---
+version: "v3"
 title: "Overview"
 description: "An orders is a request to buy a product or service. The orders data model simplifies the handling and retrieval of orders from different ecommerce gateways. The model provides a unified representation of orders, enabling you to easily access and manage orders data from different platforms."
 icon: "hand-wave"
@@ -11,24 +12,24 @@ icon: "hand-wave"
 
 ## Properties Supported
 
-| Property       | Type     | Description                                 |
-| -------------- | -------- | ------------------------------------------- |
-| platform_id    | string   | The accounting platform's ID for the orders |
-| currency_id    | string   | The currency ID of the orders               |
-| reference      | string   | The reference of the orders                 |
-| created_at     | string   | The created at of the orders                |
-| updated_at     | string   | The updated at of the orders                |
-| order_name     | string   | The order name of the orders                |
-| order_number   | string   | The order number of the orders              |
-| description    | string   | The description of the orders               |
-| total_discount | double   | The total discount of the orders            |
-| sub_total      | double   | The sub total of the orders                 |
-| tax_amount     | double   | The tax amount of the orders                |
-| total_amount   | double   | The total amount of the orders              |
-| amount_due     | double   | The amount due of the orders                |
-| order_status   | string   | The order status of the orders              |
-| payment_status | string   | The ecommerce status of the orders          |
-| line_items     | object[] | The line items of the orders                |
+| Property       | Type     | Description                        |
+| -------------- | -------- | ---------------------------------- |
+| platform_id    | string   | The Platform's ID for the orders   |
+| currency_id    | string   | The currency ID of the orders      |
+| reference      | string   | The reference of the orders        |
+| created_at     | string   | The created at of the orders       |
+| updated_at     | string   | The updated at of the orders       |
+| order_name     | string   | The order name of the orders       |
+| order_number   | string   | The order number of the orders     |
+| description    | string   | The description of the orders      |
+| total_discount | double   | The total discount of the orders   |
+| sub_total      | double   | The sub total of the orders        |
+| tax_amount     | double   | The tax amount of the orders       |
+| total_amount   | double   | The total amount of the orders     |
+| amount_due     | double   | The amount due of the orders       |
+| order_status   | string   | The order status of the orders     |
+| payment_status | string   | The ecommerce status of the orders |
+| line_items     | object[] | The line items of the orders       |
 
 <ResponseExample name="The Dispute Object" >
 

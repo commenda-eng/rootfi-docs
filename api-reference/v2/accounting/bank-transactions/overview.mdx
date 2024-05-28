@@ -1,4 +1,5 @@
 ---
+version: "v2"
 title: "Overview"
 description: "Bank Transactions include the Transactional banking data for a specific company and account."
 icon: "hand-wave"
@@ -13,7 +14,7 @@ icon: "hand-wave"
 ## Attributes
 
 <ResponseField name="platform_id" type="string" required>
-  The accounting platforms ID for the transaction
+  The Platform's ID for the transaction
 </ResponseField>
 
 <ResponseField name="account_id" type="string">
@@ -133,15 +134,11 @@ icon: "hand-wave"
   The date at which the transaction was updated on the accounting platform
 </ResponseField>
 
-<ResponseField name="raw_data" type="object">
-  The raw JSON response we get from the accounting platform for that data.
-</ResponseField>
-
 ## Properties Supported
 
 | Property         | Type                          | Description                                                              |
 | ---------------- | ----------------------------- | ------------------------------------------------------------------------ |
-| platform_id      | string                        | The accounting platforms ID for the transaction                          |
+| platform_id      | string                        | The Platform's ID for the transaction                                    |
 | account_id       | string                        | Platform ID for the account to which this transaction belongs            |
 | contact_id       | string                        | The platform's ID for the contact to that made the transaction           |
 | transaction_date | date                          | Date of the transaction                                                  |

@@ -1,4 +1,5 @@
 ---
+version: "v2"
 title: "Overview"
 description: "A record of goods or services purchased from a vendor"
 icon: "hand-wave"
@@ -125,15 +126,11 @@ icon: "hand-wave"
   The date at which the information was updated on the accounting platform
 </ResponseField>
 
-<ResponseField name="raw_data" type="object">
-  The raw JSON response we get from the accounting platform for that data.
-</ResponseField>
-
 ## Properties Supported
 
 | Property           | Type                                    | Description                                                                                        |
 | ------------------ | --------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| platform_id        | string                                  | Accounting platform's ID for the bill                                                              |
+| platform_id        | string                                  | Platform's ID for the bill                                                                         |
 | account_id         | string                                  | The accounting platform's unique ID of the account associated with the bill                        |
 | contact_id         | string                                  | The accounting platform's unique ID of the contact associated with this bill                       |
 | document_number    | string                                  | Reference number for the bill                                                                      |

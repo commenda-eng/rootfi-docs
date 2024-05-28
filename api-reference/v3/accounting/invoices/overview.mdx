@@ -1,4 +1,5 @@
 ---
+version: "v3"
 title: "Overview"
 description: "An [Invoice](https://www.investopedia.com/terms/i/invoice.asp) is an itemized record of goods sold or services provided to a customer."
 icon: "hand-wave"
@@ -10,152 +11,41 @@ icon: "hand-wave"
 - Linked entities: Invoices can be associated with accounts, customers, line items, payments, and sales orders, providing a complete view of the invoicing process and related transactions.
 - Flexible status tracking: The model supports a range of invoice statuses, such as draft, submitted, partially paid, and overdue, for better organisation and reporting.
 
-## Attributes
-
-<ResponseField name="platform_id" type="string" required>
-  The accounting Platform’s ID for this invoice
-</ResponseField>
-
-<ResponseField name="account_id" type="string">
-  The platform’s ID for the [account](https://docs.rootfi.dev/api-reference/accounts/overview) to which this invoice belongs
-</ResponseField>
-
-<ResponseField name="contact_id" type="string">
-  The Accounting Platform’s unique ID for the [contact](https://docs.rootfi.dev/api-reference/contacts/overview) who receives this invoice
-</ResponseField>
-
-<ResponseField name="currency_id" type="string">
-  The Accounting Platform’s unique ID for the currency
-</ResponseField>
-
-<ResponseField name="sales_order_ids" type="string">
-  Array of linked Sales Orders Id associated with this Invoice
-</ResponseField>
-
-<ResponseField name="document_number" type="string">
-  Reference document number for the invoice
-</ResponseField>
-
-<ResponseField name="posted_date" type="date">
-  Date of the invoice as recorded by the accounting platform
-</ResponseField>
-
-<ResponseField name="due_date" type="date">
-  The due date for the invoice as an ISO 8601 timestamp
-</ResponseField>
-
-<ResponseField name="currency" type="Object">
-  The ISO-4217 currency
-  <Expandable title="properties">
-    <ResponseField name="data" type="Object">
-      <Expandable title="properties">
-        <Snippet file="currency_snippet.mdx" />
-      </Expandable>
-    </ResponseField>
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="currency_rate" type="float">
-  Rate between the currency of the payment and the base currency
-</ResponseField>
-
-<ResponseField name="status" type="enum">
-  The status of the invoice. Values are: `DRAFT`, `SUBMITTED`, `PARTIALLY_PAID`, `PAID`, `OVERDUE`, `VOID`, `UNKNOWN`.
-</ResponseField>
-
-<ResponseField name="total_discount" type="float">
-  Total value of discounts applied to the invoice
-</ResponseField>
-
-<ResponseField name="tax_amount" type="float">
-  Total tax amount levied on the invoice
-</ResponseField>
-
-<ResponseField name="sub_total" type="float">
-  Total pre tax value of the invoice
-</ResponseField>
-
-<ResponseField name="total_amount" type="float">
-  Total value of the invoice
-</ResponseField>
-
-<ResponseField name="amount_due" type="float">
-  Total amount pending for the invoice
-</ResponseField>
-
-<ResponseField name="memo" type="string">
-  Description of the invoice
-</ResponseField>
-
-<ResponseField name="line_items" type="Line Item">
-  Array of Invoice Line items associated with the invoice.
-  <Expandable title="properties">
-    <ResponseField name="data" type="Object">
-      <Expandable title="properties">
-        <Snippet file="line_items_snippeet.mdx" />
-      </Expandable>
-    </ResponseField>
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="payments" type="Invoice Payment">
-  Array of [Invoice Payments](https://docs.rootfi.dev/api-reference/invoice-payments/overview) associated with the Invoice.
-  <Expandable title="properties">
-    <ResponseField name="data" type="Object">
-      <Expandable title="properties">
-        <Snippet file="invoice_payment.mdx" />
-      </Expandable>
-    </ResponseField>
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="documents" type="Document">
-  Array of Invoice [Documents](https://docs.rootfi.dev/api-reference/documents/overview) associated with the Invoice.
-  <Expandable title="properties">
-    <ResponseField name="data" type="Object">
-      <Expandable title="properties">
-        <Snippet file="documents_snippet.mdx" />
-      </Expandable>
-    </ResponseField>
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="raw_data" type="object">
-  The raw JSON response we get from the accounting platform for that data.
-</ResponseField>
-
-<ResponseField name="updated_at" type="date">
-  Date the record was last updated in the accounting platform.
-</ResponseField>
-
 ## Properties Supported
 
-| Property        | Type                                      | Description                                                                                           |
-| --------------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| platform_id     | string                                    | The accounting Platform's ID for this invoice                                                         |
-| account_id      | string                                    | The platform's ID for the account to which this invoice belongs                                       |
-| contact_id      | string                                    | The Accounting Platform's unique ID for the contact who receives this invoice                         |
-| document_number | string                                    | Reference document number for the invoice                                                             |
-| posted_date     | date                                      | Date of the invoice as recorded by the accounting platform                                            |
-| due_date        | date                                      | The due date for the invoice as an ISO 8601 timestamp                                                 |
-| currency        | string                                    | The ISO-4217 currency code                                                                            |
-| currency_rate   | float                                     | Rate between the currency of the payment and the base currency                                        |
-| status          | enum                                      | The status of the invoice. Values are: DRAFT, SUBMITTED, PARTIALLY_PAID, PAID, OVERDUE, VOID, UNKNOWN |
-| total_discount  | float                                     | Total value of discounts applied to the invoice                                                       |
-| tax_amount      | float                                     | Total tax amount levied on the invoice                                                                |
-| sub_total       | float                                     | Total pre tax value of the invoice                                                                    |
-| total_amount    | float                                     | Total value of the invoice                                                                            |
-| amount_due      | float                                     | Total amount pending for the invoice                                                                  |
-| memo            | string                                    | Description of the invoice                                                                            |
-| line_items      | [Line Item](/docs/line-items)             | Array of Invoice Line items associated with the invoice (see below)                                   |
-| payments        | [Invoice Payment](/docs/invoice-payments) | Array of Invoice Payments associated with the invoice                                                 |
-| sales_orders    | [Sales Order](/docs/sales-orders)         | Array of linked Sales Orders associated with this invoice                                             |
-| documents       | [Document](/docs/documents)               | Array of Invoice Documents associated with the invoice                                                |
-| account         | [Account](/docs/accounts)                 | The account to which this invoice belongs                                                             |
-| contact         | [Contact](/docs/contacts)                 | The contact who receives this invoice                                                                 |
-| updated_at      | date                                      | Date the record was last updated in the accounting platform.                                          |
+| Property        | Type                                                     | Description                                                                                           |
+| --------------- | -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| platform_id     | string                                                   | The Platform's ID for this invoice                                                                    |
+| account_id      | string                                                   | The platform's ID for the account to which this invoice belongs                                       |
+| contact_id      | string                                                   | The Accounting Platform's unique ID for the contact who receives this invoice                         |
+| currency_id     | string                                                   | The Platform's ID of the currency for the invoice                                                     |
+| document_number | string                                                   | Reference document number for the invoice                                                             |
+| posted_date     | date                                                     | Date of the invoice as recorded by the accounting platform                                            |
+| due_date        | date                                                     | The due date for the invoice as an ISO 8601 timestamp                                                 |
+| currency_rate   | float                                                    | Rate between the currency of the payment and the base currency                                        |
+| status          | enum                                                     | The status of the invoice. Values are: DRAFT, SUBMITTED, PARTIALLY_PAID, PAID, OVERDUE, VOID, UNKNOWN |
+| total_discount  | float                                                    | Total value of discounts applied to the invoice                                                       |
+| tax_amount      | float                                                    | Total tax amount levied on the invoice                                                                |
+| sub_total       | float                                                    | Total pre tax value of the invoice                                                                    |
+| total_amount    | float                                                    | Total value of the invoice                                                                            |
+| amount_due      | float                                                    | Total amount pending for the invoice                                                                  |
+| memo            | string                                                   | Description of the invoice                                                                            |
+| sales_orders    | [Sales Order](/api-reference/v3/accounting/sales-orders) | Array of linked Sales Orders associated with this invoice                                             |
+| updated_at      | date                                                     | Date the record was last updated in the accounting platform.                                          |
 
-<ResponseExample name="The Bank Transaction Object" >
+### Expandable Attributes
+
+You can expand the following attributes to get the related data
+| Property | Data Model | Description |
+| ---------- | ---------------------------------------------------------------| --------------------------- |
+| contact | [Contacts](/api-reference/v3/accounting/contacts/overview) | The contact that made the invoice |
+| currency | [Currencies](/api-reference/v3/accounting/currencies/overview) | The currency of the invoice |
+| invoice_payments | [invoice Payments](/api-reference/v3/accounting/invoice-payments/overview) | The invoice payments associated to the invoice |
+| documents | [Documents](/api-reference/v3/accounting/documents/overview) | The documents attached to the invoice |
+| addresses | Addresses | The line items associated with the invoice |
+| line_items | Line Items | The line items associated with the invoice |
+
+<ResponseExample name="The Invoice Object">
 
 ```json The Invoice Response Object
 {
@@ -167,17 +57,6 @@ icon: "hand-wave"
   "document_number": "INV-000001",
   "posted_date": "2022-09-28T00:00:00.000Z",
   "due_date": "2022-09-28T00:00:00.000Z",
-  "currency": {
-    "data": {
-      "platform_id": "3770712000000000099",
-      "name": "Indian Rupee",
-      "code": "INR",
-      "symbol": "₹",
-      "is_base_currency": true,
-      "exchange_rate": 0,
-      "updated_at": null
-    }
-  },
   "currency_rate": 1,
   "status": "PAID",
   "total_discount": 10,
@@ -186,74 +65,6 @@ icon: "hand-wave"
   "total_amount": 230,
   "amount_due": 0,
   "memo": "Thanks for your business.",
-  "line_items": {
-    "data": [
-      {
-        "platform_id": "3770712000000080302",
-        "item_id": "3770712000000080275",
-        "tax_id": null,
-        "account_id": "3770712000000000388",
-        "line_item_type": "INVOICES",
-        "line_item_type_id": "3770712000000080288",
-        "description": null,
-        "quantity": 2,
-        "unit_amount": 120,
-        "sub_total": 240,
-        "tax_amount": 0,
-        "total_amount": 240,
-        "tracking_category_ids": ["5000000000000279513"],
-        "Item": null,
-        "tax_rate": 0,
-        "total_discount": 0,
-        "updated_at": "2022-09-28T00:00:00.000Z"
-      }
-    ]
-  },
-  "payments": {
-    "data": [
-      {
-        "platform_id": "3770712000000080515",
-        "payment_id": "3770712000000080513",
-        "invoice_id": "3770712000000080288",
-        "account_id": "3770712000000000388",
-        "contact_id": "3770712000000080069",
-        "amount": 120,
-        "currency_id": "3770712000000000099",
-        "currency": {
-          "data": {
-            "platform_id": "3770712000000000099",
-            "name": "Indian Rupee",
-            "code": "INR",
-            "symbol": "₹",
-            "is_base_currency": true,
-            "exchange_rate": 0,
-            "updated_at": null
-          }
-        },
-        "payment_date": "2023-10-21T00:00:00.000Z",
-        "payment_mode": "Cash",
-        "memo": "Invoice Payment",
-        "currency_rate": 1,
-        "document_number": "AO-000001",
-        "updated_at": "2023-10-21T00:00:00.000Z"
-      }
-    ]
-  },
-  "documents": {
-    "data": [
-      {
-        "platform_id": "3770712000000203032_3770712000000080288",
-        "file_name": "sample_upload.xlsx",
-        "file_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        "file_size": 6019.53,
-        "document_type_id": "3770712000000080288",
-        "document_type": "Invoices",
-        "document_uploaded": false,
-        "download_link": "https://books.zoho.com/api/v3/documents/3770712000000203032_3770712000000080288"
-        "updated_at": "2022-09-28T00:00:00.000Z"
-      }
-    ]
-  },
   "updated_at": "2022-09-28T00:00:00.000Z"
 }
 ```

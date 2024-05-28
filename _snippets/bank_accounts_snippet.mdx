@@ -26,21 +26,6 @@
   Balance of the bank account
 </ResponseField>
 
-<ResponseField name="currency" type="Object">
-  The currency data associated with the bank account.
-  <Expandable title="properties">
-    <ResponseField name="data" type="Object">
-      <Expandable title="properties">
-        <Snippet file="currency_snippet.mdx" />
-      </Expandable>
-    </ResponseField>
-  </Expandable>
-</ResponseField>
-
 <ResponseField name="updated_at" type="date" required>
   The last ISO 8601 timestamp that the data was updated at.
-</ResponseField>
-
-<ResponseField name="raw_data" type="object">
-  The raw JSON response we get from the accounting platform for that data.
 </ResponseField>
