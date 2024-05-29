@@ -7,6 +7,8 @@ If you wish to set up Microsoft Dynamics 365 F&O on the Integration Labs Portal,
 
 ---
 
+## Setting up OAuth Credentials
+
 ### Part 1: Create an App
 
 Follow the link [https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade](https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade)
@@ -55,7 +57,11 @@ The secret value won't be displayed again in full, so you must copy the value as
 3. Click the 'Set Up' button on the MS Dynamics 365 card.
 4. When the form opens up simply enter the 'Client ID' and 'Client Secret' that you generated and click 'Save'.
 
-### Part 5: Set up the F&O account to access the data.
+## Adding OAuth Credentials to Clients F&O Account
+
+These steps have to be followed by the end-user who is connecting their F&O account to Integration Labs.
+
+### Part 1: Set up the F&O account to access the data.
 
 When your customer is connecting their MSD F&O account to Integration Labs, they will need to enter the client credentials in their F&O dashboard to allow Integration Labs to access the data.
 
@@ -64,7 +70,7 @@ When your customer is connecting their MSD F&O account to Integration Labs, they
 2. Click on '+New' and enter the client id you copied from the Azure portal, enter a name and set the User ID to 'Admin'. Enter '8f09f705-3d36-4cc9-84c2-8091e362c759' as the client id if you are using Integration Labs credentials.
    ![Client ID MS Dynamics](/images/msdF&O/dashboard.png)
 
-### Part 6: Setting up the integration Using Integration Labs Connect
+### Part 2: Setting up the integration Using Integration Labs Connect
 
 You will need to enter your F&O site url in the Integration Labs connect screen.
 

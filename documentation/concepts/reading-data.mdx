@@ -35,9 +35,13 @@ We support easy to use REST APIs for all our data models with the following quer
 8. **filter fields** - You can filter on any field in the data model. Each filter field parameter is a string that contains the field name, the operator and the value you want to filter on.
 
    1. **field name** - the name of the field you want to filter on. Example: `rootfi_company_id`
-   2. **operator** - the operator you want to use to filter the data Example: `eq`
+   2. **operator** - the operator you want to use to filter the data.
+      Supported operators are `eq`, `neq`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`, `is_null`, `not_null`, `contains`, `not_contains`
+
    3. **value** - the value you want to filter on. Example: `694`
 
-   Example `rootfi_company_id[eq] = 694`
+   Example 1: `rootfi_company_id[eq] = 694` is a common filter you will always want to have to filter data for a given comapny ID
 
-Our [API Reference](/api-reference/v3/accounting/accounts/get-all-accounts) shows you how to use these parameters. Please contact us if you have any questions.
+   Example 2: `rootfi_updated_at[gte] = 2024-01-01T00:00:00.000Z` is a common filter you would use if you want to get all the records that have been updated after performing a sync.
+
+Our GET Apis in the [API Reference](/api-reference/v3/accounting/accounts/get-all-accounts) shows you how to use these parameters. Please contact us if you have any questions.
