@@ -150,7 +150,12 @@
         },
         {
           "group": "CRM Integrations",
-          "pages": ["documentation/crm-integrations/crm-integrations-overview", "documentation/crm-integrations/hubspot", "documentation/crm-integrations/zoho-crm"]
+          "pages": [
+            "documentation/crm-integrations/crm-integrations-overview",
+            "documentation/crm-integrations/hubspot",
+            "documentation/crm-integrations/sales-force",
+            "documentation/crm-integrations/zoho-crm"
+          ]
         }
       ]
     },

@@ -11,21 +11,31 @@ These steps are elaborated upon in detail below.
 
 ### Part 1: Register your Salesforce application
 
-1. Go to [https://api-console.zoho.com/](https://api-console.zoho.com/)
-2. Sign in using your Salesforce credentials, and click the ‘Get Started' button.
-   ![](/images/b0f2355-image.png)
-3. On the page titled ‘ Choose Client Type’ select ‘Server-Based Applications’.
-   ![](/images/62fdbcb-image.png)
-4. The ‘Create New Client’ page will be displayed. Here you must enter the following details:
-   - In the ‘Client Type’ list, select ‘Server-based Applications’.
-   - For the ‘Client Name’ field, enter your company's name.
-   - In the ‘Homepage URL’ field, enter your company's website.
-   - In the ‘Authorized redirect URIs’ field, enter `https://integrate.rootfi.dev/oauth/callback`
-     ![](/images/image.png)
-5. After you click ‘Create’ and the page refreshes, you should select the ‘Client Secret’ tab. Here you will find the secure keys that you need to enter on RootFi’s dashboard in order to activate the Integration.
-   ![](/images/c2e3afb-image.png)
-6. Finally, you select the ‘Settings tab’, enable the regions where you have customers, and check the box which says ‘Use the same OAuth credentials for all data centres.'
-   ![](/images/26539e4-image.png)
+1. Go to [https://login.salesforce.com/](https://login.salesforce.com/) and sign in to your Salesforce account.
+2. Click on the gear icon in the top right corner of the page and select ‘Open Advanced Setup’.
+   ![](/images/crm/salesforce/open_setup.png)
+3. Navigate to "PLATFORM TOOLS" >> “Apps” >> “App manager”. Click on the ‘New Connected App’ button on the top right corner of the page.
+   ![](/images/crm/salesforce/new_connected_app.png)
+4. You would be redirected to a page where you need to fill in the details of your application.
+   ![image](/images/crm/salesforce/salesforce_empty_form.png)
+5. Fill in the basic information for your application:
+   ![image](/images/crm/salesforce/basic_info.png)
+6. Enable OAuth settings by scrolling down to the ‘API (Enable OAuth Settings)’ section and checking the box.
+   ![image](/images/crm/salesforce/api_settings_section.png)
+   - Keep 'https://integrate.rootfi.dev/oauth/callback' as the Callback URL.
+   - Select the OAuth scopes you need. For RootFi, you need to select the following scopes:
+     - Manage user data via APIs (api)
+     - Perform requests at any time (refresh_token, offline access)
+     - Access unique user identifiers (openid)
+   - Incase you need full access to all the data, you can select the 'Full access (full)' scope.
+   - Click on the 'Add' button to add the selected scopes.
+7. **Require Proof Key for Code Exchange (PKCE) Extension for Supported Authorization Flows:** This option is enabled by default. You need to disable it.
+8. **Require Secret for Refresh Token Flow:** This option is enabled by default. You need to disable it.
+9. **Introspect All Tokens:** This option is disabled by default. You need to enable it.
+10. Click on the 'Save' button which will save the changes and redirect you to the application details page. It can take upto 10 minutes for the changes to reflect.
+11. On the App Manager page, click on the app you just created. You will be redirected to the app details page.
+    ![image](/images/crm/salesforce/list_apps_screen.png)
+12. On the app details page, you will find the 'Consumer Key' and 'Consumer Secret' which you will need to enter on the RootFi dashboard.
 
 ### Part 2: Enter Your Client ID and Client Secret on the RootFi Dashboard
 
