@@ -592,6 +592,52 @@
               "pages": ["api-reference/v3/ecommerce/transactions/overview", "api-reference/v3/ecommerce/transactions/get-all-transactions"]
             }
           ]
+        },
+        {
+          "group": "CRM",
+          "version": "v3",
+          "pages": [
+            {
+              "group": "Activities",
+              "pages": ["api-reference/v3/crm/activities/overview", "api-reference/v3/crm/activities/get-all-activities"]
+            },
+            {
+              "group": "Companies",
+              "pages": ["api-reference/v3/crm/companies/overview", "api-reference/v3/crm/companies/get-all-companies"]
+            },
+            {
+              "group": "Contacts",
+              "pages": ["api-reference/v3/crm/contacts/overview", "api-reference/v3/crm/contacts/get-all-contacts"]
+            },
+            {
+              "group": "Deals",
+              "pages": ["api-reference/v3/crm/deals/overview", "api-reference/v3/crm/deals/get-all-deals"]
+            },
+            {
+              "group": "Leads",
+              "pages": ["api-reference/v3/crm/leads/overview", "api-reference/v3/crm/leads/get-all-leads"]
+            },
+            {
+              "group": "Notes",
+              "pages": ["api-reference/v3/crm/notes/overview", "api-reference/v3/crm/notes/get-all-notes"]
+            },
+            {
+              "group": "Pipelines",
+              "pages": ["api-reference/v3/crm/pipelines/overview", "api-reference/v3/crm/pipelines/get-all-pipelines"]
+            },
+            {
+              "group": "Stages",
+              "pages": ["api-reference/v3/crm/stages/overview", "api-reference/v3/crm/stages/get-all-stages"]
+            },
+            {
+              "group": "Tasks",
+              "pages": ["api-reference/v3/crm/tasks/overview", "api-reference/v3/crm/tasks/get-all-tasks"]
+            },
+            {
+              "group": "Users",
+              "pages": ["api-reference/v3/crm/users/overview", "api-reference/v3/crm/users/get-all-users"]
+            }
+          ]
         }
       ]
     },
