@@ -1,0 +1,42 @@
+---
+version: "v3"
+title: "Overview"
+description: "Contacts Data Model simplifies the handling and retrieval of contacts-related information across various crm platforms."
+icon: "hand-wave"
+---
+
+**The Contacts Data Model** simplifies the handling and retrieval of contacts-related information across various ecommerce platforms.
+
+- Unified Contacts properties: The model provides a unified representation of contacts properties across different platforms, enabling you to easily access and manage contacts data from different platforms.
+- Comprehensive contacts information: The model provides a comprehensive representation of contacts data, including all the properties and relationships that you can retrieve for an contact.
+
+## Attributes
+
+## Properties Supported
+
+| Property    | Type   | Description                                     |
+| ----------- | ------ | ----------------------------------------------- |
+| platform_id | string | The Platform's ID for the contacts              |
+| name        | string | The name of the contacts                        |
+| company_id  | string | The company ID of the contacts                  |
+| updated_at  | string | The date and time the contacts was last updated |
+| created_at  | string | The date and time the contacts was created      |
+
+<ResponseExample name="The Contacts Object" >
+
+```json The Contacts Response Object
+{
+  "rootfi_id": 157,
+  "rootfi_deleted_at": null,
+  "rootfi_created_at": "2024-01-22T05:07:31.465Z",
+  "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
+  "rootfi_company_id": 1089,
+  "platform_id": "123456",
+  "name": "John Doe",
+  "company_id": "123456",
+  "updated_at": "2024-01-22T05:07:31.000Z",
+  "created_at": "2024-01-22T05:07:31.465Z"
+}
+```
+
+</ResponseExample>

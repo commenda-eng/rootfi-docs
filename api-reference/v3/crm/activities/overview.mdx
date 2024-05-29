@@ -1,0 +1,46 @@
+---
+version: "v3"
+title: "Overview"
+description: "Activities Data Model simplifies the handling and retrieval of activities-related information across various crm platforms."
+icon: "hand-wave"
+---
+
+**The Activities Data Model** simplifies the handling and retrieval of activities-related information across various ecommerce platforms.
+
+- Unified Activities properties: The model provides a unified representation of activities properties across different platforms, enabling you to easily access and manage activities data from different platforms.
+- Comprehensive activities information: The model provides a comprehensive representation of activities data, including all the properties and relationships that you can retrieve for an contact.
+
+## Attributes
+
+## Properties Supported
+
+| Property         | Type   | Description                                     |
+| ---------------- | ------ | ----------------------------------------------- |
+| platform_id      | string | The Platform's ID for the activity              |
+| name             | string | The name of the activity                        |
+| status           | string | The status of the activity                      |
+| deal_probability | string | The deal probability of the activity            |
+| pipeline_id      | string | The pipeline ID of the activity                 |
+| created_at       | string | The date and time the activity was created      |
+| updated_at       | string | The date and time the activity was last updated |
+
+<ResponseExample name="The Activities Object" >
+
+```json The Activities Response Object
+{
+  "rootfi_id": 157,
+  "rootfi_deleted_at": null,
+  "rootfi_created_at": "2024-01-22T05:07:31.465Z",
+  "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
+  "rootfi_company_id": 1089,
+  "platform_id": "123456",
+  "name": "Call",
+  "status": "Open",
+  "deal_probability": "50",
+  "pipeline_id": "123456",
+  "created_at": "2024-01-22T05:07:31
+  "updated_at": "2024-01-22T05:07:31
+}
+```
+
+</ResponseExample>

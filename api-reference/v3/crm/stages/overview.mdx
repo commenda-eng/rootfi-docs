@@ -1,0 +1,46 @@
+---
+version: "v3"
+title: "Overview"
+description: "Stages Data Model simplifies the handling and retrieval of stages-related information across various crm platforms."
+icon: "hand-wave"
+---
+
+**The Stages Data Model** simplifies the handling and retrieval of stages-related information across various ecommerce platforms.
+
+- Unified Stages properties: The model provides a unified representation of stages properties across different platforms, enabling you to easily access and manage stages data from different platforms.
+- Comprehensive stages information: The model provides a comprehensive representation of stages data, including all the properties and relationships that you can retrieve for an contact.
+
+## Attributes
+
+## Properties Supported
+
+| Property         | Type   | Description                             |
+| ---------------- | ------ | --------------------------------------- |
+| platform_id      | string | The Platform's ID for the stage         |
+| name             | string | The name of the stage                   |
+| status           | string | The status of the stage                 |
+| deal_probability | string | The deal probability of the stage       |
+| pipeline_id      | string | The pipeline ID of the stage            |
+| created_at       | string | The date and time the stage was created |
+| updated_at       | string | The date and time the stage was updated |
+
+<ResponseExample name="The Stages Object" >
+
+```json The Stages Response Object
+{
+  "rootfi_id": 157,
+  "rootfi_deleted_at": null,
+  "rootfi_created_at": "2024-01-22T05:07:31.465Z",
+  "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
+  "rootfi_company_id": 1089,
+  "platform_id": "123456",
+  "name": "Stage 1",
+  "status": "active",
+  "deal_probability": "0.1",
+  "pipeline_id": "123456",
+  "created_at": "2024-01-22T05:07:31
+  "updated_at": "2024-01-22T05:07:31"
+}
+```
+
+</ResponseExample>
