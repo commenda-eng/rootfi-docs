@@ -10254,12 +10254,19 @@ components:
           type: string
           nullable: true
           description: The parent account id of the account
+    accountingAccountAllFields:
+      title: accountingAccountAllFields
+      type: object
+      properties: {}
+      allOf:
+        - $ref: '#/components/schemas/AccountingRootFiBaseFields'
+        - $ref: '#/components/schemas/accountingAccountFields'
     accountingAccountObject:
       title: accountingAccountObject
       type: object
       properties:
         parent_account:
-          $ref: '#/components/schemas/accountingAccountObject'
+          $ref: '#/components/schemas/accountingAccountAllFields'
           nullable: true
           description: The parent account of the account.
         currency:
@@ -10511,7 +10518,7 @@ components:
           nullable: true
           description: The to account of the bank transaction.
         contact:
-          $ref: '#/components/schemas/accountingContactObject'
+          $ref: '#/components/schemas/accountingContactAllFields'
           nullable: true
           description: The contact of the bank transaction.
         currency:
@@ -10620,7 +10627,7 @@ components:
       type: object
       properties:
         contact:
-          $ref: '#/components/schemas/accountingContactObject'
+          $ref: '#/components/schemas/accountingContactAllFields'
           nullable: true
           description: The contact of the bill credit note
         currency:
@@ -10727,6 +10734,13 @@ components:
           type: string
           nullable: true
           description: The document number of the bill payments
+    accountingBillPaymentsAllFields:
+      title: accountingBillPaymentsAllFields
+      type: object
+      properties: {}
+      allOf:
+        - $ref: '#/components/schemas/accountingBillPaymentsFields'
+        - $ref: '#/components/schemas/AccountingRootFiBaseFields'
     accountingBillPaymentsObject:
       title: accountingBillPaymentsObject
       type: object
@@ -10744,7 +10758,7 @@ components:
           nullable: true
           description: The currency of the bill payments
         contact:
-          $ref: '#/components/schemas/accountingContactObject'
+          $ref: '#/components/schemas/accountingContactAllFields'
           nullable: true
           description: The contact of the bill payments
       allOf:
@@ -10959,7 +10973,7 @@ components:
           nullable: true
           description: The currency of the bill
         contact:
-          $ref: '#/components/schemas/accountingContactObject'
+          $ref: '#/components/schemas/accountingContactAllFields'
           nullable: true
           description: The contact of the bill
         documents:
@@ -10971,7 +10985,7 @@ components:
         bill_payments:
           type: array
           items:
-            $ref: '#/components/schemas/accountingBillPaymentsObject'
+            $ref: '#/components/schemas/accountingBillPaymentsAllFields'
           nullable: true
           description: The bill payments of the bill
       allOf:
@@ -11343,6 +11357,13 @@ components:
             $ref: '#/components/schemas/Addresses'
           nullable: true
           description: Addresses for the contact
+    accountingContactAllFields:
+      title: accountingContactAllFields
+      type: object
+      properties: {}
+      allOf:
+        - $ref: '#/components/schemas/AccountingRootFiBaseFields'
+        - $ref: '#/components/schemas/accountingContactFields'
     accountingContactObject:
       title: accountingContactObject
       type: object
@@ -11686,7 +11707,7 @@ components:
       type: object
       properties:
         contact:
-          $ref: '#/components/schemas/accountingContactObject'
+          $ref: '#/components/schemas/accountingContactAllFields'
           nullable: true
           description: The contact of the Expense
         currency:
@@ -11901,7 +11922,7 @@ components:
       type: object
       properties:
         contact:
-          $ref: '#/components/schemas/accountingContactObject'
+          $ref: '#/components/schemas/accountingContactAllFields'
           nullable: true
           description: The contact of the invoice credit note
         currency:
@@ -12008,6 +12029,13 @@ components:
           type: string
           nullable: true
           description: The document number of the invoice payments
+    accountingInvoicePaymentsAllFields:
+      title: accountingInvoicePaymentsAllFields
+      type: object
+      properties: {}
+      allOf:
+        - $ref: '#/components/schemas/AccountingRootFiBaseFields'
+        - $ref: '#/components/schemas/accountingInvoicePaymentsFields'
     accountingInvoicePaymentsObject:
       title: accountingInvoicePaymentsObject
       type: object
@@ -12025,7 +12053,7 @@ components:
           nullable: true
           description: The currency object of the invoice payments
         contact:
-          $ref: '#/components/schemas/accountingContactObject'
+          $ref: '#/components/schemas/accountingContactAllFields'
           nullable: true
           description: The contact object of the invoice payments
       allOf:
@@ -12237,7 +12265,7 @@ components:
           nullable: true
           description: The currency of the invoice
         contact:
-          $ref: '#/components/schemas/accountingContactObject'
+          $ref: '#/components/schemas/accountingContactAllFields'
           nullable: true
           description: The contact of the invoice
         documents:
@@ -12249,7 +12277,7 @@ components:
         invoice_payments:
           type: array
           items:
-            $ref: '#/components/schemas/accountingInvoicePaymentsObject'
+            $ref: '#/components/schemas/accountingInvoicePaymentsAllFields'
           nullable: true
           description: The invoice payments of the invoice
       allOf:
@@ -12636,7 +12664,7 @@ components:
       type: object
       properties:
         contact:
-          $ref: '#/components/schemas/accountingContactObject'
+          $ref: '#/components/schemas/accountingContactAllFields'
           nullable: true
           description: The contact of the Purchase order
         currency:
@@ -12765,7 +12793,7 @@ components:
       type: object
       properties:
         contact:
-          $ref: '#/components/schemas/accountingContactObject'
+          $ref: '#/components/schemas/accountingContactAllFields'
           nullable: true
           description: The contact of the Sales order
         currency:
@@ -16198,7 +16226,7 @@ components:
           nullable: true
           description: The account of the journal line
         contact:
-          $ref: '#/components/schemas/accountingContactObject'
+          $ref: '#/components/schemas/accountingContactAllFields'
           nullable: true
           description: The contact of the journal line
         tax_rate:
