@@ -147,6 +147,10 @@
             "documentation/ecommerce-integrations/wix",
             "documentation/ecommerce-integrations/squarespace"
           ]
+        },
+        {
+          "group": "CRM Integrations",
+          "pages": ["documentation/crm-integrations/crm-integrations-overview", "documentation/crm-integrations/hubspot", "documentation/crm-integrations/zoho-crm"]
         }
       ]
     },
