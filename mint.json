@@ -30,7 +30,10 @@
   "search": {
     "prompt": "Ask any question (powered by ChatGPT)"
   },
-  "versions": ["v3", "v2"],
+  "versions": [
+    "v3",
+    "v2"
+  ],
   "tabs": [
     {
       "name": "API Reference",
@@ -66,14 +69,21 @@
   "navigation": [
     {
       "group": "General",
-      "pages": ["documentation/general/introduction", "documentation/general/glossary-key-terms"]
+      "pages": [
+        "documentation/general/introduction",
+        "documentation/general/glossary-key-terms"
+      ]
     },
     {
       "group": "Core Features",
       "pages": [
         {
           "group": "Connect by Integration Labs",
-          "pages": ["documentation/concepts/rootfi-connect/introduction", "documentation/concepts/rootfi-connect/invite-link", "documentation/concepts/rootfi-connect/embedded-sdk"]
+          "pages": [
+            "documentation/concepts/rootfi-connect/introduction",
+            "documentation/concepts/rootfi-connect/invite-link",
+            "documentation/concepts/rootfi-connect/embedded-sdk"
+          ]
         },
         "documentation/concepts/syncing-data",
         "documentation/concepts/reading-data",
@@ -153,6 +163,7 @@
           "pages": [
             "documentation/crm-integrations/crm-integrations-overview",
             "documentation/crm-integrations/hubspot",
+            "documentation/crm-integrations/pipedrive",
             "documentation/crm-integrations/sales-force",
             "documentation/crm-integrations/zoho-crm"
           ]
@@ -161,11 +172,15 @@
     },
     {
       "group": "Overview",
-      "pages": ["api-reference/v3/overview/environments"]
+      "pages": [
+        "api-reference/v3/overview/environments"
+      ]
     },
     {
       "group": "Server Side SDKs",
-      "pages": ["api-reference/v3/sdk/nodejs"]
+      "pages": [
+        "api-reference/v3/sdk/nodejs"
+      ]
     },
     {
       "group": "Core API",
@@ -223,16 +238,23 @@
         {
           "group": "Jobs",
           "version": "v2",
-          "pages": ["api-reference/v2/core/jobs/get-job"]
+          "pages": [
+            "api-reference/v2/core/jobs/get-job"
+          ]
         },
         {
           "group": "Passthrough",
-          "pages": ["api-reference/v3/core/passthrough/passthrough", "api-reference/v2/core/passthrough/passthrough"]
+          "pages": [
+            "api-reference/v3/core/passthrough/passthrough",
+            "api-reference/v2/core/passthrough/passthrough"
+          ]
         },
         {
           "group": "Real Time",
           "version": "v3",
-          "pages": ["api-reference/v3/core/realtime/realtime"]
+          "pages": [
+            "api-reference/v3/core/realtime/realtime"
+          ]
         },
         {
           "group": "Webhooks",
@@ -503,55 +525,94 @@
           "pages": [
             {
               "group": "Customers",
-              "pages": ["api-reference/v3/payments/customers/overview", "api-reference/v3/payments/customers/get-all-customers"]
+              "pages": [
+                "api-reference/v3/payments/customers/overview",
+                "api-reference/v3/payments/customers/get-all-customers"
+              ]
             },
             {
               "group": "Disputes",
-              "pages": ["api-reference/v3/payments/disputes/overview", "api-reference/v3/payments/disputes/get-all-disputes"]
+              "pages": [
+                "api-reference/v3/payments/disputes/overview",
+                "api-reference/v3/payments/disputes/get-all-disputes"
+              ]
             },
             {
               "group": "Invoices",
-              "pages": ["api-reference/v3/payments/invoices/overview", "api-reference/v3/payments/invoices/get-all-invoices"]
+              "pages": [
+                "api-reference/v3/payments/invoices/overview",
+                "api-reference/v3/payments/invoices/get-all-invoices"
+              ]
             },
             {
               "group": "Items",
-              "pages": ["api-reference/v3/payments/items/overview", "api-reference/v3/payments/items/get-all-items"]
+              "pages": [
+                "api-reference/v3/payments/items/overview",
+                "api-reference/v3/payments/items/get-all-items"
+              ]
             },
             {
               "group": "Orders",
-              "pages": ["api-reference/v3/payments/orders/overview", "api-reference/v3/payments/orders/get-all-orders"]
+              "pages": [
+                "api-reference/v3/payments/orders/overview",
+                "api-reference/v3/payments/orders/get-all-orders"
+              ]
             },
             {
               "group": "Payment Links",
-              "pages": ["api-reference/v3/payments/payment_links/overview", "api-reference/v3/payments/payment_links/get-all-payment-links"]
+              "pages": [
+                "api-reference/v3/payments/payment_links/overview",
+                "api-reference/v3/payments/payment_links/get-all-payment-links"
+              ]
             },
             {
               "group": "Payments",
-              "pages": ["api-reference/v3/payments/payments/overview", "api-reference/v3/payments/payments/get-all-payments"]
+              "pages": [
+                "api-reference/v3/payments/payments/overview",
+                "api-reference/v3/payments/payments/get-all-payments"
+              ]
             },
             {
               "group": "Payouts",
-              "pages": ["api-reference/v3/payments/payouts/overview", "api-reference/v3/payments/payouts/get-all-payouts"]
+              "pages": [
+                "api-reference/v3/payments/payouts/overview",
+                "api-reference/v3/payments/payouts/get-all-payouts"
+              ]
             },
             {
               "group": "Refunds",
-              "pages": ["api-reference/v3/payments/refunds/overview", "api-reference/v3/payments/refunds/get-all-refunds"]
+              "pages": [
+                "api-reference/v3/payments/refunds/overview",
+                "api-reference/v3/payments/refunds/get-all-refunds"
+              ]
             },
             {
               "group": "Tax Rates",
-              "pages": ["api-reference/v3/payments/tax_rates/overview", "api-reference/v3/payments/tax_rates/get-all-tax-rates"]
+              "pages": [
+                "api-reference/v3/payments/tax_rates/overview",
+                "api-reference/v3/payments/tax_rates/get-all-tax-rates"
+              ]
             },
             {
               "group": "Balances",
-              "pages": ["api-reference/v3/payments/balances/overview", "api-reference/v3/payments/balances/get-all-balances"]
+              "pages": [
+                "api-reference/v3/payments/balances/overview",
+                "api-reference/v3/payments/balances/get-all-balances"
+              ]
             },
             {
               "group": "Subscriptions",
-              "pages": ["api-reference/v3/payments/subscriptions/overview", "api-reference/v3/payments/subscriptions/get-all-subscriptions"]
+              "pages": [
+                "api-reference/v3/payments/subscriptions/overview",
+                "api-reference/v3/payments/subscriptions/get-all-subscriptions"
+              ]
             },
             {
               "group": "Transactions",
-              "pages": ["api-reference/v3/payments/transactions/overview", "api-reference/v3/payments/transactions/get-all-transactions"]
+              "pages": [
+                "api-reference/v3/payments/transactions/overview",
+                "api-reference/v3/payments/transactions/get-all-transactions"
+              ]
             }
           ]
         },
@@ -561,35 +622,59 @@
           "pages": [
             {
               "group": "Customers",
-              "pages": ["api-reference/v3/ecommerce/customers/overview", "api-reference/v3/ecommerce/customers/get-all-customers"]
+              "pages": [
+                "api-reference/v3/ecommerce/customers/overview",
+                "api-reference/v3/ecommerce/customers/get-all-customers"
+              ]
             },
             {
               "group": "Orders",
-              "pages": ["api-reference/v3/ecommerce/orders/overview", "api-reference/v3/ecommerce/orders/get-all-orders"]
+              "pages": [
+                "api-reference/v3/ecommerce/orders/overview",
+                "api-reference/v3/ecommerce/orders/get-all-orders"
+              ]
             },
             {
               "group": "Products",
-              "pages": ["api-reference/v3/ecommerce/products/overview", "api-reference/v3/ecommerce/products/get-all-products"]
+              "pages": [
+                "api-reference/v3/ecommerce/products/overview",
+                "api-reference/v3/ecommerce/products/get-all-products"
+              ]
             },
             {
               "group": "Balances",
-              "pages": ["api-reference/v3/ecommerce/balances/overview", "api-reference/v3/ecommerce/balances/get-all-balances"]
+              "pages": [
+                "api-reference/v3/ecommerce/balances/overview",
+                "api-reference/v3/ecommerce/balances/get-all-balances"
+              ]
             },
             {
               "group": "Company Info",
-              "pages": ["api-reference/v3/ecommerce/company_info/overview", "api-reference/v3/ecommerce/company_info/get-all-company-info"]
+              "pages": [
+                "api-reference/v3/ecommerce/company_info/overview",
+                "api-reference/v3/ecommerce/company_info/get-all-company-info"
+              ]
             },
             {
               "group": "Fulfillments",
-              "pages": ["api-reference/v3/ecommerce/fulfillments/overview", "api-reference/v3/ecommerce/fulfillments/get-all-fulfillments"]
+              "pages": [
+                "api-reference/v3/ecommerce/fulfillments/overview",
+                "api-reference/v3/ecommerce/fulfillments/get-all-fulfillments"
+              ]
             },
             {
               "group": "Inventories",
-              "pages": ["api-reference/v3/ecommerce/inventories/overview", "api-reference/v3/ecommerce/inventories/get-all-inventories"]
+              "pages": [
+                "api-reference/v3/ecommerce/inventories/overview",
+                "api-reference/v3/ecommerce/inventories/get-all-inventories"
+              ]
             },
             {
               "group": "Transactions",
-              "pages": ["api-reference/v3/ecommerce/transactions/overview", "api-reference/v3/ecommerce/transactions/get-all-transactions"]
+              "pages": [
+                "api-reference/v3/ecommerce/transactions/overview",
+                "api-reference/v3/ecommerce/transactions/get-all-transactions"
+              ]
             }
           ]
         },
@@ -599,43 +684,73 @@
           "pages": [
             {
               "group": "Activities",
-              "pages": ["api-reference/v3/crm/activities/overview", "api-reference/v3/crm/activities/get-all-activities"]
+              "pages": [
+                "api-reference/v3/crm/activities/overview",
+                "api-reference/v3/crm/activities/get-all-activities"
+              ]
             },
             {
               "group": "Companies",
-              "pages": ["api-reference/v3/crm/companies/overview", "api-reference/v3/crm/companies/get-all-companies"]
+              "pages": [
+                "api-reference/v3/crm/companies/overview",
+                "api-reference/v3/crm/companies/get-all-companies"
+              ]
             },
             {
               "group": "Contacts",
-              "pages": ["api-reference/v3/crm/contacts/overview", "api-reference/v3/crm/contacts/get-all-contacts"]
+              "pages": [
+                "api-reference/v3/crm/contacts/overview",
+                "api-reference/v3/crm/contacts/get-all-contacts"
+              ]
             },
             {
               "group": "Deals",
-              "pages": ["api-reference/v3/crm/deals/overview", "api-reference/v3/crm/deals/get-all-deals"]
+              "pages": [
+                "api-reference/v3/crm/deals/overview",
+                "api-reference/v3/crm/deals/get-all-deals"
+              ]
             },
             {
               "group": "Leads",
-              "pages": ["api-reference/v3/crm/leads/overview", "api-reference/v3/crm/leads/get-all-leads"]
+              "pages": [
+                "api-reference/v3/crm/leads/overview",
+                "api-reference/v3/crm/leads/get-all-leads"
+              ]
             },
             {
               "group": "Notes",
-              "pages": ["api-reference/v3/crm/notes/overview", "api-reference/v3/crm/notes/get-all-notes"]
+              "pages": [
+                "api-reference/v3/crm/notes/overview",
+                "api-reference/v3/crm/notes/get-all-notes"
+              ]
             },
             {
               "group": "Pipelines",
-              "pages": ["api-reference/v3/crm/pipelines/overview", "api-reference/v3/crm/pipelines/get-all-pipelines"]
+              "pages": [
+                "api-reference/v3/crm/pipelines/overview",
+                "api-reference/v3/crm/pipelines/get-all-pipelines"
+              ]
             },
             {
               "group": "Stages",
-              "pages": ["api-reference/v3/crm/stages/overview", "api-reference/v3/crm/stages/get-all-stages"]
+              "pages": [
+                "api-reference/v3/crm/stages/overview",
+                "api-reference/v3/crm/stages/get-all-stages"
+              ]
             },
             {
               "group": "Tasks",
-              "pages": ["api-reference/v3/crm/tasks/overview", "api-reference/v3/crm/tasks/get-all-tasks"]
+              "pages": [
+                "api-reference/v3/crm/tasks/overview",
+                "api-reference/v3/crm/tasks/get-all-tasks"
+              ]
             },
             {
               "group": "Users",
-              "pages": ["api-reference/v3/crm/users/overview", "api-reference/v3/crm/users/get-all-users"]
+              "pages": [
+                "api-reference/v3/crm/users/overview",
+                "api-reference/v3/crm/users/get-all-users"
+              ]
             }
           ]
         }
