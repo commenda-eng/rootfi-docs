@@ -62,6 +62,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -204,6 +211,13 @@ paths:
       tags:
         - AccountingBalanceSheet
       parameters:
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -378,6 +392,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -565,6 +586,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -770,6 +798,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -1017,6 +1052,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -1237,6 +1279,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -1560,6 +1609,13 @@ paths:
       tags:
         - AccountingCashFlowStatement
       parameters:
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -1725,6 +1781,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -1870,6 +1933,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -2197,6 +2267,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -2323,6 +2400,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -2558,6 +2642,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -2763,6 +2854,13 @@ paths:
       tags:
         - AccountingIncomeStatement
       parameters:
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -2969,6 +3067,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -3216,6 +3321,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -3436,6 +3548,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -3801,6 +3920,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -4102,6 +4228,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -4335,6 +4468,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -4603,6 +4743,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -4859,6 +5006,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -5047,6 +5201,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -6332,6 +6493,13 @@ paths:
           schema:
             type: string
             nullable: true
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -6457,6 +6625,13 @@ paths:
           description: >-
             Comma separated fields to expand. Supported values are
             phone_numbers,addresses,external_links,company
+          required: false
+          schema:
+            type: string
+            nullable: true
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
           required: false
           schema:
             type: string
@@ -6590,6 +6765,13 @@ paths:
           schema:
             type: string
             nullable: true
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -6711,6 +6893,13 @@ paths:
           description: >-
             Comma separated fields to expand. Supported values are
             company,contact,stage
+          required: false
+          schema:
+            type: string
+            nullable: true
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
           required: false
           schema:
             type: string
@@ -6848,6 +7037,13 @@ paths:
           schema:
             type: string
             nullable: true
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -6975,6 +7171,13 @@ paths:
           description: >-
             Comma separated fields to expand. Supported values are
             phone_numbers,addresses,external_links,companies
+          required: false
+          schema:
+            type: string
+            nullable: true
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
           required: false
           schema:
             type: string
@@ -7108,6 +7311,13 @@ paths:
           schema:
             type: string
             nullable: true
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -7231,6 +7441,13 @@ paths:
         - name: expand
           in: query
           description: Comma separated fields to expand. Supported values are pipeline.
+          required: false
+          schema:
+            type: string
+            nullable: true
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
           required: false
           schema:
             type: string
@@ -7364,6 +7581,13 @@ paths:
           schema:
             type: string
             nullable: true
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -7489,6 +7713,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -7608,6 +7839,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -7724,6 +7962,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -7844,6 +8089,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -7975,6 +8227,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -8095,6 +8354,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -8215,6 +8481,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -8365,6 +8638,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -8484,6 +8764,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -8619,6 +8906,13 @@ paths:
           examples:
             Example1:
               value: false
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -8725,6 +9019,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -8864,6 +9165,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -8985,6 +9293,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -9133,6 +9448,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -9255,6 +9577,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -9375,6 +9704,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -9516,6 +9852,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -9651,6 +9994,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -9770,6 +10120,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -9902,6 +10259,13 @@ paths:
           examples:
             Example1:
               value: false
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -10013,6 +10377,13 @@ paths:
           examples:
             Example1:
               value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
@@ -10144,6 +10515,13 @@ paths:
           examples:
             Example1:
               value: false
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
         - name: rootfi_company_id[eq]
           in: query
           description: >-
