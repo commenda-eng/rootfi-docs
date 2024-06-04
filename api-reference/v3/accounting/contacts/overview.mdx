@@ -13,18 +13,18 @@ icon: "hand-wave"
 
 ## Properties Supported
 
-| Property            | Type   | Description                                                       |
-| ------------------- | ------ | ----------------------------------------------------------------- |
-| platform_id         | string | The Platform's ID for the contact                                 |
-| name                | string | Name of the customer on the accounting platform                   |
-| contact_name        | string | Name of the primary contact person for the contact                |
-| contact_type        | enum   | The type of customer. Value is either CUSTOMER or VENDOR          |
-| currency            | string | The ISO-4217 currency code                                        |
-| tax_number          | string | Contact's tax number                                              |
-| registration_number | string | Contact's identifying number                                      |
-| status              | enum   | The status of the customer. Values are: ACTIVE, ARCHIVED, UNKNOWN |
-| bank_account        | object | Bank Account associated with this contact                         |
-| updated_at          | date   | The last ISO 8601 timestamp at which the data was updated         |
+| Property            | Type   | Description                                                              |
+| ------------------- | ------ | ------------------------------------------------------------------------ |
+| platform_id         | string | The Platform's ID for the contact                                        |
+| name                | string | Name of the customer on the accounting platform                          |
+| contact_name        | string | Name of the primary contact person for the contact                       |
+| contact_type        | enum   | The type of customer. Value are: `CUSTOMER`, `VENDOR`                    |
+| currency            | string | The ISO-4217 currency code                                               |
+| tax_number          | string | Contact's tax number                                                     |
+| registration_number | string | Contact's identifying number                                             |
+| status              | enum   | The status of the customer. Values are: `ACTIVE`, `ARCHIVED`, `UNKNOWN`  |
+| bank_account        | object | Bank Account associated with this contact                                |
+| updated_at          | date   | The date at which the information was updated on the accounting platform |
 
 ### Expandable Attributes
 
@@ -32,18 +32,24 @@ You can expand the following attributes to get the related data
 | Property | Data Model | Description |
 | ---------- | ---------------------------------------------------------------| --------------------------- |
 | currency | [Currencies](/api-reference/v3/accounting/currencies/overview) | The default currency for this contact |
-| phone_numbers | Phone Numbers | The phone numbers associated with this contact |
-| addresses | Addresses | The addresses associated with this contact |
-| external_links | External Links | The external links associated with this contact |
+| phone_numbers | [Phone Numbers](/api-reference/v3/accounting/contacts/overview#phone-numbers) | The phone numbers associated with this contact |
+| addresses | [Addresses](/api-reference/v3/accounting/contacts/overview#addresses) | The addresses associated with this contact |
+| external_links | [External Links](/api-reference/v3/accounting/contacts/overview#external-links) | The external links associated with this contact |
 | contact_persons | Contact Persons | The contact persons associated with this contact |
-| invoices | [Invoices](/api-api-reference/v3/accounting/invoices/overview) | The invoices that belong to this contact |
-| bills | [Bills](/api-api-reference/v3/accounting/bills/overview) | The bills that belong to this contact |
-| purchase_orders | [Purchase Orders](/api-api-reference/v3/accounting/purchase-orders/overview) | The purchase orders that belong to this contact |
-| bank_transactions | [Bank Transactions](/api-api-reference/v3/accounting/bank-transactions/overview) | The bank transactions that belong to this contact |
-| sales_orders | [Sales Orders](/api-api-reference/v3/accounting/sales-orders/overview) | The sales orders that belong to this contact |
-| invoice_payments | [Invoice Payments](/api-api-reference/v3/accounting/invoice-payments/overview) | The invoice payments that belong to this contact |
-| bill_payments | [Bill Payments](/api-api-reference/v3/accounting/bill-payments/overview) | The bill payments that belong to this contact |
-| expenses | [Expenses](/api-api-reference/v3/accounting/expenses/overview) | The expenses that belong to this contact |
+| invoices | [Invoices](/api-reference/v3/accounting/invoices/overview) | The invoices that belong to this contact |
+| bills | [Bills](/api-reference/v3/accounting/bills/overview) | The bills that belong to this contact |
+| purchase_orders | [Purchase Orders](/api-reference/v3/accounting/purchase-orders/overview) | The purchase orders that belong to this contact |
+| bank_transactions | [Bank Transactions](/api-reference/v3/accounting/bank-transactions/overview) | The bank transactions that belong to this contact |
+| sales_orders | [Sales Orders](/api-reference/v3/accounting/sales-orders/overview) | The sales orders that belong to this contact |
+| invoice_payments | [Invoice Payments](/api-reference/v3/accounting/invoice-payments/overview) | The invoice payments that belong to this contact |
+| bill_payments | [Bill Payments](/api-reference/v3/accounting/bill-payments/overview) | The bill payments that belong to this contact |
+| expenses | [Expenses](/api-reference/v3/accounting/expenses/overview) | The expenses that belong to this contact |
+
+<Snippet file="phone_numbers_snippet.mdx" />
+
+<Snippet file="addresses_snippet.mdx" />
+
+<Snippet file="external_links_snippet.mdx" />
 
 <ResponseExample name="The Contact Response Object">
 

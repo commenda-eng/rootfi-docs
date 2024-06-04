@@ -11,26 +11,32 @@ icon: "hand-wave"
 
 ## Properties Supported
 
-| Property            | Type   | Description                                                  |
-| ------------------- | ------ | ------------------------------------------------------------ |
-| platform_id         | string | The Platform's ID for the company                            |
-| name                | string | The company name                                             |
-| legal_name          | string | Legal name of the company                                    |
-| base_currency       | string | The primary currency of the company                          |
-| fiscal_start_at     | date   | The starting date of the Financial year for this company     |
-| org_created_at      | date   | Date the record was created in the RootFi system.            |
-| registration_number | string | Reference of the registration number                         |
-| tax_number          | string | Company tax number                                           |
-| updated_at          | date   | Date the record was last updated in the accounting platform. |
+| Property            | Type   | Description                                                              |
+| ------------------- | ------ | ------------------------------------------------------------------------ |
+| platform_id         | string | The Platform's ID for the company                                        |
+| name                | string | The company name                                                         |
+| legal_name          | string | Legal name of the company                                                |
+| base_currency       | string | The primary currency of the company                                      |
+| fiscal_start_at     | date   | The starting date of the Financial year for this company                 |
+| org_created_at      | date   | Date the record was created in the RootFi system.                        |
+| registration_number | string | Reference of the registration number                                     |
+| tax_number          | string | Company tax number                                                       |
+| updated_at          | date   | The date at which the information was updated on the accounting platform |
 
 ### Expandable Attributes
 
 You can expand the following attributes to get the related data
 | Property | Data Model | Description |
 | ---------- | ---------------------------------------------------------------| --------------------------- |
-| phone_numbers | Contacts | List of phone number for the company |
-| addresses | Currencies | List of addresses for the company |
-| external_links | External Links | List of external links for the company |
+| phone_numbers | [Phone Numbers](/api-reference/v3/accounting/company-info/overview#phone-numbers) | List of phone number for the company |
+| addresses | [Addresses](/api-reference/v3/accounting/company-info/overview#addresses) | List of addresses for the company |
+| external_links | [External Links](/api-reference/v3/accounting/company-info/overview#external-links) | List of external links for the company |
+
+<Snippet file="phone_numbers_snippet.mdx" />
+
+<Snippet file="addresses_snippet.mdx" />
+
+<Snippet file="external_links_snippet.mdx" />
 
 <ResponseExample name="The Company Info Object">
 

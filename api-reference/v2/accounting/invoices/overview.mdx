@@ -127,30 +127,30 @@ icon: "hand-wave"
 
 ## Properties Supported
 
-| Property        | Type                                      | Description                                                                                           |
-| --------------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| platform_id     | string                                    | The Platform's ID for this invoice                                                                    |
-| account_id      | string                                    | The platform's ID for the account to which this invoice belongs                                       |
-| contact_id      | string                                    | The Accounting Platform's unique ID for the contact who receives this invoice                         |
-| document_number | string                                    | Reference document number for the invoice                                                             |
-| posted_date     | date                                      | Date of the invoice as recorded by the accounting platform                                            |
-| due_date        | date                                      | The due date for the invoice as an ISO 8601 timestamp                                                 |
-| currency        | string                                    | The ISO-4217 currency code                                                                            |
-| currency_rate   | float                                     | Rate between the currency of the payment and the base currency                                        |
-| status          | enum                                      | The status of the invoice. Values are: DRAFT, SUBMITTED, PARTIALLY_PAID, PAID, OVERDUE, VOID, UNKNOWN |
-| total_discount  | float                                     | Total value of discounts applied to the invoice                                                       |
-| tax_amount      | float                                     | Total tax amount levied on the invoice                                                                |
-| sub_total       | float                                     | Total pre tax value of the invoice                                                                    |
-| total_amount    | float                                     | Total value of the invoice                                                                            |
-| amount_due      | float                                     | Total amount pending for the invoice                                                                  |
-| memo            | string                                    | Description of the invoice                                                                            |
-| line_items      | [Line Item](/docs/line-items)             | Array of Invoice Line items associated with the invoice (see below)                                   |
-| payments        | [Invoice Payment](/docs/invoice-payments) | Array of Invoice Payments associated with the invoice                                                 |
-| sales_orders    | [Sales Order](/docs/sales-orders)         | Array of linked Sales Orders associated with this invoice                                             |
-| documents       | [Document](/docs/documents)               | Array of Invoice Documents associated with the invoice                                                |
-| account         | [Account](/docs/accounts)                 | The account to which this invoice belongs                                                             |
-| contact         | [Contact](/docs/contacts)                 | The contact who receives this invoice                                                                 |
-| updated_at      | date                                      | Date the record was last updated in the accounting platform.                                          |
+| Property        | Type                                      | Description                                                                                                         |
+| --------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| platform_id     | string                                    | The Platform's ID for this invoice                                                                                  |
+| account_id      | string                                    | The platform's ID for the account to which this invoice belongs                                                     |
+| contact_id      | string                                    | The Accounting Platform's unique ID for the contact who receives this invoice                                       |
+| document_number | string                                    | Reference document number for the invoice                                                                           |
+| posted_date     | date                                      | Date of the invoice as recorded by the accounting platform                                                          |
+| due_date        | date                                      | The due date for the invoice as an ISO 8601 timestamp                                                               |
+| currency        | string                                    | The ISO-4217 currency code                                                                                          |
+| currency_rate   | float                                     | Rate between the currency of the payment and the base currency                                                      |
+| status          | enum                                      | The status of the invoice. Values are: `DRAFT`, `SUBMITTED`, `PARTIALLY_PAID`, `PAID`, `OVERDUE`, `VOID`, `UNKNOWN` |
+| total_discount  | float                                     | Total value of discounts applied to the invoice                                                                     |
+| tax_amount      | float                                     | Total tax amount levied on the invoice                                                                              |
+| sub_total       | float                                     | Total pre tax value of the invoice                                                                                  |
+| total_amount    | float                                     | Total value of the invoice                                                                                          |
+| amount_due      | float                                     | Total amount pending for the invoice                                                                                |
+| memo            | string                                    | Description of the invoice                                                                                          |
+| line_items      | [Line Item](/docs/line-items)             | Array of Invoice Line items associated with the invoice (see below)                                                 |
+| payments        | [Invoice Payment](/docs/invoice-payments) | Array of Invoice Payments associated with the invoice                                                               |
+| sales_orders    | [Sales Order](/docs/sales-orders)         | Array of linked Sales Orders associated with this invoice                                                           |
+| documents       | [Document](/docs/documents)               | Array of Invoice Documents associated with the invoice                                                              |
+| account         | [Account](/docs/accounts)                 | The account to which this invoice belongs                                                                           |
+| contact         | [Contact](/docs/contacts)                 | The contact who receives this invoice                                                                               |
+| updated_at      | date                                      | Date the record was last updated in the accounting platform.                                                        |
 
 <ResponseExample name="The Bank Transaction Object" >
 

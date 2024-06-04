@@ -13,25 +13,25 @@ icon: "hand-wave"
 
 ## Properties Supported
 
-| Property        | Type                                                     | Description                                                                                           |
-| --------------- | -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| platform_id     | string                                                   | The Platform's ID for this invoice                                                                    |
-| account_id      | string                                                   | The platform's ID for the account to which this invoice belongs                                       |
-| contact_id      | string                                                   | The Accounting Platform's unique ID for the contact who receives this invoice                         |
-| currency_id     | string                                                   | The Platform's ID of the currency for the invoice                                                     |
-| document_number | string                                                   | Reference document number for the invoice                                                             |
-| posted_date     | date                                                     | Date of the invoice as recorded by the accounting platform                                            |
-| due_date        | date                                                     | The due date for the invoice as an ISO 8601 timestamp                                                 |
-| currency_rate   | float                                                    | Rate between the currency of the payment and the base currency                                        |
-| status          | enum                                                     | The status of the invoice. Values are: DRAFT, SUBMITTED, PARTIALLY_PAID, PAID, OVERDUE, VOID, UNKNOWN |
-| total_discount  | float                                                    | Total value of discounts applied to the invoice                                                       |
-| tax_amount      | float                                                    | Total tax amount levied on the invoice                                                                |
-| sub_total       | float                                                    | Total pre tax value of the invoice                                                                    |
-| total_amount    | float                                                    | Total value of the invoice                                                                            |
-| amount_due      | float                                                    | Total amount pending for the invoice                                                                  |
-| memo            | string                                                   | Description of the invoice                                                                            |
-| sales_orders    | [Sales Order](/api-reference/v3/accounting/sales-orders) | Array of linked Sales Orders associated with this invoice                                             |
-| updated_at      | date                                                     | Date the record was last updated in the accounting platform.                                          |
+| Property        | Type   | Description                                                                                                         |
+| --------------- | ------ | ------------------------------------------------------------------------------------------------------------------- |
+| platform_id     | string | The Platform's ID for this invoice                                                                                  |
+| account_id      | string | The platform's ID for the account to which this invoice belongs                                                     |
+| contact_id      | string | The Accounting Platform's unique ID for the contact who receives this invoice                                       |
+| currency_id     | string | The Platform's ID of the currency for the invoice                                                                   |
+| document_number | string | Reference document number for the invoice                                                                           |
+| posted_date     | date   | Date of the invoice as recorded by the accounting platform                                                          |
+| due_date        | date   | The due date for the invoice as an ISO 8601 timestamp                                                               |
+| currency_rate   | float  | Rate between the currency of the payment and the base currency                                                      |
+| status          | enum   | The status of the invoice. Values are: `DRAFT`, `SUBMITTED`, `PARTIALLY_PAID`, `PAID`, `OVERDUE`, `VOID`, `UNKNOWN` |
+| total_discount  | float  | Total value of discounts applied to the invoice                                                                     |
+| tax_amount      | float  | Total tax amount levied on the invoice                                                                              |
+| sub_total       | float  | Total pre tax value of the invoice                                                                                  |
+| total_amount    | float  | Total value of the invoice                                                                                          |
+| amount_due      | float  | Total amount pending for the invoice                                                                                |
+| memo            | string | Description of the invoice                                                                                          |
+| sales_orders    | object | Array of linked Sales Order Ids associated with this invoice                                                        |
+| updated_at      | date   | The date at which the information was updated on the accounting platform                                            |
 
 ### Expandable Attributes
 
@@ -42,8 +42,12 @@ You can expand the following attributes to get the related data
 | currency | [Currencies](/api-reference/v3/accounting/currencies/overview) | The currency of the invoice |
 | invoice_payments | [invoice Payments](/api-reference/v3/accounting/invoice-payments/overview) | The invoice payments associated to the invoice |
 | documents | [Documents](/api-reference/v3/accounting/documents/overview) | The documents attached to the invoice |
-| addresses | Addresses | The line items associated with the invoice |
-| line_items | Line Items | The line items associated with the invoice |
+| addresses | [Addresses](/api-reference/v3/accounting/invoices/overview#addresses) | The addresses associated with the invoice |
+| line_items | [Line Item](/api-reference/v3/accounting/invoices/overview#line-items) | The line items associated with the invoice |
+
+<Snippet file="addresses_snippet.mdx" />
+
+<Snippet file="line_items_snippet.mdx" />
 
 <ResponseExample name="The Invoice Object">
 

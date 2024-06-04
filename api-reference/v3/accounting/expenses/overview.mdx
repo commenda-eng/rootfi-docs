@@ -14,25 +14,22 @@ icon: "hand-wave"
 
 ## Properties Supported
 
-| Property        | Type                                             | Description                                                          |
-| --------------- | ------------------------------------------------ | -------------------------------------------------------------------- |
-| platform_id     | string                                           | The Platform's ID of the expenses                                    |
-| contact_id      | string                                           | Platform ID of the contact to which this expense belongs             |
-| account_id      | string                                           | Platform ID of the account to which this expense belongs             |
-| document_number | string                                           | Reference/Document number of the expense                             |
-| posted_date     | date                                             | Date of the expense as recorded by the accounting platform           |
-| payment_mode    | string                                           | The payment mode from which the payment was made                     |
-| currency        | string                                           | The ISO-4217 currency code                                           |
-| currency_rate   | float                                            | Rate between the currency of the payment and the base currency       |
-| total_amount    | float                                            | Total value of the expense                                           |
-| sub_total       | float                                            | Total pre tax value of the expense                                   |
-| tax_amount      | float                                            | Total tax amount levied on the expense                               |
-| total_discount  | float                                            | Total value of discounts applied to the expense                      |
-| memo            | string                                           | Description of the expense                                           |
-| line_items      | Line Item                                        | List of line items contained in the expense                          |
-| contact         | [Contact](/api-reference/v3/accounting/contacts) | The contact to which this expense belongs                            |
-| account         | [Account](/api-reference/v3/accounting/accounts) | The account to which this expense belongs                            |
-| updated_at      | date                                             | The date at which the expense was updated on the accounting platform |
+| Property        | Type   | Description                                                          |
+| --------------- | ------ | -------------------------------------------------------------------- |
+| platform_id     | string | The Platform's ID of the expenses                                    |
+| contact_id      | string | Platform ID of the contact to which this expense belongs             |
+| account_id      | string | Platform ID of the account to which this expense belongs             |
+| currency_id     | string | Platform ID of the currency for the expense                          |
+| document_number | string | Reference/Document number of the expense                             |
+| posted_date     | date   | Date of the expense as recorded by the accounting platform           |
+| payment_mode    | string | The payment mode from which the payment was made                     |
+| currency_rate   | float  | Rate between the currency of the payment and the base currency       |
+| total_amount    | float  | Total value of the expense                                           |
+| sub_total       | float  | Total pre tax value of the expense                                   |
+| tax_amount      | float  | Total tax amount levied on the expense                               |
+| total_discount  | float  | Total value of discounts applied to the expense                      |
+| memo            | string | Description of the expense                                           |
+| updated_at      | date   | The date at which the expense was updated on the accounting platform |
 
 ### Expandable Attributes
 
@@ -43,8 +40,12 @@ You can expand the following attributes to get the related data
 | account | [Accounts](/api-reference/v3/accounting/accounts/overview) | The account associated to the expense |
 | currency | [Currencies](/api-reference/v3/accounting/currencies/overview) | The currency of the expense |
 | documents | [Documents](/api-reference/v3/accounting/documents/overview) | The documents attached to the expense |
-| addresses | Addresses | The line items associated with the expense |
-| line_items | Line Items | The line items associated with the expense |
+| addresses | [Addresses](/api-reference/v3/accounting/expenses/overview#addresses) | The addresses associated with the expense |
+| line_items | [Line Items](/api-reference/v3/accounting/expenses/overview#line-items) | The line items associated with the expense |
+
+<Snippet file="addresses_snippet.mdx" />
+
+<Snippet file="line_items_snippet.mdx" />
 
 <ResponseExample name="The Expense Object">
 

@@ -11,20 +11,20 @@ icon: "hand-wave"
 
 ### Properties Supported
 
-| Property         | Type                                                                   | Description                                                              |
-| ---------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| platform_id      | string                                                                 | The Platform's ID for this item                                          |
-| name             | string                                                                 | Name of the item                                                         |
-| description      | string                                                                 | Description of the item                                                  |
-| status           | enum                                                                   | Status of the item. Values are: ACTIVE, ARCHIVED, UNKNOWN                |
-| type             | enum                                                                   | Type of the item. Values are: INVENTORY, NON_INVENTORY, SERVICE, UNKNOWN |
-| code             | string                                                                 | Reference code of the item                                               |
-| quantity_on_hand | float                                                                  | Quantity on hand                                                         |
-| is_bill_item     | boolean                                                                | Check if there are details (bill_item) of this item getting purchased    |
-| bill_item        | [Item Detail](/api-reference/v3/accounting/items/overview#item-detail) | Item details of this item getting purchased                              |
-| is_invoice_item  | boolean                                                                | Check if there are details (invoice_item) of this item getting sold      |
-| invoice_item     | [Item Detail](/api-reference/v3/accounting/items/overview#item-detail) | Item details of this item getting sold                                   |
-| updated_at       | date                                                                   | The date on which the information was updated on the accounting platform |
+| Property         | Type                                                                   | Description                                                                      |
+| ---------------- | ---------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| platform_id      | string                                                                 | The Platform's ID for this item                                                  |
+| name             | string                                                                 | Name of the item                                                                 |
+| description      | string                                                                 | Description of the item                                                          |
+| status           | enum                                                                   | Status of the item. Values are: `ACTIVE`, `ARCHIVED`, `UNKNOWN`                  |
+| type             | enum                                                                   | Type of the item. Values are: `INVENTORY`, `NON_INVENTORY`, `SERVICE`, `UNKNOWN` |
+| code             | string                                                                 | Reference code of the item                                                       |
+| quantity_on_hand | float                                                                  | Quantity on hand                                                                 |
+| is_bill_item     | boolean                                                                | Check if there are details (bill_item) of this item getting purchased            |
+| bill_item        | [Item Detail](/api-reference/v3/accounting/items/overview#item-detail) | Item details of this item getting purchased                                      |
+| is_invoice_item  | boolean                                                                | Check if there are details (invoice_item) of this item getting sold              |
+| invoice_item     | [Item Detail](/api-reference/v3/accounting/items/overview#item-detail) | Item details of this item getting sold                                           |
+| updated_at       | date                                                                   | The date on which the information was updated on the accounting platform         |
 
 ## Item Detail
 
