@@ -45,3 +45,16 @@ Scopes are the permissions selected by your end customer to access specific data
 In order to maintain your customers’ data privacy, we use Scopes that allow you to preconfigure access levels for the exact data you need. **The access levels you select will be the scopes we request from the integration platforms.**
 
 When your customers [connect their integration platform to Integration Labs](/documentation/concepts/rootfi-connect/introduction), they will see data models along with the access levels you have chosen above. Upon reviewing the permissions, we will request OAuth scopes of these same permissions from the integration platform. In most cases, the integration platforms clearly outline the scopes that are being given, allowing your customer to once again acknowledge the access level of data sharing consent being given to Integration Labs.
+
+## Connection Level Configuration
+
+You can configure the sync settings for each connection as well. The scopes and sync settings configured at the connection level will override the sync settings configured at the sync config level.
+
+To configure the sync settings at the connection level, you need to pass a `sync_config` object when [creating an invite link](/api-reference/v3/core/invite-links/create-invite-link).
+
+<Note> 
+You need to pass in all the data models that you would want to sync in the sync config object as it overrides the sync settings at organization level.
+
+</Note>
+
+You can also update the sync settings of a connection by passing the `sync_config` object when [updating a company](/api-reference/v3/core/companies/edit-company).
