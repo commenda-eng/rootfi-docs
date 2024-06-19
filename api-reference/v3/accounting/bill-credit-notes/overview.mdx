@@ -13,19 +13,19 @@ icon: "hand-wave"
 
 ## Properties Supported
 
-| Property         | Type   | Description                                                                                               |
-| ---------------- | ------ | --------------------------------------------------------------------------------------------------------- |
-| platform_id      | string | The Platform's ID for the credit note                                                                     |
-| contact_id       | string | The accounting platform's unique identifier for the contact associated with this credit note              |
-| currency_id      | string | The Platform's ID of the currency for the credit note                                                     |
-| bill_ids         | object | An Array of bill platform IDs associated with the credit note                                             |
-| document_number  | string | Reference number for the credit note                                                                      |
-| total_amount     | float  | Total amount of credit note                                                                               |
-| remaining_credit | float  | The balance amount remaining on the credit note                                                           |
-| posted_date      | date   | Date on which the credit note was posted                                                                  |
-| status           | enum   | The status of the credit note. Values are: DRAFT, SUBMITTED, PARTIALLY_PAID, PAID, OVERDUE, VOID, UNKNOWN |
-| memo             | string | Description of the credit note                                                                            |
-| updated_at       | date   | The last ISO 8601 timestamp that the data was updated at                                                  |
+| Property         | Type   | Description                                                                                                             |
+| ---------------- | ------ | ----------------------------------------------------------------------------------------------------------------------- |
+| platform_id      | string | The Platform's ID for the credit note                                                                                   |
+| contact_id       | string | The accounting platform's unique identifier for the contact associated with this credit note                            |
+| currency_id      | string | The Platform's ID of the currency for the credit note                                                                   |
+| bill_ids         | object | An Array of bill platform IDs associated with the credit note                                                           |
+| document_number  | string | Reference number for the credit note                                                                                    |
+| total_amount     | float  | Total amount of credit note                                                                                             |
+| remaining_credit | float  | The balance amount remaining on the credit note                                                                         |
+| posted_date      | date   | Date on which the credit note was posted                                                                                |
+| status           | enum   | The status of the credit note. Values are: `DRAFT`, `SUBMITTED`, `PARTIALLY_PAID`, `PAID`, `OVERDUE`, `VOID`, `UNKNOWN` |
+| memo             | string | Description of the credit note                                                                                          |
+| updated_at       | date   | The date at which the information was updated on the accounting platform                                                |
 
 ### Expandable Attributes
 
@@ -35,8 +35,12 @@ You can expand the following attributes to get the related data
 | contact | [Contacts](/api-reference/v3/accounting/contacts/overview) | The contact that made the credit note |
 | currency | [Currencies](/api-reference/v3/accounting/currencies/overview) | The currency of the credit note |
 | payments | [Bill Payments](/api-reference/v3/accounting/bill-payments/overview) | The bill payments where this credit note has been applied to |
-| addresses | Addresses | The line items associated with the credit note |
-| line_items | Line Items | The line items associated with the credit note |
+| addresses | [Addresses](/api-reference/v3/accounting/bill-credit-notes/overview#addresses) | The addresses associated with the credit note |
+| line_items | [Line Items](/api-reference/v3/accounting/bill-credit-notes/overview#line-items) | The line items associated with the credit note |
+
+<Snippet file="addresses_snippet.mdx" />
+
+<Snippet file="line_items_snippet.mdx" />
 
 <ResponseExample name="The Bill Credit Note Object" >
 

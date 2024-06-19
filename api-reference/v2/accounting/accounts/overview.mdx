@@ -17,19 +17,19 @@ An **Account** is a record in an accounting system that tracks the financial act
 
 ## Properties Supported
 
-| Property          | Type   | Description                                                                                                         |
-| ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------- |
-| platform_id       | string | The ID that the accounting platform uses to identify this account                                                   |
-| name              | string | The name of the account                                                                                             |
-| description       | string | Description of the account                                                                                          |
-| nominal_code      | string | Reference given to each account for a business. It ensures money is allocated to the correct account.               |
-| currency_id       | string | The Accounting Platform's unique ID for the currency                                                                |
-| current_balance   | float  | Current balance of the account                                                                                      |
-| status            | enum   | The status of the account. Values are: ACTIVE, ARCHIVED, UNKNOWN                                                    |
-| category          | enum   | The category of the account. Values are: ASSET, EXPENSE, LIABILITY, EQUITY,INCOME, PRIMARY, BANK, REVENUE , UNKNOWN |
-| sub_category      | string | The sub category of the account                                                                                     |
-| parent_account_id | string | The platform ID of the parent account                                                                               |
-| updated_at        | date   | Date the record was last updated in the accounting platform.                                                        |
+| Property          | Type   | Description                                                                                             |
+| ----------------- | ------ | ------------------------------------------------------------------------------------------------------- |
+| platform_id       | string | The ID that the accounting platform uses to identify this account                                       |
+| name              | string | The name of the account                                                                                 |
+| description       | string | Description of the account                                                                              |
+| nominal_code      | string | Reference given to each account for a business. It ensures money is allocated to the correct account.   |
+| currency_id       | string | The Accounting Platform's unique ID for the currency                                                    |
+| current_balance   | float  | Current balance of the account                                                                          |
+| status            | enum   | The status of the account. Values are: `ACTIVE`, `ARCHIVED`, `UNKNOWN`                                  |
+| category          | enum   | The category of the account. Values are: `ASSET`, `EXPENSE`, `LIABILITY`, `EQUITY`, `INCOME`, `UNKNOWN` |
+| sub_category      | string | The sub category of the account                                                                         |
+| parent_account_id | string | The platform ID of the parent account                                                                   |
+| updated_at        | date   | Date the record was last updated in the accounting platform.                                            |
 
 <ResponseExample name="The Account Object" >
 

@@ -17,21 +17,21 @@ icon: "hand-wave"
 
 ## Properties Supported
 
-| Property            | Type                                   | Description                                                       |
-| ------------------- | -------------------------------------- | ----------------------------------------------------------------- |
-| platform_id         | string                                 | The Platform's ID for the contact                                 |
-| name                | string                                 | Name of the customer on the accounting platform                   |
-| contact_name        | string                                 | Name of the contact person for the contact                        |
-| contact_type        | enum                                   | The type of customer. Values are either CUSTOMER or VENDOR        |
-| currency            | string                                 | The ISO-4217 currency code                                        |
-| tax_number          | string                                 | Contact's tax number                                              |
-| registration_number | string                                 | Contact's identifying number                                      |
-| status              | enum                                   | The status of the customer. Values are: ACTIVE, ARCHIVED, UNKNOWN |
-| contact_persons     | [Contact Person](/docs/contact-person) | List of contacts stored for the contact.                          |
-| external_links      | [External Link](/docs/external-link)   | The external links associated with the contact                    |
-| phone_numbers       | [Phone Number](/docs/phone-number)     | The phone numbers associated with the contact                     |
-| addresses           | [Address](/docs/address)               | The addresses associated with the contact                         |
-| updated_at          | date                                   | The last ISO 8601 timestamp at which the data was updated         |
+| Property            | Type                                   | Description                                                             |
+| ------------------- | -------------------------------------- | ----------------------------------------------------------------------- |
+| platform_id         | string                                 | The Platform's ID for the contact                                       |
+| name                | string                                 | Name of the customer on the accounting platform                         |
+| contact_name        | string                                 | Name of the contact person for the contact                              |
+| contact_type        | enum                                   | The type of customer. Values are either CUSTOMER or VENDOR              |
+| currency            | string                                 | The ISO-4217 currency code                                              |
+| tax_number          | string                                 | Contact's tax number                                                    |
+| registration_number | string                                 | Contact's identifying number                                            |
+| status              | enum                                   | The status of the customer. Values are: `ACTIVE`, `ARCHIVED`, `UNKNOWN` |
+| contact_persons     | [Contact Person](/docs/contact-person) | List of contacts stored for the contact.                                |
+| external_links      | [External Link](/docs/external-link)   | The external links associated with the contact                          |
+| phone_numbers       | [Phone Number](/docs/phone-number)     | The phone numbers associated with the contact                           |
+| addresses           | [Address](/docs/address)               | The addresses associated with the contact                               |
+| updated_at          | date                                   | The last ISO 8601 timestamp at which the data was updated               |
 
 <ResponseExample name="The Bank Transaction Object" >
 

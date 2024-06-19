@@ -47,6 +47,15 @@ We support 3 Event Types for this webhook:
 - **UPDATE**: Only triggered when data undergoes changes, not during every Integration Labs sync operation. For instance, even if Integration Labs performs daily syncs, but no changes are detected on the Accounting platform, no webhook notifications will be sent.
 - **DELETE**: Activated if data is removed from the Accounting platform. Can only be triggered after a Full Sync operation.
 
+<Note>
+  **Expect Partial Data** 
+  
+  You may not recieve all fields for a data model in a single webhook. Often times you may recieve multiple webhooks based on how the data is structured in the Accounting Platform. 
+  
+  For example, you may recieve a **CREATE** webhook with only the name field for a customer. Then this is followed by several **UPDATE** webhooks with the remaining fields for the same customer.
+
+</Note>
+
 Futhermore you can configure this type of webhook for specific or all data models.
 
 Use this webhook to receive notifications when data is created, updated, or deleted to keep your systems up-to-date.

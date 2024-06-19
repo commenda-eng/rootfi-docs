@@ -19,16 +19,16 @@ icon: "hand-wave"
 
 ## Properties Supported
 
-| Property          | Type    | Description                                                                                                                                                                      |
-| ----------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| platform_id       | string  | The Platform's ID for the document                                                                                                                                               |
-| file_name         | string  | Name of the document that was used on the accounting platform                                                                                                                    |
-| file_type         | string  | The file type of the document as given by the accounting platform. Formatted as a [MIME Type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics%5Fof%5FHTTP/MIME%5Ftypes) |
-| file_size         | float   | The file size of the document in bytes                                                                                                                                           |
-| document_type_id  | string  | The platform ID of the document type with which this document is linked to                                                                                                       |
-| document_type     | enum    | The name of the data model with which this document is linked. Currently only these data models are supported: BILLS,INVOICES,EXPENSES                                           |
-| document_uploaded | boolean | A value to verify that RootFi that uploaded the document to it's servers                                                                                                         |
-| updated_at        | date    | The last ISO 8601 timestamp that the data was updated at                                                                                                                         |
+| Property          | Type    | Description                                                                                                                                                                                                   |
+| ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| platform_id       | string  | The Platform's ID for the document                                                                                                                                                                            |
+| file_name         | string  | Name of the document that was used on the accounting platform                                                                                                                                                 |
+| file_type         | string  | The file type of the document as given by the accounting platform. Formatted as a [MIME Type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics%5Fof%5FHTTP/MIME%5Ftypes)                              |
+| file_size         | float   | The file size of the document in bytes                                                                                                                                                                        |
+| document_type_id  | string  | The platform ID of the document type with which this document is linked to                                                                                                                                    |
+| document_type     | enum    | The name of the data model with which this document is linked. Values are: `BILLS`, `INVOICES`, `EXPENSES`, `BILL_CREDIT_NOTES`, `INVOICE_CREDIT_NOTES`, `PURCHASE_ORDERS`, `SALES_ORDERS`, `JOURNAL_ENTRIES` |
+| document_uploaded | boolean | A value to verify that RootFi has uploaded the document to it's servers                                                                                                                                       |
+| updated_at        | date    | The date at which the information was updated on the accounting platform                                                                                                                                      |
 
 <ResponseExample name="The Document Object">
 

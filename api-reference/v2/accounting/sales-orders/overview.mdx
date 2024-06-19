@@ -17,26 +17,26 @@ icon: "hand-wave"
 
 ## Properties Supported
 
-| Property        | Type                          | Description                                                                                               |
-| --------------- | ----------------------------- | --------------------------------------------------------------------------------------------------------- |
-| platform_id     | string                        | Platform's ID for the sales order                                                                         |
-| contact_id      | string                        | The accounting platform's unique ID of the contact associated with this sales order                       |
-| document_number | string                        | Reference number for the sales order                                                                      |
-| posted_date     | string                        | Date of creation of the sales order                                                                       |
-| delivery_date   | string                        | The delivery date for the sales order                                                                     |
-| description     | string                        | Description of the sales order                                                                            |
-| payment_mode    | string                        | The payment mode from which the payment was made                                                          |
-| currency        | string                        | The ISO-4217 currency code                                                                                |
-| currency_rate   | float                         | Rate between the currency of the payment and the base currency                                            |
-| status          | enum                          | The status of the sales order. Values are: DRAFT, SUBMITTED, PARTIALLY_PAID, PAID, OVERDUE, VOID, UNKNOWN |
-| total_discount  | float                         | Total value of discounts applied to the sales order                                                       |
-| tax_amount      | float                         | Total tax amount levied on the sales order                                                                |
-| sub_total       | float                         | Total pre tax value of the sales order                                                                    |
-| total_amount    | float                         | Total value of the sales order                                                                            |
-| line_items      | [Line Item](/docs/line-items) | Array of Sales Order Line items associated with the purchase order                                        |
-| invoices        | [Invoice](/docs/invoices)     | Array of invoices associated with the sales order                                                         |
-| addresses       | [Address](/docs/address)      | Array of addresses associated with this sales order                                                       |
-| contact         | [Contact](/docs/contacts)     | The contact associated with this sales order                                                              |
+| Property        | Type                          | Description                                                                                                             |
+| --------------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| platform_id     | string                        | Platform's ID for the sales order                                                                                       |
+| contact_id      | string                        | The accounting platform's unique ID of the contact associated with this sales order                                     |
+| document_number | string                        | Reference number for the sales order                                                                                    |
+| posted_date     | string                        | Date of creation of the sales order                                                                                     |
+| delivery_date   | string                        | The delivery date for the sales order                                                                                   |
+| description     | string                        | Description of the sales order                                                                                          |
+| payment_mode    | string                        | The payment mode from which the payment was made                                                                        |
+| currency        | string                        | The ISO-4217 currency code                                                                                              |
+| currency_rate   | float                         | Rate between the currency of the payment and the base currency                                                          |
+| status          | enum                          | The status of the sales order. Values are: `DRAFT`, `SUBMITTED`, `PARTIALLY_PAID`, `PAID`, `OVERDUE`, `VOID`, `UNKNOWN` |
+| total_discount  | float                         | Total value of discounts applied to the sales order                                                                     |
+| tax_amount      | float                         | Total tax amount levied on the sales order                                                                              |
+| sub_total       | float                         | Total pre tax value of the sales order                                                                                  |
+| total_amount    | float                         | Total value of the sales order                                                                                          |
+| line_items      | [Line Item](/docs/line-items) | Array of Sales Order Line items associated with the purchase order                                                      |
+| invoices        | [Invoice](/docs/invoices)     | Array of invoices associated with the sales order                                                                       |
+| addresses       | [Address](/docs/address)      | Array of addresses associated with this sales order                                                                     |
+| contact         | [Contact](/docs/contacts)     | The contact associated with this sales order                                                                            |
 
 <ResponseExample name="The Bank Transaction Object" >
 
