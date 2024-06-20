@@ -211,6 +211,7 @@
         {
           "group": "Sync",
           "pages": [
+            "api-reference/v3/core/sync/get-sync-config",
             "api-reference/v3/core/sync/sync-data",
             "api-reference/v3/core/sync/get-all-sync",
             "api-reference/v3/core/sync/get-all-sync-by-id",

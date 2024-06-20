@@ -5447,6 +5447,7 @@ paths:
                                 concurrent_calls: 10
                             sync_config:
                               data_model: ACCOUNTS
+                              category: ACCOUNTING
                               enabled: true
                               frequency: DAILY
                               interval: 1
@@ -5634,6 +5635,7 @@ paths:
                                 CREATE: true
                                 UPDATE: true
                                 DELETE: true
+                              category: ACCOUNTING
                             category: ACCOUNTING
                     next: https://api.fern.com/core/invite_links?limit=1&next=1
       summary: Get Invite Links
@@ -5688,6 +5690,7 @@ paths:
                     - ACCOUNTING
                   sync_config:
                     data_model: ACCOUNTS
+                    category: ACCOUNTING
                     enabled: true
                     frequency: DAILY
                     interval: 1
@@ -5766,6 +5769,7 @@ paths:
                               CREATE: true
                               UPDATE: true
                               DELETE: true
+                            category: ACCOUNTING
                           category: ACCOUNTING
       summary: Get Invite Link
       security: *ref_0
@@ -5838,6 +5842,7 @@ paths:
                               CREATE: true
                               UPDATE: true
                               DELETE: true
+                            category: ACCOUNTING
                           category: ACCOUNTING
       summary: Update Invite Link
       security: *ref_0
@@ -5858,6 +5863,7 @@ paths:
                     - ACCOUNTING
                   sync_config:
                     data_model: ACCOUNTS
+                    category: ACCOUNTING
                     enabled: true
                     frequency: DAILY
                     interval: 1
@@ -6032,6 +6038,28 @@ paths:
                   variables:
                     per_page: 100
                     page: 1
+  /core/syncs/config:
+    get:
+      description: Retrieve the sync config for your organization.
+      operationId: core_syncs_config
+      tags:
+        - CoreSyncs
+      parameters:
+        - name: category
+          in: query
+          description: The integration category whose sync config you want to retrieve
+          required: true
+          schema:
+            $ref: '#/components/schemas/IntegrationCategory'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/coregetSyncConfigObject'
+      summary: Get Sync Config
+      security: *ref_0
   /core/syncs:
     get:
       description: Retrieve all syncs from the database.
@@ -13782,6 +13810,18 @@ components:
         - company_id
         - data_model
         - variables
+    coregetSyncConfigObject:
+      title: coregetSyncConfigObject
+      type: object
+      description: The data of the sync config endpoint
+      properties:
+        sync_config:
+          type: array
+          items:
+            $ref: '#/components/schemas/SyncConfigData'
+          description: The sync configuration data for your organization
+      required:
+        - sync_config
     coregetSyncsObject:
       title: coregetSyncsObject
       type: object
@@ -15289,10 +15329,11 @@ components:
       title: IntegrationCategory
       type: string
       enum:
-        - PAYMENTS
         - ACCOUNTING
+        - PAYMENTS
         - CRM
         - ECOMMERCE
+        - CUSTOM
     DataModels:
       title: DataModels
       type: string
@@ -16399,6 +16440,9 @@ components:
         data_model:
           $ref: '#/components/schemas/DataModels'
           description: The data model of the sync configuration
+        category:
+          $ref: '#/components/schemas/IntegrationCategory'
+          description: The category of the datamodel
         scope_access:
           $ref: '#/components/schemas/ScopeAccess'
           description: The scope access of the sync configuration
@@ -16413,6 +16457,7 @@ components:
         - interval
         - frequency
         - data_model
+        - category
         - scope_access
     DeleteResponse:
       title: DeleteResponse
