@@ -85,38 +85,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -156,7 +142,14 @@ paths:
       operationId: accounting_accounts_create
       tags:
         - AccountingAccounts
-      parameters: []
+      parameters:
+        - name: run_async
+          in: query
+          description: Run the request asynchronously
+          required: false
+          schema:
+            type: boolean
+            nullable: true
       responses:
         '200':
           description: ''
@@ -234,14 +227,14 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: sort[period_end]
           in: query
           description: The period end date of the income statement
@@ -415,38 +408,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -481,7 +460,14 @@ paths:
       operationId: accounting_bankAccounts_create
       tags:
         - AccountingBankAccounts
-      parameters: []
+      parameters:
+        - name: run_async
+          in: query
+          description: Run the request asynchronously
+          required: false
+          schema:
+            type: boolean
+            nullable: true
       responses:
         '200':
           description: ''
@@ -609,38 +595,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -681,7 +653,14 @@ paths:
       operationId: accounting_bankTransactions_create
       tags:
         - AccountingBankTransactions
-      parameters: []
+      parameters:
+        - name: run_async
+          in: query
+          description: Run the request asynchronously
+          required: false
+          schema:
+            type: boolean
+            nullable: true
       responses:
         '200':
           description: ''
@@ -821,38 +800,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -911,7 +876,14 @@ paths:
       operationId: accounting_billCreditNotes_create
       tags:
         - AccountingBillCreditNotes
-      parameters: []
+      parameters:
+        - name: run_async
+          in: query
+          description: Run the request asynchronously
+          required: false
+          schema:
+            type: boolean
+            nullable: true
       responses:
         '200':
           description: ''
@@ -1075,38 +1047,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
         - name: expand
           in: query
           description: >-
@@ -1160,7 +1118,14 @@ paths:
       operationId: accounting_billPayments_create
       tags:
         - AccountingBillPayments
-      parameters: []
+      parameters:
+        - name: run_async
+          in: query
+          description: Run the request asynchronously
+          required: false
+          schema:
+            type: boolean
+            nullable: true
       responses:
         '200':
           description: ''
@@ -1302,38 +1267,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -1396,7 +1347,14 @@ paths:
       operationId: accounting_bills_create
       tags:
         - AccountingBills
-      parameters: []
+      parameters:
+        - name: run_async
+          in: query
+          description: Run the request asynchronously
+          required: false
+          schema:
+            type: boolean
+            nullable: true
       responses:
         '200':
           description: ''
@@ -1632,14 +1590,14 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: sort[period_end]
           in: query
           description: The period end date of the income statement
@@ -1804,38 +1762,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -1956,38 +1900,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -2046,7 +1976,14 @@ paths:
       operationId: accounting_contacts_create
       tags:
         - AccountingContacts
-      parameters: []
+      parameters:
+        - name: run_async
+          in: query
+          description: Run the request asynchronously
+          required: false
+          schema:
+            type: boolean
+            nullable: true
       responses:
         '200':
           description: ''
@@ -2290,38 +2227,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -2423,38 +2346,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -2490,7 +2399,14 @@ paths:
       operationId: accounting_documents_create
       tags:
         - AccountingDocuments
-      parameters: []
+      parameters:
+        - name: run_async
+          in: query
+          description: Run the request asynchronously
+          required: false
+          schema:
+            type: boolean
+            nullable: true
       responses:
         '200':
           description: ''
@@ -2665,38 +2581,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -2755,7 +2657,14 @@ paths:
       operationId: accounting_expenses_create
       tags:
         - AccountingExpenses
-      parameters: []
+      parameters:
+        - name: run_async
+          in: query
+          description: Run the request asynchronously
+          required: false
+          schema:
+            type: boolean
+            nullable: true
       responses:
         '200':
           description: ''
@@ -2877,14 +2786,14 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: sort[period_end]
           in: query
           description: The period end date of the income statement
@@ -3090,38 +2999,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -3180,7 +3075,14 @@ paths:
       operationId: accounting_invoiceCreditNotes_create
       tags:
         - AccountingInvoiceCreditNotes
-      parameters: []
+      parameters:
+        - name: run_async
+          in: query
+          description: Run the request asynchronously
+          required: false
+          schema:
+            type: boolean
+            nullable: true
       responses:
         '200':
           description: ''
@@ -3344,38 +3246,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
         - name: expand
           in: query
           description: >-
@@ -3429,7 +3317,14 @@ paths:
       operationId: accounting_invoicePayments_create
       tags:
         - AccountingInvoicePayments
-      parameters: []
+      parameters:
+        - name: run_async
+          in: query
+          description: Run the request asynchronously
+          required: false
+          schema:
+            type: boolean
+            nullable: true
       responses:
         '200':
           description: ''
@@ -3571,38 +3466,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -3665,7 +3546,14 @@ paths:
       operationId: accounting_invoices_create
       tags:
         - AccountingInvoices
-      parameters: []
+      parameters:
+        - name: run_async
+          in: query
+          description: Run the request asynchronously
+          required: false
+          schema:
+            type: boolean
+            nullable: true
       responses:
         '200':
           description: ''
@@ -3943,38 +3831,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -4021,7 +3895,14 @@ paths:
       operationId: accounting_items_create
       tags:
         - AccountingItems
-      parameters: []
+      parameters:
+        - name: run_async
+          in: query
+          description: Run the request asynchronously
+          required: false
+          schema:
+            type: boolean
+            nullable: true
       responses:
         '200':
           description: ''
@@ -4251,38 +4132,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -4333,7 +4200,14 @@ paths:
       operationId: accounting_journalEntries_create
       tags:
         - AccountingJournalEntries
-      parameters: []
+      parameters:
+        - name: run_async
+          in: query
+          description: Run the request asynchronously
+          required: false
+          schema:
+            type: boolean
+            nullable: true
       responses:
         '200':
           description: ''
@@ -4491,38 +4365,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -4584,7 +4444,14 @@ paths:
       operationId: accounting_purchaseOrders_create
       tags:
         - AccountingPurchaseOrders
-      parameters: []
+      parameters:
+        - name: run_async
+          in: query
+          description: Run the request asynchronously
+          required: false
+          schema:
+            type: boolean
+            nullable: true
       responses:
         '200':
           description: ''
@@ -4766,38 +4633,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -4859,7 +4712,14 @@ paths:
       operationId: accounting_salesOrders_create
       tags:
         - AccountingSalesOrders
-      parameters: []
+      parameters:
+        - name: run_async
+          in: query
+          description: Run the request asynchronously
+          required: false
+          schema:
+            type: boolean
+            nullable: true
       responses:
         '200':
           description: ''
@@ -5029,38 +4889,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -5099,7 +4945,14 @@ paths:
       operationId: accounting_taxRates_create
       tags:
         - AccountingTaxRates
-      parameters: []
+      parameters:
+        - name: run_async
+          in: query
+          description: Run the request asynchronously
+          required: false
+          schema:
+            type: boolean
+            nullable: true
       responses:
         '200':
           description: ''
@@ -5111,24 +4964,24 @@ paths:
                 Example1:
                   value:
                     data:
-                      - rootfi_id: 25177
-                        rootfi_deleted_at: null
-                        rootfi_created_at: '2024-01-24T11:12:02.641Z'
-                        rootfi_updated_at: '2024-01-24T11:12:02.000Z'
-                        rootfi_company_id: 1109
-                        platform_id: '123456_1'
-                        platform_unique_id: '123456'
-                        total_tax_rate: null
-                        name: Victoria Wilson
-                        code: '6609425'
-                        updated_at: '2023-12-21T10:14:26.353Z'
-                        components:
-                          - name: Victoria Wilson
-                            rate: null
-                            tax_agency: null
-                            is_compound: false
-                        effective_tax_rate: null
-                        tax_type: VAT
+                      rootfi_id: 25177
+                      rootfi_deleted_at: null
+                      rootfi_created_at: '2024-01-24T11:12:02.641Z'
+                      rootfi_updated_at: '2024-01-24T11:12:02.000Z'
+                      rootfi_company_id: 1109
+                      platform_id: '123456_1'
+                      platform_unique_id: '123456'
+                      total_tax_rate: null
+                      name: Victoria Wilson
+                      code: '6609425'
+                      updated_at: '2023-12-21T10:14:26.353Z'
+                      components:
+                        - name: Victoria Wilson
+                          rate: null
+                          tax_agency: null
+                          is_compound: false
+                      effective_tax_rate: null
+                      tax_type: VAT
       summary: Create Tax Rate
       security: *ref_0
       requestBody:
@@ -5224,38 +5077,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -5288,7 +5127,14 @@ paths:
       operationId: accounting_trackingCategories_create
       tags:
         - AccountingTrackingCategories
-      parameters: []
+      parameters:
+        - name: run_async
+          in: query
+          description: Run the request asynchronously
+          required: false
+          schema:
+            type: boolean
+            nullable: true
       responses:
         '200':
           description: ''
@@ -6541,38 +6387,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -6677,38 +6509,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -6813,38 +6631,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -6945,38 +6749,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -7085,38 +6875,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -7223,38 +6999,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -7359,38 +7121,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -7493,38 +7241,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -7629,38 +7363,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -7761,38 +7481,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -7887,38 +7593,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -8010,38 +7702,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -8137,38 +7815,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -8275,38 +7939,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -8402,38 +8052,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -8529,38 +8165,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
         - name: expand
           in: query
           description: Comma separated fields to expand. Supported values are line_items
@@ -8686,38 +8308,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -8812,38 +8420,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -8926,14 +8520,14 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: rootfi_updated_at[gte]
           in: query
           description: Filter by rootfi_updated_at Greater than or Equal To.
@@ -8952,28 +8546,14 @@ paths:
             nullable: true
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -9067,38 +8647,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -9213,38 +8779,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -9341,38 +8893,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
         - name: expand
           in: query
           description: Comma separated fields to expand. Supported values are raw_data
@@ -9496,38 +9034,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -9625,38 +9149,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -9752,38 +9262,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
         - name: expand
           in: query
           description: Comma separated fields to expand. Supported values are line_items
@@ -9900,38 +9396,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
         - name: expand
           in: query
           description: >-
@@ -10042,38 +9524,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -10168,38 +9636,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -10279,14 +9733,14 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: rootfi_updated_at[gte]
           in: query
           description: Filter by rootfi_updated_at Greater than or Equal To.
@@ -10305,28 +9759,14 @@ paths:
             nullable: true
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -10425,38 +9865,24 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -10535,14 +9961,14 @@ paths:
           in: query
           description: >-
             Include deleted records. By default, deleted records are not
-            included.
+            included. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
+              value: 'false'
         - name: rootfi_updated_at[gte]
           in: query
           description: Filter by rootfi_updated_at Greater than or Equal To.
@@ -10561,28 +9987,14 @@ paths:
             nullable: true
         - name: return_count
           in: query
-          description: Return the count of the objects
+          description: Return the count of the objects. Supported values are true and false
           required: false
           schema:
-            type: boolean
+            type: string
             nullable: true
           examples:
             Example1:
-              value: false
-        - name: sort[rootfi_created_at]
-          in: query
-          description: Sort by rootfi_created_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
-        - name: sort[rootfi_updated_at]
-          in: query
-          description: Sort by rootfi_updated_at
-          required: false
-          schema:
-            $ref: '#/components/schemas/SortOrder'
-            nullable: true
+              value: 'false'
       responses:
         '200':
           description: ''
@@ -10714,9 +10126,12 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/accountingAccountObject'
+          nullable: true
           description: The data of the accounts endpoint
-      required:
-        - data
+        sync_id:
+          type: string
+          nullable: true
+          description: The sync id of the account
     accountingBalanceSheetFields:
       title: accountingBalanceSheetFields
       type: object
@@ -10852,9 +10267,12 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/accountingBankAccountObject'
+          nullable: true
           description: The data of the created bank account
-      required:
-        - data
+        sync_id:
+          type: string
+          nullable: true
+          description: The sync id of the account
     accountingBankTransactionFields:
       title: accountingBankTransactionFields
       type: object
@@ -10966,9 +10384,12 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/accountingBankTransactionObject'
+          nullable: true
           description: The data of the created bank account
-      required:
-        - data
+        sync_id:
+          type: string
+          nullable: true
+          description: The sync id of the account
     accountingBillCreditNoteFields:
       title: accountingBillCreditNoteFields
       type: object
@@ -11081,9 +10502,12 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/accountingBillCreditNoteObject'
+          nullable: true
           description: The data of the created bill credit note
-      required:
-        - data
+        sync_id:
+          type: string
+          nullable: true
+          description: The sync id of the account
     accountingBillPaymentsFields:
       title: accountingBillPaymentsFields
       type: object
@@ -11202,9 +10626,12 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/accountingBillPaymentsObject'
+          nullable: true
           description: The data of the bill payments endpoint
-      required:
-        - data
+        sync_id:
+          type: string
+          nullable: true
+          description: The sync id of the account
     accountingBillFields:
       title: accountingBillFields
       type: object
@@ -11442,9 +10869,12 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/accountingBillObject'
+          nullable: true
           description: The data of the created bill
-      required:
-        - data
+        sync_id:
+          type: string
+          nullable: true
+          description: The sync id of the account
     accountingCashFlowStatementFields:
       title: accountingCashFlowStatementFields
       type: object
@@ -11873,8 +11303,11 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/accountingContactObject'
-      required:
-        - data
+          nullable: true
+        sync_id:
+          type: string
+          nullable: true
+          description: The sync id of the account
     accountingCurrencyFields:
       title: accountingCurrencyFields
       type: object
@@ -11984,9 +11417,12 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/accountingDocumentObject'
+          nullable: true
           description: The data of the created document
-      required:
-        - data
+        sync_id:
+          type: string
+          nullable: true
+          description: The sync id of the account
     accountingDownloadDocumentFields:
       title: accountingDownloadDocumentFields
       type: object
@@ -12165,9 +11601,12 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/accountingExpenseObject'
+          nullable: true
           description: The data of the created Expense
-      required:
-        - data
+        sync_id:
+          type: string
+          nullable: true
+          description: The sync id of the account
     accountingIncomeStatementFields:
       title: accountingIncomeStatementFields
       type: object
@@ -12376,9 +11815,12 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/accountingInvoiceCreditNoteObject'
+          nullable: true
           description: The data of the created invoice credit note
-      required:
-        - data
+        sync_id:
+          type: string
+          nullable: true
+          description: The sync id of the account
     accountingInvoicePaymentsFields:
       title: accountingInvoicePaymentsFields
       type: object
@@ -12497,9 +11939,12 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/accountingInvoicePaymentsObject'
+          nullable: true
           description: The data of the invoice payments endpoint
-      required:
-        - data
+        sync_id:
+          type: string
+          nullable: true
+          description: The sync id of the account
     accountingInvoiceFields:
       title: accountingInvoiceFields
       type: object
@@ -12734,9 +12179,12 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/accountingInvoiceObject'
+          nullable: true
           description: The data of the created invoice
-      required:
-        - data
+        sync_id:
+          type: string
+          nullable: true
+          description: The sync id of the account
     accountingItemFields:
       title: accountingItemFields
       type: object
@@ -12859,9 +12307,12 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/accountingItemObject'
+          nullable: true
           description: List of items
-      required:
-        - data
+        sync_id:
+          type: string
+          nullable: true
+          description: The sync id of the account
     accountingItemDetail:
       title: accountingItemDetail
       type: object
@@ -12989,9 +12440,12 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/accountingJournalEntryObject'
+          nullable: true
           description: The data of the created JournalEntry
-      required:
-        - data
+        sync_id:
+          type: string
+          nullable: true
+          description: The sync id of the account
     accountingPurchaseOrdersFields:
       title: accountingPurchaseOrdersFields
       type: object
@@ -13118,9 +12572,12 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/accountingPurchaseOrdersObject'
+          nullable: true
           description: The data of the created bill credit note
-      required:
-        - data
+        sync_id:
+          type: string
+          nullable: true
+          description: The sync id of the account
     accountingSalesOrdersFields:
       title: accountingSalesOrdersFields
       type: object
@@ -13247,9 +12704,12 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/accountingSalesOrdersObject'
+          nullable: true
           description: The data of the created invoice credit note
-      required:
-        - data
+        sync_id:
+          type: string
+          nullable: true
+          description: The sync id of the account
     accountingTaxRateFields:
       title: accountingTaxRateFields
       type: object
@@ -13355,12 +12815,13 @@ components:
       type: object
       properties:
         data:
-          type: array
-          items:
-            $ref: '#/components/schemas/accountingTaxRateObject'
+          $ref: '#/components/schemas/accountingTaxRateObject'
+          nullable: true
           description: The list of tax rates
-      required:
-        - data
+        sync_id:
+          type: string
+          nullable: true
+          description: The sync id of the account
     accountingTrackingCategoryFields:
       title: accountingTrackingCategoryFields
       type: object
@@ -13411,9 +12872,12 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/accountingTrackingCategoryObject'
+          nullable: true
           description: The data of the tracking categories endpoint
-      required:
-        - data
+        sync_id:
+          type: string
+          nullable: true
+          description: The sync id of the account
     accountingGetTrackingCategoryResponse:
       title: accountingGetTrackingCategoryResponse
       type: object
@@ -16451,7 +15915,9 @@ components:
           items:
             type: string
           nullable: true
-          description: The custom field names to fetch during syncing (for Netsuite and Hubspot only)
+          description: >-
+            The custom field names to fetch during syncing (for Netsuite,
+            Hubspot only)
       required:
         - enabled
         - interval
