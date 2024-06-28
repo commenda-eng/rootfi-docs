@@ -90,7 +90,8 @@
         "documentation/concepts/webhooks",
         "documentation/concepts/error-handling",
         "documentation/concepts/data-storage",
-        "documentation/concepts/partner-credentials"
+        "documentation/concepts/partner-credentials",
+        "documentation/concepts/custom-data"
       ]
     },
     {
@@ -211,6 +212,7 @@
         {
           "group": "Sync",
           "pages": [
+            "api-reference/v3/core/sync/get-sync-config",
             "api-reference/v3/core/sync/sync-data",
             "api-reference/v3/core/sync/get-all-sync",
             "api-reference/v3/core/sync/get-all-sync-by-id",
