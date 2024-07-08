@@ -88,3 +88,26 @@ const data = await rootfi.accounting.accounts.list({
 });
 ```
 </CodeGroup>
+
+## Error Handling
+
+The SDK throws an error when the API request fails. You can catch the error and handle it as shown below:
+
+<CodeGroup>
+```javascript NodeJS
+  try {
+      const rootfiClient = new RootFiClient({ apiKey: "***" });
+      await rootfiClient.core.syncs.create({...});
+    } catch (e: any) {
+      const error = e as RootFiError;
+      const statusCode = error.statusCode;
+      const errorResponse = (error.body as any)?.error;
+
+      const { code, field, message } = errorResponse;
+
+      // Handle the error based on Error Code
+    }
+
+```
+</CodeGroup>
+```
