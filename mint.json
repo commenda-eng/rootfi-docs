@@ -452,6 +452,10 @@
               ]
             },
             {
+              "group": "Goods Receipt Notes",
+              "pages": ["api-reference/v3/accounting/goods-receipt-notes/overview", "api-reference/v3/accounting/goods-receipt-notes/get-all-goods-receipt-notes"]
+            },
+            {
               "group": "Tax Rates",
               "pages": [
                 "api-reference/v3/accounting/tax-rates/overview",
