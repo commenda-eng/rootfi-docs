@@ -283,7 +283,7 @@
                 "api-reference/v3/accounting/bank-transactions/overview",
                 "api-reference/v2/accounting/bank-transactions/overview",
                 "api-reference/v3/accounting/bank-transactions/get-all-bank-transactions",
-                "api-reference/v2/accounting/bank-transactions/get-all-bank-transactions"
+                "api-reference/v3/accounting/bank-transactions/create-bank-transactions"
               ]
             },
             {
@@ -568,7 +568,11 @@
           "pages": [
             {
               "group": "Customers",
-              "pages": ["api-reference/v3/ecommerce/customers/overview", "api-reference/v3/ecommerce/customers/get-all-customers"]
+              "pages": [
+                "api-reference/v3/ecommerce/customers/overview",
+                "api-reference/v3/ecommerce/customers/get-all-customers",
+                "api-reference/v3/ecommerce/customers/create-customers"
+              ]
             },
             {
               "group": "Orders",
@@ -576,7 +580,11 @@
             },
             {
               "group": "Products",
-              "pages": ["api-reference/v3/ecommerce/products/overview", "api-reference/v3/ecommerce/products/get-all-products"]
+              "pages": [
+                "api-reference/v3/ecommerce/products/overview",
+                "api-reference/v3/ecommerce/products/get-all-products",
+                "api-reference/v3/ecommerce/products/create-products"
+              ]
             },
             {
               "group": "Balances",
