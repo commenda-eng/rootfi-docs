@@ -283,7 +283,7 @@
                 "api-reference/v3/accounting/bank-transactions/overview",
                 "api-reference/v2/accounting/bank-transactions/overview",
                 "api-reference/v3/accounting/bank-transactions/get-all-bank-transactions",
-                "api-reference/v2/accounting/bank-transactions/get-all-bank-transactions"
+                "api-reference/v3/accounting/bank-transactions/create-bank-transactions"
               ]
             },
             {

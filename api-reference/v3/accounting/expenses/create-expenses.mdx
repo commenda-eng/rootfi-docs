@@ -4,3 +4,12 @@ openapi: openapi_v3 post /accounting/expenses
 ---
 
 **Expenses** are Payment made by a business at the time of purchase (ex. a credit card payment)
+
+## Additional Required Fields
+
+To successfully create a expense, certain fields must be included in the raw_data object of the request body. The required fields are as follows:
+
+| Integration | Field                   | Description                                                               | Required |
+| ----------- | ----------------------- | ------------------------------------------------------------------------- | -------- |
+| WAFEQ       | paid_through_account_id | The account ID of the account that the expense was paid through.          | Yes      |
+| WAFEQ       | branch                  | The tracking category ID of the branch that the expense was paid through. | No       |

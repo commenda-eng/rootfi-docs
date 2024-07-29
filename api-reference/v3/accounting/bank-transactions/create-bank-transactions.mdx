@@ -4,3 +4,15 @@ openapi: openapi_v3 post /accounting/bank_transactions
 ---
 
 **Bank Transactions** include the Transactional banking data for a specific company and account.
+
+## Additional Required Fields
+
+To successfully create an bank transaction, certain fields must be included in the raw_data object of the request body. The required fields are as follows:
+
+| Integration           | Field           | Description                                                 | Required |
+| --------------------- | --------------- | ----------------------------------------------------------- | -------- |
+| ZOHO_BOOKS            | from_account_id | The ID of the account from which the amount is transferred. | Yes      |
+| XERO                  | from_account_id | The ID of the account from which the amount is transferred. | Yes      |
+| FRESH_BOOKS           | reference       | The reference for the transaction.                          | Yes      |
+| MYOB_BUSINESS         | tax_id          | The ID of the tax applied to the transaction.               | Yes      |
+| SAGE_CLOUD_ACCOUNTING | reference       | The reference for the transaction.                          | Yes      |
