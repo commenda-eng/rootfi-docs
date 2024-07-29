@@ -3293,184 +3293,6 @@ paths:
                           tax_amount: 100
                           total_discount: 100
                           updated_at: '2024-01-22T05:07:31.000Z'
-  /accounting/goods_receipt_notes:
-    get:
-      description: Retrieve all Goods Receipt Notes.
-      operationId: accounting_goodsReceiptNotes_list
-      tags:
-        - AccountingGoodsReceiptNotes
-      parameters:
-        - name: limit
-          in: query
-          description: The number of objects you want to retrieve
-          required: false
-          schema:
-            type: integer
-            nullable: true
-          examples:
-            Example1:
-              value: 10
-        - name: next
-          in: query
-          description: The next page of objects to retrieve
-          required: false
-          schema:
-            type: string
-            nullable: true
-          examples:
-            Example1:
-              value: eyJyb290ZmlfaWQiOjQ0MDA2MX0=
-        - name: prev
-          in: query
-          description: The previous page of objects to retrieve
-          required: false
-          schema:
-            type: string
-            nullable: true
-          examples:
-            Example1:
-              value: eyJyb290ZmaaqaWQiOjQ0MDA2MX0=
-        - name: expand
-          in: query
-          description: Comma separated fields to expand.
-          required: false
-          schema:
-            type: string
-            nullable: true
-        - name: select
-          in: query
-          description: >-
-            Comma separated fields to select. Supported values are raw_data,
-            data_hash
-          required: false
-          schema:
-            type: string
-            nullable: true
-          examples:
-            Example1:
-              value: raw_data
-        - name: rootfi_updated_at[gte]
-          in: query
-          description: Filter by rootfi_updated_at Greater than or Equal To.
-          required: false
-          schema:
-            type: string
-            nullable: true
-        - name: rootfi_company_id[eq]
-          in: query
-          description: >-
-            Filter by rootfi_company_id. You can filter by any field using this
-            syntax field_name[operator]
-          required: false
-          schema:
-            type: integer
-            nullable: true
-          examples:
-            Example1:
-              value: 111
-        - name: include_deleted_records
-          in: query
-          description: >-
-            Include deleted records. By default, deleted records are not
-            included. Supported values are true and false
-          required: false
-          schema:
-            type: string
-            nullable: true
-          examples:
-            Example1:
-              value: 'false'
-        - name: return_count
-          in: query
-          description: Return the count of the objects. Supported values are true and false
-          required: false
-          schema:
-            type: string
-            nullable: true
-          examples:
-            Example1:
-              value: 'false'
-      responses:
-        '200':
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/accountingGetGoodsReceiptNotesResponse'
-              examples:
-                Example1:
-                  value:
-                    data:
-                      - rootfi_id: 123
-                        rootfi_deleted_at: null
-                        rootfi_created_at: '2024-01-25T09:00:00Z'
-                        rootfi_updated_at: '2024-01-25T09:00:00Z'
-                        rootfi_company_id: 456
-                        platform_id: '123456_1'
-                        platform_unique_id: '123456'
-                        description: Example Description
-                        sub_total: 1000
-                        total_amount: 1100
-                        total_discount: 100
-                        tax_amount: 100
-                        updated_at: '2024-01-25T09:00:00Z'
-                        payment_mode: Example Payment Mode
-                        delivery_date: '2024-01-25T09:00:00Z'
-                        purchase_order_ids:
-                          - '123456'
-                        currency_id: '123456'
-                        currency_rate: 1
-                        document_number: '123456'
-                        posted_date: '2024-01-25T09:00:00Z'
-                        status: Example Status
-                        contact_id: '123456'
-                        line_items:
-                          - rootfi_id: 157
-                            platform_id: '123456'
-                            line_item_type: INVOICES
-                            line_item_type_id: '123456'
-                            tracking_category_ids:
-                              - '123456'
-                            item_id: '123456'
-                            tax_id: '123456'
-                            account_id: '123456'
-                            description: This is a description
-                            quantity: 1
-                            unit_amount: 100
-                            total_amount: 100
-                            sub_total: 100
-                            tax_amount: 100
-                            total_discount: 100
-                            updated_at: '2024-01-22T05:07:31.000Z'
-                    prev: eyJyb290ZmlfaWQiOjQ0MDA2MX0=
-                    next: eyJyb291ZmlfaWQiOjQ0MDA2MX0=
-                    total_count: 123
-        '401':
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RootFiAPIResponseType'
-        '403':
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RootFiAPIResponseType'
-        '404':
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RootFiAPIResponseType'
-        '500':
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RootFiAPIResponseType'
-      summary: Get All Goods Receipt Notes
-      security: *ref_0
   /accounting/income_statement:
     get:
       description: Retrieve Income Statement from the database.
@@ -6734,6 +6556,7 @@ paths:
                                 UPDATE: true
                                 DELETE: true
                               category: ACCOUNTING
+                              sync_from: '2023-01-01T00:00:00Z'
                             category: ACCOUNTING
                     next: https://api.fern.com/core/invite_links?limit=1&next=1
         '401':
@@ -6845,6 +6668,7 @@ paths:
                       CREATE: true
                       UPDATE: true
                       DELETE: true
+                    sync_from: '2023-01-01T00:00:00Z'
   /core/invite_links/{invite_link_id}:
     get:
       description: Retrieve a single invite link from the database.
@@ -6916,6 +6740,7 @@ paths:
                               UPDATE: true
                               DELETE: true
                             category: ACCOUNTING
+                            sync_from: '2023-01-01T00:00:00Z'
                           category: ACCOUNTING
         '401':
           description: ''
@@ -7013,6 +6838,7 @@ paths:
                               UPDATE: true
                               DELETE: true
                             category: ACCOUNTING
+                            sync_from: '2023-01-01T00:00:00Z'
                           category: ACCOUNTING
         '401':
           description: ''
@@ -7066,6 +6892,7 @@ paths:
                       CREATE: true
                       UPDATE: true
                       DELETE: true
+                    sync_from: '2023-01-01T00:00:00Z'
     delete:
       description: Delete a single invite link from the database.
       operationId: core_inviteLinks_delete
@@ -9875,6 +9702,101 @@ paths:
                 $ref: '#/components/schemas/RootFiAPIResponseType'
       summary: Get All  Customers
       security: *ref_0
+    post:
+      description: Create a customer.
+      operationId: ecommerce_customers_create
+      tags:
+        - EcommerceCustomers
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ecommerceCreateCustomersResponse'
+              examples:
+                Example1:
+                  value:
+                    data:
+                      - rootfi_id: 157
+                        rootfi_deleted_at: null
+                        rootfi_created_at: '2024-01-22T05:07:31.465Z'
+                        rootfi_updated_at: '2024-01-22T05:07:31.000Z'
+                        rootfi_company_id: 1089
+                        platform_id: '123456_1'
+                        platform_unique_id: '123456'
+                        name: John Doe
+                        email: ''
+                        phone: '1234567890'
+                        currency_id: '1234567890'
+                        status: ACTIVE
+                        updated_at: '2024-01-22T05:07:31.465Z'
+                        created_at: '2024-01-22T05:07:31.465Z'
+                        address:
+                          rootfi_id: 278264
+                          platform_id: >-
+                            CONTACTS_1af68894-ea9f-ee11-be36-7c1e520f50bc_ADDRESS
+                          street: 123 Main Street
+                          locality: Main Street
+                          city: New York
+                          state: New York
+                          pincode: '123456'
+                          country: USA
+                    sync_id: '1234567890'
+        '401':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '403':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '404':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '500':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+      summary: Create Customer
+      security: *ref_0
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ecommerceCreateCustomersRequest'
+            examples:
+              Example1:
+                value:
+                  company_id: 1089
+                  data:
+                    - name: John Doe
+                      email: ''
+                      phone: '1234567890'
+                      currency_id: '1234567890'
+                      status: ACTIVE
+                      updated_at: '2024-01-22T05:07:31.465Z'
+                      created_at: '2024-01-22T05:07:31.465Z'
+                      address:
+                        rootfi_id: 278264
+                        platform_id: CONTACTS_1af68894-ea9f-ee11-be36-7c1e520f50bc_ADDRESS
+                        street: 123 Main Street
+                        locality: Main Street
+                        city: New York
+                        state: New York
+                        pincode: '123456'
+                        country: USA
   /ecommerce/fulfillments:
     get:
       description: Retrieve all fulfillments from the database.
@@ -10452,6 +10374,77 @@ paths:
                 $ref: '#/components/schemas/RootFiAPIResponseType'
       summary: Get All Products
       security: *ref_0
+    post:
+      description: Create a product.
+      operationId: ecommerce_products_create
+      tags:
+        - EcommerceProducts
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ecommerceCreateProductResponse'
+              examples:
+                Example1:
+                  value:
+                    data:
+                      rootfi_id: 157
+                      rootfi_deleted_at: null
+                      rootfi_created_at: '2024-01-22T05:07:31.465Z'
+                      rootfi_updated_at: '2024-01-22T05:07:31.000Z'
+                      rootfi_company_id: 1089
+                      platform_id: '123456_1'
+                      platform_unique_id: '123456'
+                      name: John Doe
+                      description: John Doe
+                      status: ACTIVE
+                      created_at: '2024-01-22T05:07:31.465Z'
+                      updated_at: '2024-01-22T05:07:31.000Z'
+        '401':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '403':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '404':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '500':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+      summary: Create a Product
+      security: *ref_0
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ecommerceCreateProductRequest'
+            examples:
+              Example1:
+                value:
+                  company_id: 123
+                  data:
+                    - name: John Doe
+                      description: John Doe
+                      status: ACTIVE
+                      created_at: '2024-01-22T05:07:31.465Z'
+                      updated_at: '2024-01-22T05:07:31.000Z'
   /ecommerce/transactions:
     get:
       description: Retrieve all transactions from the database.
@@ -14041,111 +14034,6 @@ components:
           type: string
           nullable: true
           description: The sync id of the request
-    accountingGoodsReceiptNotesFields:
-      title: accountingGoodsReceiptNotesFields
-      type: object
-      properties:
-        description:
-          type: string
-          nullable: true
-          description: The description of the goods receipt note
-        sub_total:
-          type: number
-          format: double
-          nullable: true
-          description: The sub total of the goods receipt note
-        total_amount:
-          type: number
-          format: double
-          nullable: true
-          description: The total amount of the goods receipt note
-        total_discount:
-          type: number
-          format: double
-          nullable: true
-          description: The total discount of the goods receipt note
-        tax_amount:
-          type: number
-          format: double
-          nullable: true
-          description: The tax amount of the goods receipt note
-        updated_at:
-          type: string
-          nullable: true
-          description: The updated at of the goods receipt note
-        payment_mode:
-          type: string
-          nullable: true
-          description: The payment mode of the goods receipt note
-        delivery_date:
-          type: string
-          nullable: true
-          description: The delivery date of the goods receipt note
-        purchase_order_ids:
-          type: array
-          items:
-            type: string
-          nullable: true
-          description: The purchase order IDs of the goods receipt note
-        currency_id:
-          type: string
-          nullable: true
-          description: The currency ID of the goods receipt note
-        currency_rate:
-          type: number
-          format: double
-          nullable: true
-          description: The currency rate of the goods receipt note
-        document_number:
-          type: string
-          nullable: true
-          description: The document number of the goods receipt note
-        posted_date:
-          type: string
-          nullable: true
-          description: The posted date of the goods receipt note
-        status:
-          type: string
-          nullable: true
-          description: The status of the goods receipt note
-        contact_id:
-          type: string
-          nullable: true
-          description: The contact ID of the goods receipt note
-        line_items:
-          type: array
-          items:
-            $ref: '#/components/schemas/LineItemFields'
-          nullable: true
-          description: The line items of the goods receipt note.
-    accountingGoodsReceiptNoteObject:
-      title: accountingGoodsReceiptNoteObject
-      type: object
-      properties:
-        currency:
-          $ref: '#/components/schemas/accountingCurrencyObject'
-          nullable: true
-          description: The currency of the invoice
-        contact:
-          $ref: '#/components/schemas/accountingContactAllFields'
-          nullable: true
-          description: The contact of the invoice
-      allOf:
-        - $ref: '#/components/schemas/AccountingRootFiBaseFields'
-        - $ref: '#/components/schemas/accountingGoodsReceiptNotesFields'
-    accountingGetGoodsReceiptNotesResponse:
-      title: accountingGetGoodsReceiptNotesResponse
-      type: object
-      description: The data of the invoices endpoint
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/accountingGoodsReceiptNoteObject'
-      required:
-        - data
-      allOf:
-        - $ref: '#/components/schemas/CommonReadResponse'
     accountingIncomeStatementFields:
       title: accountingIncomeStatementFields
       type: object
@@ -16947,6 +16835,34 @@ components:
           type: string
           nullable: true
           description: The country of the address
+    ecommerceCreateCustomersRequest:
+      title: ecommerceCreateCustomersRequest
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/ecommerceCustomersFields'
+          description: The data of the customer endpoint
+      required:
+        - data
+      allOf:
+        - $ref: '#/components/schemas/CompanyIDRequestField'
+    ecommerceCreateCustomersResponse:
+      title: ecommerceCreateCustomersResponse
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/ecommerceCustomerObject'
+          description: The data of the customer endpoint
+        sync_id:
+          type: string
+          nullable: true
+          description: The sync id of the request
+      required:
+        - data
     ecommerceFulfillmentsFields:
       title: ecommerceFulfillmentsFields
       type: object
@@ -17192,6 +17108,31 @@ components:
         - data
       allOf:
         - $ref: '#/components/schemas/CommonReadResponse'
+    ecommerceCreateProductRequest:
+      title: ecommerceCreateProductRequest
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/ecommerceProductsFields'
+          description: The data of the products endpoint
+      required:
+        - data
+      allOf:
+        - $ref: '#/components/schemas/CompanyIDRequestField'
+    ecommerceCreateProductResponse:
+      title: ecommerceCreateProductResponse
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/ecommerceProductObject'
+          nullable: true
+          description: The data of the products endpoint
+        sync_id:
+          type: string
+          nullable: true
+          description: The sync id of the request
     ecommerceTransactionsFields:
       title: ecommerceTransactionsFields
       type: object
@@ -18489,6 +18430,13 @@ components:
         scope_access:
           $ref: '#/components/schemas/ScopeAccess'
           description: The scope access of the sync configuration
+        sync_from:
+          type: string
+          format: date-time
+          nullable: true
+          description: >-
+            The date from which the data should be synced. If not provided, it
+            will sync all historical data.
         custom_fields:
           type: array
           items:
