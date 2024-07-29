@@ -5,6 +5,15 @@ openapi: openapi_v3 post /accounting/purchase_orders
 
 A **Purchase Order** is a record of goods or services purchased from a vendor
 
+## Additional Required Fields
+
+To successfully create a purchase order, certain fields must be included in the raw_data object of the request body. The required fields are as follows:
+
+| Integration           | Field    | Description                         |
+| --------------------- | -------- | ----------------------------------- |
+| SAGE_CLOUD_ACCOUNTING | tax_code | The tax code for the purchase order |
+| MYOB_BUSINESS         | tax_code | The tax code for the purchase order |
+
 <RequestExample>
 
 ```bash cURL

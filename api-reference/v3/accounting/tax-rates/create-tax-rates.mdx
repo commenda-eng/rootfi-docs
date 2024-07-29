@@ -7,6 +7,15 @@ A [Tax Rate](https://docs.rootfi.dev/api-reference/tax-rates/overview) is the pe
 
 [he Tax Rates Data Model] is designed to provide a unified representation of tax rates across various accounting platforms.
 
+## Additional Required Fields
+
+To successfully create an tax rate, certain fields must be included in the raw_data object of the request body. The required fields are as follows:
+
+| Integration   | Field               | Description                                                                               |
+| ------------- | ------------------- | ----------------------------------------------------------------------------------------- |
+| MEKARI_JURNAL | buy_tax_account_id  | The ID of the account that will be used to record the tax amount when a purchase is made. |
+| MEKARI_JURNAL | sell_tax_account_id | The ID of the account that will be used to record the tax amount when a sale is made.     |
+
 <RequestExample>
 
 ```bash cURL
