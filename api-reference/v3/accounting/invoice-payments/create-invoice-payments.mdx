@@ -9,10 +9,10 @@ openapi: openapi_v3 post /accounting/invoice_payments
 
 To successfully create an invoice payment, certain fields must be included in the raw_data object of the request body. The required fields are as follows:
 
-| Integration     | Field              | Description                                            | Required |
-| --------------- | ------------------ | ------------------------------------------------------ | -------- |
-| MS_DYNAMICS_365 | payment_journal_id | The ID of the payment journal.                         | Yes      |
-| NETSUITE        | arr_account_id     | The ID of the account to which the payment is applied. | Yes      |
+| Integration     | Field              | Description                                            |
+| --------------- | ------------------ | ------------------------------------------------------ |
+| MS_DYNAMICS_365 | payment_journal_id | The ID of the payment journal.                         |
+| NETSUITE        | arr_account_id     | The ID of the account to which the payment is applied. |
 
 <RequestExample>
 

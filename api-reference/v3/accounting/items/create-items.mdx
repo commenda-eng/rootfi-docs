@@ -9,17 +9,15 @@ openapi: openapi_v3 post /accounting/items
 
 To successfully create an item, certain fields must be included in the raw_data object of the request body. The required fields are as follows:
 
-| Integration        | Field                      | Description                                                                                        | Required |
-| ------------------ | -------------------------- | -------------------------------------------------------------------------------------------------- | -------- |
-| NETSUITE           | taxschedule                | The ID of the tax schedule associated with the item.                                               | Yes      |
-| MS_DYNAMICS_365_FO | ProductNumber              | The product number of the item.                                                                    | Yes      |
-| MYOB_BUSINESS      | asset_account_id           | The ID of the asset account associated with the item.                                              | Yes      |
-| QOYOD              | product_unit_type_id       | The ID of the product unit type associated with the item.                                          | Yes      |
-| QOYOD              | category_id                | The ID of the category associated with the item.                                                   | Yes      |
-| QOYOD              | track_quantity             | Whether the item should track quantity.                                                            | Yes      |
-| QOYOD              | tax_id                     | The ID of the tax associated with the item.                                                        | Yes      |
-| QUICKBOOKS         | InvStartDate               | The date the item was purchased.                                                                   | No       |
-| QUICKBOOKS         | inventory_asset_account_id | The ID of the inventory asset account associated with the item. Only required if type is INVENTORY | No       |
+| Integration        | Field                | Description                                               |
+| ------------------ | -------------------- | --------------------------------------------------------- |
+| NETSUITE           | taxschedule          | The ID of the tax schedule associated with the item.      |
+| MS_DYNAMICS_365_FO | ProductNumber        | The product number of the item.                           |
+| MYOB_BUSINESS      | asset_account_id     | The ID of the asset account associated with the item.     |
+| QOYOD              | product_unit_type_id | The ID of the product unit type associated with the item. |
+| QOYOD              | category_id          | The ID of the category associated with the item.          |
+| QOYOD              | track_quantity       | Whether the item should track quantity.                   |
+| QOYOD              | tax_id               | The ID of the tax associated with the item.               |
 
 <RequestExample>
 
