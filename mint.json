@@ -37,13 +37,25 @@
       "url": "api-reference"
     },
     {
+      "name": "Accounting",
+      "url": "accounting"
+    },
+    {
+      "name": "Commerce",
+      "url": "commerce"
+    },
+    {
+      "name": "Payments",
+      "url": "payments"
+    },
+    {
       "name": "Changelog",
       "url": "changelog"
     }
   ],
   "anchors": [
     {
-      "name": "Roadmap",
+      "name": "Integrations Roadmap",
       "icon": "road",
       "url": "https://trello.com/b/ISjLnO29/building-rootfi"
     },
@@ -53,7 +65,7 @@
       "url": "https://security.rootfi.dev/?userToken=eyJ1c2VyTmFtZSI6IlR1c2hhciBTdWRoZWVzaCIsInVzZXJFbWFpbCI6InR1c2hhci5zdWRoZWVzaEByb290ZmkuaW4iLCJ0ZW5hbnRJZCI6IjI2MWQ0NCJ9"
     },
     {
-      "name": "Status",
+      "name": "Status Tracker",
       "icon": "wave-pulse",
       "url": "https://statuspage.freshping.io/66138-RootFi"
     }
