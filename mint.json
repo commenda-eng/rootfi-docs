@@ -67,11 +67,6 @@
       "url": "https://trello.com/b/ISjLnO29/building-rootfi"
     },
     {
-      "name": "Security",
-      "icon": "shield-halved",
-      "url": "https://security.rootfi.dev/?userToken=eyJ1c2VyTmFtZSI6IlR1c2hhciBTdWRoZWVzaCIsInVzZXJFbWFpbCI6InR1c2hhci5zdWRoZWVzaEByb290ZmkuaW4iLCJ0ZW5hbnRJZCI6IjI2MWQ0NCJ9"
-    },
-    {
       "name": "API Status Tracker",
       "icon": "wave-pulse",
       "url": "https://statuspage.freshping.io/66138-RootFi"
