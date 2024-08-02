@@ -1,0 +1,169 @@
+---
+title: "Expense Management"
+description: "Automate your customers' expense reconciliation with their respective accounting systems."
+icon: "credit-card"
+---
+
+## Introduction
+
+Welcome to Integration Labs' Expense Management Workflow Guide. This comprehensive guide is designed to help Expense Management companies automate their customers' expense reconciliation with their respective accounting systems using Integration Labs' Unified Accounting API.
+
+## The Need for Accounting Integrations
+
+Automation transforms how your expense management product handles your business customers' expenses by simplifying the expense collection, verification, and approval process. The challenge arises when you need to connect to different customers' accounting platforms to automate expense reconciliation.
+
+Accounting integrations bridge the data gap between your product and your customers' accounting systems. While these integrations are crucial, building and maintaining multiple integrations in-house is time-consuming, expensive, and resource-intensive.
+
+## Benefits of Integration Labs' Unified Accounting API
+
+Integration Labs' Unified API offers a more efficient approach by allowing you to leverage one API to integrate with multiple accounting platforms. The benefits include:
+
+1. **Global Connectivity**: Simplifies integration with multiple accounting platforms, ensuring maximum coverage for current and future customers.
+2. **Accelerated Go-to-Market**: Integrating with one Unified API significantly cuts down the time required to build, test, and launch an integrated product.
+3. **Cost Savings**: Lowers the overall cost of developing and maintaining integrations, allowing resources to focus on core product development.
+4. **Maintenance Ease**: Offloads integration maintenance responsibilities, allowing your team to focus on core product enhancement.
+
+Partnering with Integration Labs can accelerate your time to market and enhance your product's value to your customers, thereby increasing customer satisfaction, product appeal, and revenue potential.
+
+<br></br>
+
+This workflow can be used for the following types of accounts:
+
+- Pre-Paid Cards
+- Credit Cards
+- Debit Cards
+
+<br></br>
+
+<Steps titleSize="h2">
+
+
+<Step title="Connect with your customers' accounting platform (One-Time Activity)" titleSize="h2" stepNumber="1">
+
+Integration Labs provides two options to connect with your customers' accounting platform:
+
+1. Use Integration Labs' **Connect Link**, a convenient and secure URL
+2. Embed Integration Labs' **Connect SDK** into your application
+
+<Tabs>
+
+<Tab title="Using the Connect Link">
+
+1. Use the Dashboard or APIs to connect a customer's accounting platform
+2. Use the `POST/invite-link`
+3. Name your customers' company
+
+</Tab>
+
+<Tab title="Using the Connect SDK">
+
+Embed the SDK into your application for a white-labeled, native authentication process.
+
+After authentication, a unique `company_id` will be generated. This `company_id` will be used to read and write data to their accounting platform.
+
+</Tab>
+
+</Tabs>
+
+<br></br>
+
+</Step>
+
+<Step title="Link or Create your customer's credit card or bank account (One-Time Activity)" titleSize="h2" stepNumber="2">
+
+Every expense transaction must have an **Account** as a source of funds that is credited.
+
+<Tabs>
+
+<Tab title="For Pre-Paid/Debit Cards">
+
+This is a Bank Account with a **category = 'Bank'**
+
+1. Use `GET/bank_accounts` to get the **Bank Account ID** if the account already exists in the customer's accounting platform.
+OR
+2. Use `POST/bank_accounts` to create a bank account and get the **Bank Account ID**.
+
+</Tab>
+
+<Tab title="For Credit/Debit Cards">
+
+This is an Account with a **category = 'Liability'**
+
+1. Use `GET/accounts` to get the **Account ID** if the account already exists in the customer's accounting platform.
+OR
+2. Use `POST/accounts` to create an Account and get the **Account ID**.
+
+</Tab>
+
+</Tabs>
+
+<br></br>
+
+</Step>
+
+<Step title="Create Expenses (Recurring)" titleSize="h2" stepNumber="3">
+
+Generally, use the `POST/expenses` to create expenses.
+
+If Expenses are unavailable for a particular accounting platform like Xero and Tally, use the `POST/bills` or `POST/journal_entries`.
+
+Essential points to note:
+
+1. **Credit Account**: The account from which funds are drawn. Refer to Step 2 for more information.
+2. **Vendor**: The employee linked to the expense. Use the `GET/contacts` and `POST/contacts` and filter on type= 'vendor'. A **Contact ID** is required to post an expense or Bill. If the employee doesn't exist on the accounting platform, create a new vendor using the `POST/contacts`.
+3. **Expense Account or Debited Account**: You can push multiple line items (usually just 1) when pushing an expense. Each line item will have an expense **account** associated (category = 'Expense'). Use the `GET/accounts` to fetch all accounts, and filter the account type by **category: expense** through Postman or GraphQL.
+
+<br></br>
+
+</Step>
+
+<Step title="Upload Documents (Recurring)" titleSize="h2" stepNumber="4">
+
+Use the `POST/documents` to upload and attach files from a customer's employee to an expense, invoice, or bill.
+
+<br></br>
+
+</Step>
+
+<Step title="Record a Credit Card Repayment (Recurring)" titleSize="h2" stepNumber="5">
+
+Use the `POST/journal_entries` to reflect a credit card repayment.
+
+1. **Credited Account**: The bank account used to make the repayment.
+2. **Contact**: In this case, it will be the expense management company (your company).
+3. **Debited Account**: The credit card liability account.
+
+<br></br>
+
+</Step>
+
+<Step title="Process Bank Account Withdrawals or Top Ups for Pre-Paid Cards (Recurring)" titleSize="h2" stepNumber="6">
+
+Use the `POST/journal_entries` to reflect withdrawals and top-ups for a bank account/prepaid card.
+
+1. **Credited Account**: The bank account used to make the top-up.
+2. **Debited Account**: The account being topped up (Pre-paid asset or bank account).
+
+<br></br>
+
+</Step>
+
+<Step title="Process Employee Reimbursement Requests and Payments (Recurring)" titleSize="h2" stepNumber="7">
+
+Employee reimbursement requests and reimbursement payments are reflected in the accounting system as **Bills** and **Bill Payments**.
+
+1. To log a reimbursement request, use the `POST/bills` to create a bill containing the reimbursement amount.
+    - Use the `POST/contacts` (filter on type= 'vendor') to create a specific vendor per employee you link to the Bill.
+2. Once the reimbursement is approved and the payment is made, use the `POST/bill_payments` to log a payment against the requested reimbursement.
+
+<br></br>
+
+</Step>
+
+
+</Steps>
+
+
+## Conclusion
+
+This detailed guide outlines how to manage the most common actions of an expense management product with Integration Labs' accounting integrations. If you have more questions or would like to build an automated expense management product with Integration Labs' Unified APIs, contact Integration Labs' integration experts for assistance in getting started.
