@@ -113,8 +113,8 @@ If Expenses are unavailable for a particular accounting platform like Xero and T
 Essential points to note:
 
 1. **Credit Account**: The account from which funds are drawn. Refer to Step 2 for more information.
-2. **Vendor**: The employee linked to the expense. Use the `GET/contacts` and `POST/contacts` and filter on type= 'vendor'. A **Contact ID** is required to post an expense or Bill. If the employee doesn't exist on the accounting platform, create a new vendor using the `POST/contacts`.
-3. **Expense Account or Debited Account**: You can push multiple line items (usually just 1) when pushing an expense. Each line item will have an expense **account** associated (category = 'Expense'). Use the `GET/accounts` to fetch all accounts, and filter the account type by **category = 'expense'** through Postman or GraphQL.
+2. **Vendor**: The employee linked to the expense. Use the [`GET/contacts`](https://docs.integrationlabs.co/api-reference/v3/accounting/contacts/get-all-contacts) and [`POST/contacts`](https://docs.integrationlabs.co/api-reference/v3/accounting/contacts/create-contacts) and filter on type= 'vendor'. A **Contact ID** is required to post an Expense or Bill. If the employee doesn't exist on the accounting platform, create a new vendor using the [`POST/contacts`](https://docs.integrationlabs.co/api-reference/v3/accounting/contacts/create-contacts).
+3. **Expense Account or Debited Account**: You can push multiple line items (usually just 1) when pushing an expense. Each line item will have an expense **account** associated (category = 'Expense'). Use the [`GET/accounts`](https://docs.integrationlabs.co/api-reference/v3/accounting/accounts/get-all-accounts) to fetch all accounts, and filter the account type by **category = 'expense'** through Postman or GraphQL.
 
 ---
 
