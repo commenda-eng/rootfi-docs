@@ -4,29 +4,52 @@ description: "Sync processed payrolls to your customers' respective accounting s
 icon: "envelope-open-dollar"
 ---
 
-RootFi's Payroll Workflow helps companies sync processed payrolls to their customers’ respective accounting systems.
+Integration Labs' Payroll Workflow helps companies sync processed payrolls to their customers’ respective accounting systems.
 
 ## Introduction
 
 Here is a quick summary of all the steps involved: 
 
-1. Use RootFi’s **Authentication Flow** to **connect** each business customer's accounting system
+1. Use Integration Labs' **authentication flow to connect** each business customer's accounting system
 2. Categorize and **map** payroll components 
 3. **Sync** processed payroll with your customer's accounting software  
 
 ---
 
-## Step 1: Connect your customers’ accounting platforms
+<Steps titleSize="h2">
 
-Use [Invite Link](https://docs.rootfi.dev/documentation/concepts/rootfi-connect/invite-link), a secure URL, or [Connect SDK](https://docs.rootfi.dev/documentation/concepts/rootfi-connect/connect-sdk), a drop-in component, to connect customers. 
+<Step title="Connect with your customers' accounting platform (One-Time Activity)" titleSize="h2" stepNumber="1">
 
-If you use the Connect SDK, your customers will be guided through a white-labeled UI to connect their respective Accounting Platforms. A **company_id** will be generated, which can be used to read and write data for this specific connection.
+Integration Labs provides two options to connect with your customers' accounting platform:
 
-Please look at our [documentation](https://docs.rootfi.dev/docs/connect-sdk) on how to use the [Invite Link](https://docs.rootfi.dev/documentation/concepts/rootfi-connect/invite-link) or integrate our [Connect SDK](https://docs.rootfi.dev/documentation/concepts/rootfi-connect/connect-sdk). 
+1. Use Integration Labs' **Connect Link**, a convenient and secure URL
+2. Embed Integration Labs' **Connect SDK** into your application
+
+<Tabs>
+
+<Tab title="Using the Connect Link">
+
+1. Use the Dashboard or APIs to connect a customer's accounting platform
+2. Use the [`POST/invite_link`](https://docs.integrationlabs.co/api-reference/v3/core/invite-links/create-invite-link)
+3. Name your customers' company
+
+</Tab>
+
+<Tab title="Using the Connect SDK">
+
+Embed the SDK into your application for a white-labeled, native authentication process.
+
+After authentication, a unique `company_id` will be generated. This `company_id` will be used to read and write data to their accounting platform.
+
+</Tab>
+
+</Tabs>
 
 ---
 
-## Step 2: Categorize and map payroll components
+</Step>
+
+<Step title="Categorize and map payroll components" titleSize="h2" stepNumber="2">
 
 For your customers to appropriately represent their payroll costs in their accounting software, they will need to do some initial configuration.
 
@@ -36,57 +59,55 @@ Typically, each customer will want to set the following:
 - Which expense account does each payroll component correspond with
 - Any additional mapping for things like tracking categories
 
+---
+
 ### 2.1 Make customers select the Bank account where payroll will be processed from
 
 You must guide your customer to link the Bank Account from which payroll is dispersed. 
 
-You should create a front-end that allows your customers to select the appropriate Bank Account. To have your front-end populate the available Banks Accounts from their underlying accounting platform, call our **get/Accounts API and filter by Type =’ bank’** or call our **get/bankAccounts API.**
+You should create a front-end that allows your customers to select the appropriate Bank Account. To have your front-end populate the available Banks Accounts from their underlying accounting platform, call [`GET/accounts`](https://docs.integrationlabs.co/api-reference/v3/accounting/accounts/get-all-accounts) and filter by **type = ’bank’** or call [`GET/bank_accounts`](https://docs.integrationlabs.co/api-reference/v3/accounting/bank-accounts/get-all-bank-accounts).
 
-For example:
-
-![*Here’s a sample UI to select the appropriate Bank Account, which will need to be replicated on your system*](Payroll%20Workflow%20Guide%20564a422ffd724174b947f0373c1fb771/Screenshot_2023-12-15_at_12.45.41.png)
-
-*Here’s a sample UI to select the appropriate Bank Account, which will need to be replicated on your system*
+---
 
 ### 2.2 Make customers select which Expense Account each Payroll component corresponds with
 
 Each customer will have different preferences for recording payroll costs, pensions, and employee taxes against various nominal accounts.
 
-Your system should have a list of ***payroll components*** representing the different parts of a company's payroll. To meet your customers’ needs, it is important to offer a flexible interface that allows companies to handle the nuances of data reconciliation according to their preferences. The mapping process can be as complex or granular as required for your specific use case.
+**Your system should have a list of payroll components representing the different parts of a company's payroll.** To meet your customers’ needs, it is important to offer a flexible interface that allows companies to handle the nuances of data reconciliation according to their preferences. The mapping process can be as complex or granular as required for your specific use case.
 
-To have your interface populate the available Expense Accounts from their underlying accounting platform, use the **get/Accounts API.**
+To have your interface populate the available Expense Accounts from their underlying accounting platform, use [`GET/accounts`](https://docs.integrationlabs.co/api-reference/v3/accounting/accounts/get-all-accounts).
 
-For example:
-
-![Screenshot 2023-12-15 at 12.48.29.png](Payroll%20Workflow%20Guide%20564a422ffd724174b947f0373c1fb771/Screenshot_2023-12-15_at_12.48.29.png)
-
-![Screenshot 2023-12-15 at 12.50.16.png](Payroll%20Workflow%20Guide%20564a422ffd724174b947f0373c1fb771/Screenshot_2023-12-15_at_12.50.16.png)
-
-![*Here is a sample UI that lets customers match Payroll Components with Expense Accounts, which will need to be replicated on your system*](Payroll%20Workflow%20Guide%20564a422ffd724174b947f0373c1fb771/Screenshot_2023-12-15_at_12.51.37.png)
-
-*Here is a sample UI that lets customers match Payroll Components with Expense Accounts, which will need to be replicated on your system*
+---
 
 ### 2.3 Allow for Additional Categorization using Tracking Categories
 
 Businesses may require additional categorization for their payroll expenses. For instance, they may want to group expenses by department (e.g., sales and marketing) or location.
 
-Our tracking categories API can retrieve each company's departments, locations, and projects.
+Our [`GET/tracking_categories`](https://docs.integrationlabs.co/api-reference/v3/accounting/tracking-categories/get-all-tracking-categories) can retrieve each company's departments, locations, and projects.
 
 ---
 
-## Step 3: Sync Processed Payroll with Accounting Software
+</Step>
+
+</Steps>
+
+<Steps>
+
+<Step title="Sync Processed Payroll with Accounting Software" titleSize="h2" stepNumber="3">
 
 Before recording the payroll in your customers’ accounting platform, you must generate a line item object for each employee for each corresponding payroll component. This means you'll likely have multiple line items for each employee.
 
-To record payroll entries to the mapped accounts in your customers’ accounting platform, use the **post/journal Entries API**.
+To record payroll entries to the mapped accounts in your customers’ accounting platform, use [`POST/journal_entries`](https://docs.integrationlabs.co/api-reference/v3/accounting/journal-entries/create-journal-entries).
 
 When creating the payroll Journal Entry, you should create a line item for each payroll component. 
 
-**Note:** The sum of the amounts on the payroll component must equal the sum of the debit on the mapped bank account from which the payment is being made.
+<Note> The sum of the amounts on the payroll component must equal the sum of the debit on the mapped bank account from which the payment is being made. </Note>
+
+<br></br>
 
 Here are three examples:
 
-### 3.1 Journal entry example #1
+### Journal entry example #1
 
 Say your customer has one employee on their payroll. Your first entry shows the employee’s gross wages, payroll taxes withheld, deductions, and net pay. It includes the following:
 
@@ -104,22 +125,22 @@ Gross wages are an expense that increases with a debit. The rest of the accounts
 |  | Employee Health Insurance Payable |  | 20 |
 |  | Payroll Payable |  | 900 |
 
-Note: Remember that your debits (left side) should equal your credits (right side). Double-check your totals and look for accounting mistakes if they don't balance.
+<Note> Remember that your debits (left side) should equal your credits (right side). Double-check your totals and look for accounting mistakes if they don't balance. </Note>
 
-## 3.2 Journal entry example #2
+### Journal entry example #2
 
 Make a second journal entry when the customer gives their employee their paycheck. When they pay the employee, they no longer owe wages, so their liabilities decrease and their bank account decreases because they paid their employee.
 
 Because it’s a liability, decrease the Payroll Payable account with a debit. And decrease the Cash account (an asset) with a credit.
 
-For Xero, please use the bank transactions data model to post this entry. 
+<Note> For Xero, please use the bank transactions data model to post this entry. </Note>
 
 | Date | Account | Debit | Credit |
 | --- | --- | --- | --- |
 | XX/XX/XXXX | Payroll Payable | 900 |  |
 |  | Bank Account |  | 900 |
 
-## 3.3 Journal entry example #3
+### Journal entry example #3
 
 Eventually, your customer will need to pay employer taxes and remit withheld taxes. This is where a third accounting entry for payroll comes in.
 
@@ -137,10 +158,12 @@ For Xero, please use the bank transactions data model to post this entry.
 
 ---
 
+</Step>
+
+</Steps>
+
 ## Conclusion
 
 Once you’ve completed the steps described above, you can automatically sync processed payrolls to your customers’ respective accounting systems. Feel free to contact us if you have any questions; we’re always happy to help. 
 
 ---
-
-End of Document

@@ -8,11 +8,15 @@ icon: "credit-card"
 
 Welcome to Integration Labs' Expense Management Workflow Guide. This comprehensive guide is designed to help Expense Management companies automate their customers' expense reconciliation with their respective accounting systems using Integration Labs' Unified Accounting API.
 
-## The Need for Accounting Integrations
+---
+
+## Need for Accounting Integrations
 
 Automation transforms how your expense management product handles your business customers' expenses by simplifying the expense collection, verification, and approval process. The challenge arises when you need to connect to different customers' accounting platforms to automate expense reconciliation.
 
 Accounting integrations bridge the data gap between your product and your customers' accounting systems. While these integrations are crucial, building and maintaining multiple integrations in-house is time-consuming, expensive, and resource-intensive.
+
+---
 
 ## Benefits of Integration Labs' Unified Accounting API
 
@@ -25,7 +29,7 @@ Integration Labs' Unified API offers a more efficient approach by allowing you t
 
 Partnering with Integration Labs can accelerate your time to market and enhance your product's value to your customers, thereby increasing customer satisfaction, product appeal, and revenue potential.
 
-<br></br>
+---
 
 This workflow can be used for the following types of accounts:
 
@@ -33,7 +37,7 @@ This workflow can be used for the following types of accounts:
 - Credit Cards
 - Debit Cards
 
-<br></br>
+---
 
 <Steps titleSize="h2">
 
@@ -65,7 +69,7 @@ After authentication, a unique `company_id` will be generated. This `company_id`
 
 </Tabs>
 
-<br></br>
+---
 
 </Step>
 
@@ -96,7 +100,7 @@ OR
 
 </Tabs>
 
-<br></br>
+---
 
 </Step>
 
@@ -110,9 +114,9 @@ Essential points to note:
 
 1. **Credit Account**: The account from which funds are drawn. Refer to Step 2 for more information.
 2. **Vendor**: The employee linked to the expense. Use the `GET/contacts` and `POST/contacts` and filter on type= 'vendor'. A **Contact ID** is required to post an expense or Bill. If the employee doesn't exist on the accounting platform, create a new vendor using the `POST/contacts`.
-3. **Expense Account or Debited Account**: You can push multiple line items (usually just 1) when pushing an expense. Each line item will have an expense **account** associated (category = 'Expense'). Use the `GET/accounts` to fetch all accounts, and filter the account type by **category: expense** through Postman or GraphQL.
+3. **Expense Account or Debited Account**: You can push multiple line items (usually just 1) when pushing an expense. Each line item will have an expense **account** associated (category = 'Expense'). Use the `GET/accounts` to fetch all accounts, and filter the account type by **category = 'expense'** through Postman or GraphQL.
 
-<br></br>
+---
 
 </Step>
 
@@ -120,7 +124,7 @@ Essential points to note:
 
 Use the [`POST/documents`](https://docs.integrationlabs.co/api-reference/v3/accounting/documents/create-documents) to upload and attach files from a customer's employee to an expense, invoice, or bill.
 
-<br></br>
+---
 
 </Step>
 
@@ -132,18 +136,18 @@ Use the [`POST/journal_entries`](https://docs.integrationlabs.co/api-reference/v
 2. **Contact**: In this case, it will be the expense management company (your company).
 3. **Debited Account**: The credit card liability account.
 
-<br></br>
+---
 
 </Step>
 
 <Step title="Process Bank Account Withdrawals or Top Ups for Pre-Paid Cards (Recurring)" titleSize="h2" stepNumber="6">
 
-Use the [`POST/journal_entries`](https://docs.integrationlabs.co/api-reference/v3/accounting/journal-entries/create-journal-entries) to reflect withdrawals and top-ups for a bank account/prepaid card.
+Use [`POST/journal_entries`](https://docs.integrationlabs.co/api-reference/v3/accounting/journal-entries/create-journal-entries) to reflect withdrawals and top-ups for a bank account/prepaid card.
 
 1. **Credited Account**: The bank account used to make the top-up.
-2. **Debited Account**: The account being topped up (Pre-paid asset or bank account).
+2. **Debited Account**: The account being topped up (pre-paid asset or bank account).
 
-<br></br>
+---
 
 </Step>
 
@@ -151,18 +155,18 @@ Use the [`POST/journal_entries`](https://docs.integrationlabs.co/api-reference/v
 
 Employee reimbursement requests and reimbursement payments are reflected in the accounting system as **Bills** and **Bill Payments**.
 
-1. To log a reimbursement request, use the [`POST/bills`](https://docs.integrationlabs.co/api-reference/v3/accounting/bills/create-bills) to create a bill containing the reimbursement amount.
-    - Use the [`POST/contacts`](https://docs.integrationlabs.co/api-reference/v3/accounting/contacts/create-contacts) (filter on type= 'vendor') to create a specific vendor per employee you link to the Bill.
+1. To log a reimbursement request, use [`POST/bills`](https://docs.integrationlabs.co/api-reference/v3/accounting/bills/create-bills) to create a bill containing the reimbursement amount.
+    - Use [`POST/contacts`](https://docs.integrationlabs.co/api-reference/v3/accounting/contacts/create-contacts) (filter on type = 'vendor') to create a specific vendor per employee you link to the Bill.
 2. Once the reimbursement is approved and the payment is made, use the [`POST/bill_payments`](https://docs.integrationlabs.co/api-reference/v3/accounting/bill-payments/create-bill-payments) to log a payment against the requested reimbursement.
 
-<br></br>
+---
 
 </Step>
 
-
 </Steps>
-
 
 ## Conclusion
 
 This detailed guide outlines how to manage the most common actions of an expense management product with Integration Labs' accounting integrations. If you have more questions or would like to build an automated expense management product with Integration Labs' Unified APIs, contact Integration Labs' integration experts for assistance in getting started.
+
+---
