@@ -3,8 +3,6 @@ title: "Oracle NetSuite"
 description: "Learn how to set up our Oracle NetSuite integration."
 ---
 
-# Oracle NetSuite Guide
-
 To authenticate NetSuite, the following credentials are required:
 
 - Consumer Key
@@ -14,7 +12,7 @@ To authenticate NetSuite, the following credentials are required:
 
 This guide will demonstrate how to locate or generate these credentials within NetSuite.
 
-## Prerequisites
+## Pre-requisites
 
 Before setting up the integration, make sure you meet the following requirements:
 
@@ -25,27 +23,31 @@ Before setting up the integration, make sure you meet the following requirements
 
 </aside>
 
-## Instructions
-
-## **Step 1:** Install the Bundle
+## Install the Bundle
 
 <Steps>
-  <Step>
+  <Step title="First Step">
     In your NetSuite account, navigate to **Customization** > **SuiteBundler** > **Search & Install Bundles** > **List** or search for Search & Install Bundles in the Search bar.
     ![Untitled](/images/netsuite/Untitled.png)
   </Step>
-  <Step>Search for the **Integration Labs Bundle** or bundle ID **489902** using the Keyword box. ![Untitled](/images/netsuite/Untitled%201.png)</Step>
-  <Step>Select the bundle and click **Install**. ![Untitled](/images/netsuite/Untitled%202.png)</Step>
-  <Step>
+  <Step title="Second Step">
+  Search for the **Integration Labs Bundle** or bundle ID **489902** using the Keyword box. ![Untitled](/images/netsuite/Untitled%201.png)
+  </Step>
+  <Step title="Third Step">
+  Select the bundle and click **Install**. ![Untitled](/images/netsuite/Untitled%202.png)
+  </Step>
+  <Step title="Fourth Step">
     The bundle will begin installing and you maybe directed to the Installed Bundles page. It may take up to 5 minutes to install. ![Untitled](/images/netsuite/Untitled%203.png)
   </Step>
 </Steps>
 
-## Step 2: Create a new integration to generate the Consumer Key and Consumer Secret
+## Create a new integration to generate the Consumer Key and Consumer Secret
 
 <Steps>
-  <Step>Navigate to **Setup** > **Integration** > **Manage Integrations** > **New** to create a new integration. ![Untitled](/images/netsuite/Untitled%204.png)</Step>
-  <Step>
+  <Step title="First Step">
+  Navigate to **Setup** > **Integration** > **Manage Integrations** > **New** to create a new integration. ![Untitled](/images/netsuite/Untitled%204.png)
+  </Step>
+  <Step title="Second Step">
    Create an integration with the below details:
    - Any value can be populated in the **NAME** field
    - The **CONCURRENCY LIMIT** should be left unpopulated
@@ -56,25 +58,23 @@ Before setting up the integration, make sure you meet the following requirements
 ![Untitled](/images/netsuite/Untitled%205.png)
 
   </Step>
-  <Step>
+  <Step title="Third Step">
    Save the integration to generate the **Consumer Key** and **Consumer Secret**. **This will only be shown once, so store them in a secure place.**
   ![consumer key and consumer secret screenshot.png](/images/netsuite/consumer_key_and_consumer_secret_screenshot.png)
   </Step>
-  <Step>
+  <Step title="Fourth Step">
     The bundle will begin installing and you maybe directed to the Installed Bundles page. It may take up to 5 minutes to install. ![Untitled](/images/netsuite/Untitled%203.png)
   </Step>
 </Steps>
 
-## Step 3: Assign a user to the role
+## Assign a user to the role
 
 <Steps>
-<Step>
+<Step title="First Step">
 Navigate to **Setup** > **Users/Roles** > **Manage Users** or search **Manage Users** in the Search bar.
-
 ![Untitled](/images/netsuite/Untitled%206.png)
-
 </Step>
-<Step>
+<Step title="Second Step">
 In the Manage Users page, either select a user to assign the Role to.
 
           <aside>
@@ -86,7 +86,7 @@ In the Manage Users page, either select a user to assign the Role to.
 ![Untitled](/images/netsuite/Untitled%207.png)
 
 </Step>
-<Step>
+<Step title="Third Step">
 In the user's employee record, click **Edit** and go to the **Access** tab. In your Access tab, go to Roles and select **Integration Labs Role Permission**.
 
 ![Untitled](/images/netsuite/Untitled%208.png)
@@ -94,39 +94,41 @@ In the user's employee record, click **Edit** and go to the **Access** tab. In y
 </Step>
 </Steps>
 
-## Step 3: Create an access token to get your Token ID and Secret
+## Create an access token to get your Token ID and Secret
 
 <Steps>
-<Step>
+<Step title="First Step">
 In your **Setup** tab, go to **User Roles** > **Access Tokens** > **New** or search **New Access Token** in the search bar to begin creating a New Access Token.
 
 ![Untitled](/images/netsuite/Untitled%209.png)
 
 </Step>
-<Step>
+<Step title="Second Step">
 Select the Application Name (name of the integration you created in Step 2), User and Role (Integration Labs Role Permission) and click **Save** to generate a new access token.
 
 ![Untitled](/images/netsuite/Untitled%2010.png)
 
 </Step>
-<Step>
+<Step title="Third Step">
 Copy the **Token ID** and **Token Secret** provided. **This will only be shown once, so store them in a secure place.**
 
 ![token id and token secret screenshot.png](/images/netsuite/token_id_and_token_secret_screenshot.png)
 
 </Step>
 </Steps>
-## **Step 4: Find your NetSuite Account ID**
+## Finding your NetSuite Account ID**
 
 <Steps>
-  <Step>Log into your NetSuite portal</Step>
-  <Step>
+  <Step title="First Step">
+  Log into your NetSuite portal
+  </Step>
+  <Step title="Second Step">
     Copy the subdomain of the URL at the top of your browser and enter it within the Connect Link. In the below screenshot it is **`8635772-sb1`.** ![Screenshot 2024-04-19 at
     2.53.59 PM.png](/images/netsuite/Screenshot_2024-04-19_at_2.53.59_PM.png)
   </Step>
 </Steps>
 
-## Step 5: Enter credentials in the Connect flow
+## Enter credentials in the Connect flow
 
 ![Untitled](/images/netsuite/Untitled%2011.png)
 
