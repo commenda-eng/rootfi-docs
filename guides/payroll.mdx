@@ -59,7 +59,6 @@ Typically, each customer will want to set the following:
 - Which expense account does each payroll component correspond with
 - Any additional mapping for things like tracking categories
 
----
 
 ### 2.1 Make customers select the Bank account where payroll will be processed from
 
@@ -67,7 +66,6 @@ You must guide your customer to link the Bank Account from which payroll is disp
 
 You should create a front-end that allows your customers to select the appropriate Bank Account. To have your front-end populate the available Banks Accounts from their underlying accounting platform, call [`GET/accounts`](https://docs.integrationlabs.co/api-reference/v3/accounting/accounts/get-all-accounts) and filter by **type = ’bank’** or call [`GET/bank_accounts`](https://docs.integrationlabs.co/api-reference/v3/accounting/bank-accounts/get-all-bank-accounts).
 
----
 
 ### 2.2 Make customers select which Expense Account each Payroll component corresponds with
 
@@ -77,7 +75,6 @@ Each customer will have different preferences for recording payroll costs, pensi
 
 To have your interface populate the available Expense Accounts from their underlying accounting platform, use [`GET/accounts`](https://docs.integrationlabs.co/api-reference/v3/accounting/accounts/get-all-accounts).
 
----
 
 ### 2.3 Allow for Additional Categorization using Tracking Categories
 
