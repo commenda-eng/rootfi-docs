@@ -1,0 +1,121 @@
+---
+title: "Accounts Receivable (AR)"
+description: "This guide helps Accounts Receivable companies automate the creation and reconciliation of invoices, invoice payments, invoice credit notes, and sales orders with their customers' respective accounting systems."
+icon: "file-invoice"
+---
+
+## Introduction
+
+Automation transforms how your Accounts Receivable (AR) product helps your business customers generate, track, and collect payments for invoices. However, the challenge lies in seamlessly reconciling these invoices with the range of accounting platforms used by various customers.
+
+Accounting integrations play a pivotal role in bridging your automated Accounts Receivable (AR) solution with your customers' accounting systems. This document is a step-by-step guide that details the process of using accounting integrations (via Integration Labs' Unified Accounting API) to develop an automated Accounts Receivable (AR) product *with reconciliation*.
+
+---
+
+## What is the Accounts Receivable (AR) Workflow?
+
+Automating the AR workflow involves the following key steps:
+
+1. **Invoice Generation**: Automatically create and send invoices based on services rendered or products sold.
+2. **Payment Tracking**: Monitor incoming payments and match them against outstanding invoices.
+3. **Reminders and Collections**: Send automated reminders for overdue invoices and manage collections for delinquent accounts.
+4. **Reconciliation**: Ensure payments are accurately reflected in the accounting system.
+
+Integrating with accounting systems is vital for automating these processes, ensuring that both invoices and payments are processed and reconciled accurately.
+
+---
+
+## The Role of Accounting Integrations and Integration Labs' Unified Accounting API
+
+Building and maintaining integrations with various accounting platforms in-house can be a daunting task - the time and expert resources required come at a high cost.
+
+Integration Labs' Unified API provides a more efficient solution by offering:
+
+- **Broad Connectivity**: Access to multiple accounting platforms, ensuring comprehensive coverage for all current and future customers.
+- **Accelerated Go-to-Market**: Integrating once with a Unified API significantly reduces the time and effort needed to test, launch, and scale an integrated solution.
+- **Cost Reduction**: Using Integration Labs eliminates the expenses associated with developing custom integrations.
+- **Ease of Maintenance**: Offloads integration maintenance responsibilities to Integration Labs, allowing your team to focus on core product enhancement.
+
+Leveraging Integration Labs' Unified API accelerates the development of your AR automation solution and enhances its reliability and value to customers, ensuring seamless integration with their preferred accounting platforms.
+
+---
+
+## How to Build an Automated Accounts Receivable (AR) Solution with a Unified Accounting API
+
+This step-by-step guide can help expense management companies use Integration Labs' Unified Accounting API to automate their customers' invoices, invoice payments, invoice credit notes, and sales orders reconciliation with their respective accounting systems.
+
+Handle all of the common workflows required to offer an Accounts Receivable/ Invoice Payment product to your customers. Here is a quick summary of all the steps involved:
+
+1. Use Integration Labs' Auth Flow to connect a business customer's accounting system.
+2. Use the Invoice API to create an Invoice and link Customers, Sales Orders, Items, and Accounts to the respective Invoice.
+3. Upload Documents to their respective Expenses/Invoice/Bill.
+4. Create and Link Invoice Payments and Invoice Credit Notes to Customers and Open Invoices.
+
+---
+
+## Set Up an Automated Accounts Receivable (AR) Workflow with Accounting Integrations (Step-by-step Guide)
+
+<Steps titleSize="h2">
+
+<Step title="Connect with your customers' accounting platform (One-Time Activity)" titleSize="h2" stepNumber="1">
+
+Integration Labs provides two convenient options to connect with your customers' accounting platform:
+
+1. Use Integration Labs' **Invite Link**, a convenient and secure URL, or
+2. Embed Integration Labs' **Connect SDK** into your application
+
+The Invite Link requires no code to use, making it suitable to get started without a developer. You can customize and white-label this onboarding process with Integration Labs' Connect SDK, allowing authentication to occur natively in your product.
+
+Either way, your customers will be guided through a simple authorization flow to connect their respective accounting platforms to your product.
+
+1. Use our Dashboard or APIs to connect a customer's accounting platform
+a. Use the **POST/Invite-Link API**.
+b. Name your customers' company.
+2. A unique **company_id** will be generated once your customer completes the authentication flow. This **company_id** will be used to read and write data to their accounting platform.
+
+---
+
+</Step>
+
+<Step title="Create Invoices" titleSize="h2" stepNumber="2">
+
+Use **POST/Invoice API** to create an invoice.
+
+Important points to note:
+
+1. **Customer**: This is the customer linked to the Invoice. Use **GET/contacts** or **POST/contacts APIs**. A Contact ID is required to post an Invoice, so if the customer doesn't exist on the accounting platform, you'll first have to create a new customer using the **POST/contacts API**.
+2. **Items**: Every invoice contains multiple items (either goods or services) that were sold as part of the invoice, each of which credits certain accounts depending on what comprises their cost of goods sold. The **GET /items API** lets you fetch all items in the business entity's catalogue.
+3. **Sales/Purchase Order**: Most companies usually issue Sales or Purchase Orders before an Invoice is generated. Use **GET/Sales_Orders** to get the Sales order ID, which can be passed in the **POST/Invoice API** to link the purchase order and bill.
+4. **Credit Account** (Not Required): When you use the **POST/invoices API**, invoices are automatically placed under the Account - Category= 'asset' and account_type= 'accounts_receivable'.
+
+---
+
+</Step>
+
+<Step title="Upload Documents (Recurring)" titleSize="h2" stepNumber="3">
+
+The **POST/documents API** lets you upload a file to an expense, invoice, or bill.
+
+---
+
+</Step>
+
+<Step title="(Recurring): Link Invoice Payment and Credit Notes" titleSize="h2" stepNumber="4">
+
+An Invoice Payment debits an accounts receivable account and credits an asset account.
+
+1. Use the **Post/invoice_payments API** to create and link Invoice payments.
+
+The Invoice credit note can be created and immediately applied to a bill, or it can be created and left unapplied.
+
+1. An Invoice credit note can be created using the **POST/Invoice_credit_note API** and is linked to a Customer.
+
+---
+
+</Step>
+
+</Steps>
+
+## Learn how to build an Automated Accounts Receivable (AR) product
+
+The steps above explain how to manage the most common actions of an automated Accounts Receivable (AR) product with Integration Labs' accounting integrations. If you have more questions or would like to build an automated Accounts Receivable (AR) product with Integration Labs' Unified APIs, we'd love to help you get started. Speak to our integration experts today!
