@@ -66,12 +66,17 @@
       "name": "Integrations Roadmap",
       "icon": "road",
       "url": "https://trello.com/b/ISjLnO29/building-rootfi"
+    },
+    {
+      "name": "Data Coverage Tool",
+      "icon": "globe",
+      "url": "https://coverage.integrationlabs.co/"
     }
   ],
   "footerSocials": {
     "twitter": "https://twitter.com/RootFiAPI",
-    "linkedin": "https://www.linkedin.com/company/rootfi/",
-    "website": "https://rootfi.dev"
+    "linkedin": "https://www.linkedin.com/company/integrationlabsapi",
+    "website": "https://www.integrationlabs.co/"
   },
   "navigation": [
     {
