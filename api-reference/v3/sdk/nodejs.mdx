@@ -29,6 +29,8 @@ import { RootFiClient } from "rootfi-api";
 
 </CodeGroup>
 
+---
+
 ## Instantiate Integration Labs
 
 In your server file, instantiate the Integration Labs instance with your `apiKey`. You should generate the API keys on the [RootFi Dashboard](https://integrate.rootfi.dev/settings) and add them here.
@@ -42,6 +44,8 @@ const rootfi = new RootFiClient({ apiKey: "<api_key>", environment: RootFiEnviro
 </CodeGroup>
 
 The resources can be accessed using the instance. All the methods invocations follow the namespaced signature:
+
+---
 
 ## Run your first SDK request
 
@@ -89,6 +93,8 @@ const data = await rootfi.accounting.accounts.list({
 ```
 </CodeGroup>
 
+---
+
 ## Error Handling
 
 The SDK throws an error when the API request fails. You can catch the error and handle it as shown below:
@@ -107,7 +113,5 @@ The SDK throws an error when the API request fails. You can catch the error and 
 
       // Handle the error based on Error Code
     }
-
 ```
 </CodeGroup>
-```
