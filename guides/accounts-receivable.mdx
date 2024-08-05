@@ -61,7 +61,7 @@ Handle all of the common workflows required to offer an Accounts Receivable/ Inv
 
 Integration Labs provides two convenient options to connect with your customers' accounting platform:
 
-1. Use Integration Labs' **Invite Link**, a convenient and secure URL, or
+1. Use Integration Labs' **Connect Link**, a convenient and secure URL, or
 2. Embed Integration Labs' **Connect SDK** into your application
 
 The Invite Link requires no code to use, making it suitable to get started without a developer. You can customize and white-label this onboarding process with Integration Labs' Connect SDK, allowing authentication to occur natively in your product.
@@ -69,9 +69,9 @@ The Invite Link requires no code to use, making it suitable to get started witho
 Either way, your customers will be guided through a simple authorization flow to connect their respective accounting platforms to your product.
 
 1. Use our Dashboard or APIs to connect a customer's accounting platform
-a. Use the **POST/Invite-Link API**.
+a. Use the **POST/invite-link**.
 b. Name your customers' company.
-2. A unique **company_id** will be generated once your customer completes the authentication flow. This **company_id** will be used to read and write data to their accounting platform.
+2. A unique '**company_id**' will be generated once your customer completes the authentication flow. This '**company_id**' will be used to read and write data to their accounting platform.
 
 ---
 
@@ -79,14 +79,14 @@ b. Name your customers' company.
 
 <Step title="Create Invoices" titleSize="h2" stepNumber="2">
 
-Use **POST/Invoice API** to create an invoice.
+**POST/invoice** to create an invoice.
 
 Important points to note:
 
-1. **Customer**: This is the customer linked to the Invoice. Use **GET/contacts** or **POST/contacts APIs**. A Contact ID is required to post an Invoice, so if the customer doesn't exist on the accounting platform, you'll first have to create a new customer using the **POST/contacts API**.
-2. **Items**: Every invoice contains multiple items (either goods or services) that were sold as part of the invoice, each of which credits certain accounts depending on what comprises their cost of goods sold. The **GET /items API** lets you fetch all items in the business entity's catalogue.
-3. **Sales/Purchase Order**: Most companies usually issue Sales or Purchase Orders before an Invoice is generated. Use **GET/Sales_Orders** to get the Sales order ID, which can be passed in the **POST/Invoice API** to link the purchase order and bill.
-4. **Credit Account** (Not Required): When you use the **POST/invoices API**, invoices are automatically placed under the Account - Category= 'asset' and account_type= 'accounts_receivable'.
+1. **Customer**: This is the customer linked to the Invoice. Use **GET/contacts** or **POST/contacts**. A Contact ID is required to post an Invoice, so if the customer doesn't exist on the accounting platform, you'll first have to create a new customer using the **POST/contacts**.
+2. **Items**: Every invoice contains multiple items (either goods or services) that were sold as part of the invoice, each of which credits certain accounts depending on what comprises their cost of goods sold. The **GET/items** lets you fetch all items in the business entity's catalogue.
+3. **Sales/Purchase Order**: Most companies usually issue Sales or Purchase Orders before an Invoice is generated. Use **GET/sales_orders** to get the Sales order ID, which can be passed in **POST/invoices** to link the purchase order and bill.
+4. **Credit Account** (Not Required): When you use the **POST/invoices**, invoices are automatically placed under the Account - Category= 'asset' and account_type= 'accounts_receivable'.
 
 ---
 
@@ -94,7 +94,7 @@ Important points to note:
 
 <Step title="Upload Documents (Recurring)" titleSize="h2" stepNumber="3">
 
-The **POST/documents API** lets you upload a file to an expense, invoice, or bill.
+**POST/documents** lets you upload a file to an expense, invoice, or bill.
 
 ---
 
@@ -104,11 +104,11 @@ The **POST/documents API** lets you upload a file to an expense, invoice, or bil
 
 An Invoice Payment debits an accounts receivable account and credits an asset account.
 
-1. Use the **Post/invoice_payments API** to create and link Invoice payments.
+1. Use **POST/invoice_payments** to create and link Invoice payments.
 
 The Invoice credit note can be created and immediately applied to a bill, or it can be created and left unapplied.
 
-1. An Invoice credit note can be created using the **POST/Invoice_credit_note API** and is linked to a Customer.
+1. An Invoice credit note can be created using the **POST/invoice_credit_note** and is linked to a Customer.
 
 ---
 
