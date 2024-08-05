@@ -5,6 +5,7 @@
     "light": "/images/logo/Integration_labs_logo_light.png"
   },
   "favicon": "/images/logo/logomark_favicon_rounded.png",
+  "theme": "venus",
   "colors": {
     "primary": "#0E0E0E",
     "light": "#FAFAFA",
@@ -65,11 +66,6 @@
       "name": "Integrations Roadmap",
       "icon": "road",
       "url": "https://trello.com/b/ISjLnO29/building-rootfi"
-    },
-    {
-      "name": "API Status Tracker",
-      "icon": "wave-pulse",
-      "url": "https://statuspage.freshping.io/66138-RootFi"
     }
   ],
   "footerSocials": {
