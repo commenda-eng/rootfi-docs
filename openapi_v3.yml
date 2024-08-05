@@ -103,6 +103,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -491,6 +505,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -719,6 +747,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -965,6 +1007,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -1253,6 +1309,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
         - name: expand
           in: query
           description: >-
@@ -1514,6 +1584,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -2098,6 +2182,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -2260,6 +2358,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -2652,6 +2764,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -2795,6 +2921,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -3095,6 +3235,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -3756,6 +3910,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -4044,6 +4212,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
         - name: expand
           in: query
           description: >-
@@ -4305,6 +4487,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -4735,6 +4931,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -5101,6 +5311,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -5171,7 +5395,7 @@ paths:
       summary: Get All Journal Entries
       security: *ref_0
     post:
-      description: Create a new JournalEntry.
+      description: Create a new Journal Entry.
       operationId: accounting_journalEntries_create
       tags:
         - AccountingJournalEntries
@@ -5240,7 +5464,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/RootFiAPIResponseType"
-      summary: Create JournalEntry
+      summary: Create Journal Entry
       security: *ref_0
       requestBody:
         required: true
@@ -5375,6 +5599,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -5684,6 +5922,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -5981,6 +6233,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -6210,6 +6476,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -6724,17 +7004,17 @@ paths:
                                 per_minute: 500
                                 concurrent_calls: 10
                             sync_config:
-                              data_model: ACCOUNTS
-                              enabled: true
-                              frequency: DAILY
-                              interval: 1
-                              scope_access:
-                                READ: true
-                                CREATE: true
-                                UPDATE: true
-                                DELETE: true
-                              category: ACCOUNTING
-                              sync_from: "2023-01-01T00:00:00Z"
+                              - data_model: ACCOUNTS
+                                enabled: true
+                                frequency: DAILY
+                                interval: 1
+                                scope_access:
+                                  READ: true
+                                  CREATE: true
+                                  UPDATE: true
+                                  DELETE: true
+                                category: ACCOUNTING
+                                sync_from: "2023-01-01T00:00:00Z"
                             category: ACCOUNTING
                     next: https://api.fern.com/core/invite_links?limit=1&next=1
         "401":
@@ -6836,17 +7116,17 @@ paths:
                   integration_categories:
                     - ACCOUNTING
                   sync_config:
-                    data_model: ACCOUNTS
-                    category: ACCOUNTING
-                    enabled: true
-                    frequency: DAILY
-                    interval: 1
-                    scope_access:
-                      READ: true
-                      CREATE: true
-                      UPDATE: true
-                      DELETE: true
-                    sync_from: "2023-01-01T00:00:00Z"
+                    - data_model: ACCOUNTS
+                      category: ACCOUNTING
+                      enabled: true
+                      frequency: DAILY
+                      interval: 1
+                      scope_access:
+                        READ: true
+                        CREATE: true
+                        UPDATE: true
+                        DELETE: true
+                      sync_from: "2023-01-01T00:00:00Z"
   /core/invite_links/{invite_link_id}:
     get:
       description: Retrieve a single invite link from the database.
@@ -6908,17 +7188,17 @@ paths:
                               per_minute: 500
                               concurrent_calls: 10
                           sync_config:
-                            data_model: ACCOUNTS
-                            enabled: true
-                            frequency: DAILY
-                            interval: 1
-                            scope_access:
-                              READ: true
-                              CREATE: true
-                              UPDATE: true
-                              DELETE: true
-                            category: ACCOUNTING
-                            sync_from: "2023-01-01T00:00:00Z"
+                            - data_model: ACCOUNTS
+                              enabled: true
+                              frequency: DAILY
+                              interval: 1
+                              scope_access:
+                                READ: true
+                                CREATE: true
+                                UPDATE: true
+                                DELETE: true
+                              category: ACCOUNTING
+                              sync_from: "2023-01-01T00:00:00Z"
                           category: ACCOUNTING
         "401":
           description: ""
@@ -7006,17 +7286,17 @@ paths:
                               per_minute: 500
                               concurrent_calls: 10
                           sync_config:
-                            data_model: ACCOUNTS
-                            enabled: true
-                            frequency: DAILY
-                            interval: 1
-                            scope_access:
-                              READ: true
-                              CREATE: true
-                              UPDATE: true
-                              DELETE: true
-                            category: ACCOUNTING
-                            sync_from: "2023-01-01T00:00:00Z"
+                            - data_model: ACCOUNTS
+                              enabled: true
+                              frequency: DAILY
+                              interval: 1
+                              scope_access:
+                                READ: true
+                                CREATE: true
+                                UPDATE: true
+                                DELETE: true
+                              category: ACCOUNTING
+                              sync_from: "2023-01-01T00:00:00Z"
                           category: ACCOUNTING
         "401":
           description: ""
@@ -7060,17 +7340,17 @@ paths:
                   integration_categories:
                     - ACCOUNTING
                   sync_config:
-                    data_model: ACCOUNTS
-                    category: ACCOUNTING
-                    enabled: true
-                    frequency: DAILY
-                    interval: 1
-                    scope_access:
-                      READ: true
-                      CREATE: true
-                      UPDATE: true
-                      DELETE: true
-                    sync_from: "2023-01-01T00:00:00Z"
+                    - data_model: ACCOUNTS
+                      category: ACCOUNTING
+                      enabled: true
+                      frequency: DAILY
+                      interval: 1
+                      scope_access:
+                        READ: true
+                        CREATE: true
+                        UPDATE: true
+                        DELETE: true
+                      sync_from: "2023-01-01T00:00:00Z"
     delete:
       description: Delete a single invite link from the database.
       operationId: core_inviteLinks_delete
@@ -8100,6 +8380,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -8246,6 +8540,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -8392,6 +8700,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -8534,6 +8856,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -8684,6 +9020,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -8832,6 +9182,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -8978,6 +9342,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -9122,6 +9500,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -9268,6 +9660,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -9410,6 +9816,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -9546,6 +9966,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -9679,6 +10113,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -9816,6 +10264,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -10059,6 +10521,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -10196,6 +10672,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -10333,6 +10823,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
         - name: expand
           in: query
           description: Comma separated fields to expand. Supported values are line_items
@@ -10500,6 +11004,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -10707,6 +11225,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -10847,6 +11379,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -10982,6 +11528,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -11138,6 +11698,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -11276,6 +11850,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
         - name: expand
           in: query
           description: Comma separated fields to expand. Supported values are raw_data
@@ -11441,6 +12029,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -11580,6 +12182,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -11717,6 +12333,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
         - name: expand
           in: query
           description: Comma separated fields to expand. Supported values are line_items
@@ -11875,6 +12505,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
         - name: expand
           in: query
           description: >-
@@ -12027,6 +12671,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -12163,6 +12821,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -12300,6 +12972,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -12440,6 +13126,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -12576,6 +13276,20 @@ paths:
           examples:
             Example1:
               value: "false"
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: "#/components/schemas/SortOrder"
+            nullable: true
       responses:
         "200":
           description: ""
@@ -15810,7 +16524,9 @@ components:
             $ref: "#/components/schemas/IntegrationCategory"
           description: The integration categories of the invite link
         sync_config:
-          $ref: "#/components/schemas/SyncConfigData"
+          type: array
+          items:
+            $ref: "#/components/schemas/SyncConfigData"
           nullable: true
           description: The sync configuration of the connection
       required:
@@ -15884,7 +16600,9 @@ components:
           $ref: "#/components/schemas/IntegrationCategory"
           description: The category of the connection
         sync_config:
-          $ref: "#/components/schemas/SyncConfigData"
+          type: array
+          items:
+            $ref: "#/components/schemas/SyncConfigData"
           nullable: true
           description: The sync configuration of the connection
       required:
