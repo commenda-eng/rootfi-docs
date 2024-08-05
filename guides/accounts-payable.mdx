@@ -64,7 +64,7 @@ Integration Labs provides two convenient options to connect with your customers'
 The Invite Link requires no code, making it suitable to start without a developer. You can customize and white-label this onboarding process with Integration Labs' Connect SDK, allowing authentication to occur natively in your product. Either way, your customers will be guided through a simple authorization flow to connect their accounting platforms to your product.
 
 1. Use our Dashboard or APIs to connect a customer's accounting platform
-a. Use **POST/invite-link**.
+a. Use [**POST/invite-link**]().
 b. Name your customers' company.
 2. A unique '**company_id**' will be generated once your customer completes the authentication flow. This '**company_id**' will be used to read and write data to their accounting platform.
 
@@ -74,14 +74,14 @@ b. Name your customers' company.
 
 <Step title="Create a Bill" titleSize="h2" stepNumber="2">
 
-Use **POST/bills** to create bills.
+Use [**POST/bills**]() to create bills.
 
 Important points to note:
 
-1. **Vendor**: This is the vendor linked to the Bill. Use **GET/contacts** and **POST/contacts**. A Contact ID is required to post a Bill, so if the contact doesn't exist on the accounting platform, create a new vendor using **POST/contacts**.
-2. **Expense Account or Debited Account**: You can push multiple line items (usually just 1) when pushing an expense. Each line item will have an expense account associated (category = 'Expense'). **GET/accounts** lets you fetch all accounts, and you can filter the account type by **category = "expense"**.
-3. **Purchase Order**: Most companies usually issue Purchase Orders before a bill is generated. The purchase order ID can be passed in **POST/bill** to link the purchase order and bill.
-4. **Credit Account** (Not Required): When you use **POST/bills**, bills are automatically placed under the Account - category = 'liability' and account_type = 'accounts_payable'.
+1. **Vendor**: This is the vendor linked to the Bill. Use [**GET/contacts**]() and [**POST/contacts**](). A Contact ID is required to post a Bill, so if the contact doesn't exist on the accounting platform, create a new vendor using [**POST/contacts**]().
+2. **Expense Account or Debited Account**: You can push multiple line items (usually just 1) when pushing an expense. Each line item will have an expense account associated (category = 'Expense'). [**GET/accounts**]() lets you fetch all accounts, and you can filter the account type by **category = "expense"**.
+3. **Purchase Order**: Most companies usually issue Purchase Orders before a bill is generated. The purchase order ID can be passed in [**POST/bills**]() to link the purchase order and bill.
+4. **Credit Account** (Not Required): When you use [**POST/bills**](), bills are automatically placed under the Account - category = 'liability' and account_type = 'accounts_payable'.
 
 ---
 
@@ -99,11 +99,11 @@ Important points to note:
 
 A Bill Payment credits an account that serves as the source of funds for the payment (Credit card or Bank).
 
-1. Use **Post/bill_payments** to create and link bill payments.
+1. Use [**POST/bill_payments**]() to create and link bill payments.
 
 The bill credit note can be created and immediately applied to a bill, or it can be created and left unapplied.
 
-1. Use **POST/bill_credit_note** to create a Bill Credit note, which can be linked to a Vendor.
+1. Use [**POST/bill_credit_note**]() to create a Bill Credit note, which can be linked to a Vendor.
 
 ---
 
