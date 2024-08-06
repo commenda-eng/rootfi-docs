@@ -57,12 +57,12 @@ You can handle all of the common workflows required to offer your customers an A
 
 Integration Labs provides two convenient options to connect with your customers' accounting platform:
 
-1. Use Integration Labs' **Connect Link**, a convenient and secure URL, or
+1. Use Integration Labs' **Connect Link**, a convenient and secure URL, **or**
 2. Embed Integration Labs' **Connect SDK** into your application
 
 The Invite Link requires no code, making it suitable to start without a developer. You can customize and white-label this onboarding process with Integration Labs' Connect SDK, allowing authentication to occur natively in your product. Either way, your customers will be guided through a simple authorization flow to connect their accounting platforms to your product.
 
-1. Use our Dashboard or APIs to connect a customer's accounting platform. Use the [**POST/invite-link**]() API, and provide a name for your customers' company.
+1. Use our Dashboard or APIs to connect a customer's accounting platform. Use [**POST/invite-links**](/api-reference/v3/core/invite-links/create-invite-link), and provide a name for your customers' company.
 2. A unique `company_id` will be generated once your customer completes the authentication flow. This `company_id` will be used to read and write data to their accounting platform.
 
 ---
@@ -71,14 +71,14 @@ The Invite Link requires no code, making it suitable to start without a develope
 
 <Step title="Create a Bill (Recurring)" titleSize="h2" stepNumber="2">
 
-Use [**POST/bills**]() to create bills.
+Use [**POST/bills**](/api-reference/v3/accounting/bills/create-bills) to create bills.
 
 Important points to note:
 
-1. **Contacts**: This is the vendor linked to the Bill. Use [**GET/contacts**]() and [**POST/contacts**](). A Contact ID is required to post a Bill, so if the contact doesn't exist on the accounting platform, create a new vendor using [**POST/contacts**]().
-2. **Expense Account or Debited Account**: You can push multiple line items (usually just 1) when pushing an bill. Each line item will have an expense account associated (category = 'Expense'). [**GET/accounts**]() lets you fetch all accounts, and you can filter the account type by **category = "expense"**.
-3. **Purchase Order**: Most companies usually issue Purchase Orders before a bill is generated. The purchase order ID can be passed in [**POST/bills**]() to link the purchase order and bill.
-4. **Credit Account** (Not Required): When you use [**POST/bills**](), bills are automatically placed under the Account - **category = 'liability'** and **account_type = 'accounts_payable'**.
+1. **Contacts**: This is the vendor linked to the Bill. Use [**GET/contacts**](/api-reference/v3/accounting/contacts/get-all-contacts) and [**POST/contacts**](/api-reference/v3/accounting/contacts/create-contacts). A Contact ID is required to post a Bill, so if the contact doesn't exist on the accounting platform, create a new vendor using [**POST/contacts**](/api-reference/v3/accounting/contacts/create-contacts).
+2. **Expense Account or Debited Account**: You can push multiple line items (usually just 1) when pushing an bill. Each line item will have an expense account associated (category = 'expense'). [**GET/accounts**](/api-reference/v3/accounting/accounts/get-all-accounts) lets you fetch all accounts, and you can filter the account type by **category = 'expense'**.
+3. **Purchase Order**: Most companies usually issue Purchase Orders before a bill is generated. The Purchase Order ID can be passed in [**POST/bills**](/api-reference/v3/accounting/bills/create-bills) to link the purchase order and bill.
+4. **Credit Account** (Not Required): When you use [**POST/bills**](/api-reference/v3/accounting/bills/create-bills), bills are automatically placed under the Account - **category = 'liability'** and **account_type = 'accounts_payable'**.
 
 ---
 
@@ -86,7 +86,7 @@ Important points to note:
 
 <Step title="Upload Documents (Recurring)" titleSize="h2" stepNumber="3">
 
-**POST/documents** lets you upload a file to an expense, invoice, or bill. When posting a document you will be required to pass the feild **document_type_id**, which represents the **platform_id** that will be returned after you create a bill. 
+[**POST/documents**](/api-reference/v3/accounting/documents/create-documents) lets you upload a file to an expense, invoice, or bill. When posting a document you will be required to pass the field `document_type_id`, which represents the `platform_id` that will be returned after you create a bill. 
 
 ---
 
@@ -94,13 +94,13 @@ Important points to note:
 
 <Step title="Link Bill Payment and Credit Notes" titleSize="h2" stepNumber="4">
 
-A Bill Payment credits an account that serves as the source of funds for the payment (Credit card or Bank).
+A Bill Payment credits an account that serves as the source of funds for the payment (Credit Card or Bank).
 
-1. Use [**POST/bill_payments**]() to create and link bill payments.
+1. Use [**POST/bill_payments**](/api-reference/v3/accounting/bill-payments/create-bill-payments) to create and link bill payments.
 
 The bill credit note can be created and immediately applied to a bill, or it can be created and left unapplied.
 
-1. Use [**POST/bill_credit_note**]() to create a Bill Credit note, which can be linked to a Vendor.
+1. Use [**POST/bill_credit_notes**](/api-reference/v3/accounting/bill-credit-notes/create-bill-credit-notes) to create a Bill Credit note, which can be linked to a Vendor.
 
 ---
 

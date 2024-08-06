@@ -53,7 +53,7 @@ Typically, each customer will want to set the following:
 
 You must guide your customer to link the Bank Account from which payroll is dispersed. 
 
-You should create a front-end that allows your customers to select the appropriate Bank Account. To have your front-end populate the available Banks Accounts from their underlying accounting platform, call [GET/accounts](https://docs.integrationlabs.co/api-reference/v3/accounting/accounts/get-all-accounts) and filter by **type = 'bank'** or call [GET/bank_accounts](https://docs.integrationlabs.co/api-reference/v3/accounting/bank-accounts/get-all-bank-accounts).
+You should create a front-end that allows your customers to select the appropriate Bank Account. To have your front-end populate the available Banks Accounts from their underlying accounting platform, call [GET/accounts](/api-reference/v3/accounting/accounts/get-all-accounts) and filter by **type = 'bank'** or call [GET/bank_accounts](/api-reference/v3/accounting/bank-accounts/get-all-bank-accounts).
 
 
 ### 2.2 Make customers select which Expense Account each Payroll component corresponds with
@@ -62,14 +62,14 @@ Each customer will have different preferences for recording payroll costs, pensi
 
 **Your system should have a list of payroll components representing the different parts of a company's payroll.** To meet your customers' needs, it is important to offer a flexible interface that allows companies to handle the nuances of data reconciliation according to their preferences. The mapping process can be as complex or granular as required for your specific use case.
 
-To have your interface populate the available Expense Accounts from their underlying accounting platform, use [GET/accounts](https://docs.integrationlabs.co/api-reference/v3/accounting/accounts/get-all-accounts).
+To have your interface populate the available Expense Accounts from their underlying accounting platform, use [GET/accounts](/api-reference/v3/accounting/accounts/get-all-accounts).
 
 
 ### 2.3 Allow for Additional Categorization using Tracking Categories
 
 Businesses may require additional categorization for their payroll expenses. For instance, they may want to group expenses by department (e.g., sales and marketing) or location.
 
-Our [GET/tracking_categories](https://docs.integrationlabs.co/api-reference/v3/accounting/tracking-categories/get-all-tracking-categories) can retrieve each company's departments, locations, and projects.
+Our [GET/tracking_categories](/api-reference/v3/accounting/tracking-categories/get-all-tracking-categories) can retrieve each company's departments, locations, and projects.
 
 ---
 
@@ -83,7 +83,7 @@ Our [GET/tracking_categories](https://docs.integrationlabs.co/api-reference/v3/a
 
 Before recording the payroll in your customers' accounting platform, you must generate a line item object for each employee for each corresponding payroll component. This means you'll likely have multiple line items for each employee.
 
-To record payroll entries to the mapped accounts in your customers' accounting platform, use [POST/journal_entries](https://docs.integrationlabs.co/api-reference/v3/accounting/journal-entries/create-journal-entries).
+To record payroll entries to the mapped accounts in your customers' accounting platform, use [POST/journal_entries](/api-reference/v3/accounting/journal-entries/create-journal-entries).
 
 When creating the payroll Journal Entry, you should create a line item for each payroll component. 
 
