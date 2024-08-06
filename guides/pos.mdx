@@ -47,11 +47,18 @@ Here's a summary of the steps involved to get started:
 
 <Steps titleSize="h2">
 
-<Step title="Accounting Platform Selection" titleSize="h2" stepNumber="1">
+<Step title="Connect with your customers' accounting platform (One-Time Activity)" titleSize="h2" stepNumber="1">
 
-Embed the invite link to the Integration Labs SDK into your application. Your customers will be guided through our white-labelled UI to connect their respective Accounting Platforms. A **company_id** will be generated, which can be used to read and write data for this specific connection.
+Integration Labs provides two convenient options to connect with your customers’ accounting platform:
 
-Please refer to our documentation on how to integrate our SDK.
+Use Integration Labs’ Connect Link, a convenient and secure URL, or
+Embed Integration Labs’ Connect SDK into your application
+The Invite Link requires no code to use, making it suitable to get started without a developer. You can customize and white-label this onboarding process with Integration Labs’ Connect SDK, allowing authentication to occur natively in your product.
+
+Either way, your customers will be guided through a simple authorization flow to connect their respective accounting platforms to your product.
+
+Use our Dashboard or APIs to connect a customer’s accounting platform a. Use the POST/invite-link. b. Name your customers’ company.
+A unique `company_id` will be generated once your customer completes the authentication flow. This `company_id` will be used to read and write data to their accounting platform.
 
 ---
 
