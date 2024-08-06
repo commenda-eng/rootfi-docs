@@ -8,7 +8,7 @@ icon: "envelope-open-dollar"
 
 ## Introduction
 
-This comprehensive guide is designed to help HR and Payroll companies sync processed payrolls to their customers’ respective accounting systems using Integration Labs' Unified Accounting API.
+This comprehensive guide is designed to help HR and Payroll companies reconcile processed payrolls to their customers' respective accounting systems using Integration Labs' Unified Accounting API.
 
 Here is a quick summary of all the steps involved: 
 
@@ -22,16 +22,30 @@ Here is a quick summary of all the steps involved:
 
 <Step title="Connect with your customers' accounting platform (One-Time Activity)" titleSize="h2" stepNumber="1">
 
-Integration Labs provides two convenient options to connect with your customers’ accounting platform:
+Integration Labs provides two options to connect with your customers' accounting platform:
 
-Use Integration Labs’ Connect Link, a convenient and secure URL, or
-Embed Integration Labs’ Connect SDK into your application
-The Invite Link requires no code to use, making it suitable to get started without a developer. You can customize and white-label this onboarding process with Integration Labs’ Connect SDK, allowing authentication to occur natively in your product.
+1. Use Integration Labs' **Connect Link**, a convenient and secure URL
+2. Embed Integration Labs' **Connect SDK** into your application
 
-Either way, your customers will be guided through a simple authorization flow to connect their respective accounting platforms to your product.
+<Tabs>
 
-Use our Dashboard or APIs to connect a customer’s accounting platform a. Use the POST/invite-link. b. Name your customers’ company.
-A unique `company_id` will be generated once your customer completes the authentication flow. This `company_id` will be used to read and write data to their accounting platform.
+<Tab title="Using the Connect Link">
+
+1. Use the Dashboard or APIs to connect a customer's accounting platform, **or**
+2. Use the [POST/invite_link](https://docs.integrationlabs.co/api-reference/v3/core/invite-links/create-invite-link)
+3. Name your customers' company
+
+</Tab>
+
+<Tab title="Using the Connect SDK">
+
+Embed the SDK into your application for a white-labeled, native authentication process.
+
+After authentication, a unique `company_id` will be generated. This `company_id` will be used to read and write data to their accounting platform.
+
+</Tab>
+
+</Tabs>
 
 ---
 
@@ -52,14 +66,14 @@ Typically, each customer will want to set the following:
 
 You must guide your customer to link the Bank Account from which payroll is dispersed. 
 
-You should create a front-end that allows your customers to select the appropriate Bank Account. To have your front-end populate the available Banks Accounts from their underlying accounting platform, call [GET/accounts](https://docs.integrationlabs.co/api-reference/v3/accounting/accounts/get-all-accounts) and filter by **type = ’bank’** or call [GET/bank_accounts](https://docs.integrationlabs.co/api-reference/v3/accounting/bank-accounts/get-all-bank-accounts).
+You should create a front-end that allows your customers to select the appropriate Bank Account. To have your front-end populate the available Banks Accounts from their underlying accounting platform, call [GET/accounts](https://docs.integrationlabs.co/api-reference/v3/accounting/accounts/get-all-accounts) and filter by **type = 'bank'** or call [GET/bank_accounts](https://docs.integrationlabs.co/api-reference/v3/accounting/bank-accounts/get-all-bank-accounts).
 
 
 ### 2.2 Make customers select which Expense Account each Payroll component corresponds with
 
 Each customer will have different preferences for recording payroll costs, pensions, and employee taxes against various nominal accounts.
 
-**Your system should have a list of payroll components representing the different parts of a company's payroll.** To meet your customers’ needs, it is important to offer a flexible interface that allows companies to handle the nuances of data reconciliation according to their preferences. The mapping process can be as complex or granular as required for your specific use case.
+**Your system should have a list of payroll components representing the different parts of a company's payroll.** To meet your customers' needs, it is important to offer a flexible interface that allows companies to handle the nuances of data reconciliation according to their preferences. The mapping process can be as complex or granular as required for your specific use case.
 
 To have your interface populate the available Expense Accounts from their underlying accounting platform, use [GET/accounts](https://docs.integrationlabs.co/api-reference/v3/accounting/accounts/get-all-accounts).
 
@@ -80,9 +94,9 @@ Our [GET/tracking_categories](https://docs.integrationlabs.co/api-reference/v3/a
 
 <Step title="Sync Processed Payroll with Accounting Software" titleSize="h2" stepNumber="3">
 
-Before recording the payroll in your customers’ accounting platform, you must generate a line item object for each employee for each corresponding payroll component. This means you'll likely have multiple line items for each employee.
+Before recording the payroll in your customers' accounting platform, you must generate a line item object for each employee for each corresponding payroll component. This means you'll likely have multiple line items for each employee.
 
-To record payroll entries to the mapped accounts in your customers’ accounting platform, use [POST/journal_entries](https://docs.integrationlabs.co/api-reference/v3/accounting/journal-entries/create-journal-entries).
+To record payroll entries to the mapped accounts in your customers' accounting platform, use [POST/journal_entries](https://docs.integrationlabs.co/api-reference/v3/accounting/journal-entries/create-journal-entries).
 
 When creating the payroll Journal Entry, you should create a line item for each payroll component. 
 
@@ -94,14 +108,14 @@ Here are three examples:
 
 ### Journal Entry Example #1
 
-Say your customer has one employee on their payroll. Your first entry shows the employee’s gross wages, payroll taxes withheld, deductions, and net pay. It includes the following:
+Say your customer has one employee on their payroll. Your first entry shows the employee's gross wages, payroll taxes withheld, deductions, and net pay. It includes the following:
 
 - Gross wages
 - Employee Income tax payable
 - Employee health insurance payable
-- Payroll payable (aka the employee’s net wages)
+- Payroll payable (aka the employee's net wages)
 
-Gross wages are an expense that increases with a debit. The rest of the accounts are liabilities. Credit your liabilities. Here’s how the first journal entry would look:
+Gross wages are an expense that increases with a debit. The rest of the accounts are liabilities. Credit your liabilities. Here's how the first journal entry would look:
 
 | Date | Account | Debit | Credit |
 | --- | --- | --- | --- |
@@ -116,7 +130,7 @@ Gross wages are an expense that increases with a debit. The rest of the accounts
 
 Make a second journal entry when the customer gives their employee their paycheck. When they pay the employee, they no longer owe wages, so their liabilities decrease and their bank account decreases because they paid their employee.
 
-Because it’s a liability, decrease the Payroll Payable account with a debit. And decrease the Cash account (an asset) with a credit.
+Because it's a liability, decrease the Payroll Payable account with a debit. And decrease the Cash account (an asset) with a credit.
 
 <Note> For Xero, please use the bank transactions data model to post this entry. </Note>
 
@@ -149,6 +163,6 @@ For Xero, please use the bank transactions data model to post this entry.
 
 ## Conclusion
 
-Once you’ve completed the steps described above, you can automatically sync processed payrolls to your customers’ respective accounting systems. Feel free to contact us if you have any questions; we’re always happy to help. 
+Once you've completed the steps described above, you can automatically sync processed payrolls to your customers' respective accounting systems. Feel free to contact us if you have any questions; we're always happy to help. 
 
 ---

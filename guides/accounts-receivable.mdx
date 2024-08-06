@@ -8,15 +8,13 @@ icon: "file-invoice"
 
 ## Introduction
 
-Automation transforms how your Accounts Receivable (AR) product helps your business customers generate, track, and collect payments for invoices. However, the challenge lies in seamlessly reconciling these invoices with the range of accounting platforms used by various customers.
-
 Accounting integrations play a pivotal role in bridging your automated Accounts Receivable (AR) solution with your customers' accounting systems. This document is a step-by-step guide that details the process of using accounting integrations (via Integration Labs' Unified Accounting API) to develop an automated Accounts Receivable (AR) product with reconciliation.
 
 ---
 
 ## What is the Accounts Receivable (AR) Workflow?
 
-Automating the AR workflow involves the following key steps:
+The AR workflow involves the following key steps:
 
 1. **Invoice Generation**: Automatically create and send invoices based on services rendered or products sold.
 2. **Payment Tracking**: Monitor incoming payments and match them against outstanding invoices.
@@ -50,7 +48,7 @@ Handle all of the common workflows required to offer an Accounts Receivable/ Inv
 
 1. Use Integration Labs' Auth Flow to connect a business customer's accounting system.
 2. Use the Invoice API to create an Invoice and link Customers, Sales Orders, Items, and Accounts to the respective Invoice.
-3. Upload Documents to their respective Expenses/Invoice/Bill.
+3. Upload Documents to their respective Invoice.
 4. Create and Link Invoice Payments and Invoice Credit Notes to Customers and Open Invoices.
 
 ---
@@ -59,31 +57,32 @@ Handle all of the common workflows required to offer an Accounts Receivable/ Inv
 
 <Step title="Connect with your customers' accounting platform (One-Time Activity)" titleSize="h2" stepNumber="1">
 
-Integration Labs provides two convenient options to connect with your customers’ accounting platform:
+Integration Labs provides two convenient options to connect with your customers' accounting platform:
 
-Use Integration Labs’ Connect Link, a convenient and secure URL, or
-Embed Integration Labs’ Connect SDK into your application
-The Invite Link requires no code to use, making it suitable to get started without a developer. You can customize and white-label this onboarding process with Integration Labs’ Connect SDK, allowing authentication to occur natively in your product.
+1. Use Integration Labs' **Connect Link**, a convenient and secure URL, or
+2. Embed Integration Labs' **Connect SDK** into your application
+
+The Invite Link requires no code, making it suitable to get started without a developer. You can customize and white-label this onboarding process with Integration Labs' Connect SDK, allowing authentication to occur natively in your product.
 
 Either way, your customers will be guided through a simple authorization flow to connect their respective accounting platforms to your product.
 
-Use our Dashboard or APIs to connect a customer’s accounting platform a. Use the POST/invite-link. b. Name your customers’ company.
-A unique `company_id` will be generated once your customer completes the authentication flow. This `company_id` will be used to read and write data to their accounting platform.
+1. Use our Dashboard or APIs to connect a customer's accounting platform. Use the [**POST/invite-link**]() API, and provide a name for your customers' company.
+2. A unique '**company_id**' will be generated once your customer completes the authentication flow. This '**company_id**' will be used to read and write data to their accounting platform.
 
 ---
 
 </Step>
 
-<Step title="Create Invoices" titleSize="h2" stepNumber="2">
+<Step title="Create Invoices (Recurring)" titleSize="h2" stepNumber="2">
 
 **POST/invoice** to create an invoice.
 
-Important points to note:
+Important points to note while trying to post an Invoice:
 
-1. **Customer**: This is the customer linked to the Invoice. Use [**GET/contacts**]() or [**POST/contacts**](). A Contact ID is required to post an Invoice, so if the customer doesn't exist on the accounting platform, you'll first have to create a new customer using the [**POST/contacts**]().
+1. **Contacts**: This is the customer linked to the Invoice. Use [**GET/contacts**]() or [**POST/contacts**](). A Contact ID is required to post an Invoice, so if the customer doesn't exist on the accounting platform, you'll first have to create a new customer using the [**POST/contacts**]().
 2. **Items**: Every invoice contains multiple items (either goods or services) that were sold as part of the invoice, each of which credits certain accounts depending on what comprises their cost of goods sold. [**GET/items**]() lets you fetch all items in the business entity's catalogue.
-3. **Sales/Purchase Order**: Most companies usually issue Sales or Purchase Orders before an Invoice is generated. Use [**GET/sales_orders**]() to get the Sales order ID, which can be passed in [**POST/invoices**]() to link the purchase order and bill.
-4. **Credit Account** (Not Required): When you use the [**POST/invoices**](), invoices are automatically placed under the Account - Category= 'asset' and account_type= 'accounts_receivable'.
+3. **Sales/Purchase Order**: Some companies issue Sales or Purchase Orders before an Invoice is generated. Use [**GET/sales_orders**]() to get the Sales order ID, which can be passed in [**POST/invoices**]() to link the purchase order and bill.
+4. **Credit Account** (Not Required): When you use the [**POST/invoices**](), invoices are automatically placed under the **Account - Category= 'asset'** and **account_type= 'accounts_receivable'**.
 
 ---
 
@@ -91,7 +90,7 @@ Important points to note:
 
 <Step title="Upload Documents (Recurring)" titleSize="h2" stepNumber="3">
 
-**POST/documents** lets you upload a file to an expense, invoice, or bill.
+**POST/documents** lets you upload a file to an expense, invoice, or bill. When posting a document you will be required to pass the feild **document_type_id**, which represents the **platform_id** that will be returned after you create a Invoice. 
 
 ---
 

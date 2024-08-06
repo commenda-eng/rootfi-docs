@@ -1,6 +1,6 @@
 ---
 title: "Point-Of-Sale (POS)"
-description: "This guide helps Point-Of-Sale (POS) companies to push merchants' data from their e-commerce or point-of-sale (POS) platform into each merchant's accounting platform."
+description: "This guide helps Point-Of-Sale (POS) companies to push merchants' data from their e-commerce or point-of-sale (POS) platform into thier merchant's accounting platform."
 icon: "tag"
 ---
 
@@ -8,7 +8,7 @@ icon: "tag"
 
 ## Introduction
 
-Integration Labs allows you to push merchants' data from your e-commerce or point-of-sale (POS) platform into each merchant's accounting platform. Your merchants can seamlessly reconcile their e-commerce and accounting data, allowing them to spend more time growing their business.
+Integration Labs allows you to push merchants' data from your e-commerce or point-of-sale (POS) platform into your merchant's accounting platform. Your merchants can seamlessly reconcile their transaction data into their accounting software, allowing them to spend more time growing their business.
 
 This workflow can be used for the following types of Companies:
 
@@ -28,7 +28,7 @@ Through Integration Labs, your merchant can choose to reflect their sales data f
 - As an aggregated daily/weekly **sales invoice**, or
 - As an aggregated daily/weekly **journal entry**
 
-Integration Labs recommends using **journal entries** due to these advantages:
+Integration Labs recommends using **journal entries** due to the following advantages:
 
 - **Ease of use:** Single daily journal entries are easier to manage, adjust, and reconcile than, for example, invoices, payments, and credit notes.
 - **Controlled impact on the general ledger:** A journal entry is the most granular way to impact a company's general ledger without being confined to specific account types.
@@ -47,18 +47,11 @@ Here's a summary of the steps involved to get started:
 
 <Steps titleSize="h2">
 
-<Step title="Connect with your customers' accounting platform (One-Time Activity)" titleSize="h2" stepNumber="1">
+<Step title="Accounting Platform Selection" titleSize="h2" stepNumber="1">
 
-Integration Labs provides two convenient options to connect with your customers’ accounting platform:
+Embed the invite link to the Integration Labs SDK into your application. Your customers will be guided through our white-labelled UI to connect their respective Accounting Platforms. A **company_id** will be generated, which can be used to read and write data for this specific connection.
 
-Use Integration Labs’ Connect Link, a convenient and secure URL, or
-Embed Integration Labs’ Connect SDK into your application
-The Invite Link requires no code to use, making it suitable to get started without a developer. You can customize and white-label this onboarding process with Integration Labs’ Connect SDK, allowing authentication to occur natively in your product.
-
-Either way, your customers will be guided through a simple authorization flow to connect their respective accounting platforms to your product.
-
-Use our Dashboard or APIs to connect a customer’s accounting platform a. Use the POST/invite-link. b. Name your customers’ company.
-A unique `company_id` will be generated once your customer completes the authentication flow. This `company_id` will be used to read and write data to their accounting platform.
+Please refer to our documentation on how to integrate our SDK.
 
 ---
 
