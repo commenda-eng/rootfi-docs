@@ -52,6 +52,8 @@ You can configure the sync settings for each connection as well. The scopes and 
 
 To configure the sync settings at the connection level, you need to pass a `sync_config` object when [creating an invite link](/api-reference/v3/core/invite-links/create-invite-link).
 
+An important property you can set on a connection level sync config is a `sync_from` field. This property allows you to restrict the historical data sync from a specific date onwards. This is useful when your customers have vast amounts of data and you only want to sync particular data models from a specific date.
+
 <Note> 
 You need to pass in all the data models that you would want to sync in the sync config object as it overrides the sync settings at organization level.
 

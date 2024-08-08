@@ -1,15 +1,15 @@
 ---
 title: "Typescript SDK"
 version: "v3"
-description: "Install RootFi's Typescript server-side SDK to interact with RootFi APIs"
+description: "Install Integration Labs Typescript server-side SDK to interact with Integration Labs' APIs"
 icon: "code"
 ---
 
 ## Installation
 
-RootFi's server-side helper libraries (also known as server-side SDKs) reduce the amount of work required to use RootFi's REST APIs, starting with reducing the boilerplate code you have to write. Below are the installation instructions for these libraries in a variety of popular server-side programming languages.
+Integration Labs' server-side helper libraries (also known as server-side SDKs) reduce the amount of work required to use Integration Labs' REST APIs, starting with reducing the boilerplate code you have to write. Below are the installation instructions for these libraries in a variety of popular server-side programming languages.
 
-Open your project folder and run the following bash command on your terminal to install the RootFi SDK in your preferred language:
+Open your project folder and run the following bash command on your terminal to install the Integration Labs SDK in your preferred language:
 
 <CodeGroup>
 
@@ -29,9 +29,11 @@ import { RootFiClient } from "rootfi-api";
 
 </CodeGroup>
 
-## Instantiate RootFi
+---
 
-In your server file, instantiate the RootFi instance with your `apiKey`. You should generate the API keys on the [RootFi Dashboard](https://integrate.rootfi.dev/settings) and add them here.
+## Instantiate Integration Labs
+
+In your server file, instantiate the Integration Labs instance with your `apiKey`. You should generate the API keys on the [RootFi Dashboard](https://integrate.rootfi.dev/settings) and add them here.
 
 <CodeGroup>
 ```javascript NodeJS
@@ -43,6 +45,8 @@ const rootfi = new RootFiClient({ apiKey: "<api_key>", environment: RootFiEnviro
 
 The resources can be accessed using the instance. All the methods invocations follow the namespaced signature:
 
+---
+
 ## Run your first SDK request
 
 Now that you have the Node.js SDK installed, you can access RootFi's APIs.
@@ -51,7 +55,7 @@ Now that you have the Node.js SDK installed, you can access RootFi's APIs.
 
 ##### 2. [Unified API](/api-reference/v3/accounting/accounts/get-all-accounts)
 
-To demonstrate Core APIs, we use the following JavaScript code snippet to make a Create request for creating an invite link. In this example, we create an invite link while specifying the `company name`, `integration_categories` and `integrations`:
+To demonstrate Core APIs, we use the following JavaScript code snippet to make a Create request for creating an invite link. In this example, we create a connect link while specifying the `company name`, `integration_categories` and `integrations`:
 
 <CodeGroup>
 ```javascript NodeJS
@@ -89,6 +93,8 @@ const data = await rootfi.accounting.accounts.list({
 ```
 </CodeGroup>
 
+---
+
 ## Error Handling
 
 The SDK throws an error when the API request fails. You can catch the error and handle it as shown below:
@@ -107,7 +113,5 @@ The SDK throws an error when the API request fails. You can catch the error and 
 
       // Handle the error based on Error Code
     }
-
 ```
 </CodeGroup>
-```

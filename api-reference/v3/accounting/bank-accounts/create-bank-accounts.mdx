@@ -4,3 +4,15 @@ openapi: openapi_v3 post /accounting/bank_accounts
 ---
 
 **The Bank Accounts Data Model** streamlines access of bank account information across various accounting platforms, providing a consistent and unified representation of bank account data.
+
+## Additional Required Fields
+
+To successfully create a bank account, certain fields must be included in the raw_data object of the request body. The required fields are as follows:
+
+| Integration              | Field             | Description                                    |
+| ------------------------ | ----------------- | ---------------------------------------------- |
+| MYOB_BUSINESS            | nominal_code      | The nominal code of the bank account.          |
+| MYOB_BUSINESS            | description       | The description of the bank account.           |
+| MYOB_BUSINESS            | parent_account_id | The parent account ID of the bank account.     |
+| MYOB_BUSINESS            | tax_id            | The tax ID of the bank account.                |
+| SAGE_ZA_CLOUD_ACCOUNTING | sub_category_id   | The sub-category ID associated to the account. |
