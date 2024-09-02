@@ -4,9 +4,11 @@ description: "Automate your customers' expense reconciliation with their respect
 icon: "credit-card"
 ---
 
+---
+
 ## Introduction
 
-Welcome to Integration Labs' Expense Management Workflow Guide. This comprehensive guide is designed to help Expense Management companies automate their customers' expense reconciliation with their respective accounting systems using Integration Labs' Unified Accounting API.
+This comprehensive guide is designed to help Expense Management companies automate their customers' expense reconciliation with their respective accounting systems using Integration Labs' Unified Accounting API.
 
 ---
 
@@ -44,30 +46,16 @@ This workflow can be used for the following types of accounts:
 
 <Step title="Connect with your customers' accounting platform (One-Time Activity)" titleSize="h2" stepNumber="1">
 
-Integration Labs provides two options to connect with your customers' accounting platform:
+Integration Labs provides two convenient options to connect with your customers’ accounting platform:
 
-1. Use Integration Labs' **Connect Link**, a convenient and secure URL
-2. Embed Integration Labs' **Connect SDK** into your application
+Use Integration Labs’ Connect Link, a convenient and secure URL, **or**
+Embed Integration Labs’ Connect SDK into your application
+The Invite Link requires no code to use, making it suitable to get started without a developer. You can customize and white-label this onboarding process with Integration Labs’ Connect SDK, allowing authentication to occur natively in your product.
 
-<Tabs>
+Either way, your customers will be guided through a simple authorization flow to connect their respective accounting platforms to your product.
 
-<Tab title="Using the Connect Link">
-
-1. Use the Dashboard or APIs to connect a customer's accounting platform, **or**
-2. Use the [`POST/invite_link`](https://docs.integrationlabs.co/api-reference/v3/core/invite-links/create-invite-link)
-3. Name your customer's company
-
-</Tab>
-
-<Tab title="Using the Connect SDK">
-
-Embed the SDK into your application for a white-labeled, native authentication process.
-
-After authentication, a unique `company_id` will be generated. This `company_id` will be used to read and write data to their accounting platform.
-
-</Tab>
-
-</Tabs>
+Use our Dashboard or APIs to connect a customer’s accounting platform a. Use the POST/invite-link. b. Name your customers’ company.
+A unique `company_id` will be generated once your customer completes the authentication flow. This `company_id` will be used to read and write data to their accounting platform.
 
 ---
 
@@ -83,8 +71,8 @@ Every expense transaction must have an **Account** as a source of funds that is 
 
 This is a Bank Account with a **category = 'Bank'**
 
-1. Use [`GET/bank_accounts`](https://docs.integrationlabs.co/api-reference/v3/accounting/bank-accounts/get-all-bank-accounts) to get the **Bank Account ID** if the account already exists in the customer's accounting platform, **or**
-2. Use [`POST/bank_accounts`](https://docs.integrationlabs.co/api-reference/v3/accounting/bank-accounts/create-bank-accounts) to create a bank account and get the **Bank Account ID**.
+1. Use [GET/bank_accounts](/api-reference/v3/accounting/bank-accounts/get-all-bank-accounts) to get the **Bank Account ID** if the account already exists in the customer's accounting platform, **or**
+2. Use [POST/bank_accounts](/api-reference/v3/accounting/bank-accounts/create-bank-accounts) to create a bank account and get the **Bank Account ID**.
 
 </Tab>
 
@@ -92,9 +80,9 @@ This is a Bank Account with a **category = 'Bank'**
 
 This is an Account with a **category = 'Liability'**
 
-1. Use [`GET/accounts`](https://docs.integrationlabs.co/api-reference/v3/accounting/accounts/get-all-accounts) to get the **Account ID** if the account already exists in the customer's accounting platform.
-OR
-2. Use [`POST/accounts`](https://docs.integrationlabs.co/api-reference/v3/accounting/accounts/create-accounts) to create an Account and get the **Account ID**.
+1. Use [GET/accounts](/api-reference/v3/accounting/accounts/get-all-accounts) to get the **Account ID** if the account already exists in the customer's accounting platform.
+**OR**
+2. Use [POST/accounts](/api-reference/v3/accounting/accounts/create-accounts) to create an Account and get the **Account ID**.
 
 </Tab>
 
@@ -106,15 +94,15 @@ OR
 
 <Step title="Create Expenses (Recurring)" titleSize="h2" stepNumber="3">
 
-Generally, use the [`POST/expenses`](https://docs.integrationlabs.co/api-reference/v3/accounting/expenses/create-expenses) to create expenses.
+Generally, use the [POST/expenses](/api-reference/v3/accounting/expenses/create-expenses) to create expenses.
 
-<Note> If Expenses are unavailable for a particular accounting platform like Xero and Tally, use the [`POST/bills`](https://docs.integrationlabs.co/api-reference/v3/accounting/bills/create-bills) or [`POST/journal_entries`](https://docs.integrationlabs.co/api-reference/v3/accounting/journal-entries/create-journal-entries). </Note>
+<Note> If Expenses are unavailable for a particular accounting platform like Xero and Tally, use the [POST/bills](/api-reference/v3/accounting/bills/create-bills) or [POST/journal_entries](/api-reference/v3/accounting/journal-entries/create-journal-entries). </Note>
 
 Essential points to note:
 
 1. **Credit Account**: The account from which funds are drawn. Refer to Step 2 for more information.
-2. **Vendor**: The employee linked to the expense. Use the [`GET/contacts`](https://docs.integrationlabs.co/api-reference/v3/accounting/contacts/get-all-contacts) and [`POST/contacts`](https://docs.integrationlabs.co/api-reference/v3/accounting/contacts/create-contacts) and filter on type = 'vendor'. A **Contact ID** is required to post an Expense or Bill. If the employee doesn't exist on the accounting platform, create a new vendor using the [`POST/contacts`](https://docs.integrationlabs.co/api-reference/v3/accounting/contacts/create-contacts).
-3. **Expense Account or Debited Account**: You can push multiple line items (usually just 1) when pushing an expense. Each line item will have an expense **account** associated (category = 'expense'). Use the [`GET/accounts`](https://docs.integrationlabs.co/api-reference/v3/accounting/accounts/get-all-accounts) to fetch all accounts, and filter the account type by **category = 'expense'** through Postman or GraphQL.
+2. **Vendor**: The employee linked to the expense. Use the [GET/contacts](/api-reference/v3/accounting/contacts/get-all-contacts) and [POST/contacts](/api-reference/v3/accounting/contacts/create-contacts) and filter on type = `vendor`. A **Contact ID** is required to post an Expense or Bill. If the employee doesn't exist on the accounting platform, create a new vendor using the [POST/contacts](/api-reference/v3/accounting/contacts/create-contacts).
+3. **Expense Account or Debited Account**: You can push multiple line items (usually just 1) when pushing an expense. Each line item will have an expense **account** associated (category = `expense`). Use the [GET/accounts](/api-reference/v3/accounting/accounts/get-all-accounts) to fetch all accounts, and filter the account type by **category = `expense`** through Postman or GraphQL.
 
 ---
 
@@ -122,7 +110,7 @@ Essential points to note:
 
 <Step title="Upload Documents (Recurring)" titleSize="h2" stepNumber="4">
 
-Use the [`POST/documents`](https://docs.integrationlabs.co/api-reference/v3/accounting/documents/create-documents) to upload and attach files from a customer's employee to an expense, invoice, or bill.
+Use the [POST/documents](/api-reference/v3/accounting/documents/create-documents) to upload and attach files from a customer's employee to an expense, invoice, or bill.
 
 ---
 
@@ -130,7 +118,7 @@ Use the [`POST/documents`](https://docs.integrationlabs.co/api-reference/v3/acco
 
 <Step title="Record a Credit Card Repayment (Recurring)" titleSize="h2" stepNumber="5">
 
-Use the [`POST/journal_entries`](https://docs.integrationlabs.co/api-reference/v3/accounting/journal-entries/create-journal-entries) to reflect a credit card repayment.
+Use the [POST/journal_entries](/api-reference/v3/accounting/journal-entries/create-journal-entries) to reflect a credit card repayment.
 
 1. **Credited Account**: The bank account used to make the repayment.
 2. **Contact**: In this case, it will be the expense management company (your company).
@@ -142,7 +130,7 @@ Use the [`POST/journal_entries`](https://docs.integrationlabs.co/api-reference/v
 
 <Step title="Process Bank Account Withdrawals or Top Ups for Pre-Paid Cards (Recurring)" titleSize="h2" stepNumber="6">
 
-Use [`POST/journal_entries`](https://docs.integrationlabs.co/api-reference/v3/accounting/journal-entries/create-journal-entries) to reflect withdrawals and top-ups for a bank account/prepaid card.
+Use [POST/journal_entries](/api-reference/v3/accounting/journal-entries/create-journal-entries) to reflect withdrawals and top-ups for a bank account/prepaid card.
 
 1. **Credited Account**: The bank account used to make the top-up.
 2. **Debited Account**: The account being topped up (pre-paid asset or bank account).
@@ -155,9 +143,9 @@ Use [`POST/journal_entries`](https://docs.integrationlabs.co/api-reference/v3/ac
 
 Employee reimbursement requests and reimbursement payments are reflected in the accounting system as **Bills** and **Bill Payments**.
 
-1. To log a reimbursement request, use [`POST/bills`](https://docs.integrationlabs.co/api-reference/v3/accounting/bills/create-bills) to create a bill containing the reimbursement amount.
-    - Use [`POST/contacts`](https://docs.integrationlabs.co/api-reference/v3/accounting/contacts/create-contacts) (filter on type = 'vendor') to create a specific vendor per employee you link to the Bill.
-2. Once the reimbursement is approved and the payment is made, use the [`POST/bill_payments`](https://docs.integrationlabs.co/api-reference/v3/accounting/bill-payments/create-bill-payments) to log a payment against the requested reimbursement.
+1. To log a reimbursement request, use [POST/bills](/api-reference/v3/accounting/bills/create-bills) to create a bill containing the reimbursement amount.
+    - Use [POST/contacts](/api-reference/v3/accounting/contacts/create-contacts) (filter on type = 'vendor') to create a specific vendor per employee you link to the Bill.
+2. Once the reimbursement is approved and the payment is made, use the [POST/bill_payments](/api-reference/v3/accounting/bill-payments/create-bill-payments) to log a payment against the requested reimbursement.
 
 ---
 

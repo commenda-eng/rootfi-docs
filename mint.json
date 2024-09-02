@@ -90,7 +90,10 @@
       "group": "Use Case Guides",
       "pages": [
         "guides/expense-management",
-        "guides/payroll"
+        "guides/payroll",
+        "guides/accounts-payable",
+        "guides/accounts-receivable",
+        "guides/pos"
       ]
     },
     {
@@ -584,8 +587,8 @@
             {
               "group": "Payment Links",
               "pages": [
-                "api-reference/v3/payments/payment_links/overview",
-                "api-reference/v3/payments/payment_links/get-all-payment-links"
+                "api-reference/v3/payments/payment-links/overview",
+                "api-reference/v3/payments/payment-links/get-all-payment-links"
               ]
             },
             {
@@ -612,8 +615,8 @@
             {
               "group": "Tax Rates",
               "pages": [
-                "api-reference/v3/payments/tax_rates/overview",
-                "api-reference/v3/payments/tax_rates/get-all-tax-rates"
+                "api-reference/v3/payments/tax-rates/overview",
+                "api-reference/v3/payments/tax-rates/get-all-tax-rates"
               ]
             },
             {
@@ -676,8 +679,8 @@
             {
               "group": "Company Info",
               "pages": [
-                "api-reference/v3/ecommerce/company_info/overview",
-                "api-reference/v3/ecommerce/company_info/get-all-company-info"
+                "api-reference/v3/ecommerce/company-info/overview",
+                "api-reference/v3/ecommerce/company-info/get-all-company-info"
               ]
             },
             {

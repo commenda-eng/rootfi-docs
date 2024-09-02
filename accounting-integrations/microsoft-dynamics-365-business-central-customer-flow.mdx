@@ -5,26 +5,16 @@ description: "Learn how to set up our Microsoft Dynamics 365 Business Central in
 
 If you wish to set up Microsoft Dynamics 365 Business Central on the Integration Labs Portal, you will need to follow the steps outlined below.
 
----
+## <Note>You will need to have verified your company domain in order for you to link your Microsoft Dynamics 365 Business Central integration</Note>
 
-<Note>Your customer needs to have verified their company domain in order for them to link their Microsoft Dynamics 365 Business Central integration</Note>
+<Note>
+  You also need to have your client credentials set up for your tenant. Please follow the steps mentioned in the
+  [guide](https://docs.integrationlabs.co/accounting-integrations/microsoft-dynamics-365-business-central) to set up the client credentials for a tenant.
+</Note>
 
-## Adding OAuth Credentials to Clients Business Central Account
+### Setting up the integration Using Integration Labs Connect
 
-These steps have to be followed by the end-user who is connecting their Business Central account to Integration Labs.
-
-### Part 1: Set up the Business Central account to access the data.
-
-When your customer is connecting their MSD BC account to Integration Labs, they will need to enter the client credentials in their BC dashboard to allow Integration Labs to access the data.
-
-1. Login to the BC dashboard and navigate to Microsoft Entra Applications.
-   ![Client ID MS Dynamics](/images/msdBc/entra_page.png)
-2. Click on '+New' and enter the client id you copied from the Azure portal, enter a description, change the state to enabled and add `SUPER (DATA)` and `ADMINISTRATOR` permissions in the User Permission Sets. Enter `8f09f705-3d36-4cc9-84c2-8091e362c759` as the Client ID if you are using Integration Labs credentials.
-   ![Client ID MS Dynamics](/images/msdBc/super.png)
-
-### Part 2: Setting up the integration Using Integration Labs Connect
-
-You will need to enter your Tenant ID and Env name in the Integration Labs connect screen.
+You will need to enter your Client Credentials, Tenant ID and Env name in the Integration Labs connect screen.
 
 1. To get the Tenant ID and Env name, navigate to the BC dashboard, click on settings and then click on 'Admin Center'.
    ![Client ID MS Dynamics](/images/msdBc/admin_center.png)

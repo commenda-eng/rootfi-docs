@@ -5,13 +5,11 @@ description: "Learn how to set up our Microsoft Dynamics 365 Business Central in
 
 If you wish to set up Microsoft Dynamics 365 Business Central on the Integration Labs Portal, you will need to follow the steps outlined below.
 
----
+<Note>You will need to have verified your company domain in order for you to link your Microsoft Dynamics 365 Business Central integration</Note>
 
-<Note>Your customer needs to have verified their company domain in order for them to link their Microsoft Dynamics 365 Business Central integration</Note>
+<Steps titleSize="h2">
 
-## Setting up OAuth Credentials
-
-### Part 1: Create an App
+<Step title="Create an App" stepNumber="1">
 
 Follow the link [https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade](https://portal.azure.com/#view/Microsoft%5FAAD%5FRegisteredApps/ApplicationsListBlade)
 
@@ -25,13 +23,21 @@ Click on the +New Registration, you will see a form like this.
 4. Now Click the Register Button, now you have created an app.
 5. Below, You can see the newly created app.
 
-### Part 2: Copy Client ID and Client Secret
+---
+
+</Step>
+
+<Step title="Copy Client ID and Client Secret" stepNumber="2">
 
 1. Click on the newly created app, Go to the Overview section, you can see the Application Client ID similar to 38b55dff-140c-4602-abb5-d13dc644.
 
 ![Client ID MS Dynamics](/images/65ad5f0-Screenshot_2962.png)
 
-### Part 3: Generate and retrieve your client secret
+---
+
+</Step>
+
+<Step title="Generate and retrieve your client secret" stepNumber="3">
 
 In the Azure Portal:
 
@@ -47,12 +53,15 @@ Your **client secret** is generated and displayed at the bottom of the page.
 <Tip>
 
 **Important**
-
 The secret value won't be displayed again in full, so you must copy the value as soon as it gets generated.
 
 </Tip>
 
-### Part 4: Update access permissions
+---
+
+</Step>
+
+<Step title="Update access permissions" stepNumber="4">
 
 Now update the access permissions for your application. These control the data that your app can access in Business Central.
 
@@ -66,9 +75,9 @@ Now update the access permissions for your application. These control the data t
 6. Above the listed permissions, select Grant admin consent for Default Directory and then select Yes to confirm your change. This option might not be available for all subscription types
    ![Permissions Grant](/images/msdBc/grant.png)
 
-### Part 5: Enter Your Client ID and Client Secret on the Integration Labs Dashboard
+---
 
-1. Login to the Integration Labs dashboard.
-2. Select the 'Integrations' tab on the sidebar - here you will see a list of platforms you can integrate with.
-3. Click the 'Set Up' button on the MS Dynamics 365 card.
-4. When the form opens up simply enter the 'Client ID' and 'Client Secret' that you generated and click 'Save'.
+</Step>
+
+</Steps>
+Enter Your Client ID and Client Secret obtained from these steps in the Integration Connect Link along with the Tenant ID and Env Name.
