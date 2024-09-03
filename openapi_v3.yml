@@ -1057,10 +1057,11 @@ paths:
                             line_item_type: INVOICES
                             line_item_type_id: '123456'
                             tracking_category_ids:
-                              - '123456'
-                            item_id: '123456'
-                            tax_id: '123456'
-                            account_id: '123456'
+                              - "123456"
+                            project_id: "123456"
+                            item_id: "123456"
+                            tax_id: "123456"
+                            account_id: "123456"
                             description: This is a description
                             quantity: 1
                             unit_amount: 100
@@ -1140,10 +1141,11 @@ paths:
                           line_item_type: INVOICES
                           line_item_type_id: '123456'
                           tracking_category_ids:
-                            - '123456'
-                          item_id: '123456'
-                          tax_id: '123456'
-                          account_id: '123456'
+                            - "123456"
+                          project_id: "123456"
+                          item_id: "123456"
+                          tax_id: "123456"
+                          account_id: "123456"
                           description: This is a description
                           quantity: 1
                           unit_amount: 100
@@ -1207,10 +1209,11 @@ paths:
                           line_item_type: INVOICES
                           line_item_type_id: '123456'
                           tracking_category_ids:
-                            - '123456'
-                          item_id: '123456'
-                          tax_id: '123456'
-                          account_id: '123456'
+                            - "123456"
+                          project_id: "123456"
+                          item_id: "123456"
+                          tax_id: "123456"
+                          account_id: "123456"
                           description: This is a description
                           quantity: 1
                           unit_amount: 100
@@ -1638,10 +1641,11 @@ paths:
                             line_item_type: INVOICES
                             line_item_type_id: '123456'
                             tracking_category_ids:
-                              - '123456'
-                            item_id: '123456'
-                            tax_id: '123456'
-                            account_id: '123456'
+                              - "123456"
+                            project_id: "123456"
+                            item_id: "123456"
+                            tax_id: "123456"
+                            account_id: "123456"
                             description: This is a description
                             quantity: 1
                             unit_amount: 100
@@ -1725,10 +1729,11 @@ paths:
                           line_item_type: INVOICES
                           line_item_type_id: '123456'
                           tracking_category_ids:
-                            - '123456'
-                          item_id: '123456'
-                          tax_id: '123456'
-                          account_id: '123456'
+                            - "123456"
+                          project_id: "123456"
+                          item_id: "123456"
+                          tax_id: "123456"
+                          account_id: "123456"
                           description: This is a description
                           quantity: 1
                           unit_amount: 100
@@ -1774,40 +1779,29 @@ paths:
                 value:
                   company_id: 123
                   data:
-                    - currency_id: '123456'
-                      contact_id: '123456'
+                    - platform_id: "123456"
+                      currency_id: "123456"
+                      contact_id: "123456"
                       total_discount: 100
-                      sub_total: 1000
-                      tax_amount: 100
-                      total_amount: 1100
-                      amount_due: 1100
-                      document_number: '123456'
-                      posted_date: '2024-01-25T09:00:00Z'
-                      due_date: '2024-01-25T09:00:00Z'
+                      document_number: "123456"
+                      posted_date: "2024-01-25T09:00:00Z"
+                      due_date: "2024-01-25T09:00:00Z"
                       memo: Example Memo
-                      updated_at: '2024-01-25T09:00:00Z'
                       status: Example Status
                       currency_rate: 1
                       purchase_order_ids:
                         - '123456'
                       line_items:
-                        - rootfi_id: 157
-                          platform_id: '123456'
-                          line_item_type: INVOICES
-                          line_item_type_id: '123456'
-                          tracking_category_ids:
-                            - '123456'
-                          item_id: '123456'
-                          tax_id: '123456'
-                          account_id: '123456'
+                        - tracking_category_ids:
+                            - "123456"
+                          project_id: "123456"
+                          item_id: "123456"
+                          tax_id: "123456"
+                          account_id: "123456"
                           description: This is a description
                           quantity: 1
                           unit_amount: 100
-                          total_amount: 100
-                          sub_total: 100
-                          tax_amount: 100
                           total_discount: 100
-                          updated_at: '2024-01-22T05:07:31.000Z'
     put:
       description: Update a new Bill.
       operationId: accounting_bills_update
@@ -1854,10 +1848,11 @@ paths:
                           line_item_type: INVOICES
                           line_item_type_id: '123456'
                           tracking_category_ids:
-                            - '123456'
-                          item_id: '123456'
-                          tax_id: '123456'
-                          account_id: '123456'
+                            - "123456"
+                          project_id: "123456"
+                          item_id: "123456"
+                          tax_id: "123456"
+                          account_id: "123456"
                           description: This is a description
                           quantity: 1
                           unit_amount: 100
@@ -1907,37 +1902,25 @@ paths:
                       currency_id: '123456'
                       contact_id: '123456'
                       total_discount: 100
-                      sub_total: 1000
-                      tax_amount: 100
-                      total_amount: 1100
-                      amount_due: 1100
-                      document_number: '123456'
-                      posted_date: '2024-01-25T09:00:00Z'
-                      due_date: '2024-01-25T09:00:00Z'
+                      document_number: "123456"
+                      posted_date: "2024-01-25T09:00:00Z"
+                      due_date: "2024-01-25T09:00:00Z"
                       memo: Example Memo
-                      updated_at: '2024-01-25T09:00:00Z'
                       status: Example Status
                       currency_rate: 1
                       purchase_order_ids:
                         - '123456'
                       line_items:
-                        - rootfi_id: 157
-                          platform_id: '123456'
-                          line_item_type: INVOICES
-                          line_item_type_id: '123456'
-                          tracking_category_ids:
-                            - '123456'
-                          item_id: '123456'
-                          tax_id: '123456'
-                          account_id: '123456'
+                        - tracking_category_ids:
+                            - "123456"
+                          project_id: "123456"
+                          item_id: "123456"
+                          tax_id: "123456"
+                          account_id: "123456"
                           description: This is a description
                           quantity: 1
                           unit_amount: 100
-                          total_amount: 100
-                          sub_total: 100
-                          tax_amount: 100
                           total_discount: 100
-                          updated_at: '2024-01-22T05:07:31.000Z'
   /accounting/cash_flow_statement:
     get:
       description: Retrieve Cash Flow Statement from the database.
@@ -3285,10 +3268,11 @@ paths:
                             line_item_type: INVOICES
                             line_item_type_id: '123456'
                             tracking_category_ids:
-                              - '123456'
-                            item_id: '123456'
-                            tax_id: '123456'
-                            account_id: '123456'
+                              - "123456"
+                            project_id: "123456"
+                            item_id: "123456"
+                            tax_id: "123456"
+                            account_id: "123456"
                             description: This is a description
                             quantity: 1
                             unit_amount: 100
@@ -3368,10 +3352,11 @@ paths:
                           line_item_type: INVOICES
                           line_item_type_id: '123456'
                           tracking_category_ids:
-                            - '123456'
-                          item_id: '123456'
-                          tax_id: '123456'
-                          account_id: '123456'
+                            - "123456"
+                          project_id: "123456"
+                          item_id: "123456"
+                          tax_id: "123456"
+                          account_id: "123456"
                           description: This is a description
                           quantity: 1
                           unit_amount: 100
@@ -3420,6 +3405,49 @@ paths:
                     - currency_id: AED
                       account_id: acc_56S9s4tRcvkHJBCrgzj3YM
                       contact_id: co_UVH2BXam9VXbtZzJXa4Ctr
+                      document_number: testttt expense
+                      memo: Testttt
+                      payment_mode: cash
+                      currency_rate: 1.5
+                      posted_date: "2023-06-03T00:00:00.000Z"
+                      line_items:
+                        - tracking_category_ids:
+                            - "123456"
+                          project_id: "123456"
+                          item_id: "123456"
+                          tax_id: "123456"
+                          account_id: "123456"
+                          description: This is a description
+                          quantity: 1
+                          unit_amount: 100
+                          total_discount: 100
+    put:
+      description: Update an existing Expense.
+      operationId: accounting_expenses_update
+      tags:
+        - AccountingExpenses
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/accountingCreateExpenseResponse"
+              examples:
+                Example1:
+                  value:
+                    data:
+                      rootfi_id: 123
+                      rootfi_deleted_at: null
+                      rootfi_created_at: "2024-01-25T09:00:00Z"
+                      rootfi_updated_at: "2024-01-25T09:00:00Z"
+                      rootfi_company_id: 456
+                      platform_id: "123456_1"
+                      platform_unique_id: "123456"
+                      currency_id: AED
+                      account_id: acc_56S9s4tRcvkHJBCrgzj3YM
+                      contact_id: co_UVH2BXam9VXbtZzJXa4Ctr
                       sub_total: 400
                       tax_amount: 2.5
                       total_amount: 400
@@ -3435,10 +3463,11 @@ paths:
                           line_item_type: INVOICES
                           line_item_type_id: '123456'
                           tracking_category_ids:
-                            - '123456'
-                          item_id: '123456'
-                          tax_id: '123456'
-                          account_id: '123456'
+                            - "123456"
+                          project_id: "123456"
+                          item_id: "123456"
+                          tax_id: "123456"
+                          account_id: "123456"
                           description: This is a description
                           quantity: 1
                           unit_amount: 100
@@ -3446,7 +3475,63 @@ paths:
                           sub_total: 100
                           tax_amount: 100
                           total_discount: 100
-                          updated_at: '2024-01-22T05:07:31.000Z'
+                          updated_at: "2024-01-22T05:07:31.000Z"
+        "401":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RootFiAPIResponseType"
+        "403":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RootFiAPIResponseType"
+        "404":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RootFiAPIResponseType"
+        "500":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RootFiAPIResponseType"
+      summary: Update Expense
+      security: *ref_0
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/accountingCreateExpenseRequest"
+            examples:
+              Example1:
+                value:
+                  company_id: 123
+                  data:
+                    - currency_id: AED
+                      account_id: acc_56S9s4tRcvkHJBCrgzj3YM
+                      contact_id: co_UVH2BXam9VXbtZzJXa4Ctr
+                      document_number: testttt expense
+                      memo: Testttt
+                      payment_mode: cash
+                      currency_rate: 1.5
+                      posted_date: "2023-06-03T00:00:00.000Z"
+                      line_items:
+                        - tracking_category_ids:
+                            - "123456"
+                          project_id: "123456"
+                          item_id: "123456"
+                          tax_id: "123456"
+                          account_id: "123456"
+                          description: This is a description
+                          quantity: 1
+                          unit_amount: 100
+                          total_discount: 100
   /accounting/goods_receipt_notes:
     get:
       description: Retrieve all Goods Receipt Notes.
@@ -3584,10 +3669,11 @@ paths:
                             line_item_type: INVOICES
                             line_item_type_id: '123456'
                             tracking_category_ids:
-                              - '123456'
-                            item_id: '123456'
-                            tax_id: '123456'
-                            account_id: '123456'
+                              - "123456"
+                            project_id: "123456"
+                            item_id: "123456"
+                            tax_id: "123456"
+                            account_id: "123456"
                             description: This is a description
                             quantity: 1
                             unit_amount: 100
@@ -3960,10 +4046,11 @@ paths:
                             line_item_type: INVOICES
                             line_item_type_id: '123456'
                             tracking_category_ids:
-                              - '123456'
-                            item_id: '123456'
-                            tax_id: '123456'
-                            account_id: '123456'
+                              - "123456"
+                            project_id: "123456"
+                            item_id: "123456"
+                            tax_id: "123456"
+                            account_id: "123456"
                             description: This is a description
                             quantity: 1
                             unit_amount: 100
@@ -4043,10 +4130,11 @@ paths:
                           line_item_type: INVOICES
                           line_item_type_id: '123456'
                           tracking_category_ids:
-                            - '123456'
-                          item_id: '123456'
-                          tax_id: '123456'
-                          account_id: '123456'
+                            - "123456"
+                          project_id: "123456"
+                          item_id: "123456"
+                          tax_id: "123456"
+                          account_id: "123456"
                           description: This is a description
                           quantity: 1
                           unit_amount: 100
@@ -4110,10 +4198,11 @@ paths:
                           line_item_type: INVOICES
                           line_item_type_id: '123456'
                           tracking_category_ids:
-                            - '123456'
-                          item_id: '123456'
-                          tax_id: '123456'
-                          account_id: '123456'
+                            - "123456"
+                          project_id: "123456"
+                          item_id: "123456"
+                          tax_id: "123456"
+                          account_id: "123456"
                           description: This is a description
                           quantity: 1
                           unit_amount: 100
@@ -4541,10 +4630,11 @@ paths:
                             line_item_type: INVOICES
                             line_item_type_id: '123456'
                             tracking_category_ids:
-                              - '123456'
-                            item_id: '123456'
-                            tax_id: '123456'
-                            account_id: '123456'
+                              - "123456"
+                            project_id: "123456"
+                            item_id: "123456"
+                            tax_id: "123456"
+                            account_id: "123456"
                             description: This is a description
                             quantity: 1
                             unit_amount: 100
@@ -4628,10 +4718,11 @@ paths:
                           line_item_type: INVOICES
                           line_item_type_id: '123456'
                           tracking_category_ids:
-                            - '123456'
-                          item_id: '123456'
-                          tax_id: '123456'
-                          account_id: '123456'
+                            - "123456"
+                          project_id: "123456"
+                          item_id: "123456"
+                          tax_id: "123456"
+                          account_id: "123456"
                           description: This is a description
                           quantity: 1
                           unit_amount: 100
@@ -4677,40 +4768,29 @@ paths:
                 value:
                   company_id: 123
                   data:
-                    - currency_id: '123456'
-                      contact_id: '123456'
+                    - platform_id: 1af68894-ea9f-ee11-be36-7c1e520f50bc
+                      currency_id: "123456"
+                      contact_id: "123456"
                       total_discount: 100
-                      sub_total: 1000
-                      tax_amount: 100
-                      total_amount: 1100
-                      amount_due: 1100
-                      document_number: '123456'
-                      posted_date: '2024-01-25T09:00:00Z'
-                      due_date: '2024-01-25T09:00:00Z'
+                      document_number: "123456"
+                      posted_date: "2024-01-25T09:00:00Z"
+                      due_date: "2024-01-25T09:00:00Z"
                       memo: Example Memo
-                      updated_at: '2024-01-25T09:00:00Z'
                       status: Example Status
                       currency_rate: 1
                       sales_order_ids:
                         - '123456'
                       line_items:
-                        - rootfi_id: 157
-                          platform_id: '123456'
-                          line_item_type: INVOICES
-                          line_item_type_id: '123456'
-                          tracking_category_ids:
-                            - '123456'
-                          item_id: '123456'
-                          tax_id: '123456'
-                          account_id: '123456'
+                        - tracking_category_ids:
+                            - "123456"
+                          project_id: "123456"
+                          item_id: "123456"
+                          tax_id: "123456"
+                          account_id: "123456"
                           description: This is a description
                           quantity: 1
                           unit_amount: 100
-                          total_amount: 100
-                          sub_total: 100
-                          tax_amount: 100
                           total_discount: 100
-                          updated_at: '2024-01-22T05:07:31.000Z'
     put:
       description: Update a new invoice.
       operationId: accounting_invoices_update
@@ -4757,10 +4837,11 @@ paths:
                           line_item_type: INVOICES
                           line_item_type_id: '123456'
                           tracking_category_ids:
-                            - '123456'
-                          item_id: '123456'
-                          tax_id: '123456'
-                          account_id: '123456'
+                            - "123456"
+                          project_id: "123456"
+                          item_id: "123456"
+                          tax_id: "123456"
+                          account_id: "123456"
                           description: This is a description
                           quantity: 1
                           unit_amount: 100
@@ -4810,37 +4891,25 @@ paths:
                       currency_id: '123456'
                       contact_id: '123456'
                       total_discount: 100
-                      sub_total: 1000
-                      tax_amount: 100
-                      total_amount: 1100
-                      amount_due: 1100
-                      document_number: '123456'
-                      posted_date: '2024-01-25T09:00:00Z'
-                      due_date: '2024-01-25T09:00:00Z'
+                      document_number: "123456"
+                      posted_date: "2024-01-25T09:00:00Z"
+                      due_date: "2024-01-25T09:00:00Z"
                       memo: Example Memo
-                      updated_at: '2024-01-25T09:00:00Z'
                       status: Example Status
                       currency_rate: 1
                       sales_order_ids:
                         - '123456'
                       line_items:
-                        - rootfi_id: 157
-                          platform_id: '123456'
-                          line_item_type: INVOICES
-                          line_item_type_id: '123456'
-                          tracking_category_ids:
-                            - '123456'
-                          item_id: '123456'
-                          tax_id: '123456'
-                          account_id: '123456'
+                        - tracking_category_ids:
+                            - "123456"
+                          project_id: "123456"
+                          item_id: "123456"
+                          tax_id: "123456"
+                          account_id: "123456"
                           description: This is a description
                           quantity: 1
                           unit_amount: 100
-                          total_amount: 100
-                          sub_total: 100
-                          tax_amount: 100
                           total_discount: 100
-                          updated_at: '2024-01-22T05:07:31.000Z'
   /accounting/items:
     get:
       description: Retrieve all items from the database.
@@ -5496,7 +5565,7 @@ paths:
                           description: This is a description
                           net_amount: 100
                           tax_amount: 100
-                          updated_at: '2024-01-22T05:07:31.000Z'
+                          updated_at: "2024-01-22T05:07:31.000Z"
   /accounting/projects:
     get:
       description: Retrieve all Projects.
@@ -5583,7 +5652,7 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: 'false'
+              value: "false"
         - name: return_count
           in: query
           description: Return the count of the objects. Supported values are true and false
@@ -5593,69 +5662,69 @@ paths:
             nullable: true
           examples:
             Example1:
-              value: 'false'
+              value: "false"
         - name: sort[rootfi_created_at]
           in: query
           description: Sort by rootfi_created_at
           required: false
           schema:
-            $ref: '#/components/schemas/SortOrder'
+            $ref: "#/components/schemas/SortOrder"
             nullable: true
         - name: sort[rootfi_updated_at]
           in: query
           description: Sort by rootfi_updated_at
           required: false
           schema:
-            $ref: '#/components/schemas/SortOrder'
+            $ref: "#/components/schemas/SortOrder"
             nullable: true
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/accountingGetProjectsResponse'
+                $ref: "#/components/schemas/accountingGetProjectsResponse"
               examples:
                 Example1:
                   value:
                     data:
                       - rootfi_id: 123
                         rootfi_deleted_at: null
-                        rootfi_created_at: '2024-01-25T09:00:00Z'
-                        rootfi_updated_at: '2024-01-25T09:00:00Z'
+                        rootfi_created_at: "2024-01-25T09:00:00Z"
+                        rootfi_updated_at: "2024-01-25T09:00:00Z"
                         rootfi_company_id: 456
-                        platform_id: '123456_1'
-                        platform_unique_id: '123456'
-                        code: '123456'
+                        platform_id: "123456_1"
+                        platform_unique_id: "123456"
+                        code: "123456"
                         description: Example Description
                         name: Example Name
                     prev: eyJyb290ZmlfaWQiOjQ0MDA2MX0=
                     next: eyJyb291ZmlfaWQiOjQ0MDA2MX0=
                     total_count: 123
-        '401':
-          description: ''
+        "401":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RootFiAPIResponseType'
-        '403':
-          description: ''
+                $ref: "#/components/schemas/RootFiAPIResponseType"
+        "403":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RootFiAPIResponseType'
-        '404':
-          description: ''
+                $ref: "#/components/schemas/RootFiAPIResponseType"
+        "404":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RootFiAPIResponseType'
-        '500':
-          description: ''
+                $ref: "#/components/schemas/RootFiAPIResponseType"
+        "500":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RootFiAPIResponseType'
+                $ref: "#/components/schemas/RootFiAPIResponseType"
       summary: Get All Projects
       security: *ref_0
   /accounting/purchase_orders:
@@ -5813,10 +5882,11 @@ paths:
                             line_item_type: INVOICES
                             line_item_type_id: '123456'
                             tracking_category_ids:
-                              - '123456'
-                            item_id: '123456'
-                            tax_id: '123456'
-                            account_id: '123456'
+                              - "123456"
+                            project_id: "123456"
+                            item_id: "123456"
+                            tax_id: "123456"
+                            account_id: "123456"
                             description: This is a description
                             quantity: 1
                             unit_amount: 100
@@ -5899,10 +5969,11 @@ paths:
                           line_item_type: INVOICES
                           line_item_type_id: '123456'
                           tracking_category_ids:
-                            - '123456'
-                          item_id: '123456'
-                          tax_id: '123456'
-                          account_id: '123456'
+                            - "123456"
+                          project_id: "123456"
+                          item_id: "123456"
+                          tax_id: "123456"
+                          account_id: "123456"
                           description: This is a description
                           quantity: 1
                           unit_amount: 100
@@ -5969,10 +6040,11 @@ paths:
                           line_item_type: INVOICES
                           line_item_type_id: '123456'
                           tracking_category_ids:
-                            - '123456'
-                          item_id: '123456'
-                          tax_id: '123456'
-                          account_id: '123456'
+                            - "123456"
+                          project_id: "123456"
+                          item_id: "123456"
+                          tax_id: "123456"
+                          account_id: "123456"
                           description: This is a description
                           quantity: 1
                           unit_amount: 100
@@ -6136,10 +6208,11 @@ paths:
                             line_item_type: INVOICES
                             line_item_type_id: '123456'
                             tracking_category_ids:
-                              - '123456'
-                            item_id: '123456'
-                            tax_id: '123456'
-                            account_id: '123456'
+                              - "123456"
+                            project_id: "123456"
+                            item_id: "123456"
+                            tax_id: "123456"
+                            account_id: "123456"
                             description: This is a description
                             quantity: 1
                             unit_amount: 100
@@ -6222,10 +6295,11 @@ paths:
                           line_item_type: INVOICES
                           line_item_type_id: '123456'
                           tracking_category_ids:
-                            - '123456'
-                          item_id: '123456'
-                          tax_id: '123456'
-                          account_id: '123456'
+                            - "123456"
+                          project_id: "123456"
+                          item_id: "123456"
+                          tax_id: "123456"
+                          account_id: "123456"
                           description: This is a description
                           quantity: 1
                           unit_amount: 100
@@ -6292,10 +6366,11 @@ paths:
                           line_item_type: INVOICES
                           line_item_type_id: '123456'
                           tracking_category_ids:
-                            - '123456'
-                          item_id: '123456'
-                          tax_id: '123456'
-                          account_id: '123456'
+                            - "123456"
+                          project_id: "123456"
+                          item_id: "123456"
+                          tax_id: "123456"
+                          account_id: "123456"
                           description: This is a description
                           quantity: 1
                           unit_amount: 100
@@ -13700,6 +13775,10 @@ components:
           type: string
           nullable: true
           description: The currency id of the bank account
+        category:
+          type: string
+          nullable: true
+          description: The category of the bank account
         updated_at:
           type: string
           nullable: true
@@ -14213,26 +14292,6 @@ components:
           format: double
           nullable: true
           description: The total discount of the bill
-        sub_total:
-          type: number
-          format: double
-          nullable: true
-          description: The sub total of the bill
-        tax_amount:
-          type: number
-          format: double
-          nullable: true
-          description: The tax amount of the bill
-        total_amount:
-          type: number
-          format: double
-          nullable: true
-          description: The total amount of the bill
-        amount_due:
-          type: number
-          format: double
-          nullable: true
-          description: The amount due of the bill
         document_number:
           type: string
           nullable: true
@@ -14249,10 +14308,6 @@ components:
           type: string
           nullable: true
           description: The memo of the bill
-        updated_at:
-          type: string
-          description: The updated at of the bill
-          example: '2024-01-25T09:00:00Z'
         status:
           type: string
           nullable: true
@@ -14271,12 +14326,11 @@ components:
         line_items:
           type: array
           items:
-            $ref: '#/components/schemas/LineItemFields'
+            $ref: "#/components/schemas/CreateLineItemFields"
           nullable: true
           description: The line items of the bill
       required:
         - platform_id
-        - updated_at
     accountingBillObject:
       title: accountingBillObject
       type: object
@@ -14324,7 +14378,7 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/accountingBillFields'
+            $ref: "#/components/schemas/accountingUpdateBillFields"
           description: The data of the bill to create
       required:
         - data
@@ -15047,8 +15101,60 @@ components:
           nullable: true
           description: The documents of the Expense
       allOf:
-        - $ref: '#/components/schemas/AccountingRootFiBaseFields'
-        - $ref: '#/components/schemas/accountingExpenseFields'
+        - $ref: "#/components/schemas/AccountingRootFiBaseFields"
+        - $ref: "#/components/schemas/accountingExpenseFields"
+    accountingUpdateExpenseFields:
+      title: accountingUpdateExpenseFields
+      type: object
+      properties:
+        platform_id:
+          type: string
+          nullable: true
+          description: The platform ID of the Expense. Can we used to update the Expense
+        contact_id:
+          type: string
+          nullable: true
+          description: The contact ID of the Expense
+        account_id:
+          type: string
+          nullable: true
+          description: The account ID of the Expense
+        document_number:
+          type: string
+          nullable: true
+          description: The document number of the Expense
+        posted_date:
+          type: string
+          nullable: true
+          description: The posted date of the Expense
+        payment_mode:
+          type: string
+          nullable: true
+          description: The payment mode of the Expense
+        currency_id:
+          type: string
+          nullable: true
+          description: The ISO-4217 currency code of the Expense
+        currency_rate:
+          type: number
+          format: double
+          nullable: true
+          description: The currency rate of the Expense
+        total_discount:
+          type: number
+          format: double
+          nullable: true
+          description: The total discount of the Expense
+        memo:
+          type: string
+          nullable: true
+          description: The memo of the Expense
+        line_items:
+          type: array
+          items:
+            $ref: "#/components/schemas/CreateLineItemFields"
+          nullable: true
+          description: The line items of the Expense
     accountingGetExpensesResponse:
       title: accountingGetExpensesResponse
       type: object
@@ -15069,7 +15175,7 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/accountingExpenseFields'
+            $ref: "#/components/schemas/accountingUpdateExpenseFields"
           description: The data of the Expense to create
       required:
         - data
@@ -15630,26 +15736,6 @@ components:
           format: double
           nullable: true
           description: The total discount of the invoice
-        sub_total:
-          type: number
-          format: double
-          nullable: true
-          description: The sub total of the invoice
-        tax_amount:
-          type: number
-          format: double
-          nullable: true
-          description: The tax amount of the invoice
-        total_amount:
-          type: number
-          format: double
-          nullable: true
-          description: The total amount of the invoice
-        amount_due:
-          type: number
-          format: double
-          nullable: true
-          description: The amount due of the invoice
         document_number:
           type: string
           nullable: true
@@ -15666,10 +15752,6 @@ components:
           type: string
           nullable: true
           description: The memo of the invoice
-        updated_at:
-          type: string
-          nullable: true
-          description: The updated at of the invoice
         status:
           type: string
           nullable: true
@@ -15688,7 +15770,7 @@ components:
         line_items:
           type: array
           items:
-            $ref: '#/components/schemas/LineItemFields'
+            $ref: "#/components/schemas/CreateLineItemFields"
           nullable: true
           description: The line items of the invoice
       required:
@@ -15740,7 +15822,7 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/accountingInvoiceFields'
+            $ref: "#/components/schemas/accountingUpdateInvoiceFields"
           description: The data of the invoice to create
       required:
         - data
@@ -16053,8 +16135,8 @@ components:
       type: object
       properties: {}
       allOf:
-        - $ref: '#/components/schemas/AccountingRootFiBaseFields'
-        - $ref: '#/components/schemas/accountingProjectFields'
+        - $ref: "#/components/schemas/AccountingRootFiBaseFields"
+        - $ref: "#/components/schemas/accountingProjectFields"
     accountingGetProjectsResponse:
       title: accountingGetProjectsResponse
       type: object
@@ -16063,11 +16145,11 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/accountingProjectObject'
+            $ref: "#/components/schemas/accountingProjectObject"
       required:
         - data
       allOf:
-        - $ref: '#/components/schemas/CommonReadResponse'
+        - $ref: "#/components/schemas/CommonReadResponse"
     accountingPurchaseOrdersFields:
       title: accountingPurchaseOrdersFields
       type: object
@@ -19770,6 +19852,10 @@ components:
             type: string
           nullable: true
           description: The tracking category ids of the line item
+        project_id:
+          type: string
+          nullable: true
+          description: The project id of the line item
         item_id:
           type: string
           nullable: true
@@ -19833,6 +19919,51 @@ components:
           format: date-time
           nullable: true
           description: The last ISO 8601 timestamp that the data was updated at
+    CreateLineItemFields:
+      title: CreateLineItemFields
+      type: object
+      properties:
+        tracking_category_ids:
+          type: array
+          items:
+            type: string
+          nullable: true
+          description: The tracking category ids of the line item
+        project_id:
+          type: string
+          nullable: true
+          description: The project id of the line item
+        item_id:
+          type: string
+          nullable: true
+          description: The item id of the line item
+        tax_id:
+          type: string
+          nullable: true
+          description: The tax id of the line item
+        account_id:
+          type: string
+          nullable: true
+          description: The account id of the line item
+        description:
+          type: string
+          nullable: true
+          description: The description of the line item
+        quantity:
+          type: number
+          format: double
+          nullable: true
+          description: The quantity of the line item
+        unit_amount:
+          type: number
+          format: double
+          nullable: true
+          description: The unit amount of the line item
+        total_discount:
+          type: number
+          format: double
+          nullable: true
+          description: The total discount for the line item
     BaseJournalLineObject:
       title: BaseJournalLineObject
       type: object

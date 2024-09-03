@@ -539,7 +539,10 @@
             },
             {
               "group": "Payment Links",
-              "pages": ["api-reference/v3/payments/payment_links/overview", "api-reference/v3/payments/payment_links/get-all-payment-links"]
+              "pages": [
+                "api-reference/v3/payments/payment-links/overview",
+                "api-reference/v3/payments/payment-links/get-all-payment-links"
+              ]
             },
             {
               "group": "Payments",
@@ -555,7 +558,10 @@
             },
             {
               "group": "Tax Rates",
-              "pages": ["api-reference/v3/payments/tax_rates/overview", "api-reference/v3/payments/tax_rates/get-all-tax-rates"]
+              "pages": [
+                "api-reference/v3/payments/tax-rates/overview",
+                "api-reference/v3/payments/tax-rates/get-all-tax-rates"
+              ]
             },
             {
               "group": "Balances",
@@ -601,7 +607,10 @@
             },
             {
               "group": "Company Info",
-              "pages": ["api-reference/v3/ecommerce/company_info/overview", "api-reference/v3/ecommerce/company_info/get-all-company-info"]
+              "pages": [
+                "api-reference/v3/ecommerce/company-info/overview",
+                "api-reference/v3/ecommerce/company-info/get-all-company-info"
+              ]
             },
             {
               "group": "Fulfillments",
