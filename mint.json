@@ -148,7 +148,8 @@
         "payment-integrations/stripe",
         "payment-integrations/square",
         "payment-integrations/zoho-invoice",
-        "payment-integrations/mollie"
+        "payment-integrations/mollie",
+        "payment-integrations/paddle"
       ]
     },
     {
