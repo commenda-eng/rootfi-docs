@@ -15721,7 +15721,7 @@ components:
       properties:
         platform_id:
           type: string
-          description: The platform ID of the contact
+          description: The platform ID of the invoice
           example: 1af68894-ea9f-ee11-be36-7c1e520f50bc
         currency_id:
           type: string
