@@ -44,6 +44,7 @@ All Integration Labs Write APIs will return a 400 status code with one of the fo
 | record-already-exists | Record already exists with given: \{field_name}. A helpful error message | Thrown when a record already exists with the given field by the integration platform |
 | operation-denied      | Operation Denied: A helpful error message                                | Thrown when the integration platform denies the operation                            |
 | unknown-error         | Unknown error: : A helpful error message                                 | Thrown when RootFi cannot map the error to a known error code                        |
+| platform-denied       | The underlying platform denied the request                               | Thrown when the underlying platform denies a request                                 |
 
 <Warning>
 **Internal errors**
