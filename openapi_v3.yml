@@ -15721,7 +15721,7 @@ components:
       properties:
         platform_id:
           type: string
-          description: The platform ID of the invoice
+          description: The platform ID of the contact
           example: 1af68894-ea9f-ee11-be36-7c1e520f50bc
         currency_id:
           type: string
@@ -16810,6 +16810,10 @@ components:
             $ref: '#/components/schemas/SyncConfigData'
           nullable: true
           description: The sync configuration of the connection
+        partner_id:
+          type: string
+          nullable: true
+          description: A custom ID which can be used to identify the invite link or Company
       required:
         - integration_categories
     coreInviteLinkData:
