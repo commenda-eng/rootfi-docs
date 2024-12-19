@@ -61,7 +61,7 @@ The secret value won't be displayed again in full, so you must copy the value as
 
 </Step>
 
-<Step title="Update access permissions" stepNumber="4">
+<Step title="Update and verify access permissions" stepNumber="4">
 
 Now update the access permissions for your application. These control the data that your app can access in Business Central.
 
@@ -72,8 +72,20 @@ Now update the access permissions for your application. These control the data t
     **AdminCenter.ReadWrite.All**, **API.ReadWrite.All**, **app_access** and **Automation.ReadWrite.All**.
    ![Permissions](/images/msdBc/permissions.png)
 5. Click 'Add Permissions'.
-6. Above the listed permissions, select Grant admin consent for Default Directory and then select Yes to confirm your change. This option might not be available for all subscription types
+6. Above the listed permissions, select Grant admin consent for Default Directory and then select Yes to confirm your change. This option might not be available for all subscription types.
    ![Permissions Grant](/images/msdBc/grant.png)
+
+<Note>
+**Important**: After granting admin consent, verify that:
+- All permissions show a green checkmark ✓ status
+- Under "Status" column, it shows "Granted for..."
+- Wait a few minutes after granting consent for the permissions to fully propagate
+</Note>
+
+If you don't see the green checkmarks or "Granted for..." status, or if you're not able to grant admin consent:
+- Ensure you're logged in with an Azure AD administrator account
+- Contact your Azure AD administrator to grant these permissions
+- Try logging out and logging back in to refresh your session
 
 ---
 
@@ -81,3 +93,5 @@ Now update the access permissions for your application. These control the data t
 
 </Steps>
 Enter Your Client ID and Client Secret obtained from these steps in the Integration Connect Link along with the Tenant ID and Env Name.
+</fileContent>
+</invoke>

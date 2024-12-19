@@ -16,7 +16,7 @@ This guide will demonstrate how to locate or generate these credentials within N
 
 Before setting up the integration, make sure you meet the following requirements:
 
-- You possess **Administrator** permissions in your company’s NetSuite instance or have access permissions shared with you by another user.
+- You possess **Administrator** permissions in your company's NetSuite instance or have access permissions shared with you by another user.
 
 <aside>
 💡 The standard Administrator role is available in the list of roles on the Manage Roles page.
@@ -112,13 +112,31 @@ Copy the **Token ID** and **Token Secret** provided. **This will only be shown o
 
 </Step>
 </Steps>
+
+## Troubleshooting Permission Issues
+
+If you encounter a "Failed to verify update permissions" error during deployment, follow these steps:
+
+1. Verify that the user associated with the access token has the **Integration Labs Role Permission** properly assigned
+2. Ensure the role has the following permissions:
+   - Full access to Lists
+   - Full access to Setup
+   - Full access to Custom Records
+3. Check that the Integration Labs Bundle was successfully installed
+4. Verify that your access token hasn't expired (tokens typically expire after 60 minutes of inactivity)
+
+If the issue persists:
+- Log out and log back into NetSuite
+- Clear your browser cache
+- Contact your NetSuite administrator to verify your account has the necessary permissions
+
 ## Finding your NetSuite Account ID
 
 <Steps>
   <Step title="First Step">Log into your NetSuite portal</Step>
   <Step title="Second Step">
-    Copy the subdomain of the URL at the top of your browser and enter it within the Connect Link. In the below screenshot it is **`8635772-sb1`.** ![Screenshot 2024-04-19 at
-    2.53.59 PM.png](/images/netsuite/Screenshot_2024-04-19_at_2.53.59_PM.png)
+    Copy the subdomain of the URL at the top of your browser and enter it within the Connect Link. In the below screenshot it is **`8635772-sb1`.** ![Screenshot 2024-04-19 at
+    2.53.59 PM.png](/images/netsuite/Screenshot_2024-04-19_at_2.53.59_PM.png)
   </Step>
 </Steps>
 

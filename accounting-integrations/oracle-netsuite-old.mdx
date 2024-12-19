@@ -5,9 +5,25 @@ description: "Learn how to set up our NetSuite integration."
 
 Integrating with Netsuite requires you to install the Integration Labs bundle from the Oracle NetSuite store.
 
-Follow the below steps to install the bundle:
+<Info> **To follow the below steps, you need to be a NetSuite Administrator with appropriate permissions.** </Info>
 
-<Info> **To follow the below steps, you need to be a NetSuite Administrator.** </Info>
+### Prerequisites
+
+Before starting the integration, ensure you have:
+- Administrator access to NetSuite
+- The following permissions enabled for your role:
+  - Custom Records
+  - SuiteScript
+  - REST Web Services
+  - Token-based Authentication
+  - Setup/Integration permissions
+  - Lists/Records update permissions
+
+To verify or update your role permissions:
+1. Go to Setup > Users/Roles > Manage Roles
+2. Select your administrator role
+3. Ensure all the above permissions are checked
+4. Save any changes
 
 ### Step 1: Enable Features
 
@@ -38,3 +54,5 @@ Follow the below steps to install the bundle:
 1. Open the Connect link and select the NetSuite Integration card.
 2. Click 'Securely Login' to authorize your NetSuite account.
 3. Once the connection is successful, your data will start syncing.
+
+<Info>If you encounter a "Failed to verify update permissions" error, please review the prerequisites section and ensure your role has all the required permissions enabled.</Info>

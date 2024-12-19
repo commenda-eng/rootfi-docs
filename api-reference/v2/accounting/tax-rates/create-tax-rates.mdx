@@ -5,7 +5,7 @@ openapi: openapi_v2 post /accounting/tax_rates
 
 A [Tax Rate](https://docs.rootfi.dev/api-reference/tax-rates/overview) is the percentage at which an individual or corporation is taxed.
 
-[he Tax Rates Data Model] is designed to provide a unified representation of tax rates across various accounting platforms.
+[The Tax Rates Data Model] is designed to provide a unified representation of tax rates across various accounting platforms.
 
 <RequestExample>
 
@@ -40,7 +40,7 @@ curl --request POST \
 import { RootFiClient } from "rootfi-api";
 const rootfi = new RootFiClient({ apiKey: "<api_key>" });
 
-await rootfi.accounting.accounts.create({
+await rootfi.accounting.taxRates.create({
   company_id: 56789,
   data: [
     {

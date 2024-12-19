@@ -5,6 +5,10 @@ openapi: openapi_v3 put /core/invite_links/{invite_link_id}
 
 An **invite link** contains API requests for generating and managing invite links, which can be used to connect end users to their preferred accounting platforms.
 
+Authentication and Permissions:
+- A valid API key with `write` permissions is required for this endpoint.
+- Only users with `invite_link.update` permission can modify invite links.
+
 You can update the invite link if you need to:
 
 1. Change the company name.

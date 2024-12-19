@@ -44,3 +44,32 @@ To connect a company through the Tally on-premise connector, follow these simple
     Our Tally on-premise connector is specifically designed to operate in single-tenant environments. This means that only one Windows user can log on to a particular computer, which is also used to access the Tally Prime application.
 
 </Note>
+
+---
+
+## Troubleshooting Common Issues
+
+### Failed to Verify Update Permissions
+
+If you encounter a "Failed to verify update permissions" error during deployment, follow these steps to resolve the issue:
+
+1. Ensure you are running the connector application with administrator privileges:
+   - Right-click on the connector application
+   - Select "Run as administrator"
+
+2. Verify that your Windows user account has full permissions to:
+   - The installation directory (typically in Program Files)
+   - The Tally Prime application directory
+   - The data directory where your company files are stored
+
+3. Check if any antivirus software is blocking the connector's access:
+   - Temporarily disable your antivirus software
+   - Add the connector application to your antivirus whitelist
+   - Re-attempt the connection
+
+4. If the issue persists, try:
+   - Logging out and back into your Windows account
+   - Restarting your computer
+   - Reinstalling the connector with administrator privileges
+
+If you continue to experience issues after trying these steps, please contact our support team for further assistance.

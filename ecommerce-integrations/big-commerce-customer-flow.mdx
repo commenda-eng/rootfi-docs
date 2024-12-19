@@ -17,6 +17,13 @@ The steps to get your BigCommerce credentials are as follows:
    ![](/images/bigcommerce/create_api_account.png)
 3. Fill the form data.
    ![](/images/bigcommerce/form_data.png)
-4. Add required scopes.
+4. Add required scopes. Make sure to enable the following permissions to avoid deployment errors:
+   - Products: Read/Write
+   - Orders: Read/Write
+   - Customers: Read/Write
+   - Content: Read/Write
+   - Settings: Read/Write
    ![](/images/bigcommerce/scopes.png)
 5. Click on save to view your credentials.
+
+**Note**: Insufficient permissions will result in deployment errors. Double-check that all required scopes listed above are enabled before proceeding with the integration.
