@@ -8,7 +8,7 @@ icon: "receipt"
 
 ## Introduction
 
-Accounting integrations are crucial for bridging the gap between your AP automation solution and your customers' accounting software. This guide outlines how to leverage accounting integrations through Integration Labs' Unified Accounting API, facilitating the development of an end-to-end automated AP product.
+Accounting integrations are crucial for bridging the gap between your AP automation solution and your customers' accounting software. This guide outlines how to leverage accounting integrations through RootFi' Unified Accounting API, facilitating the development of an end-to-end automated AP product.
 
 ---
 
@@ -25,9 +25,9 @@ Integration with accounting systems is essential to automate these steps, partic
 
 ---
 
-## The Role of Accounting Integrations and Integration Labs' Unified Accounting API
+## The Role of Accounting Integrations and RootFi' Unified Accounting API
 
-While essential, developing and maintaining multiple accounting integrations in-house is resource-intensive. Integration Labs' Unified API simplifies this process by providing a single API to connect with over 20 accounting platforms.
+While essential, developing and maintaining multiple accounting integrations in-house is resource-intensive. RootFi' Unified API simplifies this process by providing a single API to connect with over 20 accounting platforms.
 
 The benefits of a Unified API include:
 
@@ -36,7 +36,7 @@ The benefits of a Unified API include:
 - **Cost Savings**: Lowers the overall cost of developing and maintaining integrations, allowing resources to focus on core product development.
 - **Maintenance Ease**: Offloads integration maintenance responsibilities, enabling your team to focus on core product enhancement.
 
-Adopting Integration Labs' Unified API speeds up the development process and adds significant value to your Accounts Payable (AP) solution, making it more reliable and easier to integrate with customers' preferred accounting systems.
+Adopting RootFi' Unified API speeds up the development process and adds significant value to your Accounts Payable (AP) solution, making it more reliable and easier to integrate with customers' preferred accounting systems.
 
 ---
 
@@ -44,7 +44,7 @@ Adopting Integration Labs' Unified API speeds up the development process and add
 
 You can handle all of the common workflows required to offer your customers an Accounts Payable (AP)/ Bill Payment product. Here's a summary of the steps involved:
 
-1. (One-Time Activity) Connect a customer's accounting systems with Integration Labs' **Authentication Flow**.
+1. (One-Time Activity) Connect a customer's accounting systems with RootFi' **Authentication Flow**.
 2. Use the **Bills API** to create a Bill and link Contacts, Purchase Orders, Items, and Accounts to the respective Bill.
 3. Upload **Documents** to their respective Expense/Bill.
 4. Create and Link Bill Payments, Purchase Orders, Good Reciept Notes, Bill Credit Notes, Contacts and Open Bills.
@@ -55,12 +55,12 @@ You can handle all of the common workflows required to offer your customers an A
 
 <Step title="Connect with your customers' accounting platform (One-Time Activity)" titleSize="h2" stepNumber="1">
 
-Integration Labs provides two convenient options to connect with your customers' accounting platform:
+RootFi provides two convenient options to connect with your customers' accounting platform:
 
-1. Use Integration Labs' **Connect Link**, a convenient and secure URL, **or**
-2. Embed Integration Labs' **Connect SDK** into your application
+1. Use RootFi' **Connect Link**, a convenient and secure URL, **or**
+2. Embed RootFi' **Connect SDK** into your application
 
-The Invite Link requires no code, making it suitable to start without a developer. You can customize and white-label this onboarding process with Integration Labs' Connect SDK, allowing authentication to occur natively in your product. Either way, your customers will be guided through a simple authorization flow to connect their accounting platforms to your product.
+The Invite Link requires no code, making it suitable to start without a developer. You can customize and white-label this onboarding process with RootFi' Connect SDK, allowing authentication to occur natively in your product. Either way, your customers will be guided through a simple authorization flow to connect their accounting platforms to your product.
 
 1. Use our Dashboard or APIs to connect a customer's accounting platform. Use [**POST/invite-links**](/api-reference/v3/core/invite-links/create-invite-link), and provide a name for your customers' company.
 2. A unique `company_id` will be generated once your customer completes the authentication flow. This `company_id` will be used to read and write data to their accounting platform.
@@ -110,6 +110,6 @@ The bill credit note can be created and immediately applied to a bill, or it can
 
 ## Learn how to build an Automated Accounts Payable (AP) product
 
-The steps above explain how to manage the most common actions of an automated Accounts Payable (AP) product with Integration Labs' accounting integrations. If you have more questions or would like to build an automated Accounts Payable (AP) product with Integration Labs' Unified APIs, we'd love to help you get started. Speak to our integration experts today!
+The steps above explain how to manage the most common actions of an automated Accounts Payable (AP) product with RootFi' accounting integrations. If you have more questions or would like to build an automated Accounts Payable (AP) product with RootFi' Unified APIs, we'd love to help you get started. Speak to our integration experts today!
 
 ---

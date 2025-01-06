@@ -1,10 +1,10 @@
 ---
 title: "Webhooks"
-description: "Listen to real-time events from the Integration Labs Platform."
+description: "Listen to real-time events from the RootFi Platform."
 icon: "webhook"
 ---
 
-The Integration Labs Platform offers robust webhook functionality, ensuring that your systems remain up-to-date with real-time synchronization of the data your app needs. With webhooks, as soon as data is synchronized from the accounting platform, a corresponding webhook is instantly activated. This guide will walk you through the steps to set up a webhook on the Integration Labs platform.
+The RootFi Platform offers robust webhook functionality, ensuring that your systems remain up-to-date with real-time synchronization of the data your app needs. With webhooks, as soon as data is synchronized from the accounting platform, a corresponding webhook is instantly activated. This guide will walk you through the steps to set up a webhook on the RootFi platform.
 
 ## How to Configure?
 
@@ -44,7 +44,7 @@ Use this webhook to receive notifications when data has completed syncing. You c
 We support 3 Event Types for this webhook:
 
 - **CREATE**: Triggered when data is initially synced or when a new record is imported from the Accounting Platform.
-- **UPDATE**: Only triggered when data undergoes changes, not during every Integration Labs sync operation. For instance, even if Integration Labs performs daily syncs, but no changes are detected on the Accounting platform, no webhook notifications will be sent.
+- **UPDATE**: Only triggered when data undergoes changes, not during every RootFi sync operation. For instance, even if RootFi performs daily syncs, but no changes are detected on the Accounting platform, no webhook notifications will be sent.
 - **DELETE**: Activated if data is removed from the Accounting platform. Can only be triggered after a Full Sync operation.
 
 <Note>

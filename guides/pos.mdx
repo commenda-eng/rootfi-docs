@@ -8,7 +8,7 @@ icon: "tag"
 
 ## Introduction
 
-Integration Labs allows you to push merchants' data from your e-commerce or point-of-sale (POS) platform into your merchant's accounting platform. Your merchants can seamlessly reconcile their transaction data into their accounting software, allowing them to spend more time growing their business.
+RootFi allows you to push merchants' data from your e-commerce or point-of-sale (POS) platform into your merchant's accounting platform. Your merchants can seamlessly reconcile their transaction data into their accounting software, allowing them to spend more time growing their business.
 
 This workflow can be used for the following types of Companies:
 
@@ -21,14 +21,14 @@ This workflow can be used for the following types of Companies:
 
 ## Overview
 
-Integration Labs APIs enable you to handle all the common workflows required to automate your business customers' payment data from your POS/e-commerce solution.
+RootFi APIs enable you to handle all the common workflows required to automate your business customers' payment data from your POS/e-commerce solution.
 
-Through Integration Labs, your merchant can choose to reflect their sales data from e-commerce and point-of-sale (POS) software:
+Through RootFi, your merchant can choose to reflect their sales data from e-commerce and point-of-sale (POS) software:
 
 - As an aggregated daily/weekly **sales invoice**, or
 - As an aggregated daily/weekly **journal entry**
 
-Integration Labs recommends using **journal entries** due to the following advantages:
+RootFi recommends using **journal entries** due to the following advantages:
 
 - **Ease of use:** Single daily journal entries are easier to manage, adjust, and reconcile than, for example, invoices, payments, and credit notes.
 - **Controlled impact on the general ledger:** A journal entry is the most granular way to impact a company's general ledger without being confined to specific account types.
@@ -40,7 +40,7 @@ Integration Labs recommends using **journal entries** due to the following advan
 
 Here's a summary of the steps involved to get started:
 
-1. **Accounting Platform selection:** Use Integration Labs' Auth Flow to connect a business customer's accounting system.
+1. **Accounting Platform selection:** Use RootFi' Auth Flow to connect a business customer's accounting system.
 2. **Merchant Configuration:** Once the Merchant provides access to the accounting platform, the merchant must set how the synchronization should work. This will tell you how the data should be mapped to the accounting platform.
 
 ---
@@ -49,12 +49,12 @@ Here's a summary of the steps involved to get started:
 
 <Step title="Accounting Platform Selection" titleSize="h2" stepNumber="1">
 
-Integration Labs provides two convenient options to connect with your customers' accounting platform:
+RootFi provides two convenient options to connect with your customers' accounting platform:
 
-1. Use Integration Labs' **Connect Link**, a convenient and secure URL, **or**
-2. Embed Integration Labs' **Connect SDK** into your application
+1. Use RootFi' **Connect Link**, a convenient and secure URL, **or**
+2. Embed RootFi' **Connect SDK** into your application
 
-The Invite Link requires no code, making it suitable to get started without a developer. You can customize and white-label this onboarding process with Integration Labs' Connect SDK, allowing authentication to occur natively in your product.
+The Invite Link requires no code, making it suitable to get started without a developer. You can customize and white-label this onboarding process with RootFi' Connect SDK, allowing authentication to occur natively in your product.
 
 Either way, your customers will be guided through a simple authorization flow to connect their respective accounting platforms to your product.
 
@@ -69,7 +69,7 @@ Either way, your customers will be guided through a simple authorization flow to
 
 This section provides guidelines for data mapping configuration from a POS/commerce platform to the supported accounting platforms (Netsuite, Xero, QuickBooks online).
 
-In Integration Labs' POS workflow, the data types are grouped under four main features:
+In RootFi' POS workflow, the data types are grouped under four main features:
 
 - Sales
 - Fees
@@ -145,7 +145,7 @@ Sales are booked on a nominal account of the type **Income**. This is the accoun
 
 The merchant can select an existing account from the accounting platform. If an account is unavailable, it must be created in the accounting platform for this purpose.
 
-1. Integration Labs pushes a single sales invoice to the Accounting platform daily. This invoice represents all sales made over that day.
+1. RootFi pushes a single sales invoice to the Accounting platform daily. This invoice represents all sales made over that day.
     - The invoice is issued to the commerce services provider.
     - The invoice contains one line item for each tax rate the merchant trades in, with this line item representing the total of all sales at that tax rate.
 2. When the merchant receives payment for the reported sales, the invoice is marked as paid and balanced against an invoice payment.
@@ -154,6 +154,6 @@ The merchant can select an existing account from the accounting platform. If an 
 
 ## Conclusion
 
-This guide outlines the process of using Integration Labs for POS Accounting Automation. It covers the essential steps of connecting to accounting platforms, configuring merchant settings, and posting journal entries or sales invoices. By following these steps, you can enable your merchants to seamlessly reconcile their e-commerce and accounting data, allowing them to focus on growing their business.
+This guide outlines the process of using RootFi for POS Accounting Automation. It covers the essential steps of connecting to accounting platforms, configuring merchant settings, and posting journal entries or sales invoices. By following these steps, you can enable your merchants to seamlessly reconcile their e-commerce and accounting data, allowing them to focus on growing their business.
 
 ---

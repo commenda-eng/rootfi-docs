@@ -1,8 +1,8 @@
 {
-  "name": "Integration Labs (formerly RootFi)",
+  "name": "RootFi",
   "logo": {
-    "dark": "/images/logo/Integration_labs_logo_dark.png",
-    "light": "/images/logo/Integration_labs_logo_light.png"
+    "dark": "/images/logo/dark.png",
+    "light": "/images/logo/light.png"
   },
   "favicon": "/images/logo/logomark_favicon_rounded.png",
   "theme": "venus",
@@ -88,7 +88,7 @@
       "group": "Core Features",
       "pages": [
         {
-          "group": "Connect by Integration Labs",
+          "group": "Connect by RootFi",
           "pages": ["documentation/concepts/rootfi-connect/introduction", "documentation/concepts/rootfi-connect/invite-link", "documentation/concepts/rootfi-connect/embedded-sdk"]
         },
         "documentation/concepts/syncing-data",

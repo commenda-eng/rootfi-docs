@@ -3,28 +3,28 @@ title: "Microsoft Dynamics 365 F&O"
 description: "Learn how to set up our Microsoft Dynamics 365 F&O integration."
 ---
 
-If you wish to set up Microsoft Dynamics 365 F&O on the Integration Labs Portal, you will need to follow the steps outlined below.
+If you wish to set up Microsoft Dynamics 365 F&O on the RootFi Portal, you will need to follow the steps outlined below.
 
 ---
 
 ## Adding OAuth Credentials to your F&O Account
 
-These steps have to be followed by the end-user who is connecting their F&O account to Integration Labs.
+These steps have to be followed by the end-user who is connecting their F&O account to RootFi.
 
 ### Part 1: Set up the F&O account to access the data.
 
-When your customer is connecting their MSD F&O account to Integration Labs, they will need to enter the client credentials in their F&O dashboard to allow Integration Labs to access the data.
+When your customer is connecting their MSD F&O account to RootFi, they will need to enter the client credentials in their F&O dashboard to allow RootFi to access the data.
 
 1. Login to the F&O dashboard and navigate to Microsoft Entra ID applications.
    ![Client ID MS Dynamics](/images/msdF&O/navigateDashboard.png)
-2. Click on '+New' and enter the client id you copied from the Azure portal, enter a name and set the User ID to 'Admin'. Enter '8f09f705-3d36-4cc9-84c2-8091e362c759' as the client id if you are using Integration Labs credentials.
+2. Click on '+New' and enter the client id you copied from the Azure portal, enter a name and set the User ID to 'Admin'. Enter '8f09f705-3d36-4cc9-84c2-8091e362c759' as the client id if you are using RootFi credentials.
    ![Client ID MS Dynamics](/images/msdF&O/dashboard.png)
 
-### Part 2: Setting up the integration Using Integration Labs Connect
+### Part 2: Setting up the integration Using RootFi Connect
 
-You will need to enter your F&O site url in the Integration Labs connect screen.
+You will need to enter your F&O site url in the RootFi connect screen.
 
 1. To get the site url, navigate to the F&O dashboard and copy the url from the address bar.
    ![Client ID MS Dynamics](/images/msdF&O/url.png)
-2. In the Integration Labs SDK screen, paste the site url of your F&O dashboard without the 'https://' and 'opearations.dynamics.com' part.
+2. In the RootFi SDK screen, paste the site url of your F&O dashboard without the 'https://' and 'opearations.dynamics.com' part.
    ![Client ID MS Dynamics](/images/msdF&O/sdk.png)
