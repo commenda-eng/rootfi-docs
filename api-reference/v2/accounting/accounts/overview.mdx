@@ -23,6 +23,7 @@ An **Account** is a record in an accounting system that tracks the financial act
 | name              | string | The name of the account                                                                                 |
 | description       | string | Description of the account                                                                              |
 | nominal_code      | string | Reference given to each account for a business. It ensures money is allocated to the correct account.   |
+| business_unit_id  | string | The platform ID of the business / subsidiary associated with the account                                |
 | currency_id       | string | The Accounting Platform's unique ID for the currency                                                    |
 | current_balance   | float  | Current balance of the account                                                                          |
 | status            | enum   | The status of the account. Values are: `ACTIVE`, `ARCHIVED`, `UNKNOWN`                                  |
@@ -40,6 +41,7 @@ An **Account** is a record in an accounting system that tracks the financial act
   "name": "Professional Services Account",
   "description": "Account for professional consulting services",
   "nominal_code": "A0123",
+  "business_unit_id": "1",
   "current_balance": 5000.0,
   "status": "ACTIVE",
   "category": "EXPENSE",

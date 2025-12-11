@@ -20,6 +20,7 @@ curl --request POST \
       "posted_date": "2021-09-28T15:00:00.000Z",
       "description": "Test Invoice",
       "currency_id": "GBP",
+      "business_unit_id": "1",
       "journal_lines": [
         {
           "account_id": "123456",
@@ -57,6 +58,7 @@ await rootfi.accounting.journalEntries.create({
       posted_date: "2021-09-28T15:00:00.000Z",
       description: "Test Invoice",
       currency_id: "GBP",
+      business_unit_id: "1",
       journal_lines: [
         {
           account_id: "123456",

@@ -16,6 +16,7 @@ icon: "hand-wave"
 | ------------------ | ------ | ------------------------------------------------------------------------------------- |
 | platform_id        | string | The Platform's ID for this journal entry                                              |
 | account_id         | string | The accounting platform's unique ID for the account associated with the journal entry |
+| business_unit_id   | string | The accounting platform's business / subsidiary ID associated with the journal entry  |
 | amount             | float  | The total amount of the journal entry                                                 |
 | currency_id        | string | The Platform's ID of the currency for the journal entry                               |
 | currency_rate      | float  | Rate between the currency of the payment and the base currency                        |
@@ -79,6 +80,7 @@ You can expand the following attributes to get the related data
   "journal_entry_type": "big_boy",
   "description": "Journal Entries For Proper Accounting",
   "posted_date": "2023-06-12T00:00:00.000Z",
+  "business_unit_id": "1",
   "journal_lines": [
     {
       "platform_id": "3770712000001725038",
