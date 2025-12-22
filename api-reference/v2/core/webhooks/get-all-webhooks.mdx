@@ -1,0 +1,20 @@
+---
+version: "v2"
+openapi: openapi_v2 get /webhooks
+---
+
+<RequestExample>
+
+```bash cURL
+curl --request GET \
+  --url https://api.rootfi.dev/webhooks \
+  --header 'api_key: <api-key>'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
+await rootfi.core.webhooks.list({});
+```
+
+</RequestExample>

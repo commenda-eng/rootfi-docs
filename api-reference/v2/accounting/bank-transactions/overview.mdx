@@ -1,0 +1,232 @@
+---
+version: "v2"
+title: "Overview"
+description: "Bank Transactions include the Transactional banking data for a specific company and account."
+icon: "hand-wave"
+---
+
+**The Bank Transactions Data Model** simplifies the management and retrieval of transaction information across different accounting platforms.
+
+- Unified transaction properties: The model consolidates essential transaction details such as transaction date, amount, type, and status, making it easier to work with transaction data from various platforms.
+- Linked account and customer data: Transactions are associated with specific accounts and customers through the `account_id` and `customer_id` properties, facilitating easier tracking and reporting.
+- Currency support and exchange rates: The data model includes the transaction currency and exchange rate, enabling accurate representation of multi-currency transactions and conversions.
+
+## Attributes
+
+<ResponseField name="platform_id" type="string" required>
+  The Platform's ID for the transaction
+</ResponseField>
+
+<ResponseField name="account_id" type="string">
+  Platform ID for the [account](https://docs.rootfi.dev/api-reference/accounts/overview) to which this transaction belongs
+</ResponseField>
+
+<ResponseField name="contact_id" type="string">
+  The platform’s ID for the [contact](https://docs.rootfi.dev/api-reference/contacts/overview) to that made the transaction
+</ResponseField>
+
+<ResponseField name="currency_id" type="string">
+  The ISO-4217 currency code of the transaction
+</ResponseField>
+
+<ResponseField name="to_account_id" type="string">
+  The platform’s ID for the account to which the transaction was made
+</ResponseField>
+
+<ResponseField name="transaction_date" type="date">
+  Date of the transaction
+</ResponseField>
+
+<ResponseField name="amount" type="float">
+  The total transaction amount
+</ResponseField>
+
+<ResponseField name="type" type="string">
+  The type of the transaction
+</ResponseField>
+
+<ResponseField name="status" type="string">
+  The status of the transaction
+</ResponseField>
+
+<ResponseField name="currency" type="Object">
+  The currency data associated with the bank transaction.
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="currency_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="currency_rate" type="float">
+  Rate between the currency of the payment and the base currency
+</ResponseField>
+
+<ResponseField name="line_items" type="Line Item">
+  Array of Transaction Line items associated with this transaction
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="line_items_snippeet.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="account" type="Account">
+  The [account](https://docs.rootfi.dev/api-reference/bank-accounts/overview) to which this transaction belongs
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="bank_accounts_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="contact" type="Contact" >
+  The [contact](https://docs.rootfi.dev/api-reference/contacts/overview) to that made the transaction
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object" >
+      <Expandable title="properties">
+    <ResponseField name="platform_id" type="string" >
+      The accounting platform’s ID for the contact
+    </ResponseField>
+    <ResponseField name="name" type="string" >
+      Name of the customer on the accounting platform
+    </ResponseField>
+    <ResponseField name="contact_name" type="string" >
+      Name of the contact person for the contact
+    </ResponseField>
+    <ResponseField name="contact_type" type="enum" >
+      The type of customer. Values are either `CUSTOMER` or `VENDOR`
+    </ResponseField>
+    <ResponseField name="currency" type="string" >
+      The currency data associated with the contact.
+      <Expandable title="properties">
+    <ResponseField name="data" type="Object" >
+    <Expandable title="properties">
+      <Snippet file="currency_snippet.mdx" />
+  </Expandable>
+</ResponseField>
+
+  </Expandable>
+    </ResponseField>
+  <ResponseField name="tax_number" type="string" >
+    Contact’s tax number
+  </ResponseField>
+  <ResponseField name="registration_number" type="string" >
+    Contact’s identifying number
+  </ResponseField>
+  <ResponseField name="status" type="enum" >
+    The status of the customer. Values are: `ACTIVE`, `ARCHIVED`, `UNKNOWN`.
+  </ResponseField>
+  <ResponseField name="updated_at" type="date" >
+    The last ISO 8601 timestamp at which the data was updated
+  </ResponseField>
+      </Expandable>
+  </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="updated_at" type="date" required>
+  The date at which the transaction was updated on the accounting platform
+</ResponseField>
+
+## Properties Supported
+
+| Property         | Type                          | Description                                                              |
+| ---------------- | ----------------------------- | ------------------------------------------------------------------------ |
+| platform_id      | string                        | The Platform's ID for the transaction                                    |
+| account_id       | string                        | Platform ID for the account to which this transaction belongs            |
+| contact_id       | string                        | The platform's ID for the contact to that made the transaction           |
+| transaction_date | date                          | Date of the transaction                                                  |
+| amount           | float                         | The total transaction amount                                             |
+| type             | string                        | The type of the transaction                                              |
+| status           | string                        | The status of the transaction                                            |
+| currency         | string                        | The ISO-4217 currency code of the transaction                            |
+| currency_rate    | float                         | Rate between the currency of the payment and the base currency           |
+| line_items       | [Line Item](/docs/line-items) | Array of Transaction Line items associated with this transaction         |
+| account          | [Account](/docs/accounts)     | The account to which this transaction belongs                            |
+| contact          | [Contact](/docs/contacts)     | The contact to that made the transaction                                 |
+| updated_at       | date                          | The date at which the transaction was updated on the accounting platform |
+
+<ResponseExample name="The Bank Transaction Object" >
+
+```json The Bank Transaction Response Object
+{
+  "platform_id": "3770712000000811013",
+  "account_id": "3770712000000493001",
+  "contact_id": "3770712000000080069",
+  "currency_id": "3770712000000000099",
+  "to_account_id": "3770712000000080063",
+  "transaction_date": "2022-02-17T00:00:00.000Z",
+  "amount": 1234.0,
+  "type": "Sales Return",
+  "status": "Manually Added",
+  "currency": {
+    "data": {
+      "platform_id": "3770712000000000099",
+      "name": "Indian Rupee",
+      "code": "INR",
+      "symbol": "₹",
+      "is_base_currency": true,
+      "exchange_rate": 1.0,
+      "updated_at": "2022-02-17T00:00:00.000Z"
+    }
+  },
+  "currency_rate": 80.0,
+  "line_items": null,
+  "account": {
+    "data": {
+      "platform_id": "3770712000000493001",
+      "institution_name": "Test RootFi Account",
+      "account_name": "DDDSF Bank Account",
+      "account_number": "XXXX4397",
+      "category": "Bank",
+      "balance": 7360.0,
+      "currency_id": "3770712000000000099",
+      "currency": {
+        "data": {
+          "platform_id": "3770712000000000099",
+          "name": "Indian Rupee",
+          "code": "INR",
+          "symbol": "₹",
+          "is_base_currency": true,
+          "exchange_rate": 1.0,
+          "updated_at": "2022-02-17T00:00:00.000Z"
+        }
+      },
+      "updated_at": "2022-02-17T00:00:00.000Z"
+    }
+  },
+  "contact": {
+    "data": {
+      "platform_id": "3770712000000080069",
+      "name": "Mr. John Doe",
+      "contact_name": "John Doe",
+      "contact_type": "Customer",
+      "currency_id": "3770712000000000099",
+      "currency": {
+        "data": {
+          "platform_id": "3770712000000000099",
+          "name": "Indian Rupee",
+          "code": "INR",
+          "symbol": "₹",
+          "is_base_currency": true,
+          "exchange_rate": 1.0,
+          "updated_at": "2022-02-17T00:00:00.000Z"
+        }
+      },
+      "tax_number": null,
+      "registration_number": null,
+      "status": "Archived",
+      "updated_at": "2023-10-12T00:00:00.000Z"
+    }
+  },
+  "updated_at": "2022-02-17T00:00:00.000Z"
+}
+```
+
+</ResponseExample>

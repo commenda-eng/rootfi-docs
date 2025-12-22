@@ -1,0 +1,150 @@
+---
+version: "v2"
+title: "Overview"
+description: "An Invoice Credit Note is a financial transaction representing a reduction that can be applied against one or multiple invoices issued to Customers."
+icon: "hand-wave"
+---
+
+**The Invoice Credit Notes Data Model** is designed to standardise and simplify the management of credit note information across various accounting platforms.
+
+- Unified credit note properties: The model consolidates essential credit note details, such as customer ID, document number, total amount, and currency, making it easier to work with credit note data from different platforms.
+- Detailed status tracking: The model supports various credit note statuses, including draft, submitted, partially paid, paid, overdue, void, and unknown, for better organisation and reporting.
+- Line item integration: Credit notes can include an array of associated line items, ensuring comprehensive representation of credit note details and relationships to other data models.
+
+## Attributes
+
+<ResponseField name="platform_id" type="string" required>
+  The accounting Platform’s ID for the credit note
+</ResponseField>
+
+<ResponseField name="invoice_id" type="string[]" required>
+  An Array of [Invoices](https://docs.rootfi.dev/api-reference/invoices/overview) Id's associated with the credit note
+</ResponseField>
+
+<ResponseField name="contact_id" type="string" required>
+  The accounting platform’s unique identifier for the [contact](https://docs.rootfi.dev/api-reference/contacts/overview) associated with this credit note
+</ResponseField>
+
+<ResponseField name="currency_id" type="string">
+  The Accounting Platform’s unique ID for the currency
+</ResponseField>
+
+<ResponseField name="document_number" type="string" required>
+  Reference number for the credit note
+</ResponseField>
+
+<ResponseField name="total_amount" type="float" required>
+  Total amount of credit note
+</ResponseField>
+
+<ResponseField name="remaining_credit" type="float" required>
+  The balance amount remaining on the credit note
+</ResponseField>
+
+<ResponseField name="posted_date" type="date" required>
+  Date on which the credit note was posted
+</ResponseField>
+
+<ResponseField name="status" type="enum" required>
+  The status of the credit note. Values are: `DRAFT`, `SUBMITTED`, `PARTIALLY_PAID`, `PAID`, `OVERDUE`, `VOID`, `UNKNOWN`.
+</ResponseField>
+
+<ResponseField name="memo" type="string" required>
+  Description of the credit note
+</ResponseField>
+
+<ResponseField name="currency" type="string" required>
+  Currency of the credit note
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="currency_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="line_Items" type="Line Item" required>
+  An array of Credit Note Line Items
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object" required>
+      <Expandable title="properties">
+        <Snippet file="line_items_snippeet.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="updated_at" type="date" required>
+  The last ISO 8601 timestamp that the data was updated at
+</ResponseField>
+
+## Properties Supported
+
+| Property         | Type                          | Description                                                                                                             |
+| ---------------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| platform_id      | string                        | The Platform's ID for the credit note                                                                                   |
+| contact_id       | string                        | The accounting platform's unique identifier for the contact associated with this credit note                            |
+| document_number  | string                        | Reference number for the credit note                                                                                    |
+| total_amount     | float                         | Total amount of credit note                                                                                             |
+| remaining_credit | float                         | The balance amount remaining on the credit note                                                                         |
+| posted_date      | date                          | Date on which the credit note was posted                                                                                |
+| status           | enum                          | The status of the credit note. Values are: `DRAFT`, `SUBMITTED`, `PARTIALLY_PAID`, `PAID`, `OVERDUE`, `VOID`, `UNKNOWN` |
+| memo             | string                        | Description of the credit note                                                                                          |
+| currency         | string                        | Currency of the credit note                                                                                             |
+| line_Items       | [Line Item](/docs/line-items) | An array of Credit Note Line Items                                                                                      |
+| invoices         | [Invoices](/docs/invoices)    | An Array of Invoices associated with the credit note                                                                    |
+| contact          | [Contact](/docs/contacts)     | The contact associated with this credit note                                                                            |
+| updated_at       | date                          | The last ISO 8601 timestamp that the data was updated at                                                                |
+
+<ResponseExample name="The Bank Transaction Object" >
+
+```json The Invoice Credit Notes Response Object
+{
+  "platform_id": "3770712000001365001",
+  "invoice_ids": ["3770712000001365001"],
+  "contact_id": "3770712000000225001",
+  "currency_id": "3770712000000000099",
+  "document_number": "CN-00029",
+  "total_amount": 49,
+  "remaining_credit": 49,
+  "posted_date": "2023-04-16T00:00:00.000Z",
+  "status": "SUBMITTED",
+  "memo": null,
+  "currency": {
+    "data": {
+      "platform_id": "3770712000000000099",
+      "name": "Indian Rupee",
+      "code": "INR",
+      "symbol": "₹",
+      "is_base_currency": true,
+      "exchange_rate": 0,
+      "updated_at": "2023-09-22T00:00:00.000Z"
+    }
+  },
+  "line_items": {
+    "data": [
+      {
+        "platform_id": "1234567890123456789",
+        "line_item_type": "EXPENSE",
+        "line_item_type_id": "1234567890123456789",
+        "tracking_category_ids": [],
+        "item_id": "1234567890123456789",
+        "tax_id": null,
+        "account_id": "1234567890123456789",
+        "description": "Line Items Description",
+        "quantity": 123,
+        "unit_amount": 150.0,
+        "total_amount": 150.0,
+        "sub_total": 150.0,
+        "tax_amount": 0,
+        "total_discount": 0,
+        "updated_at": "2023-02-17T00:00:00.000Z"
+      }
+    ]
+  },
+  "updated_at": "2023-09-22T00:00:00.000Z"
+}
+```
+
+</ResponseExample>

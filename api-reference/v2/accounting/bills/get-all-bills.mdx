@@ -1,0 +1,45 @@
+---
+version: "v2"
+openapi: openapi_v2 post /accounting/bills/all
+---
+
+A **Bills record** of goods or services purchased from a vendor.
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/accounting/bills/all \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api-key>' \
+  --data '{
+  "take": 10,
+  "skip": 0,
+  "orderBy": {
+    "total_amount": "asc"
+  },
+  "filter": {
+    "amount_due": {
+      "gt": 4000
+    }
+  }
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
+
+await rootfi.accounting.bills.list({
+  filter: {
+    amount_due: { gt: 4000 },
+  },
+  orderBy: {
+    total_amount: "asc",
+  },
+  take: 10,
+  skip: 0,
+});
+```
+
+</RequestExample>

@@ -1,0 +1,207 @@
+---
+version: "v2"
+title: "Overview"
+description: "Payment made by a business at the time of purchase (ex. a credit card payment)"
+icon: "hand-wave"
+---
+
+**The Expenses Data Model** is designed to streamline the management and retrieval of expense-related information across various accounting platforms.
+
+- Unified expense properties: The model unifies essential expense information, including document numbers, posted dates, payment modes, and currency details, facilitating consistent and accurate expense tracking.
+- Contact and account relationships: Expenses can be easily linked to specific contacts and accounts using their respective platform IDs, allowing for efficient organisation and reporting.
+- Line item support: The inclusion of line items within the expense data model enables more granular and detailed expense management, as well as the ability to track individual components of an expense.
+- Currency conversion: The `currency_rate` property supports multi-currency scenarios by providing the conversion rate between the expense currency and the base currency, ensuring accurate financial reporting across various currencies.
+
+## Attributes
+
+<ResponseField name="platform_id" type="string" required>
+  The accounting platform’s ID of the expenses
+</ResponseField>
+
+<ResponseField name="contact_id" type="string">
+  Platform ID of the [contact](https://docs.rootfi.dev/api-reference/contacts/overview) to which this expense belongs
+</ResponseField>
+
+<ResponseField name="account_id" type="string">
+  Platform ID of the [account](https://docs.rootfi.dev/api-reference/bank-accounts/overview) to which this expense belongs
+</ResponseField>
+
+<ResponseField name="currency_id" type="string">
+  The payment mode from which the payment was made
+</ResponseField>
+
+<ResponseField name="document_number" type="string">
+  Reference/Document number of the expense
+</ResponseField>
+
+<ResponseField name="posted_date" type="date">
+  Date of the expense as recorded by the accounting platform
+</ResponseField>
+
+<ResponseField name="payment_mode" type="string">
+  The payment mode from which the payment was made
+</ResponseField>
+
+<ResponseField name="currency" type="object">
+  The currency data associated with the Expenses.
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="currency_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="currency_rate" type="float">
+  Rate between the currency of the payment and the base currency
+</ResponseField>
+
+<ResponseField name="total_amount" type="float">
+  Total value of the expense
+</ResponseField>
+
+<ResponseField name="sub_total" type="float">
+  Total pre tax value of the expense
+</ResponseField>
+
+<ResponseField name="tax_amount" type="float">
+  Total tax amount levied on the expense
+</ResponseField>
+
+<ResponseField name="total_discount" type="float">
+  Total value of discounts applied to the expense
+</ResponseField>
+
+<ResponseField name="memo" type="string">
+  Description of the expense
+</ResponseField>
+
+<ResponseField name="line_items" type="Line Item">
+  List of line items contained in the expense
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="line_items_snippeet.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="contact" type="Contact">
+  The [contact](https://docs.rootfi.dev/api-reference/contacts/overview) to which this expense belongs
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="contact_snippet.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="account" type="Account">
+  The [account](https://docs.rootfi.dev/api-reference/bank-accounts/overview) to which this expense belongs
+  <Expandable title="properties">
+    <ResponseField name="data" type="Object">
+      <Expandable title="properties">
+        <Snippet file="accounts_snippets.mdx" />
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="updated_at" type="date">
+  The date at which the expense was updated on the accounting platform
+</ResponseField>
+
+## Properties Supported
+
+| Property        | Type                          | Description                                                          |
+| --------------- | ----------------------------- | -------------------------------------------------------------------- |
+| platform_id     | string                        | The Platform's ID of the expenses                                    |
+| contact_id      | string                        | Platform ID of the contact to which this expense belongs             |
+| account_id      | string                        | Platform ID of the account to which this expense belongs             |
+| document_number | string                        | Reference/Document number of the expense                             |
+| posted_date     | date                          | Date of the expense as recorded by the accounting platform           |
+| payment_mode    | string                        | The payment mode from which the payment was made                     |
+| currency        | string                        | The ISO-4217 currency code                                           |
+| currency_rate   | float                         | Rate between the currency of the payment and the base currency       |
+| total_amount    | float                         | Total value of the expense                                           |
+| sub_total       | float                         | Total pre tax value of the expense                                   |
+| tax_amount      | float                         | Total tax amount levied on the expense                               |
+| total_discount  | float                         | Total value of discounts applied to the expense                      |
+| memo            | string                        | Description of the expense                                           |
+| line_items      | [Line Item](/docs/line-items) | List of line items contained in the expense                          |
+| contact         | [Contact](/docs/contacts)     | The contact to which this expense belongs                            |
+| account         | [Account](/docs/accounts)     | The account to which this expense belongs                            |
+| updated_at      | date                          | The date at which the expense was updated on the accounting platform |
+
+<ResponseExample name="The Bank Transaction Object" >
+
+```json The Expense Response Object
+{
+  "platform_id": "1234567890123456789",
+  "contact_id": "3770712000000000099",
+  "account_id": "3770712000000000099",
+  "currency_id": "3770712000000000099",
+  "document_number": "AO-123",
+  "posted_date": "2023-09-21T00:00:00.000Z",
+  "payment_mode": "Cash",
+  "currency": {
+    "data": {
+      "platform_id": "3770712000000000099",
+      "name": "Indian Rupee",
+      "code": "INR",
+      "symbol": "₹",
+      "is_base_currency": true,
+      "exchange_rate": 0,
+      "updated_at": null
+    }
+  },
+  "currency_rate": 1,
+  "total_amount": 20.0,
+  "sub_total": 20.0,
+  "tax_amount": 0,
+  "total_discount": 0,
+  "memo": "This is a test expense",
+  "line_items": {
+    "data": [
+      {
+        "platform_id": "1234567890123456789",
+        "line_item_type": "EXPENSE",
+        "line_item_type_id": "1234567890123456789",
+        "tracking_category_ids": [],
+        "item_id": "1234567890123456789",
+        "tax_id": null,
+        "account_id": "1234567890123456789",
+        "description": "Line Items Description",
+        "quantity": 123,
+        "unit_amount": 150.0,
+        "total_amount": 150.0,
+        "sub_total": 150.0,
+        "tax_amount": 0,
+        "total_discount": 0,
+        "updated_at": "2023-02-17T00:00:00.000Z"
+      }
+    ]
+  },
+  "documents": {
+    "data": [
+      {
+        "platform_id": "3770712000000085065_3770712000000080327",
+        "file_name": "Documents.csv",
+        "file_type": "text/csv",
+        "file_size": 254.88,
+        "document_type_id": "3770712000000080327",
+        "document_type": "Invoices",
+        "document_uploaded": false,
+        "download_link": "https://rootfi-dev.s3.amazonaws.com/3770712000000085065_3770712000000080327",
+        "updated_at": "2021-03-03T10:00:00.000Z"
+      }
+    ]
+  },
+  "updated_at": "2023-09-21T00:00:00.000Z"
+}
+```
+
+</ResponseExample>

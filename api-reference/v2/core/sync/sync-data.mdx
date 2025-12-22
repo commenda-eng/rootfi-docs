@@ -1,0 +1,33 @@
+---
+version: "v2"
+openapi: openapi_v2 post /sync
+---
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/sync \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api-key>' \
+  --data '{
+  "company_id": 1,
+  "data_models_to_sync": ["ACCOUNTS"],
+  "integration_type": "ZOHO_BOOKS",
+  "full_sync": true
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
+
+await rootfi.core.sync.create({
+  company_id: 1,
+  data_models_to_sync: ["ACCOUNTS"],
+  integration_type: "ZOHO_BOOKS",
+  full_sync: true,
+});
+```
+
+</RequestExample>

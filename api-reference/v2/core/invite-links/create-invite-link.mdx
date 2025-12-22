@@ -1,0 +1,35 @@
+---
+version: "v2"
+openapi: openapi_v2 post /invite_link
+---
+
+An **invite link** contains API requests for generating and managing invite links, which can be used to connect end users to their preferred accounting platforms.
+
+**Company Name** is the name of the company that will be displayed in the Accounting platform.
+
+**Integration** is the name of the integration that you want to connect to.
+
+<RequestExample>
+
+```bash cURL
+curl --request POST \
+  --url https://api.rootfi.dev/invite_link \
+  --header 'Content-Type: application/json' \
+  --header 'api_key: <api-key>' \
+  --data '{
+  "company_name": "Test Company",
+  "integrations": ["ZOHO_BOOKS"]
+}'
+```
+
+```javascript NodeJS
+import { RootFiClient } from "rootfi-api";
+const rootfi = new RootFiClient({ apiKey: "<api_key>" });
+
+await rootfi.core.inviteLinks.create({
+  company_name: "Test Company",
+  integrations: ["ZOHO_BOOKS"],
+});
+```
+
+</RequestExample>
