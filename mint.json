@@ -201,37 +201,19 @@
           "group": "Companies",
           "pages": [
             "api-reference/v3/core/companies/get-all-companies",
-            "api-reference/v2/core/companies/get-all-companies",
             "api-reference/v3/core/companies/get-company",
-            "api-reference/v2/core/companies/get-company",
             "api-reference/v3/core/companies/edit-company",
-            "api-reference/v2/core/companies/edit-company",
-            "api-reference/v3/core/companies/delete-company",
-            "api-reference/v2/core/companies/delete-company"
+            "api-reference/v3/core/companies/delete-company"
           ]
         },
         {
           "group": "Invite Links",
           "pages": [
             "api-reference/v3/core/invite-links/get-all-invite-links",
-            "api-reference/v2/core/invite-links/get-all-invite-links",
             "api-reference/v3/core/invite-links/get-invite-link",
-            "api-reference/v2/core/invite-links/get-invite-link",
             "api-reference/v3/core/invite-links/create-invite-link",
             "api-reference/v3/core/invite-links/update-invite-link",
-            "api-reference/v2/core/invite-links/create-invite-link",
-            "api-reference/v3/core/invite-links/delete-invite-link",
-            "api-reference/v2/core/invite-links/delete-invite-link"
-          ]
-        },
-        {
-          "group": "Integrations",
-          "version": "v2",
-          "pages": [
-            "api-reference/v2/core/integrations/get-all-integrations",
-            "api-reference/v2/core/integrations/get-integration",
-            "api-reference/v2/core/integrations/create-integrations",
-            "api-reference/v2/core/integrations/edit-integration"
+            "api-reference/v3/core/invite-links/delete-invite-link"
           ]
         },
         {
@@ -242,23 +224,12 @@
             "api-reference/v3/core/sync/get-all-sync",
             "api-reference/v3/core/sync/get-all-sync-by-id",
             "api-reference/v3/core/sync/get-sync-jobs",
-            "api-reference/v3/core/sync/get-job",
-            "api-reference/v2/core/sync/get-all-sync-by-id",
-            "api-reference/v2/core/sync/get-all-sync",
-            "api-reference/v2/core/sync/sync-data"
+            "api-reference/v3/core/sync/get-job"
           ]
-        },
-        {
-          "group": "Jobs",
-          "version": "v2",
-          "pages": ["api-reference/v2/core/jobs/get-job"]
         },
         {
           "group": "Passthrough",
-          "pages": [
-            "api-reference/v3/core/passthrough/passthrough",
-            "api-reference/v2/core/passthrough/passthrough"
-          ]
+          "pages": ["api-reference/v3/core/passthrough/passthrough"]
         },
         {
           "group": "Real Time",
@@ -287,29 +258,22 @@
               "group": "Accounts",
               "pages": [
                 "api-reference/v3/accounting/accounts/overview",
-                "api-reference/v2/accounting/accounts/overview",
                 "api-reference/v3/accounting/accounts/get-all-accounts",
-                "api-reference/v2/accounting/accounts/get-all-accounts",
-                "api-reference/v3/accounting/accounts/create-accounts",
-                "api-reference/v2/accounting/accounts/create-accounts"
+                "api-reference/v3/accounting/accounts/create-accounts"
               ]
             },
             {
               "group": "Bank Accounts",
               "pages": [
                 "api-reference/v3/accounting/bank-accounts/overview",
-                "api-reference/v2/accounting/bank-accounts/overview",
                 "api-reference/v3/accounting/bank-accounts/get-all-bank-accounts",
-                "api-reference/v2/accounting/bank-accounts/get-all-bank-accounts",
-                "api-reference/v3/accounting/bank-accounts/create-bank-accounts",
-                "api-reference/v2/accounting/bank-accounts/create-bank-accounts"
+                "api-reference/v3/accounting/bank-accounts/create-bank-accounts"
               ]
             },
             {
               "group": "Bank Transactions",
               "pages": [
                 "api-reference/v3/accounting/bank-transactions/overview",
-                "api-reference/v2/accounting/bank-transactions/overview",
                 "api-reference/v3/accounting/bank-transactions/get-all-bank-transactions",
                 "api-reference/v3/accounting/bank-transactions/create-bank-transactions"
               ]
@@ -318,11 +282,8 @@
               "group": "Bills",
               "pages": [
                 "api-reference/v3/accounting/bills/overview",
-                "api-reference/v2/accounting/bills/overview",
                 "api-reference/v3/accounting/bills/get-all-bills",
-                "api-reference/v2/accounting/bills/get-all-bills",
                 "api-reference/v3/accounting/bills/create-bills",
-                "api-reference/v2/accounting/bills/create-bills",
                 "api-reference/v3/accounting/bills/update-bills"
               ]
             },
@@ -330,33 +291,24 @@
               "group": "Bill Payments",
               "pages": [
                 "api-reference/v3/accounting/bill-payments/overview",
-                "api-reference/v2/accounting/bill-payments/overview",
                 "api-reference/v3/accounting/bill-payments/get-all-bill-payments",
-                "api-reference/v2/accounting/bill-payments/get-all-bill-payments",
-                "api-reference/v3/accounting/bill-payments/create-bill-payments",
-                "api-reference/v2/accounting/bill-payments/create-bill-payments"
+                "api-reference/v3/accounting/bill-payments/create-bill-payments"
               ]
             },
             {
               "group": "Bill Credit Notes",
               "pages": [
                 "api-reference/v3/accounting/bill-credit-notes/overview",
-                "api-reference/v2/accounting/bill-credit-notes/overview",
                 "api-reference/v3/accounting/bill-credit-notes/get-all-bill-credit-notes",
-                "api-reference/v2/accounting/bill-credit-notes/get-all-bill-credit-notes",
-                "api-reference/v3/accounting/bill-credit-notes/create-bill-credit-notes",
-                "api-reference/v2/accounting/bill-credit-notes/create-bill-credit-notes"
+                "api-reference/v3/accounting/bill-credit-notes/create-bill-credit-notes"
               ]
             },
             {
               "group": "Contacts",
               "pages": [
                 "api-reference/v3/accounting/contacts/overview",
-                "api-reference/v2/accounting/contacts/overview",
                 "api-reference/v3/accounting/contacts/get-all-contacts",
-                "api-reference/v2/accounting/contacts/get-all-contacts",
                 "api-reference/v3/accounting/contacts/create-contacts",
-                "api-reference/v2/accounting/contacts/create-contacts",
                 "api-reference/v3/accounting/contacts/update-contacts"
               ]
             },
@@ -364,85 +316,64 @@
               "group": "Company Info",
               "pages": [
                 "api-reference/v3/accounting/company-info/overview",
-                "api-reference/v2/accounting/company-info/overview",
-                "api-reference/v3/accounting/company-info/get-all-company-info",
-                "api-reference/v2/accounting/company-info/get-all-company-info"
+                "api-reference/v3/accounting/company-info/get-all-company-info"
               ]
             },
             {
               "group": "Currencies",
               "pages": [
                 "api-reference/v3/accounting/currencies/overview",
-                "api-reference/v2/accounting/currencies/overview",
-                "api-reference/v3/accounting/currencies/get-all-currencies",
-                "api-reference/v2/accounting/currencies/get-all-currencies"
+                "api-reference/v3/accounting/currencies/get-all-currencies"
               ]
             },
             {
               "group": "Documents",
               "pages": [
                 "api-reference/v3/accounting/documents/overview",
-                "api-reference/v2/accounting/documents/overview",
                 "api-reference/v3/accounting/documents/get-all-documents",
                 "api-reference/v3/accounting/documents/create-documents",
-                "api-reference/v3/accounting/documents/download-document",
-                "api-reference/v2/accounting/documents/get-all-documents"
+                "api-reference/v3/accounting/documents/download-document"
               ]
             },
             {
               "group": "Expenses",
               "pages": [
                 "api-reference/v3/accounting/expenses/overview",
-                "api-reference/v2/accounting/expenses/overview",
                 "api-reference/v3/accounting/expenses/get-all-expenses",
-                "api-reference/v2/accounting/expenses/get-all-expenses",
-                "api-reference/v3/accounting/expenses/create-expenses",
-                "api-reference/v2/accounting/expenses/create-expenses"
+                "api-reference/v3/accounting/expenses/create-expenses"
               ]
             },
             {
               "group": "Invoice Credit Notes",
               "pages": [
                 "api-reference/v3/accounting/invoice-credit-notes/overview",
-                "api-reference/v2/accounting/invoice-credit-notes/overview",
                 "api-reference/v3/accounting/invoice-credit-notes/get-all-invoice-credit-notes",
-                "api-reference/v2/accounting/invoice-credit-notes/get-all-invoice-credit-notes",
-                "api-reference/v3/accounting/invoice-credit-notes/create-invoice-credit-notes",
-                "api-reference/v2/accounting/invoice-credit-notes/create-invoice-credit-notes"
+                "api-reference/v3/accounting/invoice-credit-notes/create-invoice-credit-notes"
               ]
             },
             {
               "group": "Invoices",
               "pages": [
                 "api-reference/v3/accounting/invoices/overview",
-                "api-reference/v2/accounting/invoices/overview",
                 "api-reference/v3/accounting/invoices/get-all-invoices",
-                "api-reference/v2/accounting/invoices/get-all-invoices",
                 "api-reference/v3/accounting/invoices/create-invoices",
-                "api-reference/v3/accounting/invoices/update-invoices",
-                "api-reference/v2/accounting/invoices/create-invoices"
+                "api-reference/v3/accounting/invoices/update-invoices"
               ]
             },
             {
               "group": "Invoice Payments",
               "pages": [
                 "api-reference/v3/accounting/invoice-payments/overview",
-                "api-reference/v2/accounting/invoice-payments/overview",
                 "api-reference/v3/accounting/invoice-payments/get-all-invoice-payments",
-                "api-reference/v2/accounting/invoice-payments/get-all-invoice-payments",
-                "api-reference/v3/accounting/invoice-payments/create-invoice-payments",
-                "api-reference/v2/accounting/invoice-payments/create-invoice-payments"
+                "api-reference/v3/accounting/invoice-payments/create-invoice-payments"
               ]
             },
             {
               "group": "Items",
               "pages": [
                 "api-reference/v3/accounting/items/overview",
-                "api-reference/v2/accounting/items/overview",
                 "api-reference/v3/accounting/items/get-all-items",
-                "api-reference/v2/accounting/items/get-all-items",
                 "api-reference/v3/accounting/items/create-items",
-                "api-reference/v2/accounting/items/create-items",
                 "api-reference/v3/accounting/items/update-items"
               ]
             },
@@ -450,33 +381,24 @@
               "group": "Journal Entries",
               "pages": [
                 "api-reference/v3/accounting/journal-entries/overview",
-                "api-reference/v2/accounting/journal-entries/overview",
                 "api-reference/v3/accounting/journal-entries/get-all-journal-entries",
-                "api-reference/v2/accounting/journal-entries/get-all-journal-entries",
-                "api-reference/v3/accounting/journal-entries/create-journal-entries",
-                "api-reference/v2/accounting/journal-entries/create-journal-entries"
+                "api-reference/v3/accounting/journal-entries/create-journal-entries"
               ]
             },
             {
               "group": "Purchase Orders",
               "pages": [
                 "api-reference/v3/accounting/purchase-orders/overview",
-                "api-reference/v2/accounting/purchase-orders/overview",
                 "api-reference/v3/accounting/purchase-orders/get-all-purchase-orders",
-                "api-reference/v2/accounting/purchase-orders/get-all-purchase-orders",
-                "api-reference/v3/accounting/purchase-orders/create-purchase-orders",
-                "api-reference/v2/accounting/purchase-orders/create-purchase-orders"
+                "api-reference/v3/accounting/purchase-orders/create-purchase-orders"
               ]
             },
             {
               "group": "Sales Orders",
               "pages": [
                 "api-reference/v3/accounting/sales-orders/overview",
-                "api-reference/v2/accounting/sales-orders/overview",
                 "api-reference/v3/accounting/sales-orders/get-all-sales-orders",
-                "api-reference/v2/accounting/sales-orders/get-all-sales-orders",
-                "api-reference/v3/accounting/sales-orders/create-sales-orders",
-                "api-reference/v2/accounting/sales-orders/create-sales-orders"
+                "api-reference/v3/accounting/sales-orders/create-sales-orders"
               ]
             },
             {
@@ -497,47 +419,36 @@
               "group": "Tax Rates",
               "pages": [
                 "api-reference/v3/accounting/tax-rates/overview",
-                "api-reference/v2/accounting/tax-rates/overview",
                 "api-reference/v3/accounting/tax-rates/get-all-tax-rates",
-                "api-reference/v2/accounting/tax-rates/get-all-tax-rates",
-                "api-reference/v3/accounting/tax-rates/create-tax-rates",
-                "api-reference/v2/accounting/tax-rates/create-tax-rates"
+                "api-reference/v3/accounting/tax-rates/create-tax-rates"
               ]
             },
             {
               "group": "Tracking Categories",
               "pages": [
                 "api-reference/v3/accounting/tracking-categories/overview",
-                "api-reference/v2/accounting/tracking-categories/overview",
-                "api-reference/v3/accounting/tracking-categories/get-all-tracking-categories",
-                "api-reference/v2/accounting/tracking-categories/get-all-tracking-categories"
+                "api-reference/v3/accounting/tracking-categories/get-all-tracking-categories"
               ]
             },
             {
               "group": "Balance Sheet",
               "pages": [
                 "api-reference/v3/accounting/balance-sheet/overview",
-                "api-reference/v2/accounting/balance-sheet/overview",
-                "api-reference/v3/accounting/balance-sheet/get-balance-sheet",
-                "api-reference/v2/accounting/balance-sheet/get-balance-sheet"
+                "api-reference/v3/accounting/balance-sheet/get-balance-sheet"
               ]
             },
             {
               "group": "Cash Flow Statements",
               "pages": [
                 "api-reference/v3/accounting/cash-flow-statements/overview",
-                "api-reference/v2/accounting/cash-flow-statements/overview",
-                "api-reference/v3/accounting/cash-flow-statements/get-cashflow-statements",
-                "api-reference/v2/accounting/cash-flow-statements/get-cashflow-statements"
+                "api-reference/v3/accounting/cash-flow-statements/get-cashflow-statements"
               ]
             },
             {
               "group": "Income Statements",
               "pages": [
                 "api-reference/v3/accounting/income-statements/overview",
-                "api-reference/v2/accounting/income-statements/overview",
-                "api-reference/v3/accounting/income-statements/get-income-statements",
-                "api-reference/v2/accounting/income-statements/get-income-statements"
+                "api-reference/v3/accounting/income-statements/get-income-statements"
               ]
             }
           ]
