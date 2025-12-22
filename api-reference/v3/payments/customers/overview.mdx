@@ -13,19 +13,72 @@ icon: "hand-wave"
 
 ## Attributes
 
+### Customer Attributes
+
+| Property           | Type          | Description                                                              |
+| ------------------ | ------------- | ------------------------------------------------------------------------ |
+| rootfi_id          | integer       | The RootFi ID of the customer                                            |
+| rootfi_created_at  | string        | The ISO 8601 timestamp at which the record was created in RootFi         |
+| rootfi_updated_at  | string        | The ISO 8601 timestamp at which the record was last updated in RootFi    |
+| rootfi_company_id  | integer       | The RootFi company ID associated with the customer                       |
+| platform_id        | string        | The Platform's ID for the customer                                       |
+| platform_unique_id | string        | The platform's unique identifier for the customer                        |
+| name               | string        | Name of the customer on the platform                                     |
+| created_at         | string        | The ISO 8601 timestamp at which the data was created on the platform     |
+| tax_number         | string        | Customer's tax number (i.e. GST, EIN, VAT)                               |
+| currency_id        | string        | The currency id of the customer                                          |
+| updated_at         | string        | The ISO 8601 timestamp at which the information was updated on the platform |
+| external_links     | External Link | The external links associated with the customer                          |
+| phone_numbers      | Phone Number  | The phone numbers associated with the customer                           |
+| addresses          | Address       | The addresses associated with the customer                               |
+
+### Address Attributes
+
+| Property           | Type          | Description                                                              |
+| ------------------ | ------------- | ------------------------------------------------------------------------ |
+| rootfi_id          | integer       | The RootFi ID of the address                                             |
+| platform_id        | string        | The Platform's ID for the address                                        |
+| platform_unique_id | string        | The platform's unique identifier for the address                         |
+| type               | AddressType   | The type of address (SHIPPING, BILLING, COMPANY)                         |
+| data_model_id      | string        | The ID of the parent data model this address belongs to                  |
+| street             | string        | The street address                                                       |
+| locality           | string        | The locality or neighborhood                                             |
+| city               | string        | The city                                                                 |
+| state              | string        | The state or province                                                    |
+| pincode            | string        | The postal or zip code                                                   |
+| country            | string        | The country                                                              |
+
+### Phone Number Attributes
+
+| Property    | Type                | Description                                                              |
+| ----------- | ------------------- | ------------------------------------------------------------------------ |
+| rootfi_id   | integer             | The RootFi ID of the phone number                                        |
+| platform_id | string              | The Platform's ID for the phone number                                   |
+| number      | string              | The phone number                                                         |
+| type        | ContactNumberType   | The type of phone number (MOBILE, TELEPHONE, FAX)                        |
+
+### External Link Attributes
+
+| Property    | Type              | Description                                                              |
+| ----------- | ----------------- | ------------------------------------------------------------------------ |
+| rootfi_id   | integer           | The RootFi ID of the external link                                       |
+| platform_id | string            | The Platform's ID for the external link                                  |
+| link        | string            | The URL or email address                                                 |
+| type        | ExternalLinkType  | The type of external link (WEBSITE, EMAIL)                               |
+
 ## Properties Supported
 
-| Property       | Type          | Description                                                              |
-| -------------- | ------------- | ------------------------------------------------------------------------ |
-| platform_id    | string        | The Platform's ID for the customer                                       |
-| name           | string        | Name of the customer on the accounting platform                          |
-| created_at     | string        | The last ISO 8601 timestamp at which the data was created                |
-| tax_number     | string        | Customer's tax number                                                    |
-| currency_id    | string        | The currency id of the customer                                          |
-| external_links | External Link | The external links associated with the customer                          |
-| phone_numbers  | Phone Number  | The phone numbers associated with the customer                           |
-| addresses      | Address       | The addresses associated with the customer                               |
-| updated_at     | date          | The date at which the information was updated on the accounting platform |
+| Property           | Type          | Description                                                              |
+| ------------------ | ------------- | ------------------------------------------------------------------------ |
+| platform_id        | string        | The Platform's ID for the customer                                       |
+| name               | string        | Name of the customer on the platform                                     |
+| created_at         | string        | The ISO 8601 timestamp at which the data was created                     |
+| tax_number         | string        | Customer's tax number (i.e. GST, EIN, VAT)                               |
+| currency_id        | string        | The currency id of the customer                                          |
+| updated_at         | string        | The ISO 8601 timestamp at which the information was updated on the platform |
+| external_links     | External Link | The external links associated with the customer                          |
+| phone_numbers      | Phone Number  | The phone numbers associated with the customer                           |
+| addresses          | Address       | The addresses associated with the customer                               |
 
 <ResponseExample name="The Customer Object" >
 
@@ -37,6 +90,7 @@ icon: "hand-wave"
   "rootfi_company_id": 1089,
   "platform_id": "123456",
   "created_at": "2024-01-22T05:07:31.465Z",
+  "updated_at": "2024-01-22T05:07:31.465Z",
   "name": "John Doe",
   "tax_number": "1234567890",
   "currency_id": "1234567890",
@@ -60,6 +114,9 @@ icon: "hand-wave"
     {
       "rootfi_id": 278264,
       "platform_id": "CONTACTS_1af68894-ea9f-ee11-be36-7c1e520f50bc_ADDRESS",
+      "platform_unique_id": "123456",
+      "type": "BILLING",
+      "data_model_id": "123456",
       "street": "123 Main Street",
       "locality": "Main Street",
       "city": "New York",

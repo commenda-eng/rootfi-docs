@@ -12,13 +12,31 @@ icon: "hand-wave"
 
 ## Attributes
 
+### Dispute Attributes
+
+| Property           | Type          | Description                                                              |
+| ------------------ | ------------- | ------------------------------------------------------------------------ |
+| rootfi_id          | integer       | The RootFi ID of the dispute                                             |
+| rootfi_created_at  | string        | The ISO 8601 timestamp at which the record was created in RootFi         |
+| rootfi_updated_at  | string        | The ISO 8601 timestamp at which the record was last updated in RootFi    |
+| rootfi_company_id  | integer       | The RootFi company ID associated with the dispute                        |
+| platform_id        | string        | The Platform's ID for the dispute                                        |
+| platform_unique_id | string        | The platform's unique identifier for the dispute                         |
+| created_at         | string        | The date and time the dispute was created                                |
+| amount             | number        | The amount of the dispute                                                |
+| currency_id        | string        | The currency id of the dispute                                           |
+| status             | enum          | The status of the dispute (WON, LOST, PENDING, OPEN, CLOSED)             |
+| reason_code        | string        | The reason code of the dispute                                           |
+| reason_description | string        | The reason description of the dispute                                    |
+| payment_id         | string        | The payment id of the dispute                                            |
+
 ## Properties Supported
 
 | Property           | Type   | Description                                                                    |
 | ------------------ | ------ | ------------------------------------------------------------------------------ |
 | platform_id        | string | The Platform's ID for the dispute                                              |
 | created_at         | string | The date and time the dispute was created                                      |
-| amount             | string | The amount of the dispute                                                      |
+| amount             | number | The amount of the dispute                                                      |
 | currency_id        | string | The currency id of the dispute                                                 |
 | status             | enum   | The status of the dispute. Allowed values are WON, LOST, PENDING, OPEN, CLOSED |
 | reason_code        | string | The reason code of the dispute                                                 |
@@ -33,14 +51,14 @@ icon: "hand-wave"
   "rootfi_created_at": "2024-01-22T05:07:31.465Z",
   "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
   "rootfi_company_id": 1089,
-  "platform_id": "123456",
+  "platform_id": "dp_123456",
   "created_at": "2024-01-22T05:07:31.000Z",
-  "amount": "100.00",
+  "amount": 100.00,
   "currency_id": "USD",
   "status": "PENDING",
-  "reason_code": "123456",
-  "reason_description": "Reason Description",
-  "payment_id": "123456"
+  "reason_code": "product_not_received",
+  "reason_description": "Customer claims product was not received",
+  "payment_id": "pay_123456"
 }
 ```
 

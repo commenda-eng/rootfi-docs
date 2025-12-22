@@ -1,7 +1,7 @@
 ---
 version: "v3"
 title: "Overview"
-description: "An Invoice is a request for payment of goods or services that have been provided. The Invoice Data Model simplifies the handling and retrieval of invoices from different payment gateways. The model provides a unified representation of invoices, enabling you to easily access and manage invoice data from different platforms."
+description: "An Invoice is a request for payment of goods or services that have been provided. The Invoice Data Model simplifies the handling and retrieval of invoices from different payment gateways."
 icon: "hand-wave"
 ---
 
@@ -9,6 +9,70 @@ icon: "hand-wave"
 
 - Unified invoice properties: The model provides a unified representation of invoices, enabling you to easily access and manage invoice data from different platforms.
 - Comprehensive invoices information: The model provides a comprehensive representation of invoices, enabling you to easily access and manage invoice data from different platforms.
+
+## Attributes
+
+### Invoice Attributes
+
+| Property           | Type          | Description                                                              |
+| ------------------ | ------------- | ------------------------------------------------------------------------ |
+| rootfi_id          | integer       | The RootFi ID of the invoice                                             |
+| rootfi_created_at  | string        | The ISO 8601 timestamp at which the record was created in RootFi         |
+| rootfi_updated_at  | string        | The ISO 8601 timestamp at which the record was last updated in RootFi    |
+| rootfi_company_id  | integer       | The RootFi company ID associated with the invoice                        |
+| platform_id        | string        | The Platform's ID for the invoice                                        |
+| platform_unique_id | string        | The platform's unique identifier for the invoice                         |
+| contact_id         | string        | The contact id of the invoice                                            |
+| currency_id        | string        | The currency id of the invoice                                           |
+| document_number    | string        | The document number of the invoice                                       |
+| posted_date        | string        | The posted date of the invoice                                           |
+| due_date           | string        | The due date of the invoice                                              |
+| status             | string        | The status of the invoice                                                |
+| total_discount     | number        | The total discount of the invoice                                        |
+| sub_total          | number        | The sub total of the invoice                                             |
+| tax_amount         | number        | The tax amount of the invoice                                            |
+| total_amount       | number        | The total amount of the invoice                                          |
+| amount_due         | number        | The amount due of the invoice                                            |
+| shipping_amount    | number        | The shipping amount of the invoice                                       |
+| memo               | string        | The memo or notes for the invoice                                        |
+| created_at         | string        | The date and time the invoice was created                                |
+| updated_at         | string        | The date and time the invoice was last updated                           |
+| line_items         | Line Item[]   | The line items of the invoice                                            |
+| addresses          | Address[]     | The addresses associated with the invoice                                |
+
+### Line Item Attributes
+
+| Property        | Type   | Description                                                              |
+| --------------- | ------ | ------------------------------------------------------------------------ |
+| platform_id     | string | The Platform's ID for the line item                                      |
+| line_item_type_id | string | The ID of the parent document this line item belongs to                |
+| item_id         | string | The item ID associated with the line item                                |
+| tax_id          | string | The tax ID associated with the line item                                 |
+| description     | string | The description of the line item                                         |
+| quantity        | number | The quantity of the line item                                            |
+| unit_amount     | number | The unit amount of the line item                                         |
+| line_item_type  | string | The type of line item (PAYMENT_INVOICES, PAYMENT_PAYMENT_LINKS, etc.)    |
+| sub_total       | number | The sub total of the line item                                           |
+| tax_amount      | number | The tax amount of the line item                                          |
+| total_amount    | number | The total amount of the line item                                        |
+| total_discount  | number | The total discount of the line item                                      |
+| updated_at      | string | The date and time the line item was last updated                         |
+
+### Address Attributes
+
+| Property           | Type          | Description                                                              |
+| ------------------ | ------------- | ------------------------------------------------------------------------ |
+| rootfi_id          | integer       | The RootFi ID of the address                                             |
+| platform_id        | string        | The Platform's ID for the address                                        |
+| platform_unique_id | string        | The platform's unique identifier for the address                         |
+| type               | AddressType   | The type of address (SHIPPING, BILLING, COMPANY)                         |
+| data_model_id      | string        | The ID of the parent data model this address belongs to                  |
+| street             | string        | The street address                                                       |
+| locality           | string        | The locality or neighborhood                                             |
+| city               | string        | The city                                                                 |
+| state              | string        | The state or province                                                    |
+| pincode            | string        | The postal or zip code                                                   |
+| country            | string        | The country                                                              |
 
 ## Properties Supported
 
@@ -26,7 +90,12 @@ icon: "hand-wave"
 | tax_amount      | number   | The tax amount of the invoice      |
 | total_amount    | number   | The total amount of the invoice    |
 | amount_due      | number   | The amount due of the invoice      |
+| shipping_amount | number   | The shipping amount of the invoice |
+| memo            | string   | The memo or notes for the invoice  |
+| created_at      | string   | The date and time the invoice was created |
+| updated_at      | string   | The date and time the invoice was last updated |
 | line_items      | object[] | The line items of the invoice      |
+| addresses       | object[] | The addresses associated with the invoice |
 
 <ResponseExample name="The Invoice Object" >
 
@@ -39,29 +108,49 @@ icon: "hand-wave"
   "platform_id": "123456",
   "contact_id": "123456",
   "currency_id": "USD",
-  "document_number": "123456",
+  "document_number": "INV-001",
   "posted_date": "2024-01-22T05:07:31.000Z",
-  "due_date": "2024-01-22T05:07:31.000Z",
-  "status": "ACTIVE",
-  "total_discount": 100.0,
-  "sub_total": 100.0,
-  "tax_amount": 100.0,
-  "total_amount": 100.0,
-  "amount_due": 100.0,
+  "due_date": "2024-02-22T05:07:31.000Z",
+  "status": "SUBMITTED",
+  "total_discount": 10.0,
+  "sub_total": 90.0,
+  "tax_amount": 9.0,
+  "total_amount": 99.0,
+  "amount_due": 99.0,
+  "shipping_amount": 5.0,
+  "memo": "Payment for services rendered",
+  "created_at": "2024-01-22T05:07:31.000Z",
+  "updated_at": "2024-01-22T05:07:31.000Z",
   "line_items": [
     {
+      "platform_id": "li_123456",
       "line_item_type_id": "123456",
-      "item_id": "123456",
-      "tax_id": "123456",
-      "description": "This is a description",
+      "item_id": "item_123",
+      "tax_id": "tax_123",
+      "description": "Consulting services",
       "quantity": 1,
-      "unit_amount": 100,
+      "unit_amount": 100.0,
       "line_item_type": "PAYMENT_INVOICES",
-      "sub_total": 100,
-      "tax_amount": 100,
-      "total_amount": 100,
-      "total_discount": 100,
+      "sub_total": 100.0,
+      "tax_amount": 10.0,
+      "total_amount": 110.0,
+      "total_discount": 10.0,
       "updated_at": "2024-01-22T05:07:31.000Z"
+    }
+  ],
+  "addresses": [
+    {
+      "rootfi_id": 278264,
+      "platform_id": "addr_123456",
+      "platform_unique_id": "123456",
+      "type": "BILLING",
+      "data_model_id": "123456",
+      "street": "123 Main Street",
+      "locality": "Downtown",
+      "city": "New York",
+      "state": "New York",
+      "pincode": "10001",
+      "country": "USA"
     }
   ]
 }
