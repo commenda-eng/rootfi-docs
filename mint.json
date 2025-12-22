@@ -465,6 +465,13 @@
               ]
             },
             {
+              "group": "Credit Notes",
+              "pages": [
+                "api-reference/v3/payments/credit-notes/overview",
+                "api-reference/v3/payments/credit-notes/get-all-credit-notes"
+              ]
+            },
+            {
               "group": "Disputes",
               "pages": [
                 "api-reference/v3/payments/disputes/overview",
@@ -483,6 +490,13 @@
               "pages": [
                 "api-reference/v3/payments/items/overview",
                 "api-reference/v3/payments/items/get-all-items"
+              ]
+            },
+            {
+              "group": "Products",
+              "pages": [
+                "api-reference/v3/payments/products/overview",
+                "api-reference/v3/payments/products/get-all-products"
               ]
             },
             {
