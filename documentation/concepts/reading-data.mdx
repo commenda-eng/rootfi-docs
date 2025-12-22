@@ -1,0 +1,47 @@
+---
+title: "Reading Data"
+description: "Use our read APIs for quick easy access to your customers data"
+icon: "book"
+---
+
+With RootFi you can read data using REST or Graphql APIs.
+
+<Note>
+
+**Get started with REST APIs**
+
+We recommend getting started with our REST APIs to quickly get up and running. Once you are comfortable with the data models and the data you are working with, we highly recommend using our GraphQL APIs to read data. The GraphQL APIs give you a GUI to easily make complex queries to suit your needs. The GraphQL playground also makes it very easy to test your queries and see the results.
+
+</Note>
+
+We support easy to use REST APIs for all our data models with the following query parameters:
+
+1. **limit** - the number of objects you want to retrieve. Defaults to 100
+
+2. **next** and **prev** - We use cursor page pagination to make it easy to paginate through the data. The next and prev parameters are used to paginate through the data. The next parameter is used to get the next set of data and the prev parameter is used to get the previous set of data. The next and prev parameters are returned in the response of the API call.
+
+3. **select** - optionally you can pass a comma separated list of fields of **data_hash** and **raw_data** if you need that data.
+
+4. **expand** - optionally you can pass a comma separated list of fields you want to expand. This is useful when you want to retrieve data from a data model that is related to another data model. For example, you can retrieve an invoice and all the associated payments by querying the `invoice` data model and including the `invoice_payments` field.
+
+5. **include_deleted_records** - optionally you can pass a boolean value to include deleted records in the response. This is useful when you want to know what records have been deleted after a sync.
+
+6. **return_count** - a boolean value that you can pass to return the total count of the data. This is useful when you want to know the total number of records that match your query.
+
+7. **sort[field_name]** - value is either `ASC` or `DESC`.
+
+   Example: `sort[rootfi_created_at] = DESC`
+
+8. **filter fields** - You can filter on any field in the data model. Each filter field parameter is a string that contains the field name, the operator and the value you want to filter on.
+
+   1. **field name** - the name of the field you want to filter on. Example: `rootfi_company_id`
+   2. **operator** - the operator you want to use to filter the data.
+      Supported operators are `eq`, `neq`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`, `is_null`, `not_null`, `contains`, `not_contains`
+
+   3. **value** - the value you want to filter on. Example: `694`
+
+   Example 1: `rootfi_company_id[eq] = 694` is a common filter you will always want to have to filter data for a given comapny ID
+
+   Example 2: `rootfi_updated_at[gte] = 2024-01-01T00:00:00.000Z` is a common filter you would use if you want to get all the records that have been updated after performing a sync.
+
+Our GET Apis in the [API Reference](/api-reference/v3/accounting/accounts/get-all-accounts) shows you how to use these parameters. Please contact us if you have any questions.

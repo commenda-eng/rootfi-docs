@@ -1,0 +1,48 @@
+---
+version: "v3"
+title: "Overview"
+description: "Leads Data Model simplifies the handling and retrieval of leads-related information across various crm platforms."
+icon: "hand-wave"
+---
+
+**The Leads Data Model** simplifies the handling and retrieval of leads-related information across various ecommerce platforms.
+
+- Unified Leads properties: The model provides a unified representation of leads properties across different platforms, enabling you to easily access and manage leads data from different platforms.
+- Comprehensive leads information: The model provides a comprehensive representation of leads data, including all the properties and relationships that you can retrieve for an contact.
+
+## Attributes
+
+## Properties Supported
+
+| Property    | Type   | Description                                    |
+| ----------- | ------ | ---------------------------------------------- |
+| platform_id | string | The Platform's ID for the leads                |
+| name        | string | The name of the lead                           |
+| company_id  | string | The ID of the company associated with the lead |
+| contact_id  | string | The ID of the contact associated with the lead |
+| currency    | string | The currency of the lead                       |
+| source_name | string | The source of the lead                         |
+| created_at  | date   | The date and time the lead was created         |
+| updated_at  | date   | The date and time the lead was last updated    |
+
+<ResponseExample name="The Leads Object" >
+
+```json The Leads Response Object
+{
+  "rootfi_id": 157,
+  "rootfi_deleted_at": null,
+  "rootfi_created_at": "2024-01-22T05:07:31.465Z",
+  "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
+  "rootfi_company_id": 1089,
+  "platform_id": "123456",
+  "name": "Deal 1",
+  "company_id": "123456",
+  "contact_id": "123456",
+  "currency": "USD",
+  "source_name": "Web",
+  "created_at": "2024-01-22T05:07:31
+  "updated_at": "2024-01-22T05:07:31"
+}
+```
+
+</ResponseExample>

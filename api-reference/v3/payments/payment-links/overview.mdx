@@ -1,0 +1,102 @@
+---
+version: "v3"
+title: "Overview"
+description: "A Payment link is used to collect payments from your customers. You can send a payment link to your customers via email, SMS, WhatsApp, or any other messaging app. When your customer clicks on the link, they will be redirected to a payment page where they can complete the payment."
+icon: "hand-wave"
+---
+
+**The Payment Link Data Model** simplifies the handling and retrieval of Payment Link data for your application. The model provides a unified representation of payment link data across different platforms, enabling you to easily access and manage payment link data from different platforms.
+
+- Unified Payment Link properties: The model provides a unified representation of payment link properties across different platforms, enabling you to easily access and manage payment links data from different platforms.
+- Comprehensive payment links information: The model provides a comprehensive representation of payment link data, including all the properties and relationships that you can retrieve for a payment link.
+
+## Attributes
+
+### Payment Link Attributes
+
+| Property           | Type          | Description                                                              |
+| ------------------ | ------------- | ------------------------------------------------------------------------ |
+| rootfi_id          | integer       | The RootFi ID of the payment link                                        |
+| rootfi_created_at  | string        | The ISO 8601 timestamp at which the record was created in RootFi         |
+| rootfi_updated_at  | string        | The ISO 8601 timestamp at which the record was last updated in RootFi    |
+| rootfi_company_id  | integer       | The RootFi company ID associated with the payment link                   |
+| platform_id        | string        | The Platform's ID for the Payment Link                                   |
+| platform_unique_id | string        | The platform's unique identifier for the payment link                    |
+| description        | string        | The description of the Payment Link                                      |
+| created_at         | string        | The date the Payment Link was created                                    |
+| updated_at         | string        | The date the Payment Link was updated                                    |
+| amount             | number        | The amount of the Payment Link                                           |
+| currency_id        | string        | The currency of the Payment Link                                         |
+| link               | string        | The link of the Payment Link                                             |
+| status             | enum          | The status of the Payment Link (CREATED, PARTIALLY_PAID, PAID, CANCELLED, EXPIRED) |
+| line_items         | Line Item[]   | The line items of the Payment Link                                       |
+
+### Line Item Attributes
+
+| Property        | Type   | Description                                                              |
+| --------------- | ------ | ------------------------------------------------------------------------ |
+| platform_id     | string | The Platform's ID for the line item                                      |
+| line_item_type_id | string | The ID of the parent document this line item belongs to                |
+| item_id         | string | The item ID associated with the line item                                |
+| tax_id          | string | The tax ID associated with the line item                                 |
+| description     | string | The description of the line item                                         |
+| quantity        | number | The quantity of the line item                                            |
+| unit_amount     | number | The unit amount of the line item                                         |
+| line_item_type  | string | The type of line item (PAYMENT_INVOICES, PAYMENT_PAYMENT_LINKS, etc.)    |
+| sub_total       | number | The sub total of the line item                                           |
+| tax_amount      | number | The tax amount of the line item                                          |
+| total_amount    | number | The total amount of the line item                                        |
+| total_discount  | number | The total discount of the line item                                      |
+| updated_at      | string | The date and time the line item was last updated                         |
+
+## Properties Supported
+
+| Property    | Type     | Description                                                                              |
+| ----------- | -------- | ---------------------------------------------------------------------------------------- |
+| platform_id | string   | The Platform's ID for the Payment Link                                                   |
+| description | string   | The description of the Payment Link                                                      |
+| created_at  | string   | The date the Payment Link was created                                                    |
+| updated_at  | string   | The date the Payment Link was updated                                                    |
+| amount      | number   | The amount of the Payment Link                                                           |
+| currency_id | string   | The currency of the Payment Link                                                         |
+| link        | string   | The link of the Payment Link                                                             |
+| status      | enum     | The status of the Payment Link. Allowed values are CREATED, PARTIALLY_PAID, PAID, CANCELLED, EXPIRED |
+| line_items  | object[] | The line items of the Payment Link                                                       |
+
+<ResponseExample name="The Payment Link Object" >
+
+```json The Payment Link Response Object
+{
+  "rootfi_id": 157,
+  "rootfi_created_at": "2024-01-22T05:07:31.465Z",
+  "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
+  "rootfi_company_id": 1089,
+  "platform_id": "plink_123456",
+  "description": "Payment for monthly subscription",
+  "created_at": "2024-01-22T05:07:31.000Z",
+  "updated_at": "2024-01-22T05:07:31.000Z",
+  "amount": 100.00,
+  "currency_id": "USD",
+  "link": "https://pay.example.com/plink_123456",
+  "status": "CREATED",
+  "line_items": [
+    {
+      "platform_id": "li_123456",
+      "line_item_type_id": "plink_123456",
+      "item_id": "item_123",
+      "tax_id": "tax_123",
+      "description": "Monthly subscription fee",
+      "quantity": 1,
+      "unit_amount": 100.00,
+      "line_item_type": "PAYMENT_PAYMENT_LINKS",
+      "sub_total": 100.00,
+      "tax_amount": 10.00,
+      "total_amount": 110.00,
+      "total_discount": 0,
+      "updated_at": "2024-01-22T05:07:31.000Z"
+    }
+  ]
+}
+```
+
+</ResponseExample>

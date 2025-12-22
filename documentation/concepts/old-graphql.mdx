@@ -1,0 +1,68 @@
+## What is GraphQL?
+
+GraphQL is a query language for APIs that makes is very easy to get the data you want using a fully typed system.
+To learn more about GraphQL and why we have recommend using it, visit our [Why we Use GraphQL
+Blog](https://integrationlabs.co/post/why-we-use-graphql).
+
+## Using our GraphQL APIs
+
+### 1. Open the playground
+
+To get started visit our [GraphQL playground](https://integrate.rootfi.dev/graphql).
+
+### 2. Enter your API key
+
+Click on the 'Setting' icon on the top left bar to open the 'Connection Settings'
+![](/images/graphql_settings.png)
+Enter your API key in the 'Shared headers' section. You can find your API key in the [RootFi Dashboard Settings](https://integrate.rootfi.dev/settings).
+
+You can also access your API key from the RootFi Dashboard by clicking the 'Playground' button on the navigation.
+
+<Note>Navigating from the RootFi Dashboard will automatically add your API key to the Playground.</Note>
+
+### Making Queries
+
+Once you have entered your API key, you should see the entire schema of all our data models on the left side bar. Using the left side bar, you can interactively explore our schema and structurally design the query you need. We support **filtering of any field** and **sorting of all numeric and date field** across all data models.
+
+Our responses always contain a `data` field and an `aggregate` field. The `data` contains the list of all the returned data objects. The `aggregate` field makes it very easy to retrieve aggregate fields like `total_count`, which helps facilitate **pagination**.
+
+### Arguments
+
+We have a number of arguments that can be used to design the query you need.
+The **filter** argument is on a data model level and affects the data and aggregate outputs.
+The following arguments affect the data field:
+
+- **orderBy** - Sorts the data field by the given field.
+- **take** - Limits the number of data objects returned.
+- **skip** - Skips the first n data objects.
+- **distinct** - Returns the distinct values of the given field.
+
+<Note>We support a maximum take of 500 records. The default take is 100.</Note>
+
+### Nested Data Models
+
+You can retrieve nested data models by including the data model name as a field in the query and then specifying the fields you want to retrieve from that data model. You can nest as many data models as you want.
+
+<Note>All id's have their associated data models as fields.</Note>
+
+Example: In the Accounts data models, the field `parent_account_id` is supposed to be the `platform_id` of another Account (the parent account). Therefore, in our GraphQL schema, you can find a field called `parent_account`. You can get any data relating to that `parent_account` including the next `parent_account`.
+
+Querying nested data models is also very useful when you want to retrieve data from a data model that is related to another data model.
+
+<Note>Any data model that linked to another data model via a foreign key will have a field to retrieve the other data model</Note>
+For example, you can retrieve an invoice and all the associated payments by querying the `invoice` data model and including the `payments` field.
+
+## Example Request
+
+You can use the following curl request to make a GraphQL request to our API.
+
+Replace **\{QUERY}**, **\{VARIABLES}**, with the query and variables you make in the [GraphQL Playground](https://integrate.rootfi.dev/graphql).
+Replace **\{API_KEY}** with your API key.
+
+```bash Request
+    curl --request POST \
+    --header 'content-type: application/json' \
+    --header 'api_key: {API_KEY}' \
+    --url 'https://integrate.rootfi.dev/graphql' \
+    --data '{"query": {QUERY}, "variables": {VARIABLES}}'
+```

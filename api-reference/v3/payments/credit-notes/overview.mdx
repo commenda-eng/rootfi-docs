@@ -1,0 +1,125 @@
+---
+version: "v3"
+title: "Overview"
+description: "A Credit Note is a document issued to a customer that reduces the amount owed. It can be used to refund payments, correct errors, or provide discounts on future purchases."
+icon: "hand-wave"
+---
+
+**The Credit Notes Data Model** simplifies the handling and retrieval of credit notes from different payment gateways. The model provides a unified representation of credit notes, enabling you to easily access and manage credit note data from different platforms.
+
+- Unified credit note properties: The model provides a unified representation of credit notes, enabling you to easily access and manage credit note data from different platforms.
+- Comprehensive credit note information: The model provides a comprehensive representation of credit notes, including all financial details, line items, and associated invoice references.
+
+## Attributes
+
+### Credit Note Attributes
+
+| Property           | Type          | Description                                                              |
+| ------------------ | ------------- | ------------------------------------------------------------------------ |
+| rootfi_id          | integer       | The unique RootFi identifier assigned to this credit note record         |
+| rootfi_created_at  | string        | The ISO 8601 timestamp indicating when RootFi first synced this credit note |
+| rootfi_updated_at  | string        | The ISO 8601 timestamp indicating when RootFi last updated this credit note |
+| rootfi_company_id  | integer       | The RootFi company identifier associated with this credit note            |
+| platform_id        | string        | The unique identifier for this credit note on the payment platform       |
+| platform_unique_id | string        | An additional unique identifier provided by the payment platform         |
+| contact_id         | string        | The identifier of the customer or contact associated with this credit note |
+| document_number    | string        | The reference number or document identifier for this credit note         |
+| total_amount       | number        | The total monetary value of the credit note (including all taxes and fees) |
+| total_discount     | number        | The total discount amount applied to this credit note                     |
+| remaining_credit   | number        | The amount of credit that has not yet been applied or used                |
+| tax_amount         | number        | The total tax amount included in the credit note                          |
+| shipping_amount    | number        | The shipping cost amount included in the credit note (if applicable)      |
+| posted_date        | string        | The date when this credit note was posted or finalized                    |
+| currency_id        | string        | The currency code (e.g., USD, EUR) used for all amounts in this credit note |
+| memo               | string        | Additional notes or comments associated with this credit note             |
+| status             | enum          | The current status of the credit note (DRAFT, SUBMITTED, PAID, VOID, etc.) |
+| invoice_ids        | string[]      | An array of invoice identifiers that this credit note is associated with |
+| created_at         | string        | The ISO 8601 timestamp when this credit note was created on the platform  |
+| updated_at         | string        | The ISO 8601 timestamp when this credit note was last updated on the platform |
+| line_items         | Line Item[]   | An array of line items detailing the products or services in this credit note |
+
+### Line Item Attributes
+
+| Property        | Type   | Description                                                              |
+| --------------- | ------ | ------------------------------------------------------------------------ |
+| platform_id     | string | The unique identifier for this line item on the payment platform          |
+| line_item_type_id | string | The identifier of the parent document (credit note) this line item belongs to |
+| item_id         | string | The identifier of the product or service item associated with this line item |
+| tax_id          | string | The identifier of the tax rate applied to this line item                 |
+| description     | string | A detailed description of the product or service in this line item        |
+| quantity        | number | The quantity of items in this line item                                  |
+| unit_amount     | number | The price per unit for this line item                                    |
+| line_item_type  | string | The type of line item (e.g., PAYMENT_CREDIT_NOTES)                       |
+| sub_total       | number | The subtotal amount for this line item (quantity × unit_amount)          |
+| tax_amount      | number | The tax amount calculated for this line item                              |
+| total_amount    | number | The total amount for this line item (sub_total + tax_amount - discount)   |
+| total_discount  | number | The discount amount applied to this line item                             |
+| updated_at      | string | The ISO 8601 timestamp when this line item was last updated               |
+
+## Properties Supported
+
+| Property        | Type     | Description                                                              |
+| --------------- | -------- | ------------------------------------------------------------------------ |
+| platform_id     | string   | The unique identifier for this credit note on the payment platform       |
+| contact_id      | string   | The identifier of the customer or contact associated with this credit note |
+| document_number | string   | The reference number or document identifier for this credit note          |
+| total_amount    | number   | The total monetary value of the credit note (including all taxes and fees) |
+| total_discount  | number   | The total discount amount applied to this credit note                     |
+| remaining_credit | number  | The amount of credit that has not yet been applied or used               |
+| tax_amount      | number   | The total tax amount included in the credit note                          |
+| shipping_amount | number   | The shipping cost amount included in the credit note (if applicable)      |
+| posted_date     | string   | The date when this credit note was posted or finalized                    |
+| currency_id     | string   | The currency code (e.g., USD, EUR) used for all amounts in this credit note |
+| memo            | string   | Additional notes or comments associated with this credit note             |
+| status          | enum     | The current status of the credit note (DRAFT, SUBMITTED, PAID, VOID, etc.) |
+| invoice_ids     | string[] | An array of invoice identifiers that this credit note is associated with |
+| created_at      | string   | The ISO 8601 timestamp when this credit note was created on the platform  |
+| updated_at      | string   | The ISO 8601 timestamp when this credit note was last updated on the platform |
+| line_items      | object[] | An array of line items detailing the products or services in this credit note |
+
+<ResponseExample name="The Credit Note Object" >
+
+```json The Credit Note Response Object
+{
+  "rootfi_id": 157,
+  "rootfi_created_at": "2024-01-22T05:07:31.465Z",
+  "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
+  "rootfi_company_id": 1089,
+  "platform_id": "cn_123456",
+  "platform_unique_id": "cn_unique_123456",
+  "contact_id": "cus_123456",
+  "document_number": "CN-001",
+  "total_amount": 110.00,
+  "total_discount": 10.00,
+  "remaining_credit": 110.00,
+  "tax_amount": 10.00,
+  "shipping_amount": 5.00,
+  "posted_date": "2024-01-22T05:07:31.000Z",
+  "currency_id": "USD",
+  "memo": "Credit note for returned items",
+  "status": "SUBMITTED",
+  "invoice_ids": ["inv_123456", "inv_789012"],
+  "created_at": "2024-01-22T05:07:31.000Z",
+  "updated_at": "2024-01-22T05:07:31.000Z",
+  "line_items": [
+    {
+      "platform_id": "li_123456",
+      "line_item_type_id": "cn_123456",
+      "item_id": "item_123",
+      "tax_id": "tax_123",
+      "description": "Returned product - refund",
+      "quantity": 1,
+      "unit_amount": 100.00,
+      "line_item_type": "PAYMENT_CREDIT_NOTES",
+      "sub_total": 100.00,
+      "tax_amount": 10.00,
+      "total_amount": 110.00,
+      "total_discount": 0,
+      "updated_at": "2024-01-22T05:07:31.000Z"
+    }
+  ]
+}
+```
+
+</ResponseExample>
+

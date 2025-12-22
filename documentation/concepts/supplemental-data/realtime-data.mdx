@@ -1,0 +1,30 @@
+---
+title: "Realtime Data"
+description: "The ability to get fetch realtime data on a single or multiple data models."
+icon: "clock"
+---
+
+Our Realtime Data APIs let you synchronously sync data from the Integration Platform in a unified format. For any data model we support, you can get data from the Integration platform in real time (synchronously).
+
+## Fetch Unified Data on Demand
+
+Realtime Data APIs are very powerful when you need to check certain data points on demand. It is especially useful for fetching an artefact like an invoice or small amounts of data that need to be displayed to the user, like Tax Rates.
+
+### Example
+
+Prior to a customer making an invoice payment on your platform, a common use case would be to check the status of the Invoice to see that it has not been paid.
+
+To fetch data for a particular artefact, like in the example above, you only need the **platform_id** of that artefact, which needs to be passed in the **variables** field of the request here (link to API reference)
+
+## Call APIs with a unified response.
+
+While the most common use case would be to fetch a single piece of data, **our Realtime Data APIs are fully customisable and can call any underlying platform’s API** and unify the response for the data models we support.
+
+This means you can fetch Tax Rates, Bank Accounts, invoice payments for a certain invoice, etc. If you require these custom use cases, please reach out, and we will help you with the correct API parameters for your use case.
+
+<Info>
+Need to call an API from the Platform that RootFi does not support?
+
+Check out our [Passthrough APIs](/documentation/concepts/supplemental-data/passthrough-api) to get data seamlessly from any integration platform while leveraging our built-in authentication.
+
+</Info>

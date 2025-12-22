@@ -1,4 +1,5 @@
 ---
+version: "v3"
 title: "Overview"
 description: "An Item is used to track sales and inventory, and to collect sales tax. Items are also used to track income and expenses for tax purposes."
 icon: "hand-wave"
@@ -7,21 +8,42 @@ icon: "hand-wave"
 **The Items Data Model** simplifies the handling and retrieval of Items data for your application. The model provides a unified representation of Items data across different platforms, enabling you to easily access and manage Items data from different platforms.
 
 - Unified Items properties: The model provides a unified representation of Items properties across different platforms, enabling you to easily access and manage Items data from different platforms.
-- Comprehensive Items information: The model provides a comprehensive representation of Items data, including all the properties and relationships that you can retrieve for an Items.
+- Comprehensive Items information: The model provides a comprehensive representation of Items data, including all the properties and relationships that you can retrieve for an Item.
+
+## Attributes
+
+### Item Attributes
+
+| Property           | Type          | Description                                                              |
+| ------------------ | ------------- | ------------------------------------------------------------------------ |
+| rootfi_id          | integer       | The RootFi ID of the item                                                |
+| rootfi_created_at  | string        | The ISO 8601 timestamp at which the record was created in RootFi         |
+| rootfi_updated_at  | string        | The ISO 8601 timestamp at which the record was last updated in RootFi    |
+| rootfi_company_id  | integer       | The RootFi company ID associated with the item                           |
+| platform_id        | string        | The Platform's ID for the Item                                           |
+| platform_unique_id | string        | The platform's unique identifier for the item                            |
+| created_at         | string        | The date and time the Item was created                                   |
+| updated_at         | string        | The date and time the Item was updated                                   |
+| name               | string        | The name of the Item                                                     |
+| description        | string        | The description of the Item                                              |
+| code               | string        | The code of the Item                                                     |
+| unit_price         | number        | The unit price of the Item                                               |
+| currency_id        | string        | The currency id of the Item                                              |
+| status             | enum          | The status of the Item (ACTIVE, ARCHIVED, UNKNOWN)                       |
 
 ## Properties Supported
 
-| Property    | Type   | Description                                |
-| ----------- | ------ | ------------------------------------------ |
-| platform_id | string | The accounting platform's ID for the Items |
-| created_at  | string | The date and time the Items was created    |
-| updated_at  | string | The date and time the Items was updated    |
-| name        | string | The name of the Items                      |
-| description | string | The description of the Items               |
-| code        | string | The code of the Items                      |
-| unit_price  | string | The unit price of the Items                |
-| currency_id | string | The currency id of the Items               |
-| status      | string | The status of the Items                    |
+| Property    | Type   | Description                                                          |
+| ----------- | ------ | -------------------------------------------------------------------- |
+| platform_id | string | The Platform's ID for the Item                                       |
+| created_at  | string | The date and time the Item was created                               |
+| updated_at  | string | The date and time the Item was updated                               |
+| name        | string | The name of the Item                                                 |
+| description | string | The description of the Item                                          |
+| code        | string | The code of the Item                                                 |
+| unit_price  | number | The unit price of the Item                                           |
+| currency_id | string | The currency id of the Item                                          |
+| status      | enum   | The status of the Item. Allowed values are ACTIVE, ARCHIVED, UNKNOWN |
 
 <ResponseExample name="The Items Object" >
 
@@ -31,13 +53,13 @@ icon: "hand-wave"
   "rootfi_created_at": "2024-01-22T05:07:31.465Z",
   "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
   "rootfi_company_id": 1089,
-  "platform_id": "123456",
+  "platform_id": "item_123456",
   "created_at": "2024-01-22T05:07:31.000Z",
   "updated_at": "2024-01-22T05:07:31.000Z",
-  "name": "Payment Name",
-  "description": "Payment Description",
-  "code": "123456",
-  "unit_price": "100.00",
+  "name": "Premium Widget",
+  "description": "High-quality widget for enterprise use",
+  "code": "WIDGET-001",
+  "unit_price": 99.99,
   "currency_id": "USD",
   "status": "ACTIVE"
 }

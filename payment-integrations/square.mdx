@@ -1,0 +1,27 @@
+---
+title: "Square"
+description: "Learn more about how to set up our Square integration."
+---
+
+In order to get started using your own credentials for our Square integration, you will need to first register your Square application. After that, you will need to enter your Client ID and Client Secret on the RootFi dashboard.
+
+These steps are elaborated upon in detail below.
+
+---
+
+### Part 1: Register your Square application
+
+1. Go to the [Square Developer Console](https://developer.squareup.com/console/en/apps)
+2. Click the + button to create a new application
+   ![](/images/square_oauth.png)
+3. Fill in all the details and create the app. Open the app and go to the 'OAuth' tab.
+   ![](/images/square_oauth_app.png)
+4. In the Production Tab, add the following redirect URL: [ROOTFI CALLBACK URL](/api-reference/v3/overview/environments#callback-urls) and click 'Save'
+5. Copy the 'Application ID' (**Client ID**) and 'Application Secret' (**Client Secret**) that you will enter on RootFi’s dashboard in Part 2 below.
+
+### Part 2: Enter Your Client ID and Client Secret on the RootFi Dashboard
+
+1. Login to the RootFi dashboard
+2. Select the 'Integrations' tab on the sidebar - here you will see a list of platforms you can integrate with
+3. Click the 'Set Up' button which is present on the Square card.
+4. When the form opens up simply enter the 'Client ID' and 'Client Secret' which you generated in the above steps and click 'Save'

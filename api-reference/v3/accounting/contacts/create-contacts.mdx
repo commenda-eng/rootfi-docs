@@ -4,3 +4,14 @@ openapi: openapi_v3 post /accounting/contacts
 ---
 
 A **contact** is an individual or company that buys or sells goods or services from a business. Commonly referred to a customer on a corresponding invoice or a vendor for a bill
+
+## Additional Required Fields
+
+To successfully create a contact, certain fields must be included in the raw_data object of the request body. The required fields are as follows:
+
+| Integration              | Field           | Description                                                                                                | Required |
+| ------------------------ | --------------- | ---------------------------------------------------------------------------------------------------------- | -------- |
+| MS_DYNAMICS_365_FO       | CustomerGroupId | The customer group ID to which the contact belongs. This should be passed if the contact_type is CUSTOMER. | Yes      |
+| MS_DYNAMICS_365_FO       | VendorGroupId   | The vendor group ID to which the contact belongs. This should be passed if the contact_type is VENDOR.     | Yes      |
+| MYOB_BUSINESS            | tax_code        | The tax code to which the contact belongs.                                                                 | Yes      |
+| SAGE_ZA_CLOUD_ACCOUNTING | code            | The code of the contact.                                                                                   | Yes      |

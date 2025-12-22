@@ -1,0 +1,46 @@
+---
+title: "Writing Data"
+description: "Push data to your customers platform seamlessly using a single api. You can find our write APIs in our [Postman Collection](https://postman.rootfi.dev) and our [API Reference](/api-reference/v3/overview/environments)."
+icon: "pen"
+---
+
+## Writing Data
+
+Push data to your customers platform seamlessly using a single api.
+
+We support the ability to push data to your customers platform in a synchronous and asynchronous manner. We reccomend using the asynchronous method for large data sets as we will automatically handle rate limiting and retries.
+
+You can see the fields we support for each integration in our [coverage tool](https://coverage.rootfi.dev)
+
+## Synchronous Writes
+
+**By default our write APIs are synchronous.** The latency of the request will depend on the integration. Our APIs only add a small amount of latency to the request in mapping and logging the data.
+
+<Info> 
+**Some API calls may take much longer than others**
+
+This is due to the nature of the integration, where we may need to make multiple calls to the platform.
+
+</Info>
+
+## Asynchronous Writes
+
+**To write data asynchronously you need to pass in a query parameter called `run_async` with a value `true` in the request.**
+
+We will return an `sync_id` which you can use to [query the status of the sync](/api-reference/v3/core/sync/get-all-sync-by-id). Alternatively, you can also [configure a webhook](/docs/webhooks) of type `SYNC_COMPLETED` to receive the status of the write.
+
+### Batch Writes
+
+To send data as a batch, simply send the `data` as an array of objects.  
+We group all the writes in a single `sync_id` that is returned in the response.
+
+<Warning>
+**Batch writes only supported for Async writes.**
+
+If you send a batch write request with `run_async` set to `false`, the request will throw an error.
+
+</Warning>
+
+**Note we only support batch writing data of the same data model**
+
+For example: To write 10 invoices and 10 bills, you can write 10 invoices using our invoices API and then write 10 bills using our bills API. You cannot write 10 invoices and 10 bills using one api.

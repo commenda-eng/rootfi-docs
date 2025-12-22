@@ -1,4 +1,5 @@
 ---
+version: "v3"
 title: "Overview"
 description: "A record of goods or services purchased from a vendor"
 icon: "hand-wave"
@@ -10,33 +11,40 @@ icon: "hand-wave"
 - Financial calculations: The model includes properties for tax amount, discounts, subtotals, and total amounts, enabling accurate financial calculations and reporting.
 - Association with bills: The bills property links purchase orders to their associated bills, facilitating the tracking and management of related financial transactions.
 
-## Attributes
-
-<Snippet file="purchase_order_snippet.mdx" />
-
 ## Properties Supported
 
-| Property        | Type                          | Description                                                                                                  |
-| --------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| platform_id     | string                        | Accounting platform's ID for the purchase order                                                              |
-| contact_id      | string                        | The accounting platform's unique ID of the contact associated with this purchase order                       |
-| document_number | string                        | Reference number for the purchase order                                                                      |
-| posted_date     | string                        | Date of creation of the purchase order                                                                       |
-| delivery_date   | string                        | The delivery date for the purchase order                                                                     |
-| description     | string                        | Description of the purchase order                                                                            |
-| payment_mode    | string                        | The payment mode from which the payment was made                                                             |
-| currency        | string                        | The ISO-4217 currency code                                                                                   |
-| currency_rate   | float                         | Rate between the currency of the payment and the base currency                                               |
-| status          | enum                          | The status of the purchase order. Values are: DRAFT, SUBMITTED, PARTIALLY_PAID, PAID, OVERDUE, VOID, UNKNOWN |
-| total_discount  | float                         | Total value of discounts applied to the purchase order                                                       |
-| tax_amount      | float                         | Total tax amount levied on the purchase order                                                                |
-| sub_total       | float                         | Total pre tax value of the purchase order                                                                    |
-| total_amount    | float                         | Total value of the purchase order                                                                            |
-| line_items      | [Line Item](/docs/line-items) | Array of Purchase Order Line items associated with the purchase order                                        |
-| bills           | [Bill](/docs/bills)           | Array of Bills associated with the purchase order                                                            |
-| addresses       | [Address](/docs/address)      | Array of addresses associated with this purchase order                                                       |
-| contact         | [Contact](/docs/contacts)     | The contact associated with this purchase order                                                              |
-| updated_at      | string                        | The date at which the information was updated on the accounting platform                                     |
+| Property        | Type   | Description                                                                                                                |
+| --------------- | ------ | -------------------------------------------------------------------------------------------------------------------------- |
+| platform_id     | string | The Platform's ID for the purchase order                                                                                   |
+| contact_id      | string | The Platform's unique ID of the contact associated with this purchase order                                                |
+| currency_id     | string | The Platform's ID of the currency for the purchase order                                                                   |
+| document_number | string | Reference number for the purchase order                                                                                    |
+| posted_date     | string | Date of creation of the purchase order                                                                                     |
+| delivery_date   | string | The delivery date for the purchase order                                                                                   |
+| description     | string | Description of the purchase order                                                                                          |
+| payment_mode    | string | The payment mode from which the payment was made                                                                           |
+| currency_rate   | float  | Rate between the currency of the payment and the base currency                                                             |
+| status          | enum   | The status of the purchase order. Values are: `DRAFT`, `SUBMITTED`, `PARTIALLY_PAID`, `PAID`, `OVERDUE`, `VOID`, `UNKNOWN` |
+| total_discount  | float  | Total value of discounts applied to the purchase order                                                                     |
+| tax_amount      | float  | Total tax amount levied on the purchase order                                                                              |
+| sub_total       | float  | Total pre tax value of the purchase order                                                                                  |
+| total_amount    | float  | Total value of the purchase order                                                                                          |
+| updated_at      | date   | The date at which the information was updated on the accounting platform                                                   |
+
+### Expandable Attributes
+
+You can expand the following attributes to get the related data
+| Property | Data Model | Description |
+| ---------- | ---------------------------------------------------------------| --------------------------- |
+| contact | [Contacts](/api-reference/v3/accounting/contacts/overview) | The contact that made the purchase order |
+| currency | [Currencies](/api-reference/v3/accounting/currencies/overview) | The currency of the purchase order |
+| documents | [Documents](/api-reference/v3/accounting/documents/overview) | The documents attached to the purchase order |
+| addresses | [Addresses](/api-reference/v3/accounting/purchase-orders/overview#addresses) | The addresses associated with the purchase order |
+| line_items | [Line Items](/api-reference/v3/accounting/purchase-orders/overview#line-items) | The line items associated with the purchase order |
+
+<Snippet file="addresses_snippet.mdx" />
+
+<Snippet file="line_items_snippet.mdx" />
 
 <ResponseExample name="The Bank Transaction Object" >
 

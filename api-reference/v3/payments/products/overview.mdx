@@ -1,0 +1,61 @@
+---
+version: "v3"
+title: "Overview"
+description: "A Product represents a good or service that can be sold through your payment platform. Products are used to track inventory, manage pricing, and process transactions."
+icon: "hand-wave"
+---
+
+**The Products Data Model** simplifies the handling and retrieval of product information from different payment gateways. The model provides a unified representation of products, enabling you to easily access and manage product data from different platforms.
+
+- Unified product properties: The model provides a unified representation of products, enabling you to easily access and manage product data from different platforms.
+- Comprehensive product information: The model provides a comprehensive representation of products, including all details needed for inventory management and transaction processing.
+
+## Attributes
+
+### Product Attributes
+
+| Property           | Type          | Description                                                              |
+| ------------------ | ------------- | ------------------------------------------------------------------------ |
+| rootfi_id          | integer       | The unique RootFi identifier assigned to this product record              |
+| rootfi_created_at  | string        | The ISO 8601 timestamp indicating when RootFi first synced this product   |
+| rootfi_updated_at  | string        | The ISO 8601 timestamp indicating when RootFi last updated this product   |
+| rootfi_company_id  | integer       | The RootFi company identifier associated with this product                |
+| platform_id        | string        | The unique identifier for this product on the payment platform            |
+| platform_unique_id | string        | An additional unique identifier provided by the payment platform          |
+| name               | string        | The display name or title of the product                                  |
+| description        | string        | A detailed description of the product, including features and specifications |
+| status             | enum          | The current status of the product (ACTIVE, ARCHIVED, UNKNOWN)             |
+| created_at         | string        | The ISO 8601 timestamp when this product was created on the platform      |
+| updated_at         | string        | The ISO 8601 timestamp when this product was last updated on the platform  |
+
+## Properties Supported
+
+| Property    | Type   | Description                                                              |
+| ----------- | ------ | ------------------------------------------------------------------------ |
+| platform_id | string | The unique identifier for this product on the payment platform            |
+| name        | string | The display name or title of the product                                  |
+| description | string | A detailed description of the product, including features and specifications |
+| status      | enum   | The current status of the product. Allowed values are ACTIVE, ARCHIVED, UNKNOWN |
+| created_at  | string | The ISO 8601 timestamp when this product was created on the platform      |
+| updated_at  | string | The ISO 8601 timestamp when this product was last updated on the platform  |
+
+<ResponseExample name="The Product Object" >
+
+```json The Product Response Object
+{
+  "rootfi_id": 157,
+  "rootfi_created_at": "2024-01-22T05:07:31.465Z",
+  "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
+  "rootfi_company_id": 1089,
+  "platform_id": "prod_123456",
+  "platform_unique_id": "prod_unique_123456",
+  "name": "Premium Widget",
+  "description": "High-quality widget designed for enterprise use with advanced features and 24/7 support",
+  "status": "ACTIVE",
+  "created_at": "2024-01-22T05:07:31.000Z",
+  "updated_at": "2024-01-22T05:07:31.000Z"
+}
+```
+
+</ResponseExample>
+

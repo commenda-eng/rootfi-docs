@@ -4,3 +4,13 @@ openapi: openapi_v3 post /accounting/accounts
 ---
 
 [The Accounts Data Model](https://docs.rootfi.dev/api-reference/accounts/overview) is designed to streamline the management and retrieval of account-related information across various accounting platforms.
+
+## Additional Required Fields
+
+To successfully create an account, certain fields must be included in the raw_data object of the request body. The required fields are as follows:
+
+| Integration              | Field           | Description                                         |
+| ------------------------ | --------------- | --------------------------------------------------- |
+| MS_DYNAMICS_365_FO       | ChartOfAccounts | The chart of accounts to which the account belongs. |
+| MYOB_BUSINESS            | tax_id          | The tax ID associated to the account.               |
+| SAGE_ZA_CLOUD_ACCOUNTING | sub_category_id | The sub-category ID associated to the account.      |

@@ -1,0 +1,50 @@
+---
+version: "v3"
+title: "Overview"
+description: "Notes Data Model simplifies the handling and retrieval of notes-related information across various crm platforms."
+icon: "hand-wave"
+---
+
+**The Notes Data Model** simplifies the handling and retrieval of notes-related information across various ecommerce platforms.
+
+- Unified Notes properties: The model provides a unified representation of notes properties across different platforms, enabling you to easily access and manage notes data from different platforms.
+- Comprehensive notes information: The model provides a comprehensive representation of notes data, including all the properties and relationships that you can retrieve for an contact.
+
+## Attributes
+
+## Properties Supported
+
+| Property    | Type   | Description                                 |
+| ----------- | ------ | ------------------------------------------- |
+| platform_id | string | The Platform's ID for the notes             |
+| note        | string | The note content                            |
+| deal_id     | string | The deal ID associated with the note        |
+| company_id  | string | The company ID associated with the note     |
+| contact_id  | string | The contact ID associated with the note     |
+| lead_id     | string | The lead ID associated with the note        |
+| user_id     | string | The user ID associated with the note        |
+| created_at  | date   | The date and time when the note was created |
+| updated_at  | date   | The date and time when the note was updated |
+
+<ResponseExample name="The Notes Object" >
+
+```json The Notes Response Object
+{
+  "rootfi_id": 157,
+  "rootfi_deleted_at": null,
+  "rootfi_created_at": "2024-01-22T05:07:31.465Z",
+  "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
+  "rootfi_company_id": 1089,
+  "platform_id": "123456",
+  "note": "This is a note",
+  "deal_id": "123456",
+  "company_id": "123456",
+  "contact_id": "123456",
+  "lead_id": "123456",
+  "user_id": "123456",
+  "created_at": "2024-01-22T05:07:31
+  "updated_at": "2024-01-22T05:07:31
+}
+```
+
+</ResponseExample>

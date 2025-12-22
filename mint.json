@@ -1,10 +1,11 @@
 {
   "name": "RootFi",
   "logo": {
-    "light": "/images/logo/light.png",
-    "dark": "/images/logo/dark.png"
+    "dark": "/images/logo/dark.png",
+    "light": "/images/logo/light.png"
   },
   "favicon": "/images/logo/logomark_favicon_rounded.png",
+  "theme": "venus",
   "colors": {
     "primary": "#0E0E0E",
     "light": "#FAFAFA",
@@ -20,7 +21,7 @@
   "topbarLinks": [
     {
       "name": "Postman Collection",
-      "url": "https://elements.getpostman.com/view/fork?collection=15699131-dbc81ca6-7647-46cd-acbc-df9460301665&&referrer=https%3A%2F%2Fdocumenter.getpostman.com%2Fview%2F15699131%2F2sA2r3a6kU&versionTag=latest&source=documenter"
+      "url": "https://elements.getpostman.com/view/fork?collection=18460751-387ff14d-8137-452c-8bda-68cdfa9b5504&&referrer=https%3A%2F%2Fpostman.rootfi.dev%2F&versionTag=latest&source=documenter"
     }
   ],
   "topAnchor": {
@@ -30,11 +31,27 @@
   "search": {
     "prompt": "Ask any question (powered by ChatGPT)"
   },
-  "versions": ["v3", "v2"],
+  "versions": ["v3"],
   "tabs": [
     {
       "name": "API Reference",
       "url": "api-reference"
+    },
+    {
+      "name": "Accounting",
+      "url": "accounting-integrations"
+    },
+    {
+      "name": "E-Commerce",
+      "url": "ecommerce-integrations"
+    },
+    {
+      "name": "Payments",
+      "url": "payment-integrations"
+    },
+    {
+      "name": "CRM",
+      "url": "crm-integrations"
     },
     {
       "name": "Changelog",
@@ -43,106 +60,139 @@
   ],
   "anchors": [
     {
-      "name": "Roadmap",
+      "name": "Integrations Roadmap",
       "icon": "road",
-      "url": "https://trello.com/b/ISjLnO29/building-rootfi"
+      "url": "https://trello.com/b/ISjLnO29/building-integration-labs"
     },
     {
-      "name": "Security",
-      "icon": "shield-halved",
-      "url": "https://rootfi.dev/security"
-    },
-    {
-      "name": "Status",
-      "icon": "wave-pulse",
-      "url": "https://statuspage.freshping.io/66138-RootFi"
+      "name": "Data Coverage Tool",
+      "icon": "globe",
+      "url": "https://coverage.integrationlabs.co/"
     }
   ],
   "footerSocials": {
     "twitter": "https://twitter.com/RootFiAPI",
-    "linkedin": "https://www.linkedin.com/company/rootfi/",
-    "website": "https://rootfi.dev"
+    "linkedin": "https://www.linkedin.com/company/integrationlabsapi",
+    "website": "https://www.integrationlabs.co/"
   },
   "navigation": [
     {
       "group": "General",
-      "pages": ["documentation/general/introduction", "documentation/general/glossary-key-terms", "documentation/general/sdk"]
+      "pages": [
+        "documentation/general/introduction",
+        "documentation/general/glossary-key-terms"
+      ]
     },
     {
-      "group": "Concepts",
+      "group": "Use Case Guides",
+      "pages": [
+        "guides/expense-management",
+        "guides/payroll",
+        "guides/accounts-payable",
+        "guides/accounts-receivable",
+        "guides/pos"
+      ]
+    },
+    {
+      "group": "Core Features",
       "pages": [
         {
-          "group": "RootFi Connect",
-          "pages": ["documentation/concepts/rootfi-connect/overview", "documentation/concepts/rootfi-connect/invite-link", "documentation/concepts/rootfi-connect/connect-sdk"]
-        },
-        {
-          "group": "Syncing Data",
-          "pages": ["documentation/concepts/sync-data/ways-to-sync", "documentation/concepts/sync-data/sync-config"]
-        },
-        {
-          "group": "Reading Data",
-          "pages": ["documentation/concepts/read-data/rest-apis", "documentation/concepts/read-data/graphql-apis"]
-        },
-        {
-          "group": "Writing Data",
-          "pages": ["documentation/concepts/write-data/synchronous-writes", "documentation/concepts/write-data/asynchronous-writes"]
-        },
-        {
-          "group": "Supplemental Data",
+          "group": "Connect by RootFi",
           "pages": [
-            "documentation/concepts/supplemental-data/overview",
-            "documentation/concepts/supplemental-data/raw-data",
-            "documentation/concepts/supplemental-data/passthrough-api",
-            "documentation/concepts/supplemental-data/realtime-api"
+            "documentation/concepts/rootfi-connect/introduction",
+            "documentation/concepts/rootfi-connect/invite-link",
+            "documentation/concepts/rootfi-connect/embedded-sdk"
           ]
         },
+        "documentation/concepts/syncing-data",
+        "documentation/concepts/reading-data",
+        "documentation/concepts/writing-data"
+      ]
+    },
+    {
+      "group": "Advanced Features",
+      "pages": [
+        "documentation/concepts/supplemental-data/raw-data",
+        "documentation/concepts/supplemental-data/realtime-data",
+        "documentation/concepts/supplemental-data/passthrough-api",
+        "documentation/concepts/sync-config",
         "documentation/concepts/webhooks",
         "documentation/concepts/error-handling",
-        "documentation/concepts/rate-limits",
-        "documentation/concepts/data-security",
-        "documentation/concepts/partner-credentials"
+        "documentation/concepts/data-storage",
+        "documentation/concepts/partner-credentials",
+        "documentation/concepts/custom-data"
       ]
     },
     {
-      "group": "Integrations",
+      "group": "Accounting Integrations",
       "pages": [
-        {
-          "group": "Accounting Integrations",
-          "pages": [
-            "documentation/accounting-integrations/accounting-integrations-overview",
-            "documentation/accounting-integrations/busy",
-            "documentation/accounting-integrations/mekari-jurnal",
-            "documentation/accounting-integrations/microsoft-dynamics-365-business-central",
-            "documentation/accounting-integrations/myob-business",
-            "documentation/accounting-integrations/odoo-accounting",
-            "documentation/accounting-integrations/oracle-netsuite",
-            "documentation/accounting-integrations/qoyod",
-            "documentation/accounting-integrations/quickbooks-online",
-            "documentation/accounting-integrations/sage-business-cloud",
-            "documentation/accounting-integrations/sage-business-cloud-za",
-            "documentation/accounting-integrations/tally-erp-9",
-            "documentation/accounting-integrations/tally-prime",
-            "documentation/accounting-integrations/wafeq",
-            "documentation/accounting-integrations/wave",
-            "documentation/accounting-integrations/xero",
-            "documentation/accounting-integrations/zoho-books"
-          ]
-        },
-        {
-          "group": "Payment Integrations",
-          "pages": [
-            "documentation/payment-integrations/payment-integrations-overview",
-            "documentation/payment-integrations/paypal",
-            "documentation/payment-integrations/razorpay",
-            "documentation/payment-integrations/stripe",
-            "documentation/payment-integrations/square"
-          ]
-        },
-        {
-          "group": "E-commerce Integrations",
-          "pages": ["documentation/ecommerce-integrations/ecommerce-integrations-overview", "documentation/ecommerce-integrations/shopify"]
-        }
+        "accounting-integrations/accounting-integrations-overview",
+        "accounting-integrations/busy",
+        "accounting-integrations/clear-books",
+        "accounting-integrations/fresh-books",
+        "accounting-integrations/kashflow",
+        "accounting-integrations/free-agent",
+        "accounting-integrations/mekari-jurnal",
+        "accounting-integrations/microsoft-dynamics-365-business-central",
+        "accounting-integrations/microsoft-dynamics-365-f&o",
+        "accounting-integrations/myob-business",
+        "accounting-integrations/odoo-accounting",
+        "accounting-integrations/oracle-netsuite",
+        "accounting-integrations/qoyod",
+        "accounting-integrations/quickbooks-online",
+        "accounting-integrations/sage-business-cloud",
+        "accounting-integrations/sage-business-cloud-za",
+        "accounting-integrations/sage-intacct",
+        "accounting-integrations/tally-erp-9",
+        "accounting-integrations/tally-prime",
+        "accounting-integrations/wafeq",
+        "accounting-integrations/wave",
+        "accounting-integrations/xero",
+        "accounting-integrations/zoho-books"
       ]
+    },
+    {
+      "group": "Payment Integrations",
+      "pages": [
+        "payment-integrations/payment-integrations-overview",
+        "payment-integrations/chargebee",
+        "payment-integrations/paypal",
+        "payment-integrations/razorpay",
+        "payment-integrations/stripe",
+        "payment-integrations/square",
+        "payment-integrations/zoho-invoice",
+        "payment-integrations/mollie",
+        "payment-integrations/paddle"
+      ]
+    },
+    {
+      "group": "E-Commerce Integrations",
+      "pages": [
+        "ecommerce-integrations/ecommerce-integrations-overview",
+        "ecommerce-integrations/big-commerce",
+        "ecommerce-integrations/shopify",
+        "ecommerce-integrations/woo-commerce",
+        "ecommerce-integrations/wix",
+        "ecommerce-integrations/squarespace"
+      ]
+    },
+    {
+      "group": "CRM Integrations",
+      "pages": [
+        "crm-integrations/crm-integrations-overview",
+        "crm-integrations/hubspot",
+        "crm-integrations/pipedrive",
+        "crm-integrations/sales-force",
+        "crm-integrations/zoho-crm"
+      ]
+    },
+    {
+      "group": "General",
+      "pages": ["api-reference/v3/overview/environments"]
+    },
+    {
+      "group": "Server Side SDKs",
+      "pages": ["api-reference/v3/sdk/nodejs"]
     },
     {
       "group": "Core API",
@@ -151,64 +201,50 @@
           "group": "Companies",
           "pages": [
             "api-reference/v3/core/companies/get-all-companies",
-            "api-reference/v2/core/companies/get-all-companies",
             "api-reference/v3/core/companies/get-company",
-            "api-reference/v2/core/companies/get-company",
             "api-reference/v3/core/companies/edit-company",
-            "api-reference/v2/core/companies/edit-company",
-            "api-reference/v3/core/companies/delete-company",
-            "api-reference/v2/core/companies/delete-company"
+            "api-reference/v3/core/companies/delete-company"
           ]
         },
         {
           "group": "Invite Links",
           "pages": [
             "api-reference/v3/core/invite-links/get-all-invite-links",
-            "api-reference/v2/core/invite-links/get-all-invite-links",
             "api-reference/v3/core/invite-links/get-invite-link",
-            "api-reference/v2/core/invite-links/get-invite-link",
             "api-reference/v3/core/invite-links/create-invite-link",
-            "api-reference/v2/core/invite-links/create-invite-link",
-            "api-reference/v3/core/invite-links/delete-invite-link",
-            "api-reference/v2/core/invite-links/delete-invite-link"
-          ]
-        },
-        {
-          "group": "Integrations",
-          "version": "v2",
-          "pages": [
-            "api-reference/v2/core/integrations/get-all-integrations",
-            "api-reference/v2/core/integrations/get-integration",
-            "api-reference/v2/core/integrations/create-integrations",
-            "api-reference/v2/core/integrations/edit-integration"
+            "api-reference/v3/core/invite-links/update-invite-link",
+            "api-reference/v3/core/invite-links/delete-invite-link"
           ]
         },
         {
           "group": "Sync",
           "pages": [
+            "api-reference/v3/core/sync/get-sync-config",
             "api-reference/v3/core/sync/sync-data",
             "api-reference/v3/core/sync/get-all-sync",
             "api-reference/v3/core/sync/get-all-sync-by-id",
             "api-reference/v3/core/sync/get-sync-jobs",
-            "api-reference/v3/core/sync/get-job",
-            "api-reference/v2/core/sync/get-all-sync-by-id",
-            "api-reference/v2/core/sync/get-all-sync",
-            "api-reference/v2/core/sync/sync-data"
+            "api-reference/v3/core/sync/get-job"
           ]
         },
         {
-          "group": "Jobs",
-          "version": "v2",
-          "pages": ["api-reference/v2/core/jobs/get-job"]
-        },
-        {
           "group": "Passthrough",
-          "pages": ["api-reference/v3/core/passthrough/passthrough", "api-reference/v2/core/passthrough/passthrough"]
+          "pages": ["api-reference/v3/core/passthrough/passthrough"]
         },
         {
           "group": "Real Time",
           "version": "v3",
-          "pages": ["api-reference/v3/core/real_time/real_time"]
+          "pages": ["api-reference/v3/core/realtime/realtime"]
+        },
+        {
+          "group": "Webhooks",
+          "version": "v3",
+          "pages": [
+            "api-reference/v3/core/webhooks/get-all-webhooks",
+            "api-reference/v3/core/webhooks/create-webhooks",
+            "api-reference/v3/core/webhooks/update-webhook",
+            "api-reference/v3/core/webhooks/delete-webhook"
+          ]
         }
       ]
     },
@@ -222,237 +258,197 @@
               "group": "Accounts",
               "pages": [
                 "api-reference/v3/accounting/accounts/overview",
-                "api-reference/v2/accounting/accounts/overview",
                 "api-reference/v3/accounting/accounts/get-all-accounts",
-                "api-reference/v2/accounting/accounts/get-all-accounts",
-                "api-reference/v3/accounting/accounts/create-accounts",
-                "api-reference/v2/accounting/accounts/create-accounts"
+                "api-reference/v3/accounting/accounts/create-accounts"
               ]
             },
             {
               "group": "Bank Accounts",
               "pages": [
                 "api-reference/v3/accounting/bank-accounts/overview",
-                "api-reference/v2/accounting/bank-accounts/overview",
                 "api-reference/v3/accounting/bank-accounts/get-all-bank-accounts",
-                "api-reference/v2/accounting/bank-accounts/get-all-bank-accounts",
-                "api-reference/v3/accounting/bank-accounts/create-bank-accounts",
-                "api-reference/v2/accounting/bank-accounts/create-bank-accounts"
+                "api-reference/v3/accounting/bank-accounts/create-bank-accounts"
               ]
             },
             {
               "group": "Bank Transactions",
               "pages": [
                 "api-reference/v3/accounting/bank-transactions/overview",
-                "api-reference/v2/accounting/bank-transactions/overview",
                 "api-reference/v3/accounting/bank-transactions/get-all-bank-transactions",
-                "api-reference/v2/accounting/bank-transactions/get-all-bank-transactions"
+                "api-reference/v3/accounting/bank-transactions/create-bank-transactions"
               ]
             },
             {
               "group": "Bills",
               "pages": [
                 "api-reference/v3/accounting/bills/overview",
-                "api-reference/v2/accounting/bills/overview",
                 "api-reference/v3/accounting/bills/get-all-bills",
-                "api-reference/v2/accounting/bills/get-all-bills",
                 "api-reference/v3/accounting/bills/create-bills",
-                "api-reference/v2/accounting/bills/create-bills"
+                "api-reference/v3/accounting/bills/update-bills"
               ]
             },
             {
               "group": "Bill Payments",
               "pages": [
                 "api-reference/v3/accounting/bill-payments/overview",
-                "api-reference/v2/accounting/bill-payments/overview",
                 "api-reference/v3/accounting/bill-payments/get-all-bill-payments",
-                "api-reference/v2/accounting/bill-payments/get-all-bill-payments",
-                "api-reference/v3/accounting/bill-payments/create-bill-payments",
-                "api-reference/v2/accounting/bill-payments/create-bill-payments"
+                "api-reference/v3/accounting/bill-payments/create-bill-payments"
               ]
             },
             {
               "group": "Bill Credit Notes",
               "pages": [
                 "api-reference/v3/accounting/bill-credit-notes/overview",
-                "api-reference/v2/accounting/bill-credit-notes/overview",
                 "api-reference/v3/accounting/bill-credit-notes/get-all-bill-credit-notes",
-                "api-reference/v2/accounting/bill-credit-notes/get-all-bill-credit-notes",
-                "api-reference/v3/accounting/bill-credit-notes/create-bill-credit-notes",
-                "api-reference/v2/accounting/bill-credit-notes/create-bill-credit-notes"
+                "api-reference/v3/accounting/bill-credit-notes/create-bill-credit-notes"
               ]
             },
             {
               "group": "Contacts",
               "pages": [
                 "api-reference/v3/accounting/contacts/overview",
-                "api-reference/v2/accounting/contacts/overview",
                 "api-reference/v3/accounting/contacts/get-all-contacts",
-                "api-reference/v2/accounting/contacts/get-all-contacts",
                 "api-reference/v3/accounting/contacts/create-contacts",
-                "api-reference/v2/accounting/contacts/create-contacts"
+                "api-reference/v3/accounting/contacts/update-contacts"
               ]
             },
             {
               "group": "Company Info",
               "pages": [
                 "api-reference/v3/accounting/company-info/overview",
-                "api-reference/v2/accounting/company-info/overview",
-                "api-reference/v3/accounting/company-info/get-all-company-info",
-                "api-reference/v2/accounting/company-info/get-all-company-info"
+                "api-reference/v3/accounting/company-info/get-all-company-info"
               ]
             },
             {
               "group": "Currencies",
               "pages": [
                 "api-reference/v3/accounting/currencies/overview",
-                "api-reference/v2/accounting/currencies/overview",
-                "api-reference/v3/accounting/currencies/get-all-currencies",
-                "api-reference/v2/accounting/currencies/get-all-currencies"
+                "api-reference/v3/accounting/currencies/get-all-currencies"
               ]
             },
             {
               "group": "Documents",
               "pages": [
                 "api-reference/v3/accounting/documents/overview",
-                "api-reference/v2/accounting/documents/overview",
                 "api-reference/v3/accounting/documents/get-all-documents",
-                "api-reference/v2/accounting/documents/get-all-documents"
+                "api-reference/v3/accounting/documents/create-documents",
+                "api-reference/v3/accounting/documents/download-document"
               ]
             },
             {
               "group": "Expenses",
               "pages": [
                 "api-reference/v3/accounting/expenses/overview",
-                "api-reference/v2/accounting/expenses/overview",
                 "api-reference/v3/accounting/expenses/get-all-expenses",
-                "api-reference/v2/accounting/expenses/get-all-expenses",
-                "api-reference/v3/accounting/expenses/create-expenses",
-                "api-reference/v2/accounting/expenses/create-expenses"
+                "api-reference/v3/accounting/expenses/create-expenses"
               ]
             },
             {
               "group": "Invoice Credit Notes",
               "pages": [
                 "api-reference/v3/accounting/invoice-credit-notes/overview",
-                "api-reference/v2/accounting/invoice-credit-notes/overview",
                 "api-reference/v3/accounting/invoice-credit-notes/get-all-invoice-credit-notes",
-                "api-reference/v2/accounting/invoice-credit-notes/get-all-invoice-credit-notes",
-                "api-reference/v3/accounting/invoice-credit-notes/create-invoice-credit-notes",
-                "api-reference/v2/accounting/invoice-credit-notes/create-invoice-credit-notes"
+                "api-reference/v3/accounting/invoice-credit-notes/create-invoice-credit-notes"
               ]
             },
             {
               "group": "Invoices",
               "pages": [
                 "api-reference/v3/accounting/invoices/overview",
-                "api-reference/v2/accounting/invoices/overview",
                 "api-reference/v3/accounting/invoices/get-all-invoices",
-                "api-reference/v2/accounting/invoices/get-all-invoices",
                 "api-reference/v3/accounting/invoices/create-invoices",
-                "api-reference/v2/accounting/invoices/create-invoices"
+                "api-reference/v3/accounting/invoices/update-invoices"
               ]
             },
             {
               "group": "Invoice Payments",
               "pages": [
                 "api-reference/v3/accounting/invoice-payments/overview",
-                "api-reference/v2/accounting/invoice-payments/overview",
                 "api-reference/v3/accounting/invoice-payments/get-all-invoice-payments",
-                "api-reference/v2/accounting/invoice-payments/get-all-invoice-payments",
-                "api-reference/v3/accounting/invoice-payments/create-invoice-payments",
-                "api-reference/v2/accounting/invoice-payments/create-invoice-payments"
+                "api-reference/v3/accounting/invoice-payments/create-invoice-payments"
               ]
             },
             {
               "group": "Items",
               "pages": [
                 "api-reference/v3/accounting/items/overview",
-                "api-reference/v2/accounting/items/overview",
                 "api-reference/v3/accounting/items/get-all-items",
-                "api-reference/v2/accounting/items/get-all-items",
                 "api-reference/v3/accounting/items/create-items",
-                "api-reference/v2/accounting/items/create-items"
+                "api-reference/v3/accounting/items/update-items"
               ]
             },
             {
               "group": "Journal Entries",
               "pages": [
                 "api-reference/v3/accounting/journal-entries/overview",
-                "api-reference/v2/accounting/journal-entries/overview",
                 "api-reference/v3/accounting/journal-entries/get-all-journal-entries",
-                "api-reference/v2/accounting/journal-entries/get-all-journal-entries",
-                "api-reference/v3/accounting/journal-entries/create-journal-entries",
-                "api-reference/v2/accounting/journal-entries/create-journal-entries"
+                "api-reference/v3/accounting/journal-entries/create-journal-entries"
               ]
             },
             {
               "group": "Purchase Orders",
               "pages": [
                 "api-reference/v3/accounting/purchase-orders/overview",
-                "api-reference/v2/accounting/purchase-orders/overview",
                 "api-reference/v3/accounting/purchase-orders/get-all-purchase-orders",
-                "api-reference/v2/accounting/purchase-orders/get-all-purchase-orders",
-                "api-reference/v3/accounting/purchase-orders/create-purchase-orders",
-                "api-reference/v2/accounting/purchase-orders/create-purchase-orders"
+                "api-reference/v3/accounting/purchase-orders/create-purchase-orders"
               ]
             },
             {
               "group": "Sales Orders",
               "pages": [
                 "api-reference/v3/accounting/sales-orders/overview",
-                "api-reference/v2/accounting/sales-orders/overview",
                 "api-reference/v3/accounting/sales-orders/get-all-sales-orders",
-                "api-reference/v2/accounting/sales-orders/get-all-sales-orders",
-                "api-reference/v3/accounting/sales-orders/create-sales-orders",
-                "api-reference/v2/accounting/sales-orders/create-sales-orders"
+                "api-reference/v3/accounting/sales-orders/create-sales-orders"
+              ]
+            },
+            {
+              "group": "Goods Receipt Notes",
+              "pages": [
+                "api-reference/v3/accounting/goods-receipt-notes/overview",
+                "api-reference/v3/accounting/goods-receipt-notes/get-all-goods-receipt-notes"
+              ]
+            },
+            {
+              "group": "Projects",
+              "pages": [
+                "api-reference/v3/accounting/projects/overview",
+                "api-reference/v3/accounting/projects/get-all-projects"
               ]
             },
             {
               "group": "Tax Rates",
               "pages": [
                 "api-reference/v3/accounting/tax-rates/overview",
-                "api-reference/v2/accounting/tax-rates/overview",
                 "api-reference/v3/accounting/tax-rates/get-all-tax-rates",
-                "api-reference/v2/accounting/tax-rates/get-all-tax-rates",
-                "api-reference/v3/accounting/tax-rates/create-tax-rates",
-                "api-reference/v2/accounting/tax-rates/create-tax-rates"
+                "api-reference/v3/accounting/tax-rates/create-tax-rates"
               ]
             },
             {
               "group": "Tracking Categories",
               "pages": [
                 "api-reference/v3/accounting/tracking-categories/overview",
-                "api-reference/v2/accounting/tracking-categories/overview",
-                "api-reference/v3/accounting/tracking-categories/get-all-tracking-categories",
-                "api-reference/v2/accounting/tracking-categories/get-all-tracking-categories"
+                "api-reference/v3/accounting/tracking-categories/get-all-tracking-categories"
               ]
             },
             {
               "group": "Balance Sheet",
               "pages": [
                 "api-reference/v3/accounting/balance-sheet/overview",
-                "api-reference/v2/accounting/balance-sheet/overview",
-                "api-reference/v3/accounting/balance-sheet/get-balance-sheet",
-                "api-reference/v2/accounting/balance-sheet/get-balance-sheet"
+                "api-reference/v3/accounting/balance-sheet/get-balance-sheet"
               ]
             },
             {
               "group": "Cash Flow Statements",
               "pages": [
                 "api-reference/v3/accounting/cash-flow-statements/overview",
-                "api-reference/v2/accounting/cash-flow-statements/overview",
-                "api-reference/v3/accounting/cash-flow-statements/get-cashflow-statements",
-                "api-reference/v2/accounting/cash-flow-statements/get-cashflow-statements"
+                "api-reference/v3/accounting/cash-flow-statements/get-cashflow-statements"
               ]
             },
             {
               "group": "Income Statements",
               "pages": [
                 "api-reference/v3/accounting/income-statements/overview",
-                "api-reference/v2/accounting/income-statements/overview",
-                "api-reference/v3/accounting/income-statements/get-income-statements",
-                "api-reference/v2/accounting/income-statements/get-income-statements"
+                "api-reference/v3/accounting/income-statements/get-income-statements"
               ]
             }
           ]
@@ -463,43 +459,94 @@
           "pages": [
             {
               "group": "Customers",
-              "pages": ["api-reference/v3/payments/customers/overview", "api-reference/v3/payments/customers/get-all-customers"]
+              "pages": [
+                "api-reference/v3/payments/customers/overview",
+                "api-reference/v3/payments/customers/get-all-customers"
+              ]
             },
             {
               "group": "Disputes",
-              "pages": ["api-reference/v3/payments/disputes/overview", "api-reference/v3/payments/disputes/get-all-disputes"]
+              "pages": [
+                "api-reference/v3/payments/disputes/overview",
+                "api-reference/v3/payments/disputes/get-all-disputes"
+              ]
             },
             {
               "group": "Invoices",
-              "pages": ["api-reference/v3/payments/invoices/overview", "api-reference/v3/payments/invoices/get-all-invoices"]
+              "pages": [
+                "api-reference/v3/payments/invoices/overview",
+                "api-reference/v3/payments/invoices/get-all-invoices"
+              ]
             },
             {
               "group": "Items",
-              "pages": ["api-reference/v3/payments/items/overview", "api-reference/v3/payments/items/get-all-items"]
+              "pages": [
+                "api-reference/v3/payments/items/overview",
+                "api-reference/v3/payments/items/get-all-items"
+              ]
             },
             {
               "group": "Orders",
-              "pages": ["api-reference/v3/payments/orders/overview", "api-reference/v3/payments/orders/get-all-orders"]
+              "pages": [
+                "api-reference/v3/payments/orders/overview",
+                "api-reference/v3/payments/orders/get-all-orders"
+              ]
             },
             {
               "group": "Payment Links",
-              "pages": ["api-reference/v3/payments/payment_links/overview", "api-reference/v3/payments/payment_links/get-all-payment-links"]
+              "pages": [
+                "api-reference/v3/payments/payment-links/overview",
+                "api-reference/v3/payments/payment-links/get-all-payment-links"
+              ]
             },
             {
               "group": "Payments",
-              "pages": ["api-reference/v3/payments/payments/overview", "api-reference/v3/payments/payments/get-all-payments"]
+              "pages": [
+                "api-reference/v3/payments/payments/overview",
+                "api-reference/v3/payments/payments/get-all-payments"
+              ]
             },
             {
               "group": "Payouts",
-              "pages": ["api-reference/v3/payments/payouts/overview", "api-reference/v3/payments/payouts/get-all-payouts"]
+              "pages": [
+                "api-reference/v3/payments/payouts/overview",
+                "api-reference/v3/payments/payouts/get-all-payouts"
+              ]
             },
             {
               "group": "Refunds",
-              "pages": ["api-reference/v3/payments/refunds/overview", "api-reference/v3/payments/refunds/get-all-refunds"]
+              "pages": [
+                "api-reference/v3/payments/refunds/overview",
+                "api-reference/v3/payments/refunds/get-all-refunds"
+              ]
             },
             {
               "group": "Tax Rates",
-              "pages": ["api-reference/v3/payments/tax_rates/overview", "api-reference/v3/payments/tax_rates/get-all-tax-rates"]
+              "pages": [
+                "api-reference/v3/payments/tax-rates/overview",
+                "api-reference/v3/payments/tax-rates/get-all-tax-rates"
+              ]
+            },
+            {
+              "group": "Balances",
+              "pages": [
+                "api-reference/v3/payments/balances/overview",
+                "api-reference/v3/payments/balances/get-all-balances"
+              ]
+            },
+            {
+              "group": "Subscriptions",
+              "pages": [
+                "api-reference/v3/payments/subscriptions/overview",
+                "api-reference/v3/payments/subscriptions/get-all-subscriptions"
+              ]
+            },
+            {
+              "group": "Transactions",
+              "pages": [
+                "api-reference/v3/payments/transactions/overview",
+                "api-reference/v3/payments/transactions/get-all-transactions"
+              ]
             }
           ]
         },
@@ -509,15 +556,137 @@
           "pages": [
             {
               "group": "Customers",
-              "pages": ["api-reference/v3/ecommerce/customers/overview", "api-reference/v3/ecommerce/customers/get-all-customers"]
+              "pages": [
+                "api-reference/v3/ecommerce/customers/overview",
+                "api-reference/v3/ecommerce/customers/get-all-customers",
+                "api-reference/v3/ecommerce/customers/create-customers"
+              ]
             },
             {
               "group": "Orders",
-              "pages": ["api-reference/v3/ecommerce/orders/overview", "api-reference/v3/ecommerce/orders/get-all-orders"]
+              "pages": [
+                "api-reference/v3/ecommerce/orders/overview",
+                "api-reference/v3/ecommerce/orders/get-all-orders"
+              ]
             },
             {
               "group": "Products",
-              "pages": ["api-reference/v3/ecommerce/products/overview", "api-reference/v3/ecommerce/products/get-all-products"]
+              "pages": [
+                "api-reference/v3/ecommerce/products/overview",
+                "api-reference/v3/ecommerce/products/get-all-products",
+                "api-reference/v3/ecommerce/products/create-products"
+              ]
+            },
+            {
+              "group": "Balances",
+              "pages": [
+                "api-reference/v3/ecommerce/balances/overview",
+                "api-reference/v3/ecommerce/balances/get-all-balances"
+              ]
+            },
+            {
+              "group": "Company Info",
+              "pages": [
+                "api-reference/v3/ecommerce/company-info/overview",
+                "api-reference/v3/ecommerce/company-info/get-all-company-info"
+              ]
+            },
+            {
+              "group": "Fulfillments",
+              "pages": [
+                "api-reference/v3/ecommerce/fulfillments/overview",
+                "api-reference/v3/ecommerce/fulfillments/get-all-fulfillments"
+              ]
+            },
+            {
+              "group": "Inventories",
+              "pages": [
+                "api-reference/v3/ecommerce/inventories/overview",
+                "api-reference/v3/ecommerce/inventories/get-all-inventories"
+              ]
+            },
+            {
+              "group": "Transactions",
+              "pages": [
+                "api-reference/v3/ecommerce/transactions/overview",
+                "api-reference/v3/ecommerce/transactions/get-all-transactions"
+              ]
+            }
+          ]
+        },
+        {
+          "group": "CRM",
+          "version": "v3",
+          "pages": [
+            {
+              "group": "Activities",
+              "pages": [
+                "api-reference/v3/crm/activities/overview",
+                "api-reference/v3/crm/activities/get-all-activities"
+              ]
+            },
+            {
+              "group": "Companies",
+              "pages": [
+                "api-reference/v3/crm/companies/overview",
+                "api-reference/v3/crm/companies/get-all-companies"
+              ]
+            },
+            {
+              "group": "Contacts",
+              "pages": [
+                "api-reference/v3/crm/contacts/overview",
+                "api-reference/v3/crm/contacts/get-all-contacts"
+              ]
+            },
+            {
+              "group": "Deals",
+              "pages": [
+                "api-reference/v3/crm/deals/overview",
+                "api-reference/v3/crm/deals/get-all-deals"
+              ]
+            },
+            {
+              "group": "Leads",
+              "pages": [
+                "api-reference/v3/crm/leads/overview",
+                "api-reference/v3/crm/leads/get-all-leads"
+              ]
+            },
+            {
+              "group": "Notes",
+              "pages": [
+                "api-reference/v3/crm/notes/overview",
+                "api-reference/v3/crm/notes/get-all-notes"
+              ]
+            },
+            {
+              "group": "Pipelines",
+              "pages": [
+                "api-reference/v3/crm/pipelines/overview",
+                "api-reference/v3/crm/pipelines/get-all-pipelines"
+              ]
+            },
+            {
+              "group": "Stages",
+              "pages": [
+                "api-reference/v3/crm/stages/overview",
+                "api-reference/v3/crm/stages/get-all-stages"
+              ]
+            },
+            {
+              "group": "Tasks",
+              "pages": [
+                "api-reference/v3/crm/tasks/overview",
+                "api-reference/v3/crm/tasks/get-all-tasks"
+              ]
+            },
+            {
+              "group": "Users",
+              "pages": [
+                "api-reference/v3/crm/users/overview",
+                "api-reference/v3/crm/users/get-all-users"
+              ]
             }
           ]
         }
@@ -526,6 +695,12 @@
     {
       "group": "Changelog",
       "pages": [
+        "changelog/aug-31-24",
+        "changelog/july-31-24",
+        "changelog/june-30-24",
+        "changelog/may-31-24",
+        "changelog/april-30-24",
+        "changelog/feb-29-24",
         "changelog/jan-31-24",
         "changelog/dec-31-23",
         "changelog/oct-31-23",

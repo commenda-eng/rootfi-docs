@@ -1,64 +1,35 @@
 ---
+version: "v3"
 title: "Overview"
-description: "[Cash flow statements](https://www.investopedia.com/terms/c/cashflowstatement.asp) are financial statements that show the inflow and outflow of cash and cash equivalents from a company's operations, investments, and financing activities over a specific period of time."
+description: "Cash flow statements are financial statements that show the inflow and outflow of cash and cash equivalents from a company's operations, investments, and financing activities over a specific period of time."
 icon: "hand-wave"
 ---
 
-## Attributes
+## Properties Supported
 
-<ResponseField name="platform_id" type="string" required>
-  The accounting platforms ID for this item
-</ResponseField>
+| Property                    | Type                                                                              | Description                                                       |
+| --------------------------- | --------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| platform_id                 | string                                                                            | The Platform's ID for this item                                   |
+| period_start                | date                                                                              | Start date of the cash flow statement report                      |
+| period_end                  | date                                                                              | End date of the cash flow statement report                        |
+| cash_at_beginning_of_period | float                                                                             | Total amount at the beginning of the period                       |
+| cash_at_end_of_period       | float                                                                             | Total amount at the end of the period                             |
+| operating_activities        | [Line Item](/api-reference/v3/accounting/cash-flow-statements/overview#line-item) | Line Items for operating activities of cash flow statement report |
+| investing_activities        | [Line Item](/api-reference/v3/accounting/cash-flow-statements/overview#line-item) | Line Items for investing activities of cash flow statement report |
+| financing_activities        | [Line Item](/api-reference/v3/accounting/cash-flow-statements/overview#line-item) | Line Items for financing activities of cash flow statement report |
 
-<ResponseField name="period_start" type="date">
-  Start date of the cash flow statement report
-</ResponseField>
+### Line Item
 
-<ResponseField name="period_end" type="date">
-  End date of the cash flow statement report
-</ResponseField>
+Each line item is an object with the following attributes:
 
-<ResponseField name="operating_activities" type="Line Item">
-  line_items for operating activities of income statement report
-  <Expandable title="properties">
-    <Snippet file="line_items_snippeet.mdx" />
-  </Expandable>
-</ResponseField>
+| Property   | Type   | Description                                                         |
+| ---------- | ------ | ------------------------------------------------------------------- |
+| name       | string | Name of the line item                                               |
+| value      | float  | Value of the line item                                              |
+| line_items | array  | Line items of the line item, only if further breakdown is available |
+| account_id | string | The Platform's ID for this item, only if this is the root line item |
 
-<ResponseField name="investing_activities" type="Line Item">
-  line_items for investing activities of income statement report
-  <Expandable title="properties">
-    <Snippet file="line_items_snippeet.mdx" />
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="financing_activities" type="Line Item">
-  line_items for financing activities of income statement report
-  <Expandable title="properties">
-    <Snippet file="line_items_snippeet.mdx" />
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="cash_at_beginning_of_period" type="float">
-  Total amount at the beginning of the period
-</ResponseField>
-
-<ResponseField name="cash_at_end_of_period" type="float">
-  Total amount at the end of the period
-</ResponseField>
-
-| Property                    | Type                          | Description                                                    |
-| --------------------------- | ----------------------------- | -------------------------------------------------------------- |
-| platform_id                 | string                        | The accounting platforms ID for this item                      |
-| period_start                | date                          | start date of the cash flow statement report                   |
-| period_end                  | date                          | end date of the cash flow statement report                     |
-| operating_activities        | [Line Item](/docs/line-items) | line_items for operating activities of income statement report |
-| investing_activities        | [Line Item](/docs/line-items) | line_items for investing activities of income statement report |
-| financing_activities        | [Line Item](/docs/line-items) | line_items for financing activities of income statement report |
-| cash_at_beginning_of_period | float                         | total amount at the beginning of the period                    |
-| cash_at_end_of_period       | float                         | total amount at the end of the period                          |
-
-<ResponseExample name="The Bank Transaction Object" >
+<ResponseExample name="The Cash Flow Statement Object">
 
 ```json The Cash Flow Statement Response Object
 {

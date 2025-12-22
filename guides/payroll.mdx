@@ -1,0 +1,155 @@
+---
+title: "Payroll"
+description: "Sync processed payrolls with your customers' respective accounting systems."
+icon: "envelope-open-dollar"
+---
+
+---
+
+## Introduction
+
+This comprehensive guide is designed to help HR and Payroll companies reconcile processed payrolls to their customers' respective accounting systems using RootFi' Unified Accounting API.
+
+Here is a quick summary of all the steps involved: 
+
+1. Use RootFi' **authentication flow to connect** to each business customer's accounting system.
+2. Categorize and **map** payroll components. 
+3. **Sync** processed payroll with your customer's accounting software.  
+
+---
+
+<Steps titleSize="h2">
+
+<Step title="Connect with your customers' accounting platform (One-Time Activity)" titleSize="h2" stepNumber="1">
+
+RootFi provides two convenient options to connect with your customers' accounting platform:
+
+1. Use RootFi' **Connect Link**, a convenient and secure URL, or
+2. Embed RootFi' **Connect SDK** into your application
+
+The Invite Link requires no code, making it suitable to get started without a developer. You can customize and white-label this onboarding process with RootFi' Connect SDK, allowing authentication to occur natively in your product.
+
+Either way, your customers will be guided through a simple authorization flow to connect their respective accounting platforms to your product.
+
+1. Use our Dashboard or APIs to connect a customer's accounting platform. Use the [**POST/invite-link**]() API, and provide a name for your customers' company.
+2. A unique `company_id` will be generated once your customer completes the authentication flow. This `company_id` will be used to read and write data to their accounting platform.
+
+---
+
+</Step>
+
+<Step title="Categorize and map payroll components" titleSize="h2" stepNumber="2">
+
+For your customers to appropriately represent their payroll costs in their accounting software, they will need to do some initial configuration.
+
+Typically, each customer will want to set the following:
+
+- Which bank account payments are made from
+- Which expense account does each payroll component correspond with
+- Any additional mapping for things like tracking categories
+
+
+### 2.1 Make customers select the Bank account where payroll will be processed from
+
+You must guide your customer to link the Bank Account from which payroll is dispersed. 
+
+You should create a front-end that allows your customers to select the appropriate Bank Account. To have your front-end populate the available Banks Accounts from their underlying accounting platform, call [GET/accounts](/api-reference/v3/accounting/accounts/get-all-accounts) and filter by **type = 'bank'** or call [GET/bank_accounts](/api-reference/v3/accounting/bank-accounts/get-all-bank-accounts).
+
+
+### 2.2 Make customers select which Expense Account each Payroll component corresponds with
+
+Each customer will have different preferences for recording payroll costs, pensions, and employee taxes against various nominal accounts.
+
+**Your system should have a list of payroll components representing the different parts of a company's payroll.** To meet your customers' needs, it is important to offer a flexible interface that allows companies to handle the nuances of data reconciliation according to their preferences. The mapping process can be as complex or granular as required for your specific use case.
+
+To have your interface populate the available Expense Accounts from their underlying accounting platform, use [GET/accounts](/api-reference/v3/accounting/accounts/get-all-accounts).
+
+
+### 2.3 Allow for Additional Categorization using Tracking Categories
+
+Businesses may require additional categorization for their payroll expenses. For instance, they may want to group expenses by department (e.g., sales and marketing) or location.
+
+Our [GET/tracking_categories](/api-reference/v3/accounting/tracking-categories/get-all-tracking-categories) can retrieve each company's departments, locations, and projects.
+
+---
+
+</Step>
+
+</Steps>
+
+<Steps>
+
+<Step title="Sync Processed Payroll with Accounting Software" titleSize="h2" stepNumber="3">
+
+Before recording the payroll in your customers' accounting platform, you must generate a line item object for each employee for each corresponding payroll component. This means you'll likely have multiple line items for each employee.
+
+To record payroll entries to the mapped accounts in your customers' accounting platform, use [POST/journal_entries](/api-reference/v3/accounting/journal-entries/create-journal-entries).
+
+When creating the payroll Journal Entry, you should create a line item for each payroll component. 
+
+<Note> The sum of the amounts on the payroll component must equal the sum of the debit on the mapped bank account from which the payment is being made. </Note>
+
+<br></br>
+
+Here are three examples:
+
+### Journal Entry Example #1
+
+Say your customer has one employee on their payroll. Your first entry shows the employee's gross wages, payroll taxes withheld, deductions, and net pay. It includes the following:
+
+- Gross wages
+- Employee Income tax payable
+- Employee health insurance payable
+- Payroll payable (aka the employee's net wages)
+
+Gross wages are an expense that increases with a debit. The rest of the accounts are liabilities. Credit your liabilities. Here's how the first journal entry would look:
+
+| Date | Account | Debit | Credit |
+| --- | --- | --- | --- |
+| XX/XX/XXXX | Salaries and Employee Wages | 1,000 |  |
+|  | Employee Income Tax Payable |  | 80 |
+|  | Employee Health Insurance Payable |  | 20 |
+|  | Payroll Payable |  | 900 |
+
+<Note> Remember that your debits (left side) should equal your credits (right side). Double-check your totals and look for accounting mistakes if they don't balance. </Note>
+
+### Journal Entry Example #2
+
+Make a second journal entry when the customer gives their employee their paycheck. When they pay the employee, they no longer owe wages, so their liabilities decrease and their bank account decreases because they paid their employee.
+
+Because it's a liability, decrease the Payroll Payable account with a debit. And decrease the Cash account (an asset) with a credit.
+
+<Note> For Xero, please use the bank transactions data model to post this entry. </Note>
+
+| Date | Account | Debit | Credit |
+| --- | --- | --- | --- |
+| XX/XX/XXXX | Payroll Payable | 900 |  |
+|  | Bank Account |  | 900 |
+
+### Journal Entry Example #3
+
+Eventually, your customer will need to pay employer taxes and remit withheld taxes. This is where a third accounting entry for payroll comes in.
+
+Reverse the payable entries with a debit and decrease your bank account with a credit.
+
+The amount you credit your cash account is the total amount you must remit for federal and state taxes.
+
+For Xero, please use the bank transactions data model to post this entry. 
+
+| Date | Account | Debit | Credit |
+| --- | --- | --- | --- |
+| XX/XX/XXXX | Employee  Tax Payable | 80 |  |
+|  | Employee Health Insurance Payable | 25 |  |
+|  | Bank Account |  | 100 |
+
+---
+
+</Step>
+
+</Steps>
+
+## Conclusion
+
+Once you've completed the steps described above, you can automatically sync processed payrolls to your customers' respective accounting systems. Feel free to contact us if you have any questions; we're always happy to help. 
+
+---

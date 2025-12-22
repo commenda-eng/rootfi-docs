@@ -1,6 +1,7 @@
 ---
+version: "v3"
 title: "Overview"
-description: "**The Company Info Data Model** is designed to simplify the management and retrieval of company-related information across various accounting platforms. "
+description: "The Company Info Data Model is designed to simplify the management and retrieval of company-related information across various accounting platforms. "
 icon: "hand-wave"
 ---
 
@@ -8,97 +9,38 @@ icon: "hand-wave"
 - Comprehensive contact information: Retrieve company addresses, external links, and phone numbers for a complete view of company contacts.
 - Financial year tracking: Monitor the company's financial year start date for accurate reporting and analysis.
 
-## Attributes
-
-<ResponseField name="platform_id" type="string" required>
-  The accounting Platform’s id for the company
-</ResponseField>
-
-<ResponseField name="name" type="string">
-  The company name
-</ResponseField>
-
-<ResponseField name="legal_name" type="string">
-  Legal name of the company
-</ResponseField>
-
-<ResponseField name="base_currency" type="string">
-  The primary currency of the company
-</ResponseField>
-
-<ResponseField name="fiscal_start_at" type="date">
-  The starting date of the Financial year for this company
-</ResponseField>
-
-<ResponseField name="org_created_at" type="date">
-  Date the record was created in the RootFi system.
-</ResponseField>
-
-<ResponseField name="registration_number" type="string">
-  Reference of the registration number
-</ResponseField>
-
-<ResponseField name="tax_number" type="string">
-  Company tax number
-</ResponseField>
-
-<ResponseField name="addresses" type="Address">
-  List of addresses for the company. Refer [contact](https://docs.rootfi.dev/api-reference/contacts/overview) page.
-  <Expandable title="properties">
-    <ResponseField name="data" type="Object">
-      <Expandable title="properties">
-        <Snippet file="addresses.mdx" />
-      </Expandable>
-    </ResponseField>
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="external_links" type="External Link">
-  List of external links for the company. Refer [contact](https://docs.rootfi.dev/api-reference/contacts/overview) page.
-  <Expandable title="properties">
-    <ResponseField name="data" type="Object">
-      <Expandable title="properties">
-        <Snippet file="externalLink.mdx" />
-      </Expandable>
-    </ResponseField>
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="phone_numbers" type="Phone Number">
-  List of phone number for the company. Refer [contact](https://docs.rootfi.dev/api-reference/contacts/overview) page.
-  <Expandable title="properties">
-    <ResponseField name="data" type="Object">
-      <Expandable title="properties">
-        <Snippet file="phone.mdx" />
-      </Expandable>
-    </ResponseField>
-  </Expandable>
-</ResponseField>
-
-<ResponseField name="updated_at" type="date">
-  Date the record was last updated in the accounting platform.
-</ResponseField>
-
 ## Properties Supported
 
-| Property            | Type                                 | Description                                                  |
-| ------------------- | ------------------------------------ | ------------------------------------------------------------ |
-| platform_id         | string                               | The accounting Platform's id for the company                 |
-| name                | string                               | The company name                                             |
-| legal_name          | string                               | Legal name of the company                                    |
-| base_currency       | string                               | The primary currency of the company                          |
-| fiscal_start_at     | date                                 | The starting date of the Financial year for this company     |
-| org_created_at      | date                                 | Date the record was created in the RootFi system.            |
-| registration_number | string                               | Reference of the registration number                         |
-| tax_number          | string                               | Company tax number                                           |
-| addresses           | [Address](/docs/address)             | List of addresses for the company                            |
-| external_links      | [External Link](/docs/external-link) | List of external links for the company                       |
-| phone_numbers       | [Phone Number](/docs/phone-number)   | List of phone number for the company                         |
-| updated_at          | date                                 | Date the record was last updated in the accounting platform. |
+| Property            | Type   | Description                                                              |
+| ------------------- | ------ | ------------------------------------------------------------------------ |
+| platform_id         | string | The Platform's ID for the company                                        |
+| name                | string | The company name                                                         |
+| legal_name          | string | Legal name of the company                                                |
+| base_currency       | string | The primary currency of the company                                      |
+| fiscal_start_at     | date   | The starting date of the Financial year for this company                 |
+| org_created_at      | date   | Date the record was created in the RootFi system.                        |
+| registration_number | string | Reference of the registration number                                     |
+| tax_number          | string | Company tax number                                                       |
+| updated_at          | date   | The date at which the information was updated on the accounting platform |
 
-<ResponseExample name="The Bank Transaction Object" >
+### Expandable Attributes
 
-```json The Bank Transaction Object
+You can expand the following attributes to get the related data
+| Property | Data Model | Description |
+| ---------- | ---------------------------------------------------------------| --------------------------- |
+| phone_numbers | [Phone Numbers](/api-reference/v3/accounting/company-info/overview#phone-numbers) | List of phone number for the company |
+| addresses | [Addresses](/api-reference/v3/accounting/company-info/overview#addresses) | List of addresses for the company |
+| external_links | [External Links](/api-reference/v3/accounting/company-info/overview#external-links) | List of external links for the company |
+
+<Snippet file="phone_numbers_snippet.mdx" />
+
+<Snippet file="addresses_snippet.mdx" />
+
+<Snippet file="external_links_snippet.mdx" />
+
+<ResponseExample name="The Company Info Object">
+
+```json The Company Info Object
 {
   "platform_id": "1234567890123456789"
   "name": "RootFi",
@@ -108,47 +50,6 @@ icon: "hand-wave"
   "org_created_at": "2023-12-31T00:00:00.000Z",
   "registration_number": "07CEUPK5322M1ZX",
   "tax_number": "ODSPS1279G",
-  "addresses": {
-    "data": [
-      {
-        "platform_id": "3770712000001721013_CONTACTS_3770712000001721005_SHIPPING",
-        "type": "SHIPPING",
-        "data_model": "CONTACTS",
-        "data_model_id": "3770712000001721005",
-        "street": "21 street house",
-        "locality": "Koramanager",
-        "city": "Hyderabad",
-        "state": "Bengalore",
-        "country": "India",
-        "pincode": "500045",
-        "updated_at": "2023-11-05T00:00:00.000Z"
-      }
-    ]
-  },
-  "external_links": {
-    "data": [
-      {
-        "platform_id": "CONTACTS_3770712000001721005_WEBSITE",
-        "data_model": "CONTACTS",
-        "data_model_id": "3770712000001721005",
-        "link": "https://www.rootfi.dev",
-        "type": "WEBSITE",
-        "updated_at": "2023-11-05T00:00:00.000Z"
-      }
-    ]
-  },
-  "phone_numbers": {
-    "data": [
-      {
-        "platform_id": "CONTACTS_3770712000001721005_MOBILE",
-        "data_model": "CONTACTS",
-        "data_model_id": "3770712000001721005",
-        "number": "+919*********",
-        "type": "MOBILE",
-        "updated_at": "2023-11-05T00:00:00.000Z"
-      }
-    ]
-  },
   "updated_at": "2023-12-31T00:00:00.000Z"
 }
 ```

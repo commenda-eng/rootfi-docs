@@ -1,4 +1,5 @@
 ---
+version: "v2"
 title: "Overview"
 description: "An [Income Statement](https://www.investopedia.com/terms/i/incomestatement.asp) is a financial report that shows a business's revenue, expenses, and net income or loss over a specific period of time. In an accounting platform, an income statement is typically generated automatically based on the financial transactions that have been recorded in the system."
 icon: "hand-wave"
@@ -70,17 +71,13 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="raw_data" type="object">
-  The raw JSON response we get from the accounting platform for that data.
-</ResponseField>
-
 <ResponseField name="net_profit" type="float">
   Net profit of the income statement report
 </ResponseField>
 
 | Property               | Type                                          | Description                                                  |
 | ---------------------- | --------------------------------------------- | ------------------------------------------------------------ |
-| platform_id            | string                                        | The accounting Platform's id for the income statement        |
+| platform_id            | string                                        | The Platform's ID for the income statement                   |
 | period_start_date      | date                                          | start date of the income statement report                    |
 | period_end_date        | date                                          | end date of the income statement report                      |
 | currency               | string                                        | currency of the income statement                             |
@@ -101,12 +98,12 @@ icon: "hand-wave"
 
 - fields of line item are:
 
-| Property   | Type                                          | Description                                  |
-| ---------- | --------------------------------------------- | -------------------------------------------- |
-| account_id | string                                        | the accounting Platform's id for the account |
-| value      | float                                         | value for the account                        |
-| name       | string                                        | the name of the account                      |
-| line_items | [LineItem](/docs/income-statements#line-item) | line_items for the account                   |
+| Property   | Type                                          | Description                       |
+| ---------- | --------------------------------------------- | --------------------------------- |
+| account_id | string                                        | the Platform's ID for the account |
+| value      | float                                         | value for the account             |
+| name       | string                                        | the name of the account           |
+| line_items | [LineItem](/docs/income-statements#line-item) | line_items for the account        |
 
 <ResponseExample name="The Bank Transaction Object" >
 

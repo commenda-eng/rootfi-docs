@@ -1,0 +1,35 @@
+---
+title: "Shopify"
+description: "Learn how to set up our Shopify integration."
+---
+
+To get started with our Shopify integration, your customer must first create an API Key on their Shopify dashboard. Then, they must enter their Shopify credentials on RootFi when prompted during the onboarding flow via SDK or Invite Link.
+
+These steps are elaborated on below.
+
+---
+
+### Part 1: Create a new app on Shopify
+
+1. Login to your Shopify Dashboard.
+2. Click ‘Settings‘(Bottom left of the navigation menu)
+3. Click ‘Apps and Channels’. (Bottom left of the navigation menu)
+   ![](/images/shopify_store_details.png)
+4. Click ‘Develop apps’ (on the top right)
+   ![](/images/shopify_develop_apps.png)
+5. Click ‘Create an app’.
+   ![](/images/shopify_create_app.png)
+6. Name the app. We suggest naming it “RootFi integration” or "_Your Company Name_ integration".
+7. Click ‘Create App.’
+   ![](/images/shopify_confirm_create_app.png)
+
+### Part 2: Generate Shopify API Key
+
+1. Click the ‘Configurations’ tab for the new app created and click ‘Configure’ on the ‘Admin API integration’ card.
+   ![](/images/shopify_config.png)
+2. Now, you will have to enable access to needed data models that you want RootFi to sync. We recommend at least giving access to Products, Orders, and Customers.
+   ![](/images/shopify_oauth_access.png)
+3. Go to the ‘API Credentials’ tab and click on ‘Install app’ in the ‘Access tokens’ card. This will generate the API Key and Secret Key.
+   ![](/images/shopify_api_key.png)
+4. Click ‘Reveal token’ and copy the generated API Key.
+   ![](/images/shopify/reveal_key.png)

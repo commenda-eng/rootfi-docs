@@ -1,0 +1,28 @@
+---
+version: "v3"
+title: "Overview"
+description: "**The Projects Data Model** is designed to simplify the management and retrieval of projects information across various accounting platforms. "
+icon: "hand-wave"
+---
+
+### Properties Supported
+
+| Property    | Type   | Description                        |
+| ----------- | ------ | ---------------------------------- |
+| platform_id | string | The Platform's ID for this project |
+| name        | string | The name of the project            |
+| description | string | The description of the project     |
+| status      | string | The status of the project          |
+
+<ResponseExample name="The Items Object">
+
+```json The Items Response Object
+{
+  "platform_id": "3770712000001345066",
+  "name": "Project 1",
+  "description": "This is a project",
+  "status": "active"
+}
+```
+
+</ResponseExample>

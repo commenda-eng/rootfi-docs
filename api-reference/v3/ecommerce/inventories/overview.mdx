@@ -1,0 +1,46 @@
+---
+version: "v3"
+title: "Overview"
+description: "Inventories are the goods and materials that a business holds for the ultimate purpose of resale. The Inventories Data Model simplifies the handling and retrieval of inventories-related information across various ecommerce platforms."
+icon: "hand-wave"
+---
+
+**The Inventories Data Model** simplifies the handling and retrieval of inventories-related information across various ecommerce platforms.
+
+- Unified Inventories properties: The model provides a unified representation of inventories properties across different platforms, enabling you to easily access and manage inventories data from different platforms.
+- Comprehensive inventories information: The model provides a comprehensive representation of inventories data, including all the properties and relationships that you can retrieve for an order.
+
+## Attributes
+
+## Properties Supported
+
+| Property    | Type   | Description                                    |
+| ----------- | ------ | ---------------------------------------------- |
+| platform_id | string | The Platform's ID for the inventories          |
+| product_id  | string | The product ID for the inventories             |
+| description | string | The description of the inventories             |
+| sku         | string | The SKU of the inventories                     |
+| quantity    | string | The quantity of the inventories                |
+| created_at  | string | The date and time the inventories were created |
+| updated_at  | string | The date and time the inventories were updated |
+
+<ResponseExample name="The Inventories Object" >
+
+```json The Inventories Response Object
+{
+  "rootfi_id": 157,
+  "rootfi_deleted_at": null,
+  "rootfi_created_at": "2024-01-22T05:07:31.465Z",
+  "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
+  "rootfi_company_id": 1089,
+  "platform_id": "123456",
+  "product_id": "123456",
+  "description": "John Doe",
+  "sku": "123456",
+  "quantity": "123",
+  "created_at": "2024-01-22T05:07:31.465Z",
+  "updated_at": "2024-01-22T05:07:31.000Z"
+}
+```
+
+</ResponseExample>

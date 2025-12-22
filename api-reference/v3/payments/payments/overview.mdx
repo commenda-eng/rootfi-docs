@@ -1,28 +1,51 @@
 ---
+version: "v3"
 title: "Overview"
-description: "Payments are used to record payments made by customers against invoices. Payments can be made against multiple invoice"
+description: "Payments are used to record payments made by customers against invoices. Payments can be made against multiple invoices."
 icon: "hand-wave"
 ---
 
 **The Payments Data Model** simplifies the handling and retrieval of Payments data for your application. The model provides a unified representation of payments data across different platforms, enabling you to easily access and manage payments data from different platforms.
 
 - Unified Payments properties: The model provides a unified representation of payments properties across different platforms, enabling you to easily access and manage payments data from different platforms.
-- Comprehensive payments information: The model provides a comprehensive representation of payments data, including all the properties and relationships that you can retrieve for an order.
+- Comprehensive payments information: The model provides a comprehensive representation of payments data, including all the properties and relationships that you can retrieve for a payment.
+
+## Attributes
+
+### Payment Attributes
+
+| Property           | Type          | Description                                                              |
+| ------------------ | ------------- | ------------------------------------------------------------------------ |
+| rootfi_id          | integer       | The RootFi ID of the payment                                             |
+| rootfi_created_at  | string        | The ISO 8601 timestamp at which the record was created in RootFi         |
+| rootfi_updated_at  | string        | The ISO 8601 timestamp at which the record was last updated in RootFi    |
+| rootfi_company_id  | integer       | The RootFi company ID associated with the payment                        |
+| platform_id        | string        | The Platform's ID for the Payment                                        |
+| platform_unique_id | string        | The platform's unique identifier for the payment                         |
+| created_at         | string        | The date and time the Payment was created                                |
+| description        | string        | The description of the Payment                                           |
+| amount             | number        | The amount of the Payment                                                |
+| currency_id        | string        | The currency of the Payment                                              |
+| status             | enum          | The status of the Payment (ACTIVE, INACTIVE)                             |
+| customer_id        | string        | The customer id of the Payment                                           |
+| invoice_id         | string        | The invoice id of the Payment                                            |
+| order_id           | string        | The order id of the Payment                                              |
+| payment_method     | enum          | The payment method (UPI, EMI, NET_BANKING, WALLET, CARD)                 |
 
 ## Properties Supported
 
 | Property       | Type   | Description                                                                                |
 | -------------- | ------ | ------------------------------------------------------------------------------------------ |
-| platform_id    | string | The accounting platform's ID for the Payments                                              |
-| created_at     | string | The date and time the Payments was created.                                                |
-| description    | string | The description of the Payments.                                                           |
-| amount         | string | The amount of the Payments.                                                                |
-| currency_id    | string | The currency of the Payments.                                                              |
-| status         | string | The status of the Payments.                                                                |
-| customer_id    | string | The customer id of the Payments.                                                           |
-| invoice_id     | string | The invoice id of the Payments.                                                            |
-| order_id       | string | The order id of the Payments.                                                              |
-| payment_method | enum   | The payment method of the Payments. Allowed values are UPI, EMI, NET_BANKING, WALLET, CARD |
+| platform_id    | string | The Platform's ID for the Payment                                                          |
+| created_at     | string | The date and time the Payment was created                                                  |
+| description    | string | The description of the Payment                                                             |
+| amount         | number | The amount of the Payment                                                                  |
+| currency_id    | string | The currency of the Payment                                                                |
+| status         | enum   | The status of the Payment. Allowed values are ACTIVE, INACTIVE                             |
+| customer_id    | string | The customer id of the Payment                                                             |
+| invoice_id     | string | The invoice id of the Payment                                                              |
+| order_id       | string | The order id of the Payment                                                                |
+| payment_method | enum   | The payment method of the Payment. Allowed values are UPI, EMI, NET_BANKING, WALLET, CARD  |
 
 <ResponseExample name="The Payments Object" >
 
@@ -32,15 +55,15 @@ icon: "hand-wave"
   "rootfi_created_at": "2024-01-22T05:07:31.465Z",
   "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
   "rootfi_company_id": 1089,
-  "platform_id": "123456",
+  "platform_id": "pay_123456",
   "created_at": "2024-01-22T05:07:31.000Z",
-  "description": "Payment Description",
-  "amount": "100.00",
+  "description": "Payment for Invoice INV-001",
+  "amount": 100.00,
   "currency_id": "USD",
-  "status": "ATTEMPTED",
-  "customer_id": "123456",
-  "invoice_id": "123456",
-  "order_id": "123456",
+  "status": "ACTIVE",
+  "customer_id": "cus_123456",
+  "invoice_id": "inv_123456",
+  "order_id": "ord_123456",
   "payment_method": "CARD"
 }
 ```

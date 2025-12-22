@@ -1,4 +1,5 @@
 ---
+version: "v2"
 title: "Overview"
 description: "The payments recorded against Invoices."
 icon: "hand-wave"
@@ -13,7 +14,7 @@ icon: "hand-wave"
 ## Attributes
 
 <ResponseField name="platform_id" type="string" required>
-  The accounting platforms ID for this invoice payment
+  The Platform's ID for this invoice payment
 </ResponseField>
 
 <ResponseField name="contact_id" type="string">
@@ -71,10 +72,6 @@ icon: "hand-wave"
   Optional description for the payment
 </ResponseField>
 
-<ResponseField name="raw_data" type="object">
-  The raw JSON response we get from the accounting platform for that data.
-</ResponseField>
-
 <ResponseField name="invoice" type="Invoice">
   The [invoice](https://docs.rootfi.dev/api-reference/invoices/overview) which this payment is associated with
   <Expandable title="properties">
@@ -94,7 +91,7 @@ icon: "hand-wave"
 
 | Property      | Type                      | Description                                                              |
 | ------------- | ------------------------- | ------------------------------------------------------------------------ |
-| platform_id   | string                    | The accounting platforms ID for this invoice payment                     |
+| platform_id   | string                    | The Platform's ID for this invoice payment                               |
 | contact_id    | string                    | The platform's ID for the contact that makes the payment                 |
 | account_id    | string                    | The platform's ID for the account to which this payment belongs          |
 | invoice_id    | string                    | The platform's ID for the invoice which this payment is associated with  |

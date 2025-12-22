@@ -4,20 +4,3 @@ openapi: openapi_v3 delete  /core/invite_links/{invite_link_id}
 ---
 
 **Note:** You can only delete those invite links which is not connected to any company.
-
-<RequestExample>
-
-```bash cURL
-curl --request DELETE \
- --url https://api.rootfi.dev/v3/core/invite_links/{invite_link_id} \
- --header 'api_key: <api-key>'
-
-```
-
-```javascript NodeJS
-import { RootFiClient } from "rootfi-api";
-const rootfi = new RootFiClient({ apiKey: "<api_key>" });
-await rootfi.core.inviteLinks.delete("7a1c0e42-9f85-4d6e-bb5d-358a72913c0b");
-```
-
-</RequestExample>

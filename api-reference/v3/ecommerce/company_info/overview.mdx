@@ -1,0 +1,46 @@
+---
+version: "v3"
+title: "Overview"
+description: "**The Company Info Data Model** is designed to simplify the management and retrieval of company-related information across various ecommerce platforms."
+icon: "hand-wave"
+---
+
+**The Company Info Data Model** simplifies the handling and retrieval of company info-related information across various ecommerce platforms.
+
+- Unified Company Info properties: The model provides a unified representation of company info properties across different platforms, enabling you to easily access and manage company info data from different platforms.
+- Comprehensive company info information: The model provides a comprehensive representation of company info data, including all the properties and relationships that you can retrieve for an order.
+
+## Attributes
+
+## Properties Supported
+
+| Property    | Type   | Description                               |
+| ----------- | ------ | ----------------------------------------- |
+| platform_id | string | The Platform's ID for the company info    |
+| name        | string | The name of the company                   |
+| website     | string | The website of the company                |
+| currency_id | string | The currency ID of the company            |
+| email       | string | The email of the company                  |
+| created_at  | string | The date and time the company was created |
+| updated_at  | string | The date and time the company was updated |
+
+<ResponseExample name="The Company Info Object" >
+
+```json The Company Info Response Object
+{
+  "rootfi_id": 157,
+  "rootfi_deleted_at": null,
+  "rootfi_created_at": "2024-01-22T05:07:31.465Z",
+  "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
+  "rootfi_company_id": 1089,
+  "platform_id": "123456",
+  "name": "John Doe",
+  "website": "https://www.johndoe.com",
+  "currency_id": "USD",
+  "email": "test@gmail.com",
+  "created_at": "2024-01-22T05:07:31.465Z",
+  "updated_at": "2024-01-22T05:07:31.000Z"
+}
+```
+
+</ResponseExample>

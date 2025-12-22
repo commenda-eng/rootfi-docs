@@ -5,6 +5,20 @@ openapi: openapi_v3 post /accounting/items
 
 **The Items Data Model** is designed to simplify the management and retrieval of item-related information across various accounting platforms.
 
+## Additional Required Fields
+
+To successfully create an item, certain fields must be included in the raw_data object of the request body. The required fields are as follows:
+
+| Integration        | Field                | Description                                               |
+| ------------------ | -------------------- | --------------------------------------------------------- |
+| NETSUITE           | taxschedule          | The ID of the tax schedule associated with the item.      |
+| MS_DYNAMICS_365_FO | ProductNumber        | The product number of the item.                           |
+| MYOB_BUSINESS      | asset_account_id     | The ID of the asset account associated with the item.     |
+| QOYOD              | product_unit_type_id | The ID of the product unit type associated with the item. |
+| QOYOD              | category_id          | The ID of the category associated with the item.          |
+| QOYOD              | track_quantity       | Whether the item should track quantity.                   |
+| QOYOD              | tax_id               | The ID of the tax associated with the item.               |
+
 <RequestExample>
 
 ```bash cURL

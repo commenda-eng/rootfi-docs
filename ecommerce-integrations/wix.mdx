@@ -1,0 +1,29 @@
+---
+title: "Wix"
+description: "Learn how to set up our Wix integration."
+---
+
+In order to get started using your own credentials for our Wix integration, you will need to first register your Wix application. After that, you will need to enter your Client ID and Client Secret on the RootFi dashboard.
+
+These steps are elaborated on below.
+
+---
+
+### Part 1: Create a new app on Wix
+
+1. Navigate to the Wix Developer site at [https://dev.wix.com/apps/](https://dev.wix.com/apps/).
+2. On the top right corner, find and click the '+ Create New App' button. This action initiates the creation of your new app.
+3. Once your app is created, look for the 'OAuth' option on the sidebar and select it. This section is where you manage your app's OAuth credentials.
+   ![](/images/wix/wix_oauth_credentials.png)
+4. In the 'OAuth' section, you will find the App ID and App Secret. Make sure to copy these values as you will need to enter them into the RootFi dashboard.
+5. Set the App URL to https://integrate.rootfi.dev/wix/callback
+6. For the Redirect URL, use [ROOTFI CALLBACK URL](/api-reference/v3/overview/environments#callback-urls)
+7. Note that your app will be in Draft mode initially. To proceed, submit your app for review by clicking the 'Submit for review' button located at the bottom right of the page. You'll need to fill out the necessary details for the review process.
+   ![](/images/wix/wix_submit_review.png)
+
+### Part 2: Enter Your Client ID and Client Secret on the RootFi Dashboard
+
+1. Login to the RootFi dashboard
+2. Select the 'Integrations' tab on the sidebar - here you will see a list of platforms you can integrate with
+3. Click the 'Set Up' button which is present on the Wix card.
+4. When the form opens up simply enter the 'Client ID' and 'Client Secret' which you generated on the Wix App and click 'Save'

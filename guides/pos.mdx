@@ -1,0 +1,159 @@
+---
+title: "Point-Of-Sale (POS)"
+description: "This guide helps Point-Of-Sale (POS) companies to push merchants' data from their e-commerce or point-of-sale (POS) platform into thier merchant's accounting platform."
+icon: "tag"
+---
+
+---
+
+## Introduction
+
+RootFi allows you to push merchants' data from your e-commerce or point-of-sale (POS) platform into your merchant's accounting platform. Your merchants can seamlessly reconcile their transaction data into their accounting software, allowing them to spend more time growing their business.
+
+This workflow can be used for the following types of Companies:
+
+- POS
+- Vertical SaaS
+- Payments Companies
+- E-Commerce Companies
+
+---
+
+## Overview
+
+RootFi APIs enable you to handle all the common workflows required to automate your business customers' payment data from your POS/e-commerce solution.
+
+Through RootFi, your merchant can choose to reflect their sales data from e-commerce and point-of-sale (POS) software:
+
+- As an aggregated daily/weekly **sales invoice**, or
+- As an aggregated daily/weekly **journal entry**
+
+RootFi recommends using **journal entries** due to the following advantages:
+
+- **Ease of use:** Single daily journal entries are easier to manage, adjust, and reconcile than, for example, invoices, payments, and credit notes.
+- **Controlled impact on the general ledger:** A journal entry is the most granular way to impact a company's general ledger without being confined to specific account types.
+- **Platform API Coverage:** Journal Entries are the most widely supported data model across all accounting platforms. Other Data Models, such as Invoice Payments, Expenses, and Credit Notes, may not be available.
+
+---
+
+## Getting Started
+
+Here's a summary of the steps involved to get started:
+
+1. **Accounting Platform selection:** Use RootFi' Auth Flow to connect a business customer's accounting system.
+2. **Merchant Configuration:** Once the Merchant provides access to the accounting platform, the merchant must set how the synchronization should work. This will tell you how the data should be mapped to the accounting platform.
+
+---
+
+<Steps titleSize="h2">
+
+<Step title="Accounting Platform Selection" titleSize="h2" stepNumber="1">
+
+RootFi provides two convenient options to connect with your customers' accounting platform:
+
+1. Use RootFi' **Connect Link**, a convenient and secure URL, **or**
+2. Embed RootFi' **Connect SDK** into your application
+
+The Invite Link requires no code, making it suitable to get started without a developer. You can customize and white-label this onboarding process with RootFi' Connect SDK, allowing authentication to occur natively in your product.
+
+Either way, your customers will be guided through a simple authorization flow to connect their respective accounting platforms to your product.
+
+1. Use our Dashboard or APIs to connect a customer's accounting platform. Use the [**POST/invite-link**]() API, and provide a name for your customers' company.
+2. A unique `company_id` will be generated once your customer completes the authentication flow. This `company_id` will be used to read and write data to their accounting platform.
+
+---
+
+</Step>
+
+<Step title="Merchant Configuration" titleSize="h2" stepNumber="2">
+
+This section provides guidelines for data mapping configuration from a POS/commerce platform to the supported accounting platforms (Netsuite, Xero, QuickBooks online).
+
+In RootFi' POS workflow, the data types are grouped under four main features:
+
+- Sales
+- Fees
+- Taxes
+- Payments
+
+**You will need to create a UI for this step.**
+
+Request your Merchant to Map the following features to the respective General Ledger accounts from their accounting platform:
+
+**Sales Account Mapping**
+
+1. Sales (Revenue/Income Account)
+2. Refunds (Revenue/Income Account)
+3. Gratuity/Tips (Liability)
+4. Prepaid Cards (Liability Account)
+
+**Payment Fees Account Mapping**
+
+1. Processing Fees (Platform Fee/ Expense Account)
+2. Processing Fees Refund (Platform Fee Refund/ Expense Account)
+
+**Tax Account Mapping (Optional)**
+
+**Payment Account Mapping**
+
+- Card (Accounts receivable)
+- Cash (Cash/Bank)
+- Payouts (accounts receivable)
+
+To get the General Ledger Account Names and IDs:
+
+1. Use the **GET/Accounts APIs** to get the **Account ID and Name** if the account already exists in the customer's accounting platform.
+2. Use the **POST/Accounts APIs** to create a GL account if it does not exist
+
+<Note> Store this mapping internally to post Journal Entries accurately. </Note>
+
+---
+
+</Step>
+
+</Steps>
+
+## Posting Aggregated Daily/Weekly Journal Entries
+
+A Journal Entry can be mapped to any General Ledger Account.
+
+1. Use the [**POST/journal_entries**]() Data Model to create a journal entry in your Merchants Accounting Platform.
+2. Use the Account IDs Mapped above to push Journal Entries to their respective Accounts.
+
+### Example: Daily aggregated sales journal entry
+
+This example journal entry covers a sales total of $ 1000, tax total of $ 200, gratuities of $ 50, and payment processing fee of $ 50. And A payout from the POS company.
+
+| Accounts | Account Type | Debit | Credit |
+| --- | --- | --- | --- |
+| Accounts Receivable | Asset | $1,200 |  |
+| Revenue/Sales | Income |  | $1,000 |
+| Gratuities | Income or Liability |  | $50 |
+| Sales Tax | Liability |  | $200 |
+| Processing Fee | Expense | $50 |  |
+
+| Accounts | Account Type | Debit | Credit |
+| --- | --- | --- | --- |
+| Accounts Receivable | Asset |  | $1200 |
+| Bank Account | Asset | $1200 |  |
+
+---
+
+## Posting Sales Invoice Method
+
+Sales are booked on a nominal account of the type **Income**. This is the account that the merchant would typically use to book their sales.
+
+The merchant can select an existing account from the accounting platform. If an account is unavailable, it must be created in the accounting platform for this purpose.
+
+1. RootFi pushes a single sales invoice to the Accounting platform daily. This invoice represents all sales made over that day.
+    - The invoice is issued to the commerce services provider.
+    - The invoice contains one line item for each tax rate the merchant trades in, with this line item representing the total of all sales at that tax rate.
+2. When the merchant receives payment for the reported sales, the invoice is marked as paid and balanced against an invoice payment.
+
+---
+
+## Conclusion
+
+This guide outlines the process of using RootFi for POS Accounting Automation. It covers the essential steps of connecting to accounting platforms, configuring merchant settings, and posting journal entries or sales invoices. By following these steps, you can enable your merchants to seamlessly reconcile their e-commerce and accounting data, allowing them to focus on growing their business.
+
+---

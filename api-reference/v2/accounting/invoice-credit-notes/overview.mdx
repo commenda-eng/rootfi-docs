@@ -1,4 +1,5 @@
 ---
+version: "v2"
 title: "Overview"
 description: "An Invoice Credit Note is a financial transaction representing a reduction that can be applied against one or multiple invoices issued to Customers."
 icon: "hand-wave"
@@ -74,31 +75,27 @@ icon: "hand-wave"
   </Expandable>
 </ResponseField>
 
-<ResponseField name="raw_data" type="object">
-  The raw JSON response we get from the accounting platform for that data.
-</ResponseField>
-
 <ResponseField name="updated_at" type="date" required>
   The last ISO 8601 timestamp that the data was updated at
 </ResponseField>
 
 ## Properties Supported
 
-| Property         | Type                          | Description                                                                                               |
-| ---------------- | ----------------------------- | --------------------------------------------------------------------------------------------------------- |
-| platform_id      | string                        | The accounting Platform's ID for the credit note                                                          |
-| contact_id       | string                        | The accounting platform's unique identifier for the contact associated with this credit note              |
-| document_number  | string                        | Reference number for the credit note                                                                      |
-| total_amount     | float                         | Total amount of credit note                                                                               |
-| remaining_credit | float                         | The balance amount remaining on the credit note                                                           |
-| posted_date      | date                          | Date on which the credit note was posted                                                                  |
-| status           | enum                          | The status of the credit note. Values are: DRAFT, SUBMITTED, PARTIALLY_PAID, PAID, OVERDUE, VOID, UNKNOWN |
-| memo             | string                        | Description of the credit note                                                                            |
-| currency         | string                        | Currency of the credit note                                                                               |
-| line_Items       | [Line Item](/docs/line-items) | An array of Credit Note Line Items                                                                        |
-| invoices         | [Invoices](/docs/invoices)    | An Array of Invoices associated with the credit note                                                      |
-| contact          | [Contact](/docs/contacts)     | The contact associated with this credit note                                                              |
-| updated_at       | date                          | The last ISO 8601 timestamp that the data was updated at                                                  |
+| Property         | Type                          | Description                                                                                                             |
+| ---------------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| platform_id      | string                        | The Platform's ID for the credit note                                                                                   |
+| contact_id       | string                        | The accounting platform's unique identifier for the contact associated with this credit note                            |
+| document_number  | string                        | Reference number for the credit note                                                                                    |
+| total_amount     | float                         | Total amount of credit note                                                                                             |
+| remaining_credit | float                         | The balance amount remaining on the credit note                                                                         |
+| posted_date      | date                          | Date on which the credit note was posted                                                                                |
+| status           | enum                          | The status of the credit note. Values are: `DRAFT`, `SUBMITTED`, `PARTIALLY_PAID`, `PAID`, `OVERDUE`, `VOID`, `UNKNOWN` |
+| memo             | string                        | Description of the credit note                                                                                          |
+| currency         | string                        | Currency of the credit note                                                                                             |
+| line_Items       | [Line Item](/docs/line-items) | An array of Credit Note Line Items                                                                                      |
+| invoices         | [Invoices](/docs/invoices)    | An Array of Invoices associated with the credit note                                                                    |
+| contact          | [Contact](/docs/contacts)     | The contact associated with this credit note                                                                            |
+| updated_at       | date                          | The last ISO 8601 timestamp that the data was updated at                                                                |
 
 <ResponseExample name="The Bank Transaction Object" >
 

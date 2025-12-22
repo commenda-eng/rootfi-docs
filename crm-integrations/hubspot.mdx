@@ -1,0 +1,32 @@
+---
+title: "Hubspot"
+description: "Learn more about how to set up our Hubspot integration."
+---
+
+In order to get started using your own credentials for our Hubspot integration, you will need to first register your Hubspot application. After that, you will need to enter your Client ID and Client Secret on the RootFi dashboard.
+
+These steps are elaborated upon in detail below.
+
+---
+
+### Part 1: Register your Hubspot application
+
+1. Go to [https://app.hubspot.com/developer/](https://app.hubspot.com/developer/)
+2. Navigate to Apps in the sidebar and click 'Create app' button.
+   ![](/images/crm/hubspot/create-app-button.png)
+3. Fill in the basic information in App Info tab.
+   ![](/images/crm/hubspot/basic_info.png)
+4. Go to the ‘Auth’ tab and fill in the following fields:
+   - **Redirect URL**: This is the URL where the user will be redirected after they have authorized the app. Use [ROOTFI CALLBACK URL](/api-reference/v3/overview/environments#callback-urls) as the redirect URL.
+   - **Scopes**: Select the scopes you need for your integration. For RootFi, you will need the following scopes:
+     ![](/images/crm/hubspot/scopes_list.png)
+5. Click on the 'Create App' button to save the changes.
+6. Visit the 'Auth' tab again and copy the 'Client ID' and 'Client Secret' values.
+   ![](/images/crm/hubspot/auth_cred.png)
+
+### Part 2: Enter Your Client ID and Client Secret on the RootFi Dashboard
+
+1. Login to the RootFi dashboard
+2. Select the 'Integrations' tab on the sidebar - here you will see a list of platforms you can integrate with
+3. Click the 'Set Up' button which is present on the Hubspot card.
+4. When the form opens up simply enter the 'Client ID' and 'Client Secret' which you generated on the Hubspot Developer App and click 'Save'

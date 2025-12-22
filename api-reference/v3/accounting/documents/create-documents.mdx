@@ -4,3 +4,16 @@ openapi: openapi_v3 post /accounting/documents
 ---
 
 **The Documents Data Model** simplifies the handling of document documents across various accounting platforms, providing a standardised approach to accessing and managing document-related information.
+
+To Upload a file using Node JS SDK, you can use the following code:
+
+```typescript
+import { RootFiClient } from "rootfi-api";
+
+const rootfi = new RootFiClient({ apiKey: "*****" });
+await rootfi.accounting.documents.create(fs.createReadStream("./helpers/test_img.png"), {
+  companyId: 12,
+  documentType: "BILLS",
+  documentTypeId: "3770712000000689685",
+});
+```

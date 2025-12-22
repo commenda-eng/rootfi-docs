@@ -34,4 +34,12 @@ That's it! You will be presented with a unique URL that you can send to your cus
 
 #### Via API
 
-Refer to our [Invite Link API](/api-reference/invite-links/create-invite-link) for more details on how to generate Invite Links programmatically. Using the API, you can customize the behavior of the link, such as only displaying platforms that are relevant to your customer and prefilling the customer’s company name.
+Refer to our [Invite Link API](/api-reference/v3/core/invite-links/create-invite-link) for more details on how to generate Invite Links programmatically. Using the API, you can customize the behavior of the link, such as only displaying platforms that are relevant to your customer, prefilling the customer’s company name, setting up a custom sync configuration for this connection.
+
+After generating an Invite Link, you can send your customer an invite URL:
+
+Default: https://app.rootfi.dev/onboarding?invite_link_id=INVITE_LINK_ID.
+
+KSA Region: https://app.sa.rootfi.dev/onboarding?invite_link_id=INVITE_LINK_ID.
+
+Alternatively you can use the [Connect SDK](/documentation/concepts/rootfi-connect/embedded-sdk) to embed the onboarding experience in your application.

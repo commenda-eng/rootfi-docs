@@ -1,4 +1,5 @@
 ---
+version: "v2"
 title: "Overview"
 description: "A record of goods or services purchased from a vendor"
 icon: "hand-wave"
@@ -16,27 +17,27 @@ icon: "hand-wave"
 
 ## Properties Supported
 
-| Property        | Type                          | Description                                                                                                  |
-| --------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| platform_id     | string                        | Accounting platform's ID for the purchase order                                                              |
-| contact_id      | string                        | The accounting platform's unique ID of the contact associated with this purchase order                       |
-| document_number | string                        | Reference number for the purchase order                                                                      |
-| posted_date     | string                        | Date of creation of the purchase order                                                                       |
-| delivery_date   | string                        | The delivery date for the purchase order                                                                     |
-| description     | string                        | Description of the purchase order                                                                            |
-| payment_mode    | string                        | The payment mode from which the payment was made                                                             |
-| currency        | string                        | The ISO-4217 currency code                                                                                   |
-| currency_rate   | float                         | Rate between the currency of the payment and the base currency                                               |
-| status          | enum                          | The status of the purchase order. Values are: DRAFT, SUBMITTED, PARTIALLY_PAID, PAID, OVERDUE, VOID, UNKNOWN |
-| total_discount  | float                         | Total value of discounts applied to the purchase order                                                       |
-| tax_amount      | float                         | Total tax amount levied on the purchase order                                                                |
-| sub_total       | float                         | Total pre tax value of the purchase order                                                                    |
-| total_amount    | float                         | Total value of the purchase order                                                                            |
-| line_items      | [Line Item](/docs/line-items) | Array of Purchase Order Line items associated with the purchase order                                        |
-| bills           | [Bill](/docs/bills)           | Array of Bills associated with the purchase order                                                            |
-| addresses       | [Address](/docs/address)      | Array of addresses associated with this purchase order                                                       |
-| contact         | [Contact](/docs/contacts)     | The contact associated with this purchase order                                                              |
-| updated_at      | string                        | The date at which the information was updated on the accounting platform                                     |
+| Property        | Type                          | Description                                                                                                                |
+| --------------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| platform_id     | string                        | Platform's ID for the purchase order                                                                                       |
+| contact_id      | string                        | The accounting platform's unique ID of the contact associated with this purchase order                                     |
+| document_number | string                        | Reference number for the purchase order                                                                                    |
+| posted_date     | string                        | Date of creation of the purchase order                                                                                     |
+| delivery_date   | string                        | The delivery date for the purchase order                                                                                   |
+| description     | string                        | Description of the purchase order                                                                                          |
+| payment_mode    | string                        | The payment mode from which the payment was made                                                                           |
+| currency        | string                        | The ISO-4217 currency code                                                                                                 |
+| currency_rate   | float                         | Rate between the currency of the payment and the base currency                                                             |
+| status          | enum                          | The status of the purchase order. Values are: `DRAFT`, `SUBMITTED`, `PARTIALLY_PAID`, `PAID`, `OVERDUE`, `VOID`, `UNKNOWN` |
+| total_discount  | float                         | Total value of discounts applied to the purchase order                                                                     |
+| tax_amount      | float                         | Total tax amount levied on the purchase order                                                                              |
+| sub_total       | float                         | Total pre tax value of the purchase order                                                                                  |
+| total_amount    | float                         | Total value of the purchase order                                                                                          |
+| line_items      | [Line Item](/docs/line-items) | Array of Purchase Order Line items associated with the purchase order                                                      |
+| bills           | [Bill](/docs/bills)           | Array of Bills associated with the purchase order                                                                          |
+| addresses       | [Address](/docs/address)      | Array of addresses associated with this purchase order                                                                     |
+| contact         | [Contact](/docs/contacts)     | The contact associated with this purchase order                                                                            |
+| updated_at      | string                        | The date at which the information was updated on the accounting platform                                                   |
 
 <ResponseExample name="The Bank Transaction Object" >
 
