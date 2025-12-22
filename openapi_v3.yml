@@ -11796,6 +11796,7 @@ paths:
                         rootfi_company_id: 1089
                         platform_id: '123456'
                         created_at: '2024-01-22T05:07:31.465Z'
+                        updated_at: '2024-01-22T05:07:31.465Z'
                         name: John Doe
                         tax_number: '1234567890'
                         currency_id: '1234567890'
@@ -11815,6 +11816,8 @@ paths:
                           - rootfi_id: 278264
                             platform_id: '123456_1'
                             platform_unique_id: '123456'
+                            type: BILLING
+                            data_model_id: '123456'
                             street: 123 Main Street
                             locality: Main Street
                             city: New York
@@ -13579,6 +13582,319 @@ paths:
               schema:
                 $ref: '#/components/schemas/RootFiAPIResponseType'
       summary: Get All Transactions
+      security: *ref_0
+  /payments/credit-notes:
+    get:
+      description: Retrieve all credit notes from the database.
+      operationId: payments_credit_notes_list
+      tags:
+        - PaymentsCreditNotes
+      parameters:
+        - name: limit
+          in: query
+          description: The number of credit notes you want to retrieve
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 1
+        - name: next
+          in: query
+          description: The next page of objects to retrieve
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: nhgdfghjgyffcvjhgc==
+        - name: prev
+          in: query
+          description: The previous page of objects to retrieve
+          required: false
+          schema:
+            type: string
+            nullable: true
+        - name: select
+          in: query
+          description: >-
+            Comma separated fields to select. Supported values are raw_data,
+            data_hash
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
+        - name: rootfi_company_id[eq]
+          in: query
+          description: >-
+            Filter by rootfi_company_id. You can filter by any field using this
+            syntax field_name[operator]
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 1
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included. Supported values are true and false
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: 'false'
+        - name: return_count
+          in: query
+          description: Return the count of the objects. Supported values are true and false
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: 'false'
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: '#/components/schemas/SortOrder'
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: '#/components/schemas/SortOrder'
+            nullable: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/paymentsGetCreditNotesResponse'
+              examples:
+                Example1:
+                  value:
+                    data:
+                      - rootfi_id: 157
+                        rootfi_deleted_at: null
+                        rootfi_created_at: '2024-01-22T05:07:31.465Z'
+                        rootfi_updated_at: '2024-01-22T05:07:31.000Z'
+                        rootfi_company_id: 1089
+                        platform_id: 'cn_123456'
+                        contact_id: 'cus_123456'
+                        document_number: 'CN-001'
+                        total_amount: 110.00
+                        total_discount: 10.00
+                        remaining_credit: 110.00
+                        tax_amount: 10.00
+                        shipping_amount: 5.00
+                        posted_date: '2024-01-22T05:07:31.000Z'
+                        currency_id: 'USD'
+                        memo: 'Credit note for returned items'
+                        status: 'SUBMITTED'
+                        invoice_ids: ['inv_123456']
+                        created_at: '2024-01-22T05:07:31.000Z'
+                        updated_at: '2024-01-22T05:07:31.000Z'
+                    prev: eyJyb290ZmlfaWQiOjQ0MDA2MX0=
+                    next: eyJyb291ZmlfaWQiOjQ0MDA2MX0=
+                    total_count: 123
+        '401':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '403':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '404':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '500':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+      summary: Get All Credit Notes
+      security: *ref_0
+  /payments/products:
+    get:
+      description: Retrieve all products from the database.
+      operationId: payments_products_list
+      tags:
+        - PaymentsProducts
+      parameters:
+        - name: limit
+          in: query
+          description: The number of products you want to retrieve
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 1
+        - name: next
+          in: query
+          description: The next page of objects to retrieve
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: nhgdfghjgyffcvjhgc==
+        - name: prev
+          in: query
+          description: The previous page of objects to retrieve
+          required: false
+          schema:
+            type: string
+            nullable: true
+        - name: select
+          in: query
+          description: >-
+            Comma separated fields to select. Supported values are raw_data,
+            data_hash
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
+        - name: rootfi_company_id[eq]
+          in: query
+          description: >-
+            Filter by rootfi_company_id. You can filter by any field using this
+            syntax field_name[operator]
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 1
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included. Supported values are true and false
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: 'false'
+        - name: return_count
+          in: query
+          description: Return the count of the objects. Supported values are true and false
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: 'false'
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: '#/components/schemas/SortOrder'
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: '#/components/schemas/SortOrder'
+            nullable: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/paymentsGetProductsResponse'
+              examples:
+                Example1:
+                  value:
+                    data:
+                      - rootfi_id: 157
+                        rootfi_deleted_at: null
+                        rootfi_created_at: '2024-01-22T05:07:31.465Z'
+                        rootfi_updated_at: '2024-01-22T05:07:31.000Z'
+                        rootfi_company_id: 1089
+                        platform_id: 'prod_123456'
+                        name: 'Premium Widget'
+                        description: 'High-quality widget designed for enterprise use'
+                        status: 'ACTIVE'
+                        created_at: '2024-01-22T05:07:31.000Z'
+                        updated_at: '2024-01-22T05:07:31.000Z'
+                    prev: eyJyb290ZmlfaWQiOjQ0MDA2MX0=
+                    next: eyJyb291ZmlfaWQiOjQ0MDA2MX0=
+                    total_count: 123
+        '401':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '403':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '404':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '500':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+      summary: Get All Products
       security: *ref_0
 components:
   schemas:
@@ -18720,8 +19036,9 @@ components:
       title: AddressType
       type: string
       enum:
-        - BILLING
         - SHIPPING
+        - BILLING
+        - COMPANY
     DocumentType:
       title: DocumentType
       type: string
@@ -18851,21 +19168,24 @@ components:
       type: object
       properties:
         total_balance:
-          type: string
+          type: number
+          format: double
           nullable: true
-          description: The total balance of the account.
+          description: The complete balance of the account, representing the sum of all funds including both available and pending amounts, expressed in the currency specified by currency_id.
         available_balance:
-          type: string
+          type: number
+          format: double
           nullable: true
-          description: The available balance of the account.
+          description: The amount of funds that are immediately available for use, withdrawal, or transfer. This excludes any pending transactions that have not yet cleared.
         pending_balance:
-          type: string
+          type: number
+          format: double
           nullable: true
-          description: The pending balance of the account.
+          description: The amount of funds that are currently in a pending state, awaiting processing or clearance before they become available for use.
         currency_id:
           type: string
           nullable: true
-          description: The ID of the currency.
+          description: The currency code (e.g., USD, EUR, GBP) in which all balance amounts are denominated.
     paymentsBalancesObject:
       title: paymentsBalancesObject
       type: object
@@ -18893,37 +19213,41 @@ components:
         created_at:
           type: string
           nullable: true
-          description: The date and time the customer was created.
+          description: The ISO 8601 timestamp indicating when this customer record was created on the payment platform.
         name:
           type: string
           nullable: true
-          description: The name of the customer.
+          description: The full name or business name of the customer as it appears on the payment platform.
         tax_number:
           type: string
           nullable: true
-          description: The tax number of the customer.
+          description: The tax identification number for the customer (e.g., GST, EIN, VAT number). This is used for tax reporting and compliance purposes.
         currency_id:
           type: string
           nullable: true
-          description: The ID of the customer.
+          description: The currency code (e.g., USD, EUR, GBP) that is the default currency for this customer's transactions.
+        updated_at:
+          type: string
+          nullable: true
+          description: The ISO 8601 timestamp indicating when this customer record was last modified on the payment platform.
         external_links:
           type: array
           items:
             $ref: '#/components/schemas/paymentsExternalLinks'
           nullable: true
-          description: External links for the customer
+          description: An array of external links associated with this customer, such as website URLs or email addresses.
         phone_numbers:
           type: array
           items:
             $ref: '#/components/schemas/paymentsPhoneNumbers'
           nullable: true
-          description: Phone numbers for the customer
+          description: An array of phone numbers associated with this customer, including mobile, telephone, and fax numbers.
         addresses:
           type: array
           items:
             $ref: '#/components/schemas/paymentsAddresses'
           nullable: true
-          description: Addresses for the customer
+          description: An array of physical addresses associated with this customer, such as billing, shipping, or company addresses.
     paymentsCustomerObject:
       title: paymentsCustomerObject
       type: object
@@ -18951,19 +19275,19 @@ components:
         rootfi_id:
           type: integer
           nullable: true
-          description: The RootFi ID of the customer
+          description: The unique RootFi identifier assigned to this external link record.
         platform_id:
           type: string
           nullable: true
-          description: The platform ID of the customer
+          description: The unique identifier for this external link on the payment platform.
         link:
           type: string
           nullable: true
-          description: The link to the customer
+          description: The URL or email address associated with this external link (e.g., website URL or email address).
         type:
           $ref: '#/components/schemas/ExternalLinkType'
           nullable: true
-          description: The type of the link.
+          description: The category of external link, indicating whether it is a website URL or an email address.
     paymentsPhoneNumbers:
       title: paymentsPhoneNumbers
       type: object
@@ -18971,19 +19295,19 @@ components:
         rootfi_id:
           type: integer
           nullable: true
-          description: The RootFi ID of the customer
+          description: The unique RootFi identifier assigned to this phone number record.
         platform_id:
           type: string
           nullable: true
-          description: The platform ID of the customer
+          description: The unique identifier for this phone number on the payment platform.
         number:
           type: string
           nullable: true
-          description: The number to the customer
+          description: The complete phone number in international format, including country code and area code.
         type:
           $ref: '#/components/schemas/ContactNumberType'
           nullable: true
-          description: The type of the link.
+          description: The category of phone number, indicating whether it is a mobile, telephone, or fax number.
     paymentsAddresses:
       title: paymentsAddresses
       type: object
@@ -18991,39 +19315,47 @@ components:
         rootfi_id:
           type: integer
           nullable: true
-          description: The RootFi ID of the customer
+          description: The unique RootFi identifier assigned to this address record.
         platform_id:
           type: string
           nullable: true
-          description: An unique custom RootFi ID made from platform's unique_id.
+          description: The unique identifier for this address on the payment platform, typically generated from the platform's unique identifier.
         platform_unique_id:
           type: string
           nullable: true
-          description: The platform unique ID of the customer
+          description: An additional unique identifier provided by the payment platform for this address.
+        type:
+          $ref: '#/components/schemas/AddressType'
+          nullable: true
+          description: The category of address, indicating its purpose (e.g., SHIPPING for delivery addresses, BILLING for payment addresses, COMPANY for business addresses).
+        data_model_id:
+          type: string
+          nullable: true
+          description: The identifier of the parent data model (e.g., customer, invoice) that this address is associated with.
         street:
           type: string
           nullable: true
-          description: The street of the address
+          description: The street address line, including building number and street name.
         locality:
           type: string
           nullable: true
-          description: The locality of the address
+          description: The neighborhood, district, or locality within the city or town.
         city:
           type: string
           nullable: true
-          description: The city of the address
+          description: The city or town name where this address is located.
         state:
           type: string
           nullable: true
-          description: The state of the address
+          description: The state, province, or region where this address is located.
         pincode:
           type: string
           nullable: true
-          description: The pincode of the address
+          description: The postal code or ZIP code for this address, used for mail delivery and location identification.
         country:
           type: string
           nullable: true
-          description: The country of the address
+          description: The country name or country code (ISO 3166-1 alpha-2) where this address is located.
     paymentsDisputeFields:
       title: paymentsDisputeFields
       type: object
@@ -19031,31 +19363,32 @@ components:
         created_at:
           type: string
           nullable: true
-          description: The date and time the dispute was created.
+          description: The ISO 8601 timestamp indicating when this dispute was first created on the payment platform.
         amount:
-          type: string
+          type: number
+          format: double
           nullable: true
-          description: The amount of the dispute.
+          description: The monetary amount that is being disputed, expressed in the currency specified by currency_id.
         currency_id:
           type: string
           nullable: true
-          description: The currency id of the dispute.
+          description: The currency code (e.g., USD, EUR, GBP) in which the dispute amount is denominated.
         status:
           $ref: '#/components/schemas/PaymentDisputeStatusType'
           nullable: true
-          description: The status of the dispute.
+          description: The current status of the dispute, indicating whether it is WON, LOST, PENDING, OPEN, or CLOSED.
         reason_code:
           type: string
           nullable: true
-          description: The reason code of the dispute.
+          description: A standardized code that categorizes the reason for the dispute (e.g., 'fraudulent', 'product_not_received', 'duplicate').
         reason_description:
           type: string
           nullable: true
-          description: The reason description of the dispute.
+          description: A detailed, human-readable explanation of why the dispute was raised, providing context beyond the reason code.
         payment_id:
           type: string
           nullable: true
-          description: The payment id of the dispute.
+          description: The unique identifier of the payment transaction that is being disputed.
     paymentsDisputesObject:
       title: paymentsDisputesObject
       type: object
@@ -19083,58 +19416,81 @@ components:
         contact_id:
           type: string
           nullable: true
-          description: The contact id of the invoice.
+          description: The unique identifier of the customer or contact to whom this invoice is issued.
         currency_id:
           type: string
           nullable: true
-          description: The currency id of the invoice.
+          description: The currency code (e.g., USD, EUR, GBP) used for all monetary amounts in this invoice.
         document_number:
           type: string
           nullable: true
-          description: The document number of the invoice.
+          description: The unique reference number or invoice number assigned to this invoice for tracking and record-keeping purposes.
         posted_date:
           type: string
           nullable: true
-          description: The posted date of the invoice.
+          description: The ISO 8601 date when this invoice was posted or finalized, marking it as an official accounting record.
         due_date:
           type: string
           nullable: true
-          description: The due date of the invoice.
+          description: The ISO 8601 date by which payment for this invoice is expected to be received.
         status:
           type: string
           nullable: true
-          description: The status of the invoice.
+          description: The current status of the invoice, indicating its state in the payment lifecycle (e.g., DRAFT, SUBMITTED, PAID, OVERDUE, VOID).
         total_discount:
           type: number
           format: double
           nullable: true
-          description: The total discount of the invoice.
+          description: The total amount of all discounts applied to this invoice, reducing the final amount owed.
         sub_total:
           type: number
           format: double
           nullable: true
-          description: The sub total of the invoice.
+          description: The sum of all line item amounts before applying taxes, discounts, and shipping charges.
         tax_amount:
           type: number
           format: double
           nullable: true
-          description: The tax amount of the invoice.
+          description: The total amount of taxes (e.g., VAT, sales tax) applied to this invoice.
         total_amount:
           type: number
           format: double
           nullable: true
-          description: The total amount of the invoice.
+          description: The final total amount of the invoice, including all line items, taxes, shipping, and discounts.
         amount_due:
           type: number
           format: double
           nullable: true
-          description: The amount due of the invoice.
+          description: The remaining balance that is still owed on this invoice after accounting for any payments made.
+        shipping_amount:
+          type: number
+          format: double
+          nullable: true
+          description: The cost of shipping or delivery charges included in this invoice, if applicable.
+        memo:
+          type: string
+          nullable: true
+          description: Additional notes, comments, or instructions associated with this invoice, visible to both the issuer and customer.
+        created_at:
+          type: string
+          nullable: true
+          description: The ISO 8601 timestamp indicating when this invoice was first created on the payment platform.
+        updated_at:
+          type: string
+          nullable: true
+          description: The ISO 8601 timestamp indicating when this invoice was last modified on the payment platform.
         line_items:
           type: array
           items:
             $ref: '#/components/schemas/PaymentLineItemsFields'
           nullable: true
-          description: The line items of the invoice.
+          description: An array of line items that detail the individual products, services, or charges included in this invoice.
+        addresses:
+          type: array
+          items:
+            $ref: '#/components/schemas/paymentsAddresses'
+          nullable: true
+          description: An array of addresses associated with this invoice, such as billing or shipping addresses.
     paymentsInvoicesObject:
       title: paymentsInvoicesObject
       type: object
@@ -19162,35 +19518,36 @@ components:
         created_at:
           type: string
           nullable: true
-          description: The date and time the payment was created.
+          description: The ISO 8601 timestamp indicating when this item was first created on the payment platform.
         updated_at:
           type: string
           nullable: true
-          description: The date and time the payment was updated.
+          description: The ISO 8601 timestamp indicating when this item was last modified on the payment platform.
         name:
           type: string
           nullable: true
-          description: The name of the payment.
+          description: The display name or title of the product or service item as it appears in catalogs and invoices.
         description:
           type: string
           nullable: true
-          description: The description of the payment.
+          description: A detailed description of the item, including features, specifications, or other relevant information.
         code:
           type: string
           nullable: true
-          description: The code of the payment.
+          description: A unique product code, SKU (Stock Keeping Unit), or identifier used for inventory management and tracking.
         unit_price:
-          type: string
+          type: number
+          format: double
           nullable: true
-          description: The unit price of the payment.
+          description: The price per unit for this item, expressed in the currency specified by currency_id.
         currency_id:
           type: string
           nullable: true
-          description: The currency id of the payment.
+          description: The currency code (e.g., USD, EUR, GBP) in which the unit_price is denominated.
         status:
           $ref: '#/components/schemas/BaseStatus'
           nullable: true
-          description: The status of the payment.
+          description: The current status of the item, indicating whether it is ACTIVE (available for use), ARCHIVED (no longer active), or UNKNOWN.
     paymentsItemsObject:
       title: paymentsItemsObject
       type: object
@@ -19218,27 +19575,33 @@ components:
         created_at:
           type: string
           nullable: true
-          description: The date and time the Order was created.
+          description: The ISO 8601 timestamp indicating when this order was first created on the payment platform.
+        updated_at:
+          type: string
+          nullable: true
+          description: The ISO 8601 timestamp indicating when this order was last modified on the payment platform.
         reference:
           type: string
           nullable: true
-          description: The reference of the order.
+          description: A unique reference number or order identifier assigned to this order for tracking and customer communication purposes.
         amount:
-          type: integer
+          type: number
+          format: double
           nullable: true
-          description: The amount of the order.
+          description: The total monetary value of the order, including all items, taxes, and fees, expressed in the currency specified by currency_id.
         amount_due:
-          type: integer
+          type: number
+          format: double
           nullable: true
-          description: The amount due of the order.
+          description: The remaining balance that is still owed on this order after accounting for any payments or partial payments made.
         status:
           $ref: '#/components/schemas/PaymentOrderStatusType'
           nullable: true
-          description: The status of the order.
+          description: The current status of the order, indicating its state in the payment lifecycle (e.g., CREATED, ATTEMPTED, PAID, CANCELLED).
         currency_id:
           type: string
           nullable: true
-          description: The currency of the order.
+          description: The currency code (e.g., USD, EUR, GBP) in which all monetary amounts for this order are denominated.
     paymentsOrderObject:
       title: paymentsOrderObject
       type: object
@@ -19266,37 +19629,38 @@ components:
         description:
           type: string
           nullable: true
-          description: The description of the payment link
+          description: A human-readable description of what the payment link is for, typically displayed to customers when they access the link.
         created_at:
           type: string
           nullable: true
-          description: The date the payment link was created
+          description: The ISO 8601 timestamp indicating when this payment link was first created on the payment platform.
         updated_at:
           type: string
           nullable: true
-          description: The date the payment link was updated
+          description: The ISO 8601 timestamp indicating when this payment link was last modified on the payment platform.
         amount:
-          type: string
+          type: number
+          format: double
           nullable: true
-          description: The amount of the payment link
+          description: The total amount that customers will be charged when they complete payment through this link, expressed in the currency specified by currency_id.
         currency_id:
           type: string
           nullable: true
-          description: The currency of the payment link
+          description: The currency code (e.g., USD, EUR, GBP) in which the payment amount is denominated.
         link:
           type: string
           nullable: true
-          description: The link of the payment link
+          description: The unique URL that customers can use to access the payment page and complete their payment.
         status:
           $ref: '#/components/schemas/PaymentPaymentLinkStatusTypes'
           nullable: true
-          description: The status of the payment link
+          description: The current status of the payment link, indicating whether it is CREATED, PARTIALLY_PAID, PAID, CANCELLED, or EXPIRED.
         line_items:
           type: array
           items:
             $ref: '#/components/schemas/PaymentLineItemsFields'
           nullable: true
-          description: The line items of the payment link
+          description: An array of line items that detail the individual products, services, or charges included in this payment link.
     paymentsPaymentLinksObject:
       title: paymentsPaymentLinksObject
       type: object
@@ -19324,39 +19688,40 @@ components:
         created_at:
           type: string
           nullable: true
-          description: The date and time the dispute was created.
+          description: The ISO 8601 timestamp indicating when this payment transaction was first created on the payment platform.
         description:
           type: string
           nullable: true
-          description: The description of the dispute.
+          description: A human-readable description or memo associated with this payment, providing context about what the payment is for.
         amount:
-          type: string
+          type: number
+          format: double
           nullable: true
-          description: The amount of the dispute.
+          description: The monetary amount of this payment transaction, expressed in the currency specified by currency_id.
         currency_id:
           type: string
           nullable: true
-          description: The currency of the dispute.
+          description: The currency code (e.g., USD, EUR, GBP) in which the payment amount is denominated.
         status:
           $ref: '#/components/schemas/PaymentPaymentStatusType'
           nullable: true
-          description: The status of the dispute.
+          description: The current status of the payment, indicating whether it is ACTIVE (successful and processed) or INACTIVE (failed, cancelled, or voided).
         customer_id:
           type: string
           nullable: true
-          description: The customer id of the dispute.
+          description: The unique identifier of the customer who made this payment.
         invoice_id:
           type: string
           nullable: true
-          description: The invoice id of the dispute.
+          description: The unique identifier of the invoice that this payment is associated with or applied to.
         order_id:
           type: string
           nullable: true
-          description: The order id of the dispute.
+          description: The unique identifier of the order that this payment is associated with or applied to.
         payment_method:
           $ref: '#/components/schemas/PaymentPaymentMethodType'
           nullable: true
-          description: The payment method of the dispute.
+          description: The method used to process this payment, such as UPI, EMI, NET_BANKING, WALLET, or CARD.
     paymentsPaymentsObject:
       title: paymentsPaymentsObject
       type: object
@@ -19382,25 +19747,26 @@ components:
       type: object
       properties:
         amount:
-          type: string
+          type: number
+          format: double
           nullable: true
-          description: The amount of the payment
+          description: The monetary amount being transferred in this payout, expressed in the currency specified by currency_id.
         created_at:
           type: string
           nullable: true
-          description: The date the payment was created
+          description: The ISO 8601 timestamp indicating when this payout was first created on the payment platform.
         description:
           type: string
           nullable: true
-          description: The description of the payment
+          description: A human-readable description or memo associated with this payout, providing context about the purpose of the transfer.
         currency_id:
           type: string
           nullable: true
-          description: The currency of the payment
+          description: The currency code (e.g., USD, EUR, GBP) in which the payout amount is denominated.
         status:
           $ref: '#/components/schemas/PaymentPayoutStatusType'
           nullable: true
-          description: The status of the payment
+          description: The current status of the payout, indicating whether it is CREATED (initiated), SUCCESS (completed), or FAILED (unsuccessful).
     paymentsPayoutsObject:
       title: paymentsPayoutsObject
       type: object
@@ -19428,28 +19794,28 @@ components:
         created_at:
           type: string
           nullable: true
-          description: The date and time the payment was created.
+          description: The ISO 8601 timestamp indicating when this refund was first created on the payment platform.
         amount:
           type: number
           format: double
           nullable: true
-          description: The amount of the payment.
+          description: The monetary amount being refunded to the customer, expressed in the currency specified by currency_id.
         currency_id:
           type: string
           nullable: true
-          description: The currency of the payment.
+          description: The currency code (e.g., USD, EUR, GBP) in which the refund amount is denominated.
         payment_id:
           type: string
           nullable: true
-          description: The payment id of the payment.
+          description: The unique identifier of the original payment transaction that this refund is associated with.
         description:
           type: string
           nullable: true
-          description: The description of the payment.
+          description: A human-readable description or reason for the refund, providing context about why the refund was issued.
         status:
           $ref: '#/components/schemas/PaymentRefundStatusType'
           nullable: true
-          description: The status of the payment.
+          description: The current status of the refund, indicating whether it is PENDING (processing), SUCCESS (completed), or FAILED (unsuccessful).
     paymentsRefundsObject:
       title: paymentsRefundsObject
       type: object
@@ -19477,39 +19843,39 @@ components:
         created_at:
           type: string
           nullable: true
-          description: The date and time the subscription was created.
+          description: The ISO 8601 timestamp indicating when this subscription was first created on the payment platform.
         currency_id:
           type: string
           nullable: true
-          description: The ID of the subscription.
+          description: The currency code (e.g., USD, EUR, GBP) used for all recurring payments associated with this subscription.
         description:
           type: string
           nullable: true
-          description: The description of the subscription.
+          description: A human-readable description of the subscription, explaining what service or product the customer is subscribed to.
         status:
           type: string
           nullable: true
-          description: The status of the subscription.
+          description: The current status of the subscription, indicating whether it is active, cancelled, expired, or in another state.
         contact_id:
           type: string
           nullable: true
-          description: The ID of the contact.
+          description: The unique identifier of the customer or contact who owns this subscription.
         expire_by:
           type: string
           nullable: true
-          description: The date and time the subscription will expire.
+          description: The ISO 8601 timestamp indicating the expiration date when this subscription will automatically end, if applicable.
         current_start:
           type: string
           nullable: true
-          description: The date and time the subscription started.
+          description: The ISO 8601 timestamp indicating the start date of the current billing period for this subscription.
         current_end:
           type: string
           nullable: true
-          description: The date and time the subscription will end.
+          description: The ISO 8601 timestamp indicating the end date of the current billing period for this subscription.
         payment_method:
           type: string
           nullable: true
-          description: The payment method of the subscription.
+          description: The payment method (e.g., CARD, BANK_ACCOUNT) that is used to process recurring payments for this subscription.
     paymentsSubscriptionObject:
       title: paymentsSubscriptionObject
       type: object
@@ -19537,24 +19903,24 @@ components:
         updated_at:
           type: string
           nullable: true
-          description: The date and time the tax rate was last updated
+          description: The ISO 8601 timestamp indicating when this tax rate was last modified on the payment platform.
         created_at:
           type: string
           nullable: true
-          description: The date and time the tax rate was created
+          description: The ISO 8601 timestamp indicating when this tax rate was first created on the payment platform.
         name:
           type: string
           nullable: true
-          description: The name of the tax rate
+          description: The display name of the tax rate (e.g., 'Standard VAT', 'Sales Tax', 'GST'), used for identification and reporting purposes.
         description:
           type: string
           nullable: true
-          description: The description of the tax rate
+          description: A detailed description of the tax rate, including information about when and where it applies, and any relevant regulations.
         rate:
           type: number
           format: double
           nullable: true
-          description: The rate of the tax rate
+          description: The tax rate expressed as a decimal (e.g., 0.20 for 20%, 0.05 for 5%). This rate is used to calculate tax amounts on invoices and transactions.
     paymentsTaxRateObject:
       title: paymentsTaxRateObject
       type: object
@@ -19580,33 +19946,34 @@ components:
       type: object
       properties:
         amount:
-          type: string
+          type: number
+          format: double
           nullable: true
-          description: The amount of the transaction.
+          description: The monetary amount of this transaction, expressed in the currency specified by currency_id. Positive values typically represent credits, while negative values represent debits.
         type:
           type: string
           nullable: true
-          description: The type of the transaction.
+          description: The category or classification of the transaction (e.g., 'credit', 'debit', 'refund', 'chargeback'), indicating the nature of the financial movement.
         created_at:
           type: string
           nullable: true
-          description: The date and time the transaction was created.
+          description: The ISO 8601 timestamp indicating when this transaction was first recorded on the payment platform.
         description:
           type: string
           nullable: true
-          description: The description of the transaction.
+          description: A human-readable description of the transaction, providing context about what the transaction represents or what it is for.
         currency_id:
           type: string
           nullable: true
-          description: The ID of the currency.
+          description: The currency code (e.g., USD, EUR, GBP) in which the transaction amount is denominated.
         status:
           type: string
           nullable: true
-          description: The status of the transaction.
+          description: The current status of the transaction, indicating whether it is completed, pending, failed, or in another state.
         source:
           type: string
           nullable: true
-          description: The source of the transaction.
+          description: The origin or source system that generated this transaction (e.g., 'payment', 'refund', 'adjustment', 'fee').
     paymentsTransactionsObject:
       title: paymentsTransactionsObject
       type: object
@@ -19623,6 +19990,143 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/paymentsTransactionsObject'
+      required:
+        - data
+      allOf:
+        - $ref: '#/components/schemas/CommonReadResponse'
+    paymentsProductsFields:
+      title: paymentsProductsFields
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+          description: The display name or title of the product as it appears in catalogs, invoices, and customer-facing materials.
+        description:
+          type: string
+          nullable: true
+          description: A detailed description of the product, including features, specifications, use cases, or other relevant information that helps customers understand what they are purchasing.
+        status:
+          $ref: '#/components/schemas/BaseStatus'
+          nullable: true
+          description: The current status of the product, indicating whether it is ACTIVE (available for sale), ARCHIVED (no longer active but retained for historical records), or UNKNOWN (status not determined).
+        created_at:
+          type: string
+          nullable: true
+          description: The ISO 8601 timestamp indicating when this product was first created on the payment platform.
+        updated_at:
+          type: string
+          nullable: true
+          description: The ISO 8601 timestamp indicating when this product was last modified on the payment platform.
+    paymentsProductsObject:
+      title: paymentsProductsObject
+      type: object
+      properties: {}
+      allOf:
+        - $ref: '#/components/schemas/AccountingRootFiBaseFields'
+        - $ref: '#/components/schemas/paymentsProductsFields'
+    paymentsGetProductsResponse:
+      title: paymentsGetProductsResponse
+      type: object
+      description: The data of the products endpoint.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/paymentsProductsObject'
+      required:
+        - data
+      allOf:
+        - $ref: '#/components/schemas/CommonReadResponse'
+    paymentsCreditNotesFields:
+      title: paymentsCreditNotesFields
+      type: object
+      properties:
+        contact_id:
+          type: string
+          nullable: true
+          description: The unique identifier of the customer or contact to whom this credit note is issued.
+        document_number:
+          type: string
+          nullable: true
+          description: The unique reference number or credit note identifier assigned to this document for tracking and record-keeping purposes.
+        total_amount:
+          type: number
+          format: double
+          nullable: true
+          description: The total monetary value of the credit note, including all line items, taxes, and shipping charges, expressed in the currency specified by currency_id.
+        total_discount:
+          type: number
+          format: double
+          nullable: true
+          description: The total amount of all discounts applied to this credit note, reducing the final credit amount.
+        remaining_credit:
+          type: number
+          format: double
+          nullable: true
+          description: The amount of credit that has not yet been applied to invoices or used. This decreases as the credit is applied to customer accounts.
+        tax_amount:
+          type: number
+          format: double
+          nullable: true
+          description: The total amount of taxes (e.g., VAT, sales tax) included in this credit note.
+        shipping_amount:
+          type: number
+          format: double
+          nullable: true
+          description: The cost of shipping or delivery charges included in this credit note, if applicable.
+        posted_date:
+          type: string
+          nullable: true
+          description: The ISO 8601 date when this credit note was posted or finalized, marking it as an official accounting record.
+        currency_id:
+          type: string
+          nullable: true
+          description: The currency code (e.g., USD, EUR, GBP) used for all monetary amounts in this credit note.
+        memo:
+          type: string
+          nullable: true
+          description: Additional notes, comments, or instructions associated with this credit note, explaining the reason for the credit or providing other relevant information.
+        status:
+          $ref: '#/components/schemas/ArtifactStatus'
+          nullable: true
+          description: The current status of the credit note, indicating its state in the workflow (e.g., DRAFT, SUBMITTED, PAID, VOID, UNKNOWN).
+        invoice_ids:
+          type: array
+          items:
+            type: string
+          nullable: true
+          description: An array of invoice identifiers that this credit note is associated with or can be applied to. This allows credits to be linked to specific invoices.
+        created_at:
+          type: string
+          nullable: true
+          description: The ISO 8601 timestamp indicating when this credit note was first created on the payment platform.
+        updated_at:
+          type: string
+          nullable: true
+          description: The ISO 8601 timestamp indicating when this credit note was last modified on the payment platform.
+        line_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/PaymentLineItemsFields'
+          nullable: true
+          description: An array of line items that detail the individual products, services, or charges included in this credit note.
+    paymentsCreditNotesObject:
+      title: paymentsCreditNotesObject
+      type: object
+      properties: {}
+      allOf:
+        - $ref: '#/components/schemas/AccountingRootFiBaseFields'
+        - $ref: '#/components/schemas/paymentsCreditNotesFields'
+    paymentsGetCreditNotesResponse:
+      title: paymentsGetCreditNotesResponse
+      type: object
+      description: The data of the credit notes endpoint.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/paymentsCreditNotesObject'
       required:
         - data
       allOf:
