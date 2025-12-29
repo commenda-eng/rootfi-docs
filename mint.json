@@ -14,7 +14,7 @@
   "api": {
     "baseUrl": "https://api.rootfi.dev"
   },
-  "apiReference": "./openapi_v3.yml",
+  "openapi": ["openapi_v3.yml"],
   "topbarCtaButton": {
     "name": "Log In",
     "url": "https://app.rootfi.dev/login"
