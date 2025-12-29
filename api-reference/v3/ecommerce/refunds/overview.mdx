@@ -1,0 +1,141 @@
+---
+version: "v3"
+title: "Overview"
+description: "Refunds are the process of returning money to customers for returned or cancelled orders. The Refunds Data Model simplifies the handling and retrieval of refunds-related information across various ecommerce platforms."
+icon: "hand-wave"
+---
+
+**The Refunds Data Model** simplifies the handling and retrieval of refunds-related information across various ecommerce platforms. The model provides a unified representation of refunds data, enabling you to easily access and manage refunds data from different platforms.
+
+- Unified Refunds properties: The model provides a unified representation of refunds properties across different platforms, enabling you to easily access and manage refunds data from different platforms.
+- Comprehensive refunds information: The model provides a comprehensive representation of refunds data, including all the properties and relationships that you can retrieve for a refund.
+
+## Attributes
+
+### Refund Attributes
+
+| Property             | Type    | Description                                                              |
+| -------------------- | ------- | ------------------------------------------------------------------------ |
+| rootfi_id            | integer | The RootFi ID of the refund                                              |
+| rootfi_created_at    | string  | The ISO 8601 timestamp at which the record was created in RootFi         |
+| rootfi_updated_at    | string  | The ISO 8601 timestamp at which the record was last updated in RootFi    |
+| rootfi_company_id    | integer | The RootFi company ID associated with the refund                         |
+| platform_id          | string  | The Platform's ID for the refund                                         |
+| platform_unique_id   | string  | The platform's unique identifier for the refund                          |
+| parent_data_model    | string  | The parent data model type (e.g., ECOMMERCE_ORDERS)                     |
+| parent_data_model_id | string  | The ID of the parent data model in the ecommerce platform                |
+| currency_id          | string  | The currency ID of the refund                                             |
+| created_at           | string  | The date and time the refund was created                                  |
+| updated_at           | string  | The date and time the refund was last updated                             |
+| description          | string  | The description of the refund                                             |
+| sub_total            | number  | The subtotal of items, fees etc.                                         |
+| sub_total_tax_amount | number  | The tax on subtotal of items, fees etc.                                  |
+| shipping_sub_total   | number  | The shipping subtotal                                                     |
+| shipping_tax_amount  | number  | The tax on shipping subtotal                                              |
+| total_amount         | number  | The total amount including everything like shipping, taxes etc.           |
+| line_items           | Line Item[] | The line items of the refund                                        |
+| shipping_line_items  | Shipping Line Item[] | The shipping line items of the refund                         |
+
+### Line Item Attributes
+
+| Property          | Type   | Description                                                              |
+| ----------------- | ------ | ------------------------------------------------------------------------ |
+| platform_id       | string | The Platform's ID for the line item                                      |
+| item_id           | string | The ID of the item in the ecommerce platform                             |
+| tax_id            | string | The ID of the tax in the ecommerce platform                              |
+| line_item_type_id | string | The ID of the line item type in the ecommerce platform                   |
+| line_item_type    | enum   | The line item type (e.g., ECOMMERCE_ORDERS, ECOMMERCE_REFUNDS)           |
+| description       | string | The description of the line item                                         |
+| unit_amount       | number | The unit amount of the line item                                         |
+| quantity          | number | The quantity of the line item                                            |
+| total_discount    | number | The total discount of the line item                                      |
+| tax_amount        | number | The tax amount of the line item                                          |
+| sub_total         | number | The subtotal of the line item                                            |
+| total_amount      | number | The total amount of the line item                                        |
+
+### Shipping Line Item Attributes
+
+| Property             | Type   | Description                                                              |
+| -------------------- | ------ | ------------------------------------------------------------------------ |
+| platform_id          | string | The Platform's ID for the shipping line item                             |
+| parent_data_model    | string | The parent data model type (e.g., ECOMMERCE_ORDERS, ECOMMERCE_REFUNDS)   |
+| parent_data_model_id | string | The ID of the parent data model in the ecommerce platform                 |
+| title                | string | The title of the shipping line item                                      |
+| description          | string | The description of the shipping line item                                |
+| sub_total            | number | The subtotal of the shipping line item                                   |
+| tax_amount           | number | The tax amount on the shipping subtotal                                  |
+| total_amount         | number | The total amount including shipping and taxes                             |
+
+## Properties Supported
+
+| Property             | Type   | Description                                                              |
+| -------------------- | ------ | ------------------------------------------------------------------------ |
+| platform_id          | string | The Platform's ID for the refund                                          |
+| parent_data_model    | string | The parent data model type (e.g., ECOMMERCE_ORDERS)                      |
+| parent_data_model_id | string | The ID of the parent data model in the ecommerce platform                |
+| currency_id          | string | The currency ID of the refund                                             |
+| created_at           | string | The date and time the refund was created                                  |
+| updated_at           | string | The date and time the refund was last updated                             |
+| description          | string | The description of the refund                                             |
+| sub_total            | number | The subtotal of items, fees etc.                                         |
+| sub_total_tax_amount | number | The tax on subtotal of items, fees etc.                                  |
+| shipping_sub_total   | number | The shipping subtotal                                                     |
+| shipping_tax_amount  | number | The tax on shipping subtotal                                              |
+| total_amount         | number | The total amount including everything like shipping, taxes etc.           |
+| line_items           | object[] | The line items of the refund                                        |
+| shipping_line_items  | object[] | The shipping line items of the refund                         |
+
+<ResponseExample name="The Refunds Object" >
+
+```json The Refunds Response Object
+{
+  "rootfi_id": 157,
+  "rootfi_created_at": "2024-01-22T05:07:31.465Z",
+  "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
+  "rootfi_company_id": 1089,
+  "platform_id": "ref_123456",
+  "platform_unique_id": "REF-2024-001",
+  "parent_data_model": "ECOMMERCE_ORDERS",
+  "parent_data_model_id": "ord_123456",
+  "currency_id": "USD",
+  "created_at": "2024-01-22T05:07:31.465Z",
+  "updated_at": "2024-01-22T05:07:31.000Z",
+  "description": "Refund for Order #ORD-2024-001",
+  "sub_total": 89.99,
+  "sub_total_tax_amount": 7.20,
+  "shipping_sub_total": 5.99,
+  "shipping_tax_amount": 0.48,
+  "total_amount": 103.66,
+  "line_items": [
+    {
+      "platform_id": "li_123456",
+      "item_id": "prod_789",
+      "tax_id": "tax_001",
+      "line_item_type_id": "ref_123456",
+      "line_item_type": "ECOMMERCE_REFUNDS",
+      "description": "Wireless Headphones - Black",
+      "unit_amount": 99.99,
+      "quantity": 1,
+      "total_discount": 10.00,
+      "tax_amount": 7.20,
+      "sub_total": 89.99,
+      "total_amount": 97.19
+    }
+  ],
+  "shipping_line_items": [
+    {
+      "platform_id": "sli_123456",
+      "parent_data_model": "ECOMMERCE_REFUNDS",
+      "parent_data_model_id": "ref_123456",
+      "title": "Standard Shipping",
+      "description": "Standard shipping via USPS",
+      "sub_total": 5.99,
+      "tax_amount": 0.48,
+      "total_amount": 6.47
+    }
+  ]
+}
+```
+
+</ResponseExample>
+
