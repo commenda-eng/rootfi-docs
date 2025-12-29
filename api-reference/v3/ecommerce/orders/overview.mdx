@@ -10,63 +10,180 @@ icon: "hand-wave"
 - Unified orders properties: The model provides a unified representation of orders from different ecommerce gateways, enabling you to easily access and manage orders data from different platforms.
 - Comprehensive orders information: The model provides a comprehensive representation of orders.
 
+## Attributes
+
+### Order Attributes
+
+| Property        | Type     | Description                                                              |
+| --------------- | -------- | ------------------------------------------------------------------------ |
+| rootfi_id       | integer  | The RootFi ID of the order                                              |
+| rootfi_created_at | string | The ISO 8601 timestamp at which the record was created in RootFi         |
+| rootfi_updated_at | string | The ISO 8601 timestamp at which the record was last updated in RootFi    |
+| rootfi_company_id | integer | The RootFi company ID associated with the order                        |
+| platform_id    | string   | The Platform's ID for the order                                        |
+| platform_unique_id | string | The platform's unique identifier for the order                         |
+| currency_id    | string   | The currency ID of the order                                            |
+| reference      | string   | The reference of the order                                              |
+| created_at     | string   | The date and time the order was created                                 |
+| updated_at     | string   | The date and time the order was last updated                            |
+| order_name     | string   | The name of the order                                                    |
+| order_number   | string   | The order number                                                         |
+| description    | string   | The description of the order                                             |
+| total_discount | number   | The total discount amount of the order                                  |
+| sub_total      | number   | The subtotal of the order before taxes and shipping                      |
+| tax_amount     | number   | The tax amount of the order                                              |
+| total_amount   | number   | The total amount of the order                                            |
+| amount_due     | number   | The amount due for the order                                             |
+| order_status   | string   | The status of the order                                                  |
+| payment_status | string   | The payment status of the order                                         |
+| customer_id    | string   | The customer ID associated with the order                               |
+| shipping_amount | number | The shipping amount for the order                                       |
+| line_items     | Line Item[] | The line items of the order                                              |
+| addresses      | Address[] | The addresses associated with the order                                 |
+| shipping_line_items | Shipping Line Item[] | The shipping line items of the order                              |
+
+### Line Item Attributes
+
+| Property          | Type   | Description                                                              |
+| ----------------- | ------ | ------------------------------------------------------------------------ |
+| platform_id       | string | The Platform's ID for the line item                                      |
+| item_id           | string | The ID of the item in the ecommerce platform                             |
+| tax_id            | string | The ID of the tax in the ecommerce platform                              |
+| line_item_type_id | string | The ID of the line item type in the ecommerce platform                   |
+| line_item_type    | enum   | The line item type (e.g., ECOMMERCE_ORDERS, ECOMMERCE_REFUNDS)           |
+| description       | string | The description of the line item                                         |
+| unit_amount       | number | The unit amount of the line item                                         |
+| quantity          | number | The quantity of the line item                                            |
+| total_discount    | number | The total discount of the line item                                      |
+| tax_amount        | number | The tax amount of the line item                                          |
+| sub_total         | number | The subtotal of the line item                                            |
+| total_amount      | number | The total amount of the line item                                        |
+
+### Address Attributes
+
+| Property        | Type    | Description                                                              |
+| --------------- | ------- | ------------------------------------------------------------------------ |
+| rootfi_id       | integer | The RootFi ID of the address                                             |
+| platform_id     | string  | The Platform's ID for the address                                        |
+| platform_unique_id | string | The platform's unique identifier for the address                         |
+| type            | string  | The type of the address (e.g., SHIPPING, BILLING)                        |
+| data_model_id   | string  | The ID of the data model this address belongs to                         |
+| street          | string  | The street address                                                       |
+| locality        | string  | The locality of the address                                              |
+| city            | string  | The city of the address                                                  |
+| state           | string  | The state of the address                                                 |
+| country         | string  | The country of the address                                               |
+| pincode         | string  | The postal code of the address                                           |
+| data_model      | string  | The data model type this address belongs to                               |
+| updated_at      | string  | The date and time the address was last updated                           |
+
+### Shipping Line Item Attributes
+
+| Property             | Type   | Description                                                              |
+| -------------------- | ------ | ------------------------------------------------------------------------ |
+| platform_id          | string | The Platform's ID for the shipping line item                             |
+| parent_data_model    | string | The parent data model type (e.g., ECOMMERCE_ORDERS, ECOMMERCE_REFUNDS)   |
+| parent_data_model_id | string | The ID of the parent data model in the ecommerce platform                 |
+| title                | string | The title of the shipping line item                                      |
+| description          | string | The description of the shipping line item                                |
+| sub_total            | number | The subtotal of the shipping line item                                   |
+| tax_amount           | number | The tax amount on the shipping subtotal                                  |
+| total_amount         | number | The total amount including shipping and taxes                             |
+
 ## Properties Supported
 
-| Property       | Type     | Description                        |
-| -------------- | -------- | ---------------------------------- |
-| platform_id    | string   | The Platform's ID for the orders   |
-| currency_id    | string   | The currency ID of the orders      |
-| reference      | string   | The reference of the orders        |
-| created_at     | string   | The created at of the orders       |
-| updated_at     | string   | The updated at of the orders       |
-| order_name     | string   | The order name of the orders       |
-| order_number   | string   | The order number of the orders     |
-| description    | string   | The description of the orders      |
-| total_discount | double   | The total discount of the orders   |
-| sub_total      | double   | The sub total of the orders        |
-| tax_amount     | double   | The tax amount of the orders       |
-| total_amount   | double   | The total amount of the orders     |
-| amount_due     | double   | The amount due of the orders       |
-| order_status   | string   | The order status of the orders     |
-| payment_status | string   | The ecommerce status of the orders |
-| line_items     | object[] | The line items of the orders       |
+| Property        | Type     | Description                                                              |
+| --------------- | -------- | ------------------------------------------------------------------------ |
+| platform_id     | string   | The Platform's ID for the order                                          |
+| currency_id     | string   | The currency ID of the order                                             |
+| reference       | string   | The reference of the order                                               |
+| created_at      | string   | The date and time the order was created                                  |
+| updated_at      | string   | The date and time the order was last updated                             |
+| order_name      | string   | The name of the order                                                    |
+| order_number    | string   | The order number                                                          |
+| description     | string   | The description of the order                                              |
+| total_discount  | number   | The total discount amount of the order                                   |
+| sub_total       | number   | The subtotal of the order before taxes and shipping                       |
+| tax_amount      | number   | The tax amount of the order                                              |
+| total_amount    | number   | The total amount of the order                                            |
+| amount_due      | number   | The amount due for the order                                             |
+| order_status    | string   | The status of the order                                                  |
+| payment_status  | string   | The payment status of the order                                          |
+| customer_id     | string   | The customer ID associated with the order                                |
+| shipping_amount | number  | The shipping amount for the order                                        |
+| line_items      | object[] | The line items of the order                                              |
+| addresses       | object[] | The addresses associated with the order                                  |
+| shipping_line_items | object[] | The shipping line items of the order                               |
 
-<ResponseExample name="The Dispute Object" >
+<ResponseExample name="The Orders Object" >
 
-```json The Dispute Response Object
+```json The Orders Response Object
 {
   "rootfi_id": 157,
   "rootfi_created_at": "2024-01-22T05:07:31.465Z",
   "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
   "rootfi_company_id": 1089,
-  "platform_id": "123456",
-  "currency_id": "1234567890",
-  "reference": "123456",
+  "platform_id": "ord_123456",
+  "platform_unique_id": "ORD-2024-001",
+  "currency_id": "USD",
+  "reference": "REF-2024-001",
   "created_at": "2024-01-22T05:07:31.465Z",
   "updated_at": "2024-01-22T05:07:31.000Z",
-  "order_name": "John Doe",
-  "order_number": "123456",
-  "description": "John Doe",
-  "total_discount": 100,
-  "sub_total": 100,
-  "tax_amount": 100,
-  "total_amount": 100,
-  "amount_due": 100,
-  "order_status": "ACTIVE",
-  "payment_status": "ACTIVE",
+  "order_name": "Order #ORD-2024-001",
+  "order_number": "ORD-2024-001",
+  "description": "Summer Sale Order - Wireless Headphones",
+  "total_discount": 10.00,
+  "sub_total": 89.99,
+  "tax_amount": 7.20,
+  "total_amount": 97.19,
+  "amount_due": 0.00,
+  "order_status": "FULFILLED",
+  "payment_status": "PAID",
+  "customer_id": "cus_123456",
+  "shipping_amount": 5.99,
   "line_items": [
     {
-      "item_id": "123456",
-      "tax_id": "123456",
-      "line_item_type_id": "123456",
+      "platform_id": "li_123456",
+      "item_id": "prod_789",
+      "tax_id": "tax_001",
+      "line_item_type_id": "ord_123456",
       "line_item_type": "ECOMMERCE_ORDERS",
-      "description": "This is a description",
-      "unit_amount": 100,
+      "description": "Wireless Headphones - Black",
+      "unit_amount": 99.99,
       "quantity": 1,
-      "total_discount": 100,
-      "tax_amount": 100,
-      "sub_total": 100,
-      "total_amount": 100
+      "total_discount": 10.00,
+      "tax_amount": 7.20,
+      "sub_total": 89.99,
+      "total_amount": 97.19
+    }
+  ],
+  "addresses": [
+    {
+      "rootfi_id": 278264,
+      "platform_id": "addr_123456",
+      "platform_unique_id": "ADDR-2024-001",
+      "type": "SHIPPING",
+      "data_model_id": "ord_123456",
+      "street": "123 Main Street",
+      "locality": "Downtown",
+      "city": "New York",
+      "state": "NY",
+      "country": "USA",
+      "pincode": "10001",
+      "data_model": "ECOMMERCE_ORDERS",
+      "updated_at": "2024-01-22T05:07:31.000Z"
+    }
+  ],
+  "shipping_line_items": [
+    {
+      "platform_id": "sli_123456",
+      "parent_data_model": "ECOMMERCE_ORDERS",
+      "parent_data_model_id": "ord_123456",
+      "title": "Standard Shipping",
+      "description": "Standard shipping via USPS",
+      "sub_total": 5.99,
+      "tax_amount": 0.48,
+      "total_amount": 6.47
     }
   ]
 }

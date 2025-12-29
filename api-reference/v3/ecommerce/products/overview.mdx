@@ -10,13 +10,33 @@ icon: "hand-wave"
 - Unified Products properties: The model provides a unified representation of products properties across different platforms, enabling you to easily access and manage products data from different platforms.
 - Comprehensive products information: The model provides a comprehensive representation of products data, including all the properties and relationships that you can retrieve for an order.
 
+## Attributes
+
+### Product Attributes
+
+| Property           | Type          | Description                                                              |
+| ------------------ | ------------- | ------------------------------------------------------------------------ |
+| rootfi_id          | integer       | The RootFi ID of the product                                             |
+| rootfi_created_at  | string        | The ISO 8601 timestamp at which the record was created in RootFi         |
+| rootfi_updated_at  | string        | The ISO 8601 timestamp at which the record was last updated in RootFi    |
+| rootfi_company_id  | integer       | The RootFi company ID associated with the product                        |
+| platform_id        | string        | The Platform's ID for the product                                        |
+| platform_unique_id | string        | The platform's unique identifier for the product                         |
+| name               | string        | The name of the product                                                  |
+| description        | string        | The description of the product                                           |
+| sku                | string        | The SKU (Stock Keeping Unit) of the product                              |
+| status             | enum          | The status of the product (ACTIVE, INACTIVE)                             |
+| created_at         | string        | The date the product was created                                         |
+| updated_at         | string        | The date the product was updated                                         |
+
 ## Properties Supported
 
 | Property    | Type             | Description                        |
 | ----------- | ---------------- | ---------------------------------- |
-| platform_id | string           | The Platform's ID for the Products |
+| platform_id | string           | The Platform's ID for the product  |
 | name        | string           | The name of the product            |
 | description | string           | The description of the product     |
+| sku         | string           | The SKU (Stock Keeping Unit) of the product |
 | status      | enums.BaseStatus | The status of the product          |
 | created_at  | string           | The date the product was created   |
 | updated_at  | string           | The date the product was updated   |
@@ -29,9 +49,11 @@ icon: "hand-wave"
   "rootfi_created_at": "2024-01-22T05:07:31.465Z",
   "rootfi_updated_at": "2024-01-22T05:07:31.000Z",
   "rootfi_company_id": 1089,
-  "platform_id": "123456",
-  "name": "John Doe",
-  "description": "John Doe",
+  "platform_id": "prod_789",
+  "platform_unique_id": "WH-2024-BLK",
+  "name": "Wireless Headphones",
+  "description": "Premium wireless headphones with noise cancellation",
+  "sku": "WH-2024-BLK",
   "status": "ACTIVE",
   "created_at": "2024-01-22T05:07:31.465Z",
   "updated_at": "2024-01-22T05:07:31.000Z"

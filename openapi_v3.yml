@@ -10530,25 +10530,24 @@ paths:
                         rootfi_created_at: '2024-01-22T05:07:31.465Z'
                         rootfi_updated_at: '2024-01-22T05:07:31.000Z'
                         rootfi_company_id: 1089
-                        platform_id: '123456_1'
-                        platform_unique_id: '123456'
-                        name: John Doe
-                        email: ''
-                        phone: '1234567890'
-                        currency_id: '1234567890'
+                        platform_id: 'cus_123456'
+                        platform_unique_id: 'CUST-2024-001'
+                        name: 'John Smith'
+                        email: 'john.smith@example.com'
+                        phone: '+1-555-123-4567'
+                        currency_id: 'USD'
                         status: ACTIVE
                         updated_at: '2024-01-22T05:07:31.465Z'
                         created_at: '2024-01-22T05:07:31.465Z'
                         address:
                           rootfi_id: 278264
-                          platform_id: >-
-                            CONTACTS_1af68894-ea9f-ee11-be36-7c1e520f50bc_ADDRESS
-                          street: 123 Main Street
-                          locality: Main Street
-                          city: New York
-                          state: New York
-                          pincode: '123456'
-                          country: USA
+                          platform_id: 'addr_123456'
+                          street: '123 Main Street'
+                          locality: 'Downtown'
+                          city: 'New York'
+                          state: 'NY'
+                          pincode: '10001'
+                          country: 'USA'
                     prev: eyJyb290ZmlfaWQiOjQ0MDA2MX0=
                     next: eyJyb291ZmlfaWQiOjQ0MDA2MX0=
                     total_count: 123
@@ -11099,34 +11098,36 @@ paths:
                         rootfi_created_at: '2024-01-22T05:07:31.465Z'
                         rootfi_updated_at: '2024-01-22T05:07:31.000Z'
                         rootfi_company_id: 1089
-                        platform_id: '123456_1'
-                        platform_unique_id: '123456'
-                        currency_id: '1234567890'
-                        reference: '123456'
+                        platform_id: 'ord_123456'
+                        platform_unique_id: 'ORD-2024-001'
+                        currency_id: 'USD'
+                        reference: 'REF-2024-001'
                         created_at: '2024-01-22T05:07:31.465Z'
                         updated_at: '2024-01-22T05:07:31.000Z'
-                        order_name: John Doe
-                        order_number: '123456'
-                        description: John Doe
-                        total_discount: 100
-                        sub_total: 100
-                        tax_amount: 100
-                        total_amount: 100
-                        amount_due: 100
-                        order_status: ACTIVE
-                        payment_status: ACTIVE
+                        order_name: 'Order #ORD-2024-001'
+                        order_number: 'ORD-2024-001'
+                        description: 'Summer Sale Order - Wireless Headphones'
+                        total_discount: 10.00
+                        sub_total: 89.99
+                        tax_amount: 7.20
+                        total_amount: 97.19
+                        amount_due: 0.00
+                        order_status: 'FULFILLED'
+                        payment_status: 'PAID'
+                        customer_id: 'cus_123456'
+                        shipping_amount: 5.99
                         line_items:
-                          - item_id: '123456'
-                            tax_id: '123456'
-                            line_item_type_id: '123456'
+                          - item_id: 'prod_789'
+                            tax_id: 'tax_001'
+                            line_item_type_id: 'ord_123456'
                             line_item_type: ECOMMERCE_ORDERS
-                            description: This is a description
-                            unit_amount: 100
+                            description: 'Wireless Headphones - Black'
+                            unit_amount: 99.99
                             quantity: 1
-                            total_discount: 100
-                            tax_amount: 100
-                            sub_total: 100
-                            total_amount: 100
+                            total_discount: 10.00
+                            tax_amount: 7.20
+                            sub_total: 89.99
+                            total_amount: 97.19
                     prev: eyJyb290ZmlfaWQiOjQ0MDA2MX0=
                     next: eyJyb291ZmlfaWQiOjQ0MDA2MX0=
                     total_count: 123
@@ -11270,10 +11271,11 @@ paths:
                         rootfi_created_at: '2024-01-22T05:07:31.465Z'
                         rootfi_updated_at: '2024-01-22T05:07:31.000Z'
                         rootfi_company_id: 1089
-                        platform_id: '123456_1'
-                        platform_unique_id: '123456'
-                        name: John Doe
-                        description: John Doe
+                        platform_id: 'prod_789'
+                        platform_unique_id: 'WH-2024-BLK'
+                        name: 'Wireless Headphones'
+                        description: 'Premium wireless headphones with noise cancellation'
+                        sku: 'WH-2024-BLK'
                         status: ACTIVE
                         created_at: '2024-01-22T05:07:31.465Z'
                         updated_at: '2024-01-22T05:07:31.000Z'
@@ -11491,15 +11493,16 @@ paths:
                         rootfi_created_at: '2024-01-22T05:07:31.465Z'
                         rootfi_updated_at: '2024-01-22T05:07:31.000Z'
                         rootfi_company_id: 1089
-                        platform_id: '123456_1'
-                        platform_unique_id: '123456'
-                        amount: '100.00'
-                        fee: '10.00'
+                        platform_id: 'txn_123456'
+                        platform_unique_id: 'TXN-2024-001'
+                        amount: 97.19
+                        fee: 2.50
                         type: SALE
                         payment_method: CREDIT_CARD
-                        status: ACTIVE
-                        description: John Doe
+                        status: COMPLETED
+                        description: 'Payment for Order #ORD-2024-001'
                         currency_id: USD
+                        order_id: 'ord_123456'
                         created_at: '2024-01-22T05:07:31.465Z'
                         updated_at: '2024-01-22T05:07:31.000Z'
                     prev: eyJyb290ZmlfaWQiOjQ0MDA2MX0=
@@ -11530,6 +11533,625 @@ paths:
               schema:
                 $ref: '#/components/schemas/RootFiAPIResponseType'
       summary: Get All Transactions
+      security: *ref_0
+  /ecommerce/refunds:
+    get:
+      description: Retrieve all refunds from the database.
+      operationId: ecommerce_refunds_list
+      tags:
+        - EcommerceRefunds
+      parameters:
+        - name: limit
+          in: query
+          description: The number of refunds you want to retrieve
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 1
+        - name: next
+          in: query
+          description: The next page of objects to retrieve
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: nhgdfghjgyffcvjhgc==
+        - name: prev
+          in: query
+          description: The previous page of objects to retrieve
+          required: false
+          schema:
+            type: string
+            nullable: true
+        - name: select
+          in: query
+          description: >-
+            Comma separated fields to select. Supported values are raw_data,
+            data_hash
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
+        - name: rootfi_company_id[eq]
+          in: query
+          description: >-
+            Filter by rootfi_company_id. You can filter by any field using this
+            syntax field_name[operator]
+          required: false
+          schema:
+            type: integer
+            nullable: true
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included. Supported values are true and false
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: 'false'
+        - name: return_count
+          in: query
+          description: Return the count of the objects. Supported values are true and false
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: 'false'
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: '#/components/schemas/SortOrder'
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: '#/components/schemas/SortOrder'
+            nullable: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ecommerceGetRefundsResponse'
+              examples:
+                Example1:
+                  value:
+                    data:
+                      - rootfi_id: 157
+                        rootfi_deleted_at: null
+                        rootfi_created_at: '2024-01-22T05:07:31.465Z'
+                        rootfi_updated_at: '2024-01-22T05:07:31.000Z'
+                        rootfi_company_id: 1089
+                        platform_id: 'ref_123456'
+                        platform_unique_id: 'REF-2024-001'
+                        parent_data_model: ECOMMERCE_ORDERS
+                        parent_data_model_id: 'ord_123456'
+                        currency_id: USD
+                        created_at: '2024-01-22T05:07:31.465Z'
+                        updated_at: '2024-01-22T05:07:31.000Z'
+                        description: 'Refund for Order #ORD-2024-001'
+                        sub_total: 89.99
+                        sub_total_tax_amount: 7.20
+                        shipping_sub_total: 5.99
+                        shipping_tax_amount: 0.48
+                        total_amount: 103.66
+                    prev: eyJyb290ZmlfaWQiOjQ0MDA2MX0=
+                    next: eyJyb291ZmlfaWQiOjQ0MDA2MX0=
+                    total_count: 123
+        '401':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '403':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '404':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '500':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+      summary: Get All Refunds
+      security: *ref_0
+  /ecommerce/line_items:
+    get:
+      description: Retrieve all line items from the database.
+      operationId: ecommerce_lineItems_list
+      tags:
+        - EcommerceLineItems
+      parameters:
+        - name: limit
+          in: query
+          description: The number of line items you want to retrieve
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 1
+        - name: next
+          in: query
+          description: The next page of objects to retrieve
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: nhgdfghjgyffcvjhgc==
+        - name: prev
+          in: query
+          description: The previous page of objects to retrieve
+          required: false
+          schema:
+            type: string
+            nullable: true
+        - name: select
+          in: query
+          description: >-
+            Comma separated fields to select. Supported values are raw_data,
+            data_hash
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
+        - name: rootfi_company_id[eq]
+          in: query
+          description: >-
+            Filter by rootfi_company_id. You can filter by any field using this
+            syntax field_name[operator]
+          required: false
+          schema:
+            type: integer
+            nullable: true
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included. Supported values are true and false
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: 'false'
+        - name: return_count
+          in: query
+          description: Return the count of the objects. Supported values are true and false
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: 'false'
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: '#/components/schemas/SortOrder'
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: '#/components/schemas/SortOrder'
+            nullable: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ecommerceGetLineItemsResponse'
+              examples:
+                Example1:
+                  value:
+                    data:
+                      - rootfi_id: 157
+                        rootfi_deleted_at: null
+                        rootfi_created_at: '2024-01-22T05:07:31.465Z'
+                        rootfi_updated_at: '2024-01-22T05:07:31.000Z'
+                        rootfi_company_id: 1089
+                        platform_id: 'li_123456'
+                        platform_unique_id: 'LI-2024-001'
+                        item_id: 'prod_789'
+                        tax_id: 'tax_001'
+                        line_item_type_id: 'ord_123456'
+                        line_item_type: ECOMMERCE_ORDERS
+                        description: 'Wireless Headphones - Black'
+                        unit_amount: 99.99
+                        quantity: 1
+                        total_discount: 10.00
+                        tax_amount: 7.20
+                        sub_total: 89.99
+                        total_amount: 97.19
+                    prev: eyJyb290ZmlfaWQiOjQ0MDA2MX0=
+                    next: eyJyb291ZmlfaWQiOjQ0MDA2MX0=
+                    total_count: 123
+        '401':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '403':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '404':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '500':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+      summary: Get All Line Items
+      security: *ref_0
+  /ecommerce/addresses:
+    get:
+      description: Retrieve all addresses from the database.
+      operationId: ecommerce_addresses_list
+      tags:
+        - EcommerceAddresses
+      parameters:
+        - name: limit
+          in: query
+          description: The number of addresses you want to retrieve
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 1
+        - name: next
+          in: query
+          description: The next page of objects to retrieve
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: nhgdfghjgyffcvjhgc==
+        - name: prev
+          in: query
+          description: The previous page of objects to retrieve
+          required: false
+          schema:
+            type: string
+            nullable: true
+        - name: select
+          in: query
+          description: >-
+            Comma separated fields to select. Supported values are raw_data,
+            data_hash
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
+        - name: rootfi_company_id[eq]
+          in: query
+          description: >-
+            Filter by rootfi_company_id. You can filter by any field using this
+            syntax field_name[operator]
+          required: false
+          schema:
+            type: integer
+            nullable: true
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included. Supported values are true and false
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: 'false'
+        - name: return_count
+          in: query
+          description: Return the count of the objects. Supported values are true and false
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: 'false'
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: '#/components/schemas/SortOrder'
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: '#/components/schemas/SortOrder'
+            nullable: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ecommerceGetAddressesResponse'
+              examples:
+                Example1:
+                  value:
+                    data:
+                      - rootfi_id: 157
+                        rootfi_deleted_at: null
+                        rootfi_created_at: '2024-01-22T05:07:31.465Z'
+                        rootfi_updated_at: '2024-01-22T05:07:31.000Z'
+                        rootfi_company_id: 1089
+                        platform_id: 'addr_123456'
+                        platform_unique_id: 'ADDR-2024-001'
+                        type: SHIPPING
+                        data_model_id: 'ord_123456'
+                        street: '123 Main Street'
+                        locality: 'Downtown'
+                        city: 'New York'
+                        state: 'NY'
+                        country: 'USA'
+                        pincode: '10001'
+                        data_model: ECOMMERCE_ORDERS
+                        updated_at: '2024-01-22T05:07:31.000Z'
+                    prev: eyJyb290ZmlfaWQiOjQ0MDA2MX0=
+                    next: eyJyb291ZmlfaWQiOjQ0MDA2MX0=
+                    total_count: 123
+        '401':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '403':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '404':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '500':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+      summary: Get All Addresses
+      security: *ref_0
+  /ecommerce/shipping_line_items:
+    get:
+      description: Retrieve all shipping line items from the database.
+      operationId: ecommerce_shippingLineItems_list
+      tags:
+        - EcommerceShippingLineItems
+      parameters:
+        - name: limit
+          in: query
+          description: The number of shipping line items you want to retrieve
+          required: false
+          schema:
+            type: integer
+            nullable: true
+          examples:
+            Example1:
+              value: 1
+        - name: next
+          in: query
+          description: The next page of objects to retrieve
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: nhgdfghjgyffcvjhgc==
+        - name: prev
+          in: query
+          description: The previous page of objects to retrieve
+          required: false
+          schema:
+            type: string
+            nullable: true
+        - name: select
+          in: query
+          description: >-
+            Comma separated fields to select. Supported values are raw_data,
+            data_hash
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: raw_data
+        - name: rootfi_updated_at[gte]
+          in: query
+          description: Filter by rootfi_updated_at Greater than or Equal To.
+          required: false
+          schema:
+            type: string
+            nullable: true
+        - name: rootfi_company_id[eq]
+          in: query
+          description: >-
+            Filter by rootfi_company_id. You can filter by any field using this
+            syntax field_name[operator]
+          required: false
+          schema:
+            type: integer
+            nullable: true
+        - name: include_deleted_records
+          in: query
+          description: >-
+            Include deleted records. By default, deleted records are not
+            included. Supported values are true and false
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: 'false'
+        - name: return_count
+          in: query
+          description: Return the count of the objects. Supported values are true and false
+          required: false
+          schema:
+            type: string
+            nullable: true
+          examples:
+            Example1:
+              value: 'false'
+        - name: sort[rootfi_created_at]
+          in: query
+          description: Sort by rootfi_created_at
+          required: false
+          schema:
+            $ref: '#/components/schemas/SortOrder'
+            nullable: true
+        - name: sort[rootfi_updated_at]
+          in: query
+          description: Sort by rootfi_updated_at
+          required: false
+          schema:
+            $ref: '#/components/schemas/SortOrder'
+            nullable: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ecommerceGetShippingLineItemsResponse'
+              examples:
+                Example1:
+                  value:
+                    data:
+                      - rootfi_id: 157
+                        rootfi_deleted_at: null
+                        rootfi_created_at: '2024-01-22T05:07:31.465Z'
+                        rootfi_updated_at: '2024-01-22T05:07:31.000Z'
+                        rootfi_company_id: 1089
+                        platform_id: 'sli_123456'
+                        platform_unique_id: 'SLI-2024-001'
+                        parent_data_model: ECOMMERCE_ORDERS
+                        parent_data_model_id: 'ord_123456'
+                        title: 'Standard Shipping'
+                        description: 'Standard shipping via USPS'
+                        sub_total: 5.99
+                        tax_amount: 0.48
+                        total_amount: 6.47
+                    prev: eyJyb290ZmlfaWQiOjQ0MDA2MX0=
+                    next: eyJyb291ZmlfaWQiOjQ0MDA2MX0=
+                    total_count: 123
+        '401':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '403':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '404':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+        '500':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootFiAPIResponseType'
+      summary: Get All Shipping Line Items
       security: *ref_0
   /payments/balances:
     get:
@@ -18582,70 +19204,79 @@ components:
         currency_id:
           type: string
           nullable: true
-          description: The currency ID of the customer
+          description: The currency ID of the order
         reference:
           type: string
           nullable: true
-          description: The reference of the customer
+          description: The reference of the order
         created_at:
           type: string
           nullable: true
-          description: The created at of the customer
+          description: The date and time the order was created
         updated_at:
           type: string
           nullable: true
-          description: The updated at of the customer
+          description: The date and time the order was last updated
         order_name:
           type: string
           nullable: true
-          description: The order name of the customer
+          description: The name of the order
         order_number:
           type: string
           nullable: true
-          description: The order number of the customer
+          description: The order number
         description:
           type: string
           nullable: true
-          description: The description of the customer
+          description: The description of the order
         total_discount:
           type: number
           format: double
           nullable: true
-          description: The total discount of the customer
+          description: The total discount amount of the order
         sub_total:
           type: number
           format: double
           nullable: true
-          description: The sub total of the customer
+          description: The subtotal of the order before taxes and shipping
         tax_amount:
           type: number
           format: double
           nullable: true
-          description: The tax amount of the customer
+          description: The tax amount of the order
         total_amount:
           type: number
           format: double
           nullable: true
-          description: The total amount of the customer
+          description: The total amount of the order
         amount_due:
           type: number
           format: double
           nullable: true
-          description: The amount due of the customer
+          description: The amount due for the order
         order_status:
           type: string
           nullable: true
-          description: The order status of the customer
+          description: The status of the order
         payment_status:
           type: string
           nullable: true
-          description: The payment status of the customer
+          description: The payment status of the order
+        customer_id:
+          type: string
+          nullable: true
+          description: The customer ID associated with the order
+        shipping_amount:
+          type: number
+          format: double
+          nullable: true
+          description: The shipping amount for the order
         line_items:
           type: array
           items:
             $ref: '#/components/schemas/EcommerceLineItemsFields'
           nullable: true
-          description: The line items of the customer
+          description: The line items of the order
     ecommerceOrderObject:
       title: ecommerceOrderObject
       type: object
@@ -18682,6 +19313,10 @@ components:
           $ref: '#/components/schemas/BaseStatus'
           nullable: true
           description: The status of the product
+        sku:
+          type: string
+          nullable: true
+          description: The SKU (Stock Keeping Unit) of the product
         created_at:
           type: string
           nullable: true
@@ -18740,51 +19375,57 @@ components:
       type: object
       properties:
         amount:
-          type: string
-          description: The amount of the transaction.
-          example: '100.00'
+          type: number
+          format: double
+          nullable: true
+          description: The amount of the transaction
+          example: 100.00
         fee:
-          type: string
-          description: The fee of the transaction.
-          example: '10.00'
+          type: number
+          format: double
+          nullable: true
+          description: The fee of the transaction
+          example: 2.50
         type:
           type: string
-          description: The type of the transaction.
+          nullable: true
+          description: The type of the transaction
           example: SALE
         payment_method:
           type: string
-          description: The payment method of the transaction.
+          nullable: true
+          description: The payment method of the transaction
           example: CREDIT_CARD
         status:
           type: string
-          description: The status of the transaction.
-          example: ACTIVE
+          nullable: true
+          description: The status of the transaction
+          example: COMPLETED
         description:
           type: string
-          description: The description of the transaction.
-          example: John Doe
+          nullable: true
+          description: The description of the transaction
+          example: Payment for Order #ORD-2024-001
         currency_id:
           type: string
-          description: The currency id of the transaction.
+          nullable: true
+          description: The currency ID of the transaction
           example: USD
+        order_id:
+          type: string
+          nullable: true
+          description: The order ID associated with the transaction
+          example: ord_123456
         created_at:
           type: string
-          description: The date and time the transaction was created.
+          nullable: true
+          description: The date and time the transaction was created
           example: '2024-01-22T05:07:31.465Z'
         updated_at:
           type: string
-          description: The date and time the transaction was updated.
+          nullable: true
+          description: The date and time the transaction was updated
           example: '2024-01-22T05:07:31.000Z'
-      required:
-        - amount
-        - fee
-        - type
-        - payment_method
-        - status
-        - description
-        - currency_id
-        - created_at
-        - updated_at
     ecommerceTransactionObject:
       title: ecommerceTransactionObject
       type: object
@@ -18801,6 +19442,196 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ecommerceTransactionObject'
+      required:
+        - data
+      allOf:
+        - $ref: '#/components/schemas/CommonReadResponse'
+    ecommerceRefundsFields:
+      title: ecommerceRefundsFields
+      type: object
+      properties:
+        parent_data_model:
+          type: string
+          nullable: true
+          description: The parent data model type (e.g., ECOMMERCE_ORDERS)
+        parent_data_model_id:
+          type: string
+          nullable: true
+          description: The ID of the parent data model in the ecommerce platform
+        currency_id:
+          type: string
+          nullable: true
+          description: The currency ID of the refund
+        created_at:
+          type: string
+          nullable: true
+          description: The date and time the refund was created
+        updated_at:
+          type: string
+          nullable: true
+          description: The date and time the refund was last updated
+        description:
+          type: string
+          nullable: true
+          description: The description of the refund
+        sub_total:
+          type: number
+          format: double
+          nullable: true
+          description: The subtotal of items, fees etc.
+        sub_total_tax_amount:
+          type: number
+          format: double
+          nullable: true
+          description: The tax on subtotal of items, fees etc.
+        shipping_sub_total:
+          type: number
+          format: double
+          nullable: true
+          description: The shipping subtotal
+        shipping_tax_amount:
+          type: number
+          format: double
+          nullable: true
+          description: The tax on shipping subtotal
+        total_amount:
+          type: number
+          format: double
+          nullable: true
+          description: The total amount including everything like shipping, taxes etc.
+    ecommerceRefundObject:
+      title: ecommerceRefundObject
+      type: object
+      properties: {}
+      allOf:
+        - $ref: '#/components/schemas/AccountingRootFiBaseFields'
+        - $ref: '#/components/schemas/ecommerceRefundsFields'
+    ecommerceGetRefundsResponse:
+      title: ecommerceGetRefundsResponse
+      type: object
+      description: The data of the refunds endpoint.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/ecommerceRefundObject'
+      required:
+        - data
+      allOf:
+        - $ref: '#/components/schemas/CommonReadResponse'
+    ecommerceAddressesFields:
+      title: ecommerceAddressesFields
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+          description: The type of the address
+        data_model_id:
+          type: string
+          nullable: true
+          description: The ID of the data model this address belongs to
+        street:
+          type: string
+          nullable: true
+          description: The street address
+        locality:
+          type: string
+          nullable: true
+          description: The locality of the address
+        city:
+          type: string
+          nullable: true
+          description: The city of the address
+        state:
+          type: string
+          nullable: true
+          description: The state of the address
+        country:
+          type: string
+          nullable: true
+          description: The country of the address
+        pincode:
+          type: string
+          nullable: true
+          description: The postal code of the address
+        data_model:
+          type: string
+          nullable: true
+          description: The data model type this address belongs to
+        updated_at:
+          type: string
+          nullable: true
+          description: The date and time the address was last updated
+    ecommerceAddressObject:
+      title: ecommerceAddressObject
+      type: object
+      properties: {}
+      allOf:
+        - $ref: '#/components/schemas/AccountingRootFiBaseFields'
+        - $ref: '#/components/schemas/ecommerceAddressesFields'
+    ecommerceGetAddressesResponse:
+      title: ecommerceGetAddressesResponse
+      type: object
+      description: The data of the addresses endpoint.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/ecommerceAddressObject'
+      required:
+        - data
+      allOf:
+        - $ref: '#/components/schemas/CommonReadResponse'
+    ecommerceShippingLineItemsFields:
+      title: ecommerceShippingLineItemsFields
+      type: object
+      properties:
+        parent_data_model:
+          type: string
+          description: The parent data model type (e.g., ECOMMERCE_ORDERS, ECOMMERCE_REFUNDS)
+        parent_data_model_id:
+          type: string
+          description: The ID of the parent data model in the ecommerce platform
+        title:
+          type: string
+          nullable: true
+          description: The title of the shipping line item
+        description:
+          type: string
+          nullable: true
+          description: The description of the shipping line item
+        sub_total:
+          type: number
+          format: double
+          nullable: true
+          description: The subtotal of the shipping line item
+        tax_amount:
+          type: number
+          format: double
+          nullable: true
+          description: The tax amount on the shipping subtotal
+        total_amount:
+          type: number
+          format: double
+          nullable: true
+          description: The total amount including shipping and taxes
+    ecommerceShippingLineItemObject:
+      title: ecommerceShippingLineItemObject
+      type: object
+      properties: {}
+      allOf:
+        - $ref: '#/components/schemas/AccountingRootFiBaseFields'
+        - $ref: '#/components/schemas/ecommerceShippingLineItemsFields'
+    ecommerceGetShippingLineItemsResponse:
+      title: ecommerceGetShippingLineItemsResponse
+      type: object
+      description: The data of the shipping line items endpoint.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/ecommerceShippingLineItemObject'
       required:
         - data
       allOf:
@@ -20683,6 +21514,26 @@ components:
           format: double
           nullable: true
           description: The total amount of the line item
+    ecommerceLineItemObject:
+      title: ecommerceLineItemObject
+      type: object
+      properties: {}
+      allOf:
+        - $ref: '#/components/schemas/AccountingRootFiBaseFields'
+        - $ref: '#/components/schemas/EcommerceLineItemsFields'
+    ecommerceGetLineItemsResponse:
+      title: ecommerceGetLineItemsResponse
+      type: object
+      description: The data of the line items endpoint.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/ecommerceLineItemObject'
+      required:
+        - data
+      allOf:
+        - $ref: '#/components/schemas/CommonReadResponse'
     RateLimitData:
       title: RateLimitData
       type: object
