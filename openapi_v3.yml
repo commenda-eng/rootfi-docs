@@ -19563,13 +19563,6 @@ components:
           type: string
           nullable: true
           description: The date and time the address was last updated
-    ecommerceAddressObject:
-      title: ecommerceAddressObject
-      type: object
-      properties: {}
-      allOf:
-        - $ref: '#/components/schemas/AccountingRootFiBaseFields'
-        - $ref: '#/components/schemas/ecommerceAddressesFields'
     ecommerceGetAddressesResponse:
       title: ecommerceGetAddressesResponse
       type: object
