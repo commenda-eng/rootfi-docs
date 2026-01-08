@@ -1,5 +1,5 @@
 {
-  "name": "RootFi",
+  "name": "Integrations by Commenda",
   "logo": {
     "dark": "/images/logo/dark.svg",
     "light": "/images/logo/light.svg"
@@ -61,20 +61,14 @@
   ],
   "anchors": [
     {
-      "name": "Integrations Roadmap",
-      "icon": "road",
-      "url": "https://trello.com/b/ISjLnO29/building-integration-labs"
-    },
-    {
       "name": "Data Coverage Tool",
       "icon": "globe",
       "url": "https://coverage.integrationlabs.co/"
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/RootFiAPI",
-    "linkedin": "https://www.linkedin.com/company/integrationlabsapi",
-    "website": "https://www.integrationlabs.co/"
+    "linkedin": "https://www.linkedin.com/company/commenda",
+    "website": "https://www.commenda.io/"
   },
   "navigation": [
     {
@@ -98,7 +92,7 @@
       "group": "Core Features",
       "pages": [
         {
-          "group": "Connect by RootFi",
+          "group": "Connect by Commenda",
           "pages": [
             "documentation/concepts/rootfi-connect/introduction",
             "documentation/concepts/rootfi-connect/invite-link",
