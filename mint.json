@@ -1,8 +1,8 @@
 {
   "name": "RootFi",
   "logo": {
-    "dark": "/images/logo/dark.png",
-    "light": "/images/logo/light.png"
+    "dark": "/images/logo/dark.svg",
+    "light": "/images/logo/light.svg"
   },
   "favicon": "/images/logo/logomark_favicon_rounded.png",
   "theme": "venus",
