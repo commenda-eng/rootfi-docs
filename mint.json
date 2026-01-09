@@ -7,9 +7,9 @@
   "favicon": "/images/logo/Favicon (1).ico",
   "theme": "venus",
   "colors": {
-    "primary": "#0E0E0E",
-    "light": "#FAFAFA",
-    "dark": "#0E0E0E"
+    "primary": "#F8F6F1",
+    "light": "#026EB9",
+    "dark": "#026EB9"
   },
   "api": {
     "baseUrl": "https://api.rootfi.dev"
