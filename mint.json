@@ -11,13 +11,15 @@
     "light": "#026EB9",
     "dark": "#026EB9"
   },
+  {
   "styling": {
     "background": {
       "color": {
-        "light": "#F8F6F1"
+        "light": "#F8F6F1",
       }
     }
-  },
+  }
+},
   "api": {
     "baseUrl": "https://api.rootfi.dev"
   },
